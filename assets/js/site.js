@@ -293,7 +293,11 @@
       var d = id === "specimen" ? h.specimen : byId(h.register, id);
       if (!d) { put("#hitem", empty({ en: "This record could not be found. Return to Heritage.", ko: "해당 기록을 찾을 수 없다. 헤리티지로 돌아가라." }) + '<p><a href="heritage.html">Heritage</a></p>'); return; }
       document.title = en(d.name) + " | IOBSF Heritage";
-      put("#hitem", d.status === "inscribed" ? inscriptionForm(d, h) : recordForm(d, h));
+      var metal = d.status === "inscribed" ? "gold" : d.status === "review" ? "silver" : d.status === "record" ? "bronze" : "";
+      var aside = metal ? '<aside class="hitem-aside"><div class="hitem-trophy">' + trophySVG(metal) +
+        '<div class="trophy-label t-' + metal + '">' + esc(METALS[metal].label.en) + "</div>" + bi({ ko: METALS[metal].label.ko }, "div", "trophy-sub") +
+        '<div class="hitem-trophy-no">' + esc(d.status === "inscribed" ? "No. " + d.number : (d.record_no || "")) + "</div></div></aside>" : "";
+      put("#hitem", '<div class="hitem-grid' + (metal ? "" : " no-aside") + '"><div class="hitem-main">' + (d.status === "inscribed" ? inscriptionForm(d, h) : recordForm(d, h)) + "</div>" + aside + "</div>");
     });
   };
 
