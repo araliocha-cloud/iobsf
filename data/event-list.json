@@ -17,7 +17,7 @@
         "zh": ""
       },
       "nation": "KR",
-      "tier": "partner",
+      "tier": "national",
       "status": "completed",
       "summary": {
         "en": "Details and results to be recorded.",
@@ -28,7 +28,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2027-aobe-guangzhou",
@@ -59,7 +60,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "federation"
     },
     {
       "id": "2010-yeongdong-amateur",
@@ -89,7 +91,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2010-mungyeong-hanton",
@@ -119,7 +122,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2012-namwon-invitational",
@@ -149,7 +153,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2013-namwon-invitational",
@@ -179,7 +184,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2013-jaraseom-rhythm-barbecue",
@@ -209,7 +215,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2013-intl-bike-camping",
@@ -239,7 +246,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2013-korea-open-cheonan",
@@ -269,7 +277,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2014-national-outdoor-folk-games",
@@ -299,7 +308,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2015-hongseong-carnival",
@@ -329,7 +339,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2016-masters-pocheon",
@@ -359,7 +370,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2016-masters-icheon",
@@ -389,7 +401,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     },
     {
       "id": "2017-masters-yeoju",
@@ -419,69 +432,8 @@
       "ritual": [],
       "results": [],
       "table": [],
-      "acclaimed_by": ""
-    },
-    {
-      "id": "plb-primitive-league",
-      "name": {
-        "en": "PLB, Primitive League Barbecue",
-        "ko": "PLB(Primitive League Barbecue)",
-        "ja": "",
-        "zh": ""
-      },
-      "date": "",
-      "year": 2027,
-      "when": "In preparation",
-      "place": {
-        "en": "Korea",
-        "ko": "대한민국",
-        "ja": "",
-        "zh": ""
-      },
-      "nation": "KR",
-      "tier": "league",
-      "status": "upcoming",
-      "summary": {
-        "en": "Launch in preparation. A league of primitive barbecue.",
-        "ko": "출범 준비 중. 원시주의 바비큐 리그.",
-        "ja": "",
-        "zh": ""
-      },
-      "ritual": [],
-      "results": [],
-      "table": [],
-      "acclaimed_by": ""
-    },
-    {
-      "id": "korea-steak-battle",
-      "name": {
-        "en": "Korea Steak Battle",
-        "ko": "Korea Steak Battle",
-        "ja": "",
-        "zh": ""
-      },
-      "date": "",
-      "year": 2027,
-      "when": "In preparation",
-      "place": {
-        "en": "Korea",
-        "ko": "대한민국",
-        "ja": "",
-        "zh": ""
-      },
-      "nation": "KR",
-      "tier": "national",
-      "status": "upcoming",
-      "summary": {
-        "en": "In preparation.",
-        "ko": "추진 중.",
-        "ja": "",
-        "zh": ""
-      },
-      "ritual": [],
-      "results": [],
-      "table": [],
-      "acclaimed_by": ""
+      "acclaimed_by": "",
+      "org": "KR"
     }
   ]
 }

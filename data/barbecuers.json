@@ -319,6 +319,28 @@
           },
           "href": "https://koreapost.co.kr/news/articleView.html?idxno=89463",
           "by": ""
+        },
+        {
+          "kind": "project",
+          "title": {
+            "en": "PLB, Primitive League Barbecue, a league of primitive barbecue (launch in preparation)",
+            "ko": "PLB(Primitive League Barbecue), 원시주의 바비큐 리그 (출범 준비 중)",
+            "ja": "PLB（Primitive League Barbecue）、原始主義バーベキューのリーグ（発足準備中）",
+            "zh": "PLB（Primitive League Barbecue），原始主义烧烤联赛（筹备启动中）"
+          },
+          "href": "",
+          "by": ""
+        },
+        {
+          "kind": "project",
+          "title": {
+            "en": "Korea Steak Battle (in preparation)",
+            "ko": "Korea Steak Battle (추진 중)",
+            "ja": "Korea Steak Battle（推進中）",
+            "zh": "Korea Steak Battle（推进中）"
+          },
+          "href": "",
+          "by": ""
         }
       ],
       "records": [

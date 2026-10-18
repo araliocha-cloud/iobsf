@@ -143,31 +143,11 @@
       }
     },
     {
-      "id": "rankings",
-      "href": "rankings.html",
-      "label": {
-        "en": "Rankings",
-        "ko": "순위",
-        "ja": "",
-        "zh": ""
-      }
-    },
-    {
       "id": "events",
       "href": "events.html",
       "label": {
         "en": "Events",
         "ko": "대회",
-        "ja": "",
-        "zh": ""
-      }
-    },
-    {
-      "id": "pathway",
-      "href": "pathway.html",
-      "label": {
-        "en": "Pathway",
-        "ko": "육성 과정",
         "ja": "",
         "zh": ""
       }
@@ -183,13 +163,13 @@
       }
     },
     {
-      "id": "chronicle",
-      "href": "chronicle.html",
+      "id": "archives",
+      "href": "archives.html",
       "label": {
-        "en": "Chronicle",
-        "ko": "기록",
-        "ja": "",
-        "zh": ""
+        "en": "Archives",
+        "ko": "서고",
+        "ja": "書庫",
+        "zh": "书库"
       }
     },
     {
@@ -198,16 +178,6 @@
       "label": {
         "en": "Federation",
         "ko": "연맹",
-        "ja": "",
-        "zh": ""
-      }
-    },
-    {
-      "id": "partners",
-      "href": "partners.html",
-      "label": {
-        "en": "Partners",
-        "ko": "파트너",
         "ja": "",
         "zh": ""
       }
@@ -312,5 +282,101 @@
       "ja": "",
       "zh": ""
     }
+  },
+  "roadmap": {
+    "intro": {
+      "en": "The Federation was founded in 2018. These are the systems it is building next.",
+      "ko": "연맹은 2018년에 창립했다. 다음은 연맹이 앞으로 세워 갈 제도다.",
+      "ja": "連盟は2018年に創立した。次は連盟がこれから築いていく制度である。",
+      "zh": "联合会于2018年创立。以下是联合会接下来要建立的制度。"
+    },
+    "items": [
+      {
+        "title": {
+          "en": "Pro Barbecuer Charter",
+          "ko": "프로바비큐어 헌장",
+          "ja": "プロバーベキュアー憲章",
+          "zh": "职业烧烤师宪章"
+        },
+        "text": {
+          "en": "The duties of the officiant, the pledge, and the procedures for discipline and appeal.",
+          "ko": "집전자의 의무와 서약, 징계와 소명 절차.",
+          "ja": "執典者の義務と誓約、懲戒と弁明の手続き。",
+          "zh": "执典者的义务与宣誓，惩戒与申辩程序。"
+        }
+      },
+      {
+        "title": {
+          "en": "Academy and Certification",
+          "ko": "아카데미와 인증",
+          "ja": "アカデミーと認証",
+          "zh": "学院与认证"
+        },
+        "text": {
+          "en": "The path that raises Pro Barbecuers, from the first lesson to certification.",
+          "ko": "첫 수업부터 인증까지, 프로바비큐어를 기르는 길.",
+          "ja": "最初の授業から認証まで、プロバーベキュアーを育てる道。",
+          "zh": "从第一堂课到认证，培养职业烧烤师的道路。"
+        },
+        "href": "pathway.html"
+      },
+      {
+        "title": {
+          "en": "Judges",
+          "ko": "심판",
+          "ja": "審判",
+          "zh": "裁判"
+        },
+        "text": {
+          "en": "Judge training, qualification and the principles of judgment.",
+          "ko": "심판의 교육과 자격, 판정의 원칙.",
+          "ja": "審判の教育と資格、判定の原則。",
+          "zh": "裁判的培训与资格，评判原则。"
+        }
+      },
+      {
+        "title": {
+          "en": "Sanctioning",
+          "ko": "대회 공인",
+          "ja": "大会公認",
+          "zh": "赛事认证"
+        },
+        "text": {
+          "en": "How member nations and organisers host events sanctioned by the Federation.",
+          "ko": "회원국과 주최자가 연맹 공인 대회를 여는 절차.",
+          "ja": "会員国と主催者が連盟公認大会を開く手続き。",
+          "zh": "会员国与主办方举办联合会认证赛事的程序。"
+        }
+      },
+      {
+        "title": {
+          "en": "Pro Tour and Season Rankings",
+          "ko": "프로 투어와 시즌 순위",
+          "ja": "プロツアーとシーズン順位",
+          "zh": "职业巡回赛与赛季排名"
+        },
+        "text": {
+          "en": "Season points, the Honours of Distribution and the Hall of Fame.",
+          "ko": "시즌 포인트, 분배의 명예, 명예의 전당.",
+          "ja": "シーズンポイント、分配の栄誉、殿堂。",
+          "zh": "赛季积分、分配的荣誉、名人堂。"
+        },
+        "href": "rankings.html"
+      },
+      {
+        "title": {
+          "en": "AOBE 2027 Summit, Guangzhou",
+          "ko": "AOBE 2027 광저우 서밋",
+          "ja": "AOBE 2027 広州サミット",
+          "zh": "AOBE 2027 广州峰会"
+        },
+        "text": {
+          "en": "The Federation delivers the keynote at the Asia Outdoor Kitchen & BBQ Expo, May 2027.",
+          "ko": "2027년 5월 아시아 아웃도어 키친 앤 바비큐 박람회에서 연맹이 기조연설을 맡는다.",
+          "ja": "2027年5月、アジア・アウトドアキッチン＆バーベキュー博覧会で連盟が基調講演を担う。",
+          "zh": "2027年5月，联合会将在亚洲户外厨房与烧烤博览会上发表主旨演讲。"
+        }
+      }
+    ]
   }
 }

@@ -561,3 +561,5 @@ a.event-row:hover .title { color: var(--copper-light); }
 .art-list { margin: 0; padding-left: 1.3em; }
 .art-list li { margin: 0 0 8px; }
 .table.officers td { vertical-align: top; }
+.member-intro { color: var(--ash); margin: 0 0 18px; max-width: var(--measure); }
+#fed-founding { max-width: 900px; }

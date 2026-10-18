@@ -194,8 +194,7 @@
 
     Promise.all([load("rankings"), load("barbecuers"), load("events"), load("nations")]).then(function (r) {
       var rk = r[0], bb = r[1].barbecuers, ev = r[2], na = r[3].nations;
-      put("#home-rankings", rankingTable(rk, bb, na, 5));
-      var up = ev.events.filter(function (e) { return e.status === "upcoming"; })
+      var up = ev.events.filter(function (e) { return e.status === "upcoming" && e.org === "federation"; })
         .sort(function (a, b) { return (a.date || a.year) > (b.date || b.year) ? 1 : -1; });
       put("#home-next", up.length ? eventRows(up.slice(0, 3), ev, na)
         : empty({ en: "The next sanctioned event will be announced here.", ko: "다음 공인 대회가 이곳에 발표된다." }));
@@ -224,7 +223,7 @@
       var active = bb.filter(function (b) { return b.status !== "hall_of_fame"; });
       var hof = bb.filter(function (b) { return b.status === "hall_of_fame"; });
       put("#roster", active.length ? roster(active, na) : empty({ en: "Certified Pro Barbecuers will be listed here.", ko: "인증된 프로바비큐어가 이곳에 오른다." }));
-      put("#hall", hof.length ? roster(hof, na) : empty({ en: "The Hall of Fame awaits its first officiant.", ko: "명예의 전당은 첫 집전자를 기다린다." }));
+      if (hof.length) put("#hall", roster(hof, na)); else { var hs = $("#hall"); if (hs) hs.closest("section").remove(); }
     });
   };
 
@@ -242,7 +241,7 @@
         var e = byId(ev.events, x.event);
         return "<tr><td>" + (e ? '<a href="event.html?id=' + idOf(e) + '">' + esc(en(e.name)) + "</a>" + '<div class="entry-by">' + esc(fmtDate(e)) + "</div>" : esc(x.event)) + "</td><td>" + esc(x.result) + "</td><td>" + esc(x.note || "") + "</td></tr>";
       }).join("");
-      var groups = [["role", { en: "Institutions and Fire", ko: "기관과 불의 자리" }], ["book", { en: "Books", ko: "저서" }], ["paper", { en: "Papers", ko: "논문" }], ["media", { en: "Broadcasts, Interviews and Columns", ko: "방송, 인터뷰, 칼럼" }], ["event", { en: "Events", ko: "대회" }]];
+      var groups = [["role", { en: "Institutions and Fire", ko: "기관과 불의 자리" }], ["book", { en: "Books", ko: "저서" }], ["paper", { en: "Papers", ko: "논문" }], ["media", { en: "Broadcasts, Interviews and Columns", ko: "방송, 인터뷰, 칼럼" }], ["event", { en: "Events", ko: "대회" }], ["project", { en: "Projects in Preparation", ko: "추진 중인 일" }]];
       var portfolio = groups.map(function (g) {
         var list = (b.portfolio || []).filter(function (x) { return x.kind === g[0]; });
         return list.length ? '<h3 class="pf-head">' + esc(g[1].en) + bi({ ko: g[1].ko }, "span") + "</h3>" + entryList(list.map(function (x) { var y = {}; for (var k in x) y[k] = x[k]; y.kind = ""; return y; })) : "";
@@ -262,7 +261,7 @@
               "<dt>" + bi({ en: "Birthplace", ko: "출생지" }, "span", "", true) + "</dt><dd>" + val(b.birthplace) + "</dd>" +
               "<dt>" + bi({ en: "Raised", ko: "성장지" }, "span", "", true) + "</dt><dd>" + val(b.raised) + "</dd>" +
               "<dt>" + bi({ en: "Pro Barbecuer since", ko: "프로바비큐어" }, "span", "", true) + "</dt><dd>" + (b.certified ? esc(b.certified) : tbc) + "</dd>" +
-              "<dt>" + bi({ en: "Charter pledge", ko: "헌장 서약" }, "span", "", true) + "</dt><dd>" + (b.pledge_signed ? esc(b.pledge_signed) : bi({ en: "Pending the Charter", ko: "헌장 제정 후" }, "span", "pending", true)) + "</dd>" +
+              (b.pledge_signed ? "<dt>" + bi({ en: "Charter pledge", ko: "헌장 서약" }, "span", "", true) + "</dt><dd>" + esc(b.pledge_signed) + "</dd>" : "") +
             "</dl>" +
           "</div>" +
         "</div>" +
@@ -270,9 +269,8 @@
         formSection("Narrative", "서사", b.narrative ? bi(b.narrative, "div", "prose narrative") : bi(b.bio, "div", "prose")) +
         (career ? formSection("Barbecue Career", "바비큐 경력", career) : "") +
         (portfolio ? formSection("Portfolio", "포트폴리오", portfolio) : "") +
-        formSection("Honours of Distribution", "분배의 명예", '<dl class="facts">' + honors + "</dl>") +
-        formSection("Records", "공인 기록", recs ? '<div class="table-scroll"><table class="table"><thead><tr><th>Event</th><th>Role or result</th><th>Note</th></tr></thead><tbody>' + recs + "</tbody></table></div>"
-                : empty({ en: "No sanctioned records yet.", ko: "아직 공인 기록이 없다." })));
+        (rk.honors_def.some(function (h) { return b.honors && b.honors[h.key]; }) ? formSection("Honours of Distribution", "분배의 명예", '<dl class="facts">' + honors + "</dl>") : "") +
+        (recs ? formSection("Events Hosted", "대회 개최 경력", '<div class="table-scroll"><table class="table"><thead><tr><th>Event</th><th>Role</th><th>Note</th></tr></thead><tbody>' + recs + "</tbody></table></div>") : ""));
     });
   };
 
@@ -291,10 +289,14 @@
     put("#events-creed", '<div class="statement"><p class="label">' + esc(site.statements.creed.label.en) + "</p>" + bi(site.statements.creed.text, "p", "text") + "</div>");
     Promise.all([load("events"), load("nations")]).then(function (r) {
       var ev = r[0], na = r[1].nations;
-      var up = ev.events.filter(function (e) { return e.status === "upcoming"; });
-      var past = ev.events.filter(function (e) { return e.status === "completed"; }).sort(function (a, b) { return (b.date || b.year) > (a.date || a.year) ? 1 : -1; });
-      put("#events-up", up.length ? eventRows(up, ev, na) : empty({ en: "The next sanctioned event will be announced here.", ko: "다음 공인 대회가 이곳에 발표된다." }));
-      put("#events-past", past.length ? eventRows(past, ev, na) : empty({ en: "No results yet.", ko: "아직 결과가 없다." }));
+      var byDate = function (a, b) { return (b.date || b.year) > (a.date || a.year) ? 1 : -1; };
+      var fed = ev.events.filter(function (e) { return e.org === "federation"; }).sort(byDate);
+      var kr = ev.events.filter(function (e) { return e.org !== "federation"; }).sort(byDate);
+      var after = kr.filter(function (e) { return (e.year || 0) >= 2018; }), before = kr.filter(function (e) { return (e.year || 0) < 2018; });
+      put("#events-up", fed.length ? eventRows(fed, ev, na) : empty({ en: "The next sanctioned event will be announced here.", ko: "다음 공인 대회가 이곳에 발표된다." }));
+      put("#events-past", bi({ en: "Competitions hosted in Korea by KOOBA, the Federation’s member in Korea, and its forerunners.", ko: "연맹의 한국 회원인 KOOBA와 그 앞선 이들이 한국에서 연 대회." }, "div", "prose member-intro") +
+        (after.length ? eventRows(after, ev, na) : "") +
+        (before.length ? '<h3 class="pf-head">Before the Federation' + bi({ ko: "연맹 이전의 불" }, "span") + "</h3>" + eventRows(before, ev, na) : ""));
       put("#ritual", ritualList(ev.ritual_stages, null, true));
     });
   };
@@ -312,14 +314,14 @@
         '<p class="meta" style="color:var(--ash)">' + esc(fmtDate(e)) + ", " + esc(en(e.place)) + ", " + esc(en(ev.tiers[e.tier] || "")) + "</p>" +
         "<h1>" + esc(en(e.name)) + "</h1>" +
         bi(e.summary, "div", "prose lede") +
-        '<div class="section"><h2>The Ritual</h2><div style="margin-top:28px">' + ritualList(ev.ritual_stages, e.ritual, false) + "</div></div>" +
-        '<div class="section"><h2>Results</h2><div style="margin-top:24px">' +
+        (e.org === "federation" || (e.ritual && e.ritual.length) ? '<div class="section"><h2>The Ritual</h2><div style="margin-top:28px">' + ritualList(ev.ritual_stages, e.ritual, false) + "</div></div>" : "") +
+        (e.status === "completed" && !results ? "" : '<div class="section"><h2>Results</h2><div style="margin-top:24px">' +
           (results ? '<div class="table-scroll"><table class="table"><thead><tr><th>Rank</th><th>Pro Barbecuer or team</th><th class="num">Score</th></tr></thead><tbody>' + results + "</tbody></table></div>" : empty({ en: "Results will be recorded after judgment.", ko: "판정 후 결과를 기록한다." })) +
           (e.acclaimed_by ? '<p style="margin-top:20px">Glory conferred by ' + esc(e.acclaimed_by) + ".</p>" : "") +
-        "</div></div>" +
-        '<div class="section"><h2>The Table' + bi({ ko: "공동의 식탁", ja: "", zh: "" }, "span") + '</h2><p class="prose" style="margin-top:16px;color:var(--ash)">Every team that kept the fire, in its own words.</p><div style="margin-top:24px">' +
+        "</div></div>") +
+        (e.status === "completed" && !table ? "" : '<div class="section"><h2>The Table' + bi({ ko: "공동의 식탁", ja: "", zh: "" }, "span") + '</h2><p class="prose" style="margin-top:16px;color:var(--ash)">Every team that kept the fire, in its own words.</p><div style="margin-top:24px">' +
           (table || empty({ en: "The stories of every team will be recorded here.", ko: "모든 참가팀의 이야기가 이곳에 기록된다." })) +
-        "</div></div>");
+        "</div></div>"));
     });
   };
 
@@ -356,8 +358,11 @@
       put("#heritage-register", registerList(ins));
       put("#heritage-records", registerList(rec));
       put("#heritage-forms", '<p>' + bi({ en: "Federation Recorded Heritage follows the record form. Federation Inscribed Heritage follows the inscription form, with its plaque.", ko: "연맹기록유산은 기록양식을, 연맹등재유산은 명판을 포함한 등재양식을 따른다." }) + '</p><p style="margin-top:18px"><a class="more" href="heritage-item.html?id=ignis-primus&form=record">See the record form (No. 0, Ignis Primus)</a><br><a class="more" href="heritage-item.html?id=ignis-primus">See the inscription form and plaque (No. 0, Origin)</a></p>');
-      load("writings").then(function (wr) { renderArchives(h, wr.writings || []); }, function () { renderArchives(h, []); });
+
     });
+  };
+  pages.archives = function () {
+    Promise.all([load("heritage"), load("writings").catch(function () { return { writings: [] }; })]).then(function (r) { renderArchives(r[0], r[1].writings || []); });
   };
   function renderArchives(h, writings) {
       put("#heritage-archives", h.archives.map(function (a) {
@@ -516,7 +521,7 @@
       var pub = w.published && w.published.outlet ? '<p class="w-pub">' + bi({ en: "First published in " + w.published.outlet + (w.published.date ? ", " + fmtDate({ date: w.published.date }) : ""), ko: "처음 실린 곳: " + w.published.outlet, ja: "初出：" + w.published.outlet, zh: "首次刊载于：" + w.published.outlet }, "span", "", true) + (w.published.href ? ' <a href="' + esc(w.published.href) + '">Original</a>' : "") + "</p>" : "";
       put("#writing",
         '<article class="writing">' +
-          '<p class="w-crumb"><a href="heritage.html#archives">Archives</a>' + (cat ? " / " + esc(cat.name.en) + bi({ ko: cat.name.ko }, "span", "", true) : "") + "</p>" +
+          '<p class="w-crumb"><a href="archives.html">Archives</a>' + (cat ? " / " + esc(cat.name.en) + bi({ ko: cat.name.ko }, "span", "", true) : "") + "</p>" +
           "<h1>" + esc(en(w.title)) + "</h1>" +
           (w.subtitle && w.subtitle.en ? '<p class="w-sub-en">' + esc(w.subtitle.en) + "</p>" : "") +
           '<div class="w-ko">' + bi({ ko: w.title.ko }, "div", "w-title-ko") + (w.subtitle && w.subtitle.ko ? bi({ ko: w.subtitle.ko }, "div", "w-sub-ko") : "") + "</div>" +
@@ -556,9 +561,20 @@
         }).join("") + "</tbody></table>");
     });
     load("history").then(function (hi) {
-      put("#history", '<ol class="timeline">' + hi.entries.slice().sort(function (a, b) { return a.year - b.year; }).map(function (x) {
-        return '<li><div class="year">' + x.year + "</div>" + bi(x.text) + "</li>";
-      }).join("") + "</ol>");
+      var tl = function (list) { return '<ol class="timeline">' + list.slice().sort(function (a, b) { return a.year - b.year; }).map(function (x) {
+        return '<li><div class="year">' + x.year + "</div>" + bi(x.text) + "</li>"; }).join("") + "</ol>"; };
+      var fed = hi.entries.filter(function (x) { return x.scope === "federation"; }), roots = hi.entries.filter(function (x) { return x.scope !== "federation"; });
+      put("#history", tl(fed) + (roots.length ? '<h3 class="pf-head">Roots of the Federation' + bi({ ko: "연맹의 뿌리", ja: "連盟の根", zh: "联合会的根基" }, "span") + "</h3>" +
+        bi({ en: "The work in Korea that led to the Federation.", ko: "연맹으로 이어진 한국에서의 걸음.", ja: "連盟へとつながった韓国での歩み。", zh: "通往联合会的韩国足迹。" }, "div", "prose member-intro") + tl(roots) : ""));
+    });
+    if (site.roadmap) put("#fed-roadmap", bi(site.roadmap.intro, "div", "prose member-intro") + '<div class="forms7">' + site.roadmap.items.map(function (x) {
+      return '<div class="form7"><h3>' + (x.href ? '<a href="' + esc(x.href) + '">' + esc(x.title.en) + "</a>" : esc(x.title.en)) + bi({ ko: x.title.ko, ja: x.title.ja, zh: x.title.zh }, "span") + "</h3>" + bi(x.text, "div", "form7-text") + "</div>";
+    }).join("") + "</div>");
+    load("chronicle").then(function (c) {
+      var s0 = (c.stories || []).filter(function (x) { return x.id === "founding-general-meeting"; })[0];
+      if (!s0) return;
+      var imgs = s0.images || [];
+      put("#fed-founding", (imgs.length ? '<div class="story-gallery">' + imgs.map(function (im, i) { return '<figure class="' + (i === 0 ? "lead" : "") + '"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '" loading="lazy"></figure>'; }).join("") + "</div>" : "") + bi(s0.text, "div", "prose story-text"));
     });
   };
 
