@@ -506,6 +506,29 @@
     });
   };
 
+  pages.writing = function () {
+    Promise.all([load("writings"), load("heritage")]).then(function (r) {
+      var w = byId(r[0].writings, param("id"));
+      if (!w) { put("#writing", empty({ en: "This essay was not found.", ko: "글을 찾을 수 없다." })); return; }
+      var cat = (r[1].archives || []).filter(function (a) { return a.key === w.category; })[0];
+      document.title = en(w.title) + " | IOBSF";
+      var body = md(w.body);
+      var pub = w.published && w.published.outlet ? '<p class="w-pub">' + bi({ en: "First published in " + w.published.outlet + (w.published.date ? ", " + fmtDate({ date: w.published.date }) : ""), ko: "처음 실린 곳: " + w.published.outlet, ja: "初出：" + w.published.outlet, zh: "首次刊载于：" + w.published.outlet }, "span", "", true) + (w.published.href ? ' <a href="' + esc(w.published.href) + '">Original</a>' : "") + "</p>" : "";
+      put("#writing",
+        '<article class="writing">' +
+          '<p class="w-crumb"><a href="heritage.html#archives">Archives</a>' + (cat ? " / " + esc(cat.name.en) + bi({ ko: cat.name.ko }, "span", "", true) : "") + "</p>" +
+          "<h1>" + esc(en(w.title)) + "</h1>" +
+          (w.subtitle && w.subtitle.en ? '<p class="w-sub-en">' + esc(w.subtitle.en) + "</p>" : "") +
+          '<div class="w-ko">' + bi({ ko: w.title.ko }, "div", "w-title-ko") + (w.subtitle && w.subtitle.ko ? bi({ ko: w.subtitle.ko }, "div", "w-sub-ko") : "") + "</div>" +
+          '<p class="w-by">' + esc((w.by && w.by.en) || "Shaka Chaa") + bi({ ko: (w.by && w.by.ko) || "차영기" }, "span", "", true) + "</p>" + pub +
+          '<p class="w-lang">' + bi({ en: "Original text in Korean", ko: "원문 한국어" }, "span", "", true) + "</p>" +
+          (w.image ? '<figure class="w-fig"><img src="' + esc(w.image) + '" alt="">' + (w.image_caption ? "<figcaption>" + esc(w.image_caption) + "</figcaption>" : "") + "</figure>" : "") +
+          '<div class="w-body" lang="ko">' + body + "</div>" +
+          (w.refs && w.refs.length ? '<div class="w-refs"><h3>' + bi({ en: "References", ko: "주요 참고 문헌" }, "span", "", true) + '</h3><ul>' + w.refs.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>" : "") +
+        "</article>");
+    });
+  };
+
   pages.federation = function (site) {
     var st = site.statements, f = site.federation;
     put("#fed-facts",
