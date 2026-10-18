@@ -333,3 +333,7 @@ a.event-row:hover .title { color: var(--copper-light); }
 .plaque-foot-ko { font-family: var(--f-ko); font-size: 13px; margin-top: 6px; }
 .plaque-watermark { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--f-display); font-size: 84px; letter-spacing: .2em;
   color: rgba(243, 223, 184, .13); transform: rotate(-24deg); pointer-events: none; text-shadow: none; }
+.heritage-item { position: relative; }
+.heritage-item .h-link::after { content: ""; position: absolute; inset: 0; }
+.heritage-item .h-sources { position: relative; z-index: 1; }
+.heritage-item:hover .dish-name a { color: var(--copper-light); }
