@@ -105,7 +105,7 @@ html[data-second="zh"] .bi.inline .s[lang="zh"] { display: inline; }
   isolation: isolate;
 }
 /* dawn: a band of early humans advancing out of the dawn, set in the flow under the creed */
-.hero .dawn-wrap { display: block; position: relative; width: min(1180px, 100%); margin: 0 auto; pointer-events: none; }
+.hero .dawn-wrap { display: block; position: relative; z-index: -1; width: min(1180px, 100%); margin: calc(-1 * min(1180px, 100vw) * 170 / 2033) auto 0; pointer-events: none; }
 .hero .dawn { width: 100%; height: auto; aspect-ratio: auto; display: block;
   animation: dawn-rise 4s ease-out both; }
 @keyframes dawn-rise { from { opacity: 0; } to { opacity: 1; } }
@@ -540,4 +540,4 @@ a.event-row:hover .title { color: var(--copper-light); }
 .register > * { min-width: 0; }
 @media (max-width: 400px) { .heritage-item.is-origin .dish-name { font-size: 32px; } }
 .hero::after { display: none; }
-@media (max-width: 700px) { .hero .dawn-wrap { width: calc(100% + 2 * var(--gutter)); margin: 0 calc(-1 * var(--gutter)); } .hero .dawn { aspect-ratio: 2 / 1; object-fit: cover; object-position: 50% 55%; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); } }
+@media (max-width: 700px) { .hero .dawn-wrap { width: calc(100% + 2 * var(--gutter)); margin: -48px calc(-1 * var(--gutter)) 0; } .hero .dawn { aspect-ratio: 2 / 1; object-fit: cover; object-position: 50% 100%; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); } }
