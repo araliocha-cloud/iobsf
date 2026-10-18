@@ -393,3 +393,15 @@ a.event-row:hover .title { color: var(--copper-light); }
 
 /* fixed line breaks in statements: one clause per line, centred */
 .placard-text, .statement .text { white-space: pre-line; text-align: center; }
+
+/* emphasis: form type and record number */
+.form-kind { font-size: 25px; font-weight: 600; color: var(--copper-light); letter-spacing: .01em; margin-bottom: 14px; }
+.form-kind .bi .s, .form-kind .s { font-size: 19px; font-weight: 500; color: var(--bone); margin-left: .6em; }
+.record-no { display: inline-block; font-size: 34px; font-weight: 600; color: var(--bone); letter-spacing: .08em;
+  border: 1px solid var(--copper); padding: 4px 16px 2px; margin: 0 0 18px; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) {
+  .form-kind { font-size: 21px; }
+  .form-kind .bi .s, .form-kind .s { font-size: 16px; margin-left: 0; }
+  html[data-second="ko"] .form-kind .bi.inline .s[lang="ko"], html[data-second="ja"] .form-kind .bi.inline .s[lang="ja"], html[data-second="zh"] .form-kind .bi.inline .s[lang="zh"] { display: block; margin-top: 4px; }
+  .record-no { font-size: 27px; }
+}
