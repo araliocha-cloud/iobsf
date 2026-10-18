@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://araliocha-cloud.github.io/iobsf/sitemap.xml
