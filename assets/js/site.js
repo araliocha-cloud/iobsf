@@ -376,10 +376,8 @@
       '<div class="plaque-community">' + esc(en(d.community)) + "</div>" +
       '<div class="plaque-rule"></div>' +
       '<div class="plaque-text">' + esc(ins.plaque.en) + "</div>" +
-      '<div class="plaque-text-ko">' + esc(ins.plaque.ko) + "</div>" +
       '<div class="plaque-rule"></div>' +
       '<div class="plaque-foot">' + (d.status === "origin" ? "Declared " : "Inscribed ") + esc(ins.date) + "<br>" + (d.status === "origin" ? "" : "Decision ") + esc(ins.decision_no) + "</div>" +
-      '<div class="plaque-foot-ko">국제아웃도어바비큐스포츠연맹<br>' + (d.status === "origin" ? "불의 유산 원점 제" : "연맹등재유산 제") + esc(d.number) + "호</div>" +
     "</figure>";
   }
 
