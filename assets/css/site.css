@@ -541,3 +541,4 @@ a.event-row:hover .title { color: var(--copper-light); }
 @media (max-width: 400px) { .heritage-item.is-origin .dish-name { font-size: 32px; } }
 .hero::after { display: none; }
 @media (max-width: 700px) { .hero .dawn-wrap { width: calc(100% + 2 * var(--gutter)); margin: -40px calc(-1 * var(--gutter)) 0; } .hero .dawn { aspect-ratio: 2 / 1; object-fit: cover; object-position: 50% 100%; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); mask-image: linear-gradient(to right, transparent 0, #000 18%, #000 82%, transparent 100%); } }
+.site-footer .f-emblem { display: block; width: 96px; height: auto; margin-top: 26px; opacity: .92; filter: drop-shadow(0 6px 14px rgba(0,0,0,.5)); }
