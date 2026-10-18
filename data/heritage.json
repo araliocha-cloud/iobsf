@@ -1,22 +1,16 @@
 {
   "_schema": {
     "intro": "헤리티지 첫머리 문장 (다국어)",
-    "principle": "등재 원칙 (다국어)",
     "criteria": "등재 기준 목록: key, name(다국어), text(다국어)",
     "register": "연맹 인증 바비큐 유산 목록: id, number(등재 번호, 등재 때 부여, 원점은 0), name(다국어), original(원어 표기), community(그 유산을 만든 공동체와 지역, 다국어), era(시대, 다국어), status(origin 원점 | record 연맹 기록유산 | inscribed 등재유산), designated(등재 날짜), decision(결정 번호), text(해설, 다국어), sources(출처 목록: title, href)",
     "archives": "서사 기록 공간: key, name(다국어), text(소개, 다국어), entries(글 목록: title, date, href, summary)",
     "record_form": "연맹 기록유산 기록양식: record_no(R-연도-일련번호), recorded(기록 일자), recorder(기록 기관), sections.summary/fire/sharing/history/living(개요, 불과 조리, 나눔과 의례, 역사와 문헌, 전승 현황, 다국어), log(변경 이력: date, text, 덧붙이기만 하고 지우지 않음)",
-    "inscription_form": "등재양식 (status가 inscribed일 때): inscription.decision_no, date, session, plaque(명판 등재문 한 문장, 다국어), decision(결정문 네 단락: receives, criteria{history,community,identity,living}, inscribes, invites), statement(가치 선언문: summary, authenticity, safeguarding), consent(공동체 동의 기록)"
+    "inscription_form": "등재양식 (status가 inscribed일 때): inscription.decision_no, date, session, plaque(명판 등재문 한 문장, 다국어), decision(결정문 네 단락: receives, criteria{history,community,identity,living}, inscribes, invites), statement(가치 선언문: summary, authenticity, safeguarding), consent(공동체 동의 기록)",
+    "principles": "헤리티지 원칙 목록 (다국어)"
   },
   "intro": {
     "en": "The Heritage of the Fire is the Federation's register of humankind's barbecue. Here the Federation recognises the representative barbecue traditions of the world and records the history behind them.",
     "ko": "불의 유산은 인류 바비큐에 대한 연맹의 등재부다. 연맹은 이곳에서 세계의 대표 바비큐 전통을 인정하고, 그 뒤에 놓인 역사를 기록한다.",
-    "ja": "",
-    "zh": ""
-  },
-  "principle": {
-    "en": "A heritage belongs to the community that made it.",
-    "ko": "유산의 주인은 그것을 만든 공동체다.",
     "ja": "",
     "zh": ""
   },
@@ -30,8 +24,8 @@
         "zh": ""
       },
       "text": {
-        "en": "Handed down across generations, with a traceable record.",
-        "ko": "세대를 건너 전승되었고, 그 기록을 따라갈 수 있다.",
+        "en": "Handed down across generations, traceable through people, testimony or texts.",
+        "ko": "세대를 건너 전승되었고, 사람과 증언과 문헌으로 그 전승을 따라갈 수 있다.",
         "ja": "",
         "zh": ""
       }
@@ -905,5 +899,19 @@
         }
       }
     ]
-  }
+  },
+  "principles": [
+    {
+      "en": "A heritage belongs to the community that made it.",
+      "ko": "유산의 주인은 그것을 만든 공동체다.",
+      "ja": "",
+      "zh": ""
+    },
+    {
+      "en": "The Federation is not a court of science or archaeology. A heritage is proven by its people and its tradition.",
+      "ko": "연맹은 과학이나 고고학이 아니다. 유산은 사람과 전통이 증명한다.",
+      "ja": "",
+      "zh": ""
+    }
+  ]
 }

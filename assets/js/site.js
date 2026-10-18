@@ -264,7 +264,7 @@
   pages.heritage = function () {
     load("heritage").then(function (h) {
       put("#heritage-intro", bi(h.intro, "div", "lede"));
-      put("#heritage-principle", '<div class="statement"><p class="label">Principle</p>' + bi(h.principle, "p", "text") + "</div>");
+      put("#heritage-principle", '<div class="statement"><p class="label">Principles</p>' + h.principles.map(function (x) { return bi(x, "p", "text principle-line"); }).join("") + "</div>");
       put("#heritage-criteria", '<dl class="facts">' + h.criteria.map(function (c) {
         return "<dt>" + bi(c.name, "span", "", true) + "</dt><dd>" + bi(c.text) + "</dd>";
       }).join("") + "</dl>");

@@ -337,3 +337,4 @@ a.event-row:hover .title { color: var(--copper-light); }
 .heritage-item .h-link::after { content: ""; position: absolute; inset: 0; }
 .heritage-item .h-sources { position: relative; z-index: 1; }
 .heritage-item:hover .dish-name a { color: var(--copper-light); }
+.statement .principle-line + .principle-line { margin-top: 40px; }
