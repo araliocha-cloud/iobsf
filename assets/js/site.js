@@ -367,7 +367,9 @@
     return '<figure class="plaque' + (d.specimen ? " is-specimen" : "") + '" aria-label="Heritage plaque">' +
       (d.specimen ? '<div class="plaque-watermark">SPECIMEN</div>' : "") +
       '<img class="plaque-emblem" src="assets/img/emblem-small.png" alt="">' +
-      '<div class="plaque-head">' + (d.status === "origin" ? "Heritage of the Fire, Origin" : "Federation Inscribed Heritage") + "<br>International Outdoor Barbecue Sports Federation</div>" +
+      '<div class="plaque-head">International Outdoor Barbecue<br>Sports Federation</div>' +
+      '<div class="plaque-rule short"></div>' +
+      '<div class="plaque-tier">' + (d.status === "origin" ? "Heritage of the Fire<br>The Origin" : "Federation Inscribed Heritage") + "</div>" +
       '<div class="plaque-no">No. ' + esc(d.number) + "</div>" +
       '<div class="plaque-name">' + esc(en(d.name)) + "</div>" +
       (d.original && d.original !== en(d.name) ? '<div class="plaque-orig">' + esc(d.original) + "</div>" : "") +
@@ -377,7 +379,7 @@
       '<div class="plaque-text-ko">' + esc(ins.plaque.ko) + "</div>" +
       '<div class="plaque-rule"></div>' +
       '<div class="plaque-foot">' + (d.status === "origin" ? "Declared " : "Inscribed ") + esc(ins.date) + "<br>" + (d.status === "origin" ? "" : "Decision ") + esc(ins.decision_no) + "</div>" +
-      '<div class="plaque-foot-ko">국제아웃도어바비큐스포츠연맹 ' + (d.status === "origin" ? "불의 유산 원점 제" : "연맹등재유산 제") + esc(d.number) + "호</div>" +
+      '<div class="plaque-foot-ko">국제아웃도어바비큐스포츠연맹<br>' + (d.status === "origin" ? "불의 유산 원점 제" : "연맹등재유산 제") + esc(d.number) + "호</div>" +
     "</figure>";
   }
 

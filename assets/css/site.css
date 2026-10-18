@@ -425,3 +425,22 @@ a.event-row:hover .title { color: var(--copper-light); }
 .entry-sub { font-size: 15px; color: var(--ash); margin-top: 2px; }
 .entry-by { font-size: 14px; color: var(--ash); margin-top: 2px; }
 .form7 h3 a { color: inherit; }
+
+/* plaque balance */
+.plaque { max-width: 600px; padding: 48px clamp(24px, 6vw, 64px) 44px; }
+.plaque > div { text-wrap: balance; }
+.plaque-head { font-size: 15px; letter-spacing: .16em; line-height: 1.7; }
+.plaque-rule.short { width: 28%; margin: 16px auto 14px; }
+.plaque-tier { font-family: var(--f-display); font-size: 13px; letter-spacing: .22em; text-transform: uppercase; line-height: 1.7; opacity: .9; }
+.plaque-no { margin: 10px 0 0; }
+.plaque-name { margin-top: 2px; }
+.plaque-text, .plaque-text-ko { max-width: 30em; margin-left: auto; margin-right: auto; }
+.plaque-foot { line-height: 1.9; }
+.plaque-foot-ko { font-size: 14px; line-height: 1.7; margin-top: 10px; letter-spacing: .04em; }
+@media (max-width: 600px) {
+  .plaque-head { font-size: 12px; letter-spacing: .12em; }
+  .plaque-tier { font-size: 11px; }
+  .plaque-name { font-size: 28px; }
+  .plaque-no { font-size: 40px; }
+}
+.plaque-text, .plaque-text-ko { white-space: pre-line; }
