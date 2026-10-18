@@ -182,7 +182,7 @@
         '<p class="placard-label">' + esc(st.creed.label.en) + "</p>" +
         bi(st.creed.text, "p", "placard-text") +
       "</div>" +
-      '<img class="dawn" src="assets/img/dawn.svg" alt="" aria-hidden="true">');
+      '<picture class="dawn-wrap"><source srcset="assets/img/dawn-band.webp" type="image/webp"><img class="dawn" src="assets/img/dawn-band.jpg" alt="A band of early humans with stone axes, spears and bows advancing out of the dawn"></picture>');
 
     put("#home-spirit",
       '<div class="statement">' +

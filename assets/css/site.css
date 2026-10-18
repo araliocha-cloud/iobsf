@@ -101,17 +101,21 @@ html[data-second="zh"] .bi.inline .s[lang="zh"] { display: inline; }
   min-height: calc(100svh - 68px);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center;
-  padding: 48px var(--gutter) calc(clamp(240px, 30vw, 440px) + 24px);
+  --dawn-h: clamp(300px, 48vw, 720px);
+  padding: 48px var(--gutter) calc(var(--dawn-h) + 12px);
   overflow: hidden;
   isolation: isolate;
 }
-/* dawn: a band of early humans walking out of the sunrise */
-.hero .dawn { position: absolute; z-index: -1; left: 0; bottom: 0; width: 100%; height: clamp(240px, 30vw, 440px);
-  object-fit: cover; object-position: 50% 100%; pointer-events: none;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 28%); mask-image: linear-gradient(to bottom, transparent 0, #000 28%);
-  transform-origin: 50% 78%; animation: dawn-rise 6s cubic-bezier(.2,.7,.2,1) both; }
-@keyframes dawn-rise { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } }
+/* dawn: a band of early humans advancing out of the dawn */
+.hero .dawn-wrap { position: absolute; z-index: -1; left: 0; bottom: 0; width: 100%; height: var(--dawn-h); pointer-events: none; }
+.hero .dawn { width: 100%; height: 100%; object-fit: cover; object-position: 50% 62%; display: block;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,.55) 22%, #000 42%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,.55) 22%, #000 42%, #000 86%, transparent 100%), linear-gradient(to right, transparent 0, #000 12%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in; mask-composite: intersect;
+  animation: dawn-rise 4s ease-out both; }
+@keyframes dawn-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .hero .dawn { animation: none; } }
+@media (max-width: 700px) { .hero .dawn { -webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,.55) 18%, #000 36%, #000 88%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,.55) 18%, #000 36%, #000 88%, transparent 100%); } }
 .hero::after {
   /* the hearth: light rising from below */
   content: ""; position: absolute; z-index: -2;
