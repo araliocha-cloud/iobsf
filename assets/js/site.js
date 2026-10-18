@@ -147,7 +147,7 @@
         : empty({ en: "The next sanctioned event will be announced here.", ko: "다음 공인 대회가 이곳에 발표된다." }));
       put("#home-roster", roster(bb.slice(0, 4), na));
     });
-    load("heritage").then(function (h) { put("#home-heritage-intro", bi(h.intro, "div", "lede")); put("#home-register", registerList(h.register, true)); });
+    load("heritage").then(function (h) { (h.forms || []).forEach(function (f) { FORMS[f.key] = f; }); put("#home-heritage-intro", bi(h.intro, "div", "lede")); put("#home-register", registerList(h.register, true)); });
   };
 
   pages.fire = function (site) {
@@ -263,6 +263,12 @@
 
   pages.heritage = function () {
     load("heritage").then(function (h) {
+      (h.forms || []).forEach(function (f) { FORMS[f.key] = f; });
+      put("#heritage-forms7", '<div class="forms7">' + h.forms.map(function (f) {
+        var list = h.register.filter(function (d) { return (d.forms || []).indexOf(f.key) >= 0; });
+        return '<div class="form7"><h3>' + esc(f.name.en) + bi({ ko: f.name.ko }, "span") + "</h3>" + bi(f.text, "div", "form7-text") +
+          '<div class="form7-list">' + (list.length ? list.map(function (d) { return '<a href="heritage-item.html?id=' + esc(d.id) + '">' + esc(en(d.name)) + "</a>"; }).join(", ") : '<span style="color:var(--ash)">' + bi({ en: "Awaiting its first record", ko: "첫 기록을 기다린다" }, "span", "", true) + "</span>") + "</div></div>";
+      }).join("") + "</div>");
       put("#heritage-intro", bi(h.intro, "div", "lede"));
       put("#trophies", trophyStage());
       put("#heritage-principle", '<div class="statement"><p class="label">Principles</p>' + h.principles.map(function (x) { return bi(x, "p", "text principle-line"); }).join("") + "</div>");
@@ -289,6 +295,7 @@
 
   pages.heritageitem = function () {
     load("heritage").then(function (h) {
+      (h.forms || []).forEach(function (f) { FORMS[f.key] = f; });
       var id = param("id");
       var d = id === "specimen" ? h.specimen : byId(h.register, id);
       if (!d) { put("#hitem", empty({ en: "This record could not be found. Return to Heritage.", ko: "해당 기록을 찾을 수 없다. 헤리티지로 돌아가라." }) + '<p><a href="heritage.html">Heritage</a></p>'); return; }
@@ -328,6 +335,8 @@
       "<h1>" + esc(en(d.name)) + (d.original && d.original !== en(d.name) ? ' <span class="orig-big">' + esc(d.original) + "</span>" : "") + bi({ ko: d.name.ko, ja: d.name.ja, zh: d.name.zh }, "span") + "</h1>" +
       "</div>" + smallTrophy(d) + "</div>" +
       '<dl class="facts form-facts">' +
+        fieldRow({ en: "Original name", ko: "원어 이름" }, '<span class="orig-field">' + esc(d.original || "") + "</span>" + (d.original_lang ? bi(d.original_lang) : "")) +
+        fieldRow({ en: "Form of fire", ko: "불의 형식" }, (d.forms && d.forms.length) ? (d.forms || []).map(function (k) { return FORMS[k] ? bi(FORMS[k].name) : ""; }).join("") : bi({ en: "Origin of all forms", ko: "모든 형식의 원점" })) +
         fieldRow({ en: "Community and region", ko: "공동체와 지역" }, bi(d.community)) +
         fieldRow({ en: "Era", ko: "시대" }, bi(d.era)) +
         fieldRow({ en: "Recorded", ko: "기록 일자" }, esc(d.recorded || "")) +
@@ -547,6 +556,12 @@
       }).join("") + "</ul>";
   }
 
+  var FORMS = {};
+  function formLine(d, inline) {
+    var fs = (d.forms || []).map(function (k) { return FORMS[k]; }).filter(Boolean);
+    if (!fs.length) return "";
+    return '<div class="h-form">' + fs.map(function (f) { return bi(f.name, "span", "", true); }).join('<span class="sep">, </span>') + "</div>";
+  }
   function registerList(reg, brief) {
     if (!reg.length) return empty({ en: "The first designations will be announced here.", ko: "첫 지정 유산이 이곳에 발표된다." });
     return '<div class="register">' + reg.map(function (d) {
@@ -557,7 +572,7 @@
       return '<div class="heritage-item' + (d.status === "origin" ? " is-origin" : "") + '"><div class="h-mark' + (d.status === "origin" ? " is-designated" : "") + '">' + (metal ? '<span class="dot t-' + metal + '"></span>' : "") + mark + "</div>" +
         '<div class="dish-name"><a class="h-link" href="heritage-item.html?id=' + esc(d.id) + '">' + esc(en(d.name)) + "</a>" + (d.original && d.original !== en(d.name) ? '<span class="orig">' + esc(d.original) + "</span>" : "") + "</div>" +
         bi({ ko: d.name.ko, ja: d.name.ja, zh: d.name.zh }, "div") +
-        '<div class="h-community">' + bi(d.community) + (d.era ? bi(d.era, "div", "h-era") : "") + "</div>" +
+        '<div class="h-community">' + bi(d.community) + (d.era ? bi(d.era, "div", "h-era") : "") + "</div>" + formLine(d) +
         (brief ? "" : bi(d.text, "div", "h-text") + src) + "</div>";
     }).join("") + "</div>";
   }

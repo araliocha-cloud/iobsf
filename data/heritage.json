@@ -6,7 +6,9 @@
     "archives": "서사 기록 공간: key, name(다국어), text(소개, 다국어), entries(글 목록: title, date, href, summary)",
     "record_form": "연맹기록유산 기록양식: record_no(R-연도-일련번호), recorded(기록 일자), recorder(기록 기관), sections.summary/fire/sharing/history/living(개요, 불과 조리, 나눔과 의례, 역사와 문헌, 전승 현황, 다국어), log(변경 이력: date, text, 덧붙이기만 하고 지우지 않음)",
     "inscription_form": "등재양식 (status가 inscribed일 때): inscription.decision_no, date, session, plaque(명판 등재문 한 문장, 다국어), decision(결정문 네 단락: receives, criteria{history,community,identity,living}, inscribes, invites), statement(가치 선언문: summary, authenticity, safeguarding), consent(공동체 동의 기록)",
-    "principles": "헤리티지 원칙 목록 (다국어)"
+    "principles": "헤리티지 원칙 목록 (다국어)",
+    "forms": "일곱 가지 불의 형식: key, name(영어, 한국어), text(정의)",
+    "naming": "모든 유산 이름은 영어(name.en), 한국어(name.ko), 원어(original)와 원어의 언어(original_lang)를 함께 적는다. forms는 forms 목록의 key 배열"
   },
   "intro": {
     "en": "The Heritage of the Fire is the Federation's register of humankind's barbecue. Here the Federation recognises the representative barbecue traditions of the world and records the history behind them.",
@@ -113,7 +115,14 @@
           "href": "https://www.sciencenews.org/article/ashes-oldest-controlled-fire"
         }
       ],
-      "log": []
+      "log": [],
+      "forms": [],
+      "original_lang": {
+        "en": "Latin",
+        "ko": "라틴어",
+        "ja": "",
+        "zh": ""
+      }
     },
     {
       "id": "suya",
@@ -126,7 +135,7 @@
         "ja": "",
         "zh": ""
       },
-      "original": "Tsire / Suya",
+      "original": "Tsire",
       "community": {
         "en": "Hausa people, northern Nigeria and West Africa",
         "ko": "하우사(Hausa)인, 나이지리아 북부와 서아프리카",
@@ -201,7 +210,16 @@
             "zh": ""
           }
         }
-      ]
+      ],
+      "forms": [
+        "spit"
+      ],
+      "original_lang": {
+        "en": "Hausa",
+        "ko": "하우사어",
+        "ja": "",
+        "zh": ""
+      }
     },
     {
       "id": "nyama-choma",
@@ -269,7 +287,16 @@
             "zh": ""
           }
         }
-      ]
+      ],
+      "forms": [
+        "spit"
+      ],
+      "original_lang": {
+        "en": "Swahili",
+        "ko": "스와힐리어",
+        "ja": "",
+        "zh": ""
+      }
     },
     {
       "id": "braai",
@@ -337,7 +364,16 @@
             "zh": ""
           }
         }
-      ]
+      ],
+      "forms": [
+        "brazier"
+      ],
+      "original_lang": {
+        "en": "Afrikaans",
+        "ko": "아프리칸스어",
+        "ja": "",
+        "zh": ""
+      }
     },
     {
       "id": "maekjeok",
@@ -350,7 +386,7 @@
         "ja": "",
         "zh": ""
       },
-      "original": "貊炙",
+      "original": "맥적 貊炙",
       "community": {
         "en": "The Maek people of the ancient north of the Korean Peninsula and Manchuria",
         "ko": "고대 한반도 북부와 만주의 맥(貊)족",
@@ -405,7 +441,16 @@
             "zh": ""
           }
         }
-      ]
+      ],
+      "forms": [
+        "spit"
+      ],
+      "original_lang": {
+        "en": "Korean, recorded in Classical Chinese",
+        "ko": "한국어, 한문 기록",
+        "ja": "",
+        "zh": ""
+      }
     },
     {
       "id": "seolyamyeokjeok",
@@ -418,7 +463,7 @@
         "ja": "",
         "zh": ""
       },
-      "original": "雪夜覓炙",
+      "original": "설야멱적 雪夜覓炙",
       "community": {
         "en": "Kaesong, Goryeo and Joseon Korea",
         "ko": "개성, 고려와 조선",
@@ -477,7 +522,16 @@
             "zh": ""
           }
         }
-      ]
+      ],
+      "forms": [
+        "brazier"
+      ],
+      "original_lang": {
+        "en": "Korean",
+        "ko": "한국어",
+        "ja": "",
+        "zh": ""
+      }
     },
     {
       "id": "robatayaki",
@@ -545,7 +599,16 @@
             "zh": ""
           }
         }
-      ]
+      ],
+      "forms": [
+        "brazier"
+      ],
+      "original_lang": {
+        "en": "Japanese",
+        "ko": "일본어",
+        "ja": "",
+        "zh": ""
+      }
     },
     {
       "id": "lechon",
@@ -558,7 +621,7 @@
         "ja": "",
         "zh": ""
       },
-      "original": "Lechón",
+      "original": "Litson",
       "community": {
         "en": "The Philippines, with Cebu as its best-known home",
         "ko": "필리핀, 특히 세부",
@@ -613,7 +676,16 @@
             "zh": ""
           }
         }
-      ]
+      ],
+      "forms": [
+        "spit"
+      ],
+      "original_lang": {
+        "en": "Filipino, from Spanish lechón",
+        "ko": "필리핀어, 스페인어 lechón에서 옴",
+        "ja": "",
+        "zh": ""
+      }
     },
     {
       "id": "char-siu",
@@ -671,6 +743,703 @@
         "history": {},
         "living": {}
       },
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
+      ],
+      "forms": [
+        "spit"
+      ],
+      "original_lang": {
+        "en": "Cantonese",
+        "ko": "광둥어",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "churrasco",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-009",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "name": {
+        "en": "Churrasco",
+        "ko": "슈하스코",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Churrasco",
+      "original_lang": {
+        "en": "Portuguese",
+        "ko": "포르투갈어",
+        "ja": "",
+        "zh": ""
+      },
+      "forms": [
+        "spit"
+      ],
+      "community": {
+        "en": "Gaúchos of the pampa, Rio Grande do Sul, southern Brazil",
+        "ko": "남부 브라질 리우그란데두술, 팜파의 가우초(gaúcho)",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Traditional",
+        "ko": "전통",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The fire of the gaúchos of the southern Brazilian pampa: meat on long skewers over embers, seasoned with coarse salt.",
+        "ko": "남부 브라질 팜파의 가우초들이 지켜 온 불이다. 긴 꼬챙이에 꿴 고기를 잉걸불 위에서 굵은 소금만으로 굽는다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "The fire of the gaúchos of the southern Brazilian pampa: meat on long skewers over embers, seasoned with coarse salt.",
+          "ko": "남부 브라질 팜파의 가우초들이 지켜 온 불이다. 긴 꼬챙이에 꿴 고기를 잉걸불 위에서 굵은 소금만으로 굽는다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "Originally only a wooden stake, a sharp knife, fire and coarse salt. Meat is set on large skewers over embers or stuck into the ground beside the fire; wood is still favoured in Rio Grande do Sul.",
+          "ko": "본래 필요한 것은 나무 꼬챙이, 잘 드는 칼, 불, 굵은 소금뿐이었다. 큰 꼬챙이를 잉걸불 위에 걸거나 불 곁 땅에 꽂아 굽는다. 리우그란데두술에서는 지금도 장작을 즐겨 쓴다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "A staple of celebrations in homes across Rio Grande do Sul. In the rodízio custom, the meat is carried on the skewer and carved at the table for everyone.",
+          "ko": "리우그란데두술의 가정마다 잔치의 중심이 된다. 호지지우(rodízio) 관습에서는 꼬챙이째 고기를 들고 다니며 식탁마다 썰어 나눈다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "Its history is tied to the gaúcho people of the cattle country of the pampa. The Tupi peoples smoked game over wooden grills, a method called moka'em, before it.",
+          "ko": "그 역사는 팜파 목축지대의 가우초와 함께한다. 그보다 앞서 투피(Tupi)족은 나무 석쇠 위에서 사냥한 고기를 훈연했는데, 이를 모카엥(moka'em)이라 불렀다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Living and widespread across Brazil, with many regional variations.",
+          "ko": "브라질 전역에 퍼져 지역마다 다양한 모습으로 살아 있다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "sources": [
+        {
+          "title": "Da história aos dias atuais: churrasco (UFPel)",
+          "href": "https://wp.ufpel.edu.br/empauta/da-historia-aos-dias-atuais-como-fazer-um-bom-churrasco/"
+        },
+        {
+          "title": "Churrasco (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Churrasco"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "asado",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-010",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "name": {
+        "en": "Asado",
+        "ko": "아사도",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Asado",
+      "original_lang": {
+        "en": "Spanish",
+        "ko": "스페인어",
+        "ja": "",
+        "zh": ""
+      },
+      "forms": [
+        "spit",
+        "brazier"
+      ],
+      "community": {
+        "en": "Argentina and Uruguay, the Río de la Plata",
+        "ko": "아르헨티나와 우루과이, 리오데라플라타",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Traditional",
+        "ko": "전통",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Both a way of cooking and a gathering. Meat seasoned only with salt is cooked slowly by the asador, the one who keeps the fire.",
+        "ko": "굽는 방식이자 모임 그 자체다. 소금만 친 고기를 불을 지키는 사람, 아사도르(asador)가 천천히 굽는다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "Both a way of cooking and a gathering. Meat seasoned only with salt is cooked slowly by the asador, the one who keeps the fire.",
+          "ko": "굽는 방식이자 모임 그 자체다. 소금만 친 고기를 불을 지키는 사람, 아사도르(asador)가 천천히 굽는다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "Two ways: al asador, the whole animal splayed on iron crosses around an open fire, and a la parrilla, on a grill over embers of native hardwood such as quebracho. About two hours, with the fat kept from the coals.",
+          "ko": "두 가지 방식이 있다. 통째의 고기를 쇠 십자가에 펼쳐 열린 불 둘레에 세우는 알 아사도르(al asador), 그리고 케브라초 같은 토종 단단한 나무의 잉걸불 위 석쇠에서 굽는 아 라 파리야(a la parrilla)다. 두 시간 남짓, 기름이 숯에 떨어지지 않게 굽는다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "An asado is an event as much as a meal. Offal comes first, then the cuts in turn, shared from the fire to the table.",
+          "ko": "아사도는 식사이기 전에 모임이다. 내장 부위가 먼저 나오고 이어서 부위마다 차례로, 불에서 식탁으로 나뉜다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "Traditional in Argentina and Uruguay, and shared with Rio Grande do Sul, Chile and Paraguay; in Patagonia whole lamb is roasted on a wooden stake, asado al palo.",
+          "ko": "아르헨티나와 우루과이의 전통이며, 리우그란데두술, 칠레, 파라과이와도 이어진다. 파타고니아에서는 통양을 나무 기둥에 꽂아 굽는 아사도 알 팔로(asado al palo)가 있다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Living and central to social life in the Río de la Plata.",
+          "ko": "리오데라플라타의 사회생활 한가운데에 살아 있다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "sources": [
+        {
+          "title": "Asado (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Asado"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "tonir",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-011",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "name": {
+        "en": "Tonir",
+        "ko": "토니르",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Թոնիր",
+      "original_lang": {
+        "en": "Armenian",
+        "ko": "아르메니아어",
+        "ja": "",
+        "zh": ""
+      },
+      "forms": [
+        "clay"
+      ],
+      "community": {
+        "en": "Armenia",
+        "ko": "아르메니아",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Ancient",
+        "ko": "고대부터",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The Armenian clay oven set into the ground, once the centre of the household, where lavash is baked and khorovats is cooked.",
+        "ko": "땅에 묻은 아르메니아의 흙 화덕이다. 예부터 집의 한가운데에 놓였고, 라바시를 굽고 호로바츠를 익힌다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "The Armenian clay oven set into the ground, once the centre of the household, where lavash is baked and khorovats is cooked.",
+          "ko": "땅에 묻은 아르메니아의 흙 화덕이다. 예부터 집의 한가운데에 놓였고, 라바시를 굽고 호로바츠를 익힌다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "An oven of clay and stone set into the ground. Bread is pressed to its walls; meat stacked on skewers with potatoes and onions is lowered inside, and a wet cloth over the mouth keeps the heat and the smoke.",
+          "ko": "흙과 돌로 지어 땅에 묻은 화덕이다. 빵은 화덕 벽에 붙여 굽고, 감자와 양파와 함께 꼬챙이에 꿴 고기는 안으로 내려 익힌다. 입구를 젖은 천으로 덮어 열과 연기를 가둔다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "The tonir stood in the middle of the house; the household gathered around it.",
+          "ko": "토니르는 집 한가운데에 섰고, 식구들은 그 둘레에 모였다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "In pagan times Armenians honoured the tonir as the sun within the earth. Lavash, baked in the tonir, was inscribed on UNESCO's Representative List of the Intangible Cultural Heritage of Humanity in 2014.",
+          "ko": "이교 시대의 아르메니아인은 토니르를 땅속의 태양으로 섬겼다. 토니르에서 굽는 라바시는 2014년 유네스코 인류무형문화유산 대표목록에 올랐다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Living. Still used for bread, khorovats and festive cooking.",
+          "ko": "살아 있다. 지금도 빵과 호로바츠, 잔치 음식에 쓰인다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "sources": [
+        {
+          "title": "Tonir (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Tonir"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "tandoor",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-012",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "name": {
+        "en": "Tandoor",
+        "ko": "탄두르",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "तंदूर / تندور",
+      "original_lang": {
+        "en": "Hindi and Urdu, from Persian tanūr",
+        "ko": "힌디어와 우르두어, 페르시아어 tanūr에서 옴",
+        "ja": "",
+        "zh": ""
+      },
+      "forms": [
+        "clay"
+      ],
+      "community": {
+        "en": "Punjab and South Asia, with kin ovens across Western and Central Asia",
+        "ko": "펀자브와 남아시아, 서아시아와 중앙아시아에 같은 계열의 화덕",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Ancient",
+        "ko": "고대부터",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "A tall clay oven heated from within by wood or charcoal, where bread clings to the walls and meat roasts on long skewers.",
+        "ko": "장작이나 숯으로 안에서 달군 키 큰 흙 화덕이다. 빵은 벽에 붙어 익고, 고기는 긴 꼬챙이에 꿰어 굽는다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "A tall clay oven heated from within by wood or charcoal, where bread clings to the walls and meat roasts on long skewers.",
+          "ko": "장작이나 숯으로 안에서 달군 키 큰 흙 화덕이다. 빵은 벽에 붙어 익고, 고기는 긴 꼬챙이에 꿰어 굽는다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "A vase-shaped clay oven, above ground or partly buried, often over a metre deep, heated by an inner fire to about 480 °C.",
+          "ko": "항아리 모양의 흙 화덕으로, 땅 위에 서거나 일부를 묻는다. 깊이는 흔히 1미터가 넘고, 안의 불로 섭씨 480도 가까이 달군다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "In rural Punjab the village kept a communal tandoor, a common sight before 1947, and some villages keep one still.",
+          "ko": "펀자브의 시골 마을은 공동 탄두르를 두었다. 1947년 이전에는 흔한 풍경이었고, 지금도 그 화덕을 지키는 마을이 있다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "The word goes back through Persian tanūr to Akkadian tinūru, from mud and fire, and appears as early as the Epic of Gilgamesh.",
+          "ko": "이름은 페르시아어 타누르(tanūr)를 거쳐 아카드어 티누루(tinūru)로 거슬러 오른다. 진흙과 불이라는 뜻이며, 『길가메시 서사시』에 이미 나온다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Living and widespread, from village ovens to restaurant kitchens around the world.",
+          "ko": "마을의 화덕에서 세계의 식당 주방까지, 살아 있고 널리 퍼져 있다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "sources": [
+        {
+          "title": "Tandoor (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Tandoor"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "imu",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-013",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "name": {
+        "en": "Imu",
+        "ko": "이무",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Imu",
+      "original_lang": {
+        "en": "Hawaiian",
+        "ko": "하와이어",
+        "ja": "",
+        "zh": ""
+      },
+      "forms": [
+        "earth"
+      ],
+      "community": {
+        "en": "Native Hawaiians",
+        "ko": "하와이 원주민",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "From the first settlement of the islands",
+        "ko": "섬에 처음 정착한 때부터",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The Hawaiian earth oven. To cook in it is kālua, and the whole pig cooked in it is the heart of the feast.",
+        "ko": "하와이의 땅속 화덕이다. 이 화덕에서 익히는 것을 칼루아(kālua)라 하며, 그렇게 익힌 통돼지가 잔치의 중심이다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "The Hawaiian earth oven. To cook in it is kālua, and the whole pig cooked in it is the heart of the feast.",
+          "ko": "하와이의 땅속 화덕이다. 이 화덕에서 익히는 것을 칼루아(kālua)라 하며, 그렇게 익힌 통돼지가 잔치의 중심이다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "A fire of koa or kiawe wood heats porous lava rocks in a pit. The rocks are covered with banana and ti leaves, the pig and taro and breadfruit laid on them, more leaves above, then earth, for several hours.",
+          "ko": "구덩이에 코아(koa)나 키아웨(kiawe) 나무로 불을 피워 구멍 많은 용암석을 달군다. 돌 위에 바나나 잎과 티(ti) 잎을 깔고, 돼지와 타로, 빵나무 열매를 올린 뒤 다시 잎과 흙으로 덮어 몇 시간을 익힌다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "Kālua pork belongs to the lūʻau, to family gatherings and to the shared table.",
+          "ko": "칼루아 돼지는 루아우(lūʻau)와 가족 모임, 함께 나누는 식탁의 음식이다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "The first settlers, arriving roughly between 300 and 500 AD, brought pigs with them. Pigs were precious and appear in Hawaiian mythology through the demigod Kamapuaʻa.",
+          "ko": "대략 서기 300년에서 500년 사이에 도착한 첫 정착민이 돼지를 가져왔다. 돼지는 귀했으며, 하와이 신화의 반신 카마푸아아(Kamapuaʻa)로도 등장한다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Living. Imu are still dug for celebrations across Hawaiʻi.",
+          "ko": "살아 있다. 하와이 곳곳에서 잔치 때마다 지금도 이무를 판다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "sources": [
+        {
+          "title": "A Brief History of Kālua Pork (Culture Trip)",
+          "href": "https://www.theculturetrip.com/north-america/usa/hawaii/articles/a-brief-history-of-hawaiis-famous-kalua-pork-dish"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "umu",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-014",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "name": {
+        "en": "Umu",
+        "ko": "우무",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "ʻUmu",
+      "original_lang": {
+        "en": "Samoan and Tongan",
+        "ko": "사모아어와 통가어",
+        "ja": "",
+        "zh": ""
+      },
+      "forms": [
+        "earth"
+      ],
+      "community": {
+        "en": "Samoa and Tonga, Polynesia",
+        "ko": "사모아와 통가, 폴리네시아",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Traditional",
+        "ko": "전통",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The Polynesian earth oven of Samoa and Tonga, the fire of the Sunday family meal.",
+        "ko": "사모아와 통가의 폴리네시아 땅속 화덕이며, 일요일 가족 식사의 불이다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "The Polynesian earth oven of Samoa and Tonga, the fire of the Sunday family meal.",
+          "ko": "사모아와 통가의 폴리네시아 땅속 화덕이며, 일요일 가족 식사의 불이다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "Rocks are heated and food is laid on them, wrapped in banana or breadfruit leaves and covered with more leaves to hold the heat: taro, breadfruit, fish, pork and chicken.",
+          "ko": "돌을 달구고 그 위에 음식을 올린다. 바나나 잎이나 빵나무 잎으로 싸고 다시 잎으로 덮어 열을 가둔다. 타로, 빵나무 열매, 생선, 돼지, 닭을 익힌다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "In Samoa the umu feeds toʻonaʻi, the Sunday meal after church, often the most important family meal of the week. Food is set in the middle and shared, in the way of faʻa Samoa, where the group comes before the self.",
+          "ko": "사모아에서 우무는 교회 예배 뒤의 일요일 식사 토오나이(toʻonaʻi)를 차린다. 한 주에서 가장 중요한 가족 식사로 여겨진다. 음식은 가운데에 놓여 함께 나뉘며, 개인보다 공동체를 먼저 두는 사모아의 길, 파아 사모아(faʻa Samoa)를 따른다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "Umu is the common Polynesian name for the earth oven; the Māori hāngī belongs to the same family.",
+          "ko": "우무는 폴리네시아 땅속 화덕의 공통된 이름이며, 마오리의 항이도 같은 계열이다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Living. Prepared every week in Samoan and Tongan homes.",
+          "ko": "살아 있다. 사모아와 통가의 가정에서 매주 차려진다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "sources": [
+        {
+          "title": "Samoan Food and Culture (U.S. National Park Service)",
+          "href": "https://www.nps.gov/npsa/learn/historyculture/samoan-food-and-culture.htm"
+        },
+        {
+          "title": "Umu (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Umu"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
+      ]
+    },
+    {
+      "id": "hangi",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-015",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "name": {
+        "en": "Hāngī",
+        "ko": "항이",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Hāngī",
+      "original_lang": {
+        "en": "Māori",
+        "ko": "마오리어",
+        "ja": "",
+        "zh": ""
+      },
+      "forms": [
+        "earth"
+      ],
+      "community": {
+        "en": "Māori of Aotearoa New Zealand",
+        "ko": "아오테아로아 뉴질랜드의 마오리",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "From about 1280",
+        "ko": "1280년 무렵부터",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The Māori earth oven, still made for large gatherings, cooking great amounts of food without any kitchen.",
+        "ko": "마오리의 땅속 화덕이다. 지금도 큰 모임 때 만들며, 부엌 없이 많은 음식을 한꺼번에 익힌다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "The Māori earth oven, still made for large gatherings, cooking great amounts of food without any kitchen.",
+          "ko": "마오리의 땅속 화덕이다. 지금도 큰 모임 때 만들며, 부엌 없이 많은 음식을 한꺼번에 익힌다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "A pit is dug and filled with mānuka or kānuka logs and andesite or basalt stones, burned for three to four hours until the stones reach 600 to 700 °C. Food goes on the stones, meat below and vegetables above, under wet cloths and earth, for two to four hours while someone watches for escaping steam.",
+          "ko": "구덩이를 파고 마누카나 카누카 장작과 안산암이나 현무암 돌을 채워, 돌이 섭씨 600에서 700도에 이를 때까지 서너 시간 태운다. 돌 위에 고기를 아래, 채소를 위로 올리고 젖은 천과 흙으로 덮어 두세 시간 익힌다. 그동안 한 사람이 새어 나오는 김을 지킨다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "The hāngī is often the food of the pōwhiri, the welcome ceremony, and is part of the identity of Aotearoa.",
+          "ko": "항이는 환영 의식 포휘리(pōwhiri)의 음식이 되는 경우가 많으며, 아오테아로아의 정체성의 한 부분이다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "Early Polynesian settlers dug large umu from about 1280, at sites such as Wairau Bar. Wire baskets and cloth covers replaced bark and leaves after European contact.",
+          "ko": "폴리네시아 첫 정착민은 1280년 무렵부터 와이라우 바(Wairau Bar) 같은 곳에 큰 화덕을 팠다. 유럽인과의 접촉 뒤에는 나무껍질과 잎 대신 철망 바구니와 천을 쓰게 되었다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Living. Made for gatherings across New Zealand today.",
+          "ko": "살아 있다. 오늘도 뉴질랜드 곳곳의 모임에서 만들어진다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "sources": [
+        {
+          "title": "Hāngī (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/H%C4%81ng%C4%AB"
+        }
+      ],
       "log": [
         {
           "date": "2026-10-18",
@@ -793,7 +1562,7 @@
       "ja": "",
       "zh": ""
     },
-    "original": "Tsire / Suya",
+    "original": "Tsire",
     "community": {
       "en": "Hausa people, northern Nigeria and West Africa",
       "ko": "하우사(Hausa)인, 나이지리아 북부와 서아프리카",
@@ -898,6 +1667,15 @@
           "zh": ""
         }
       }
+    ],
+    "original_lang": {
+      "en": "Hausa",
+      "ko": "하우사어",
+      "ja": "",
+      "zh": ""
+    },
+    "forms": [
+      "spit"
     ]
   },
   "principles": [
@@ -912,6 +1690,113 @@
       "ko": "연맹은 과학이나 고고학이 아니다.\n유산은 사람과 전통이 증명한다.",
       "ja": "",
       "zh": ""
+    }
+  ],
+  "forms": [
+    {
+      "key": "earth",
+      "name": {
+        "en": "Earth Oven",
+        "ko": "땅의 불",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Stones heated in a pit; the food is buried and cooked in its steam.",
+        "ko": "구덩이에 달군 돌을 깔고 음식을 묻어, 그 증기로 익힌다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "clay",
+      "name": {
+        "en": "Clay Oven",
+        "ko": "흙의 불",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "A jar-shaped oven of clay; food is pressed to its walls or hung inside.",
+        "ko": "흙으로 빚은 항아리 화덕의 벽에 붙이거나 안에 매달아 굽는다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "spit",
+      "name": {
+        "en": "Spit and Skewer",
+        "ko": "꼬챙이의 불",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Meat on spits or skewers, roasted beside or above an open fire.",
+        "ko": "고기를 꼬챙이에 꿰어 열린 불 곁이나 위에서 굽는다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "brazier",
+      "name": {
+        "en": "Brazier and Grate",
+        "ko": "화로의 불",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Meat grilled directly over embers on a grate. In East Asia the brazier came to the middle of the table, and those around it grill and share together.",
+        "ko": "숯불 위 석쇠와 철망에서 직접 굽는다. 동아시아에서는 화로가 식탁 한가운데로 들어와, 둘러앉은 이들이 함께 굽고 나눈다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "smoke",
+      "name": {
+        "en": "Smoke and Pit",
+        "ko": "연기의 불",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Long cooking in the smoke of a low fire.",
+        "ko": "낮은 불의 연기로 오래 익힌다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "stone",
+      "name": {
+        "en": "Hot Stone",
+        "ko": "돌의 불",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Heated stones placed with the meat, cooking it from within.",
+        "ko": "달군 돌을 고기와 함께 넣어 안에서부터 익힌다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "bell",
+      "name": {
+        "en": "Under the Bell",
+        "ko": "덮개의 불",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "An iron lid covered with embers, cooking what lies beneath.",
+        "ko": "쇠 뚜껑을 덮고 그 위에 잿불을 얹어 그 아래를 익힌다.",
+        "ja": "",
+        "zh": ""
+      }
     }
   ]
 }

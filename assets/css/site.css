@@ -405,3 +405,13 @@ a.event-row:hover .title { color: var(--copper-light); }
   html[data-second="ko"] .form-kind .bi.inline .s[lang="ko"], html[data-second="ja"] .form-kind .bi.inline .s[lang="ja"], html[data-second="zh"] .form-kind .bi.inline .s[lang="zh"] { display: block; margin-top: 4px; }
   .record-no { font-size: 27px; }
 }
+
+/* forms of fire */
+.h-form { margin-top: 8px; font-size: 15px; color: var(--copper-light); font-family: var(--f-display); }
+.h-form .sep { color: var(--ash); }
+.forms7 { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0 40px; border-top: 1px solid var(--ember-line); }
+.form7 { padding: 26px 0; border-bottom: 1px solid var(--ember-line); min-width: 0; }
+.form7 h3 { font-size: 26px; color: var(--copper-light); }
+.form7-text { margin-top: 10px; font-size: 17px; }
+.form7-list { margin-top: 12px; font-size: 16px; }
+.orig-field { font-size: 22px; font-family: var(--f-display); }
