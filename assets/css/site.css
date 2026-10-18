@@ -272,3 +272,13 @@ a.event-row:hover .title { color: var(--copper-light); }
 .noscript { padding: 40px var(--gutter); color: var(--ash); }
 .split h2 + .bi { margin-top: 18px; }
 @media (max-width: 460px) { .brand-mark { display: none; } }
+
+/* heritage register */
+.register { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0 32px; border-top: 1px solid var(--ember-line); }
+.heritage-item { padding: 24px 0; border-bottom: 1px solid var(--ember-line); min-width: 0; }
+.heritage-item .h-mark { font-family: var(--f-display); font-size: 16px; color: var(--ash); margin-bottom: 6px; }
+.heritage-item .h-mark.is-designated { color: var(--copper-light); }
+.heritage-item .dish-name { font-family: var(--f-display); font-size: 26px; line-height: 1.2; }
+.heritage-item .orig { color: var(--ash); margin-left: 10px; font-family: var(--f-ko); font-size: 18px; }
+.heritage-item .h-community { color: var(--ash); font-size: 16px; margin-top: 8px; }
+.heritage-item .h-text { margin-top: 10px; font-size: 17px; }

@@ -146,9 +146,8 @@
       put("#home-next", up.length ? eventRows(up.slice(0, 3), ev, na)
         : empty({ en: "The next sanctioned event will be announced here.", ko: "다음 공인 대회가 이곳에 발표된다." }));
       put("#home-roster", roster(bb.slice(0, 4), na));
-      put("#home-nations", nationsStrip(na));
     });
-    load("heritage").then(function (h) { put("#home-heritage-intro", bi(h.intro, "div", "lede")); });
+    load("heritage").then(function (h) { put("#home-heritage-intro", bi(h.intro, "div", "lede")); put("#home-register", registerList(h.register)); });
   };
 
   pages.fire = function (site) {
@@ -263,18 +262,19 @@
   };
 
   pages.heritage = function () {
-    Promise.all([load("heritage"), load("nations"), load("history")]).then(function (r) {
-      var h = r[0], na = r[1].nations, hi = r[2];
+    load("heritage").then(function (h) {
       put("#heritage-intro", bi(h.intro, "div", "lede"));
-      put("#heritage", h.nations.map(function (n) {
-        return '<div class="nation-block"><h3>' + esc(en(nationName(na, n.nation))) + bi({ ko: nationName(na, n.nation).ko }, "span") + "</h3><div>" +
-          n.items.map(function (d) {
-            return '<div class="dish"><div class="dish-name">' + esc(en(d.name)) + '<span class="orig">' + esc(d.original) + "</span></div>" + bi(d.text, "div") + "</div>";
-          }).join("") + "</div></div>";
+      put("#heritage-principle", '<div class="statement"><p class="label">Principle</p>' + bi(h.principle, "p", "text") + "</div>");
+      put("#heritage-criteria", '<dl class="facts">' + h.criteria.map(function (c) {
+        return "<dt>" + bi(c.name, "span", "", true) + "</dt><dd>" + bi(c.text) + "</dd>";
+      }).join("") + "</dl>");
+      put("#heritage-register", registerList(h.register));
+      put("#heritage-archives", h.archives.map(function (a) {
+        return '<div class="nation-block"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3><div>" + bi(a.text, "div", "prose") +
+          '<div style="margin-top:18px">' + (a.entries.length ? a.entries.map(function (x) {
+            return '<p style="margin:0 0 10px"><a href="' + esc(x.href || "#") + '">' + esc(en(x.title)) + "</a>" + (x.date ? ' <span style="color:var(--ash)">' + esc(x.date) + "</span>" : "") + "</p>";
+          }).join("") : '<p style="color:var(--ash);margin:0">Records will be published here.</p>') + "</div></div></div>";
       }).join(""));
-      put("#history", '<ol class="timeline">' + hi.entries.slice().sort(function (a, b) { return a.year - b.year; }).map(function (x) {
-        return '<li><div class="year">' + x.year + "</div>" + bi(x.text) + "</li>";
-      }).join("") + "</ol>");
     });
   };
 
@@ -297,6 +297,11 @@
         "<dt>" + esc(st.mission.label.en) + "</dt><dd>" + bi(st.mission.text) + "</dd>" +
       "</dl>");
     load("nations").then(function (n) { put("#fed-members", nationsStrip(n.nations)); });
+    load("history").then(function (hi) {
+      put("#history", '<ol class="timeline">' + hi.entries.slice().sort(function (a, b) { return a.year - b.year; }).map(function (x) {
+        return '<li><div class="year">' + x.year + "</div>" + bi(x.text) + "</li>";
+      }).join("") + "</ol>");
+    });
   };
 
   pages.partners = function () {
@@ -352,6 +357,17 @@
       return "<li><h3>" + esc(s.name.en) + "</h3>" + bi({ ko: s.name.ko, ja: s.name.ja, zh: s.name.zh }, "div") +
         (x ? "<p>" + esc(x.time || "") + (x.note ? ", " + esc(x.note) : "") + "</p>" : "") + "</li>";
     }).join("") + "</ol>";
+  }
+  function registerList(reg) {
+    if (!reg.length) return empty({ en: "The first designations will be announced here.", ko: "첫 지정 유산이 이곳에 발표된다." });
+    return '<div class="register">' + reg.map(function (d) {
+      var mark = d.status === "designated" ? (d.number ? "No. " + esc(d.number) : "Designated") : "Candidate";
+      return '<div class="heritage-item"><div class="h-mark' + (d.status === "designated" ? " is-designated" : "") + '">' + mark + "</div>" +
+        '<div class="dish-name">' + esc(en(d.name)) + '<span class="orig">' + esc(d.original) + "</span></div>" +
+        bi({ ko: d.name.ko, ja: d.name.ja, zh: d.name.zh }, "div") +
+        '<div class="h-community">' + bi(d.community, "span", "", true) + (d.designated ? ", designated " + esc(d.designated) : "") + "</div>" +
+        bi(d.text, "div", "h-text") + "</div>";
+    }).join("") + "</div>";
   }
   function nationsStrip(na) {
     return '<div class="nations">' + na.map(function (n) {

@@ -1,39 +1,72 @@
 {
   "_schema": {
-    "nation": "nations.json의 code",
-    "items": "그 나라의 전통 바비큐 기록: name(다국어), original(원어 표기), era(시대), text(다국어 해설), source(출처)"
+    "intro": "헤리티지 첫머리 문장 (다국어)",
+    "principle": "등재 원칙 (다국어)",
+    "criteria": "등재 기준 목록: key, name(다국어), text(다국어)",
+    "register": "연맹 인증 바비큐 유산 목록: id, number(지정 번호, 지정 후 부여), name(다국어), original(원어 표기), community(그 유산을 만든 공동체와 지역, 다국어), era(시대), status(candidate 후보 | designated 지정), designated(지정 날짜), text(해설, 다국어), source(출처)",
+    "archives": "서사 기록 공간: key, name(다국어), text(소개, 다국어), entries(글 목록: title, date, href, summary)"
   },
+
   "intro": {
-    "en": "Every nation kept its own fire. The Federation records these traditions as a shared heritage of humankind.",
-    "ko": "모든 민족은 저마다의 불을 지켜 왔다. 연맹은 그 전통을 인류 공동의 유산으로 기록한다.",
+    "en": "The Heritage of the Fire is the Federation's register of humankind's barbecue. Here the Federation recognises the representative barbecue traditions of the world and records the history behind them.",
+    "ko": "불의 유산은 인류 바비큐에 대한 연맹의 등재부다. 연맹은 이곳에서 세계의 대표 바비큐 전통을 인정하고, 그 뒤에 놓인 역사를 기록한다.",
     "ja": "",
     "zh": ""
   },
-  "nations": [
-    {
-      "nation": "KR",
-      "items": [
-        { "name": { "en": "Maekjeok", "ko": "맥적", "ja": "", "zh": "" }, "original": "貊炙", "era": "", "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" },
-        { "name": { "en": "Seolyamyeokjeok", "ko": "설야멱적", "ja": "", "zh": "" }, "original": "雪夜覓炙", "era": "", "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" }
-      ]
-    },
-    {
-      "nation": "JP",
-      "items": [
-        { "name": { "en": "Robatayaki", "ko": "로바타야키", "ja": "炉端焼き", "zh": "" }, "original": "炉端焼き", "era": "", "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" }
-      ]
-    },
-    {
-      "nation": "PH",
-      "items": [
-        { "name": { "en": "Lechon", "ko": "레촌", "ja": "", "zh": "" }, "original": "Lechón", "era": "", "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" }
-      ]
-    },
-    {
-      "nation": "CN",
-      "items": [
-        { "name": { "en": "Char siu", "ko": "차샤오", "ja": "", "zh": "叉烧" }, "original": "叉燒", "era": "", "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" }
-      ]
-    }
+
+  "principle": {
+    "en": "A heritage belongs to the community that made it.",
+    "ko": "유산의 주인은 그것을 만든 공동체다.",
+    "ja": "",
+    "zh": ""
+  },
+
+  "criteria": [
+    { "key": "history", "name": { "en": "Lineage", "ko": "역사성", "ja": "", "zh": "" },
+      "text": { "en": "Handed down across generations, with a traceable record.", "ko": "세대를 건너 전승되었고, 그 기록을 따라갈 수 있다.", "ja": "", "zh": "" } },
+    { "key": "community", "name": { "en": "Community", "ko": "공동체성", "ja": "", "zh": "" },
+      "text": { "en": "Made together and shared together by a community.", "ko": "공동체가 함께 만들고 함께 나눈다.", "ja": "", "zh": "" } },
+    { "key": "identity", "name": { "en": "Distinctiveness", "ko": "고유성", "ja": "", "zh": "" },
+      "text": { "en": "A way with fire that belongs to its land and people.", "ko": "그 땅과 사람에게 고유한 불 다루기가 있다.", "ja": "", "zh": "" } },
+    { "key": "living", "name": { "en": "Living Practice", "ko": "계승성", "ja": "", "zh": "" },
+      "text": { "en": "Still practised today, not only remembered.", "ko": "기억으로만 남지 않고 지금도 살아 있다.", "ja": "", "zh": "" } }
+  ],
+
+  "register": [
+    { "id": "maekjeok", "number": "", "status": "candidate", "designated": "",
+      "name": { "en": "Maekjeok", "ko": "맥적", "ja": "", "zh": "" }, "original": "貊炙",
+      "community": { "en": "Korea", "ko": "한국", "ja": "", "zh": "" }, "era": "",
+      "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" },
+    { "id": "seolyamyeokjeok", "number": "", "status": "candidate", "designated": "",
+      "name": { "en": "Seolyamyeokjeok", "ko": "설야멱적", "ja": "", "zh": "" }, "original": "雪夜覓炙",
+      "community": { "en": "Korea", "ko": "한국", "ja": "", "zh": "" }, "era": "",
+      "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" },
+    { "id": "robatayaki", "number": "", "status": "candidate", "designated": "",
+      "name": { "en": "Robatayaki", "ko": "로바타야키", "ja": "炉端焼き", "zh": "" }, "original": "炉端焼き",
+      "community": { "en": "Japan", "ko": "일본", "ja": "日本", "zh": "" }, "era": "",
+      "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" },
+    { "id": "lechon", "number": "", "status": "candidate", "designated": "",
+      "name": { "en": "Lechon", "ko": "레촌", "ja": "", "zh": "" }, "original": "Lechón",
+      "community": { "en": "Philippines", "ko": "필리핀", "ja": "", "zh": "" }, "era": "",
+      "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" },
+    { "id": "char-siu", "number": "", "status": "candidate", "designated": "",
+      "name": { "en": "Char siu", "ko": "차샤오", "ja": "", "zh": "叉烧" }, "original": "叉燒",
+      "community": { "en": "Southern China (Guangdong)", "ko": "중국 남부(광둥)", "ja": "", "zh": "" }, "era": "",
+      "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" }
+  ],
+
+  "archives": [
+    { "key": "civilization",
+      "name": { "en": "A Civilization History of Human Barbecue", "ko": "인류바비큐문명사", "ja": "", "zh": "" },
+      "text": { "en": "From the first cooking fire of Homo erectus to the present, the history of humankind told before the fire.", "ko": "호모 에렉투스의 첫 화식에서 오늘까지, 불 앞에서 쓰인 인류의 역사.", "ja": "", "zh": "" },
+      "entries": [] },
+    { "key": "humanities",
+      "name": { "en": "Barbecue Humanities", "ko": "바비큐 인문학", "ja": "", "zh": "" },
+      "text": { "en": "The thought that gives barbecue its meaning: distribution, community, ritual and the return of the human.", "ko": "바비큐에 의미를 세우는 사상. 분배, 공동체, 의례, 그리고 인간의 귀환.", "ja": "", "zh": "" },
+      "entries": [] },
+    { "key": "narratives",
+      "name": { "en": "Histories of the Nations' Fires", "ko": "각국 바비큐의 역사 서사", "ja": "", "zh": "" },
+      "text": { "en": "How each people kept its fire, told through records and texts.", "ko": "각 민족이 자신의 불을 어떻게 지켜 왔는지, 기록과 문헌으로 전한다.", "ja": "", "zh": "" },
+      "entries": [] }
   ]
 }

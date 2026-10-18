@@ -33,8 +33,8 @@ GitHub Pages로 운영한다. 빌드 과정이 없다. 저장소에 올리면 �
 | `data/rankings.json` | 시즌 포인트 순위, 분배 4요소 명예 정의 |
 | `data/events.json` | 대회, 8단계 의례, 결과, The Table(모든 참가팀의 이야기) |
 | `data/nations.json` | 회원국과 회원 단체 |
-| `data/heritage.json` | 각국 전통 바비큐 기록 |
-| `data/history.json` | 연혁 |
+| `data/heritage.json` | 연맹 인증 바비큐 유산 등재부, 등재 기준, 서사 기록(인류바비큐문명사, 바비큐 인문학, 각국 역사 서사) |
+| `data/history.json` | 연맹 연혁 (Federation 페이지) |
 | `data/pathway.json` | 프로바비큐어 육성 과정 |
 | `data/chronicle.json` | 대회 서사와 영상 |
 | `data/partners.json` | 파트너 등급과 후원사 |
