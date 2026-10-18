@@ -382,11 +382,11 @@ a.event-row:hover .title { color: var(--copper-light); }
 .form-head-title { min-width: 0; padding-bottom: 18px; }
 .form-head + .form-facts { margin-top: 0; }
 .mini-trophy { display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0; margin-bottom: -2px; }
-.mini-trophy .trophy-svg { width: 46px; height: 69px; filter: drop-shadow(0 4px 6px rgba(0,0,0,.5)); }
-.mini-trophy-label { text-align: right; font-family: var(--f-display); font-size: 14px; line-height: 1.3; padding-bottom: 6px; }
-.mini-trophy-label .bi .s { font-size: 12px; margin-top: 0; }
+.mini-trophy .trophy-svg { width: 110px; height: 165px; filter: drop-shadow(0 4px 6px rgba(0,0,0,.5)); }
+.mini-trophy-label { text-align: right; font-family: var(--f-display); font-size: 17px; line-height: 1.3; padding-bottom: 10px; }
+.mini-trophy-label .bi .s { font-size: 14px; margin-top: 2px; }
 .form-head-plain { justify-content: flex-end; border-bottom: 1px solid var(--copper); padding-bottom: 0; }
 @media (max-width: 600px) {
   .mini-trophy-label { display: none; }
-  .mini-trophy .trophy-svg { width: 38px; height: 57px; }
+  .mini-trophy .trophy-svg { width: 84px; height: 126px; }
 }
