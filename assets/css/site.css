@@ -390,3 +390,6 @@ a.event-row:hover .title { color: var(--copper-light); }
   .mini-trophy-label { display: none; }
   .mini-trophy .trophy-svg { width: 84px; height: 126px; }
 }
+
+/* fixed line breaks in statements: one clause per line, centred */
+.placard-text, .statement .text { white-space: pre-line; text-align: center; }
