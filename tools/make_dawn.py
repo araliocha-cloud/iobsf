@@ -97,20 +97,20 @@ def place(fig, cx, fy, h, shadow=True):
         A=tr(*a);B=tr(*b); out.append(f'<line x1="{A[0]:.1f}" y1="{A[1]:.1f}" x2="{B[0]:.1f}" y2="{B[1]:.1f}" stroke="#060504" stroke-width="{max(w*k,.5):.2f}"/>')
     return "".join(out)
 kinds=["spear","axe","bow","shoulder","club","spear"]
-band=[(0,414,178,"spear",False,1.0,1.08)]
-ranks=[(122,388,136),(226,368,106),(318,353,84),(400,343,67),(474,336,53),(540,331,42),(598,328,33)]
+band=[(0,372,104,"spear",False,1.0,1.08)]
+ranks=[(48,360,88),(94,350,74),(136,342,62),(172,336,52),(204,331,44),(232,328,37)]
 for r,(dx,fy,h) in enumerate(ranks):
     for side in (-1,1):
-        band.append((side*(dx+random.uniform(-10,10)), fy+random.uniform(-2,2), h*random.uniform(.94,1.05), kinds[(r*2+(side>0)+1)%len(kinds)], side<0, random.uniform(.5,1.2), random.uniform(.95,1.08)))
-for (dx,fy,h) in [(-70,362,104),(72,364,106),(-170,346,80),(172,347,82),(-280,336,60),(282,336,60),(-118,334,58),(120,335,58),(-360,331,46),(362,331,46),(-230,330,44),(232,330,44)]:
-    band.append((dx+random.uniform(-6,6), fy, h*random.uniform(.95,1.05), random.choice(kinds), random.random()<.5, random.uniform(.5,1.2), random.uniform(.95,1.08)))
+        band.append((side*(dx+random.uniform(-6,6)), fy+random.uniform(-1.5,1.5), h*random.uniform(.95,1.04), kinds[(r*2+(side>0)+1)%len(kinds)], side<0, random.uniform(.5,1.2), random.uniform(.95,1.08)))
+for (dx,fy,h) in [(-22,352,78),(24,353,80),(-70,342,64),(72,343,64),(0,340,62),(-116,335,52),(118,335,52),(-40,333,48),(42,333,48),(-156,330,42),(158,330,42),(0,329,40),(-90,328,38),(92,328,38)]:
+    band.append((dx+random.uniform(-4,4), fy, h*random.uniform(.95,1.05), random.choice(kinds), random.random()<.5, random.uniform(.5,1.2), random.uniform(.95,1.08)))
 band.sort(key=lambda b:b[1])
 figs="".join(place(figure(k,fl,st,bk), W/2+dx, fy, h) for dx,fy,h,k,fl,st,bk in band)
-tiny="".join(place(figure(random.choice(kinds),random.random()<.5,.8,1), W/2+dx, HZ+4, 17+random.uniform(-3,3), shadow=False) for dx in [-720,-690,-655,-625,640,672,705,740,-770,775])
+tiny="" and "".join(place(figure(random.choice(kinds),random.random()<.5,.8,1), W/2+dx, HZ+4, 17+random.uniform(-3,3), shadow=False) for dx in [-720,-690,-655,-625,640,672,705,740,-770,775])
 rays="".join(f'<path d="M{W/2},{HZ} L{W/2+1500*math.cos(a-0.03):.0f},{HZ-1500*math.sin(a-0.03):.0f} L{W/2+1500*math.cos(a+0.03):.0f},{HZ-1500*math.sin(a+0.03):.0f}Z" fill="url(#ray)"/>' for a in [math.pi*(i+0.5)/12 for i in range(12)])
 svg=f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A band of early humans with stone axes, spears and bows walking out of the sunrise">
 <defs>
-<radialGradient id="sun"><stop offset="0" stop-color="#fff8e0"/><stop offset=".05" stop-color="#ffe4a3"/><stop offset=".13" stop-color="#ffb558"/><stop offset=".28" stop-color="#e07a30" stop-opacity=".9"/><stop offset=".5" stop-color="#8a3f18" stop-opacity=".55"/><stop offset=".78" stop-color="#3a1c0c" stop-opacity=".25"/><stop offset="1" stop-color="#1b1916" stop-opacity="0"/></radialGradient>
+<radialGradient id="sun"><stop offset="0" stop-color="#ffe9b8"/><stop offset=".08" stop-color="#ffc977"/><stop offset=".2" stop-color="#f09a45"/><stop offset=".38" stop-color="#c2622a" stop-opacity=".85"/><stop offset=".6" stop-color="#6e3116" stop-opacity=".5"/><stop offset=".82" stop-color="#2e170b" stop-opacity=".22"/><stop offset="1" stop-color="#1b1916" stop-opacity="0"/></radialGradient>
 <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a3d16"/><stop offset=".08" stop-color="#4a250f"/><stop offset=".45" stop-color="#1e120a"/><stop offset="1" stop-color="#1b1916"/></linearGradient>
 <linearGradient id="shadow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#060504" stop-opacity=".8"/><stop offset="1" stop-color="#060504" stop-opacity="0"/></linearGradient>
 <radialGradient id="ray" cx="50%" cy="100%" r="100%"><stop offset="0" stop-color="#ffd58a" stop-opacity=".09"/><stop offset=".6" stop-color="#ffd58a" stop-opacity=".03"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
@@ -118,11 +118,8 @@ svg=f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" preserveAs
 </defs>
 
 <g class="rise">
-<ellipse cx="{W/2}" cy="{HZ}" rx="980" ry="360" fill="url(#sun)"/>
-<g class="rays">{rays}</g>
-<circle cx="{W/2}" cy="{HZ+8}" r="128" fill="#ffd27a" opacity=".32"/>
-<circle cx="{W/2}" cy="{HZ+8}" r="84" fill="#fff4d2"/>
-<ellipse cx="{W/2}" cy="{HZ}" rx="640" ry="30" fill="url(#haze)"/>
+<ellipse cx="{W/2}" cy="{HZ+20}" rx="1150" ry="330" fill="url(#sun)"/>
+<ellipse cx="{W/2}" cy="{HZ}" rx="760" ry="34" fill="url(#haze)"/>
 </g>
 <path d="M0,{HZ+2} C220,{HZ-6} 420,{HZ+1} 600,{HZ-3} S940,{HZ+3} 1120,{HZ-2} 1420,{HZ} {W},{HZ-6} L{W},{H} L0,{H}Z" fill="url(#ground)"/>
 <line x1="0" y1="{HZ}" x2="{W}" y2="{HZ}" stroke="#ffe0a0" stroke-opacity=".35" stroke-width="1"/>
