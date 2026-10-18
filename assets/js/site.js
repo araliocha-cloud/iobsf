@@ -205,7 +205,7 @@
             (b.titles && b.titles.length ? '<ul class="titles">' + b.titles.map(function (t) { return "<li>" + bi(t) + "</li>"; }).join("") + "</ul>" : "") +
             '<dl class="facts form-facts">' +
               "<dt>" + bi({ en: "Nation", ko: "국적" }, "span", "", true) + "</dt><dd>" + bi(nationName(na, b.nation)) + "</dd>" +
-              "<dt>" + bi({ en: "Born", ko: "출생연도" }, "span", "", true) + "</dt><dd>" + (b.born_year ? esc(b.born_year) : tbc) + "</dd>" +
+              (b.born_year ? "<dt>" + bi({ en: "Born", ko: "출생연도" }, "span", "", true) + "</dt><dd>" + esc(b.born_year) + "</dd>" : "") +
               "<dt>" + bi({ en: "Birthplace", ko: "출생지" }, "span", "", true) + "</dt><dd>" + val(b.birthplace) + "</dd>" +
               "<dt>" + bi({ en: "Raised", ko: "성장지" }, "span", "", true) + "</dt><dd>" + val(b.raised) + "</dd>" +
               "<dt>" + bi({ en: "Pro Barbecuer since", ko: "프로바비큐어" }, "span", "", true) + "</dt><dd>" + (b.certified ? esc(b.certified) : tbc) + "</dd>" +
