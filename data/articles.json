@@ -130,8 +130,14 @@
         "ja": "連盟総裁",
         "zh": "总裁"
       },
-      "name": "Chung Tae-Kyung",
-      "nation": "KR"
+      "name": "",
+      "nation": "",
+      "vacant": {
+        "en": "Vacant",
+        "ko": "공석",
+        "ja": "空席",
+        "zh": "空缺"
+      }
     },
     {
       "role": {

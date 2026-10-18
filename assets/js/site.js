@@ -529,7 +529,7 @@
         }).join("") + "</dl>" +
         '<h3 class="pf-head">' + esc(a.officers_label.en) + bi({ ko: a.officers_label.ko, ja: a.officers_label.ja, zh: a.officers_label.zh }, "span") + "</h3>" +
         '<table class="table officers"><tbody>' + a.officers.map(function (o) {
-          return "<tr><td>" + bi(o.role) + "</td><td>" + esc(o.name) + '</td><td class="entry-by">' + bi(nat[o.nation] || { en: o.nation }, "span", "", true) + "</td></tr>";
+          return "<tr><td>" + bi(o.role) + "</td><td>" + (o.name ? esc(o.name) : bi(o.vacant || { en: "Vacant", ko: "공석" }, "span", "pending", true)) + '</td><td class="entry-by">' + (o.nation ? bi(nat[o.nation] || { en: o.nation }, "span", "", true) : "") + "</td></tr>";
         }).join("") + "</tbody></table>");
     });
     load("history").then(function (hi) {
