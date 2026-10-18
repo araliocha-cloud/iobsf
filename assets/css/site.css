@@ -449,3 +449,15 @@ a.event-row:hover .title { color: var(--copper-light); }
 .plaque-head { font-size: 19px; letter-spacing: .15em; line-height: 1.6; }
 .plaque-foot-en { margin-top: 10px; }
 @media (max-width: 600px) { .plaque-emblem { width: 104px; } .plaque-head { font-size: 14px; } }
+
+/* justified running text across the site (centred statements, placards and plaques excepted) */
+.prose, .prose p, .lede, .facts dd, .h-text, .form7-text, .decision li, .sequence p,
+.dish .bi, .empty, .entry-sub, .page-head .lede, #rank-note, .site-footer .f-link .bi,
+.heritage-item .h-community, .hitem-main .bi {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+.heritage-hero .lede, .heritage-hero #heritage-intro .bi { text-align: justify; text-align-last: center; }
+.statement, .statement *, .placard, .placard *, .plaque, .plaque *, .hero, .hero *, .trophy-stage *, .trophy-legend * { text-align-last: auto; }
+.statement .text, .placard-text, .plaque > div, .hero > * { text-align: center; }
