@@ -220,6 +220,45 @@
           "ja": "",
           "zh": ""
         }
+      },
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "The first cooking fire of humankind, before every myth. It leaves no site and no artefact, so it is not inscribed. It is the origin from which every heritage in this register is measured. The cooking hypothesis infers it from the smaller teeth and gut and the larger brain of Homo erectus. The oldest direct evidence of fire made by human ancestors comes from Wonderwerk Cave in South Africa, about one million years ago: burned bone and plant ash found together with stone tools.",
+          "ko": "신화 이전, 인류 최초의 화식의 불이다. 유적도 유물도 남기지 않았기에 등재하지 않는다. 이 등재부의 모든 유산은 이 원점에서부터 헤아려진다. 화식 가설은 호모 에렉투스의 작아진 이와 장, 커진 뇌에서 이 불을 추론한다. 인류의 조상이 피운 불의 가장 오래된 직접 증거는 남아프리카 원더워크 동굴에서 나왔다. 약 100만 년 전의 탄 뼈와 식물 재가 석기와 함께 발견되었다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "The first cooking fire, before every myth.",
+          "ko": "신화 이전, 최초의 화식의 불이다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "It belongs to no single people. It is the fire of all humankind.",
+          "ko": "어느 한 민족의 것이 아니다. 인류 전체의 불이다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "A hypothesis grounded in the anatomy of Homo erectus, about 1.9 million years ago, and in the oldest evidence of fire made by human ancestors.",
+          "ko": "약 190만 년 전 호모 에렉투스의 해부학적 변화, 그리고 인류 조상이 피운 불의 가장 오래된 증거에 근거한 가설이다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Every fire kept and shared today descends from it.",
+          "ko": "오늘 지켜지고 나뉘는 모든 불이 이 불에서 나왔다.",
+          "ja": "",
+          "zh": ""
+        }
       }
     },
     {

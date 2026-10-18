@@ -338,7 +338,7 @@
       var rec = h.register.filter(function (d) { return d.status === "record" || d.status === "review"; });
       put("#heritage-register", registerList(ins));
       put("#heritage-records", registerList(rec));
-      put("#heritage-forms", '<p>' + bi({ en: "Federation Recorded Heritage follows the record form. Federation Inscribed Heritage follows the inscription form, with its plaque.", ko: "연맹기록유산은 기록양식을, 연맹등재유산은 명판을 포함한 등재양식을 따른다." }) + '</p><p style="margin-top:18px"><a class="more" href="heritage-item.html?id=suya">See the record form (R-2026-001)</a><br><a class="more" href="heritage-item.html?id=ignis-primus">See the inscription form and plaque (No. 0, Origin)</a></p>');
+      put("#heritage-forms", '<p>' + bi({ en: "Federation Recorded Heritage follows the record form. Federation Inscribed Heritage follows the inscription form, with its plaque.", ko: "연맹기록유산은 기록양식을, 연맹등재유산은 명판을 포함한 등재양식을 따른다." }) + '</p><p style="margin-top:18px"><a class="more" href="heritage-item.html?id=ignis-primus&form=record">See the record form (No. 0, Ignis Primus)</a><br><a class="more" href="heritage-item.html?id=ignis-primus">See the inscription form and plaque (No. 0, Origin)</a></p>');
       load("writings").then(function (wr) { renderArchives(h, wr.writings || []); }, function () { renderArchives(h, []); });
     });
   };
@@ -361,7 +361,7 @@
       var d = byId(h.register, id === "specimen" ? "ignis-primus" : id);
       if (!d) { put("#hitem", empty({ en: "This record could not be found. Return to Heritage.", ko: "해당 기록을 찾을 수 없다. 헤리티지로 돌아가라." }) + '<p><a href="heritage.html">Heritage</a></p>'); return; }
       document.title = en(d.name) + " | IOBSF Heritage";
-      put("#hitem", d.inscription ? inscriptionForm(d, h) : recordForm(d, h));
+      put("#hitem", d.inscription && param("form") !== "record" ? inscriptionForm(d, h) : recordForm(d, h));
     });
   };
 
@@ -402,7 +402,7 @@
       '<div class="form-head"><div class="form-head-title">' +
       '<p class="record-no">' + esc(d.record_no || (d.status === "origin" ? "No. 0" : "")) + "</p>" +
       "<h1>" + esc(en(d.name)) + (d.original && d.original !== en(d.name) ? ' <span class="orig-big">' + esc(d.original) + "</span>" : "") + bi({ ko: d.name.ko, ja: d.name.ja, zh: d.name.zh }, "span") + "</h1>" +
-      "</div>" + smallTrophy(d) + "</div>" +
+      "</div>" + smallTrophy(d.status === "origin" ? { status: "record" } : d) + "</div>" +
       '<dl class="facts form-facts">' +
         fieldRow({ en: "Original name", ko: "원어 이름" }, '<span class="orig-field">' + esc(d.original || "") + "</span>" + (d.original_lang ? bi(d.original_lang) : "")) +
         fieldRow({ en: "Form of fire", ko: "불의 형식" }, (d.forms && d.forms.length) ? (d.forms || []).map(function (k) { return FORMS[k] ? bi(FORMS[k].name) : ""; }).join("") : bi({ en: "Origin of all forms", ko: "모든 형식의 원점" })) +
@@ -413,11 +413,10 @@
         fieldRow({ en: "Status", ko: "상태" }, bi(statusLabel)) +
       "</dl>" +
       formSection("Summary", "개요", para(sec.summary || d.text)) +
-      (d.status === "origin" ? "" :
-        formSection("Fire and Method", "불과 조리", para(sec.fire)) +
-        formSection("Sharing and Ritual", "나눔과 의례", para(sec.sharing)) +
-        formSection("History and Texts", "역사와 문헌", para(sec.history)) +
-        formSection("Living Practice", "전승 현황", para(sec.living))) +
+      (sec.fire ? formSection("Fire and Method", "불과 조리", para(sec.fire)) : "") +
+      (sec.sharing ? formSection("Sharing and Ritual", "나눔과 의례", para(sec.sharing)) : "") +
+      (sec.history ? formSection("History and Texts", "역사와 문헌", para(sec.history)) : "") +
+      (sec.living ? formSection("Living Practice", "전승 현황", para(sec.living)) : "") +
       formSection("Sources", "출처", sourcesList(d)) +
       formSection("Record Log", "변경 이력", '<p class="form-note">' + bi({ en: "Entries are only ever added, never erased.", ko: "이력은 덧붙이기만 하고 지우지 않는다." }, "span", "", true) + "</p>" + logList(d)) +
       '<p style="margin-top:48px"><a href="heritage.html">Back to Heritage</a></p>';
