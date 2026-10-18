@@ -10,7 +10,7 @@
     "photo": "assets/img/barbecuers/ 아래 파일 경로 (없으면 빈 칸)",
     "statement": "집전 선언 (Officiant's Statement), 다국어",
     "bio": "소개, 다국어",
-    "records": "대회 기록 목록: event(대회 id), result(순위 또는 기록), note",
+    "records": "공인 기록: event(대회 id), result(순위 또는 역할, 예: Host 주최), note",
     "honors": "분배 4요소 명예: dignity, endurance, participation, contribution 횟수",
     "born_year": "출생연도",
     "birthplace": "출생지 (다국어)",
@@ -321,7 +321,13 @@
           "by": ""
         }
       ],
-      "records": [],
+      "records": [
+        {
+          "event": "2025-korea-japan-sca-asia",
+          "result": "Host",
+          "note": "Korea's first international Sports Barbecue competition, with barbecuers from Japan"
+        }
+      ],
       "honors": {
         "dignity": 0,
         "endurance": 0,

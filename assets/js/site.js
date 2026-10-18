@@ -187,7 +187,7 @@
       }).join("");
       var recs = (b.records || []).map(function (x) {
         var e = byId(ev.events, x.event);
-        return "<tr><td>" + (e ? '<a href="event.html?id=' + e.id + '">' + esc(en(e.name)) + "</a>" : esc(x.event)) + '</td><td class="num">' + esc(x.result) + "</td><td>" + esc(x.note || "") + "</td></tr>";
+        return "<tr><td>" + (e ? '<a href="event.html?id=' + e.id + '">' + esc(en(e.name)) + "</a>" + '<div class="entry-by">' + esc(fmtDate(e)) + "</div>" : esc(x.event)) + "</td><td>" + esc(x.result) + "</td><td>" + esc(x.note || "") + "</td></tr>";
       }).join("");
       var groups = [["role", { en: "Institutions and Fire", ko: "기관과 불의 자리" }], ["book", { en: "Books", ko: "저서" }], ["paper", { en: "Papers", ko: "논문" }], ["media", { en: "Broadcasts, Interviews and Columns", ko: "방송, 인터뷰, 칼럼" }], ["event", { en: "Events", ko: "대회" }]];
       var portfolio = groups.map(function (g) {
@@ -218,7 +218,7 @@
         (career ? formSection("Barbecue Career", "바비큐 경력", career) : "") +
         (portfolio ? formSection("Portfolio", "포트폴리오", portfolio) : "") +
         formSection("Honours of Distribution", "분배의 명예", '<dl class="facts">' + honors + "</dl>") +
-        formSection("Records", "공인 기록", recs ? '<div class="table-scroll"><table class="table"><thead><tr><th>Event</th><th class="num">Result</th><th>Note</th></tr></thead><tbody>' + recs + "</tbody></table></div>"
+        formSection("Records", "공인 기록", recs ? '<div class="table-scroll"><table class="table"><thead><tr><th>Event</th><th>Role or result</th><th>Note</th></tr></thead><tbody>' + recs + "</tbody></table></div>"
                 : empty({ en: "No sanctioned records yet.", ko: "아직 공인 기록이 없다." })));
     });
   };
