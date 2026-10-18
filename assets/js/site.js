@@ -264,6 +264,7 @@
   pages.heritage = function () {
     load("heritage").then(function (h) {
       put("#heritage-intro", bi(h.intro, "div", "lede"));
+      put("#trophies", trophyStage());
       put("#heritage-principle", '<div class="statement"><p class="label">Principles</p>' + h.principles.map(function (x) { return bi(x, "p", "text principle-line"); }).join("") + "</div>");
       put("#heritage-criteria", '<dl class="facts">' + h.criteria.map(function (c) {
         return "<dt>" + bi(c.name, "span", "", true) + "</dt><dd>" + bi(c.text) + "</dd>";
@@ -271,8 +272,8 @@
       put("#heritage-process", '<ol class="sequence compact three">' + h.process.map(function (x) {
         return "<li><h3>" + esc(x.name.en) + "</h3>" + bi({ ko: x.name.ko, ja: x.name.ja, zh: x.name.zh }, "div") + bi(x.text, "p") + "</li>";
       }).join("") + "</ol>");
-      var ins = h.register.filter(function (d) { return d.status !== "record"; });
-      var rec = h.register.filter(function (d) { return d.status === "record"; });
+      var ins = h.register.filter(function (d) { return d.status === "origin" || d.status === "inscribed"; });
+      var rec = h.register.filter(function (d) { return d.status === "record" || d.status === "review"; });
       put("#heritage-register", registerList(ins));
       put("#heritage-records", registerList(rec));
       put("#heritage-forms", '<p>' + bi({ en: "Each record follows the Federation Record Form. Each inscription follows the Inscription Form, with its plaque.", ko: "모든 기록은 연맹 기록유산 기록양식을, 모든 등재는 명판을 포함한 등재양식을 따른다." }) + '</p><p style="margin-top:18px"><a class="more" href="heritage-item.html?id=suya">See the record form (R-2026-001)</a><br><a class="more" href="heritage-item.html?id=specimen">See the inscription form and plaque (specimen)</a></p>');
@@ -465,13 +466,50 @@
         (x ? "<p>" + esc(x.time || "") + (x.note ? ", " + esc(x.note) : "") + "</p>" : "") + "</li>";
     }).join("") + "</ol>";
   }
+
+  /* three-tier trophies: gold inscribed, silver under review, bronze record */
+  var METALS = {
+    gold:   { a: "#fff1b8", b: "#e2b33c", c: "#8a5a10", label: { en: "Inscribed Heritage", ko: "등재유산" }, note: { en: "By agreement of the Committee", ko: "위원회 합의로 등재" } },
+    silver: { a: "#ffffff", b: "#c4c9d0", c: "#5d636b", label: { en: "Under Review", ko: "심사 중" }, note: { en: "Before the Heritage Committee", ko: "등재위원회 심의 중" } },
+    bronze: { a: "#f6c79a", b: "#b8743a", c: "#5a2f12", label: { en: "Federation Record", ko: "연맹 기록유산" }, note: { en: "Recorded by the Federation", ko: "연맹이 기록" } }
+  };
+  function trophySVG(m) {
+    var c = METALS[m], g = "tg-" + m;
+    return '<svg viewBox="0 0 120 170" class="trophy-svg" aria-hidden="true">' +
+      '<defs><linearGradient id="' + g + '" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="' + c.a + '"/><stop offset=".45" stop-color="' + c.b + '"/><stop offset="1" stop-color="' + c.c + '"/></linearGradient>' +
+      '<linearGradient id="' + g + '-f" x1="0" x2="0" y1="1" y2="0"><stop offset="0" stop-color="' + c.b + '"/><stop offset="1" stop-color="' + c.a + '"/></linearGradient></defs>' +
+      '<path d="M60 8 C66 22 78 26 74 42 C72 50 66 54 60 56 C54 54 48 50 46 42 C43 30 54 26 60 8 Z" fill="url(#' + g + '-f)"/>' +
+      '<path d="M44 26 C47 36 42 44 46 54 C40 52 36 46 37 40 C38 34 42 31 44 26 Z" fill="url(#' + g + '-f)" opacity=".8"/>' +
+      '<path d="M76 26 C73 36 78 44 74 54 C80 52 84 46 83 40 C82 34 78 31 76 26 Z" fill="url(#' + g + '-f)" opacity=".8"/>' +
+      '<path d="M18 60 H102 C100 82 84 96 60 96 C36 96 20 82 18 60 Z" fill="url(#' + g + ')"/>' +
+      '<rect x="14" y="56" width="92" height="7" rx="2" fill="url(#' + g + ')"/>' +
+      '<path d="M40 62 V90 M60 62 V96 M80 62 V90" stroke="' + c.c + '" stroke-opacity=".45" stroke-width="2"/>' +
+      '<path d="M52 96 H68 L64 124 H56 Z" fill="url(#' + g + ')"/>' +
+      '<rect x="40" y="124" width="40" height="8" rx="2" fill="url(#' + g + ')"/>' +
+      '<path d="M30 132 H90 L96 158 H24 Z" fill="url(#' + g + ')"/>' +
+      '<rect x="20" y="158" width="80" height="8" rx="2" fill="url(#' + g + ')"/>' +
+    "</svg>";
+  }
+  function trophyStage() {
+    var order = ["gold", "silver", "bronze"];
+    return '<div class="trophy-stage" role="img" aria-label="Three tiers: gold for Inscribed Heritage, silver for Under Review, bronze for Federation Record">' +
+      '<div class="trophy-ring">' + order.map(function (m, i) {
+        return '<div class="trophy-slot" style="--i:' + i + '"><div class="trophy-face">' + trophySVG(m) +
+          '<div class="trophy-label t-' + m + '">' + esc(METALS[m].label.en) + "</div>" + bi({ ko: METALS[m].label.ko }, "div", "trophy-sub") + "</div></div>";
+      }).join("") + "</div></div>" +
+      '<ul class="trophy-legend">' + order.map(function (m) {
+        return '<li><span class="dot t-' + m + '"></span>' + bi(METALS[m].label, "span", "", true) + '<span class="legend-note">' + bi(METALS[m].note, "span", "", true) + "</span></li>";
+      }).join("") + "</ul>";
+  }
+
   function registerList(reg, brief) {
     if (!reg.length) return empty({ en: "The first designations will be announced here.", ko: "첫 지정 유산이 이곳에 발표된다." });
     return '<div class="register">' + reg.map(function (d) {
-      var mark = d.status === "origin" ? "No. 0, Origin" : d.status === "inscribed" ? "Inscribed No. " + esc(d.number) : "Federation Record";
+      var mark = d.status === "origin" ? "No. 0, Origin" : d.status === "inscribed" ? "Inscribed No. " + esc(d.number) : d.status === "review" ? "Under Review" : "Federation Record";
+      var metal = d.status === "inscribed" ? "gold" : d.status === "review" ? "silver" : d.status === "record" ? "bronze" : "";
       var src = (!brief && d.sources && d.sources.length) ? '<div class="h-sources">Sources: ' + d.sources.map(function (x) { return '<a href="' + esc(x.href) + '">' + esc(x.title) + "</a>"; }).join(", ") + "</div>" : "";
       if (d.status === "record" && d.record_no) mark = "Federation Record " + esc(d.record_no);
-      return '<div class="heritage-item' + (d.status === "origin" ? " is-origin" : "") + '"><div class="h-mark' + (d.status !== "record" ? " is-designated" : "") + '">' + mark + "</div>" +
+      return '<div class="heritage-item' + (d.status === "origin" ? " is-origin" : "") + '"><div class="h-mark' + (d.status === "origin" ? " is-designated" : "") + '">' + (metal ? '<span class="dot t-' + metal + '"></span>' : "") + mark + "</div>" +
         '<div class="dish-name"><a class="h-link" href="heritage-item.html?id=' + esc(d.id) + '">' + esc(en(d.name)) + "</a>" + (d.original && d.original !== en(d.name) ? '<span class="orig">' + esc(d.original) + "</span>" : "") + "</div>" +
         bi({ ko: d.name.ko, ja: d.name.ja, zh: d.name.zh }, "div") +
         '<div class="h-community">' + bi(d.community) + (d.era ? bi(d.era, "div", "h-era") : "") + "</div>" +
