@@ -181,7 +181,8 @@
       '<div class="placard">' +
         '<p class="placard-label">' + esc(st.creed.label.en) + "</p>" +
         bi(st.creed.text, "p", "placard-text") +
-      "</div>");
+      "</div>" +
+      '<img class="dawn" src="assets/img/dawn.svg" alt="" aria-hidden="true">');
 
     put("#home-spirit",
       '<div class="statement">' +

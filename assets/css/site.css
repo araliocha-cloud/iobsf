@@ -101,15 +101,22 @@ html[data-second="zh"] .bi.inline .s[lang="zh"] { display: inline; }
   min-height: calc(100svh - 68px);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   text-align: center;
-  padding: 48px var(--gutter) 120px;
+  padding: 48px var(--gutter) calc(clamp(240px, 30vw, 440px) + 24px);
   overflow: hidden;
   isolation: isolate;
 }
+/* dawn: a band of early humans walking out of the sunrise */
+.hero .dawn { position: absolute; z-index: -1; left: 0; bottom: 0; width: 100%; height: clamp(240px, 30vw, 440px);
+  object-fit: cover; object-position: 50% 100%; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 28%); mask-image: linear-gradient(to bottom, transparent 0, #000 28%);
+  transform-origin: 50% 78%; animation: dawn-rise 6s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes dawn-rise { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .hero .dawn { animation: none; } }
 .hero::after {
   /* the hearth: light rising from below */
-  content: ""; position: absolute; z-index: -1;
+  content: ""; position: absolute; z-index: -2;
   left: 50%; bottom: -38vh; width: 140vw; height: 80vh; transform: translateX(-50%);
-  background: radial-gradient(ellipse at center, var(--glow) 0%, rgba(150, 70, 25, .14) 38%, transparent 68%);
+  background: radial-gradient(ellipse at center, var(--glow) 0%, rgba(150, 70, 25, .08) 38%, transparent 68%); opacity: .5;
   animation: ignite 3.2s ease-out both;
 }
 @keyframes ignite { from { opacity: 0; transform: translateX(-50%) scaleY(.6); } to { opacity: 1; transform: translateX(-50%) scaleY(1); } }
