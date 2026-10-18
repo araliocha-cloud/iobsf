@@ -218,8 +218,8 @@
       "href": "https://professionalbarbecuer.com",
       "name": "KBRI",
       "desc": {
-        "en": "Korea Barbecue Research & Institute. Home of the thought behind Sports Barbecue.",
-        "ko": "한국바비큐연구원. 스포츠바비큐 사상의 본산.",
+        "en": "Korea Barbecue Research & Institute. The world's first Sports Barbecue portal, researching fire, food and the survival and evolution of humankind.",
+        "ko": "한국바비큐연구원. 불과 음식, 인간의 생존과 진화를 연구하는 세계 최초의 스포츠바비큐 포털.",
         "ja": "",
         "zh": ""
       }
@@ -228,8 +228,8 @@
       "href": "https://kooba.kr",
       "name": "KOOBA",
       "desc": {
-        "en": "Korea Outdoor & Barbecue Association. Korea Member of IOBSF.",
-        "ko": "한국아웃도어바비큐협회. IOBSF 한국 회원.",
+        "en": "Korea Outdoor & Barbecue Association, an incorporated association under the Ministry of Agriculture, Food and Rural Affairs. Korea Member of IOBSF.",
+        "ko": "사단법인 대한아웃도어바비큐협회, 농림축산식품부 산하. IOBSF 한국 회원.",
         "ja": "",
         "zh": ""
       }
@@ -248,5 +248,69 @@
       "code": "zh",
       "name": "中文"
     }
-  ]
+  ],
+  "institutions": [
+    {
+      "name": "KBRI",
+      "full": {
+        "en": "Korea Barbecue Research & Institute",
+        "ko": "한국바비큐연구원",
+        "ja": "",
+        "zh": ""
+      },
+      "role": {
+        "en": "Research and thought: barbecue humanities, civilization history, distribution economics",
+        "ko": "연구와 사상: 바비큐 인문학, 문명사, 분배경제학",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://professionalbarbecuer.com"
+    },
+    {
+      "name": "KBU",
+      "full": {
+        "en": "Korea Barbecue University",
+        "ko": "한국바비큐대학",
+        "ja": "",
+        "zh": ""
+      },
+      "role": {
+        "en": "Education",
+        "ko": "교육",
+        "ja": "",
+        "zh": ""
+      },
+      "href": ""
+    },
+    {
+      "name": "KOOBA",
+      "full": {
+        "en": "Korea Outdoor & Barbecue Association",
+        "ko": "사단법인 대한아웃도어바비큐협회",
+        "ja": "",
+        "zh": ""
+      },
+      "role": {
+        "en": "Korea Member of IOBSF, national competitions",
+        "ko": "IOBSF 한국 회원, 국내 대회 주관",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://kooba.kr"
+    }
+  ],
+  "secretariat": {
+    "name": {
+      "en": "IOBSF Korea Federation Secretariat",
+      "ko": "IOBSF 한국연맹사무국",
+      "ja": "",
+      "zh": ""
+    },
+    "head": {
+      "en": "Secretary-General Shaka Chaa (Cha Young-ki)",
+      "ko": "사무총장 차영기(Shaka Chaa)",
+      "ja": "",
+      "zh": ""
+    }
+  }
 }

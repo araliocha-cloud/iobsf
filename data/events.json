@@ -12,35 +12,166 @@
     "ritual": "8단계 의례 시간표: stage(ritual_stages의 key), time, note",
     "results": "순위: rank, barbecuer(id) 또는 team(이름), score",
     "table": "The Table, 모든 참가팀의 이야기: team, barbecuer(id, 선택), story(다국어)",
-    "acclaimed_by": "우승자에게 영광을 건넨 참가팀 대표 (추대 의례, 규정 여부 미결정)"
+    "acclaimed_by": "우승자에게 영광을 건넨 참가팀 대표 (추대 의례, 규정 여부 미결정)",
+    "when": "날짜를 일 단위로 모를 때 표시할 문구 (예: May 2027)"
   },
   "ritual_stages": [
-    { "key": "entry",       "name": { "en": "Entry",            "ko": "입장", "ja": "", "zh": "" } },
-    { "key": "ignition",    "name": { "en": "Ignition",         "ko": "점화", "ja": "", "zh": "" } },
-    { "key": "contest",     "name": { "en": "Contest",          "ko": "경쟁", "ja": "", "zh": "" } },
-    { "key": "waiting",     "name": { "en": "Waiting",          "ko": "기다림", "ja": "", "zh": "" } },
-    { "key": "judgment",    "name": { "en": "Judgment",         "ko": "판정", "ja": "", "zh": "" } },
-    { "key": "sharing",     "name": { "en": "Sharing",          "ko": "나눔", "ja": "", "zh": "" } },
-    { "key": "celebration", "name": { "en": "Celebration",      "ko": "축하", "ja": "", "zh": "" } },
-    { "key": "return",      "name": { "en": "Promise to Return","ko": "재회 약속", "ja": "", "zh": "" } }
+    {
+      "key": "entry",
+      "name": {
+        "en": "Entry",
+        "ko": "입장",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "ignition",
+      "name": {
+        "en": "Ignition",
+        "ko": "점화",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "contest",
+      "name": {
+        "en": "Contest",
+        "ko": "경쟁",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "waiting",
+      "name": {
+        "en": "Waiting",
+        "ko": "기다림",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "judgment",
+      "name": {
+        "en": "Judgment",
+        "ko": "판정",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "sharing",
+      "name": {
+        "en": "Sharing",
+        "ko": "나눔",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "celebration",
+      "name": {
+        "en": "Celebration",
+        "ko": "축하",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "return",
+      "name": {
+        "en": "Promise to Return",
+        "ko": "재회 약속",
+        "ja": "",
+        "zh": ""
+      }
+    }
   ],
   "tiers": {
-    "world":      { "en": "World Championship", "ko": "세계선수권", "ja": "", "zh": "" },
-    "tour":       { "en": "Pro Tour",           "ko": "프로 투어", "ja": "", "zh": "" },
-    "challenger": { "en": "Challenger Series",  "ko": "챌린저 시리즈", "ja": "", "zh": "" },
-    "partner":    { "en": "Partner Event",      "ko": "협력 대회", "ja": "", "zh": "" }
+    "world": {
+      "en": "World Championship",
+      "ko": "세계선수권",
+      "ja": "",
+      "zh": ""
+    },
+    "tour": {
+      "en": "Pro Tour",
+      "ko": "프로 투어",
+      "ja": "",
+      "zh": ""
+    },
+    "challenger": {
+      "en": "Challenger Series",
+      "ko": "챌린저 시리즈",
+      "ja": "",
+      "zh": ""
+    },
+    "partner": {
+      "en": "Partner Event",
+      "ko": "협력 대회",
+      "ja": "",
+      "zh": ""
+    }
   },
   "events": [
     {
       "id": "2025-korea-japan-sca-asia",
-      "name": { "en": "KOREA × JAPAN SCA Asia STEAK COOK OFF in KOREA", "ko": "KOREA × JAPAN SCA Asia STEAK COOK OFF in KOREA", "ja": "", "zh": "" },
+      "name": {
+        "en": "KOREA × JAPAN SCA Asia STEAK COOK OFF in KOREA",
+        "ko": "KOREA × JAPAN SCA Asia STEAK COOK OFF in KOREA",
+        "ja": "",
+        "zh": ""
+      },
       "date": "",
       "year": 2025,
-      "place": { "en": "Korea", "ko": "대한민국", "ja": "", "zh": "" },
+      "place": {
+        "en": "Korea",
+        "ko": "대한민국",
+        "ja": "",
+        "zh": ""
+      },
       "nation": "KR",
       "tier": "partner",
       "status": "completed",
-      "summary": { "en": "Details and results to be recorded.", "ko": "상세 내용과 결과를 기록할 예정이다.", "ja": "", "zh": "" },
+      "summary": {
+        "en": "Details and results to be recorded.",
+        "ko": "상세 내용과 결과를 기록할 예정이다.",
+        "ja": "",
+        "zh": ""
+      },
+      "ritual": [],
+      "results": [],
+      "table": [],
+      "acclaimed_by": ""
+    },
+    {
+      "id": "2027-aobe-guangzhou",
+      "name": {
+        "en": "AOBE 2027, Asia Outdoor Kitchen & BBQ Expo",
+        "ko": "AOBE 2027 아시아 아웃도어 키친 앤 바비큐 박람회",
+        "ja": "",
+        "zh": ""
+      },
+      "date": "",
+      "year": 2027,
+      "when": "May 2027",
+      "place": {
+        "en": "Guangzhou, China",
+        "ko": "중국 광저우",
+        "ja": "",
+        "zh": ""
+      },
+      "nation": "CN",
+      "tier": "partner",
+      "status": "upcoming",
+      "summary": {
+        "en": "Organised by Guangdong Grandeur International Exhibition Group, which proposed cooperation with IOBSF. IOBSF delivers the keynote at the summit.",
+        "ko": "광둥 그랜더 국제전시그룹이 주최하며, 주최 측이 먼저 IOBSF에 협력을 제안했다. IOBSF가 서밋 연설을 맡는다.",
+        "ja": "",
+        "zh": ""
+      },
       "ritual": [],
       "results": [],
       "table": [],

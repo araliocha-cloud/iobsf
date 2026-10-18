@@ -415,3 +415,13 @@ a.event-row:hover .title { color: var(--copper-light); }
 .form7-text { margin-top: 10px; font-size: 17px; }
 .form7-list { margin-top: 12px; font-size: 16px; }
 .orig-field { font-size: 22px; font-family: var(--f-display); }
+
+/* archive and reading entries */
+.entries { list-style: none; padding: 0; margin: 0; }
+.entries li { padding: 12px 0; border-bottom: 1px solid var(--ember-line); }
+.entries li:last-child { border-bottom: 0; }
+.entry-kind { display: inline-block; font-size: 13px; color: var(--ash); border: 1px solid var(--ember-line); padding: 0 8px; margin-right: 10px; vertical-align: 2px; font-family: var(--f-body); }
+.entry-title { color: var(--bone); }
+.entry-sub { font-size: 15px; color: var(--ash); margin-top: 2px; }
+.entry-by { font-size: 14px; color: var(--ash); margin-top: 2px; }
+.form7 h3 a { color: inherit; }

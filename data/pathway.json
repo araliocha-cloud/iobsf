@@ -1,5 +1,8 @@
 {
-  "_schema": { "steps": "프로바비큐어가 되는 단계 (순서대로): key, name, text (다국어), status (open | preparing)" },
+  "_schema": {
+    "steps": "프로바비큐어가 되는 단계 (순서대로): key, name, text (다국어), status (open | preparing)",
+    "reading": "아카데미 기초 읽기: KBRI 연구 글 링크 (title, href, kind)"
+  },
   "intro": {
     "en": "A Pro Barbecuer is not born at a single contest. The Federation raises officiants step by step, from the first lesson to the Pro Tour.",
     "ko": "프로바비큐어는 한 번의 대회로 탄생하지 않는다. 연맹은 첫 수업부터 프로 투어까지 단계를 밟아 집전자를 기른다.",
@@ -7,17 +10,187 @@
     "zh": ""
   },
   "steps": [
-    { "key": "academy", "status": "preparing",
-      "name": { "en": "Academy", "ko": "아카데미", "ja": "", "zh": "" },
-      "text": { "en": "Fire, meat and time, and the humanities that give them meaning.", "ko": "불과 고기와 시간, 그리고 그 의미를 세우는 바비큐 인문학을 배운다.", "ja": "", "zh": "" } },
-    { "key": "certification", "status": "preparing",
-      "name": { "en": "Certification", "ko": "인증", "ja": "", "zh": "" },
-      "text": { "en": "Skill, knowledge and the Charter pledge. Those who pass become Pro Barbecuers.", "ko": "기량과 지식, 그리고 헌장 서약. 통과한 이가 프로바비큐어가 된다.", "ja": "", "zh": "" } },
-    { "key": "challenger", "status": "preparing",
-      "name": { "en": "Challenger Series", "ko": "챌린저 시리즈", "ja": "", "zh": "" },
-      "text": { "en": "The first sanctioned stage, where new officiants earn their season points.", "ko": "새 집전자가 첫 시즌 포인트를 쌓는 공인 무대.", "ja": "", "zh": "" } },
-    { "key": "tour", "status": "preparing",
-      "name": { "en": "Pro Tour", "ko": "프로 투어", "ja": "", "zh": "" },
-      "text": { "en": "The season-long stage of the Federation, leading to the World Championship.", "ko": "세계선수권으로 이어지는 연맹의 시즌 무대.", "ja": "", "zh": "" } }
+    {
+      "key": "academy",
+      "status": "preparing",
+      "name": {
+        "en": "Academy",
+        "ko": "아카데미",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Fire, meat and time, and the humanities that give them meaning.",
+        "ko": "불과 고기와 시간, 그리고 그 의미를 세우는 바비큐 인문학을 배운다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "certification",
+      "status": "preparing",
+      "name": {
+        "en": "Certification",
+        "ko": "인증",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Skill, knowledge and the Charter pledge. Those who pass become Pro Barbecuers.",
+        "ko": "기량과 지식, 그리고 헌장 서약. 통과한 이가 프로바비큐어가 된다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "challenger",
+      "status": "preparing",
+      "name": {
+        "en": "Challenger Series",
+        "ko": "챌린저 시리즈",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The first sanctioned stage, where new officiants earn their season points.",
+        "ko": "새 집전자가 첫 시즌 포인트를 쌓는 공인 무대.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "tour",
+      "status": "preparing",
+      "name": {
+        "en": "Pro Tour",
+        "ko": "프로 투어",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The season-long stage of the Federation, leading to the World Championship.",
+        "ko": "세계선수권으로 이어지는 연맹의 시즌 무대.",
+        "ja": "",
+        "zh": ""
+      }
+    }
+  ],
+  "reading_intro": {
+    "en": "Foundations for the Academy, from the research of KBRI.",
+    "ko": "아카데미의 기초. 한국바비큐연구원(KBRI)의 연구에서 가려 뽑았다.",
+    "ja": "",
+    "zh": ""
+  },
+  "reading": [
+    {
+      "title": {
+        "en": "Barbecuing vs Smoking vs Grilling",
+        "ko": "BARBECUING VS SMOKING VS GRILLING, 무엇이 다른가?",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://www.professionalbarbecuer.com/33/?bmode=view&idx=53057348",
+      "kind": "article",
+      "by": "KBRI"
+    },
+    {
+      "title": {
+        "en": "Smoking and Smoked",
+        "ko": "훈연과 훈제",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://www.professionalbarbecuer.com/32/?bmode=view&idx=9147323",
+      "kind": "article",
+      "by": "KBRI"
+    },
+    {
+      "title": {
+        "en": "Wood and Smoke",
+        "ko": "Wood & Smoke",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://www.professionalbarbecuer.com/32/?bmode=view&idx=9147593",
+      "kind": "article",
+      "by": "KBRI"
+    },
+    {
+      "title": {
+        "en": "White Smoke",
+        "ko": "White smoke",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://www.professionalbarbecuer.com/32/?bmode=view&idx=9147049",
+      "kind": "article",
+      "by": "KBRI"
+    },
+    {
+      "title": {
+        "en": "The Chemistry of Barbecue: the Maillard Reaction and the Smoke Ring",
+        "ko": "[바비큐의 화학] 마이야르 반응과 훈연 링",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://www.professionalbarbecuer.com/32/?bmode=view&idx=168716528",
+      "kind": "article",
+      "by": "KBRI"
+    },
+    {
+      "title": {
+        "en": "Stall and Plateau in Barbecue",
+        "ko": "바비큐학에서의 스톨(Stall)과 플래토(Plateau)의 관계",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://www.professionalbarbecuer.com/32/?bmode=view&idx=168774254",
+      "kind": "article",
+      "by": "KBRI"
+    },
+    {
+      "title": {
+        "en": "Brining and Salting",
+        "ko": "염지(Brining)와 염장(Salting)의 본질적 차이",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://www.professionalbarbecuer.com/32/?bmode=view&idx=168770495",
+      "kind": "article",
+      "by": "KBRI"
+    },
+    {
+      "title": {
+        "en": "What Is the Sizzle Effect?",
+        "ko": "시즐(Sizzle) 효과란 무엇인가?",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://www.professionalbarbecuer.com/32/?bmode=view&idx=164902243",
+      "kind": "article",
+      "by": "KBRI"
+    },
+    {
+      "title": {
+        "en": "Inside and Outside Grill Temperature",
+        "ko": "그릴 내외부 온도의 상관관계 및 컨트롤",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://www.professionalbarbecuer.com/33/?bmode=view&idx=167141596",
+      "kind": "article",
+      "by": "KBRI"
+    },
+    {
+      "title": {
+        "en": "Creosote Oil and Wood Creosote",
+        "ko": "Creosote oil vs Wood creosote",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://www.professionalbarbecuer.com/43/?bmode=view&idx=167157741",
+      "kind": "video",
+      "by": "KBRI"
+    }
   ]
 }

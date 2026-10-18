@@ -1438,6 +1438,10 @@
         {
           "title": "Hāngī (Wikipedia)",
           "href": "https://en.wikipedia.org/wiki/H%C4%81ng%C4%AB"
+        },
+        {
+          "title": "항이(Hāngī) 뉴질랜드 전통 바비큐 (KBRI)",
+          "href": "https://www.professionalbarbecuer.com/43/?bmode=view&idx=169173959"
         }
       ],
       "log": [
@@ -1468,7 +1472,85 @@
         "ja": "",
         "zh": ""
       },
-      "entries": []
+      "entries": [
+        {
+          "title": {
+            "en": "A Civilization History of Human Barbecue",
+            "ko": "인류바비큐문명사",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "",
+          "kind": "book",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "What Is Barbecue?",
+            "ko": "바비큐란 무엇인가?",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=9142306",
+          "kind": "article",
+          "by": "KBRI"
+        },
+        {
+          "title": {
+            "en": "The History of the Word Barbecue",
+            "ko": "Barbecue의 어원에 대한 역사",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=168961080",
+          "kind": "article",
+          "by": "KBRI"
+        },
+        {
+          "title": {
+            "en": "History of Barbecue Culture",
+            "ko": "바비큐 문화의 역사",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=9143207",
+          "kind": "article",
+          "by": "KBRI"
+        },
+        {
+          "title": {
+            "en": "Seven Barbecue Styles of the World",
+            "ko": "전 세계 7가지 바비큐 스타일",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=167589936",
+          "kind": "article",
+          "by": "KBRI"
+        },
+        {
+          "title": {
+            "en": "The Definition of Real Barbecue",
+            "ko": "리얼바비큐의 정의",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/history/?bmode=view&idx=167330078",
+          "kind": "article",
+          "by": "KBRI"
+        },
+        {
+          "title": {
+            "en": "Dried Meat and Human Evolution",
+            "ko": "육포와 인간의 진화",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/43/?bmode=view&idx=166639447",
+          "kind": "video",
+          "by": "KBRI"
+        }
+      ]
     },
     {
       "key": "humanities",
@@ -1484,7 +1566,41 @@
         "ja": "",
         "zh": ""
       },
-      "entries": []
+      "entries": [
+        {
+          "title": {
+            "en": "Barbecue Humanities",
+            "ko": "바비큐인문학",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "",
+          "kind": "book",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "Distribution Economics",
+            "ko": "분배경제학",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "",
+          "kind": "book",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "Sparkling Tales: Homo Erectus, Books 1 to 4",
+            "ko": "스파클링동화 호모에렉투스 1~4",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "",
+          "kind": "book",
+          "by": "Shaka Chaa (차영기)"
+        }
+      ]
     },
     {
       "key": "narratives",
@@ -1500,7 +1616,85 @@
         "ja": "",
         "zh": ""
       },
-      "entries": []
+      "entries": [
+        {
+          "title": {
+            "en": "A Civilization History of Korean Barbecue",
+            "ko": "한국바비큐문명사",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "",
+          "kind": "book",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "A Study on the History of Korean Barbecue (SSRN, 2026)",
+            "ko": "한국바비큐의 역사연구 (SSRN, 2026)",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6680799",
+          "kind": "paper",
+          "by": "Shaka Chaa (차영기), KBRI"
+        },
+        {
+          "title": {
+            "en": "History of Korean Barbecue",
+            "ko": "한국 바비큐 역사",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=168615981",
+          "kind": "article",
+          "by": "KBRI"
+        },
+        {
+          "title": {
+            "en": "Characteristics of Traditional Korean Barbecue",
+            "ko": "한국의 전통적 바비큐의 특징",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=9143991",
+          "kind": "article",
+          "by": "KBRI"
+        },
+        {
+          "title": {
+            "en": "The Evolution of American Barbecue",
+            "ko": "미국식 바비큐의 진화",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=9151151",
+          "kind": "article",
+          "by": "KBRI"
+        },
+        {
+          "title": {
+            "en": "Barbecue Sauce and History",
+            "ko": "바비큐 소스와 역사",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=9147485",
+          "kind": "article",
+          "by": "KBRI"
+        },
+        {
+          "title": {
+            "en": "Hāngī, the Traditional Barbecue of New Zealand",
+            "ko": "항이(Hāngī), 뉴질랜드 전통 바비큐",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "https://www.professionalbarbecuer.com/43/?bmode=view&idx=169173959",
+          "kind": "video",
+          "by": "KBRI"
+        }
+      ]
     }
   ],
   "process": [

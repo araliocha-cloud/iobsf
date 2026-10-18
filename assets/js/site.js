@@ -61,6 +61,7 @@
   function sampleBadge(x) { return x && x.sample ? '<span class="badge">Sample</span>' : ""; }
   function empty(o) { return '<div class="empty">' + bi(o) + "</div>"; }
   function fmtDate(e) {
+    if (e.when) return e.when;
     if (e.date) { var d = new Date(e.date + "T00:00:00"); return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }); }
     return e.year ? String(e.year) : "";
   }
@@ -258,6 +259,7 @@
       put("#pathway", '<ol class="sequence">' + p.steps.map(function (s) {
         return "<li><h3>" + esc(en(s.name)) + (s.status === "preparing" ? '<span class="badge">In preparation</span>' : "") + bi({ ko: s.name.ko, ja: s.name.ja, zh: s.name.zh }, "span") + "</h3>" + bi(s.text, "p") + "</li>";
       }).join("") + "</ol>");
+      if (p.reading && p.reading.length) put("#pathway-reading", bi(p.reading_intro, "div", "prose") + '<div style="margin-top:24px">' + entryList(p.reading) + "</div>");
     });
   };
 
@@ -285,9 +287,7 @@
       put("#heritage-forms", '<p>' + bi({ en: "Federation Recorded Heritage follows the record form. Federation Inscribed Heritage follows the inscription form, with its plaque.", ko: "연맹기록유산은 기록양식을, 연맹등재유산은 명판을 포함한 등재양식을 따른다." }) + '</p><p style="margin-top:18px"><a class="more" href="heritage-item.html?id=suya">See the record form (R-2026-001)</a><br><a class="more" href="heritage-item.html?id=specimen">See the inscription form and plaque (specimen)</a></p>');
       put("#heritage-archives", h.archives.map(function (a) {
         return '<div class="nation-block"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3><div>" + bi(a.text, "div", "prose") +
-          '<div style="margin-top:18px">' + (a.entries.length ? a.entries.map(function (x) {
-            return '<p style="margin:0 0 10px"><a href="' + esc(x.href || "#") + '">' + esc(en(x.title)) + "</a>" + (x.date ? ' <span style="color:var(--ash)">' + esc(x.date) + "</span>" : "") + "</p>";
-          }).join("") : '<p style="color:var(--ash);margin:0">Records will be published here.</p>') + "</div></div></div>";
+          '<div style="margin-top:18px">' + (a.entries.length ? entryList(a.entries) : '<p style="color:var(--ash);margin:0">Records will be published here.</p>') + "</div></div></div>";
       }).join(""));
     });
   };
@@ -320,6 +320,14 @@
     return '<section class="form-section"><h2 class="bi"><span class="p">' + title + '</span><span class="s" lang="ko">' + ko + "</span></h2>" + inner + "</section>";
   }
 
+  var KINDS = { book: { en: "Book", ko: "저서" }, paper: { en: "Paper", ko: "논문" }, article: { en: "Article", ko: "연구 글" }, video: { en: "Video", ko: "영상" } };
+  function entryList(list) {
+    return '<ul class="entries">' + list.map(function (x) {
+      var t = x.href ? '<a href="' + esc(x.href) + '">' + esc(en(x.title)) + "</a>" : '<span class="entry-title">' + esc(en(x.title)) + "</span>";
+      var k = KINDS[x.kind] ? '<span class="entry-kind">' + bi(KINDS[x.kind], "span", "", true) + "</span>" : "";
+      return "<li>" + k + t + bi({ ko: x.title.ko }, "div", "entry-sub") + (x.by ? '<div class="entry-by">' + esc(x.by) + "</div>" : "") + "</li>";
+    }).join("") + "</ul>";
+  }
   function smallTrophy(d) {
     var metal = d.status === "inscribed" ? "gold" : d.status === "review" ? "silver" : d.status === "record" ? "bronze" : "";
     if (!metal) return "";
@@ -421,7 +429,11 @@
         "<dt>Founded</dt><dd>" + bi({ en: "8 December 2018, " + f.founded_place.en, ko: "2018년 12월 8일, " + f.founded_place.ko }) + "</dd>" +
         "<dt>Headquarters</dt><dd>" + bi(f.headquarters) + "</dd>" +
         "<dt>" + esc(st.mission.label.en) + "</dt><dd>" + bi(st.mission.text) + "</dd>" +
+        (site.secretariat ? "<dt>Secretariat</dt><dd>" + bi(site.secretariat.name) + bi(site.secretariat.head) + "</dd>" : "") +
       "</dl>");
+    if (site.institutions) put("#fed-institutions", '<div class="forms7">' + site.institutions.map(function (x) {
+      return '<div class="form7"><h3>' + (x.href ? '<a href="' + esc(x.href) + '">' + esc(x.name) + "</a>" : esc(x.name)) + "</h3>" + bi(x.full, "div", "form7-text") + bi(x.role, "div", "entry-sub") + "</div>";
+    }).join("") + "</div>");
     load("nations").then(function (n) { put("#fed-members", nationsStrip(n.nations)); });
     load("history").then(function (hi) {
       put("#history", '<ol class="timeline">' + hi.entries.slice().sort(function (a, b) { return a.year - b.year; }).map(function (x) {
