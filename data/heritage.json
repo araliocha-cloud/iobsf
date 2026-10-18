@@ -115,13 +115,111 @@
           "href": "https://www.sciencenews.org/article/ashes-oldest-controlled-fire"
         }
       ],
-      "log": [],
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Declared as No. 0, the Origin, with its plaque.",
+            "ko": "원점 제0호로 선언, 명판 수여.",
+            "ja": "",
+            "zh": ""
+          }
+        }
+      ],
       "forms": [],
       "original_lang": {
         "en": "Latin",
         "ko": "라틴어",
         "ja": "",
         "zh": ""
+      },
+      "inscription": {
+        "decision_no": "IOBSF/ORIGIN/0",
+        "date": "2026-10-18",
+        "session": {
+          "en": "Declared by the Federation at the opening of the Heritage of the Fire register.",
+          "ko": "불의 유산 등재부를 열며 연맹이 선언.",
+          "ja": "",
+          "zh": ""
+        },
+        "plaque": {
+          "en": "The first fire of humankind, from which every fire that follows is measured.",
+          "ko": "인류 최초의 불, 뒤따르는 모든 불이 이곳에서 헤아려진다.",
+          "ja": "",
+          "zh": ""
+        },
+        "decision": {
+          "receives": {
+            "en": "The Federation opens the Heritage of the Fire register.",
+            "ko": "연맹은 불의 유산 등재부를 연다.",
+            "ja": "",
+            "zh": ""
+          },
+          "criteria": {
+            "history": {
+              "en": "A hypothesis grounded in the anatomy of Homo erectus, about 1.9 million years ago, and in the oldest evidence of fire made by human ancestors.",
+              "ko": "약 190만 년 전 호모 에렉투스의 해부학적 변화, 그리고 인류 조상이 피운 불의 가장 오래된 증거에 근거한 가설이다.",
+              "ja": "",
+              "zh": ""
+            },
+            "community": {
+              "en": "It belongs to no single people. It is the fire of all humankind.",
+              "ko": "어느 한 민족의 것이 아니다. 인류 전체의 불이다.",
+              "ja": "",
+              "zh": ""
+            },
+            "identity": {
+              "en": "The first cooking fire, before every myth.",
+              "ko": "신화 이전, 최초의 화식의 불이다.",
+              "ja": "",
+              "zh": ""
+            },
+            "living": {
+              "en": "Every fire kept and shared today descends from it.",
+              "ko": "오늘 지켜지고 나뉘는 모든 불이 이 불에서 나왔다.",
+              "ja": "",
+              "zh": ""
+            }
+          },
+          "inscribes": {
+            "en": "The Federation sets Ignis Primus as No. 0, the Origin of the register. It is not inscribed; it is the point from which every heritage is measured.",
+            "ko": "연맹은 이그니스 프리머스를 등재부의 원점, 제0호로 세운다. 이것은 등재가 아니라, 모든 유산을 헤아리는 기준점이다.",
+            "ja": "",
+            "zh": ""
+          },
+          "invites": {
+            "en": "The Federation invites every people to record the fire it has kept.",
+            "ko": "연맹은 모든 민족이 지켜 온 자신의 불을 기록하도록 초대한다.",
+            "ja": "",
+            "zh": ""
+          }
+        },
+        "statement": {
+          "summary": {
+            "en": "The first cooking fire of humankind, before every myth. It leaves no site and no artefact, so it is not inscribed. It is the origin from which every heritage in this register is measured. The cooking hypothesis infers it from the smaller teeth and gut and the larger brain of Homo erectus. The oldest direct evidence of fire made by human ancestors comes from Wonderwerk Cave in South Africa, about one million years ago: burned bone and plant ash found together with stone tools.",
+            "ko": "신화 이전, 인류 최초의 화식의 불이다. 유적도 유물도 남기지 않았기에 등재하지 않는다. 이 등재부의 모든 유산은 이 원점에서부터 헤아려진다. 화식 가설은 호모 에렉투스의 작아진 이와 장, 커진 뇌에서 이 불을 추론한다. 인류의 조상이 피운 불의 가장 오래된 직접 증거는 남아프리카 원더워크 동굴에서 나왔다. 약 100만 년 전의 탄 뼈와 식물 재가 석기와 함께 발견되었다.",
+            "ja": "",
+            "zh": ""
+          },
+          "authenticity": {
+            "en": "Recorded as a hypothesis, with the evidence that supports it, and never claimed as more.",
+            "ko": "가설은 가설로, 그것을 받치는 증거와 함께 기록하며, 그 이상을 주장하지 않는다.",
+            "ja": "",
+            "zh": ""
+          },
+          "safeguarding": {
+            "en": "The origin is kept by keeping every living fire.",
+            "ko": "살아 있는 모든 불을 지키는 일이 곧 원점을 지키는 일이다.",
+            "ja": "",
+            "zh": ""
+          }
+        },
+        "consent": {
+          "en": "The fire of all humankind: no single community's consent applies.",
+          "ko": "인류 전체의 불이므로 특정 공동체의 동의 대상이 아니다.",
+          "ja": "",
+          "zh": ""
+        }
       }
     },
     {
@@ -1744,134 +1842,6 @@
       }
     }
   ],
-  "specimen": {
-    "id": "specimen",
-    "status": "inscribed",
-    "specimen": true,
-    "number": "1",
-    "record_no": "R-2026-001",
-    "name": {
-      "en": "Suya",
-      "ko": "수야",
-      "ja": "",
-      "zh": ""
-    },
-    "original": "Tsire",
-    "community": {
-      "en": "Hausa people, northern Nigeria and West Africa",
-      "ko": "하우사(Hausa)인, 나이지리아 북부와 서아프리카",
-      "ja": "",
-      "zh": ""
-    },
-    "inscription": {
-      "decision_no": "IOBSF/HC/0000/00",
-      "date": "0000-00-00",
-      "session": {
-        "en": "Specimen. Not an actual decision of the Heritage Committee.",
-        "ko": "견본. 등재위원회의 실제 결정이 아니다.",
-        "ja": "",
-        "zh": ""
-      },
-      "plaque": {
-        "en": "A fire kept by the Hausa people, shared at the roadside with all who pass.",
-        "ko": "하우사인이 지켜 온 불, 길가에서 지나는 모든 이와 나누는 불.",
-        "ja": "",
-        "zh": ""
-      },
-      "decision": {
-        "receives": {
-          "en": "The Committee receives Federation Recorded Heritage R-2026-001, Suya, prepared by the Secretariat with KBRI.",
-          "ko": "위원회는 사무국과 KBRI가 작성한 연맹기록유산 R-2026-001 수야를 접수한다.",
-          "ja": "",
-          "zh": ""
-        },
-        "criteria": {
-          "history": {
-            "en": "Handed down among the Hausa across generations under its own name, tsire.",
-            "ko": "하우사인 사이에서 고유의 이름 치레로 세대를 건너 전승되었다.",
-            "ja": "",
-            "zh": ""
-          },
-          "community": {
-            "en": "Made by the mai suya and shared at open fires with neighbours and strangers alike.",
-            "ko": "마이 수야가 굽고, 길가의 불 앞에서 이웃과 낯선 이에게 똑같이 나눈다.",
-            "ja": "",
-            "zh": ""
-          },
-          "identity": {
-            "en": "Yaji and the skewer over open charcoal form a way with fire unique to its people.",
-            "ko": "야지와 숯불 위의 꼬챙이는 그 사람들에게 고유한 불 다루기다.",
-            "ja": "",
-            "zh": ""
-          },
-          "living": {
-            "en": "Practised daily across West Africa and its diaspora.",
-            "ko": "서아프리카와 그 이주민 사회에서 날마다 행해진다.",
-            "ja": "",
-            "zh": ""
-          }
-        },
-        "inscribes": {
-          "en": "The Committee inscribes Suya as Federation Inscribed Heritage No. 1.",
-          "ko": "위원회는 수야를 연맹등재유산 제1호로 등재한다.",
-          "ja": "",
-          "zh": ""
-        },
-        "invites": {
-          "en": "The Committee invites the Federation and its members to record the history of Suya with the Hausa community, and to protect the craft of the mai suya from being reduced to a commodity.",
-          "ko": "위원회는 연맹과 회원들이 하우사 공동체와 함께 수야의 역사를 기록하고, 마이 수야의 기예가 상품으로만 소비되지 않도록 지킬 것을 당부한다.",
-          "ja": "",
-          "zh": ""
-        }
-      },
-      "statement": {
-        "summary": {
-          "en": "Suya is the roadside fire of the Hausa: meat on wooden skewers, yaji and charcoal, shared with whoever comes.",
-          "ko": "수야는 하우사의 길가의 불이다. 나무 꼬챙이의 고기와 야지와 숯, 그리고 누구든 오는 이와 나누는 식탁이다.",
-          "ja": "",
-          "zh": ""
-        },
-        "authenticity": {
-          "en": "The name, the spice and the maker remain those of the community that created it.",
-          "ko": "이름과 양념과 굽는 사람이 모두 그것을 만든 공동체의 것으로 남아 있다.",
-          "ja": "",
-          "zh": ""
-        },
-        "safeguarding": {
-          "en": "Transmission depends on the mai suya. Records, training and fair recognition of the makers sustain it.",
-          "ko": "전승은 마이 수야에게 달려 있다. 기록과 교육, 그리고 굽는 사람에 대한 정당한 인정이 이를 지킨다.",
-          "ja": "",
-          "zh": ""
-        }
-      },
-      "consent": {
-        "en": "To be recorded at inscription: the consent of the community concerned.",
-        "ko": "등재 시 기록: 해당 공동체의 동의.",
-        "ja": "",
-        "zh": ""
-      }
-    },
-    "log": [
-      {
-        "date": "0000-00-00",
-        "text": {
-          "en": "Specimen created to show the inscription form.",
-          "ko": "등재양식을 보이기 위한 견본.",
-          "ja": "",
-          "zh": ""
-        }
-      }
-    ],
-    "original_lang": {
-      "en": "Hausa",
-      "ko": "하우사어",
-      "ja": "",
-      "zh": ""
-    },
-    "forms": [
-      "spit"
-    ]
-  },
   "principles": [
     {
       "en": "A heritage belongs to the community that made it.",

@@ -284,7 +284,7 @@
       var rec = h.register.filter(function (d) { return d.status === "record" || d.status === "review"; });
       put("#heritage-register", registerList(ins));
       put("#heritage-records", registerList(rec));
-      put("#heritage-forms", '<p>' + bi({ en: "Federation Recorded Heritage follows the record form. Federation Inscribed Heritage follows the inscription form, with its plaque.", ko: "연맹기록유산은 기록양식을, 연맹등재유산은 명판을 포함한 등재양식을 따른다." }) + '</p><p style="margin-top:18px"><a class="more" href="heritage-item.html?id=suya">See the record form (R-2026-001)</a><br><a class="more" href="heritage-item.html?id=specimen">See the inscription form and plaque (specimen)</a></p>');
+      put("#heritage-forms", '<p>' + bi({ en: "Federation Recorded Heritage follows the record form. Federation Inscribed Heritage follows the inscription form, with its plaque.", ko: "연맹기록유산은 기록양식을, 연맹등재유산은 명판을 포함한 등재양식을 따른다." }) + '</p><p style="margin-top:18px"><a class="more" href="heritage-item.html?id=suya">See the record form (R-2026-001)</a><br><a class="more" href="heritage-item.html?id=ignis-primus">See the inscription form and plaque (No. 0, Origin)</a></p>');
       put("#heritage-archives", h.archives.map(function (a) {
         return '<div class="nation-block"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3><div>" + bi(a.text, "div", "prose") +
           '<div style="margin-top:18px">' + (a.entries.length ? entryList(a.entries) : '<p style="color:var(--ash);margin:0">Records will be published here.</p>') + "</div></div></div>";
@@ -297,10 +297,10 @@
     load("heritage").then(function (h) {
       (h.forms || []).forEach(function (f) { FORMS[f.key] = f; });
       var id = param("id");
-      var d = id === "specimen" ? h.specimen : byId(h.register, id);
+      var d = byId(h.register, id === "specimen" ? "ignis-primus" : id);
       if (!d) { put("#hitem", empty({ en: "This record could not be found. Return to Heritage.", ko: "해당 기록을 찾을 수 없다. 헤리티지로 돌아가라." }) + '<p><a href="heritage.html">Heritage</a></p>'); return; }
       document.title = en(d.name) + " | IOBSF Heritage";
-      put("#hitem", d.status === "inscribed" ? inscriptionForm(d, h) : recordForm(d, h));
+      put("#hitem", d.inscription ? inscriptionForm(d, h) : recordForm(d, h));
     });
   };
 
@@ -367,17 +367,17 @@
     return '<figure class="plaque' + (d.specimen ? " is-specimen" : "") + '" aria-label="Heritage plaque">' +
       (d.specimen ? '<div class="plaque-watermark">SPECIMEN</div>' : "") +
       '<img class="plaque-emblem" src="assets/img/emblem-small.png" alt="">' +
-      '<div class="plaque-head">Federation Inscribed Heritage<br>International Outdoor Barbecue Sports Federation</div>' +
+      '<div class="plaque-head">' + (d.status === "origin" ? "Heritage of the Fire, Origin" : "Federation Inscribed Heritage") + "<br>International Outdoor Barbecue Sports Federation</div>" +
       '<div class="plaque-no">No. ' + esc(d.number) + "</div>" +
       '<div class="plaque-name">' + esc(en(d.name)) + "</div>" +
-      '<div class="plaque-orig">' + esc(d.original || "") + "</div>" +
+      (d.original && d.original !== en(d.name) ? '<div class="plaque-orig">' + esc(d.original) + "</div>" : "") +
       '<div class="plaque-community">' + esc(en(d.community)) + "</div>" +
       '<div class="plaque-rule"></div>' +
       '<div class="plaque-text">' + esc(ins.plaque.en) + "</div>" +
       '<div class="plaque-text-ko">' + esc(ins.plaque.ko) + "</div>" +
       '<div class="plaque-rule"></div>' +
-      '<div class="plaque-foot">Inscribed ' + esc(ins.date) + "<br>Decision " + esc(ins.decision_no) + "</div>" +
-      '<div class="plaque-foot-ko">국제아웃도어바비큐스포츠연맹 연맹등재유산 제' + esc(d.number) + "호</div>" +
+      '<div class="plaque-foot">' + (d.status === "origin" ? "Declared " : "Inscribed ") + esc(ins.date) + "<br>" + (d.status === "origin" ? "" : "Decision ") + esc(ins.decision_no) + "</div>" +
+      '<div class="plaque-foot-ko">국제아웃도어바비큐스포츠연맹 ' + (d.status === "origin" ? "불의 유산 원점 제" : "연맹등재유산 제") + esc(d.number) + "호</div>" +
     "</figure>";
   }
 
@@ -385,19 +385,19 @@
     var ins = d.inscription, dc = ins.decision, crit = h.criteria;
     var critRows = crit.map(function (c) { return fieldRow(c.name, bi(dc.criteria[c.key])); }).join("");
     return (d.specimen ? '<div class="specimen-banner">' + bi({ en: "Specimen. This page shows the inscription form. It is not an actual inscription.", ko: "견본. 등재양식을 보이기 위한 페이지이며, 실제 등재가 아니다." }) + "</div>" : "") +
-      '<p class="form-kind">' + bi({ en: "Inscription Form, Federation Inscribed Heritage", ko: "등재양식, 연맹등재유산" }, "span", "", true) + "</p>" +
+      '<p class="form-kind">' + bi(d.status === "origin" ? { en: "Inscription Form, No. 0, the Origin", ko: "등재양식, 원점 제0호" } : { en: "Inscription Form, Federation Inscribed Heritage", ko: "등재양식, 연맹등재유산" }, "span", "", true) + "</p>" +
       '<div class="form-head form-head-plain">' + smallTrophy(d) + "</div>" +
       plaque(d) +
-      formSection("Decision", "결정문",
+      formSection(d.status === "origin" ? "Declaration" : "Decision", d.status === "origin" ? "선언문" : "결정문",
         '<dl class="facts form-facts">' +
-          fieldRow({ en: "Decision", ko: "결정 번호" }, esc(ins.decision_no)) +
-          fieldRow({ en: "Date", ko: "결정 일자" }, esc(ins.date)) +
-          fieldRow({ en: "Session", ko: "회기" }, bi(ins.session)) +
-          fieldRow({ en: "Record", ko: "원 기록" }, '<a href="heritage-item.html?id=' + esc(d.id === "specimen" ? "suya" : d.id) + '">' + esc(d.record_no) + "</a>") +
+          fieldRow({ en: "Number", ko: "번호" }, esc(ins.decision_no)) +
+          fieldRow({ en: "Date", ko: "일자" }, esc(ins.date)) +
+          fieldRow({ en: "Authority", ko: "주체" }, bi(ins.session)) +
+          (d.record_no ? fieldRow({ en: "Record", ko: "원 기록" }, esc(d.record_no)) : "") +
         "</dl>" +
         '<ol class="decision">' +
           "<li>" + bi(dc.receives) + "</li>" +
-          "<li>" + bi({ en: "The Committee finds that the record satisfies the four criteria:", ko: "위원회는 이 기록이 네 가지 기준을 충족한다고 판단한다." }) + '<dl class="facts" style="margin-top:14px">' + critRows + "</dl></li>" +
+          "<li>" + bi(d.status === "origin" ? { en: "Against the four criteria, the Federation records:", ko: "연맹은 네 가지 기준에 비추어 이렇게 기록한다." } : { en: "The Committee finds that the record satisfies the four criteria:", ko: "위원회는 이 기록이 네 가지 기준을 충족한다고 판단한다." }) + '<dl class="facts" style="margin-top:14px">' + critRows + "</dl></li>" +
           "<li>" + bi(dc.inscribes) + "</li>" +
           "<li>" + bi(dc.invites) + "</li>" +
         "</ol>") +
