@@ -111,7 +111,7 @@ html[data-second="zh"] .bi.inline .s[lang="zh"] { display: inline; }
 @keyframes dawn-rise { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .hero .dawn { animation: none; } }
 .hero .placard { border-bottom: 0; padding-bottom: 0; }
-.hero + .section { border-top: 0; padding-top: 24px; }
+.hero + .section { border-top: 0; padding-top: 16px; }
 .hero::after {
   /* the hearth: light rising from below */
   content: ""; position: absolute; z-index: -2;
@@ -156,8 +156,8 @@ html[data-second="zh"] .bi.inline .s[lang="zh"] { display: inline; }
 }
 
 /* ---------- sections ---------- */
-.section { padding: clamp(64px, 9vw, 112px) 0; border-top: 1px solid var(--ember-line); }
-.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 36px; flex-wrap: wrap; }
+.section { padding: clamp(36px, 4.5vw, 60px) 0; border-top: 1px solid var(--ember-line); }
+.section-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin-bottom: 24px; flex-wrap: wrap; }
 h1, h2, h3 { font-family: var(--f-display); font-weight: 500; line-height: 1.15; margin: 0; color: var(--bone); }
 h1 { font-size: clamp(42px, 6vw, 72px); }
 h2 { font-size: clamp(32px, 4vw, 46px); }
@@ -170,7 +170,7 @@ h3 .s { font-size: .6em; }
 .prose p { margin: 0 0 1em; }
 
 /* page header */
-.page-head { padding: clamp(56px, 8vw, 96px) 0 40px; }
+.page-head { padding: clamp(36px, 5vw, 60px) 0 28px; }
 .page-head .lede { max-width: var(--measure); margin-top: 22px; font-size: 21px; color: var(--bone); }
 .page-head .lede .s { font-size: 17px; }
 
@@ -243,7 +243,7 @@ a.event-row:hover .title { color: var(--copper-light); }
 .timeline .year { font-family: var(--f-display); font-size: 26px; color: var(--copper-light); line-height: 1.2; }
 
 /* heritage */
-.nation-block { display: grid; grid-template-columns: 240px 1fr; gap: 32px; padding: 36px 0; border-bottom: 1px solid var(--ember-line); }
+.nation-block { display: grid; grid-template-columns: 240px 1fr; gap: 32px; padding: 26px 0; border-bottom: 1px solid var(--ember-line); }
 .nation-block:first-child { border-top: 1px solid var(--ember-line); }
 .nation-block h3 { color: var(--copper-light); }
 .dish { margin-bottom: 22px; }
@@ -354,7 +354,7 @@ a.event-row:hover .title { color: var(--copper-light); }
 .heritage-hero { text-align: center; padding: 48px var(--gutter) 24px; overflow: hidden; }
 .heritage-hero .hero-emblem { width: clamp(150px, 18vw, 210px); margin: 0 auto 18px; }
 .heritage-hero #heritage-intro { max-width: 720px; margin: 22px auto 0; }
-.trophy-stage { --r: 250px; position: relative; height: 470px; margin: 64px auto 0; perspective: 1100px; }
+.trophy-stage { --r: 250px; position: relative; height: 450px; margin: 36px auto 0; perspective: 1100px; }
 .trophy-ring { position: absolute; left: 50%; top: 20px; width: 0; height: 0; transform-style: preserve-3d; animation: ring-spin 21s linear infinite; }
 .trophy-slot { position: absolute; transform-style: preserve-3d; transform: rotateY(calc(var(--i) * 120deg)) translateZ(var(--r)); }
 .trophy-face { width: 220px; margin-left: -110px; text-align: center; transform-style: preserve-3d;
@@ -491,7 +491,7 @@ a.event-row:hover .title { color: var(--copper-light); }
 .titles li { padding: 6px 0; font-size: 17px; }
 .titles li .s { font-size: 15px; margin-top: 0; }
 .pending { color: var(--ash); font-style: italic; }
-.statement.officiant { margin: 64px auto 24px; }
+.statement.officiant { margin: 40px auto 16px; }
 .narrative { white-space: pre-line; max-width: 72ch; }
 .pf-head { font-size: 22px; margin: 26px 0 8px; color: var(--copper-light); }
 .pf-head .s { font-size: .6em; }
