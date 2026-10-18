@@ -15,13 +15,43 @@
     "ja": "",
     "zh": ""
   },
-  "entries": [
-    { "barbecuer": "sample-officiant", "points": 0, "events": 0, "sample": true }
-  ],
+  "entries": [],
   "honors_def": [
-    { "key": "dignity",       "name": { "en": "Dignity",       "ko": "존엄(尊嚴)", "ja": "", "zh": "" } },
-    { "key": "endurance",     "name": { "en": "Endurance",     "ko": "감내(堪耐)", "ja": "", "zh": "" } },
-    { "key": "participation", "name": { "en": "Participation", "ko": "참여(參與)", "ja": "", "zh": "" } },
-    { "key": "contribution",  "name": { "en": "Contribution",  "ko": "기여(寄與)", "ja": "", "zh": "" } }
+    {
+      "key": "dignity",
+      "name": {
+        "en": "Dignity",
+        "ko": "존엄(尊嚴)",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "endurance",
+      "name": {
+        "en": "Endurance",
+        "ko": "감내(堪耐)",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "participation",
+      "name": {
+        "en": "Participation",
+        "ko": "참여(參與)",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "contribution",
+      "name": {
+        "en": "Contribution",
+        "ko": "기여(寄與)",
+        "ja": "",
+        "zh": ""
+      }
+    }
   ]
 }

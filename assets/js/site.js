@@ -179,7 +179,9 @@
     Promise.all([load("barbecuers"), load("nations"), load("events"), load("rankings")]).then(function (r) {
       var b = byId(r[0].barbecuers, param("id")), na = r[1].nations, ev = r[2], rk = r[3];
       if (!b) { put("#person", empty({ en: "This Pro Barbecuer could not be found. Return to the roster.", ko: "해당 프로바비큐어를 찾을 수 없다. 명단으로 돌아가라." }) + '<p><a href="barbecuers.html">Pro Barbecuers</a></p>'); return; }
-      document.title = en(b.name) + " | IOBSF";
+      document.title = en(b.name) + " | IOBSF Pro Barbecuer";
+      var tbc = bi({ en: "To be confirmed", ko: "확인 중" }, "span", "pending", true);
+      var val = function (o) { return o && (o.en || o.ko) ? bi(o) : tbc; };
       var honors = rk.honors_def.map(function (h) {
         return "<dt>" + bi(h.name, "span", "", true) + "</dt><dd>" + (b.honors && b.honors[h.key] || 0) + "</dd>";
       }).join("");
@@ -187,22 +189,37 @@
         var e = byId(ev.events, x.event);
         return "<tr><td>" + (e ? '<a href="event.html?id=' + e.id + '">' + esc(en(e.name)) + "</a>" : esc(x.event)) + '</td><td class="num">' + esc(x.result) + "</td><td>" + esc(x.note || "") + "</td></tr>";
       }).join("");
+      var groups = [["role", { en: "Institutions and Fire", ko: "기관과 불의 자리" }], ["book", { en: "Books", ko: "저서" }], ["paper", { en: "Papers", ko: "논문" }], ["media", { en: "Broadcasts, Interviews and Columns", ko: "방송, 인터뷰, 칼럼" }], ["event", { en: "Events", ko: "대회" }]];
+      var portfolio = groups.map(function (g) {
+        var list = (b.portfolio || []).filter(function (x) { return x.kind === g[0]; });
+        return list.length ? '<h3 class="pf-head">' + esc(g[1].en) + bi({ ko: g[1].ko }, "span") + "</h3>" + entryList(list.map(function (x) { var y = {}; for (var k in x) y[k] = x[k]; y.kind = ""; return y; })) : "";
+      }).join("");
+      var career = (b.career || []).length ? '<ol class="timeline">' + b.career.map(function (x) { return '<li><div class="year">' + x.year + "</div>" + bi(x.text) + "</li>"; }).join("") + "</ol>" : "";
       put("#person",
-        '<div class="split">' +
-          '<div class="person"><div class="portrait">' + (b.photo ? '<img src="' + esc(b.photo) + '" alt="">' : "<span>" + esc(initials(b.name)) + "</span>") + "</div></div>" +
+        '<p class="form-kind">' + bi({ en: "Pro Barbecuer Profile", ko: "프로바비큐어 프로필" }, "span", "", true) + "</p>" +
+        '<div class="split profile-head">' +
+          '<div class="person"><div class="portrait">' + (b.photo ? '<img src="' + esc(b.photo) + '" alt="' + esc(en(b.name)) + '">' : "<span>" + esc(initials(b.name)) + "</span>") + "</div></div>" +
           "<div>" +
+            (b.founder ? '<p class="founder-mark">' + bi({ en: "Founder of the Profession, 2013", ko: "프로바비큐어 창직자, 2013" }, "span", "", true) + "</p>" : "") +
             "<h1>" + esc(en(b.name)) + sampleBadge(b) + bi({ ko: b.name.ko, ja: b.name.ja, zh: b.name.zh }, "span") + "</h1>" +
-            '<p class="person"><span class="meta">' + esc(en(nationName(na, b.nation))) + (b.certified ? ", certified " + b.certified : "") + "</span></p>" +
-            '<h3 style="margin-top:36px">Officiant\'s Statement</h3>' + bi(b.statement, "div", "prose lede") +
-            '<h3 style="margin-top:36px">Profile</h3>' + bi(b.bio, "div", "prose") +
-            '<h3 style="margin-top:36px">Honours</h3><dl class="facts" style="margin-top:14px">' + honors + "</dl>" +
-            '<h3 style="margin-top:36px">Pledge</h3><p>' + (b.pledge_signed ? "Charter pledge signed " + esc(b.pledge_signed) : '<span style="color:var(--ash)">Charter pledge pending.</span>') + "</p>" +
+            (b.titles && b.titles.length ? '<ul class="titles">' + b.titles.map(function (t) { return "<li>" + bi(t) + "</li>"; }).join("") + "</ul>" : "") +
+            '<dl class="facts form-facts">' +
+              "<dt>" + bi({ en: "Nation", ko: "국적" }, "span", "", true) + "</dt><dd>" + bi(nationName(na, b.nation)) + "</dd>" +
+              "<dt>" + bi({ en: "Born", ko: "출생연도" }, "span", "", true) + "</dt><dd>" + (b.born_year ? esc(b.born_year) : tbc) + "</dd>" +
+              "<dt>" + bi({ en: "Birthplace", ko: "출생지" }, "span", "", true) + "</dt><dd>" + val(b.birthplace) + "</dd>" +
+              "<dt>" + bi({ en: "Raised", ko: "성장지" }, "span", "", true) + "</dt><dd>" + val(b.raised) + "</dd>" +
+              "<dt>" + bi({ en: "Pro Barbecuer since", ko: "프로바비큐어" }, "span", "", true) + "</dt><dd>" + (b.certified ? esc(b.certified) : tbc) + "</dd>" +
+              "<dt>" + bi({ en: "Charter pledge", ko: "헌장 서약" }, "span", "", true) + "</dt><dd>" + (b.pledge_signed ? esc(b.pledge_signed) : bi({ en: "Pending the Charter", ko: "헌장 제정 후" }, "span", "pending", true)) + "</dd>" +
+            "</dl>" +
           "</div>" +
         "</div>" +
-        '<div class="section"><h2>Records</h2><div style="margin-top:24px">' +
-          (recs ? '<div class="table-scroll"><table class="table"><thead><tr><th>Event</th><th class="num">Result</th><th>Note</th></tr></thead><tbody>' + recs + "</tbody></table></div>"
-                : empty({ en: "No sanctioned records yet.", ko: "아직 공인 기록이 없다." })) +
-        "</div></div>");
+        '<div class="statement officiant"><p class="label">Officiant\'s Statement</p>' + bi(b.statement, "p", "text") + "</div>" +
+        formSection("Narrative", "서사", b.narrative ? bi(b.narrative, "div", "prose narrative") : bi(b.bio, "div", "prose")) +
+        (career ? formSection("Barbecue Career", "바비큐 경력", career) : "") +
+        (portfolio ? formSection("Portfolio", "포트폴리오", portfolio) : "") +
+        formSection("Honours of Distribution", "분배의 명예", '<dl class="facts">' + honors + "</dl>") +
+        formSection("Records", "공인 기록", recs ? '<div class="table-scroll"><table class="table"><thead><tr><th>Event</th><th class="num">Result</th><th>Note</th></tr></thead><tbody>' + recs + "</tbody></table></div>"
+                : empty({ en: "No sanctioned records yet.", ko: "아직 공인 기록이 없다." })));
     });
   };
 
@@ -320,7 +337,7 @@
     return '<section class="form-section"><h2 class="bi"><span class="p">' + title + '</span><span class="s" lang="ko">' + ko + "</span></h2>" + inner + "</section>";
   }
 
-  var KINDS = { book: { en: "Book", ko: "저서" }, paper: { en: "Paper", ko: "논문" }, article: { en: "Article", ko: "연구 글" }, video: { en: "Video", ko: "영상" } };
+  var KINDS = { book: { en: "Book", ko: "저서" }, paper: { en: "Paper", ko: "논문" }, article: { en: "Article", ko: "연구 글" }, video: { en: "Video", ko: "영상" }, media: { en: "Media", ko: "매체" }, role: { en: "Role", ko: "직책" }, event: { en: "Event", ko: "대회" } };
   function entryList(list) {
     return '<ul class="entries">' + list.map(function (x) {
       var t = x.href ? '<a href="' + esc(x.href) + '">' + esc(en(x.title)) + "</a>" : '<span class="entry-title">' + esc(en(x.title)) + "</span>";
