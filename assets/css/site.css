@@ -266,7 +266,7 @@ a.event-row:hover .title { color: var(--copper-light); }
 .site-footer .f-link { display: block; margin-bottom: 18px; }
 .site-footer .f-link strong { font-family: var(--f-display); font-size: 21px; font-weight: 500; color: var(--copper-light); display: block; }
 .site-footer .f-slogan { letter-spacing: .16em; font-family: var(--f-display); color: var(--bone); margin-top: 14px; }
-.site-footer .f-bottom { grid-column: 1 / -1; border-top: 1px solid var(--ember-line); padding-top: 24px; font-size: 17px; line-height: 1.6; }
+.site-footer .f-bottom { grid-column: 1 / -1; border-top: 1px solid var(--ember-line); padding-top: 24px; font-size: 17px; line-height: 1.6; text-align: center; }
 .site-footer .f-bottom .f-line + .f-line { margin-top: 10px; }
 .site-footer .f-bottom .s { font-size: 15px; }
 @media (max-width: 760px) { .site-footer .wrap { grid-template-columns: 1fr; } }
