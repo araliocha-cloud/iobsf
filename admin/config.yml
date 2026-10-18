@@ -211,5 +211,12 @@ collections:
                   - { name: ko, label: "한국어", widget: text, required: false }
               - { name: event, label: "대회 주소 이름 (선택)", widget: string, required: false }
               - { name: video, label: "YouTube 주소 (선택)", widget: string, required: false }
-              - { name: image, label: "이미지 (선택)", widget: image, required: false }
+              - { name: image, label: "대표 이미지 (선택)", widget: image, required: false }
+              - name: images
+                label: "사진 묶음 (선택, 첫 장이 크게 보인다)"
+                widget: list
+                required: false
+                fields:
+                  - { name: src, label: "사진", widget: image }
+                  - { name: alt, label: "사진 설명", widget: string, required: false }
               - { name: id, label: "주소 이름 (선택)", widget: string, required: false }

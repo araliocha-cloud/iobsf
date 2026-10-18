@@ -493,32 +493,16 @@
   pages.chronicle = function () {
     load("chronicle").then(function (c) {
       put("#chronicle-intro", bi(c.intro, "div", "lede"));
-      put("#chronicle", c.stories.length ? c.stories.map(function (s) {
-        return '<article class="dish" style="margin-bottom:48px"><p style="color:var(--ash);margin:0">' + esc(s.date || "") + "</p><h2>" + esc(en(s.title)) + "</h2>" + bi(s.text, "div", "prose") + "</article>";
+      var stories = (c.stories || []).slice().sort(function (a, b) { return (b.date || "") > (a.date || "") ? 1 : -1; });
+      put("#chronicle", stories.length ? stories.map(function (s) {
+        var imgs = (s.images || []).concat(s.image ? [{ src: s.image, alt: "" }] : []);
+        var gallery = imgs.length ? '<div class="story-gallery">' + imgs.map(function (im, i) {
+          return '<figure class="' + (i === 0 ? "lead" : "") + '"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '" loading="lazy"></figure>';
+        }).join("") + "</div>" : "";
+        var video = s.video ? '<p><a class="more" href="' + esc(s.video) + '">Watch the video</a></p>' : "";
+        return '<article class="story" id="' + esc(idOf(s)) + '"><p class="story-date">' + esc(s.date ? fmtDate({ date: s.date }) : "") + "</p>" +
+          bi(s.title, "h2", "story-title") + gallery + bi(s.text, "div", "prose story-text") + video + "</article>";
       }).join("") : empty({ en: "Stories from the fire will be published here after each event.", ko: "대회가 끝날 때마다 불 앞의 이야기가 이곳에 실린다." }));
-    });
-  };
-
-  pages.writing = function () {
-    Promise.all([load("writings"), load("heritage")]).then(function (r) {
-      var w = byId(r[0].writings, param("id"));
-      if (!w) { put("#writing", empty({ en: "This essay was not found.", ko: "글을 찾을 수 없다." })); return; }
-      var cat = (r[1].archives || []).filter(function (a) { return a.key === w.category; })[0];
-      document.title = en(w.title) + " | IOBSF";
-      var body = md(w.body);
-      var pub = w.published && w.published.outlet ? '<p class="w-pub">' + bi({ en: "First published in " + w.published.outlet + (w.published.date ? ", " + fmtDate({ date: w.published.date }) : ""), ko: "처음 실린 곳: " + w.published.outlet, ja: "初出：" + w.published.outlet, zh: "首次刊载于：" + w.published.outlet }, "span", "", true) + (w.published.href ? ' <a href="' + esc(w.published.href) + '">Original</a>' : "") + "</p>" : "";
-      put("#writing",
-        '<article class="writing">' +
-          '<p class="w-crumb"><a href="heritage.html#archives">Archives</a>' + (cat ? " / " + esc(cat.name.en) + bi({ ko: cat.name.ko }, "span", "", true) : "") + "</p>" +
-          "<h1>" + esc(en(w.title)) + "</h1>" +
-          (w.subtitle && w.subtitle.en ? '<p class="w-sub-en">' + esc(w.subtitle.en) + "</p>" : "") +
-          '<div class="w-ko">' + bi({ ko: w.title.ko }, "div", "w-title-ko") + (w.subtitle && w.subtitle.ko ? bi({ ko: w.subtitle.ko }, "div", "w-sub-ko") : "") + "</div>" +
-          '<p class="w-by">' + esc((w.by && w.by.en) || "Shaka Chaa") + bi({ ko: (w.by && w.by.ko) || "차영기" }, "span", "", true) + "</p>" + pub +
-          '<p class="w-lang">' + bi({ en: "Original text in Korean", ko: "원문 한국어" }, "span", "", true) + "</p>" +
-          (w.image ? '<figure class="w-fig"><img src="' + esc(w.image) + '" alt="">' + (w.image_caption ? "<figcaption>" + esc(w.image_caption) + "</figcaption>" : "") + "</figure>" : "") +
-          '<div class="w-body" lang="ko">' + body + "</div>" +
-          (w.refs && w.refs.length ? '<div class="w-refs"><h3>' + bi({ en: "References", ko: "주요 참고 문헌" }, "span", "", true) + '</h3><ul>' + w.refs.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>" : "") +
-        "</article>");
     });
   };
 
@@ -536,6 +520,18 @@
       return '<div class="form7"><h3>' + (x.href ? '<a href="' + esc(x.href) + '">' + esc(x.name) + "</a>" : esc(x.name)) + "</h3>" + bi(x.full, "div", "form7-text") + bi(x.role, "div", "entry-sub") + "</div>";
     }).join("") + "</div>");
     load("nations").then(function (n) { put("#fed-members", nationsStrip(n.nations)); });
+    load("articles").then(function (a) {
+      var nat = { KR: { en: "Korea", ko: "한국", ja: "韓国", zh: "韩国" }, JP: { en: "Japan", ko: "일본", ja: "日本", zh: "日本" }, MY: { en: "Malaysia", ko: "말레이시아", ja: "マレーシア", zh: "马来西亚" }, PH: { en: "Philippines", ko: "필리핀", ja: "フィリピン", zh: "菲律宾" } };
+      put("#fed-articles", bi(a.intro, "div", "prose") +
+        '<dl class="facts articles">' + a.items.map(function (it) {
+          return "<dt>" + bi(it.label, "span", "", true) + "</dt><dd>" + (it.text ? bi(it.text) : "") +
+            (it.list ? '<ol class="art-list">' + it.list.map(function (x) { return "<li>" + bi(x) + "</li>"; }).join("") + "</ol>" : "") + "</dd>";
+        }).join("") + "</dl>" +
+        '<h3 class="pf-head">' + esc(a.officers_label.en) + bi({ ko: a.officers_label.ko, ja: a.officers_label.ja, zh: a.officers_label.zh }, "span") + "</h3>" +
+        '<table class="table officers"><tbody>' + a.officers.map(function (o) {
+          return "<tr><td>" + bi(o.role) + "</td><td>" + esc(o.name) + '</td><td class="entry-by">' + bi(nat[o.nation] || { en: o.nation }, "span", "", true) + "</td></tr>";
+        }).join("") + "</tbody></table>");
+    });
     load("history").then(function (hi) {
       put("#history", '<ol class="timeline">' + hi.entries.slice().sort(function (a, b) { return a.year - b.year; }).map(function (x) {
         return '<li><div class="year">' + x.year + "</div>" + bi(x.text) + "</li>";

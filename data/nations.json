@@ -31,24 +31,24 @@
       "hq": false
     },
     {
-      "code": "PH",
+      "code": "MY",
       "name": {
-        "en": "Philippines",
-        "ko": "필리핀",
-        "ja": "フィリピン",
-        "zh": "菲律宾"
+        "en": "Malaysia",
+        "ko": "말레이시아",
+        "ja": "マレーシア",
+        "zh": "马来西亚"
       },
       "member_org": "",
       "site": "",
       "hq": false
     },
     {
-      "code": "CN",
+      "code": "PH",
       "name": {
-        "en": "China",
-        "ko": "중국",
-        "ja": "中国",
-        "zh": "中国"
+        "en": "Philippines",
+        "ko": "필리핀",
+        "ja": "フィリピン",
+        "zh": "菲律宾"
       },
       "member_org": "",
       "site": "",

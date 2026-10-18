@@ -544,3 +544,20 @@ a.event-row:hover .title { color: var(--copper-light); }
 .site-footer .f-col1 { display: flex; flex-direction: column; }
 .site-footer .f-emblem { display: block; width: 170px; max-width: 70%; height: auto; margin: 28px auto auto; align-self: center; opacity: .95; filter: drop-shadow(0 8px 18px rgba(0,0,0,.5)); }
 @media (min-width: 861px) { .site-footer .f-emblem { margin: auto; } }
+
+/* chronicle stories */
+.story { max-width: 900px; margin: 0 0 72px; }
+.story-date { color: var(--ash); margin: 0 0 6px; font-family: var(--f-display); }
+.story-title { font-size: clamp(28px, 4vw, 40px); margin: 0 0 24px; }
+.story-title .s { font-size: .55em; }
+.story-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 0 28px; }
+.story-gallery figure { margin: 0; overflow: hidden; background: var(--soot, #141210); aspect-ratio: 4 / 3; }
+.story-gallery figure.lead { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.story-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.story-text { white-space: pre-line; }
+@media (max-width: 600px) { .story-gallery { grid-template-columns: 1fr 1fr; } }
+/* articles summary */
+.facts.articles { margin-top: 24px; }
+.art-list { margin: 0; padding-left: 1.3em; }
+.art-list li { margin: 0 0 8px; }
+.table.officers td { vertical-align: top; }

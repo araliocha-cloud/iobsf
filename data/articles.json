@@ -1,0 +1,187 @@
+{
+  "adopted": "2018-12-08",
+  "intro": {
+    "en": "The articles of the Federation were adopted at the Founding General Meeting on 8 December 2018. Their substance is summarised here.",
+    "ko": "연맹 정관은 2018년 12월 8일 창립총회에서 채택되었다. 그 요지를 여기에 정리한다.",
+    "ja": "連盟定款は2018年12月8日の創立総会で採択された。その要旨をここにまとめる。",
+    "zh": "联合会章程于2018年12月8日创立大会上通过。其要旨整理如下。"
+  },
+  "items": [
+    {
+      "label": {
+        "en": "Purpose",
+        "ko": "목적",
+        "ja": "目的",
+        "zh": "宗旨"
+      },
+      "text": {
+        "en": "To unite the outdoor sports and barbecue sports organisations and experts of every member nation, widen exchange among them, spread the culture of outdoor and barbecue sports across the world, advance the field, and protect the interests of member nations.",
+        "ko": "각 회원국의 아웃도어 스포츠와 바비큐 스포츠 단체, 전문가가 연합해 민간 교류를 넓힌다. 세계에 아웃도어 스포츠와 바비큐 스포츠 문화를 확산해 그 발전을 이끌고, 회원국의 권익을 보호한다.",
+        "ja": "各会員国のアウトドアスポーツとバーベキュースポーツの団体と専門家が連合し、民間の交流を広げる。世界にアウトドアスポーツとバーベキュースポーツの文化を広め、その発展を導き、会員国の権益を保護する。",
+        "zh": "联合各会员国的户外运动与烧烤运动团体及专家，扩大民间交流；在世界推广户外运动与烧烤运动文化，推动其发展，并保护会员国的权益。"
+      }
+    },
+    {
+      "label": {
+        "en": "Programmes",
+        "ko": "사업",
+        "ja": "事業",
+        "zh": "事业"
+      },
+      "list": [
+        {
+          "en": "Exchange among practitioners and the spread of the culture",
+          "ko": "문화인들의 상호 교류와 문화 확산",
+          "ja": "実践者の相互交流と文化の普及",
+          "zh": "从业者之间的交流与文化推广"
+        },
+        {
+          "en": "International competitions",
+          "ko": "국제 대회 개최",
+          "ja": "国際大会の開催",
+          "zh": "举办国际赛事"
+        },
+        {
+          "en": "Exchange of information and culture",
+          "ko": "정보와 문화 교류",
+          "ja": "情報と文化の交流",
+          "zh": "信息与文化交流"
+        },
+        {
+          "en": "Higher standards and healthy leisure",
+          "ko": "문화 수준 향상과 건전한 여가 활동",
+          "ja": "文化水準の向上と健全な余暇活動",
+          "zh": "提升文化水平，引导健康休闲"
+        },
+        {
+          "en": "Raising and managing athletes and experts",
+          "ko": "선수와 전문가 육성, 관리",
+          "ja": "選手と専門家の育成、管理",
+          "zh": "培养与管理选手及专家"
+        },
+        {
+          "en": "Joint research, development and supply of equipment",
+          "ko": "장비, 용구, 용품의 공동 연구개발과 보급",
+          "ja": "装備、用具、用品の共同研究開発と普及",
+          "zh": "装备、器具、用品的共同研发与推广"
+        }
+      ]
+    },
+    {
+      "label": {
+        "en": "Membership",
+        "ko": "회원",
+        "ja": "会員",
+        "zh": "会员"
+      },
+      "text": {
+        "en": "One member per nation: a single organisation or expert in outdoor or barbecue sports, admitted by the Board. Each member nation may have its own affiliated bodies and individual members.",
+        "ko": "회원국은 한 나라에 한 단체 또는 한 전문가만 가입하며, 이사회의 의결로 확정된다. 각 회원국은 산하 단체와 개인회원을 둘 수 있다.",
+        "ja": "会員国は一国につき一団体または一専門家のみ加入でき、理事会の議決で確定する。各会員国は傘下団体と個人会員を置くことができる。",
+        "zh": "每个国家仅限一个团体或一位专家加入，经理事会决议确定。各会员国可设下属团体与个人会员。"
+      }
+    },
+    {
+      "label": {
+        "en": "Governance",
+        "ko": "운영 기구",
+        "ja": "運営機構",
+        "zh": "治理机构"
+      },
+      "list": [
+        {
+          "en": "General Assembly: representatives of the member nations decide the Federation's major matters.",
+          "ko": "총회: 회원국 대표가 모여 연맹의 중요 사항을 의결한다.",
+          "ja": "総会：会員国の代表が集まり、連盟の重要事項を議決する。",
+          "zh": "全体大会：会员国代表共同决议联合会的重要事项。"
+        },
+        {
+          "en": "Board: the highest executive body.",
+          "ko": "이사회: 연맹의 최고 집행기관이다.",
+          "ja": "理事会：連盟の最高執行機関である。",
+          "zh": "理事会：联合会的最高执行机构。"
+        },
+        {
+          "en": "Committees: education, discipline, qualification, technical, competition, publicity and equipment.",
+          "ko": "위원회: 교육, 상벌, 자격, 기술, 대회, 홍보, 장비 위원회를 둘 수 있다.",
+          "ja": "委員会：教育、賞罰、資格、技術、大会、広報、装備の委員会を置くことができる。",
+          "zh": "委员会：可设教育、奖惩、资格、技术、赛事、宣传、装备等委员会。"
+        },
+        {
+          "en": "Secretariat: carries out the Federation's work under the Secretary-General.",
+          "ko": "사무국: 사무총장의 지휘 아래 연맹의 사무를 집행한다.",
+          "ja": "事務局：事務総長の指揮のもと、連盟の事務を執行する。",
+          "zh": "秘书处：在秘书长领导下执行联合会事务。"
+        }
+      ]
+    }
+  ],
+  "officers_label": {
+    "en": "Founding Officers",
+    "ko": "창립 임원",
+    "ja": "創立役員",
+    "zh": "创始管理人员"
+  },
+  "officers": [
+    {
+      "role": {
+        "en": "President",
+        "ko": "연맹총재",
+        "ja": "連盟総裁",
+        "zh": "总裁"
+      },
+      "name": "Chung Tae-Kyung",
+      "nation": "KR"
+    },
+    {
+      "role": {
+        "en": "Chairman",
+        "ko": "회장",
+        "ja": "会長",
+        "zh": "会长"
+      },
+      "name": "Shimojo Tamio",
+      "nation": "JP"
+    },
+    {
+      "role": {
+        "en": "Vice President & Secretary-General",
+        "ko": "부회장 겸 사무총장",
+        "ja": "副会長兼事務総長",
+        "zh": "副会长兼秘书长"
+      },
+      "name": "Cha Young-Ki (Shaka Chaa)",
+      "nation": "KR"
+    },
+    {
+      "role": {
+        "en": "Vice President & Executive Director",
+        "ko": "부회장 겸 전무이사",
+        "ja": "副会長兼専務理事",
+        "zh": "副会长兼常务理事"
+      },
+      "name": "Steven Lim",
+      "nation": "MY"
+    },
+    {
+      "role": {
+        "en": "Auditor",
+        "ko": "감사",
+        "ja": "監事",
+        "zh": "监事"
+      },
+      "name": "Chang Young-Hoon",
+      "nation": "KR"
+    },
+    {
+      "role": {
+        "en": "Directors",
+        "ko": "이사",
+        "ja": "理事",
+        "zh": "理事"
+      },
+      "name": "Cha Young-Jun, An Se-Hong",
+      "nation": "KR"
+    }
+  ]
+}
