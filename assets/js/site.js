@@ -294,8 +294,9 @@
       put("#heritage-criteria", '<dl class="facts">' + h.criteria.map(function (c) {
         return "<dt>" + bi(c.name, "span", "", true) + "</dt><dd>" + bi(c.text) + "</dd>";
       }).join("") + "</dl>");
-      put("#heritage-process", '<ol class="sequence compact three">' + h.process.map(function (x) {
-        return "<li><h3>" + esc(x.name.en) + "</h3>" + bi({ ko: x.name.ko, ja: x.name.ja, zh: x.name.zh }, "div") + bi(x.text, "p") + "</li>";
+      var PM = { record: "bronze", review: "silver", inscribed: "gold", inscription: "gold" };
+      put("#heritage-process", '<ol class="sequence compact three proc-list">' + h.process.map(function (x) {
+        return '<li><div class="proc-trophy">' + (PM[x.key] ? trophySVG(PM[x.key]) : "") + "</div><h3>" + esc(x.name.en) + "</h3>" + bi({ ko: x.name.ko, ja: x.name.ja, zh: x.name.zh }, "div") + '<p class="proc-en">' + esc(x.text.en) + "</p>" + bi({ ko: x.text.ko, ja: x.text.ja, zh: x.text.zh }, "div", "proc-ko") + "</li>";
       }).join("") + "</ol>");
       var ins = h.register.filter(function (d) { return d.status === "origin" || d.status === "inscribed"; });
       var rec = h.register.filter(function (d) { return d.status === "record" || d.status === "review"; });

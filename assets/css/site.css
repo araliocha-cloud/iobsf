@@ -500,3 +500,13 @@ a.event-row:hover .title { color: var(--copper-light); }
 .w-refs { margin-top: 48px; border-top: 1px solid var(--line, #3a352f); padding-top: 18px; font-size: 15px; color: var(--ash); }
 .w-refs h3 { font-family: var(--f-display); font-size: 18px; color: var(--copper); margin: 0 0 10px; }
 .w-refs ul { margin: 0; padding-left: 1.2em; }
+
+/* record to inscription: trophies, rows aligned across the three columns, one bottom rule */
+.proc-list { align-items: stretch; grid-template-rows: auto auto auto auto 1fr; }
+.proc-list > li { display: grid; grid-row: span 5; grid-template-rows: subgrid; row-gap: 0; padding-bottom: 26px !important; border-bottom: 1px solid var(--copper); }
+.proc-list > li::before { top: 186px !important; }
+.proc-trophy { height: 170px; margin: 0 0 16px -52px; display: flex; align-items: flex-end; justify-content: center; }
+.proc-trophy .trophy-svg { width: 108px; height: 162px; margin: 0; filter: drop-shadow(0 10px 14px rgba(0,0,0,.55)); }
+.proc-list .proc-en { margin: 14px 0 0; text-align: justify; }
+.proc-list .proc-ko { margin-top: 10px; color: var(--ash); text-align: justify; font-size: .9em; line-height: 1.75; }
+@media (max-width: 760px) { .proc-list { grid-template-rows: none; } .proc-list > li { grid-row: auto; grid-template-rows: none; display: flex; flex-direction: column; margin-bottom: 20px; } }
