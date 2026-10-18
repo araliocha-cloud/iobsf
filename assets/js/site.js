@@ -155,10 +155,10 @@
     var f = site.federation;
     put("#site-footer",
       '<div class="wrap">' +
-        "<div>" +
+        '<div class="f-col1">' +
           '<div class="f-name">' + esc(f.name.en) + "</div>" + bi({ ko: f.name.ko, ja: f.name.ja, zh: f.name.zh, en: "" }) +
           '<div class="f-slogan">' + esc(site.statements.slogan.text.en) + "</div>" +
-          '<img class="f-emblem" src="assets/img/emblem.webp" alt="IOBSF emblem" width="96" height="81" onerror="this.remove()">' +
+          '<img class="f-emblem" src="assets/img/emblem.webp" alt="IOBSF emblem" width="170" height="143" onerror="this.remove()">' +
         "</div>" +
         "<div>" + links + "</div>" +
         "<div>" + bi(site.statements.motto.text, "div", "f-motto") + "</div>" +
