@@ -55,3 +55,16 @@ GitHub Pages로 운영한다. 빌드 과정이 없다. 저장소에 올리면 �
 - 분배 4요소 명예를 시즌 포인트에 반영할지 정한다. 지금은 별도 명예로 표시한다 (`honors_scored: false`).
 - 추대 의례(참가팀 대표가 우승자에게 영광을 건넴)를 대회 규정으로 할지 정한다. `events.json`의 `acclaimed_by` 칸이 준비되어 있다.
 - 전용 도메인(iobsf.org 등)을 연결한다.
+
+## 관리 화면 (/admin)
+
+주소: https://araliocha-cloud.github.io/iobsf/admin/
+
+- 로그인: "Sign In Using Access Token"에 GitHub 개인 액세스 토큰을 붙여 넣는다.
+  - 토큰 만들기: GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token
+  - Repository access: Only select repositories → araliocha-cloud/iobsf
+  - Permissions: Contents → Read and write
+- 편집할 수 있는 것: 서고 글(data/writings.json), 대회(data/event-list.json), 기록(data/chronicle.json)
+- 저장하면 main 브랜치에 바로 커밋되고 1~2분 뒤 홈페이지에 반영된다.
+- 글 본문은 마크다운이다. 문단은 빈 줄로 나누고, 소제목은 ### , 인용은 > 를 앞에 붙인다.
+- 서고 글은 분류(category)에 따라 헤리티지 페이지의 서사 기록 칸에 자동으로 실린다.

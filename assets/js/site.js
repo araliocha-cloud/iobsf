@@ -42,16 +42,43 @@
     return "<" + tag + ' class="bi' + (inline ? " inline" : "") + (cls ? " " + cls : "") + '">' + h + "</" + tag + ">";
   }
 
+  function fetchJSON(name) {
+    return fetch("data/" + name + ".json", { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error(name + ".json " + r.status);
+      return r.json();
+    });
+  }
   function load(name) {
     if (!cache[name]) {
-      cache[name] = fetch("data/" + name + ".json", { cache: "no-cache" }).then(function (r) {
-        if (!r.ok) throw new Error(name + ".json " + r.status);
-        return r.json();
-      });
+      cache[name] = name === "events"
+        ? Promise.all([fetchJSON("events"), fetchJSON("event-list")]).then(function (r) { r[0].events = r[1].events || []; return r[0]; })
+        : fetchJSON(name);
     }
     return cache[name];
   }
-  function byId(list, id) { for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i]; return null; }
+  function slug(t) { return String(t || "").toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80); }
+  function idOf(x) { return (x && x.id) || slug(en(x.title) || en(x.name)); }
+  /* small markdown reader for texts written in the admin */
+  function inline(t) {
+    return esc(t)
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/(^|[^*])\*([^*\n]+)\*/g, "$1<em>$2</em>")
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
+      .replace(/(\\|  )\n/g, "\n").replace(/\n/g, "<br>");
+  }
+  function md(text) {
+    return String(text || "").replace(/\r/g, "").split(/\n\s*\n/).map(function (b) {
+      b = b.replace(/^\n+|\s+$/g, ""); if (!b) return "";
+      var m;
+      if ((m = b.match(/^#{1,6}\s+(.*)$/))) return "<h3>" + inline(m[1]) + "</h3>";
+      if ((m = b.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/))) return '<figure class="w-fig"><img src="' + esc(m[2]) + '" alt="' + esc(m[1]) + '"></figure>';
+      if (/^>/.test(b)) return '<p class="w-quote">' + inline(b.replace(/^>\s?/gm, "")) + "</p>";
+      if (/^[-*]\s/.test(b)) return "<ul>" + b.split(/\n/).map(function (l) { return "<li>" + inline(l.replace(/^[-*]\s+/, "")) + "</li>"; }).join("") + "</ul>";
+      if (/^\*\*[\s\S]*\*\*$/.test(b) && b.indexOf("**", 2) === b.length - 2) return '<p class="w-strong">' + inline(b.slice(2, -2)) + "</p>";
+      return "<p" + (/\n/.test(b) ? ' class="w-verse"' : "") + ">" + inline(b) + "</p>";
+    }).join("");
+  }
+  function byId(list, id) { for (var i = 0; i < list.length; i++) if (idOf(list[i]) === id) return list[i]; return null; }
   function nationName(nations, code) {
     var n = nations.filter(function (x) { return x.code === code; })[0];
     return n ? n.name : { en: code };
@@ -187,7 +214,7 @@
       }).join("");
       var recs = (b.records || []).map(function (x) {
         var e = byId(ev.events, x.event);
-        return "<tr><td>" + (e ? '<a href="event.html?id=' + e.id + '">' + esc(en(e.name)) + "</a>" + '<div class="entry-by">' + esc(fmtDate(e)) + "</div>" : esc(x.event)) + "</td><td>" + esc(x.result) + "</td><td>" + esc(x.note || "") + "</td></tr>";
+        return "<tr><td>" + (e ? '<a href="event.html?id=' + idOf(e) + '">' + esc(en(e.name)) + "</a>" + '<div class="entry-by">' + esc(fmtDate(e)) + "</div>" : esc(x.event)) + "</td><td>" + esc(x.result) + "</td><td>" + esc(x.note || "") + "</td></tr>";
       }).join("");
       var groups = [["role", { en: "Institutions and Fire", ko: "기관과 불의 자리" }], ["book", { en: "Books", ko: "저서" }], ["paper", { en: "Papers", ko: "논문" }], ["media", { en: "Broadcasts, Interviews and Columns", ko: "방송, 인터뷰, 칼럼" }], ["event", { en: "Events", ko: "대회" }]];
       var portfolio = groups.map(function (g) {
@@ -303,12 +330,19 @@
       put("#heritage-register", registerList(ins));
       put("#heritage-records", registerList(rec));
       put("#heritage-forms", '<p>' + bi({ en: "Federation Recorded Heritage follows the record form. Federation Inscribed Heritage follows the inscription form, with its plaque.", ko: "연맹기록유산은 기록양식을, 연맹등재유산은 명판을 포함한 등재양식을 따른다." }) + '</p><p style="margin-top:18px"><a class="more" href="heritage-item.html?id=suya">See the record form (R-2026-001)</a><br><a class="more" href="heritage-item.html?id=ignis-primus">See the inscription form and plaque (No. 0, Origin)</a></p>');
+      load("writings").then(function (wr) { renderArchives(h, wr.writings || []); }, function () { renderArchives(h, []); });
+    });
+  };
+  function renderArchives(h, writings) {
       put("#heritage-archives", h.archives.map(function (a) {
+        var ess = writings.filter(function (w) { return w.category === a.key; }).map(function (w) {
+          return { title: w.title, href: "writing.html?id=" + idOf(w), kind: "essay", by: "Shaka Chaa (차영기)" };
+        });
+        a = Object.assign({}, a, { entries: (a.entries || []).concat(ess) });
         return '<div class="nation-block"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3><div>" + bi(a.text, "div", "prose") +
           '<div style="margin-top:18px">' + (a.entries.length ? entryList(a.entries) : '<p style="color:var(--ash);margin:0">Records will be published here.</p>') + "</div></div></div>";
       }).join(""));
-    });
-  };
+  }
 
 
   pages.heritageitem = function () {
@@ -446,22 +480,15 @@
       if (!w) { put("#writing", empty({ en: "This essay was not found.", ko: "글을 찾을 수 없다." })); return; }
       var cat = (r[1].archives || []).filter(function (a) { return a.key === w.category; })[0];
       document.title = en(w.title) + " | IOBSF";
-      var nl = function (t) { return esc(t).replace(/\n/g, "<br>"); };
-      var body = w.blocks.map(function (b) {
-        if (b.t === "h") return "<h3>" + esc(b.x) + "</h3>";
-        if (b.t === "q") return '<p class="w-quote">' + nl(b.x) + "</p>";
-        if (b.t === "s") return '<p class="w-strong">' + nl(b.x) + "</p>";
-        if (b.t === "v") return '<p class="w-verse">' + nl(b.x) + "</p>";
-        return "<p>" + nl(b.x) + "</p>";
-      }).join("");
-      var pub = w.published ? '<p class="w-pub">' + bi({ en: "First published in " + w.published.outlet + (w.published.date ? ", " + fmtDate({ date: w.published.date }) : ""), ko: "처음 실린 곳: " + w.published.outlet }, "span", "", true) + (w.published.href ? ' <a href="' + esc(w.published.href) + '">Original</a>' : "") + "</p>" : "";
+      var body = md(w.body);
+      var pub = w.published && w.published.outlet ? '<p class="w-pub">' + bi({ en: "First published in " + w.published.outlet + (w.published.date ? ", " + fmtDate({ date: w.published.date }) : ""), ko: "처음 실린 곳: " + w.published.outlet }, "span", "", true) + (w.published.href ? ' <a href="' + esc(w.published.href) + '">Original</a>' : "") + "</p>" : "";
       put("#writing",
         '<article class="writing">' +
           '<p class="w-crumb"><a href="heritage.html#archives">Archives</a>' + (cat ? " / " + esc(cat.name.en) + bi({ ko: cat.name.ko }, "span", "", true) : "") + "</p>" +
           "<h1>" + esc(en(w.title)) + "</h1>" +
           (w.subtitle && w.subtitle.en ? '<p class="w-sub-en">' + esc(w.subtitle.en) + "</p>" : "") +
           '<div class="w-ko" lang="ko"><div class="w-title-ko">' + esc(w.title.ko) + "</div>" + (w.subtitle && w.subtitle.ko ? '<div class="w-sub-ko">' + esc(w.subtitle.ko) + "</div>" : "") + "</div>" +
-          '<p class="w-by">' + esc(w.by.en) + bi({ ko: w.by.ko }, "span", "", true) + "</p>" + pub +
+          '<p class="w-by">' + esc((w.by && w.by.en) || "Shaka Chaa") + bi({ ko: (w.by && w.by.ko) || "차영기" }, "span", "", true) + "</p>" + pub +
           '<p class="w-lang">' + bi({ en: "Original text in Korean", ko: "원문 한국어" }, "span", "", true) + "</p>" +
           (w.image ? '<figure class="w-fig"><img src="' + esc(w.image) + '" alt=""></figure>' : "") +
           '<div class="w-body" lang="ko">' + body + "</div>" +
@@ -526,7 +553,7 @@
   }
   function eventRows(list, ev, na) {
     return list.map(function (e) {
-      return '<a class="event-row" href="event.html?id=' + e.id + '"><div class="when">' + esc(fmtDate(e)) + '</div><div><div class="title">' + esc(en(e.name)) + '</div><div class="where">' + esc(en(e.place)) + '</div></div><div class="tier">' + esc(en(ev.tiers[e.tier] || "")) + "</div></a>";
+      return '<a class="event-row" href="event.html?id=' + idOf(e) + '"><div class="when">' + esc(fmtDate(e)) + '</div><div><div class="title">' + esc(en(e.name)) + '</div><div class="where">' + esc(en(e.place)) + '</div></div><div class="tier">' + esc(en(ev.tiers[e.tier] || "")) + "</div></a>";
     }).join("");
   }
   function roster(list, na) {
