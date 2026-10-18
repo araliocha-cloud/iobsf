@@ -84,6 +84,19 @@
   "reading": [
     {
       "title": {
+        "en": "Shaka's Barbecue Primer (Kyomunsa, 2016)",
+        "ko": "샤카의 바비큐 프라이머리 (교문사, 2016)",
+        "ja": "",
+        "zh": ""
+      },
+      "href": "https://kyobobook.co.kr/product/detailViewKor.laf?barcode=9788936315627",
+      "kind": "book",
+      "by": "Shaka Chaa (차영기)",
+      "isbn": "9788936315627",
+      "store": "교보문고"
+    },
+    {
+      "title": {
         "en": "Barbecuing vs Smoking vs Grilling",
         "ko": "BARBECUING VS SMOKING VS GRILLING, 무엇이 다른가?",
         "ja": "",
