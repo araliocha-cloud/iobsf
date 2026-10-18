@@ -278,7 +278,7 @@ a.event-row:hover .title { color: var(--copper-light); }
 @media (max-width: 460px) { .brand-mark { display: none; } }
 
 /* heritage register */
-.register { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 0 32px; border-top: 1px solid var(--ember-line); }
+.register { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 0 32px; border-top: 1px solid var(--ember-line); }
 .heritage-item { padding: 24px 0; border-bottom: 1px solid var(--ember-line); min-width: 0; }
 .heritage-item .h-mark { font-family: var(--f-display); font-size: 16px; color: var(--ash); margin-bottom: 6px; }
 .heritage-item .h-mark.is-designated { color: var(--copper-light); }
@@ -291,7 +291,7 @@ a.event-row:hover .title { color: var(--copper-light); }
 .heritage-item.is-origin .h-text { max-width: var(--measure); font-size: 19px; }
 .heritage-item .h-era { margin-top: 2px; }
 .heritage-item .h-sources { margin-top: 12px; font-size: 14px; color: var(--ash); }
-.register { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.register { grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); }
 .sequence.compact.three { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 760px) { .sequence.compact.three { grid-template-columns: 1fr; } }
 
@@ -373,9 +373,17 @@ a.event-row:hover .title { color: var(--copper-light); }
   .trophy-legend { flex-direction: column; align-items: center; }
 }
 @keyframes trophy-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+/* all three trophies always stand on one line, the same size */
+@media (max-width: 700px) {
+  .trophy-stage .trophy-ring { gap: 4px; flex-wrap: nowrap; align-items: flex-start; }
+  .trophy-stage .trophy-face { width: min(118px, calc((100vw - 40px) / 3)); flex: 0 0 auto; }
+  .trophy-stage .trophy-svg { width: min(92px, 24vw); height: min(138px, 36vw); }
+  .trophy-stage .trophy-label { font-size: min(14px, 3.6vw); white-space: normal; overflow-wrap: anywhere; }
+  .trophy-stage .trophy-sub { font-size: min(13px, 3.3vw); }
+}
 @media (prefers-reduced-motion: reduce) {
   .trophy-stage { height: auto; perspective: none; }
-  .trophy-ring { position: static; width: auto; height: auto; animation: none; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; transform: none; }
+  .trophy-ring { position: static; width: auto; height: auto; animation: none; display: flex; justify-content: center; gap: 24px; flex-wrap: nowrap; transform: none; }
   .trophy-slot { position: static; transform: none; }
   .trophy-face { animation: none; transform: none; margin-left: 0; }
 }
@@ -522,3 +530,5 @@ a.event-row:hover .title { color: var(--copper-light); }
 .w-table td, .w-table th { text-indent: 0; }
 .w-ko .bi .s { color: inherit; font-size: inherit; margin-top: 0; }
 .w-ko .w-sub-ko .s { color: var(--ash); }
+.register > * { min-width: 0; }
+@media (max-width: 400px) { .heritage-item.is-origin .dish-name { font-size: 32px; } }
