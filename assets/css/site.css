@@ -193,6 +193,8 @@ h3 .s { font-size: .6em; }
 .person .portrait { aspect-ratio: 4 / 5; background: var(--soot); border-bottom: 2px solid var(--copper);
   display: grid; place-items: center; margin-bottom: 16px; overflow: hidden; }
 .person .portrait img { width: 100%; height: 100%; object-fit: cover; }
+.person .portrait.full { aspect-ratio: auto; }
+.person .portrait.full img { height: auto; object-fit: contain; display: block; }
 .person .portrait span { font-family: var(--f-display); font-size: 64px; color: var(--ember-line); }
 .person .who { font-family: var(--f-display); font-size: 25px; line-height: 1.2; }
 .person .meta { color: var(--ash); font-size: 16px; margin-top: 6px; }
@@ -466,8 +468,9 @@ a.event-row:hover .title { color: var(--copper-light); }
 
 /* pro barbecuer profile */
 #person { max-width: 1000px; }
-.profile-head { grid-template-columns: 340px minmax(0, 1fr); align-items: start; margin-top: 18px; }
-.profile-head .portrait { aspect-ratio: 4 / 5; max-width: 100%; }
+.profile-head { grid-template-columns: 1fr; align-items: start; margin-top: 18px; gap: 32px; }
+.profile-head .portrait { aspect-ratio: auto; max-width: 100%; }
+.profile-head .portrait img { height: auto; object-fit: contain; display: block; }
 .founder-mark { color: var(--copper-light); font-family: var(--f-display); font-size: 18px; margin: 0 0 10px; letter-spacing: .04em; }
 .titles { list-style: none; padding: 0; margin: 18px 0 0; }
 .titles li { padding: 6px 0; font-size: 17px; }
@@ -477,7 +480,7 @@ a.event-row:hover .title { color: var(--copper-light); }
 .narrative { white-space: pre-line; max-width: 72ch; }
 .pf-head { font-size: 22px; margin: 26px 0 8px; color: var(--copper-light); }
 .pf-head .s { font-size: .6em; }
-@media (max-width: 860px) { .profile-head { grid-template-columns: 1fr; } .profile-head .portrait { max-width: 340px; } }
+@media (max-width: 860px) { .profile-head { grid-template-columns: 1fr; } .profile-head .portrait { max-width: 100%; } }
 
 /* writings */
 .writing { max-width: 760px; margin: 0 auto; }

@@ -582,7 +582,7 @@
   function roster(list, na) {
     if (!list.length) return empty({ en: "Certified Pro Barbecuers will be listed here.", ko: "인증된 프로바비큐어가 이곳에 오른다." });
     return '<div class="roster">' + list.map(function (b) {
-      return '<a class="person" href="barbecuer.html?id=' + b.id + '"><div class="portrait">' + (b.photo ? '<img src="' + esc(b.photo) + '" alt="">' : "<span>" + esc(initials(b.name)) + "</span>") + "</div>" +
+      return '<a class="person" href="barbecuer.html?id=' + b.id + '"><div class="portrait' + (b.photo ? " full" : "") + '">' + (b.photo ? '<img src="' + esc(b.photo) + '" alt="">' : "<span>" + esc(initials(b.name)) + "</span>") + "</div>" +
         '<div class="who">' + esc(en(b.name)) + sampleBadge(b) + "</div>" + bi({ ko: b.name.ko, ja: b.name.ja, zh: b.name.zh }, "div") +
         '<div class="meta">' + esc(en(nationName(na, b.nation))) + "</div></a>";
     }).join("") + "</div>";
