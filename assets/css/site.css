@@ -290,3 +290,46 @@ a.event-row:hover .title { color: var(--copper-light); }
 .register { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
 .sequence.compact.three { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 760px) { .sequence.compact.three { grid-template-columns: 1fr; } }
+
+/* heritage forms */
+.h-link { color: inherit; }
+.h-link:hover { color: var(--copper-light); }
+.form-kind { color: var(--copper); font-family: var(--f-display); font-size: 18px; margin: 0 0 8px; }
+.record-no { font-family: var(--f-display); font-size: 22px; color: var(--ash); margin: 0 0 10px; font-variant-numeric: tabular-nums; }
+.orig-big { color: var(--ash); font-size: .55em; font-family: var(--f-ko); }
+.form-facts { margin: 36px 0 12px; padding: 24px 0; border-top: 1px solid var(--copper); border-bottom: 1px solid var(--ember-line); }
+.form-section { padding: 40px 0 8px; border-bottom: 1px solid var(--ember-line); }
+.form-section h2 { font-size: 30px; margin-bottom: 18px; }
+.form-section h2 .s { font-size: .55em; }
+.form-note { color: var(--ash); font-size: 16px; margin: 0 0 12px; }
+.decision { padding-left: 1.4em; max-width: var(--measure); }
+.decision > li { margin-bottom: 18px; padding-left: 6px; }
+.decision > li::marker { color: var(--copper); font-family: var(--f-display); }
+.specimen-banner { border: 1px dashed var(--ash); padding: 14px 18px; margin-bottom: 28px; color: var(--ash); }
+
+/* the plaque: cast bronze */
+.plaque {
+  --bronze-1: #6b4a26; --bronze-2: #a87a42; --bronze-3: #4a3219; --engrave: #f3dfb8; --engrave-shadow: rgba(30, 18, 6, .85);
+  position: relative; margin: 32px auto 24px; max-width: 560px; padding: 44px clamp(22px, 6vw, 56px) 40px;
+  text-align: center; color: var(--engrave);
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255, 220, 160, .22), transparent 55%),
+    linear-gradient(160deg, var(--bronze-2), var(--bronze-1) 45%, var(--bronze-3));
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 3px rgba(40, 24, 8, .55), inset 0 0 0 9px rgba(214, 170, 104, .35), inset 0 0 0 11px rgba(40, 24, 8, .5), 0 24px 50px rgba(0, 0, 0, .55);
+  text-shadow: 0 1px 0 var(--engrave-shadow), 0 -1px 0 rgba(255, 236, 200, .25);
+  overflow: hidden;
+}
+.plaque-emblem { width: 92px; height: auto; margin: 0 auto 16px; filter: drop-shadow(0 2px 2px rgba(0,0,0,.6)); }
+.plaque-head { font-family: var(--f-display); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; line-height: 1.6; }
+.plaque-no { font-family: var(--f-display); font-size: 46px; font-weight: 600; margin: 14px 0 2px; letter-spacing: .06em; }
+.plaque-name { font-family: var(--f-display); font-size: 34px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; line-height: 1.15; }
+.plaque-orig { font-family: var(--f-ko); font-size: 17px; margin-top: 4px; }
+.plaque-community { font-family: var(--f-display); font-size: 14px; letter-spacing: .12em; text-transform: uppercase; margin-top: 10px; }
+.plaque-rule { height: 1px; width: 60%; margin: 20px auto; background: rgba(243, 223, 184, .55); box-shadow: 0 1px 0 var(--engrave-shadow); }
+.plaque-text { font-family: var(--f-display); font-style: italic; font-size: 21px; line-height: 1.4; }
+.plaque-text-ko { font-family: var(--f-ko); font-size: 15px; margin-top: 10px; line-height: 1.6; word-break: keep-all; }
+.plaque-foot { font-family: var(--f-display); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; line-height: 1.8; }
+.plaque-foot-ko { font-family: var(--f-ko); font-size: 13px; margin-top: 6px; }
+.plaque-watermark { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--f-display); font-size: 84px; letter-spacing: .2em;
+  color: rgba(243, 223, 184, .13); transform: rotate(-24deg); pointer-events: none; text-shadow: none; }

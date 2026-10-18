@@ -4,7 +4,9 @@
     "principle": "등재 원칙 (다국어)",
     "criteria": "등재 기준 목록: key, name(다국어), text(다국어)",
     "register": "연맹 인증 바비큐 유산 목록: id, number(등재 번호, 등재 때 부여, 원점은 0), name(다국어), original(원어 표기), community(그 유산을 만든 공동체와 지역, 다국어), era(시대, 다국어), status(origin 원점 | record 연맹 기록유산 | inscribed 등재유산), designated(등재 날짜), decision(결정 번호), text(해설, 다국어), sources(출처 목록: title, href)",
-    "archives": "서사 기록 공간: key, name(다국어), text(소개, 다국어), entries(글 목록: title, date, href, summary)"
+    "archives": "서사 기록 공간: key, name(다국어), text(소개, 다국어), entries(글 목록: title, date, href, summary)",
+    "record_form": "연맹 기록유산 기록양식: record_no(R-연도-일련번호), recorded(기록 일자), recorder(기록 기관), sections.summary/fire/sharing/history/living(개요, 불과 조리, 나눔과 의례, 역사와 문헌, 전승 현황, 다국어), log(변경 이력: date, text, 덧붙이기만 하고 지우지 않음)",
+    "inscription_form": "등재양식 (status가 inscribed일 때): inscription.decision_no, date, session, plaque(명판 등재문 한 문장, 다국어), decision(결정문 네 단락: receives, criteria{history,community,identity,living}, inscribes, invites), statement(가치 선언문: summary, authenticity, safeguarding), consent(공동체 동의 기록)"
   },
   "intro": {
     "en": "The Heritage of the Fire is the Federation's register of humankind's barbecue. Here the Federation recognises the representative barbecue traditions of the world and records the history behind them.",
@@ -116,7 +118,8 @@
           "title": "Berna et al., PNAS 2012 (Science News)",
           "href": "https://www.sciencenews.org/article/ashes-oldest-controlled-fire"
         }
-      ]
+      ],
+      "log": []
     },
     {
       "id": "suya",
@@ -152,6 +155,57 @@
         {
           "title": "Suya (Wikipedia)",
           "href": "https://en.wikipedia.org/wiki/Suya"
+        }
+      ],
+      "record_no": "R-2026-001",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "Thin slices of meat threaded on wooden skewers, rubbed with yaji, a Hausa spice blend made with ground peanut cake (kuli-kuli), chilli and ginger, and grilled over open fire. The Hausa still call it tsire. It is traditionally made by Hausa men called mai suya, and is now eaten across West Africa and its diaspora.",
+          "ko": "얇게 저민 고기를 나무 꼬챙이에 꿰고, 땅콩 덩이(쿨리쿨리), 고추, 생강으로 만든 하우사의 양념 야지(yaji)를 입혀 직화에 굽는다. 하우사인은 지금도 치레(tsire)라 부른다. 전통적으로 마이 수야(mai suya)라 불리는 하우사 남성들이 굽고 팔며, 오늘날 서아프리카 전역과 그 이주민 사회로 퍼졌다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "Thin slices of beef, goat, ram or chicken are threaded on wooden skewers, rubbed with yaji and grilled over an open charcoal fire. Yaji is a dry blend of ground peanut cake (kuli-kuli), dried chilli, ginger, dried onion and salt; every maker keeps their own proportions.",
+          "ko": "쇠고기, 염소, 숫양, 닭고기를 얇게 저며 나무 꼬챙이에 꿰고, 야지(yaji)를 입혀 숯의 직화에 굽는다. 야지는 땅콩 덩이(쿨리쿨리), 말린 고추, 생강, 말린 양파, 소금을 섞은 마른 양념이며, 굽는 사람마다 그 배합을 따로 지킨다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "Suya is made and sold by the mai suya at open fires by the roadside, mostly after dark, and eaten with sliced onion, tomato and more yaji. It is food for passers-by and neighbours alike, and is often called a dish that unites Nigeria across its peoples.",
+          "ko": "수야는 마이 수야(mai suya)가 길가의 불 앞에서 굽고 판다. 주로 해가 진 뒤이며, 썬 양파와 토마토, 야지를 더해 먹는다. 지나가는 이와 이웃이 같은 불 앞에서 먹는 음식이며, 여러 민족이 사는 나이지리아를 하나로 묶는 음식으로 불린다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "A traditional dish of the Hausa people of northern Nigeria, who still call it tsire. Written sources that fix its date of origin have not yet been confirmed; a date of 1852 circulates without a cited source and is not adopted here.",
+          "ko": "나이지리아 북부 하우사인의 전통 음식이며, 하우사인은 지금도 치레(tsire)라 부른다. 기원 연대를 확정하는 문헌은 아직 확인되지 않았다. 1852년이라는 연대가 출처 없이 떠돌지만, 이 기록에서는 채택하지 않는다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Living and widespread. Practised daily across Nigeria and West Africa and carried by the West African diaspora to cities around the world.",
+          "ko": "살아 있고 널리 퍼져 있다. 나이지리아와 서아프리카 전역에서 날마다 행해지며, 서아프리카 이주민과 함께 세계 여러 도시로 건너갔다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as a Federation Record.",
+            "ko": "연맹 기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
         }
       ]
     },
@@ -190,6 +244,37 @@
           "title": "Nyama choma (Wikipedia)",
           "href": "https://en.wikipedia.org/wiki/Nyama_choma"
         }
+      ],
+      "record_no": "R-2026-002",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "Swahili for roasted meat. Goat is preferred, roasted slowly over wood or charcoal and eaten by hand, shared at the table among friends. It is a dish of gathering more than of the kitchen.",
+          "ko": "스와힐리어로 구운 고기라는 뜻이다. 염소고기를 으뜸으로 치며, 장작이나 숯불에 천천히 구워 손으로 나눠 먹는다. 부엌의 음식이라기보다 모임의 음식이다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {},
+        "sharing": {},
+        "history": {},
+        "living": {}
+      },
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as a Federation Record.",
+            "ko": "연맹 기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
       ]
     },
     {
@@ -227,6 +312,37 @@
           "title": "Khoi kindled SA's braai habit (TimesLIVE)",
           "href": "https://www.timeslive.co.za/news/south-africa/2017-11-10-khoi-kindled-sas-braai-habit/"
         }
+      ],
+      "record_no": "R-2026-003",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "The South African gathering around an open wood or charcoal fire. Researchers at Stellenbosch University trace it to the open-flame roasting of the early Khoisan, later shaped by Cape Malay, Dutch and Indian influences. The name itself is Afrikaans.",
+          "ko": "장작과 숯의 열린 불 앞에 모이는 남아프리카의 전통이다. 스텔렌보스 대학 연구진은 그 뿌리를 초기 코이산(Khoisan)인의 직화 구이에서 찾는다. 이후 케이프 말레이, 네덜란드, 인도의 영향이 더해졌다. 이름은 아프리칸스어다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {},
+        "sharing": {},
+        "history": {},
+        "living": {}
+      },
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as a Federation Record.",
+            "ko": "연맹 기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
       ]
     },
     {
@@ -263,6 +379,37 @@
         {
           "title": "貊炙 문헌 정리 (天下雜誌 換日線)",
           "href": "https://crossing.cw.com.tw/article/11895"
+        }
+      ],
+      "record_no": "R-2026-004",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "The Shiming of Liu Xi (Later Han) records: the whole animal is roasted, and each person cuts with their own knife; it comes from the Hu and Maek. The Soushen ji of Gan Bao (Jin) lists maekjeok among foreign dishes that became fashionable at Chinese banquets. The Maek are commonly read as the Buyeo and Goguryeo line, which is why maekjeok is called the source of Korean grilled meat.",
+          "ko": "후한 유희(劉熙)의 『석명(釋名)』은 이렇게 적는다. 통째로 굽고, 각자 칼로 잘라 먹으며, 호(胡)와 맥(貊)에서 나왔다. 진(晉) 간보(干寶)의 『수신기(搜神記)』는 맥적을 중원의 연회에 유행한 이민족의 음식으로 기록한다. 맥은 흔히 부여와 고구려 계통으로 해석되며, 그래서 맥적은 한국 고기구이의 연원으로 불린다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {},
+        "sharing": {},
+        "history": {},
+        "living": {}
+      },
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as a Federation Record.",
+            "ko": "연맹 기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
         }
       ]
     },
@@ -305,6 +452,37 @@
           "title": "개성의 빼어난 고기구이, 설야멱적 (농심)",
           "href": "https://nongshimmall.com/article/%ED%91%B8%EB%93%9C%EC%B9%BC%EB%9F%BC/1002/892/"
         }
+      ],
+      "record_no": "R-2026-005",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "Meat sought on a snowy night. Hong Man-seon's Sallim gyeongje (c. 1715) records the dish, and the Gyuhap chongseo (c. 1809) gives the method: beef scored with the knife, grilled over charcoal lightly covered with ash, plunged in cold water and grilled again, three times over. Choe Yeong-nyeon's Haedong jukji (1920s) names it an old specialty of Kaesong.",
+          "ko": "눈 내리는 밤에 찾아 먹는 고기라는 뜻이다. 홍만선의 『산림경제(山林經濟)』(1715년경)에 수록되었고, 『규합총서(閨閤叢書)』(1809년경)는 그 법을 자세히 적는다. 칼로 잔금을 낸 쇠고기를 재를 얇게 덮은 숯불에 굽고, 냉수에 담갔다가 다시 굽기를 세 번 되풀이한다. 최영년의 『해동죽지(海東竹枝)』(1920년대)는 이를 개성의 오래된 명물로 기록한다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {},
+        "sharing": {},
+        "history": {},
+        "living": {}
+      },
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as a Federation Record.",
+            "ko": "연맹 기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
       ]
     },
     {
@@ -341,6 +519,37 @@
         {
           "title": "Robatayaki (Wikipedia)",
           "href": "https://en.wikipedia.org/wiki/Robatayaki"
+        }
+      ],
+      "record_no": "R-2026-006",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "Fireside cooking. It grew from the communal irori hearth of the Japanese countryside, which was both kitchen and heat. Hokkaido fishermen carried the fire to sea in stone boxes of binchotan charcoal. The first robata restaurant opened in Sendai, and the port town of Kushiro keeps the tradition today.",
+          "ko": "화롯가에서 굽는다는 뜻이다. 부엌이자 난방이던 일본 시골집의 공동 화로 이로리에서 자랐다. 홋카이도의 어부들은 비장탄을 돌상자에 담아 배 위로 불을 가져갔다. 첫 로바타 식당은 센다이에서 문을 열었고, 항구 도시 구시로가 지금도 그 전통을 잇는다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {},
+        "sharing": {},
+        "history": {},
+        "living": {}
+      },
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as a Federation Record.",
+            "ko": "연맹 기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
         }
       ]
     },
@@ -379,6 +588,37 @@
           "title": "A brief history of Cebu lechon (GMA News)",
           "href": "https://www.gmanetwork.com/news/lifestyle/food/636587/a-brief-history-of-the-yummy-cebu-lechon/story"
         }
+      ],
+      "record_no": "R-2026-007",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "A whole pig roasted over charcoal on a spit, at the centre of every Filipino fiesta. The name is Spanish. In Cebu it was first called inasal, from asal, grilling over live coals; the first lechoneros of Talisay are believed to date from the 1920s.",
+          "ko": "통돼지를 꼬챙이에 꿰어 숯불에 굽는다. 필리핀 모든 잔치의 한가운데에 놓인다. 이름은 스페인어에서 왔다. 세부에서는 처음에 이나살(inasal)이라 불렀는데, 숯불에 굽는다는 뜻의 아살(asal)에서 왔다. 탈리사이의 첫 레촌 장인들은 1920년대로 거슬러 올라가는 것으로 전한다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {},
+        "sharing": {},
+        "history": {},
+        "living": {}
+      },
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as a Federation Record.",
+            "ko": "연맹 기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
       ]
     },
     {
@@ -415,6 +655,37 @@
         {
           "title": "Char siu (Wikipedia)",
           "href": "https://en.wikipedia.org/wiki/Char_siu"
+        }
+      ],
+      "record_no": "R-2026-008",
+      "recorded": "2026-10-18",
+      "recorder": {
+        "en": "IOBSF Secretariat with KBRI",
+        "ko": "연맹 사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "Fork-roasted: pork on long forks over the fire. A pillar of Cantonese siu mei, the roasting craft of Guangdong, carried by Cantonese roast masters to Hong Kong in the 1950s and from there across Asia.",
+          "ko": "포크에 꿰어 굽는다는 뜻이다. 긴 쇠꼬챙이에 돼지고기를 꿰어 불 위에서 굽는다. 광둥의 구이 기술인 소우메이(燒味)의 기둥이며, 1950년대 광둥의 구이 장인들이 홍콩으로 옮겨 가면서 아시아 전역으로 퍼졌다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {},
+        "sharing": {},
+        "history": {},
+        "living": {}
+      },
+      "log": [
+        {
+          "date": "2026-10-18",
+          "text": {
+            "en": "Entered as a Federation Record.",
+            "ko": "연맹 기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
         }
       ]
     }
@@ -515,5 +786,124 @@
         "zh": ""
       }
     }
-  ]
+  ],
+  "specimen": {
+    "id": "specimen",
+    "status": "inscribed",
+    "specimen": true,
+    "number": "1",
+    "record_no": "R-2026-001",
+    "name": {
+      "en": "Suya",
+      "ko": "수야",
+      "ja": "",
+      "zh": ""
+    },
+    "original": "Tsire / Suya",
+    "community": {
+      "en": "Hausa people, northern Nigeria and West Africa",
+      "ko": "하우사(Hausa)인, 나이지리아 북부와 서아프리카",
+      "ja": "",
+      "zh": ""
+    },
+    "inscription": {
+      "decision_no": "IOBSF/HC/0000/00",
+      "date": "0000-00-00",
+      "session": {
+        "en": "Specimen. Not an actual decision of the Heritage Committee.",
+        "ko": "견본. 등재위원회의 실제 결정이 아니다.",
+        "ja": "",
+        "zh": ""
+      },
+      "plaque": {
+        "en": "A fire kept by the Hausa people, shared at the roadside with all who pass.",
+        "ko": "하우사인이 지켜 온 불, 길가에서 지나는 모든 이와 나누는 불.",
+        "ja": "",
+        "zh": ""
+      },
+      "decision": {
+        "receives": {
+          "en": "The Committee receives Federation Record R-2026-001, Suya, prepared by the Secretariat with KBRI.",
+          "ko": "위원회는 사무국과 KBRI가 작성한 연맹 기록유산 R-2026-001 수야를 접수한다.",
+          "ja": "",
+          "zh": ""
+        },
+        "criteria": {
+          "history": {
+            "en": "Handed down among the Hausa across generations under its own name, tsire.",
+            "ko": "하우사인 사이에서 고유의 이름 치레로 세대를 건너 전승되었다.",
+            "ja": "",
+            "zh": ""
+          },
+          "community": {
+            "en": "Made by the mai suya and shared at open fires with neighbours and strangers alike.",
+            "ko": "마이 수야가 굽고, 길가의 불 앞에서 이웃과 낯선 이에게 똑같이 나눈다.",
+            "ja": "",
+            "zh": ""
+          },
+          "identity": {
+            "en": "Yaji and the skewer over open charcoal form a way with fire unique to its people.",
+            "ko": "야지와 숯불 위의 꼬챙이는 그 사람들에게 고유한 불 다루기다.",
+            "ja": "",
+            "zh": ""
+          },
+          "living": {
+            "en": "Practised daily across West Africa and its diaspora.",
+            "ko": "서아프리카와 그 이주민 사회에서 날마다 행해진다.",
+            "ja": "",
+            "zh": ""
+          }
+        },
+        "inscribes": {
+          "en": "The Committee inscribes Suya on the Heritage Register of the Federation as No. 1.",
+          "ko": "위원회는 수야를 연맹 등재유산 제1호로 등재한다.",
+          "ja": "",
+          "zh": ""
+        },
+        "invites": {
+          "en": "The Committee invites the Federation and its members to record the history of Suya with the Hausa community, and to protect the craft of the mai suya from being reduced to a commodity.",
+          "ko": "위원회는 연맹과 회원들이 하우사 공동체와 함께 수야의 역사를 기록하고, 마이 수야의 기예가 상품으로만 소비되지 않도록 지킬 것을 당부한다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "statement": {
+        "summary": {
+          "en": "Suya is the roadside fire of the Hausa: meat on wooden skewers, yaji and charcoal, shared with whoever comes.",
+          "ko": "수야는 하우사의 길가의 불이다. 나무 꼬챙이의 고기와 야지와 숯, 그리고 누구든 오는 이와 나누는 식탁이다.",
+          "ja": "",
+          "zh": ""
+        },
+        "authenticity": {
+          "en": "The name, the spice and the maker remain those of the community that created it.",
+          "ko": "이름과 양념과 굽는 사람이 모두 그것을 만든 공동체의 것으로 남아 있다.",
+          "ja": "",
+          "zh": ""
+        },
+        "safeguarding": {
+          "en": "Transmission depends on the mai suya. Records, training and fair recognition of the makers sustain it.",
+          "ko": "전승은 마이 수야에게 달려 있다. 기록과 교육, 그리고 굽는 사람에 대한 정당한 인정이 이를 지킨다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "consent": {
+        "en": "To be recorded at inscription: the consent of the community concerned.",
+        "ko": "등재 시 기록: 해당 공동체의 동의.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    "log": [
+      {
+        "date": "0000-00-00",
+        "text": {
+          "en": "Specimen created to show the inscription form.",
+          "ko": "등재양식을 보이기 위한 견본.",
+          "ja": "",
+          "zh": ""
+        }
+      }
+    ]
+  }
 }
