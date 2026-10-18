@@ -293,11 +293,7 @@
       var d = id === "specimen" ? h.specimen : byId(h.register, id);
       if (!d) { put("#hitem", empty({ en: "This record could not be found. Return to Heritage.", ko: "해당 기록을 찾을 수 없다. 헤리티지로 돌아가라." }) + '<p><a href="heritage.html">Heritage</a></p>'); return; }
       document.title = en(d.name) + " | IOBSF Heritage";
-      var metal = d.status === "inscribed" ? "gold" : d.status === "review" ? "silver" : d.status === "record" ? "bronze" : "";
-      var aside = metal ? '<aside class="hitem-aside"><div class="hitem-trophy">' + trophySVG(metal) +
-        '<div class="trophy-label t-' + metal + '">' + esc(METALS[metal].label.en) + "</div>" + bi({ ko: METALS[metal].label.ko }, "div", "trophy-sub") +
-        '<div class="hitem-trophy-no">' + esc(d.status === "inscribed" ? "No. " + d.number : (d.record_no || "")) + "</div></div></aside>" : "";
-      put("#hitem", '<div class="hitem-grid' + (metal ? "" : " no-aside") + '"><div class="hitem-main">' + (d.status === "inscribed" ? inscriptionForm(d, h) : recordForm(d, h)) + "</div>" + aside + "</div>");
+      put("#hitem", d.status === "inscribed" ? inscriptionForm(d, h) : recordForm(d, h));
     });
   };
 
@@ -317,12 +313,20 @@
     return '<section class="form-section"><h2 class="bi"><span class="p">' + title + '</span><span class="s" lang="ko">' + ko + "</span></h2>" + inner + "</section>";
   }
 
+  function smallTrophy(d) {
+    var metal = d.status === "inscribed" ? "gold" : d.status === "review" ? "silver" : d.status === "record" ? "bronze" : "";
+    if (!metal) return "";
+    return '<div class="mini-trophy" title="' + esc(METALS[metal].label.en) + '"><div class="mini-trophy-label">' +
+      '<span class="t-' + metal + '">' + esc(METALS[metal].label.en) + "</span>" + bi({ ko: METALS[metal].label.ko }, "span", "", false) + "</div>" + trophySVG(metal) + "</div>";
+  }
   function recordForm(d, h) {
     var sec = d.sections || {};
     var statusLabel = d.status === "origin" ? { en: "Origin (not inscribed)", ko: "원점 (등재 대상 아님)" } : (d.status === "review" ? { en: "Federation Nominated Heritage, under Committee review", ko: "연맹심사유산, 등재위원회 심사 중" } : { en: "Federation Recorded Heritage", ko: "연맹기록유산" });
     return '<p class="form-kind">' + bi({ en: "Record Form, Federation Recorded Heritage", ko: "기록양식, 연맹기록유산" }, "span", "", true) + "</p>" +
+      '<div class="form-head"><div class="form-head-title">' +
       '<p class="record-no">' + esc(d.record_no || (d.status === "origin" ? "No. 0" : "")) + "</p>" +
       "<h1>" + esc(en(d.name)) + (d.original && d.original !== en(d.name) ? ' <span class="orig-big">' + esc(d.original) + "</span>" : "") + bi({ ko: d.name.ko, ja: d.name.ja, zh: d.name.zh }, "span") + "</h1>" +
+      "</div>" + smallTrophy(d) + "</div>" +
       '<dl class="facts form-facts">' +
         fieldRow({ en: "Community and region", ko: "공동체와 지역" }, bi(d.community)) +
         fieldRow({ en: "Era", ko: "시대" }, bi(d.era)) +
@@ -365,6 +369,7 @@
     var critRows = crit.map(function (c) { return fieldRow(c.name, bi(dc.criteria[c.key])); }).join("");
     return (d.specimen ? '<div class="specimen-banner">' + bi({ en: "Specimen. This page shows the inscription form. It is not an actual inscription.", ko: "견본. 등재양식을 보이기 위한 페이지이며, 실제 등재가 아니다." }) + "</div>" : "") +
       '<p class="form-kind">' + bi({ en: "Inscription Form, Federation Inscribed Heritage", ko: "등재양식, 연맹등재유산" }, "span", "", true) + "</p>" +
+      '<div class="form-head form-head-plain">' + smallTrophy(d) + "</div>" +
       plaque(d) +
       formSection("Decision", "결정문",
         '<dl class="facts form-facts">' +
