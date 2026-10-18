@@ -268,7 +268,13 @@
       put("#heritage-criteria", '<dl class="facts">' + h.criteria.map(function (c) {
         return "<dt>" + bi(c.name, "span", "", true) + "</dt><dd>" + bi(c.text) + "</dd>";
       }).join("") + "</dl>");
-      put("#heritage-register", registerList(h.register));
+      put("#heritage-process", '<ol class="sequence compact three">' + h.process.map(function (x) {
+        return "<li><h3>" + esc(x.name.en) + "</h3>" + bi({ ko: x.name.ko, ja: x.name.ja, zh: x.name.zh }, "div") + bi(x.text, "p") + "</li>";
+      }).join("") + "</ol>");
+      var ins = h.register.filter(function (d) { return d.status !== "record"; });
+      var rec = h.register.filter(function (d) { return d.status === "record"; });
+      put("#heritage-register", registerList(ins));
+      put("#heritage-records", registerList(rec));
       put("#heritage-archives", h.archives.map(function (a) {
         return '<div class="nation-block"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3><div>" + bi(a.text, "div", "prose") +
           '<div style="margin-top:18px">' + (a.entries.length ? a.entries.map(function (x) {
@@ -361,9 +367,9 @@
   function registerList(reg, brief) {
     if (!reg.length) return empty({ en: "The first designations will be announced here.", ko: "첫 지정 유산이 이곳에 발표된다." });
     return '<div class="register">' + reg.map(function (d) {
-      var mark = d.status === "origin" ? "No. 0, Origin" : d.status === "designated" ? (d.number ? "No. " + esc(d.number) : "Designated") : "Candidate";
+      var mark = d.status === "origin" ? "No. 0, Origin" : d.status === "inscribed" ? "Inscribed No. " + esc(d.number) : "Federation Record";
       var src = (!brief && d.sources && d.sources.length) ? '<div class="h-sources">Sources: ' + d.sources.map(function (x) { return '<a href="' + esc(x.href) + '">' + esc(x.title) + "</a>"; }).join(", ") + "</div>" : "";
-      return '<div class="heritage-item' + (d.status === "origin" ? " is-origin" : "") + '"><div class="h-mark' + (d.status !== "candidate" ? " is-designated" : "") + '">' + mark + "</div>" +
+      return '<div class="heritage-item' + (d.status === "origin" ? " is-origin" : "") + '"><div class="h-mark' + (d.status !== "record" ? " is-designated" : "") + '">' + mark + "</div>" +
         '<div class="dish-name">' + esc(en(d.name)) + (d.original && d.original !== en(d.name) ? '<span class="orig">' + esc(d.original) + "</span>" : "") + "</div>" +
         bi({ ko: d.name.ko, ja: d.name.ja, zh: d.name.zh }, "div") +
         '<div class="h-community">' + bi(d.community) + (d.era ? bi(d.era, "div", "h-era") : "") + "</div>" +

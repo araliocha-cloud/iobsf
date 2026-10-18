@@ -3,7 +3,7 @@
     "intro": "헤리티지 첫머리 문장 (다국어)",
     "principle": "등재 원칙 (다국어)",
     "criteria": "등재 기준 목록: key, name(다국어), text(다국어)",
-    "register": "연맹 인증 바비큐 유산 목록: id, number(지정 번호, 원점은 0), name(다국어), original(원어 표기), community(그 유산을 만든 공동체와 지역, 다국어), era(시대, 다국어), status(origin 원점 | candidate 후보 | designated 지정), designated(지정 날짜), text(해설, 다국어), sources(출처 목록: title, href)",
+    "register": "연맹 인증 바비큐 유산 목록: id, number(등재 번호, 등재 때 부여, 원점은 0), name(다국어), original(원어 표기), community(그 유산을 만든 공동체와 지역, 다국어), era(시대, 다국어), status(origin 원점 | record 연맹 기록유산 | inscribed 등재유산), designated(등재 날짜), decision(결정 번호), text(해설, 다국어), sources(출처 목록: title, href)",
     "archives": "서사 기록 공간: key, name(다국어), text(소개, 다국어), entries(글 목록: title, date, href, summary)"
   },
   "intro": {
@@ -106,8 +106,8 @@
         "zh": ""
       },
       "text": {
-        "en": "The first cooking fire of humankind, before every myth. It leaves no site and no artefact, so it is not designated. It is the origin from which every heritage in this register is measured. The cooking hypothesis infers it from the smaller teeth and gut and the larger brain of Homo erectus. The oldest direct evidence of fire made by human ancestors comes from Wonderwerk Cave in South Africa, about one million years ago: burned bone and plant ash found together with stone tools.",
-        "ko": "신화 이전, 인류 최초의 화식의 불이다. 유적도 유물도 남기지 않았기에 지정하지 않는다. 이 등재부의 모든 유산은 이 원점에서부터 헤아려진다. 화식 가설은 호모 에렉투스의 작아진 이와 장, 커진 뇌에서 이 불을 추론한다. 인류의 조상이 피운 불의 가장 오래된 직접 증거는 남아프리카 원더워크 동굴에서 나왔다. 약 100만 년 전의 탄 뼈와 식물 재가 석기와 함께 발견되었다.",
+        "en": "The first cooking fire of humankind, before every myth. It leaves no site and no artefact, so it is not inscribed. It is the origin from which every heritage in this register is measured. The cooking hypothesis infers it from the smaller teeth and gut and the larger brain of Homo erectus. The oldest direct evidence of fire made by human ancestors comes from Wonderwerk Cave in South Africa, about one million years ago: burned bone and plant ash found together with stone tools.",
+        "ko": "신화 이전, 인류 최초의 화식의 불이다. 유적도 유물도 남기지 않았기에 등재하지 않는다. 이 등재부의 모든 유산은 이 원점에서부터 헤아려진다. 화식 가설은 호모 에렉투스의 작아진 이와 장, 커진 뇌에서 이 불을 추론한다. 인류의 조상이 피운 불의 가장 오래된 직접 증거는 남아프리카 원더워크 동굴에서 나왔다. 약 100만 년 전의 탄 뼈와 식물 재가 석기와 함께 발견되었다.",
         "ja": "",
         "zh": ""
       },
@@ -121,7 +121,7 @@
     {
       "id": "suya",
       "number": "",
-      "status": "candidate",
+      "status": "record",
       "designated": "",
       "name": {
         "en": "Suya",
@@ -158,7 +158,7 @@
     {
       "id": "nyama-choma",
       "number": "",
-      "status": "candidate",
+      "status": "record",
       "designated": "",
       "name": {
         "en": "Nyama choma",
@@ -195,7 +195,7 @@
     {
       "id": "braai",
       "number": "",
-      "status": "candidate",
+      "status": "record",
       "designated": "",
       "name": {
         "en": "Braai",
@@ -232,7 +232,7 @@
     {
       "id": "maekjeok",
       "number": "",
-      "status": "candidate",
+      "status": "record",
       "designated": "",
       "name": {
         "en": "Maekjeok",
@@ -269,7 +269,7 @@
     {
       "id": "seolyamyeokjeok",
       "number": "",
-      "status": "candidate",
+      "status": "record",
       "designated": "",
       "name": {
         "en": "Seolyamyeokjeok",
@@ -310,7 +310,7 @@
     {
       "id": "robatayaki",
       "number": "",
-      "status": "candidate",
+      "status": "record",
       "designated": "",
       "name": {
         "en": "Robatayaki",
@@ -347,7 +347,7 @@
     {
       "id": "lechon",
       "number": "",
-      "status": "candidate",
+      "status": "record",
       "designated": "",
       "name": {
         "en": "Lechon",
@@ -384,7 +384,7 @@
     {
       "id": "char-siu",
       "number": "",
-      "status": "candidate",
+      "status": "record",
       "designated": "",
       "name": {
         "en": "Char siu",
@@ -467,6 +467,53 @@
         "zh": ""
       },
       "entries": []
+    }
+  ],
+  "process": [
+    {
+      "key": "record",
+      "name": {
+        "en": "Federation Record",
+        "ko": "연맹 기록유산",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The Federation records a tradition it judges worth studying and preserving. This is a scholarly record, not an inscription.",
+        "ko": "연맹이 연구하고 보존할 가치가 있다고 판단한 전통을 기록한다. 이것은 학술적 기록이며, 등재가 아니다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "review",
+      "name": {
+        "en": "Committee Review",
+        "ko": "등재위원회 심의",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The Heritage Committee examines the record against the four criteria.",
+        "ko": "등재위원회가 네 가지 기준에 비추어 기록을 심의한다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "inscription",
+      "name": {
+        "en": "Inscription",
+        "ko": "등재",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "By agreement of the Committee, the tradition is inscribed. It receives a number, a decision and a plaque, which are never altered.",
+        "ko": "위원회의 합의로 등재된다. 등재 번호와 결정문, 명판을 받으며, 이것은 바뀌지 않는다.",
+        "ja": "",
+        "zh": ""
+      }
     }
   ]
 }

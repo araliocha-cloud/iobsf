@@ -288,3 +288,5 @@ a.event-row:hover .title { color: var(--copper-light); }
 .heritage-item .h-era { margin-top: 2px; }
 .heritage-item .h-sources { margin-top: 12px; font-size: 14px; color: var(--ash); }
 .register { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+.sequence.compact.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 760px) { .sequence.compact.three { grid-template-columns: 1fr; } }
