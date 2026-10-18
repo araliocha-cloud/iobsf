@@ -3,70 +3,470 @@
     "intro": "헤리티지 첫머리 문장 (다국어)",
     "principle": "등재 원칙 (다국어)",
     "criteria": "등재 기준 목록: key, name(다국어), text(다국어)",
-    "register": "연맹 인증 바비큐 유산 목록: id, number(지정 번호, 지정 후 부여), name(다국어), original(원어 표기), community(그 유산을 만든 공동체와 지역, 다국어), era(시대), status(candidate 후보 | designated 지정), designated(지정 날짜), text(해설, 다국어), source(출처)",
+    "register": "연맹 인증 바비큐 유산 목록: id, number(지정 번호, 원점은 0), name(다국어), original(원어 표기), community(그 유산을 만든 공동체와 지역, 다국어), era(시대, 다국어), status(origin 원점 | candidate 후보 | designated 지정), designated(지정 날짜), text(해설, 다국어), sources(출처 목록: title, href)",
     "archives": "서사 기록 공간: key, name(다국어), text(소개, 다국어), entries(글 목록: title, date, href, summary)"
   },
-
   "intro": {
     "en": "The Heritage of the Fire is the Federation's register of humankind's barbecue. Here the Federation recognises the representative barbecue traditions of the world and records the history behind them.",
     "ko": "불의 유산은 인류 바비큐에 대한 연맹의 등재부다. 연맹은 이곳에서 세계의 대표 바비큐 전통을 인정하고, 그 뒤에 놓인 역사를 기록한다.",
     "ja": "",
     "zh": ""
   },
-
   "principle": {
     "en": "A heritage belongs to the community that made it.",
     "ko": "유산의 주인은 그것을 만든 공동체다.",
     "ja": "",
     "zh": ""
   },
-
   "criteria": [
-    { "key": "history", "name": { "en": "Lineage", "ko": "역사성", "ja": "", "zh": "" },
-      "text": { "en": "Handed down across generations, with a traceable record.", "ko": "세대를 건너 전승되었고, 그 기록을 따라갈 수 있다.", "ja": "", "zh": "" } },
-    { "key": "community", "name": { "en": "Community", "ko": "공동체성", "ja": "", "zh": "" },
-      "text": { "en": "Made together and shared together by a community.", "ko": "공동체가 함께 만들고 함께 나눈다.", "ja": "", "zh": "" } },
-    { "key": "identity", "name": { "en": "Distinctiveness", "ko": "고유성", "ja": "", "zh": "" },
-      "text": { "en": "A way with fire that belongs to its land and people.", "ko": "그 땅과 사람에게 고유한 불 다루기가 있다.", "ja": "", "zh": "" } },
-    { "key": "living", "name": { "en": "Living Practice", "ko": "계승성", "ja": "", "zh": "" },
-      "text": { "en": "Still practised today, not only remembered.", "ko": "기억으로만 남지 않고 지금도 살아 있다.", "ja": "", "zh": "" } }
+    {
+      "key": "history",
+      "name": {
+        "en": "Lineage",
+        "ko": "역사성",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Handed down across generations, with a traceable record.",
+        "ko": "세대를 건너 전승되었고, 그 기록을 따라갈 수 있다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "community",
+      "name": {
+        "en": "Community",
+        "ko": "공동체성",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Made together and shared together by a community.",
+        "ko": "공동체가 함께 만들고 함께 나눈다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "identity",
+      "name": {
+        "en": "Distinctiveness",
+        "ko": "고유성",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "A way with fire that belongs to its land and people.",
+        "ko": "그 땅과 사람에게 고유한 불 다루기가 있다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "key": "living",
+      "name": {
+        "en": "Living Practice",
+        "ko": "계승성",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Still practised today, not only remembered.",
+        "ko": "기억으로만 남지 않고 지금도 살아 있다.",
+        "ja": "",
+        "zh": ""
+      }
+    }
   ],
-
   "register": [
-    { "id": "maekjeok", "number": "", "status": "candidate", "designated": "",
-      "name": { "en": "Maekjeok", "ko": "맥적", "ja": "", "zh": "" }, "original": "貊炙",
-      "community": { "en": "Korea", "ko": "한국", "ja": "", "zh": "" }, "era": "",
-      "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" },
-    { "id": "seolyamyeokjeok", "number": "", "status": "candidate", "designated": "",
-      "name": { "en": "Seolyamyeokjeok", "ko": "설야멱적", "ja": "", "zh": "" }, "original": "雪夜覓炙",
-      "community": { "en": "Korea", "ko": "한국", "ja": "", "zh": "" }, "era": "",
-      "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" },
-    { "id": "robatayaki", "number": "", "status": "candidate", "designated": "",
-      "name": { "en": "Robatayaki", "ko": "로바타야키", "ja": "炉端焼き", "zh": "" }, "original": "炉端焼き",
-      "community": { "en": "Japan", "ko": "일본", "ja": "日本", "zh": "" }, "era": "",
-      "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" },
-    { "id": "lechon", "number": "", "status": "candidate", "designated": "",
-      "name": { "en": "Lechon", "ko": "레촌", "ja": "", "zh": "" }, "original": "Lechón",
-      "community": { "en": "Philippines", "ko": "필리핀", "ja": "", "zh": "" }, "era": "",
-      "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" },
-    { "id": "char-siu", "number": "", "status": "candidate", "designated": "",
-      "name": { "en": "Char siu", "ko": "차샤오", "ja": "", "zh": "叉烧" }, "original": "叉燒",
-      "community": { "en": "Southern China (Guangdong)", "ko": "중국 남부(광둥)", "ja": "", "zh": "" }, "era": "",
-      "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" }
+    {
+      "id": "ignis-primus",
+      "number": "0",
+      "status": "origin",
+      "designated": "",
+      "name": {
+        "en": "Ignis Primus",
+        "ko": "이그니스 프리머스",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Ignis Primus",
+      "community": {
+        "en": "All of humankind, beginning in Africa",
+        "ko": "인류 전체, 아프리카에서 시작",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "c. 1.9 million years ago (hypothesis)",
+        "ko": "약 190만 년 전 (가설)",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The first cooking fire of humankind, before every myth. It leaves no site and no artefact, so it is not designated. It is the origin from which every heritage in this register is measured. The cooking hypothesis infers it from the smaller teeth and gut and the larger brain of Homo erectus. The oldest direct evidence of fire made by human ancestors comes from Wonderwerk Cave in South Africa, about one million years ago: burned bone and plant ash found together with stone tools.",
+        "ko": "신화 이전, 인류 최초의 화식의 불이다. 유적도 유물도 남기지 않았기에 지정하지 않는다. 이 등재부의 모든 유산은 이 원점에서부터 헤아려진다. 화식 가설은 호모 에렉투스의 작아진 이와 장, 커진 뇌에서 이 불을 추론한다. 인류의 조상이 피운 불의 가장 오래된 직접 증거는 남아프리카 원더워크 동굴에서 나왔다. 약 100만 년 전의 탄 뼈와 식물 재가 석기와 함께 발견되었다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "Berna et al., PNAS 2012 (Science News)",
+          "href": "https://www.sciencenews.org/article/ashes-oldest-controlled-fire"
+        }
+      ]
+    },
+    {
+      "id": "suya",
+      "number": "",
+      "status": "candidate",
+      "designated": "",
+      "name": {
+        "en": "Suya",
+        "ko": "수야",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Tsire / Suya",
+      "community": {
+        "en": "Hausa people, northern Nigeria and West Africa",
+        "ko": "하우사(Hausa)인, 나이지리아 북부와 서아프리카",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Traditional",
+        "ko": "전통",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Thin slices of meat threaded on wooden skewers, rubbed with yaji, a Hausa spice blend made with ground peanut cake (kuli-kuli), chilli and ginger, and grilled over open fire. The Hausa still call it tsire. It is traditionally made by Hausa men called mai suya, and is now eaten across West Africa and its diaspora.",
+        "ko": "얇게 저민 고기를 나무 꼬챙이에 꿰고, 땅콩 덩이(쿨리쿨리), 고추, 생강으로 만든 하우사의 양념 야지(yaji)를 입혀 직화에 굽는다. 하우사인은 지금도 치레(tsire)라 부른다. 전통적으로 마이 수야(mai suya)라 불리는 하우사 남성들이 굽고 팔며, 오늘날 서아프리카 전역과 그 이주민 사회로 퍼졌다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "Suya (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Suya"
+        }
+      ]
+    },
+    {
+      "id": "nyama-choma",
+      "number": "",
+      "status": "candidate",
+      "designated": "",
+      "name": {
+        "en": "Nyama choma",
+        "ko": "냐마 초마",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Nyama choma",
+      "community": {
+        "en": "Kenya and Tanzania, East Africa",
+        "ko": "케냐와 탄자니아, 동아프리카",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Traditional",
+        "ko": "전통",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Swahili for roasted meat. Goat is preferred, roasted slowly over wood or charcoal and eaten by hand, shared at the table among friends. It is a dish of gathering more than of the kitchen.",
+        "ko": "스와힐리어로 구운 고기라는 뜻이다. 염소고기를 으뜸으로 치며, 장작이나 숯불에 천천히 구워 손으로 나눠 먹는다. 부엌의 음식이라기보다 모임의 음식이다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "Nyama choma (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Nyama_choma"
+        }
+      ]
+    },
+    {
+      "id": "braai",
+      "number": "",
+      "status": "candidate",
+      "designated": "",
+      "name": {
+        "en": "Braai",
+        "ko": "브라이",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Braai",
+      "community": {
+        "en": "South Africa",
+        "ko": "남아프리카공화국",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Traditional",
+        "ko": "전통",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The South African gathering around an open wood or charcoal fire. Researchers at Stellenbosch University trace it to the open-flame roasting of the early Khoisan, later shaped by Cape Malay, Dutch and Indian influences. The name itself is Afrikaans.",
+        "ko": "장작과 숯의 열린 불 앞에 모이는 남아프리카의 전통이다. 스텔렌보스 대학 연구진은 그 뿌리를 초기 코이산(Khoisan)인의 직화 구이에서 찾는다. 이후 케이프 말레이, 네덜란드, 인도의 영향이 더해졌다. 이름은 아프리칸스어다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "Khoi kindled SA's braai habit (TimesLIVE)",
+          "href": "https://www.timeslive.co.za/news/south-africa/2017-11-10-khoi-kindled-sas-braai-habit/"
+        }
+      ]
+    },
+    {
+      "id": "maekjeok",
+      "number": "",
+      "status": "candidate",
+      "designated": "",
+      "name": {
+        "en": "Maekjeok",
+        "ko": "맥적",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "貊炙",
+      "community": {
+        "en": "The Maek people of the ancient north of the Korean Peninsula and Manchuria",
+        "ko": "고대 한반도 북부와 만주의 맥(貊)족",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Recorded from the Later Han dynasty",
+        "ko": "후한 대 문헌부터 기록",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The Shiming of Liu Xi (Later Han) records: the whole animal is roasted, and each person cuts with their own knife; it comes from the Hu and Maek. The Soushen ji of Gan Bao (Jin) lists maekjeok among foreign dishes that became fashionable at Chinese banquets. The Maek are commonly read as the Buyeo and Goguryeo line, which is why maekjeok is called the source of Korean grilled meat.",
+        "ko": "후한 유희(劉熙)의 『석명(釋名)』은 이렇게 적는다. 통째로 굽고, 각자 칼로 잘라 먹으며, 호(胡)와 맥(貊)에서 나왔다. 진(晉) 간보(干寶)의 『수신기(搜神記)』는 맥적을 중원의 연회에 유행한 이민족의 음식으로 기록한다. 맥은 흔히 부여와 고구려 계통으로 해석되며, 그래서 맥적은 한국 고기구이의 연원으로 불린다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "貊炙 문헌 정리 (天下雜誌 換日線)",
+          "href": "https://crossing.cw.com.tw/article/11895"
+        }
+      ]
+    },
+    {
+      "id": "seolyamyeokjeok",
+      "number": "",
+      "status": "candidate",
+      "designated": "",
+      "name": {
+        "en": "Seolyamyeokjeok",
+        "ko": "설야멱적",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "雪夜覓炙",
+      "community": {
+        "en": "Kaesong, Goryeo and Joseon Korea",
+        "ko": "개성, 고려와 조선",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Recorded from the 17th century",
+        "ko": "17세기 문헌부터 기록",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Meat sought on a snowy night. Hong Man-seon's Sallim gyeongje (c. 1715) records the dish, and the Gyuhap chongseo (c. 1809) gives the method: beef scored with the knife, grilled over charcoal lightly covered with ash, plunged in cold water and grilled again, three times over. Choe Yeong-nyeon's Haedong jukji (1920s) names it an old specialty of Kaesong.",
+        "ko": "눈 내리는 밤에 찾아 먹는 고기라는 뜻이다. 홍만선의 『산림경제(山林經濟)』(1715년경)에 수록되었고, 『규합총서(閨閤叢書)』(1809년경)는 그 법을 자세히 적는다. 칼로 잔금을 낸 쇠고기를 재를 얇게 덮은 숯불에 굽고, 냉수에 담갔다가 다시 굽기를 세 번 되풀이한다. 최영년의 『해동죽지(海東竹枝)』(1920년대)는 이를 개성의 오래된 명물로 기록한다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "전통문화포털 불고기",
+          "href": "https://www.kculture.or.kr/brd/board/219/L/menu/457?brdType=R&thisPage=8&bbIdx=8352&recordCnt=10"
+        },
+        {
+          "title": "개성의 빼어난 고기구이, 설야멱적 (농심)",
+          "href": "https://nongshimmall.com/article/%ED%91%B8%EB%93%9C%EC%B9%BC%EB%9F%BC/1002/892/"
+        }
+      ]
+    },
+    {
+      "id": "robatayaki",
+      "number": "",
+      "status": "candidate",
+      "designated": "",
+      "name": {
+        "en": "Robatayaki",
+        "ko": "로바타야키",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "炉端焼き",
+      "community": {
+        "en": "Fishermen of Hokkaido and northern Japan",
+        "ko": "홋카이도와 일본 북부의 어부",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Rooted in the old irori hearth",
+        "ko": "오래된 이로리(囲炉裏) 화로 문화에 뿌리",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Fireside cooking. It grew from the communal irori hearth of the Japanese countryside, which was both kitchen and heat. Hokkaido fishermen carried the fire to sea in stone boxes of binchotan charcoal. The first robata restaurant opened in Sendai, and the port town of Kushiro keeps the tradition today.",
+        "ko": "화롯가에서 굽는다는 뜻이다. 부엌이자 난방이던 일본 시골집의 공동 화로 이로리에서 자랐다. 홋카이도의 어부들은 비장탄을 돌상자에 담아 배 위로 불을 가져갔다. 첫 로바타 식당은 센다이에서 문을 열었고, 항구 도시 구시로가 지금도 그 전통을 잇는다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "Robatayaki (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Robatayaki"
+        }
+      ]
+    },
+    {
+      "id": "lechon",
+      "number": "",
+      "status": "candidate",
+      "designated": "",
+      "name": {
+        "en": "Lechon",
+        "ko": "레촌",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Lechón",
+      "community": {
+        "en": "The Philippines, with Cebu as its best-known home",
+        "ko": "필리핀, 특히 세부",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Cebu lechoneros recorded from the 1920s",
+        "ko": "세부의 레촌 장인은 1920년대부터 기록",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "A whole pig roasted over charcoal on a spit, at the centre of every Filipino fiesta. The name is Spanish. In Cebu it was first called inasal, from asal, grilling over live coals; the first lechoneros of Talisay are believed to date from the 1920s.",
+        "ko": "통돼지를 꼬챙이에 꿰어 숯불에 굽는다. 필리핀 모든 잔치의 한가운데에 놓인다. 이름은 스페인어에서 왔다. 세부에서는 처음에 이나살(inasal)이라 불렀는데, 숯불에 굽는다는 뜻의 아살(asal)에서 왔다. 탈리사이의 첫 레촌 장인들은 1920년대로 거슬러 올라가는 것으로 전한다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "A brief history of Cebu lechon (GMA News)",
+          "href": "https://www.gmanetwork.com/news/lifestyle/food/636587/a-brief-history-of-the-yummy-cebu-lechon/story"
+        }
+      ]
+    },
+    {
+      "id": "char-siu",
+      "number": "",
+      "status": "candidate",
+      "designated": "",
+      "name": {
+        "en": "Char siu",
+        "ko": "차샤오",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "叉燒",
+      "community": {
+        "en": "Cantonese people, Guangdong",
+        "ko": "광둥(廣東)인",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Traditional",
+        "ko": "전통",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Fork-roasted: pork on long forks over the fire. A pillar of Cantonese siu mei, the roasting craft of Guangdong, carried by Cantonese roast masters to Hong Kong in the 1950s and from there across Asia.",
+        "ko": "포크에 꿰어 굽는다는 뜻이다. 긴 쇠꼬챙이에 돼지고기를 꿰어 불 위에서 굽는다. 광둥의 구이 기술인 소우메이(燒味)의 기둥이며, 1950년대 광둥의 구이 장인들이 홍콩으로 옮겨 가면서 아시아 전역으로 퍼졌다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "Char siu (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Char_siu"
+        }
+      ]
+    }
   ],
-
   "archives": [
-    { "key": "civilization",
-      "name": { "en": "A Civilization History of Human Barbecue", "ko": "인류바비큐문명사", "ja": "", "zh": "" },
-      "text": { "en": "From the first cooking fire of Homo erectus to the present, the history of humankind told before the fire.", "ko": "호모 에렉투스의 첫 화식에서 오늘까지, 불 앞에서 쓰인 인류의 역사.", "ja": "", "zh": "" },
-      "entries": [] },
-    { "key": "humanities",
-      "name": { "en": "Barbecue Humanities", "ko": "바비큐 인문학", "ja": "", "zh": "" },
-      "text": { "en": "The thought that gives barbecue its meaning: distribution, community, ritual and the return of the human.", "ko": "바비큐에 의미를 세우는 사상. 분배, 공동체, 의례, 그리고 인간의 귀환.", "ja": "", "zh": "" },
-      "entries": [] },
-    { "key": "narratives",
-      "name": { "en": "Histories of the Nations' Fires", "ko": "각국 바비큐의 역사 서사", "ja": "", "zh": "" },
-      "text": { "en": "How each people kept its fire, told through records and texts.", "ko": "각 민족이 자신의 불을 어떻게 지켜 왔는지, 기록과 문헌으로 전한다.", "ja": "", "zh": "" },
-      "entries": [] }
+    {
+      "key": "civilization",
+      "name": {
+        "en": "A Civilization History of Human Barbecue",
+        "ko": "인류바비큐문명사",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "From the first cooking fire of Homo erectus to the present, the history of humankind told before the fire.",
+        "ko": "호모 에렉투스의 첫 화식에서 오늘까지, 불 앞에서 쓰인 인류의 역사.",
+        "ja": "",
+        "zh": ""
+      },
+      "entries": []
+    },
+    {
+      "key": "humanities",
+      "name": {
+        "en": "Barbecue Humanities",
+        "ko": "바비큐 인문학",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The thought that gives barbecue its meaning: distribution, community, ritual and the return of the human.",
+        "ko": "바비큐에 의미를 세우는 사상. 분배, 공동체, 의례, 그리고 인간의 귀환.",
+        "ja": "",
+        "zh": ""
+      },
+      "entries": []
+    },
+    {
+      "key": "narratives",
+      "name": {
+        "en": "Histories of the Nations' Fires",
+        "ko": "각국 바비큐의 역사 서사",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "How each people kept its fire, told through records and texts.",
+        "ko": "각 민족이 자신의 불을 어떻게 지켜 왔는지, 기록과 문헌으로 전한다.",
+        "ja": "",
+        "zh": ""
+      },
+      "entries": []
+    }
   ]
 }

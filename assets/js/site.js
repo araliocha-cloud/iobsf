@@ -147,7 +147,7 @@
         : empty({ en: "The next sanctioned event will be announced here.", ko: "다음 공인 대회가 이곳에 발표된다." }));
       put("#home-roster", roster(bb.slice(0, 4), na));
     });
-    load("heritage").then(function (h) { put("#home-heritage-intro", bi(h.intro, "div", "lede")); put("#home-register", registerList(h.register)); });
+    load("heritage").then(function (h) { put("#home-heritage-intro", bi(h.intro, "div", "lede")); put("#home-register", registerList(h.register, true)); });
   };
 
   pages.fire = function (site) {
@@ -358,15 +358,16 @@
         (x ? "<p>" + esc(x.time || "") + (x.note ? ", " + esc(x.note) : "") + "</p>" : "") + "</li>";
     }).join("") + "</ol>";
   }
-  function registerList(reg) {
+  function registerList(reg, brief) {
     if (!reg.length) return empty({ en: "The first designations will be announced here.", ko: "첫 지정 유산이 이곳에 발표된다." });
     return '<div class="register">' + reg.map(function (d) {
-      var mark = d.status === "designated" ? (d.number ? "No. " + esc(d.number) : "Designated") : "Candidate";
-      return '<div class="heritage-item"><div class="h-mark' + (d.status === "designated" ? " is-designated" : "") + '">' + mark + "</div>" +
-        '<div class="dish-name">' + esc(en(d.name)) + '<span class="orig">' + esc(d.original) + "</span></div>" +
+      var mark = d.status === "origin" ? "No. 0, Origin" : d.status === "designated" ? (d.number ? "No. " + esc(d.number) : "Designated") : "Candidate";
+      var src = (!brief && d.sources && d.sources.length) ? '<div class="h-sources">Sources: ' + d.sources.map(function (x) { return '<a href="' + esc(x.href) + '">' + esc(x.title) + "</a>"; }).join(", ") + "</div>" : "";
+      return '<div class="heritage-item' + (d.status === "origin" ? " is-origin" : "") + '"><div class="h-mark' + (d.status !== "candidate" ? " is-designated" : "") + '">' + mark + "</div>" +
+        '<div class="dish-name">' + esc(en(d.name)) + (d.original && d.original !== en(d.name) ? '<span class="orig">' + esc(d.original) + "</span>" : "") + "</div>" +
         bi({ ko: d.name.ko, ja: d.name.ja, zh: d.name.zh }, "div") +
-        '<div class="h-community">' + bi(d.community, "span", "", true) + (d.designated ? ", designated " + esc(d.designated) : "") + "</div>" +
-        bi(d.text, "div", "h-text") + "</div>";
+        '<div class="h-community">' + bi(d.community) + (d.era ? bi(d.era, "div", "h-era") : "") + "</div>" +
+        (brief ? "" : bi(d.text, "div", "h-text") + src) + "</div>";
     }).join("") + "</div>";
   }
   function nationsStrip(na) {

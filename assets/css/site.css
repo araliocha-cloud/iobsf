@@ -282,3 +282,9 @@ a.event-row:hover .title { color: var(--copper-light); }
 .heritage-item .orig { color: var(--ash); margin-left: 10px; font-family: var(--f-ko); font-size: 18px; }
 .heritage-item .h-community { color: var(--ash); font-size: 16px; margin-top: 8px; }
 .heritage-item .h-text { margin-top: 10px; font-size: 17px; }
+.heritage-item.is-origin { grid-column: 1 / -1; padding: 36px 0; }
+.heritage-item.is-origin .dish-name { font-size: 40px; color: var(--copper-light); }
+.heritage-item.is-origin .h-text { max-width: var(--measure); font-size: 19px; }
+.heritage-item .h-era { margin-top: 2px; }
+.heritage-item .h-sources { margin-top: 12px; font-size: 14px; color: var(--ash); }
+.register { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
