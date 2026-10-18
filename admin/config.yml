@@ -220,3 +220,35 @@ collections:
                   - { name: src, label: "사진", widget: image }
                   - { name: alt, label: "사진 설명", widget: string, required: false }
               - { name: id, label: "주소 이름 (선택)", widget: string, required: false }
+
+  - name: judges
+    label: "공식 심판 (Judges)"
+    files:
+      - name: judges
+        label: "KOOBA 공식 심판"
+        file: data/judges.json
+        format: json
+        fields:
+          - name: issuer
+            label: "발급 기관"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: en, label: "영어", widget: string }
+              - { name: ko, label: "한국어", widget: string }
+          - { name: confirmed, label: "일괄 증명일 (YYYY-MM-DD)", widget: string }
+          - name: judges
+            label: "심판 명단"
+            label_singular: "심판"
+            widget: list
+            summary: "{{fields.name.ko}}"
+            fields:
+              - name: name
+                label: "이름"
+                widget: object
+                fields:
+                  - { name: ko, label: "한국어 이름", widget: string }
+                  - { name: en, label: "영문 이름 (예: Kim, Jae-goo)", widget: string }
+              - { name: photo, label: "사진 (정사각형)", widget: image }
+              - { name: certified, label: "인정일 (YYYY-MM-DD)", widget: string }
+              - { name: id, label: "주소 이름 (영문 소문자와 하이픈)", widget: string, required: false }

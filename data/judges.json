@@ -1,0 +1,63 @@
+{
+  "issuer": {
+    "en": "Korea Outdoor & Barbecue Association (KOOBA)",
+    "ko": "사단법인 대한아웃도어바비큐협회"
+  },
+  "confirmed": "2019-08-30",
+  "judges": [
+    {
+      "id": "kim-jae-goo",
+      "name": {
+        "ko": "김재구",
+        "en": "Kim, Jae-goo"
+      },
+      "photo": "assets/img/judges/kim-jae-goo.jpg",
+      "certified": "2016-05-15"
+    },
+    {
+      "id": "sung-chang-soo",
+      "name": {
+        "ko": "성창수",
+        "en": "Sung, Chang-soo"
+      },
+      "photo": "assets/img/judges/sung-chang-soo.jpg",
+      "certified": "2016-05-15"
+    },
+    {
+      "id": "choi-woo-hyeok",
+      "name": {
+        "ko": "최우혁",
+        "en": "Choi, Woo-hyeok"
+      },
+      "photo": "assets/img/judges/choi-woo-hyeok.jpg",
+      "certified": "2016-05-15"
+    },
+    {
+      "id": "oh-taek-soo",
+      "name": {
+        "ko": "오택수",
+        "en": "Oh, Taek-soo"
+      },
+      "photo": "assets/img/judges/oh-taek-soo.jpg",
+      "certified": "2012-04-15"
+    },
+    {
+      "id": "shin-seong-bong",
+      "name": {
+        "ko": "신성봉",
+        "en": "Shin, Seong-bong"
+      },
+      "photo": "assets/img/judges/shin-seong-bong-2.jpg",
+      "certified": "2016-05-15"
+    },
+    {
+      "id": "lee-jae-cheon",
+      "name": {
+        "ko": "이재천",
+        "en": "Lee, Jae-cheon"
+      },
+      "photo": "assets/img/judges/lee-jae-cheon-2.jpg",
+      "certified": "2016-05-15"
+    }
+  ]
+}

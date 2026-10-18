@@ -563,3 +563,18 @@ a.event-row:hover .title { color: var(--copper-light); }
 .table.officers td { vertical-align: top; }
 .member-intro { color: var(--ash); margin: 0 0 18px; max-width: var(--measure); }
 #fed-founding { max-width: 900px; }
+
+/* KOOBA official judge card, standard form */
+.judge-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
+.judge-card { background: #fff; color: #111; border: 3px solid #c8102e; padding: 14px 14px 10px; text-align: center; font-family: "Noto Sans KR", "Helvetica Neue", Arial, sans-serif; }
+.judge-card * { text-align: center !important; text-align-last: auto; }
+.jc-title { font-weight: 800; font-size: 22px; letter-spacing: .01em; margin-bottom: 10px; }
+.jc-photo { width: 104px; height: 104px; object-fit: cover; border-radius: 16px; display: block; margin: 0 auto 10px; }
+.jc-name-ko { font-weight: 700; font-size: 19px; }
+.jc-name-en { font-weight: 700; font-size: 14px; margin-bottom: 8px; }
+.jc-ko { font-size: 12.5px; line-height: 1.5; margin: 0 0 6px; word-break: keep-all; }
+.jc-en { font-size: 12px; font-weight: 700; line-height: 1.4; margin: 0 0 6px; }
+.jc-date { font-weight: 700; font-size: 14px; color: #111; }
+.jc-date span { display: block; font-size: 11.5px; font-weight: 600; }
+.jc-strip { width: 92%; height: auto; display: block; margin: 8px auto 0; }
+.jc-confirm { color: var(--ash); margin-top: 18px; font-size: 15px; }
