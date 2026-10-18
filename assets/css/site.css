@@ -105,7 +105,7 @@ html[data-second="zh"] .bi.inline .s[lang="zh"] { display: inline; }
   isolation: isolate;
 }
 /* dawn: a band of early humans advancing out of the dawn, set in the flow under the creed */
-.hero .dawn-wrap { display: block; position: relative; z-index: -1; width: min(1180px, 100%); margin: calc(-1 * min(1180px, 100vw) * 110 / 2033) auto 0; pointer-events: none; }
+.hero .dawn-wrap { display: block; position: relative; z-index: -1; width: min(1180px, 100%); margin: calc(-1 * min(1180px, 100vw) * 55 / 2033) auto 0; pointer-events: none; }
 .hero .dawn { width: 100%; height: auto; aspect-ratio: auto; display: block;
   animation: dawn-rise 4s ease-out both; }
 @keyframes dawn-rise { from { opacity: 0; } to { opacity: 1; } }
