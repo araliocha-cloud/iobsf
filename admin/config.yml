@@ -36,6 +36,7 @@ collections:
                   - { label: "인류바비큐문명사 (Civilization History)", value: civilization }
                   - { label: "바비큐 인문학 (Barbecue Humanities)", value: humanities }
                   - { label: "각국 바비큐의 역사 서사 (Histories of the Nations' Fires)", value: narratives }
+                  - { label: "인간과 사회 (The Human and Society)", value: society }
               - name: title
                 label: "제목"
                 widget: object
@@ -57,6 +58,7 @@ collections:
                 label: "대표 이미지"
                 widget: image
                 required: false
+              - { name: image_caption, label: "이미지 설명 (출처 등, 선택)", widget: string, required: false }
               - name: body
                 label: "본문"
                 widget: markdown

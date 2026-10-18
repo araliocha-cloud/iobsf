@@ -70,6 +70,12 @@
     return String(text || "").replace(/\r/g, "").split(/\n\s*\n/).map(function (b) {
       b = b.replace(/^\n+|\s+$/g, ""); if (!b) return "";
       var m;
+      if (/^(-{3,}|\* \* \*)$/.test(b)) return '<hr class="w-hr">';
+      if (/^\|/.test(b)) {
+        var rows = b.split(/\n/).filter(function (l) { return !/^\|\s*-{2,}/.test(l); }).map(function (l) { return l.replace(/^\||\|$/g, "").split("|"); });
+        return '<div class="w-table"><table class="table"><thead><tr>' + rows[0].map(function (c) { return "<th>" + inline(c.trim()) + "</th>"; }).join("") + "</tr></thead><tbody>" +
+          rows.slice(1).map(function (r) { return "<tr>" + r.map(function (c) { return "<td>" + inline(c.trim()) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
+      }
       if ((m = b.match(/^#{1,6}\s+(.*)$/))) return "<h3>" + inline(m[1]) + "</h3>";
       if ((m = b.match(/^!\[([^\]]*)\]\(([^)\s]+)\)$/))) return '<figure class="w-fig"><img src="' + esc(m[2]) + '" alt="' + esc(m[1]) + '"></figure>';
       if (/^>/.test(b)) return '<p class="w-quote">' + inline(b.replace(/^>\s?/gm, "")) + "</p>";
@@ -490,7 +496,7 @@
           '<div class="w-ko" lang="ko"><div class="w-title-ko">' + esc(w.title.ko) + "</div>" + (w.subtitle && w.subtitle.ko ? '<div class="w-sub-ko">' + esc(w.subtitle.ko) + "</div>" : "") + "</div>" +
           '<p class="w-by">' + esc((w.by && w.by.en) || "Shaka Chaa") + bi({ ko: (w.by && w.by.ko) || "차영기" }, "span", "", true) + "</p>" + pub +
           '<p class="w-lang">' + bi({ en: "Original text in Korean", ko: "원문 한국어" }, "span", "", true) + "</p>" +
-          (w.image ? '<figure class="w-fig"><img src="' + esc(w.image) + '" alt=""></figure>' : "") +
+          (w.image ? '<figure class="w-fig"><img src="' + esc(w.image) + '" alt="">' + (w.image_caption ? "<figcaption>" + esc(w.image_caption) + "</figcaption>" : "") + "</figure>" : "") +
           '<div class="w-body" lang="ko">' + body + "</div>" +
           (w.refs && w.refs.length ? '<div class="w-refs"><h3>' + bi({ en: "References", ko: "주요 참고 문헌" }, "span", "", true) + '</h3><ul>' + w.refs.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>" : "") +
         "</article>");

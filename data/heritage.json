@@ -1673,6 +1673,22 @@
           "by": "Shaka Chaa (차영기), KBRI"
         }
       ]
+    },
+    {
+      "key": "society",
+      "name": {
+        "en": "The Human and Society",
+        "ko": "인간과 사회",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "Reading the world from before the fire: power, labor, technology and community.",
+        "ko": "불 앞에서 세상을 읽는다. 권력, 노동, 기술, 그리고 공동체.",
+        "ja": "",
+        "zh": ""
+      },
+      "entries": []
     }
   ],
   "process": [

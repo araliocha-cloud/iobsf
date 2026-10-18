@@ -510,3 +510,8 @@ a.event-row:hover .title { color: var(--copper-light); }
 .proc-list .proc-en { margin: 14px 0 0; text-align: justify; }
 .proc-list .proc-ko { margin-top: 10px; color: var(--ash); text-align: justify; font-size: .9em; line-height: 1.75; }
 @media (max-width: 760px) { .proc-list { grid-template-rows: none; } .proc-list > li { grid-row: auto; grid-template-rows: none; display: flex; flex-direction: column; margin-bottom: 20px; } }
+.w-fig figcaption { font-size: 14px; color: var(--ash); margin-top: 8px; }
+.w-hr { border: 0; border-top: 1px solid var(--copper); width: 80px; margin: 2.4em auto; }
+.w-table { overflow-x: auto; margin: 0 0 1.4em; }
+.w-table .table { font-size: 15px; }
+.w-table td, .w-table th { text-indent: 0; }
