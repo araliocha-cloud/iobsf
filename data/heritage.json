@@ -2,9 +2,9 @@
   "_schema": {
     "intro": "헤리티지 첫머리 문장 (다국어)",
     "criteria": "등재 기준 목록: key, name(다국어), text(다국어)",
-    "register": "연맹 인증 바비큐 유산 목록: id, number(등재 번호, 등재 때 부여, 원점은 0), name(다국어), original(원어 표기), community(그 유산을 만든 공동체와 지역, 다국어), era(시대, 다국어), status(origin 원점 | record 연맹 기록유산 | inscribed 등재유산), designated(등재 날짜), decision(결정 번호), text(해설, 다국어), sources(출처 목록: title, href)",
+    "register": "연맹 인증 바비큐 유산 목록: id, number(등재 번호, 등재 때 부여, 원점은 0), name(다국어), original(원어 표기), community(그 유산을 만든 공동체와 지역, 다국어), era(시대, 다국어), status(origin 원점 | record 연맹기록유산 | review 연맹심사유산 | inscribed 연맹등재유산), designated(등재 날짜), decision(결정 번호), text(해설, 다국어), sources(출처 목록: title, href)",
     "archives": "서사 기록 공간: key, name(다국어), text(소개, 다국어), entries(글 목록: title, date, href, summary)",
-    "record_form": "연맹 기록유산 기록양식: record_no(R-연도-일련번호), recorded(기록 일자), recorder(기록 기관), sections.summary/fire/sharing/history/living(개요, 불과 조리, 나눔과 의례, 역사와 문헌, 전승 현황, 다국어), log(변경 이력: date, text, 덧붙이기만 하고 지우지 않음)",
+    "record_form": "연맹기록유산 기록양식: record_no(R-연도-일련번호), recorded(기록 일자), recorder(기록 기관), sections.summary/fire/sharing/history/living(개요, 불과 조리, 나눔과 의례, 역사와 문헌, 전승 현황, 다국어), log(변경 이력: date, text, 덧붙이기만 하고 지우지 않음)",
     "inscription_form": "등재양식 (status가 inscribed일 때): inscription.decision_no, date, session, plaque(명판 등재문 한 문장, 다국어), decision(결정문 네 단락: receives, criteria{history,community,identity,living}, inscribes, invites), statement(가치 선언문: summary, authenticity, safeguarding), consent(공동체 동의 기록)",
     "principles": "헤리티지 원칙 목록 (다국어)"
   },
@@ -195,8 +195,8 @@
         {
           "date": "2026-10-18",
           "text": {
-            "en": "Entered as a Federation Record.",
-            "ko": "연맹 기록유산으로 기록.",
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
             "ja": "",
             "zh": ""
           }
@@ -263,8 +263,8 @@
         {
           "date": "2026-10-18",
           "text": {
-            "en": "Entered as a Federation Record.",
-            "ko": "연맹 기록유산으로 기록.",
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
             "ja": "",
             "zh": ""
           }
@@ -331,8 +331,8 @@
         {
           "date": "2026-10-18",
           "text": {
-            "en": "Entered as a Federation Record.",
-            "ko": "연맹 기록유산으로 기록.",
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
             "ja": "",
             "zh": ""
           }
@@ -399,8 +399,8 @@
         {
           "date": "2026-10-18",
           "text": {
-            "en": "Entered as a Federation Record.",
-            "ko": "연맹 기록유산으로 기록.",
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
             "ja": "",
             "zh": ""
           }
@@ -471,8 +471,8 @@
         {
           "date": "2026-10-18",
           "text": {
-            "en": "Entered as a Federation Record.",
-            "ko": "연맹 기록유산으로 기록.",
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
             "ja": "",
             "zh": ""
           }
@@ -539,8 +539,8 @@
         {
           "date": "2026-10-18",
           "text": {
-            "en": "Entered as a Federation Record.",
-            "ko": "연맹 기록유산으로 기록.",
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
             "ja": "",
             "zh": ""
           }
@@ -607,8 +607,8 @@
         {
           "date": "2026-10-18",
           "text": {
-            "en": "Entered as a Federation Record.",
-            "ko": "연맹 기록유산으로 기록.",
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
             "ja": "",
             "zh": ""
           }
@@ -675,8 +675,8 @@
         {
           "date": "2026-10-18",
           "text": {
-            "en": "Entered as a Federation Record.",
-            "ko": "연맹 기록유산으로 기록.",
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
             "ja": "",
             "zh": ""
           }
@@ -738,8 +738,8 @@
     {
       "key": "record",
       "name": {
-        "en": "Federation Record",
-        "ko": "연맹 기록유산",
+        "en": "Federation Recorded Heritage",
+        "ko": "연맹기록유산",
         "ja": "",
         "zh": ""
       },
@@ -753,14 +753,14 @@
     {
       "key": "review",
       "name": {
-        "en": "Committee Review",
-        "ko": "등재위원회 심의",
+        "en": "Federation Nominated Heritage",
+        "ko": "연맹심사유산",
         "ja": "",
         "zh": ""
       },
       "text": {
-        "en": "The Heritage Committee examines the record against the four criteria.",
-        "ko": "등재위원회가 네 가지 기준에 비추어 기록을 심의한다.",
+        "en": "Submitted to the Heritage Committee, which examines the record against the four criteria.",
+        "ko": "등재위원회에 올라, 위원회가 네 가지 기준에 비추어 기록을 심사한다.",
         "ja": "",
         "zh": ""
       }
@@ -768,8 +768,8 @@
     {
       "key": "inscription",
       "name": {
-        "en": "Inscription",
-        "ko": "등재",
+        "en": "Federation Inscribed Heritage",
+        "ko": "연맹등재유산",
         "ja": "",
         "zh": ""
       },
@@ -817,8 +817,8 @@
       },
       "decision": {
         "receives": {
-          "en": "The Committee receives Federation Record R-2026-001, Suya, prepared by the Secretariat with KBRI.",
-          "ko": "위원회는 사무국과 KBRI가 작성한 연맹 기록유산 R-2026-001 수야를 접수한다.",
+          "en": "The Committee receives Federation Recorded Heritage R-2026-001, Suya, prepared by the Secretariat with KBRI.",
+          "ko": "위원회는 사무국과 KBRI가 작성한 연맹기록유산 R-2026-001 수야를 접수한다.",
           "ja": "",
           "zh": ""
         },
@@ -849,8 +849,8 @@
           }
         },
         "inscribes": {
-          "en": "The Committee inscribes Suya on the Heritage Register of the Federation as No. 1.",
-          "ko": "위원회는 수야를 연맹 등재유산 제1호로 등재한다.",
+          "en": "The Committee inscribes Suya as Federation Inscribed Heritage No. 1.",
+          "ko": "위원회는 수야를 연맹등재유산 제1호로 등재한다.",
           "ja": "",
           "zh": ""
         },
