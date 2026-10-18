@@ -337,7 +337,7 @@
     return '<section class="form-section"><h2 class="bi"><span class="p">' + title + '</span><span class="s" lang="ko">' + ko + "</span></h2>" + inner + "</section>";
   }
 
-  var KINDS = { book: { en: "Book", ko: "저서" }, paper: { en: "Paper", ko: "논문" }, article: { en: "Article", ko: "연구 글" }, video: { en: "Video", ko: "영상" }, media: { en: "Media", ko: "매체" }, role: { en: "Role", ko: "직책" }, event: { en: "Event", ko: "대회" } };
+  var KINDS = { book: { en: "Book", ko: "저서" }, paper: { en: "Paper", ko: "논문" }, article: { en: "Article", ko: "연구 글" }, video: { en: "Video", ko: "영상" }, media: { en: "Media", ko: "매체" }, role: { en: "Role", ko: "직책" }, event: { en: "Event", ko: "대회" }, essay: { en: "Essay", ko: "글" } };
   function entryList(list) {
     return '<ul class="entries">' + list.map(function (x) {
       var t = x.href ? '<a href="' + esc(x.href) + '">' + esc(en(x.title)) + "</a>" : '<span class="entry-title">' + esc(en(x.title)) + "</span>";
@@ -436,6 +436,36 @@
       put("#chronicle", c.stories.length ? c.stories.map(function (s) {
         return '<article class="dish" style="margin-bottom:48px"><p style="color:var(--ash);margin:0">' + esc(s.date || "") + "</p><h2>" + esc(en(s.title)) + "</h2>" + bi(s.text, "div", "prose") + "</article>";
       }).join("") : empty({ en: "Stories from the fire will be published here after each event.", ko: "대회가 끝날 때마다 불 앞의 이야기가 이곳에 실린다." }));
+    });
+  };
+
+  pages.writing = function () {
+    Promise.all([load("writings"), load("heritage")]).then(function (r) {
+      var w = byId(r[0].writings, param("id"));
+      if (!w) { put("#writing", empty({ en: "This essay was not found.", ko: "글을 찾을 수 없다." })); return; }
+      var cat = (r[1].archives || []).filter(function (a) { return a.key === w.category; })[0];
+      document.title = en(w.title) + " | IOBSF";
+      var nl = function (t) { return esc(t).replace(/\n/g, "<br>"); };
+      var body = w.blocks.map(function (b) {
+        if (b.t === "h") return "<h3>" + esc(b.x) + "</h3>";
+        if (b.t === "q") return '<p class="w-quote">' + nl(b.x) + "</p>";
+        if (b.t === "s") return '<p class="w-strong">' + nl(b.x) + "</p>";
+        if (b.t === "v") return '<p class="w-verse">' + nl(b.x) + "</p>";
+        return "<p>" + nl(b.x) + "</p>";
+      }).join("");
+      var pub = w.published ? '<p class="w-pub">' + bi({ en: "First published in " + w.published.outlet + (w.published.date ? ", " + fmtDate({ date: w.published.date }) : ""), ko: "처음 실린 곳: " + w.published.outlet }, "span", "", true) + (w.published.href ? ' <a href="' + esc(w.published.href) + '">Original</a>' : "") + "</p>" : "";
+      put("#writing",
+        '<article class="writing">' +
+          '<p class="w-crumb"><a href="heritage.html#archives">Archives</a>' + (cat ? " / " + esc(cat.name.en) + bi({ ko: cat.name.ko }, "span", "", true) : "") + "</p>" +
+          "<h1>" + esc(en(w.title)) + "</h1>" +
+          (w.subtitle && w.subtitle.en ? '<p class="w-sub-en">' + esc(w.subtitle.en) + "</p>" : "") +
+          '<div class="w-ko" lang="ko"><div class="w-title-ko">' + esc(w.title.ko) + "</div>" + (w.subtitle && w.subtitle.ko ? '<div class="w-sub-ko">' + esc(w.subtitle.ko) + "</div>" : "") + "</div>" +
+          '<p class="w-by">' + esc(w.by.en) + bi({ ko: w.by.ko }, "span", "", true) + "</p>" + pub +
+          '<p class="w-lang">' + bi({ en: "Original text in Korean", ko: "원문 한국어" }, "span", "", true) + "</p>" +
+          (w.image ? '<figure class="w-fig"><img src="' + esc(w.image) + '" alt=""></figure>' : "") +
+          '<div class="w-body" lang="ko">' + body + "</div>" +
+          (w.refs && w.refs.length ? '<div class="w-refs"><h3>' + bi({ en: "References", ko: "주요 참고 문헌" }, "span", "", true) + '</h3><ul>' + w.refs.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>" : "") +
+        "</article>");
     });
   };
 

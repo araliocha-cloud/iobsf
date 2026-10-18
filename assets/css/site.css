@@ -476,3 +476,27 @@ a.event-row:hover .title { color: var(--copper-light); }
 .pf-head { font-size: 22px; margin: 26px 0 8px; color: var(--copper-light); }
 .pf-head .s { font-size: .6em; }
 @media (max-width: 860px) { .profile-head { grid-template-columns: 1fr; } .profile-head .portrait { max-width: 340px; } }
+
+/* writings */
+.writing { max-width: 760px; margin: 0 auto; }
+.writing h1 { font-size: clamp(34px, 5vw, 52px); line-height: 1.1; margin: 10px 0 8px; }
+.w-crumb { font-family: var(--f-display); color: var(--copper); font-size: 16px; margin: 0; }
+.w-crumb .s { margin-left: 6px; }
+.w-sub-en { font-family: var(--f-display); font-style: italic; font-size: 21px; color: var(--ash); margin: 0 0 22px; }
+.w-ko { border-top: 1px solid var(--copper); padding-top: 18px; margin-bottom: 18px; }
+.w-title-ko { font-family: "Noto Serif KR", serif; font-size: 24px; line-height: 1.5; }
+.w-sub-ko { font-family: "Noto Serif KR", serif; font-size: 16px; color: var(--ash); margin-top: 4px; }
+.w-by { margin: 0; color: var(--bone); }
+.w-by .s { margin-left: 8px; }
+.w-pub, .w-lang { margin: 4px 0 0; color: var(--ash); font-size: 15px; }
+.w-fig { margin: 36px 0 0; }
+.w-fig img { width: 100%; height: auto; display: block; }
+.w-body { margin-top: 40px; font-family: "Noto Serif KR", serif; font-size: 17px; line-height: 1.95; }
+.w-body p { margin: 0 0 1.2em; text-align: justify; text-indent: 1em; word-break: keep-all; }
+.w-body h3 { font-family: "Noto Serif KR", serif; font-size: 20px; color: var(--copper-light); margin: 2em 0 .8em; }
+.w-body .w-quote { text-align: center; text-indent: 0; color: var(--copper-light); margin: 1.6em 0; }
+.w-body .w-strong { font-weight: 500; color: var(--bone); }
+.w-body .w-verse { text-align: left; text-indent: 0; }
+.w-refs { margin-top: 48px; border-top: 1px solid var(--line, #3a352f); padding-top: 18px; font-size: 15px; color: var(--ash); }
+.w-refs h3 { font-family: var(--f-display); font-size: 18px; color: var(--copper); margin: 0 0 10px; }
+.w-refs ul { margin: 0; padding-left: 1.2em; }

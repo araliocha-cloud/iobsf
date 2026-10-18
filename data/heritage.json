@@ -1536,10 +1536,6 @@
         {
           "title": "Hāngī (Wikipedia)",
           "href": "https://en.wikipedia.org/wiki/H%C4%81ng%C4%AB"
-        },
-        {
-          "title": "항이(Hāngī) 뉴질랜드 전통 바비큐 (KBRI)",
-          "href": "https://www.professionalbarbecuer.com/43/?bmode=view&idx=169173959"
         }
       ],
       "log": [
@@ -1585,69 +1581,25 @@
         },
         {
           "title": {
-            "en": "What Is Barbecue?",
-            "ko": "바비큐란 무엇인가?",
+            "en": "The Table of 1.8 Million Years",
+            "ko": "180만 년의 식탁",
             "ja": "",
             "zh": ""
           },
-          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=9142306",
-          "kind": "article",
-          "by": "KBRI"
+          "href": "writing.html?id=table-of-1-8-million-years",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
         },
         {
           "title": {
-            "en": "The History of the Word Barbecue",
-            "ko": "Barbecue의 어원에 대한 역사",
+            "en": "The Table that War Set",
+            "ko": "전쟁이 차려낸 밥상",
             "ja": "",
             "zh": ""
           },
-          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=168961080",
-          "kind": "article",
-          "by": "KBRI"
-        },
-        {
-          "title": {
-            "en": "History of Barbecue Culture",
-            "ko": "바비큐 문화의 역사",
-            "ja": "",
-            "zh": ""
-          },
-          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=9143207",
-          "kind": "article",
-          "by": "KBRI"
-        },
-        {
-          "title": {
-            "en": "Seven Barbecue Styles of the World",
-            "ko": "전 세계 7가지 바비큐 스타일",
-            "ja": "",
-            "zh": ""
-          },
-          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=167589936",
-          "kind": "article",
-          "by": "KBRI"
-        },
-        {
-          "title": {
-            "en": "The Definition of Real Barbecue",
-            "ko": "리얼바비큐의 정의",
-            "ja": "",
-            "zh": ""
-          },
-          "href": "https://www.professionalbarbecuer.com/history/?bmode=view&idx=167330078",
-          "kind": "article",
-          "by": "KBRI"
-        },
-        {
-          "title": {
-            "en": "Dried Meat and Human Evolution",
-            "ko": "육포와 인간의 진화",
-            "ja": "",
-            "zh": ""
-          },
-          "href": "https://www.professionalbarbecuer.com/43/?bmode=view&idx=166639447",
-          "kind": "video",
-          "by": "KBRI"
+          "href": "writing.html?id=the-table-war-set",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
         }
       ]
     },
@@ -1701,6 +1653,116 @@
           "kind": "book",
           "by": "Shaka Chaa (차영기)",
           "store": "교보문고"
+        },
+        {
+          "title": {
+            "en": "Humankind, the Odysseus",
+            "ko": "인류라는 오디세우스",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "writing.html?id=humankind-the-odysseus",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "Smoke Goes to the Gods",
+            "ko": "연기는 신에게 간다",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "writing.html?id=smoke-goes-to-the-gods",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "A Chronicle of Flame",
+            "ko": "화염의 연대기",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "writing.html?id=a-chronicle-of-flame",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "Since When Has God Been Beside Us?",
+            "ko": "신은 언제부터 인간 곁에 있었는가?",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "writing.html?id=since-when-has-god-been-beside-us",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "Insulting the Meat",
+            "ko": "고기를 모욕하라(Insulting the Meat)",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "writing.html?id=insulting-the-meat",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "Savage Purity",
+            "ko": "야만의 순수(純粹)",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "writing.html?id=savage-purity",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "Heart of the Wild",
+            "ko": "야생의 심장, 자유를 향한 불굴의 도망자들",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "writing.html?id=heart-of-the-wild",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "The End of Labor, the Revival of Distribution",
+            "ko": "노동의 종말, 분배의 부활",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "writing.html?id=end-of-labor-revival-of-distribution",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "When the Human Meal Becomes Feed",
+            "ko": "사료화되는 인간의 식사와 사라지는 존엄",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "writing.html?id=when-the-meal-becomes-feed",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
+        },
+        {
+          "title": {
+            "en": "The First Fire, the Future Community",
+            "ko": "2026년 병오년(丙午年)의 아침에 살피는 \"태초의 불, 미래의 공동체\".",
+            "ja": "",
+            "zh": ""
+          },
+          "href": "writing.html?id=first-fire-future-community",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
         }
       ]
     },
@@ -1744,58 +1806,14 @@
         },
         {
           "title": {
-            "en": "History of Korean Barbecue",
-            "ko": "한국 바비큐 역사",
+            "en": "Maekjeok, the Myth of an Invented Origin",
+            "ko": "맥적(貊炙), 발명된 기원(起源)의 신화",
             "ja": "",
             "zh": ""
           },
-          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=168615981",
-          "kind": "article",
-          "by": "KBRI"
-        },
-        {
-          "title": {
-            "en": "Characteristics of Traditional Korean Barbecue",
-            "ko": "한국의 전통적 바비큐의 특징",
-            "ja": "",
-            "zh": ""
-          },
-          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=9143991",
-          "kind": "article",
-          "by": "KBRI"
-        },
-        {
-          "title": {
-            "en": "The Evolution of American Barbecue",
-            "ko": "미국식 바비큐의 진화",
-            "ja": "",
-            "zh": ""
-          },
-          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=9151151",
-          "kind": "article",
-          "by": "KBRI"
-        },
-        {
-          "title": {
-            "en": "Barbecue Sauce and History",
-            "ko": "바비큐 소스와 역사",
-            "ja": "",
-            "zh": ""
-          },
-          "href": "https://www.professionalbarbecuer.com/31/?bmode=view&idx=9147485",
-          "kind": "article",
-          "by": "KBRI"
-        },
-        {
-          "title": {
-            "en": "Hāngī, the Traditional Barbecue of New Zealand",
-            "ko": "항이(Hāngī), 뉴질랜드 전통 바비큐",
-            "ja": "",
-            "zh": ""
-          },
-          "href": "https://www.professionalbarbecuer.com/43/?bmode=view&idx=169173959",
-          "kind": "video",
-          "by": "KBRI"
+          "href": "writing.html?id=maekjeok-invented-origin",
+          "kind": "essay",
+          "by": "Shaka Chaa (차영기)"
         }
       ]
     }
