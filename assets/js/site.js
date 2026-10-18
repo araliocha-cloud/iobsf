@@ -31,13 +31,28 @@
   function en(o) { return o && typeof o === "object" ? (o.en || "") : (o || ""); }
 
   /* bilingual block: English first, the chosen second language beneath */
+  var DICT = {};
+  /* Japanese and Chinese come from data/i18n.json, keyed by the Korean text; untranslated text falls back to Korean */
+  function tr(ko, k) { var d = DICT[ko]; return (d && d[k]) || ko; }
+  function translateStatic(root) {
+    var list = (root || document).querySelectorAll('.bi > .s[lang="ko"]');
+    for (var i = 0; i < list.length; i++) {
+      var el = list[i], par = el.parentNode;
+      if (par.querySelector('.s[lang="ja"]')) continue;
+      ["ja", "zh"].forEach(function (k) {
+        var n = el.cloneNode(false); n.setAttribute("lang", k); n.textContent = tr(el.textContent, k);
+        par.insertBefore(n, el.nextSibling);
+      });
+    }
+  }
   function bi(o, tag, cls, inline) {
     tag = tag || "div";
     if (!o || typeof o !== "object") return "<" + tag + (cls ? ' class="' + cls + '"' : "") + ">" + esc(o) + "</" + tag + ">";
     var h = '<span class="p" lang="en">' + esc(o.en || "") + "</span>";
     var sTag = inline ? "span" : "span";
     SECONDS.forEach(function (k) {
-      if (o[k]) h += "<" + sTag + ' class="s" lang="' + k + '">' + esc(o[k]) + "</" + sTag + ">";
+      var v = o[k] || (k !== "ko" && o.ko ? tr(o.ko, k) : "");
+      if (v) h += "<" + sTag + ' class="s" lang="' + k + '">' + esc(v) + "</" + sTag + ">";
     });
     return "<" + tag + ' class="bi' + (inline ? " inline" : "") + (cls ? " " + cls : "") + '">' + h + "</" + tag + ">";
   }
@@ -378,7 +393,7 @@
     return "<ul>" + d.sources.map(function (x) { return '<li><a href="' + esc(x.href) + '">' + esc(x.title) + "</a></li>"; }).join("") + "</ul>";
   }
   function formSection(title, ko, inner) {
-    return '<section class="form-section"><h2 class="bi"><span class="p">' + title + '</span><span class="s" lang="ko">' + ko + "</span></h2>" + inner + "</section>";
+    return '<section class="form-section">' + bi({ en: title, ko: ko }, "h2") + inner + "</section>";
   }
 
   var KINDS = { book: { en: "Book", ko: "저서" }, paper: { en: "Paper", ko: "논문" }, article: { en: "Article", ko: "연구 글" }, video: { en: "Video", ko: "영상" }, media: { en: "Media", ko: "매체" }, role: { en: "Role", ko: "직책" }, event: { en: "Event", ko: "대회" }, essay: { en: "Essay", ko: "글" } };
@@ -489,13 +504,13 @@
       var cat = (r[1].archives || []).filter(function (a) { return a.key === w.category; })[0];
       document.title = en(w.title) + " | IOBSF";
       var body = md(w.body);
-      var pub = w.published && w.published.outlet ? '<p class="w-pub">' + bi({ en: "First published in " + w.published.outlet + (w.published.date ? ", " + fmtDate({ date: w.published.date }) : ""), ko: "처음 실린 곳: " + w.published.outlet }, "span", "", true) + (w.published.href ? ' <a href="' + esc(w.published.href) + '">Original</a>' : "") + "</p>" : "";
+      var pub = w.published && w.published.outlet ? '<p class="w-pub">' + bi({ en: "First published in " + w.published.outlet + (w.published.date ? ", " + fmtDate({ date: w.published.date }) : ""), ko: "처음 실린 곳: " + w.published.outlet, ja: "初出：" + w.published.outlet, zh: "首次刊载于：" + w.published.outlet }, "span", "", true) + (w.published.href ? ' <a href="' + esc(w.published.href) + '">Original</a>' : "") + "</p>" : "";
       put("#writing",
         '<article class="writing">' +
           '<p class="w-crumb"><a href="heritage.html#archives">Archives</a>' + (cat ? " / " + esc(cat.name.en) + bi({ ko: cat.name.ko }, "span", "", true) : "") + "</p>" +
           "<h1>" + esc(en(w.title)) + "</h1>" +
           (w.subtitle && w.subtitle.en ? '<p class="w-sub-en">' + esc(w.subtitle.en) + "</p>" : "") +
-          '<div class="w-ko" lang="ko"><div class="w-title-ko">' + esc(w.title.ko) + "</div>" + (w.subtitle && w.subtitle.ko ? '<div class="w-sub-ko">' + esc(w.subtitle.ko) + "</div>" : "") + "</div>" +
+          '<div class="w-ko">' + bi({ ko: w.title.ko }, "div", "w-title-ko") + (w.subtitle && w.subtitle.ko ? bi({ ko: w.subtitle.ko }, "div", "w-sub-ko") : "") + "</div>" +
           '<p class="w-by">' + esc((w.by && w.by.en) || "Shaka Chaa") + bi({ ko: (w.by && w.by.ko) || "차영기" }, "span", "", true) + "</p>" + pub +
           '<p class="w-lang">' + bi({ en: "Original text in Korean", ko: "원문 한국어" }, "span", "", true) + "</p>" +
           (w.image ? '<figure class="w-fig"><img src="' + esc(w.image) + '" alt="">' + (w.image_caption ? "<figcaption>" + esc(w.image_caption) + "</figcaption>" : "") + "</figure>" : "") +
@@ -510,7 +525,7 @@
     put("#fed-facts",
       '<dl class="facts">' +
         "<dt>Name</dt><dd>" + bi(f.name) + "</dd>" +
-        "<dt>Founded</dt><dd>" + bi({ en: "8 December 2018, " + f.founded_place.en, ko: "2018년 12월 8일, " + f.founded_place.ko }) + "</dd>" +
+        "<dt>Founded</dt><dd>" + bi({ en: "8 December 2018, " + f.founded_place.en, ko: "2018년 12월 8일, " + f.founded_place.ko, ja: "2018年12月8日、" + tr(f.founded_place.ko, "ja"), zh: "2018年12月8日，" + tr(f.founded_place.ko, "zh") }) + "</dd>" +
         "<dt>Headquarters</dt><dd>" + bi(f.headquarters) + "</dd>" +
         "<dt>" + esc(st.mission.label.en) + "</dt><dd>" + bi(st.mission.text) + "</dd>" +
         (site.secretariat ? "<dt>Secretariat</dt><dd>" + bi(site.secretariat.name) + bi(site.secretariat.head) + "</dd>" : "") +
@@ -679,7 +694,9 @@
   }
 
   /* ---------- boot ---------- */
-  load("site").then(function (site) {
+  Promise.all([load("site"), fetchJSON("i18n").catch(function () { return {}; })]).then(function (r) {
+    var site = r[0]; DICT = r[1] || {};
+    translateStatic(document);
     renderChrome(site);
     var fn = pages[document.body.dataset.page];
     if (fn) fn(site);

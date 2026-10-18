@@ -517,3 +517,5 @@ a.event-row:hover .title { color: var(--copper-light); }
 .w-table { overflow-x: auto; margin: 0 0 1.4em; }
 .w-table .table { font-size: 15px; }
 .w-table td, .w-table th { text-indent: 0; }
+.w-ko .bi .s { color: inherit; font-size: inherit; margin-top: 0; }
+.w-ko .w-sub-ko .s { color: var(--ash); }
