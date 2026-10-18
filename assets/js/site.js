@@ -146,7 +146,10 @@
         "</div>" +
         "<div>" + links + "</div>" +
         "<div>" + bi(site.statements.motto.text, "div", "f-motto") + "</div>" +
-        '<div class="f-bottom">Founded 8 December 2018, Seoul. Headquarters: Republic of Korea.</div>' +
+        '<div class="f-bottom">' +
+          '<div class="f-line">' + bi({ en: "Founded 8 December 2018, Seoul. Headquarters: Republic of Korea.", ko: "2018년 12월 8일 서울에서 창립. 본부: 대한민국." }, "div", "", true) + "</div>" +
+          '<div class="f-line">' + bi({ en: "Secretary-General, International Outdoor Barbecue Sports Federation: Shaka Chaa", ko: "국제아웃도어바비큐스포츠연맹 사무총장 차영기(Shaka Chaa)" }, "div", "", true) + "</div>" +
+        "</div>" +
       "</div>");
     $("#site-footer").classList.add("site-footer");
   }
