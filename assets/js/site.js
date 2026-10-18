@@ -378,6 +378,7 @@
       '<div class="plaque-text">' + esc(ins.plaque.en) + "</div>" +
       '<div class="plaque-rule"></div>' +
       '<div class="plaque-foot">' + (d.status === "origin" ? "Declared " : "Inscribed ") + esc(ins.date) + "<br>" + (d.status === "origin" ? "" : "Decision ") + esc(ins.decision_no) + "</div>" +
+      '<div class="plaque-foot-en">' + (d.status === "origin" ? "Heritage of the Fire, No. " + esc(d.number) + ", The Origin" : "Federation Inscribed Heritage, No. " + esc(d.number)) + "</div>" +
     "</figure>";
   }
 

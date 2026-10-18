@@ -444,3 +444,8 @@ a.event-row:hover .title { color: var(--copper-light); }
   .plaque-no { font-size: 40px; }
 }
 .plaque-text, .plaque-text-ko { white-space: pre-line; }
+.plaque-foot-en { font-family: var(--f-display); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; margin-top: 8px; line-height: 1.7; }
+.plaque-emblem { width: 132px; margin-bottom: 20px; }
+.plaque-head { font-size: 19px; letter-spacing: .15em; line-height: 1.6; }
+.plaque-foot-en { margin-top: 10px; }
+@media (max-width: 600px) { .plaque-emblem { width: 104px; } .plaque-head { font-size: 14px; } }
