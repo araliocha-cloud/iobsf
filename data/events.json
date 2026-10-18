@@ -1,0 +1,50 @@
+{
+  "_schema": {
+    "id": "고유 영문 아이디 (event.html?id=...)",
+    "name": "대회명 (다국어)",
+    "date": "YYYY-MM-DD (모르면 빈 칸, year만 채움)",
+    "year": "개최 연도",
+    "place": "장소 (다국어)",
+    "nation": "nations.json의 code",
+    "tier": "world | tour | challenger | partner",
+    "status": "upcoming | completed",
+    "summary": "소개 (다국어)",
+    "ritual": "8단계 의례 시간표: stage(ritual_stages의 key), time, note",
+    "results": "순위: rank, barbecuer(id) 또는 team(이름), score",
+    "table": "The Table, 모든 참가팀의 이야기: team, barbecuer(id, 선택), story(다국어)",
+    "acclaimed_by": "우승자에게 영광을 건넨 참가팀 대표 (추대 의례, 규정 여부 미결정)"
+  },
+  "ritual_stages": [
+    { "key": "entry",       "name": { "en": "Entry",            "ko": "입장", "ja": "", "zh": "" } },
+    { "key": "ignition",    "name": { "en": "Ignition",         "ko": "점화", "ja": "", "zh": "" } },
+    { "key": "contest",     "name": { "en": "Contest",          "ko": "경쟁", "ja": "", "zh": "" } },
+    { "key": "waiting",     "name": { "en": "Waiting",          "ko": "기다림", "ja": "", "zh": "" } },
+    { "key": "judgment",    "name": { "en": "Judgment",         "ko": "판정", "ja": "", "zh": "" } },
+    { "key": "sharing",     "name": { "en": "Sharing",          "ko": "나눔", "ja": "", "zh": "" } },
+    { "key": "celebration", "name": { "en": "Celebration",      "ko": "축하", "ja": "", "zh": "" } },
+    { "key": "return",      "name": { "en": "Promise to Return","ko": "재회 약속", "ja": "", "zh": "" } }
+  ],
+  "tiers": {
+    "world":      { "en": "World Championship", "ko": "세계선수권", "ja": "", "zh": "" },
+    "tour":       { "en": "Pro Tour",           "ko": "프로 투어", "ja": "", "zh": "" },
+    "challenger": { "en": "Challenger Series",  "ko": "챌린저 시리즈", "ja": "", "zh": "" },
+    "partner":    { "en": "Partner Event",      "ko": "협력 대회", "ja": "", "zh": "" }
+  },
+  "events": [
+    {
+      "id": "2025-korea-japan-sca-asia",
+      "name": { "en": "KOREA × JAPAN SCA Asia STEAK COOK OFF in KOREA", "ko": "KOREA × JAPAN SCA Asia STEAK COOK OFF in KOREA", "ja": "", "zh": "" },
+      "date": "",
+      "year": 2025,
+      "place": { "en": "Korea", "ko": "대한민국", "ja": "", "zh": "" },
+      "nation": "KR",
+      "tier": "partner",
+      "status": "completed",
+      "summary": { "en": "Details and results to be recorded.", "ko": "상세 내용과 결과를 기록할 예정이다.", "ja": "", "zh": "" },
+      "ritual": [],
+      "results": [],
+      "table": [],
+      "acclaimed_by": ""
+    }
+  ]
+}

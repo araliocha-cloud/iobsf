@@ -1,0 +1,27 @@
+{
+  "_schema": {
+    "season": "시즌 연도",
+    "updated": "마지막 갱신 날짜",
+    "points_note": "시즌 포인트 산정 방식 설명 (다국어)",
+    "entries": "barbecuer(barbecuers.json의 id), points(시즌 포인트), events(출전 대회 수)",
+    "honors_scored": "분배 4요소 명예를 포인트에 반영하는지 여부 (미결정, 현재 false: 별도 명예로 표시)"
+  },
+  "season": 2026,
+  "updated": "",
+  "honors_scored": false,
+  "points_note": {
+    "en": "Season points are earned at sanctioned events. The scoring table will be published with the first sanctioned season.",
+    "ko": "시즌 포인트는 연맹 공인 대회에서 쌓인다. 산정표는 첫 공인 시즌과 함께 공개한다.",
+    "ja": "",
+    "zh": ""
+  },
+  "entries": [
+    { "barbecuer": "sample-officiant", "points": 0, "events": 0, "sample": true }
+  ],
+  "honors_def": [
+    { "key": "dignity",       "name": { "en": "Dignity",       "ko": "존엄(尊嚴)", "ja": "", "zh": "" } },
+    { "key": "endurance",     "name": { "en": "Endurance",     "ko": "감내(堪耐)", "ja": "", "zh": "" } },
+    { "key": "participation", "name": { "en": "Participation", "ko": "참여(參與)", "ja": "", "zh": "" } },
+    { "key": "contribution",  "name": { "en": "Contribution",  "ko": "기여(寄與)", "ja": "", "zh": "" } }
+  ]
+}

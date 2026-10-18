@@ -1,0 +1,39 @@
+{
+  "_schema": {
+    "nation": "nations.json의 code",
+    "items": "그 나라의 전통 바비큐 기록: name(다국어), original(원어 표기), era(시대), text(다국어 해설), source(출처)"
+  },
+  "intro": {
+    "en": "Every nation kept its own fire. The Federation records these traditions as a shared heritage of humankind.",
+    "ko": "모든 민족은 저마다의 불을 지켜 왔다. 연맹은 그 전통을 인류 공동의 유산으로 기록한다.",
+    "ja": "",
+    "zh": ""
+  },
+  "nations": [
+    {
+      "nation": "KR",
+      "items": [
+        { "name": { "en": "Maekjeok", "ko": "맥적", "ja": "", "zh": "" }, "original": "貊炙", "era": "", "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" },
+        { "name": { "en": "Seolyamyeokjeok", "ko": "설야멱적", "ja": "", "zh": "" }, "original": "雪夜覓炙", "era": "", "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" }
+      ]
+    },
+    {
+      "nation": "JP",
+      "items": [
+        { "name": { "en": "Robatayaki", "ko": "로바타야키", "ja": "炉端焼き", "zh": "" }, "original": "炉端焼き", "era": "", "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" }
+      ]
+    },
+    {
+      "nation": "PH",
+      "items": [
+        { "name": { "en": "Lechon", "ko": "레촌", "ja": "", "zh": "" }, "original": "Lechón", "era": "", "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" }
+      ]
+    },
+    {
+      "nation": "CN",
+      "items": [
+        { "name": { "en": "Char siu", "ko": "차샤오", "ja": "", "zh": "叉烧" }, "original": "叉燒", "era": "", "text": { "en": "Record in preparation.", "ko": "기록 준비 중.", "ja": "", "zh": "" }, "source": "" }
+      ]
+    }
+  ]
+}

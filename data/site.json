@@ -1,0 +1,106 @@
+{
+  "federation": {
+    "abbr": "IOBSF",
+    "name": {
+      "en": "International Outdoor Barbecue Sports Federation",
+      "ko": "국제아웃도어바비큐스포츠연맹",
+      "ja": "",
+      "zh": ""
+    },
+    "founded": "2018-12-08",
+    "founded_place": { "en": "Founding General Assembly, Seoul", "ko": "서울 창립총회", "ja": "", "zh": "" },
+    "headquarters": { "en": "Republic of Korea", "ko": "대한민국", "ja": "", "zh": "" }
+  },
+
+  "statements": {
+    "motto": {
+      "label": { "en": "Motto", "ko": "모토", "ja": "", "zh": "" },
+      "text": {
+        "en": "You and I, and We",
+        "ko": "너와 나, 그리고 우리",
+        "ja": "あなたと私、そして私たち",
+        "zh": "你和我，还有我们"
+      }
+    },
+    "creed": {
+      "label": { "en": "Pro Barbecuer's Creed", "ko": "프로바비큐어 신조", "ja": "", "zh": "" },
+      "text": {
+        "en": "Victory in Sports Barbecue is not won through another's defeat. It is a glory conferred by those who did not win.",
+        "ko": "스포츠바비큐의 승리는 누군가의 패배로 이룬 것이 아니라, 패자의 추대로 얻은 영광이다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    "spirit": {
+      "label": { "en": "Spirit of the Game", "ko": "경기정신", "ja": "", "zh": "" },
+      "text": {
+        "en": "Sports Barbecue is not a victory built on sacrifice, but a glory built on sharing.",
+        "ko": "스포츠바비큐는 희생 위에 세운 승리가 아니라, 나눔 위에 세운 영광이다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    "slogan": {
+      "label": { "en": "Slogan", "ko": "슬로건", "ja": "", "zh": "" },
+      "text": { "en": "DO NOT DO IF NOT FUN", "ko": "", "ja": "", "zh": "" }
+    },
+    "hwahap": {
+      "label": { "en": "Pyrokoinonia", "ko": "화합(火合)", "ja": "", "zh": "" },
+      "text": {
+        "en": "Sport demanded harmony in the midst of rivalry. Sports Barbecue demands nothing. Those who sit before one fire are already one.",
+        "ko": "스포츠는 겨루면서 화합하라고 요구했다. 스포츠바비큐는 요구하지 않는다. 같은 불 앞에 앉은 사람은 이미 하나다. 和合은 강요되었고, 火合은 저절로 온다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    "mission": {
+      "label": { "en": "Mission", "ko": "사명", "ja": "", "zh": "" },
+      "text": {
+        "en": "The Federation connects the Sports Barbecue cultures of every nation, records each nation's traditional barbecue as a shared heritage of humankind, and builds a world worth living in by restoring lost humanity and a crumbling community of shared fate.",
+        "ko": "연맹의 역할은 각국의 스포츠바비큐 문화를 하나로 연결하고 각국의 전통적인 바비큐를 인류 공동의 문화유산으로 기록하며 잃어버린 인간성과 무너지는 공동운명체 복원을 통해 살 맛 나는 세상을 만들어 간다.",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    "pro_barbecuer": {
+      "label": { "en": "The Pro Barbecuer", "ko": "프로바비큐어", "ja": "", "zh": "" },
+      "text": {
+        "en": "A Pro Barbecuer officiates the ritual on the foundation of barbecue humanities and philosophical humanism, and carries a sense of mission for the common prosperity of humankind.",
+        "ko": "프로바비큐어는 바비큐 인문학과 철학적 인본을 바탕으로 의식을 집전하며 인류공영의 사명감을 갖는다.",
+        "ja": "",
+        "zh": ""
+      }
+    }
+  },
+
+  "nav": [
+    { "id": "fire",       "href": "fire.html",       "label": { "en": "The Fire",       "ko": "불", "ja": "", "zh": "" } },
+    { "id": "barbecuers", "href": "barbecuers.html", "label": { "en": "Pro Barbecuers", "ko": "프로바비큐어", "ja": "", "zh": "" } },
+    { "id": "rankings",   "href": "rankings.html",   "label": { "en": "Rankings",       "ko": "순위", "ja": "", "zh": "" } },
+    { "id": "events",     "href": "events.html",     "label": { "en": "Events",         "ko": "대회", "ja": "", "zh": "" } },
+    { "id": "pathway",    "href": "pathway.html",    "label": { "en": "Pathway",        "ko": "육성 과정", "ja": "", "zh": "" } },
+    { "id": "heritage",   "href": "heritage.html",   "label": { "en": "Heritage",       "ko": "헤리티지", "ja": "", "zh": "" } },
+    { "id": "chronicle",  "href": "chronicle.html",  "label": { "en": "Chronicle",      "ko": "기록", "ja": "", "zh": "" } },
+    { "id": "federation", "href": "federation.html", "label": { "en": "Federation",     "ko": "연맹", "ja": "", "zh": "" } },
+    { "id": "partners",   "href": "partners.html",   "label": { "en": "Partners",       "ko": "파트너", "ja": "", "zh": "" } }
+  ],
+
+  "links": [
+    {
+      "href": "https://professionalbarbecuer.com",
+      "name": "KBRI",
+      "desc": { "en": "Korea Barbecue Research & Institute. Home of the thought behind Sports Barbecue.", "ko": "한국바비큐연구원. 스포츠바비큐 사상의 본산.", "ja": "", "zh": "" }
+    },
+    {
+      "href": "https://kooba.kr",
+      "name": "KOOBA",
+      "desc": { "en": "Korea Outdoor & Barbecue Association. Korea Member of IOBSF.", "ko": "한국아웃도어바비큐협회. IOBSF 한국 회원.", "ja": "", "zh": "" }
+    }
+  ],
+
+  "second_languages": [
+    { "code": "ko", "name": "한국어" },
+    { "code": "ja", "name": "日本語" },
+    { "code": "zh", "name": "中文" }
+  ]
+}

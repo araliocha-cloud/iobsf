@@ -1,0 +1,12 @@
+{
+  "_schema": {
+    "stories": "대회 서사와 영상: id, date, title(다국어), text(다국어), event(대회 id, 선택), video(YouTube 주소, 선택), image(선택)"
+  },
+  "intro": {
+    "en": "Not only the champions. Every team that kept the fire has a story worth telling.",
+    "ko": "우승자만이 아니다. 불을 지킨 모든 팀에게 남길 이야기가 있다.",
+    "ja": "",
+    "zh": ""
+  },
+  "stories": []
+}

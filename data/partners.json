@@ -1,0 +1,19 @@
+{
+  "_schema": {
+    "tiers": "후원 등급: key, name(다국어)",
+    "partners": "후원사: name, tier(key), logo(경로), href"
+  },
+  "intro": {
+    "en": "Partners of the Federation stand beside the fire with us, and share in the culture and the market it creates.",
+    "ko": "연맹의 파트너는 불 곁에 함께 서서, 그 불이 만드는 문화와 시장을 함께 나눈다.",
+    "ja": "",
+    "zh": ""
+  },
+  "contact": "",
+  "tiers": [
+    { "key": "founding", "name": { "en": "Founding Partners", "ko": "창립 파트너", "ja": "", "zh": "" } },
+    { "key": "official", "name": { "en": "Official Partners", "ko": "공식 파트너", "ja": "", "zh": "" } },
+    { "key": "supporting", "name": { "en": "Supporting Partners", "ko": "후원 파트너", "ja": "", "zh": "" } }
+  ],
+  "partners": []
+}

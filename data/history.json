@@ -1,0 +1,12 @@
+{
+  "_schema": {
+    "year": "연도",
+    "date": "날짜 (선택)",
+    "text": "내용 (다국어)",
+    "note": "2000~2024년 항목은 kooba.kr 연혁에서 옮겨 올 예정"
+  },
+  "entries": [
+    { "year": 2018, "date": "2018-12-08", "text": { "en": "IOBSF founded at the Founding General Assembly in Seoul.", "ko": "서울 창립총회에서 국제아웃도어바비큐스포츠연맹 창립.", "ja": "", "zh": "" } },
+    { "year": 2025, "date": "", "text": { "en": "KOREA × JAPAN SCA Asia STEAK COOK OFF in KOREA.", "ko": "KOREA × JAPAN SCA Asia STEAK COOK OFF in KOREA 개최.", "ja": "", "zh": "" } }
+  ]
+}

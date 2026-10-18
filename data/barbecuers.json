@@ -1,0 +1,42 @@
+{
+  "_schema": {
+    "id": "고유 영문 아이디. 주소에 쓰인다 (barbecuer.html?id=...)",
+    "sample": "true면 예시 데이터. 실제 선수가 등록되면 지운다",
+    "name": "다국어 이름",
+    "nation": "nations.json의 code",
+    "status": "active | hall_of_fame | retired",
+    "certified": "프로바비큐어 인증 연도",
+    "pledge_signed": "헌장 서약 날짜 (YYYY-MM-DD)",
+    "photo": "assets/img/barbecuers/ 아래 파일 경로 (없으면 빈 칸)",
+    "statement": "집전 선언 (Officiant's Statement), 다국어",
+    "bio": "소개, 다국어",
+    "records": "대회 기록 목록: event(대회 id), result(순위 또는 기록), note",
+    "honors": "분배 4요소 명예: dignity, endurance, participation, contribution 횟수"
+  },
+  "barbecuers": [
+    {
+      "id": "sample-officiant",
+      "sample": true,
+      "name": { "en": "Sample Officiant", "ko": "예시 집전자", "ja": "", "zh": "" },
+      "nation": "KR",
+      "status": "active",
+      "certified": 2026,
+      "pledge_signed": "",
+      "photo": "",
+      "statement": {
+        "en": "This is where the Pro Barbecuer's own Officiant's Statement will appear, in their own words.",
+        "ko": "이 자리에 프로바비큐어가 직접 쓴 집전 선언이 들어간다.",
+        "ja": "",
+        "zh": ""
+      },
+      "bio": {
+        "en": "Profile, training path and the fire this barbecuer keeps.",
+        "ko": "약력, 육성 과정, 그리고 이 집전자가 지키는 불의 이야기.",
+        "ja": "",
+        "zh": ""
+      },
+      "records": [],
+      "honors": { "dignity": 0, "endurance": 0, "participation": 0, "contribution": 0 }
+    }
+  ]
+}

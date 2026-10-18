@@ -1,0 +1,23 @@
+{
+  "_schema": { "steps": "프로바비큐어가 되는 단계 (순서대로): key, name, text (다국어), status (open | preparing)" },
+  "intro": {
+    "en": "A Pro Barbecuer is not born at a single contest. The Federation raises officiants step by step, from the first lesson to the Pro Tour.",
+    "ko": "프로바비큐어는 한 번의 대회로 탄생하지 않는다. 연맹은 첫 수업부터 프로 투어까지 단계를 밟아 집전자를 기른다.",
+    "ja": "",
+    "zh": ""
+  },
+  "steps": [
+    { "key": "academy", "status": "preparing",
+      "name": { "en": "Academy", "ko": "아카데미", "ja": "", "zh": "" },
+      "text": { "en": "Fire, meat and time, and the humanities that give them meaning.", "ko": "불과 고기와 시간, 그리고 그 의미를 세우는 바비큐 인문학을 배운다.", "ja": "", "zh": "" } },
+    { "key": "certification", "status": "preparing",
+      "name": { "en": "Certification", "ko": "인증", "ja": "", "zh": "" },
+      "text": { "en": "Skill, knowledge and the Charter pledge. Those who pass become Pro Barbecuers.", "ko": "기량과 지식, 그리고 헌장 서약. 통과한 이가 프로바비큐어가 된다.", "ja": "", "zh": "" } },
+    { "key": "challenger", "status": "preparing",
+      "name": { "en": "Challenger Series", "ko": "챌린저 시리즈", "ja": "", "zh": "" },
+      "text": { "en": "The first sanctioned stage, where new officiants earn their season points.", "ko": "새 집전자가 첫 시즌 포인트를 쌓는 공인 무대.", "ja": "", "zh": "" } },
+    { "key": "tour", "status": "preparing",
+      "name": { "en": "Pro Tour", "ko": "프로 투어", "ja": "", "zh": "" },
+      "text": { "en": "The season-long stage of the Federation, leading to the World Championship.", "ko": "세계선수권으로 이어지는 연맹의 시즌 무대.", "ja": "", "zh": "" } }
+  ]
+}

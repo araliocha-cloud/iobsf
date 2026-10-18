@@ -1,0 +1,14 @@
+{
+  "_schema": {
+    "code": "국가 코드 (ISO 2자리)",
+    "member_org": "회원 단체명",
+    "site": "회원 단체 홈페이지",
+    "hq": "연맹 본부 여부"
+  },
+  "nations": [
+    { "code": "KR", "name": { "en": "Republic of Korea", "ko": "대한민국", "ja": "大韓民国", "zh": "大韩民国" }, "member_org": "KOOBA, Korea Outdoor & Barbecue Association", "site": "https://kooba.kr", "hq": true },
+    { "code": "JP", "name": { "en": "Japan", "ko": "일본", "ja": "日本", "zh": "日本" }, "member_org": "", "site": "", "hq": false },
+    { "code": "PH", "name": { "en": "Philippines", "ko": "필리핀", "ja": "フィリピン", "zh": "菲律宾" }, "member_org": "", "site": "", "hq": false },
+    { "code": "CN", "name": { "en": "China", "ko": "중국", "ja": "中国", "zh": "中国" }, "member_org": "", "site": "", "hq": false }
+  ]
+}
