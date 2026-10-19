@@ -1588,6 +1588,301 @@
           }
         }
       ]
+    },
+    {
+      "id": "jerk",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-016",
+      "recorded": "2026-10-19",
+      "recorder": {
+        "en": "IOBSF Headquarters and Korea Secretariat, with KBRI",
+        "ko": "IOBSF 연맹본부 및 한국사무국, 한국바비큐연구원(KBRI)",
+        "ja": "IOBSF 連盟本部及び韓国事務局、韓国バーベキュー研究院（KBRI）",
+        "zh": "IOBSF 联合会总部及韩国秘书处、韩国烧烤研究院（KBRI）"
+      },
+      "name": {
+        "en": "Jerk",
+        "ko": "저크",
+        "ja": "ジャーク",
+        "zh": "牙买加烟熏烤肉（Jerk）"
+      },
+      "original": "Jerk",
+      "original_lang": {
+        "en": "Jamaican English",
+        "ko": "자메이카 영어",
+        "ja": "ジャマイカ英語",
+        "zh": "牙买加英语"
+      },
+      "forms": [
+        "smoke"
+      ],
+      "community": {
+        "en": "Jamaican Maroons, inheriting from the Taíno",
+        "ko": "타이노의 불을 이어받은 자메이카의 마룬",
+        "ja": "タイノから受け継いだジャマイカのマルーン",
+        "zh": "继承泰诺人之火的牙买加马龙人"
+      },
+      "era": {
+        "en": "Recorded by 1516; Maroon communities from the 17th century",
+        "ko": "1516년 기록, 17세기부터 마룬 공동체",
+        "ja": "1516年に記録、17世紀からマルーンの共同体",
+        "zh": "1516年有记载，17世纪起由马龙人社群传承"
+      },
+      "text": {
+        "en": "Meat rubbed with allspice and Scotch bonnet pepper, cooked slowly in the smoke of pimento wood.",
+        "ko": "올스파이스와 스카치 보닛 고추로 문지른 고기를 피멘토 나무의 연기로 천천히 익힌다.",
+        "ja": "オールスパイスとスコッチボネット唐辛子をすり込んだ肉を、ピメントの木の煙でゆっくり火を通す。",
+        "zh": "以多香果与苏格兰帽辣椒涂抹的肉，在多香果木的烟中慢慢熏熟。"
+      },
+      "sections": {
+        "summary": {
+          "en": "Meat rubbed with allspice and Scotch bonnet pepper, cooked slowly in the smoke of pimento wood.",
+          "ko": "올스파이스와 스카치 보닛 고추로 문지른 고기를 피멘토 나무의 연기로 천천히 익힌다.",
+          "ja": "オールスパイスとスコッチボネット唐辛子をすり込んだ肉を、ピメントの木の煙でゆっくり火を通す。",
+          "zh": "以多香果与苏格兰帽辣椒涂抹的肉，在多香果木的烟中慢慢熏熟。"
+        },
+        "fire": {
+          "en": "Pork or chicken is laid over green pimento (allspice) wood and cooked low and long in its smoke. The Maroons are said to have cooked in covered pits so that no smoke would betray their hiding places. Today oil-drum pits burn the same wood at the roadside.",
+          "ko": "돼지고기나 닭고기를 푸른 피멘토(올스파이스) 나무 위에 얹고, 그 연기로 낮게 오래 익힌다. 마룬은 연기가 숨은 곳을 드러내지 않도록 덮은 구덩이에서 익혔다고 전한다. 오늘은 길가의 기름통 화덕이 같은 나무를 태운다.",
+          "ja": "豚肉や鶏肉を青いピメント（オールスパイス）の木の上に置き、その煙で低く長く火を通す。マルーンは煙が隠れ家を明かさないよう、覆った穴で調理したと伝えられる。今日では道端のドラム缶の炉が同じ木を燃やす。",
+          "zh": "将猪肉或鸡肉置于新鲜的多香果木上，以其烟低温长时间熏烤。相传马龙人在加盖的坑中烹煮，以免烟雾暴露藏身之处。如今路边的油桶烤炉仍燃烧同样的木材。"
+        },
+        "sharing": {
+          "en": "Jerk is the food of the roadside jerk centre, eaten together with hard dough bread, bammy and festival.",
+          "ko": "저크는 길가 저크 센터의 음식이다. 하드 도우 빵, 바미, 페스티벌과 함께 나눠 먹는다.",
+          "ja": "ジャークは道端のジャークセンターの食べ物である。ハードドウブレッド、バミー、フェスティバルとともに分け合って食べる。",
+          "zh": "牙买加烟熏烤肉是路边“Jerk中心”的食物，与硬面包、木薯饼、炸面团一同分享。"
+        },
+        "history": {
+          "en": "In 1516 Gonzalo Fernández de Oviedo recorded the Taíno preserving meat on a barbacoa, a framework of sticks, with peppers and pimento. Africans who escaped slavery after 1655 became the Maroons, met the Taíno and carried the method on. In 2015 Jamaica registered Jamaica Jerk as a geographical indication.",
+          "ko": "1516년 곤살로 페르난데스 데 오비에도는 타이노가 나무 틀 바르바코아(barbacoa) 위에서 고추와 피멘토로 고기를 갈무리하는 모습을 기록했다. 1655년 이후 노예에서 벗어난 아프리카인들이 마룬이 되어 타이노와 만나고 이 방식을 이었다. 2015년 자메이카는 「자메이카 저크」를 지리적 표시로 등록했다.",
+          "ja": "1516年、ゴンサロ・フェルナンデス・デ・オビエドは、タイノが木枠バルバコア（barbacoa）の上で唐辛子とピメントを使い肉を保存する姿を記録した。1655年以降、奴隷の身から逃れたアフリカ人がマルーンとなってタイノと出会い、この方法を受け継いだ。2015年、ジャマイカは「ジャマイカ・ジャーク」を地理的表示として登録した。",
+          "zh": "1516年，贡萨洛·费尔南德斯·德·奥维耶多记载泰诺人在名为barbacoa的木架上以辣椒和多香果保存肉类。1655年后摆脱奴役的非洲人成为马龙人，与泰诺人相遇并延续此法。2015年牙买加将“牙买加Jerk”登记为地理标志。"
+        },
+        "living": {
+          "en": "Living. Cooked across Jamaica and in the Caribbean diaspora.",
+          "ko": "살아 있다. 자메이카 전역과 카리브 이주민 사회에서 익힌다.",
+          "ja": "生きている。ジャマイカ全土とカリブ系移民社会で作られている。",
+          "zh": "仍然鲜活。遍及牙买加全境及加勒比海外侨民社区。"
+        }
+      },
+      "sources": [
+        {
+          "title": "Jamaican jerk spice (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Jamaican_jerk_spice"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-19",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "連盟記録遺産として記録。",
+            "zh": "作为联合会记录遗产记录。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "boodog",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-017",
+      "recorded": "2026-10-19",
+      "recorder": {
+        "en": "IOBSF Headquarters and Korea Secretariat, with KBRI",
+        "ko": "IOBSF 연맹본부 및 한국사무국, 한국바비큐연구원(KBRI)",
+        "ja": "IOBSF 連盟本部及び韓国事務局、韓国バーベキュー研究院（KBRI）",
+        "zh": "IOBSF 联合会总部及韩国秘书处、韩国烧烤研究院（KBRI）"
+      },
+      "name": {
+        "en": "Boodog",
+        "ko": "보독",
+        "ja": "ボードグ",
+        "zh": "石烤全羊（Boodog）"
+      },
+      "original": "Боодог",
+      "original_lang": {
+        "en": "Mongolian",
+        "ko": "몽골어",
+        "ja": "モンゴル語",
+        "zh": "蒙古语"
+      },
+      "forms": [
+        "stone"
+      ],
+      "community": {
+        "en": "Herders of Mongolia",
+        "ko": "몽골의 유목민",
+        "ja": "モンゴルの遊牧民",
+        "zh": "蒙古牧民"
+      },
+      "era": {
+        "en": "Traditional, of the herding life",
+        "ko": "유목 생활의 전통",
+        "ja": "遊牧生活の伝統",
+        "zh": "游牧生活的传统"
+      },
+      "text": {
+        "en": "A goat or marmot cooked from within by hot stones sealed inside its own skin.",
+        "ko": "염소나 마멋을 그 가죽 안에 넣은 달군 돌로 안에서부터 익힌다.",
+        "ja": "ヤギやマーモットを、その皮の中に入れた焼け石で内側から火を通す。",
+        "zh": "将烧热的石头封入山羊或旱獭的皮内，由内而外烤熟。"
+      },
+      "sections": {
+        "summary": {
+          "en": "A goat or marmot cooked from within by hot stones sealed inside its own skin.",
+          "ko": "염소나 마멋을 그 가죽 안에 넣은 달군 돌로 안에서부터 익힌다.",
+          "ja": "ヤギやマーモットを、その皮の中に入れた焼け石で内側から火を通す。",
+          "zh": "将烧热的石头封入山羊或旱獭的皮内，由内而外烤熟。"
+        },
+        "fire": {
+          "en": "Bones and organs are taken out through the neck. Fist-sized stones heated in the fire go in with the meat, onion and salt, and the neck is tied shut. The skin is singed over embers while the stones cook the meat from inside. Khorkhog, its younger form, cooks mutton with hot stones in a sealed metal can.",
+          "ko": "목으로 뼈와 내장을 꺼낸다. 불에 달군 주먹만 한 돌을 고기, 양파, 소금과 함께 넣고 목을 묶는다. 겉가죽을 잿불에 그슬리는 동안 돌이 안에서 고기를 익힌다. 그 뒤에 생긴 호르호그(khorkhog)는 달군 돌과 양고기를 쇠 통에 넣고 봉해 익힌다.",
+          "ja": "首から骨と内臓を取り出す。火で焼いた拳大の石を肉、玉ねぎ、塩とともに入れ、首を縛る。皮を熾火であぶる間、石が内側から肉に火を通す。後に生まれたホルホグ（khorkhog）は、焼け石と羊肉を金属の缶に入れて封じ、火を通す。",
+          "zh": "从颈部取出骨头与内脏，把在火中烧热的拳头大小石块与肉、洋葱、盐一同放入，再扎紧颈口。外皮在余烬上燎烤时，石块从内部将肉烤熟。后来出现的“霍尔霍格”（khorkhog）则将热石与羊肉放入密封的铁桶中烹煮。"
+        },
+        "sharing": {
+          "en": "Boodog is made outdoors by two or more people for special occasions. The hot stones are passed from hand to hand among those who share the meat.",
+          "ko": "보독은 특별한 날 두 사람 이상이 함께 바깥에서 만든다. 고기를 나누는 사람들은 달군 돌을 손에서 손으로 돌린다.",
+          "ja": "ボードグは特別な日に、二人以上で屋外で作る。肉を分け合う人々は焼け石を手から手へと回す。",
+          "zh": "Boodog在特殊的日子由两人以上在户外共同制作。分享肉的人们把热石从一人手中传到另一人手中。"
+        },
+        "history": {
+          "en": "Boodog belongs to the herding life of the steppe, using the animal's own skin as the vessel. Khorkhog grew from it in the 20th century, when metal milk cans took the place of the skin.",
+          "ko": "보독은 동물의 가죽을 그대로 그릇으로 삼는 초원 유목 생활의 불이다. 20세기에 쇠 우유 통이 가죽을 대신하면서 호르호그가 생겨났다.",
+          "ja": "ボードグは動物の皮をそのまま器とする、草原の遊牧生活の火である。20世紀に金属の牛乳缶が皮に代わり、ホルホグが生まれた。",
+          "zh": "Boodog是草原游牧生活之火，以动物自身的皮为容器。20世纪金属奶桶取代兽皮，由此衍生出霍尔霍格。"
+        },
+        "living": {
+          "en": "Living. Made across Mongolia, with khorkhog the more common form today.",
+          "ko": "살아 있다. 몽골 곳곳에서 만들며, 오늘은 호르호그가 더 흔하다.",
+          "ja": "生きている。モンゴル各地で作られ、今日ではホルホグの方が一般的である。",
+          "zh": "仍然鲜活。蒙古各地均有制作，如今霍尔霍格更为常见。"
+        }
+      },
+      "sources": [
+        {
+          "title": "Boodog (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Boodog"
+        },
+        {
+          "title": "Khorkhog (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Khorkhog"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-19",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "連盟記録遺産として記録。",
+            "zh": "作为联合会记录遗产记录。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "peka",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-018",
+      "recorded": "2026-10-19",
+      "recorder": {
+        "en": "IOBSF Headquarters and Korea Secretariat, with KBRI",
+        "ko": "IOBSF 연맹본부 및 한국사무국, 한국바비큐연구원(KBRI)",
+        "ja": "IOBSF 連盟本部及び韓国事務局、韓国バーベキュー研究院（KBRI）",
+        "zh": "IOBSF 联合会总部及韩国秘书处、韩国烧烤研究院（KBRI）"
+      },
+      "name": {
+        "en": "Peka",
+        "ko": "페카",
+        "ja": "ペカ",
+        "zh": "铁钟焖烤（Peka）"
+      },
+      "original": "Peka / Sač",
+      "original_lang": {
+        "en": "Croatian / Bosnian, Serbian",
+        "ko": "크로아티아어, 보스니아어, 세르비아어",
+        "ja": "クロアチア語、ボスニア語、セルビア語",
+        "zh": "克罗地亚语、波斯尼亚语、塞尔维亚语"
+      },
+      "forms": [
+        "bell"
+      ],
+      "community": {
+        "en": "Peoples of the western Balkans",
+        "ko": "서부 발칸의 여러 민족",
+        "ja": "西バルカンの諸民族",
+        "zh": "西巴尔干各民族"
+      },
+      "era": {
+        "en": "Traditional, of the village hearth",
+        "ko": "마을 화덕의 전통",
+        "ja": "村のかまどの伝統",
+        "zh": "乡村炉灶的传统"
+      },
+      "text": {
+        "en": "Meat and vegetables baked under an iron or clay bell, with embers heaped on its lid.",
+        "ko": "쇠나 흙으로 만든 종 모양 덮개 아래에 고기와 채소를 넣고, 덮개 위에 잿불을 쌓아 굽는다.",
+        "ja": "鉄や土の釣鐘形の蓋の下に肉と野菜を入れ、蓋の上に熾火を積んで焼く。",
+        "zh": "将肉与蔬菜置于铁或陶制钟形盖下，在盖上堆放余烬烘烤。"
+      },
+      "sections": {
+        "summary": {
+          "en": "Meat and vegetables baked under an iron or clay bell, with embers heaped on its lid.",
+          "ko": "쇠나 흙으로 만든 종 모양 덮개 아래에 고기와 채소를 넣고, 덮개 위에 잿불을 쌓아 굽는다.",
+          "ja": "鉄や土の釣鐘形の蓋の下に肉と野菜を入れ、蓋の上に熾火を積んで焼く。",
+          "zh": "将肉与蔬菜置于铁或陶制钟形盖下，在盖上堆放余烬烘烤。"
+        },
+        "fire": {
+          "en": "A hearth is cleared and the pan set on the hot floor. Lamb, veal or octopus goes in with potatoes, and the bell-shaped lid is closed. Live coals and ash are heaped over the lid, so heat comes from above and below while the steam turns inside.",
+          "ko": "화덕 바닥을 쓸고 달궈진 바닥에 팬을 놓는다. 양고기나 송아지고기, 문어를 감자와 함께 넣고 종 모양 덮개를 닫는다. 덮개 위에 숯불과 재를 쌓으면 위아래에서 열이 오고, 안에서는 김이 돈다.",
+          "ja": "かまどの床を掃き、熱くなった床に鍋を置く。羊肉や子牛肉、タコをじゃがいもと一緒に入れ、釣鐘形の蓋を閉じる。蓋の上に炭火と灰を積むと上下から熱が入り、中では蒸気がめぐる。",
+          "zh": "清理炉底，把锅放在烧热的地面上。放入羊肉、小牛肉或章鱼与土豆，盖上钟形盖。盖上堆满炭火与灰，热从上下而来，蒸汽在内部循环。"
+        },
+        "sharing": {
+          "en": "Peka is the dish of the family gathering and the village feast, set in the middle of the table for all to share.",
+          "ko": "페카는 집안 모임과 마을 잔치의 음식이다. 식탁 가운데 놓고 모두가 함께 나눈다.",
+          "ja": "ペカは家族の集まりと村の祝宴の料理である。食卓の真ん中に置き、皆で分け合う。",
+          "zh": "Peka是家庭聚会与乡村宴席的菜肴，放在餐桌中央供所有人分享。"
+        },
+        "history": {
+          "en": "The bell is thought to descend from the saj, the curved iron plate of the Middle East. For generations it served households without a stove, baking bread and meat in the hearth itself.",
+          "ko": "덮개는 중동의 굽은 쇠판 사지(saj)에서 왔다고 여겨진다. 오랜 세대 동안 화덕이 없는 집에서 화덕 자체를 오븐 삼아 빵과 고기를 구웠다.",
+          "ja": "蓋は中東の湾曲した鉄板サージ（saj）に由来すると考えられている。何世代にもわたり、オーブンのない家でかまどそのものを窯として、パンと肉を焼いてきた。",
+          "zh": "钟形盖被认为源自中东的弧形铁板“萨吉”（saj）。世世代代，没有烤炉的人家就以炉灶本身为窑，烤制面包与肉。"
+        },
+        "living": {
+          "en": "Living. Made in homes and restaurants across Croatia, Bosnia and Herzegovina, Serbia, Montenegro and neighbouring lands.",
+          "ko": "살아 있다. 크로아티아, 보스니아 헤르체고비나, 세르비아, 몬테네그로와 이웃 땅의 가정과 식당에서 만든다.",
+          "ja": "生きている。クロアチア、ボスニア・ヘルツェゴビナ、セルビア、モンテネグロと近隣の地の家庭や食堂で作られている。",
+          "zh": "仍然鲜活。在克罗地亚、波黑、塞尔维亚、黑山及邻近地区的家庭与餐馆中制作。"
+        }
+      },
+      "sources": [
+        {
+          "title": "Sač (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Sa%C4%8D"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-19",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "連盟記録遺産として記録。",
+            "zh": "作为联合会记录遗产记录。"
+          }
+        }
+      ]
     }
   ],
   "archives": [
