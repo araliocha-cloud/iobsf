@@ -1883,6 +1883,204 @@
           }
         }
       ]
+    },
+    {
+      "id": "pachamanca",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-019",
+      "recorded": "2026-10-19",
+      "recorder": {
+        "en": "IOBSF Headquarters and Korea Secretariat, with KBRI",
+        "ko": "IOBSF 연맹본부 및 한국사무국, 한국바비큐연구원(KBRI)",
+        "ja": "IOBSF 連盟本部及び韓国事務局、韓国バーベキュー研究院（KBRI）",
+        "zh": "IOBSF 联合会总部及韩国秘书处、韩国烧烤研究院（KBRI）"
+      },
+      "name": {
+        "en": "Pachamanca",
+        "ko": "파차망카",
+        "ja": "パチャマンカ",
+        "zh": "帕恰曼卡（Pachamanca）"
+      },
+      "original": "Pachamanca",
+      "original_lang": {
+        "en": "Quechua",
+        "ko": "케추아어",
+        "ja": "ケチュア語",
+        "zh": "克丘亚语"
+      },
+      "forms": [
+        "earth"
+      ],
+      "community": {
+        "en": "Andean peoples of Peru",
+        "ko": "페루 안데스의 사람들",
+        "ja": "ペルー・アンデスの人々",
+        "zh": "秘鲁安第斯山区的人们"
+      },
+      "era": {
+        "en": "From before the Inca",
+        "ko": "잉카 이전부터",
+        "ja": "インカ以前から",
+        "zh": "始于印加之前"
+      },
+      "text": {
+        "en": "Meat, potatoes and corn cooked in the earth on hot stones, as an offering to Pachamama.",
+        "ko": "고기와 감자, 옥수수를 달군 돌 위에 얹어 땅속에서 익힌다. 대지의 어머니 파차마마에게 바치는 음식이다.",
+        "ja": "肉とじゃがいも、とうもろこしを焼け石の上に置き、地中で火を通す。大地の母パチャママに捧げる料理である。",
+        "zh": "将肉、土豆与玉米置于烧热的石头上，埋入地下烹熟，是献给大地之母帕恰玛玛的食物。"
+      },
+      "sections": {
+        "summary": {
+          "en": "Meat, potatoes and corn cooked in the earth on hot stones, as an offering to Pachamama.",
+          "ko": "고기와 감자, 옥수수를 달군 돌 위에 얹어 땅속에서 익힌다. 대지의 어머니 파차마마에게 바치는 음식이다.",
+          "ja": "肉とじゃがいも、とうもろこしを焼け石の上に置き、地中で火を通す。大地の母パチャママに捧げる料理である。",
+          "zh": "将肉、土豆与玉米置于烧热的石头上，埋入地下烹熟，是献给大地之母帕恰玛玛的食物。"
+        },
+        "fire": {
+          "en": "Stones are heated over a wood fire. Meat seasoned with huacatay and chincho goes on the stones with potatoes, sweet potatoes and corn, wrapped in leaves, then covered with grass and earth. The oven is opened after about two hours. The name means earth pot in Quechua.",
+          "ko": "장작불로 돌을 달군다. 우아카타이와 친초로 양념한 고기를 감자, 고구마, 옥수수와 함께 잎에 싸서 돌 위에 얹고, 풀과 흙으로 덮는다. 두 시간쯤 뒤에 연다. 이름은 케추아어로 「땅의 솥」이라는 뜻이다.",
+          "ja": "薪火で石を焼く。ウアカタイとチンチョで味付けした肉を、じゃがいも、さつまいも、とうもろこしとともに葉で包んで石の上に置き、草と土で覆う。二時間ほどで開ける。名はケチュア語で「大地の鍋」を意味する。",
+          "zh": "以柴火烧热石头，将用秘鲁黑薄荷与金丘香草调味的肉，与土豆、红薯、玉米一同包入叶中置于石上，再以草与泥土覆盖，约两小时后开启。其名在克丘亚语中意为“大地之锅”。"
+        },
+        "sharing": {
+          "en": "Pachamanca is the food of festivals and religious days, eaten with music, chicha and beer. In some places godparents set a cross and flowers on the buried food.",
+          "ko": "파차망카는 축제와 종교 절기의 음식이다. 음악, 치차, 맥주와 함께 나눈다. 어떤 곳에서는 대부와 대모가 묻힌 음식 위에 십자가와 꽃을 놓는다.",
+          "ja": "パチャマンカは祭りと宗教の節目の料理である。音楽、チチャ、ビールとともに分け合う。ところによっては代父母が埋めた料理の上に十字架と花を置く。",
+          "zh": "帕恰曼卡是节庆与宗教节日的食物，伴着音乐、奇恰酒与啤酒一同分享。有些地方，教父母会在埋着的食物上放置十字架与鲜花。"
+        },
+        "history": {
+          "en": "The pachamanca goes back before the Inca. The hot stones stand for Inti, the sun, and burying the food returns it to the womb of Pachamama, the earth.",
+          "ko": "파차망카는 잉카 이전으로 거슬러 오른다. 달군 돌은 태양신 인티를, 음식을 묻는 일은 대지의 어머니 파차마마의 품으로 돌려보내는 것을 뜻한다.",
+          "ja": "パチャマンカはインカ以前にさかのぼる。焼け石は太陽神インティを、料理を埋めることは大地の母パチャママの胎内へ返すことを意味する。",
+          "zh": "帕恰曼卡可追溯至印加之前。热石象征太阳神因蒂，埋藏食物则意味着将其送回大地之母帕恰玛玛的怀中。"
+        },
+        "living": {
+          "en": "Living. Made across Peru, with regional forms in Huánuco, the Mantaro valley and Ayacucho, and in parts of Ecuador.",
+          "ko": "살아 있다. 페루 전역에서 만들며, 우아누코, 만타로 계곡, 아야쿠초마다 지역의 모습이 있다. 에콰도르 일부에도 있다.",
+          "ja": "生きている。ペルー全土で作られ、ワヌコ、マンタロ渓谷、アヤクーチョごとに地域の姿がある。エクアドルの一部にもある。",
+          "zh": "仍然鲜活。遍及秘鲁全境，瓦努科、曼塔罗河谷、阿亚库乔各有地方风貌，厄瓜多尔部分地区亦有。"
+        }
+      },
+      "sources": [
+        {
+          "title": "Pachamanca (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Pachamanca"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-19",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "連盟記録遺産として記録。",
+            "zh": "作为联合会记录遗产记录。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "competition-barbecue",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-020",
+      "recorded": "2026-10-19",
+      "recorder": {
+        "en": "IOBSF Headquarters and Korea Secretariat, with KBRI",
+        "ko": "IOBSF 연맹본부 및 한국사무국, 한국바비큐연구원(KBRI)",
+        "ja": "IOBSF 連盟本部及び韓国事務局、韓国バーベキュー研究院（KBRI）",
+        "zh": "IOBSF 联合会总部及韩国秘书处、韩国烧烤研究院（KBRI）"
+      },
+      "name": {
+        "en": "Competition Barbecue",
+        "ko": "컴페티션 바비큐",
+        "ja": "コンペティション・バーベキュー",
+        "zh": "竞技烧烤（Competition Barbecue）"
+      },
+      "original": "Competition Barbecue",
+      "original_lang": {
+        "en": "American English",
+        "ko": "미국 영어",
+        "ja": "アメリカ英語",
+        "zh": "美式英语"
+      },
+      "forms": [
+        "smoke"
+      ],
+      "community": {
+        "en": "Competition pitmasters of the United States",
+        "ko": "미국의 컴페티션 피트마스터",
+        "ja": "アメリカのコンペティション・ピットマスター",
+        "zh": "美国竞技烧烤师"
+      },
+      "era": {
+        "en": "From 1978",
+        "ko": "1978년부터",
+        "ja": "1978年から",
+        "zh": "始于1978年"
+      },
+      "text": {
+        "en": "Chicken, pork ribs, pork shoulder and beef brisket smoked low and slow overnight, judged blind by certified judges.",
+        "ko": "닭, 돼지갈비, 돼지 어깨살, 소 양지를 밤새 낮은 불의 연기로 익히고, 인증 심판이 이름을 가린 채 판정한다.",
+        "ja": "鶏、豚スペアリブ、豚肩肉、牛ブリスケットを夜通し低温の煙で火を通し、認定審査員が名を伏せて審査する。",
+        "zh": "鸡肉、猪肋排、猪肩肉与牛胸肉通宵以低温烟熏烤，由认证评委盲评。"
+      },
+      "sections": {
+        "summary": {
+          "en": "Chicken, pork ribs, pork shoulder and beef brisket smoked low and slow overnight, judged blind by certified judges.",
+          "ko": "닭, 돼지갈비, 돼지 어깨살, 소 양지를 밤새 낮은 불의 연기로 익히고, 인증 심판이 이름을 가린 채 판정한다.",
+          "ja": "鶏、豚スペアリブ、豚肩肉、牛ブリスケットを夜通し低温の煙で火を通し、認定審査員が名を伏せて審査する。",
+          "zh": "鸡肉、猪肋排、猪肩肉与牛胸肉通宵以低温烟熏烤，由认证评委盲评。"
+        },
+        "fire": {
+          "en": "Teams tend wood or charcoal smokers through the night at the contest site. Each category is turned in at a set hour in a closed box with no mark of the team, and judges score it by sight, smell, touch and taste.",
+          "ko": "팀들은 대회장에서 밤새 장작이나 숯 스모커를 지킨다. 종목마다 정해진 시각에 팀 표시가 없는 닫힌 상자로 제출하고, 심판은 눈, 냄새, 촉감, 맛으로 점수를 매긴다.",
+          "ja": "チームは会場で夜通し薪や炭のスモーカーを見守る。部門ごとに決められた時刻に、チームの印のない閉じた箱で提出し、審査員は目、香り、手触り、味で採点する。",
+          "zh": "各队在比赛现场通宵守护木柴或木炭烟熏炉。每个项目在规定时刻以无队伍标记的封闭盒提交，评委依视觉、气味、触感与味道评分。"
+        },
+        "sharing": {
+          "en": "The contest weekend is a camp of neighbouring pits. Teams share wood, tools and food across the rows before and after judging.",
+          "ko": "대회 주말은 이웃한 화덕들이 모인 하나의 야영지다. 팀들은 판정 앞뒤로 줄을 넘나들며 장작과 도구, 음식을 나눈다.",
+          "ja": "大会の週末は隣り合う炉が集まるひとつの野営地である。チームは審査の前後に列を越えて薪と道具、食べ物を分け合う。",
+          "zh": "比赛周末是相邻烤炉汇聚的营地。各队在评审前后跨越一排排摊位，分享木柴、工具与食物。"
+        },
+        "history": {
+          "en": "It rests on the pit cooking of the American South, long kept by Black and Indigenous cooks. Memphis in May held its first contest in 1978, with 26 teams on a vacant lot. The Kansas City Barbeque Society, founded in 1985, set the four categories and blind judging, and now sanctions more than 300 contests a year.",
+          "ko": "미국 남부의 구덩이 조리 위에 서 있다. 그 불은 오랫동안 흑인과 원주민 요리사들이 지켜 왔다. 1978년 멤피스 인 메이(Memphis in May)가 빈터에서 26개 팀으로 첫 대회를 열었다. 1985년 세워진 캔자스시티 바비큐 협회(KCBS)가 네 종목과 블라인드 판정을 정했고, 오늘 해마다 300개가 넘는 대회를 공인한다.",
+          "ja": "アメリカ南部の穴調理の上に立っている。その火は長く黒人と先住民の料理人が守ってきた。1978年、メンフィス・イン・メイ（Memphis in May）が空き地に26チームを集めて最初の大会を開いた。1985年に設立されたカンザスシティ・バーベキュー協会（KCBS）が四部門とブラインド審査を定め、今日では毎年300を超える大会を公認している。",
+          "zh": "它建立在美国南方的坑烤之上，那团火长久以来由黑人与原住民厨师守护。1978年“孟菲斯五月节”（Memphis in May）在一块空地上以26支队伍举办首届比赛。1985年成立的堪萨斯城烧烤协会（KCBS）确立了四个项目与盲评制度，如今每年认证300多场比赛。"
+        },
+        "living": {
+          "en": "Living. Contests run across the United States every weekend, and the circuit now reaches other countries.",
+          "ko": "살아 있다. 미국 곳곳에서 주말마다 대회가 열리고, 이제 다른 나라로도 퍼지고 있다.",
+          "ja": "生きている。アメリカ各地で週末ごとに大会が開かれ、今では他の国々にも広がっている。",
+          "zh": "仍然鲜活。美国各地每个周末都有比赛，如今更扩展至其他国家。"
+        }
+      },
+      "sources": [
+        {
+          "title": "Kansas City Barbeque Society (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Kansas_City_Barbeque_Society"
+        },
+        {
+          "title": "Memphis in May, 1978 barbecue contest (Squirrel Cook Off)",
+          "href": "https://squirrelcookoff.com/history/mim-memphis-1978-bbq-contest/"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-19",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "連盟記録遺産として記録。",
+            "zh": "作为联合会记录遗产记录。"
+          }
+        }
+      ]
     }
   ],
   "archives": [
