@@ -22,6 +22,20 @@
     }
   },
   "statements": {
+    "sports_barbecue": {
+      "label": {
+        "en": "Sports Barbecue",
+        "ko": "스포츠바비큐",
+        "ja": "スポーツバーベキュー",
+        "zh": "运动烧烤"
+      },
+      "text": {
+        "en": "Sports Barbecue is a humanist sport that revives humankind's first cooking with fire as ritual, restores lost humanity through freedom and equality before the fire, and builds a world worth living in by rebuilding a crumbling community of shared fate.",
+        "ko": "스포츠바비큐는 인류 최초의 화식(火食)을 의식(Ritual)으로 되살려 불 앞에서 자유와 평등을 통해 잃어버린 인간성을 회복하고, 무너지는 공동운명체 복원을 통해 살 맛 나는 세상을 만들어 가는 인본주의적 스포츠다.",
+        "ja": "スポーツバーベキューは、人類最初の火食（かしょく）を儀式（Ritual）としてよみがえらせ、火の前で自由と平等を通じて失われた人間性を回復し、崩れゆく運命共同体の復元を通じて生きがいのある世の中をつくっていく人本主義的スポーツである。",
+        "zh": "运动烧烤是一项人本主义运动：它将人类最初的火食以仪式（Ritual）重新唤醒，在火前通过自由与平等恢复失落的人性，并通过修复正在瓦解的命运共同体，创造一个值得活下去的世界。"
+      }
+    },
     "motto": {
       "label": {
         "en": "Motto",

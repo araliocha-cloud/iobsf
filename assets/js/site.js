@@ -213,6 +213,7 @@
   pages.fire = function (site) {
     var st = site.statements;
     put("#fire-body",
+      (st.sports_barbecue ? '<div class="statement definition"><p class="label">' + esc(st.sports_barbecue.label.en) + "</p>" + bi(st.sports_barbecue.text, "p", "text") + '</div><div style="height:80px"></div>' : "") +
       '<div class="statement">' + bi(st.hwahap.text, "p", "text") + "</div>" +
       '<div style="height:80px"></div>' +
       ["motto", "spirit", "creed"].map(function (k) {
@@ -582,6 +583,7 @@
         "<dt>Name</dt><dd>" + bi(f.name) + "</dd>" +
         "<dt>Founded</dt><dd>" + bi({ en: "8 December 2018, " + f.founded_place.en, ko: "2018년 12월 8일, " + f.founded_place.ko, ja: "2018年12月8日、" + tr(f.founded_place.ko, "ja"), zh: "2018年12月8日，" + tr(f.founded_place.ko, "zh") }) + "</dd>" +
         "<dt>Headquarters</dt><dd>" + bi(f.headquarters) + "</dd>" +
+        (st.sports_barbecue ? "<dt>" + esc(st.sports_barbecue.label.en) + "</dt><dd>" + bi(st.sports_barbecue.text) + "</dd>" : "") +
         "<dt>" + esc(st.mission.label.en) + "</dt><dd>" + bi(st.mission.text) + "</dd>" +
         (site.secretariat ? "<dt>Secretariat</dt><dd>" + bi(site.secretariat.name) + bi(site.secretariat.head) + "</dd>" : "") +
       "</dl>");
