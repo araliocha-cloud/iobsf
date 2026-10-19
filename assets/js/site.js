@@ -339,6 +339,12 @@
         '<p class="meta" style="color:var(--ash)">' + esc(fmtDate(e)) + ", " + esc(en(e.place)) + ", " + esc(en(ev.tiers[e.tier] || "")) + "</p>" +
         "<h1>" + esc(en(e.name)) + "</h1>" +
         bi(e.summary, "div", "prose lede") +
+        (e.facts && e.facts.length ? '<div class="section"><h2>At a Glance' + bi({ ko: "개요", ja: "概要", zh: "概况" }, "span") + '</h2><dl class="facts" style="margin-top:24px">' + e.facts.map(function (f) {
+          return "<dt>" + bi(f.label, "span", "", true) + "</dt><dd>" + (f.href ? '<a href="' + esc(f.href) + '">' + esc(en(f.value)) + "</a>" : bi(f.value)) + "</dd>"; }).join("") + "</dl></div>" : "") +
+        (e.speech ? '<div class="section speech"><h2>' + esc(en(e.speech.title)) + bi({ ko: e.speech.title.ko, ja: e.speech.title.ja, zh: e.speech.title.zh }, "span") + "</h2>" +
+          (e.speech.note ? bi(e.speech.note, "div", "prose member-intro") : "") + (e.speech.body ? bi(e.speech.body, "div", "prose speech-body") : "") +
+          (e.speech.file ? '<p style="margin-top:20px"><a class="more" href="' + esc(e.speech.file) + '">' + bi({ en: "Download the speech", ko: "연설문 내려받기" }, "span", "", true) + "</a></p>" : "") + "</div>" : "") +
+        (e.kind === "summit" ? "" :
         (e.org === "federation" || (e.ritual && e.ritual.length) ? '<div class="section"><h2>The Ritual</h2><div style="margin-top:28px">' + ritualList(ev.ritual_stages, e.ritual, false) + "</div></div>" : "") +
         (e.status === "completed" && !results ? "" : '<div class="section"><h2>Results</h2><div style="margin-top:24px">' +
           (results ? '<div class="table-scroll"><table class="table"><thead><tr><th>Rank</th><th>Pro Barbecuer or team</th><th class="num">Score</th></tr></thead><tbody>' + results + "</tbody></table></div>" : empty({ en: "Results will be recorded after judgment.", ko: "판정 후 결과를 기록한다." })) +
@@ -346,7 +352,7 @@
         "</div></div>") +
         (e.status === "completed" && !table ? "" : '<div class="section"><h2>The Table' + bi({ ko: "공동의 식탁", ja: "", zh: "" }, "span") + '</h2><p class="prose" style="margin-top:16px;color:var(--ash)">Every team that kept the fire, in its own words.</p><div style="margin-top:24px">' +
           (table || empty({ en: "The stories of every team will be recorded here.", ko: "모든 참가팀의 이야기가 이곳에 기록된다." })) +
-        "</div></div>"));
+        "</div></div>")));
     });
   };
 
