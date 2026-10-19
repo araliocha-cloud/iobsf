@@ -578,3 +578,11 @@ a.event-row:hover .title { color: var(--copper-light); }
 .jc-date span { display: block; font-size: 11.5px; font-weight: 600; }
 .jc-strip { width: 92%; height: auto; display: block; margin: 8px auto 0; }
 .jc-confirm { color: var(--ash); margin-top: 18px; font-size: 15px; }
+.track { margin-bottom: 36px; }
+.track-name { font-size: clamp(24px, 3vw, 30px); margin: 0 0 8px; }
+.track-name .s { font-size: .6em; }
+.track-steps { counter-reset: none; }
+.track-steps > li::before { content: attr(value); }
+#judges { scroll-margin-top: 90px; }
+.track-steps p, .track-steps p .s { text-align: left !important; text-align-last: auto; }
+.track-steps { grid-template-columns: repeat(3, 1fr); }

@@ -4,77 +4,11 @@
     "reading": "아카데미 기초 읽기: KBRI 연구 글 링크 (title, href, kind)"
   },
   "intro": {
-    "en": "A Pro Barbecuer is not born at a single contest. The Federation raises officiants step by step, from the first lesson to the Pro Tour.",
-    "ko": "프로바비큐어는 한 번의 대회로 탄생하지 않는다. 연맹은 첫 수업부터 프로 투어까지 단계를 밟아 집전자를 기른다.",
-    "ja": "",
-    "zh": ""
+    "en": "A Pro Barbecuer is raised in five stages. The three amateur courses are earned by training and examination. Semi-Pro and Pro are earned by results in competition.",
+    "ko": "프로바비큐어는 다섯 단계로 길러진다. 아마추어 세 과정은 교육과 시험으로, 세미프로와 프로는 경기 성적으로 자격을 얻는다.",
+    "ja": "プロバーベキュアーは五つの段階で育てられる。アマチュアの三課程は教育と試験で、セミプロとプロは競技の成績で資格を得る。",
+    "zh": "职业烧烤师分五个阶段培养。业余三个课程通过培训与考试取得资格，半职业与职业通过比赛成绩取得资格。"
   },
-  "steps": [
-    {
-      "key": "academy",
-      "status": "preparing",
-      "name": {
-        "en": "Academy",
-        "ko": "아카데미",
-        "ja": "",
-        "zh": ""
-      },
-      "text": {
-        "en": "Fire, meat and time, and the humanities that give them meaning.",
-        "ko": "불과 고기와 시간, 그리고 그 의미를 세우는 바비큐 인문학을 배운다.",
-        "ja": "",
-        "zh": ""
-      }
-    },
-    {
-      "key": "certification",
-      "status": "preparing",
-      "name": {
-        "en": "Certification",
-        "ko": "인증",
-        "ja": "",
-        "zh": ""
-      },
-      "text": {
-        "en": "Skill, knowledge and the Charter pledge. Those who pass become Pro Barbecuers.",
-        "ko": "기량과 지식, 그리고 헌장 서약. 통과한 이가 프로바비큐어가 된다.",
-        "ja": "",
-        "zh": ""
-      }
-    },
-    {
-      "key": "challenger",
-      "status": "preparing",
-      "name": {
-        "en": "Challenger Series",
-        "ko": "챌린저 시리즈",
-        "ja": "",
-        "zh": ""
-      },
-      "text": {
-        "en": "The first sanctioned stage, where new officiants earn their season points.",
-        "ko": "새 집전자가 첫 시즌 포인트를 쌓는 공인 무대.",
-        "ja": "",
-        "zh": ""
-      }
-    },
-    {
-      "key": "tour",
-      "status": "preparing",
-      "name": {
-        "en": "Pro Tour",
-        "ko": "프로 투어",
-        "ja": "",
-        "zh": ""
-      },
-      "text": {
-        "en": "The season-long stage of the Federation, leading to the World Championship.",
-        "ko": "세계선수권으로 이어지는 연맹의 시즌 무대.",
-        "ja": "",
-        "zh": ""
-      }
-    }
-  ],
   "reading_intro": {
     "en": "Foundations for the Academy, from the research of KBRI.",
     "ko": "아카데미의 기초. 한국바비큐연구원(KBRI)의 연구에서 가려 뽑았다.",
@@ -108,5 +42,107 @@
       "isbn": "9791196856809",
       "store": "교보문고"
     }
-  ]
+  ],
+  "tracks": [
+    {
+      "key": "amateur",
+      "name": {
+        "en": "Amateur Courses",
+        "ko": "아마추어 과정",
+        "ja": "アマチュア課程",
+        "zh": "业余课程"
+      },
+      "rule": {
+        "en": "Qualification is granted on completing the training, sitting the examination and passing it.",
+        "ko": "교육을 수료하고, 시험에 응시해, 합격하면 자격이 부여된다.",
+        "ja": "教育を修了し、試験を受け、合格すると資格が与えられる。",
+        "zh": "完成培训、参加考试并通过后授予资格。"
+      },
+      "steps": [
+        {
+          "name": {
+            "en": "Beginner",
+            "ko": "초급",
+            "ja": "初級",
+            "zh": "初级"
+          }
+        },
+        {
+          "name": {
+            "en": "Intermediate",
+            "ko": "중급",
+            "ja": "中級",
+            "zh": "中级"
+          }
+        },
+        {
+          "name": {
+            "en": "Advanced",
+            "ko": "고급",
+            "ja": "上級",
+            "zh": "高级"
+          },
+          "note": {
+            "en": "The highest amateur course.",
+            "ko": "아마추어 최고 과정.",
+            "ja": "アマチュアの最高課程。",
+            "zh": "业余最高课程。"
+          }
+        }
+      ]
+    },
+    {
+      "key": "pro",
+      "name": {
+        "en": "Professional Courses",
+        "ko": "프로 과정",
+        "ja": "プロ課程",
+        "zh": "职业课程"
+      },
+      "rule": {
+        "en": "Tested by results in competition. Qualification is recognised on the strength of those results.",
+        "ko": "경기 성적으로 테스트하며, 그 성적으로 자격을 인정받는다.",
+        "ja": "競技の成績でテストし、その成績によって資格が認められる。",
+        "zh": "以比赛成绩进行考核，并据此认定资格。"
+      },
+      "steps": [
+        {
+          "name": {
+            "en": "Semi-Pro",
+            "ko": "세미프로",
+            "ja": "セミプロ",
+            "zh": "半职业"
+          }
+        },
+        {
+          "name": {
+            "en": "Pro",
+            "ko": "프로",
+            "ja": "プロ",
+            "zh": "职业"
+          },
+          "note": {
+            "en": "The Pro Barbecuer, officiant of the fire.",
+            "ko": "프로바비큐어, 불의 집전자.",
+            "ja": "プロバーベキュアー、火の執典者。",
+            "zh": "职业烧烤师，火的执典者。"
+          }
+        }
+      ]
+    }
+  ],
+  "judges": {
+    "name": {
+      "en": "Judges",
+      "ko": "심판 과정",
+      "ja": "審判課程",
+      "zh": "裁判课程"
+    },
+    "text": {
+      "en": "Judges are selected by test. Candidates must hold the Advanced qualification, the highest amateur course, or have at least ten years of experience.",
+      "ko": "심판은 테스트로 선발한다. 아마추어 최고 과정인 고급 과정 자격 보유자, 또는 경력 10년 이상인 사람이 응시할 수 있다.",
+      "ja": "審判はテストで選抜する。アマチュアの最高課程である上級課程の資格保持者、または経歴10年以上の者が受験できる。",
+      "zh": "裁判通过考核选拔。持有业余最高课程即高级课程资格者，或从业经历十年以上者，方可报考。"
+    }
+  }
 }

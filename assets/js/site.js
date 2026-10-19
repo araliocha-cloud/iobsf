@@ -344,9 +344,14 @@
   pages.pathway = function () {
     load("pathway").then(function (p) {
       put("#pathway-intro", bi(p.intro, "div", "lede"));
-      put("#pathway", '<ol class="sequence">' + p.steps.map(function (s) {
-        return "<li><h3>" + esc(en(s.name)) + (s.status === "preparing" ? '<span class="badge">In preparation</span>' : "") + bi({ ko: s.name.ko, ja: s.name.ja, zh: s.name.zh }, "span") + "</h3>" + bi(s.text, "p") + "</li>";
-      }).join("") + "</ol>");
+      var n = 0;
+      put("#pathway", (p.tracks || []).map(function (t) {
+        return '<div class="track"><h2 class="track-name">' + esc(t.name.en) + bi({ ko: t.name.ko, ja: t.name.ja, zh: t.name.zh }, "span") + "</h2>" + bi(t.rule, "div", "prose member-intro") +
+          '<ol class="sequence compact track-steps">' + t.steps.map(function (s) { n++;
+            return '<li value="' + n + '"><h3>' + esc(s.name.en) + "</h3>" + bi({ ko: s.name.ko, ja: s.name.ja, zh: s.name.zh }, "div") + (s.note ? bi(s.note, "p") : "") + "</li>";
+          }).join("") + "</ol></div>";
+      }).join(""));
+      if (p.judges) put("#pathway-judges", bi(p.judges.text, "div", "prose"));
       if (p.reading && p.reading.length) put("#pathway-reading", bi(p.reading_intro, "div", "prose") + '<div style="margin-top:24px">' + entryList(p.reading) + "</div>");
     });
   };

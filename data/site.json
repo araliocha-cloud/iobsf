@@ -153,6 +153,16 @@
       }
     },
     {
+      "id": "pathway",
+      "href": "pathway.html",
+      "label": {
+        "en": "Pathway",
+        "ko": "육성 과정",
+        "ja": "育成課程",
+        "zh": "培养路径"
+      }
+    },
+    {
       "id": "heritage",
       "href": "heritage.html",
       "label": {
@@ -313,10 +323,10 @@
           "zh": "学院与认证"
         },
         "text": {
-          "en": "The path that raises Pro Barbecuers, from the first lesson to certification.",
-          "ko": "첫 수업부터 인증까지, 프로바비큐어를 기르는 길.",
-          "ja": "最初の授業から認証まで、プロバーベキュアーを育てる道。",
-          "zh": "从第一堂课到认证，培养职业烧烤师的道路。"
+          "en": "Beginner, Intermediate and Advanced amateur courses, then Semi-Pro and Pro.",
+          "ko": "초급, 중급, 고급의 아마추어 과정, 그리고 세미프로와 프로.",
+          "ja": "初級、中級、上級のアマチュア課程、そしてセミプロとプロ。",
+          "zh": "初级、中级、高级业余课程，以及半职业与职业。"
         },
         "href": "pathway.html"
       },
@@ -332,7 +342,8 @@
           "ko": "심판의 교육과 자격, 판정의 원칙.",
           "ja": "審判の教育と資格、判定の原則。",
           "zh": "裁判的培训与资格，评判原则。"
-        }
+        },
+        "href": "pathway.html#judges"
       },
       {
         "title": {
