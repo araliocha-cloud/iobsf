@@ -342,7 +342,8 @@
         (e.facts && e.facts.length ? '<div class="section"><h2>At a Glance' + bi({ ko: "개요", ja: "概要", zh: "概况" }, "span") + '</h2><dl class="facts" style="margin-top:24px">' + e.facts.map(function (f) {
           return "<dt>" + bi(f.label, "span", "", true) + "</dt><dd>" + (f.href ? '<a href="' + esc(f.href) + '">' + esc(en(f.value)) + "</a>" : bi(f.value)) + "</dd>"; }).join("") + "</dl></div>" : "") +
         (e.speech ? '<div class="section speech"><h2>' + esc(en(e.speech.title)) + bi({ ko: e.speech.title.ko, ja: e.speech.title.ja, zh: e.speech.title.zh }, "span") + "</h2>" +
-          (e.speech.note ? bi(e.speech.note, "div", "prose member-intro") : "") + (e.speech.body ? bi(e.speech.body, "div", "prose speech-body") : "") +
+          (e.speech.note ? bi(e.speech.note, "div", "prose member-intro") : "") + (e.speech.points && e.speech.points.length ? '<ol class="decision speech-points">' + e.speech.points.map(function (x) { return "<li>" + bi(x) + "</li>"; }).join("") + "</ol>" : "") +
+          (e.speech.body ? bi(e.speech.body, "div", "prose speech-body") : "") +
           (e.speech.file ? '<p style="margin-top:20px"><a class="more" href="' + esc(e.speech.file) + '">' + bi({ en: "Download the speech", ko: "연설문 내려받기" }, "span", "", true) + "</a></p>" : "") + "</div>" : "") +
         (e.kind === "summit" ? "" :
         (e.org === "federation" || (e.ritual && e.ritual.length) ? '<div class="section"><h2>The Ritual</h2><div style="margin-top:28px">' + ritualList(ev.ritual_stages, e.ritual, false) + "</div></div>" : "") +

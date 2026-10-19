@@ -191,7 +191,53 @@
           },
           "href": "https://www.asiabbqexpo.com"
         }
-      ]
+      ],
+      "speech": {
+        "title": {
+          "en": "Summit Keynote",
+          "ko": "서밋 기조연설",
+          "ja": "サミット基調講演",
+          "zh": "峰会主旨演讲"
+        },
+        "note": {
+          "en": "Heritage of the Fire: recording the world's fire together. Draft outline.",
+          "ko": "불의 유산, 세계의 불을 함께 기록하다. 연설 골자(준비 중).",
+          "ja": "火の遺産、世界の火をともに記録する。講演骨子（準備中）。",
+          "zh": "火之遗产：共同记录世界之火。演讲要点（筹备中）。"
+        },
+        "points": [
+          {
+            "en": "International launch of the Heritage of the Fire, with Ignis Primus as Origin No. 0.",
+            "ko": "불의 유산 등재부의 국제 출범 선언. 원점은 제0호 이그니스 프리머스.",
+            "ja": "火の遺産登録簿の国際発足を宣言。原点は第0号イグニス・プリムス。",
+            "zh": "宣布火之遗产名录国际启动，原点为第0号 Ignis Primus。"
+          },
+          {
+            "en": "Two principles: a heritage belongs to the community that made it, and it is proven by its people and tradition.",
+            "ko": "두 원칙. 유산의 주인은 그것을 만든 공동체다. 유산은 사람과 전통이 증명한다.",
+            "ja": "二つの原則。遺産の主はそれを生んだ共同体である。遺産は人と伝統が証明する。",
+            "zh": "两项原则：遗产属于创造它的社群；遗产由人与传统来证明。"
+          },
+          {
+            "en": "Three tiers: Federation Recorded, Nominated and Inscribed Heritage.",
+            "ko": "세 단계. 연맹기록유산, 연맹심사유산, 연맹등재유산.",
+            "ja": "三段階。連盟記録遺産、連盟審査遺産、連盟登録遺産。",
+            "zh": "三个等级：联合会记录遗产、审查遗产、列入遗产。"
+          },
+          {
+            "en": "An invitation to every nation, China among them, to record the fire it has kept.",
+            "ko": "중국을 비롯한 모든 나라에 스스로 지켜 온 불을 기록해 달라는 초대.",
+            "ja": "中国をはじめすべての国へ、自ら守ってきた火を記録してほしいという招待。",
+            "zh": "邀请包括中国在内的各国，记录各自守护的火。"
+          },
+          {
+            "en": "The first Federation Inscribed Heritage, to be announced on the day (planned).",
+            "ko": "첫 연맹등재유산 발표 (예정).",
+            "ja": "最初の連盟登録遺産を発表（予定）。",
+            "zh": "发布首个联合会列入遗产（计划中）。"
+          }
+        ]
+      }
     },
     {
       "id": "2010-yeongdong-amateur",

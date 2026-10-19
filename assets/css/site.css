@@ -797,3 +797,6 @@ h1, h2, h3 { font-weight: 500; }
 hr, .rule { border-color: var(--ember-line); }
 .timeline li > * { min-width: 0; overflow-wrap: anywhere; }
 @media (max-width: 600px) { .timeline li { grid-template-columns: 96px minmax(0, 1fr); } }
+.speech .member-intro { margin-top: 14px; font-style: italic; }
+.speech-points { margin-top: 22px; }
+.speech-points > li { margin-bottom: 14px; }
