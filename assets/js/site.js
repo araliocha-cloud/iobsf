@@ -310,8 +310,8 @@
             '<div class="jc-name-ko" lang="ko">' + spaced(x.name.ko) + '</div><div class="jc-name-en">' + esc(x.name.en) + "</div>" +
             '<p class="jc-ko" lang="ko">이 사람은 대한아웃도어바비큐협회가 인정하는 공식 심판임을 확인합니다.</p>' +
             '<p class="jc-en">This person is an official judge certified by KOOBA.</p>' +
-            '<div class="jc-date">' + esc(d.dot) + "<span>" + esc(d.en) + "</span></div>" +
-            '<div class="jc-meta">' + (x.reissued ? "Certified " + esc(String(x.certified).slice(0, 4)) + ", reissued " + esc((x.issued || "").slice(0, 4)) + " / " + esc(String(x.certified).slice(0, 4)) + "년 공인, " + esc((x.issued || "").slice(0, 4)) + "년 재발급" : "Certified " + esc(String(x.certified).slice(0, 4)) + " / " + esc(String(x.certified).slice(0, 4)) + "년 공인") + "</div>" +
+            '<div class="jc-date">' + esc(d.en) + "</div>" +
+            '<div class="jc-meta">' + (x.reissued ? "Certified " + esc(String(x.certified).slice(0, 4)) + ", reissued " + esc((x.issued || "").slice(0, 4)) : "Certified " + esc(String(x.certified).slice(0, 4))) + "</div>" +
             '<img class="jc-strip" src="assets/img/judges/kooba-strip.png" alt="Korea Outdoor &amp; Barbecue Association">' +
             '<img class="jc-seal" src="assets/img/judges/kooba-seal.png" alt="Seal of the Korea Outdoor &amp; Barbecue Association"></div>';
         }).join("") + "</div>" +
