@@ -2017,10 +2017,10 @@
         "zh": "美国竞技烧烤师"
       },
       "era": {
-        "en": "From 1978",
-        "ko": "1978년부터",
-        "ja": "1978年から",
-        "zh": "始于1978年"
+        "en": "From 1959",
+        "ko": "1959년부터",
+        "ja": "1959年から",
+        "zh": "始于1959年"
       },
       "text": {
         "en": "Chicken, pork ribs, pork shoulder and beef brisket smoked low and slow overnight, judged blind by certified judges.",
@@ -2048,10 +2048,10 @@
           "zh": "比赛周末是相邻烤炉汇聚的营地。各队在评审前后跨越一排排摊位，分享木柴、工具与食物。"
         },
         "history": {
-          "en": "It rests on the pit cooking of the American South, long kept by Black and Indigenous cooks. Memphis in May held its first contest in 1978, with 26 teams on a vacant lot. The Kansas City Barbeque Society, founded in 1985, set the four categories and blind judging, and now sanctions more than 300 contests a year.",
-          "ko": "미국 남부의 구덩이 조리 위에 서 있다. 그 불은 오랫동안 흑인과 원주민 요리사들이 지켜 왔다. 1978년 멤피스 인 메이(Memphis in May)가 빈터에서 26개 팀으로 첫 대회를 열었다. 1985년 세워진 캔자스시티 바비큐 협회(KCBS)가 네 종목과 블라인드 판정을 정했고, 오늘 해마다 300개가 넘는 대회를 공인한다.",
-          "ja": "アメリカ南部の穴調理の上に立っている。その火は長く黒人と先住民の料理人が守ってきた。1978年、メンフィス・イン・メイ（Memphis in May）が空き地に26チームを集めて最初の大会を開いた。1985年に設立されたカンザスシティ・バーベキュー協会（KCBS）が四部門とブラインド審査を定め、今日では毎年300を超える大会を公認している。",
-          "zh": "它建立在美国南方的坑烤之上，那团火长久以来由黑人与原住民厨师守护。1978年“孟菲斯五月节”（Memphis in May）在一块空地上以26支队伍举办首届比赛。1985年成立的堪萨斯城烧烤协会（KCBS）确立了四个项目与盲评制度，如今每年认证300多场比赛。"
+          "en": "It rests on the pit cooking of the American South, long kept by Black and Indigenous cooks. The first barbecue cooking contest was the Kaiser Foil Cookoff, held in November 1959 at the Hawaiian Village Hotel in Waikiki, a few months after Hawaii became a state. Twenty-five finalists from across the country cooked for the title of Grand National Cookout Champion. Memphis in May held its contest from 1978, and the Kansas City Barbeque Society, founded in 1985, set the four categories and blind judging. It now sanctions more than 300 contests a year.",
+          "ko": "미국 남부의 구덩이 조리 위에 서 있다. 그 불은 오랫동안 흑인과 원주민 요리사들이 지켜 왔다. 첫 바비큐 경연은 1959년 11월 하와이 와이키키의 하와이안 빌리지 호텔에서 열린 카이저 포일 쿡오프(Kaiser Foil Cookoff)다. 하와이가 미국의 주가 된 지 몇 달 뒤였다. 전국에서 뽑힌 25명의 결선 진출자가 「그랜드 내셔널 쿡아웃 챔피언」 칭호를 두고 겨뤘다. 1978년 멤피스 인 메이(Memphis in May)가 대회를 열었고, 1985년 세워진 캔자스시티 바비큐 협회(KCBS)가 네 종목과 블라인드 판정을 정했다. 오늘 KCBS는 해마다 300개가 넘는 대회를 공인한다.",
+          "ja": "アメリカ南部の穴調理の上に立っている。その火は長く黒人と先住民の料理人が守ってきた。最初のバーベキュー競技は、1959年11月にハワイ・ワイキキのハワイアン・ビレッジ・ホテルで開かれたカイザー・フォイル・クックオフ（Kaiser Foil Cookoff）である。ハワイが州となって数か月後のことだった。全国から選ばれた25人の決勝進出者が「グランド・ナショナル・クックアウト・チャンピオン」の称号をかけて競った。1978年にメンフィス・イン・メイ（Memphis in May）が大会を開き、1985年に設立されたカンザスシティ・バーベキュー協会（KCBS）が四部門とブラインド審査を定めた。今日KCBSは毎年300を超える大会を公認している。",
+          "zh": "它建立在美国南方的坑烤之上，那团火长久以来由黑人与原住民厨师守护。首届烧烤比赛是1959年11月在夏威夷威基基的夏威夷村酒店举办的“凯撒铝箔烹饪大赛”（Kaiser Foil Cookoff），时值夏威夷成为美国一州后数月。来自全国的25名决赛选手角逐“全国烧烤总冠军”称号。1978年“孟菲斯五月节”（Memphis in May）开始举办比赛，1985年成立的堪萨斯城烧烤协会（KCBS）确立了四个项目与盲评制度，如今每年认证300多场比赛。"
         },
         "living": {
           "en": "Living. Contests run across the United States every weekend, and the circuit now reaches other countries.",
@@ -2061,6 +2061,14 @@
         }
       },
       "sources": [
+        {
+          "title": "The History of Barbecue Competitions (AmazingRibs)",
+          "href": "https://amazingribs.com/barbecue-history-and-culture/history-barbecue-competitions/"
+        },
+        {
+          "title": "Kaiser Foil BBQ Hawaii Cookoff of 1959 (Squirrel Cook Off)",
+          "href": "https://squirrelcookoff.com/history/hawaii-cookoff-1959/"
+        },
         {
           "title": "Kansas City Barbeque Society (Wikipedia)",
           "href": "https://en.wikipedia.org/wiki/Kansas_City_Barbeque_Society"
@@ -2078,6 +2086,15 @@
             "ko": "연맹기록유산으로 기록.",
             "ja": "連盟記録遺産として記録。",
             "zh": "作为联合会记录遗产记录。"
+          }
+        },
+        {
+          "date": "2026-10-19",
+          "text": {
+            "en": "Era corrected to 1959: the first barbecue contest, the Kaiser Foil Cookoff in Waikiki, Hawaii.",
+            "ko": "시대를 1959년으로 정정. 첫 바비큐 경연인 하와이 와이키키의 카이저 포일 쿡오프.",
+            "ja": "時代を1959年に訂正。最初のバーベキュー競技、ハワイ・ワイキキのカイザー・フォイル・クックオフ。",
+            "zh": "年代更正为1959年：首届烧烤比赛，夏威夷威基基的凯撒铝箔烹饪大赛。"
           }
         }
       ]
