@@ -611,3 +611,16 @@ a.event-row:hover .title { color: var(--copper-light); }
 .plaque.gold { color: #3b2507; text-shadow: 0 1px 0 rgba(255, 240, 190, .55), 0 -1px 0 rgba(60, 36, 6, .25); }
 .plaque.gold .plaque-rule { background: rgba(70, 44, 10, .5); box-shadow: 0 1px 0 rgba(255, 240, 190, .5); }
 .plaque.gold { background: radial-gradient(ellipse at 28% 16%, rgba(255, 248, 210, .6), transparent 58%), linear-gradient(160deg, #f3da98 0%, #d7ac52 42%, #b8892f 75%, #9c7126 100%); }
+/* gold plaque, readability */
+.plaque.gold { color: #241603; text-shadow: 0 1px 0 rgba(255, 244, 205, .7);
+  background: linear-gradient(160deg, #f0d48e 0%, #ddb562 45%, #c99a45 80%, #b88a38 100%); }
+.plaque.gold .plaque-head, .plaque.gold .plaque-tier, .plaque.gold .plaque-community, .plaque.gold .plaque-foot, .plaque.gold .plaque-foot-en, .plaque.gold .plaque-decision { font-weight: 600; opacity: 1; }
+.plaque.mini { max-width: 380px; padding: 30px 24px 26px; }
+.plaque.mini .plaque-head { font-size: 13px; letter-spacing: .1em; }
+.plaque.mini .plaque-tier { font-size: 12px; letter-spacing: .14em; }
+.plaque.mini .plaque-no { font-size: 36px; }
+.plaque.mini .plaque-name { font-size: 27px; letter-spacing: .08em; }
+.plaque.mini .plaque-community { font-size: 12.5px; letter-spacing: .08em; }
+.plaque.mini .plaque-text { font-size: 18px; font-weight: 500; }
+.plaque.mini .plaque-foot, .plaque.mini .plaque-foot-en, .plaque.mini .plaque-decision { font-size: 11.5px; letter-spacing: .08em; }
+.heritage-item.has-plaque { grid-template-columns: minmax(0, 1fr) 380px; }
