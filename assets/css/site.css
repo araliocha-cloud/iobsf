@@ -652,3 +652,6 @@ a.event-row:hover .title { color: var(--copper-light); }
 .plaque.mini .plaque-text { font-size: 15px; line-height: 1.4; }
 .plaque.mini .plaque-foot, .plaque.mini .plaque-foot-en, .plaque.mini .plaque-decision { font-size: 10.5px; letter-spacing: .03em; line-height: 1.6; }
 @media (max-width: 860px) { .heritage-item.has-plaque { grid-template-columns: 1fr; gap: 24px; } }
+/* gold plaque: centred vertically against the record */
+.heritage-item.has-plaque { align-items: center; }
+.origin-plaque { align-self: center; }
