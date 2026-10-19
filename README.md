@@ -19,7 +19,7 @@ GitHub Pages로 운영한다. 빌드 과정이 없다. 저장소에 올리면 �
 |---|---|
 | 모토 (Motto) | 너와 나, 그리고 우리 / You and I, and We |
 | 경기정신 (Spirit of the Game) | 스포츠바비큐는 희생 위에 세운 쟁취가 아니라, 나눔 속에 맺힌 결실이다. |
-| 프로바비큐어 신조 (Pro Barbecuer's Creed) | 스포츠바비큐의 승리는 누군가의 패배로 이룬 것이 아니라, 패자의 추대로 얻은 영광이다. |
+| 프로바비큐어 신조 (Pro Barbecuer's Creed) | 스포츠바비큐의 승리는 누군가의 패배로 이룬 결과가 아니라, 패자의 추대로 얻은 영광이다. |
 | 슬로건 (Slogan) | DO NOT DO IF NOT FUN |
 
 공식 용어: 프로바비큐어는 집전자(執典者, Officiant)다.
