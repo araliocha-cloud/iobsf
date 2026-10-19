@@ -795,3 +795,5 @@ h1, h2, h3 { font-weight: 500; }
 .lang-switch button { color: #b9ad9c; }
 /* section rules: bronze hairline that reads on the dark ground */
 hr, .rule { border-color: var(--ember-line); }
+.timeline li > * { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 600px) { .timeline li { grid-template-columns: 96px minmax(0, 1fr); } }
