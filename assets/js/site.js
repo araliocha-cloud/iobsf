@@ -753,12 +753,28 @@
   }
 
   /* ---------- boot ---------- */
+  /* keep the reading position on reload: content is drawn after load, so restore once it is there */
+  var SKEY = "iobsf-scroll:" + location.pathname + location.search;
+  try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+  window.addEventListener("pagehide", function () { try { sessionStorage.setItem(SKEY, String(window.scrollY)); } catch (e) {} });
+  function restoreScroll() {
+    var y = 0; try { y = parseInt(sessionStorage.getItem(SKEY) || "0", 10) || 0; } catch (e) {}
+    var target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
+    if (!y && !target) return;
+    var t0 = Date.now();
+    (function tick() {
+      if (target) { target.scrollIntoView(); return; }
+      if (document.documentElement.scrollHeight >= y + window.innerHeight || Date.now() - t0 > 4000) { window.scrollTo(0, y); return; }
+      setTimeout(tick, 60);
+    })();
+  }
   Promise.all([load("site"), fetchJSON("i18n").catch(function () { return {}; })]).then(function (r) {
     var site = r[0]; DICT = r[1] || {};
     translateStatic(document);
     renderChrome(site);
     var fn = pages[document.body.dataset.page];
     if (fn) fn(site);
+    restoreScroll();
   }).catch(function (err) {
     var m = document.createElement("p");
     m.className = "noscript";
