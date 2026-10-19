@@ -587,4 +587,4 @@ a.event-row:hover .title { color: var(--copper-light); }
 .track-steps p, .track-steps p .s { text-align: left !important; text-align-last: auto; }
 .track-steps { grid-template-columns: repeat(3, 1fr); }
 .jc-date { position: relative; }
-.jc-seal { position: absolute; width: 46px; height: 46px; right: 14px; bottom: 38px; opacity: .9; transform: none; mix-blend-mode: multiply; pointer-events: none; }
+.jc-seal { position: absolute; width: 44px; height: 44px; right: 9%; bottom: 8px; opacity: .9; transform: none; mix-blend-mode: multiply; pointer-events: none; }
