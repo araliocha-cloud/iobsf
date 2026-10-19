@@ -532,7 +532,7 @@
       put("#chronicle", stories.length ? stories.map(function (s) {
         var imgs = (s.images || []).concat(s.image ? [{ src: s.image, alt: "" }] : []);
         var gallery = imgs.length ? '<div class="story-gallery">' + imgs.map(function (im, i) {
-          return '<figure class="' + (i === 0 ? "lead" : "") + '"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '" loading="lazy"></figure>';
+          return '<figure class="' + (i === 0 ? "lead" : "") + '"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '" loading="lazy">' + (im.caption ? "<figcaption>" + bi(im.caption, "span", "", true) + "</figcaption>" : "") + "</figure>";
         }).join("") + "</div>" : "";
         var video = s.video ? '<p><a class="more" href="' + esc(s.video) + '">Watch the video</a></p>' : "";
         return '<article class="story" id="' + esc(idOf(s)) + '"><p class="story-date">' + esc(s.date ? fmtDate({ date: s.date }) : "") + "</p>" +
