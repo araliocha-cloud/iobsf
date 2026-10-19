@@ -126,6 +126,12 @@
       "ko": "리그",
       "ja": "",
       "zh": ""
+    },
+    "international": {
+      "en": "International Event",
+      "ko": "국제 대회",
+      "ja": "国際大会",
+      "zh": "国际赛事"
     }
   }
 }

@@ -349,7 +349,7 @@
           (e.speech.note ? bi(e.speech.note, "div", "prose member-intro") : "") + (e.speech.points && e.speech.points.length ? '<ol class="decision speech-points">' + e.speech.points.map(function (x) { return "<li>" + bi(x) + "</li>"; }).join("") + "</ol>" : "") +
           (e.speech.body ? bi(e.speech.body, "div", "prose speech-body") : "") +
           (e.speech.file ? '<p style="margin-top:20px"><a class="more" href="' + esc(e.speech.file) + '">' + bi({ en: "Download the speech", ko: "연설문 내려받기" }, "span", "", true) + "</a></p>" : "") + "</div>" : "") +
-        (e.kind === "summit" ? "" :
+        (e.kind === "summit" || e.kind === "external" ? "" :
         (e.org === "federation" || (e.ritual && e.ritual.length) ? '<div class="section"><h2>The Ritual</h2><div style="margin-top:28px">' + ritualList(ev.ritual_stages, e.ritual, false) + "</div></div>" : "") +
         (e.status === "completed" && !results ? "" : '<div class="section"><h2>Results</h2><div style="margin-top:24px">' +
           (results ? '<div class="table-scroll"><table class="table"><thead><tr><th>Rank</th><th>Pro Barbecuer or team</th><th class="num">Score</th></tr></thead><tbody>' + results + "</tbody></table></div>" : empty({ en: "Results will be recorded after judgment.", ko: "판정 후 결과를 기록한다." })) +
