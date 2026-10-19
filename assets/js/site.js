@@ -137,6 +137,13 @@
         '<div class="lang-switch" role="group" aria-label="Second language">' + langs + "</div>" +
       "</div>");
     var header = $("#site-header"); header.classList.add("site-header");
+    /* the emblem always returns to the home page as first opened: top of the page, no saved position */
+    var brand = header.querySelector(".brand");
+    if (brand) brand.addEventListener("click", function (ev) {
+      try { Object.keys(sessionStorage).forEach(function (k) { if (k.indexOf("iobsf-scroll:") === 0) sessionStorage.removeItem(k); }); } catch (e) {}
+      if (page === "home" && !location.hash && !location.search) { ev.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+      else { ev.preventDefault(); location.href = "./"; }
+    });
 
     var toggle = header.querySelector(".nav-toggle");
     toggle.addEventListener("click", function () {
@@ -760,7 +767,12 @@
   try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
   window.addEventListener("pagehide", function () { try { sessionStorage.setItem(SKEY, String(window.scrollY)); } catch (e) {} });
   function restoreScroll() {
-    var y = 0; try { y = parseInt(sessionStorage.getItem(SKEY) || "0", 10) || 0; } catch (e) {}
+    var nt = "navigate";
+    try { var ne = performance.getEntriesByType("navigation")[0]; if (ne) nt = ne.type; else if (performance.navigation) nt = performance.navigation.type === 1 ? "reload" : performance.navigation.type === 2 ? "back_forward" : "navigate"; } catch (e) {}
+    var y = 0;
+    /* only a reload or back/forward returns to the old position; a link (the emblem included) always opens at the top */
+    if (nt === "reload" || nt === "back_forward") { try { y = parseInt(sessionStorage.getItem(SKEY) || "0", 10) || 0; } catch (e) {} }
+    else { try { sessionStorage.removeItem(SKEY); } catch (e) {} }
     var target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
     if (!y && !target) return;
     var t0 = Date.now();
