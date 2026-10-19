@@ -26,19 +26,43 @@
       "images": [
         {
           "src": "assets/img/chronicle/founding-banner.jpg",
-          "alt": "Banner of the Founding General Meeting, 8 December 2018"
+          "alt": "Banner of the Founding General Meeting, 8 December 2018",
+          "caption": {
+            "en": "Founding General Meeting, Seoul, 8 December 2018",
+            "ko": "2018년 12월 8일, 서울 창립총회",
+            "ja": "",
+            "zh": ""
+          }
         },
         {
           "src": "assets/img/chronicle/founding-plaques.jpg",
-          "alt": "The representatives of Japan and Korea with their member plaques"
+          "alt": "The representatives of Japan and Korea with their member plaques",
+          "caption": {
+            "en": "Japan and Korea take up their member plaques",
+            "ko": "회원국 현판을 든 일본과 한국 대표",
+            "ja": "",
+            "zh": ""
+          }
         },
         {
           "src": "assets/img/chronicle/founding-meeting.jpg",
-          "alt": "Delegates at the founding meeting"
+          "alt": "Delegates at the founding meeting",
+          "caption": {
+            "en": "The delegates in session",
+            "ko": "회의에 임한 대표들",
+            "ja": "",
+            "zh": ""
+          }
         },
         {
           "src": "assets/img/chronicle/founding-group.jpg",
-          "alt": "Founding members around the table"
+          "alt": "Founding members around the table",
+          "caption": {
+            "en": "One table, one meal",
+            "ko": "한 식탁, 한 끼의 나눔",
+            "ja": "",
+            "zh": ""
+          }
         }
       ]
     }

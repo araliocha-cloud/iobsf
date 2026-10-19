@@ -715,3 +715,31 @@ body[data-page="heritageitem"] .plaque.gold .plaque-foot, body[data-page="herita
   .brand img { height: 44px; }
   .brand-mark { font-size: 26px; }
 }
+/* founding assembly: staggered, rounded gallery
+   row 1: banner (wide) | plaques (narrow); row 2 mirrored: group (narrow) | meeting (wide) */
+.assembly-gallery { display: grid; grid-template-columns: repeat(8, 1fr); gap: 14px; margin: 4px 0 32px; }
+.assembly-gallery figure { position: relative; margin: 0; overflow: hidden; border-radius: 16px; min-height: 0;
+  background: #141210; border: 1px solid rgba(214, 160, 92, .35);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .45); }
+.assembly-gallery figure:nth-child(1) { grid-column: 1 / 6; grid-row: 1; aspect-ratio: 16 / 9; }
+.assembly-gallery figure:nth-child(2) { grid-column: 6 / 9; grid-row: 1; }
+.assembly-gallery figure:nth-child(3) { grid-column: 4 / 9; grid-row: 2; aspect-ratio: 16 / 9; }
+.assembly-gallery figure:nth-child(4) { grid-column: 1 / 4; grid-row: 2; }
+.assembly-gallery img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
+.assembly-gallery figure:hover img { transform: scale(1.035); }
+.assembly-gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 32px 16px 12px;
+  background: linear-gradient(to top, rgba(14, 11, 8, .9), rgba(14, 11, 8, 0));
+  color: var(--bone); font-family: var(--f-display); font-size: 15px; line-height: 1.35; }
+.assembly-gallery figcaption, .assembly-gallery figcaption * { text-align: left; text-align-last: auto; }
+.assembly-gallery figcaption .p { display: block; }
+.assembly-gallery figcaption .s { font-size: 13px; color: #d2c6b4; margin-left: 0 !important; padding-left: 0 !important; }
+@media (max-width: 700px) {
+  .assembly-gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .assembly-gallery figure { border-radius: 12px; }
+  .assembly-gallery figure:nth-child(n) { grid-row: auto; }
+  .assembly-gallery figure:nth-child(1), .assembly-gallery figure:nth-child(3) { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+  .assembly-gallery figure:nth-child(2), .assembly-gallery figure:nth-child(4) { grid-column: auto; aspect-ratio: 4 / 5; }
+  .assembly-gallery figure:nth-child(3) { order: 4; }
+  .assembly-gallery figcaption { font-size: 13px; padding: 24px 11px 9px; }
+  .assembly-gallery figcaption .s { font-size: 11.5px; }
+}

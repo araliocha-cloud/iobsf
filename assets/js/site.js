@@ -604,7 +604,11 @@
       var s0 = (c.stories || []).filter(function (x) { return x.id === "founding-general-meeting"; })[0];
       if (!s0) return;
       var imgs = s0.images || [];
-      put("#fed-founding", (imgs.length ? '<div class="story-gallery">' + imgs.map(function (im, i) { return '<figure class="' + (i === 0 ? "lead" : "") + '"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '" loading="lazy"></figure>'; }).join("") + "</div>" : "") + bi(s0.text, "div", "prose story-text"));
+      var shape = ["wide", "tall", "tall", "wide"];
+      put("#fed-founding", (imgs.length ? '<div class="assembly-gallery">' + imgs.map(function (im, i) {
+        return '<figure class="ag-' + (shape[i] || "wide") + '"><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '" loading="lazy">' +
+          (im.caption ? "<figcaption>" + bi(im.caption, "span", "", true) + "</figcaption>" : "") + "</figure>";
+      }).join("") + "</div>" : "") + bi(s0.text, "div", "prose story-text"));
     });
   };
 
