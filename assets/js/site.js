@@ -146,11 +146,19 @@
     });
 
     var toggle = header.querySelector(".nav-toggle");
+    var navEl = header.querySelector(".site-nav");
+    function closeNav() { navEl.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); }
     toggle.addEventListener("click", function () {
-      var nav = header.querySelector(".site-nav");
-      var open = nav.classList.toggle("open");
+      var open = navEl.classList.toggle("open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
+    /* the menu never stays open: close it on choosing a page, on leaving, and on coming back with the back gesture */
+    navEl.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeNav); });
+    if (brand) brand.addEventListener("click", closeNav);
+    window.addEventListener("pagehide", closeNav);
+    window.addEventListener("pageshow", closeNav);
+    document.addEventListener("click", function (ev) { if (navEl.classList.contains("open") && !header.contains(ev.target)) closeNav(); });
+    document.addEventListener("keydown", function (ev) { if (ev.key === "Escape") closeNav(); });
     header.querySelectorAll(".lang-switch button").forEach(function (b) {
       b.addEventListener("click", function () { setSecond(b.dataset.lang); });
     });
