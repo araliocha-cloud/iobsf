@@ -194,10 +194,10 @@
       ],
       "speech": {
         "title": {
-          "en": "Summit Keynote",
-          "ko": "서밋 기조연설",
-          "ja": "サミット基調講演",
-          "zh": "峰会主旨演讲"
+          "en": "Summit Keynote, Scheduled",
+          "ko": "서밋 기조연설 예정",
+          "ja": "サミット基調講演 予定",
+          "zh": "峰会主旨演讲 预定"
         },
         "subject": {
           "en": "Sports Barbecue and the Pro Barbecuer",
