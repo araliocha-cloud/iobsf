@@ -589,3 +589,4 @@ a.event-row:hover .title { color: var(--copper-light); }
 .track-steps { grid-template-columns: repeat(3, 1fr); }
 .jc-date { position: relative; }
 .jc-seal { position: absolute; width: 44px; height: 44px; right: 9%; bottom: 8px; opacity: .9; transform: none; mix-blend-mode: multiply; pointer-events: none; }
+.jc-meta { font-size: 10.5px; color: #6b5a44; margin-top: 2px; }

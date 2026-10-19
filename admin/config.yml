@@ -250,6 +250,8 @@ collections:
                   - { name: ko, label: "한국어 이름", widget: string }
                   - { name: en, label: "영문 이름 (예: Kim, Jae-goo)", widget: string }
               - { name: photo, label: "사진 (정사각형)", widget: image }
-              - { name: certified, label: "인정일 (YYYY-MM-DD)", widget: string }
-              - { name: no, label: "자격번호 (인정 연도-일련번호, 예: 2016-006)", widget: string }
+              - { name: certified, label: "자격 공인 연도 (예: 2012)", widget: string }
+              - { name: issued, label: "증명서 발급일 (YYYY-MM-DD)", widget: string }
+              - { name: reissued, label: "재발급 또는 갱신", widget: boolean, default: false }
+              - { name: no, label: "자격번호 (공인 연도-일련번호, 예: 2012-007)", widget: string }
               - { name: id, label: "주소 이름 (영문 소문자와 하이픈)", widget: string, required: false }

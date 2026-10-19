@@ -11,9 +11,11 @@
         "ko": "성창수",
         "en": "Sung, Chang-soo"
       },
-      "photo": "assets/img/judges/sung-chang-soo.jpg",
-      "certified": "2012-04-15",
-      "no": "2012-001"
+      "photo": "assets/img/judges/sung-chang-soo-v3.jpg",
+      "certified": "2012",
+      "no": "2012-001",
+      "issued": "2016-05-15",
+      "reissued": true
     },
     {
       "id": "shin-seong-bong",
@@ -21,9 +23,11 @@
         "ko": "신성봉",
         "en": "Shin, Seong-bong"
       },
-      "photo": "assets/img/judges/shin-seong-bong-2.jpg",
-      "certified": "2012-04-15",
-      "no": "2012-002"
+      "photo": "assets/img/judges/shin-seong-bong-v3.jpg",
+      "certified": "2012",
+      "no": "2012-002",
+      "issued": "2016-05-15",
+      "reissued": true
     },
     {
       "id": "kim-jae-goo",
@@ -31,9 +35,11 @@
         "ko": "김재구",
         "en": "Kim, Jae-goo"
       },
-      "photo": "assets/img/judges/kim-jae-goo.jpg",
-      "certified": "2012-04-15",
-      "no": "2012-003"
+      "photo": "assets/img/judges/kim-jae-goo-v3.jpg",
+      "certified": "2012",
+      "no": "2012-003",
+      "issued": "2016-05-15",
+      "reissued": true
     },
     {
       "id": "lee-jae-cheon",
@@ -41,9 +47,11 @@
         "ko": "이재천",
         "en": "Lee, Jae-cheon"
       },
-      "photo": "assets/img/judges/lee-jae-cheon-2.jpg",
-      "certified": "2012-04-15",
-      "no": "2012-004"
+      "photo": "assets/img/judges/lee-jae-cheon-v3.jpg",
+      "certified": "2012",
+      "no": "2012-004",
+      "issued": "2016-05-15",
+      "reissued": true
     },
     {
       "id": "choi-woo-hyeok",
@@ -51,9 +59,11 @@
         "ko": "최우혁",
         "en": "Choi, Woo-hyeok"
       },
-      "photo": "assets/img/judges/choi-woo-hyeok.jpg",
-      "certified": "2012-04-15",
-      "no": "2012-005"
+      "photo": "assets/img/judges/choi-woo-hyeok-v3.jpg",
+      "certified": "2012",
+      "no": "2012-005",
+      "issued": "2016-05-15",
+      "reissued": true
     },
     {
       "id": "oh-taek-soo",
@@ -61,9 +71,11 @@
         "ko": "오택수",
         "en": "Oh, Taek-soo"
       },
-      "photo": "assets/img/judges/oh-taek-soo.jpg",
-      "certified": "2012-04-15",
-      "no": "2012-006"
+      "photo": "assets/img/judges/oh-taek-soo-v3.jpg",
+      "certified": "2012",
+      "no": "2012-006",
+      "issued": "2012-04-15",
+      "reissued": false
     }
   ]
 }
