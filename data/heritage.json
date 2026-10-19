@@ -1198,6 +1198,107 @@
       ]
     },
     {
+      "id": "tendir",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "record_no": "R-2026-021",
+      "recorded": "2026-10-19",
+      "recorder": {
+        "en": "IOBSF Headquarters and Korea Secretariat, with KBRI",
+        "ko": "IOBSF 연맹본부 및 한국사무국, 한국바비큐연구원(KBRI)",
+        "ja": "IOBSF 連盟本部及び韓国事務局、韓国バーベキュー研究院（KBRI）",
+        "zh": "IOBSF 联合会总部及韩国秘书处、韩国烧烤研究院（KBRI）"
+      },
+      "name": {
+        "en": "Təndir",
+        "ko": "탠디르",
+        "ja": "テンディル",
+        "zh": "阿塞拜疆馕坑（Təndir）"
+      },
+      "original": "Təndir",
+      "original_lang": {
+        "en": "Azerbaijani",
+        "ko": "아제르바이잔어",
+        "ja": "アゼルバイジャン語",
+        "zh": "阿塞拜疆语"
+      },
+      "forms": [
+        "clay"
+      ],
+      "community": {
+        "en": "Azerbaijan",
+        "ko": "아제르바이잔",
+        "ja": "アゼルバイジャン",
+        "zh": "阿塞拜疆"
+      },
+      "era": {
+        "en": "Traditional, handed down in families",
+        "ko": "가문을 따라 이어 온 전통",
+        "ja": "家々に受け継がれてきた伝統",
+        "zh": "世代家传的传统"
+      },
+      "text": {
+        "en": "A clay oven of Azerbaijan, built on the ground or sunk into it, where bread is baked and meat and poultry are cooked.",
+        "ko": "땅 위에 세우거나 땅속에 묻은 아제르바이잔의 흙 화덕이다. 빵을 굽고, 고기와 가금을 익힌다.",
+        "ja": "地上に据えるか地中に埋める、アゼルバイジャンの土のかまどである。パンを焼き、肉と家禽に火を通す。",
+        "zh": "阿塞拜疆的泥土炉，立于地面或埋入地下，用以烤面包、烹制肉类与禽类。"
+      },
+      "sections": {
+        "summary": {
+          "en": "A clay oven of Azerbaijan, built on the ground or sunk into it, where bread is baked and meat and poultry are cooked.",
+          "ko": "땅 위에 세우거나 땅속에 묻은 아제르바이잔의 흙 화덕이다. 빵을 굽고, 고기와 가금을 익힌다.",
+          "ja": "地上に据えるか地中に埋める、アゼルバイジャンの土のかまどである。パンを焼き、肉と家禽に火を通す。",
+          "zh": "阿塞拜疆的泥土炉，立于地面或埋入地下，用以烤面包、烹制肉类与禽类。"
+        },
+        "fire": {
+          "en": "Masters build two kinds of təndir, one standing on the ground and one sunk below it. A fire is lit inside until the clay walls are hot. Flatbread is slapped onto the walls, and meat and poultry are lowered inside and cooked by the heat the clay holds.",
+          "ko": "장인은 두 가지 탠디르를 짓는다. 땅 위에 세우는 것과 땅속에 묻는 것이다. 안에서 불을 피워 흙벽을 달군다. 납작한 빵은 벽에 붙여 굽고, 고기와 가금은 안으로 내려 흙이 머금은 열로 익힌다.",
+          "ja": "職人は二種類のテンディルを築く。地上に据えるものと地中に埋めるものである。中で火を焚いて土の壁を熱する。平たいパンは壁に貼りつけて焼き、肉と家禽は中に下ろして、土が蓄えた熱で火を通す。",
+          "zh": "匠人筑造两种馕坑：立于地面的与埋入地下的。在炉内生火，烧热泥壁。薄饼贴在炉壁上烤，肉与禽类则垂入炉内，以泥土蓄存的热量烹熟。"
+        },
+        "sharing": {
+          "en": "Baking at the təndir gathers family and neighbours. Bread is offered first to children and guests, which is believed to bring prosperity to the house.",
+          "ko": "탠디르 앞의 빵 굽기는 식구와 이웃을 한자리에 모은다. 빵은 아이와 손님에게 먼저 내어 주며, 그것이 집안에 복을 부른다고 여긴다.",
+          "ja": "テンディルの前のパン焼きは家族と隣人をひとところに集める。パンはまず子どもと客に差し出し、それが家に福を呼ぶと考えられている。",
+          "zh": "在馕坑前烤饼，把家人与邻里聚在一起。面包先递给孩子与客人，人们相信这会为家中带来富足。"
+        },
+        "history": {
+          "en": "Craft and baking pass from parents to children by watching, helping and spoken instruction. In 2024 UNESCO inscribed Tandir craftsmanship and bread baking in Azerbaijan on the Representative List of the Intangible Cultural Heritage of Humanity. The wider flatbread culture of Azerbaijan, Iran, Kazakhstan, Kyrgyzstan and Türkiye was inscribed in 2016.",
+          "ko": "화덕을 짓는 솜씨와 빵 굽기는 부모에게서 자녀에게, 보고 거들고 말로 배우며 이어진다. 2024년 유네스코는 「아제르바이잔의 탠디르 장인 기술과 빵 굽기」를 인류무형문화유산 대표목록에 올렸다. 아제르바이잔, 이란, 카자흐스탄, 키르기스스탄, 튀르키예의 납작빵 문화는 2016년에 함께 올랐다.",
+          "ja": "かまどを築く技とパン焼きは、親から子へ、見て手伝い口伝えで学びながら受け継がれる。2024年、ユネスコは「アゼルバイジャンのテンディル職人技とパン焼き」を人類の無形文化遺産の代表一覧表に記載した。アゼルバイジャン、イラン、カザフスタン、キルギス、トルコの平焼きパン文化は2016年にともに記載された。",
+          "zh": "筑炉手艺与烤饼技艺由父母传给子女，在观看、帮忙与口授中延续。2024年联合国教科文组织将“阿塞拜疆馕坑手艺与烤饼”列入人类非物质文化遗产代表作名录。阿塞拜疆、伊朗、哈萨克斯坦、吉尔吉斯斯坦与土耳其的薄饼文化已于2016年共同列入。"
+        },
+        "living": {
+          "en": "Living. Baked every day in homes and village yards across Azerbaijan.",
+          "ko": "살아 있다. 아제르바이잔 곳곳의 집과 마을 마당에서 날마다 굽는다.",
+          "ja": "生きている。アゼルバイジャン各地の家や村の庭で毎日焼かれている。",
+          "zh": "仍然鲜活。在阿塞拜疆各地的家中与村庄院落里每日烤制。"
+        }
+      },
+      "sources": [
+        {
+          "title": "Tandir craftsmanship and bread baking in Azerbaijan (UNESCO, 2024)",
+          "href": "https://ich.unesco.org/en/RL/tandir-craftsmanship-and-bread-baking-in-azerbaijan-02120"
+        },
+        {
+          "title": "Flatbread making and sharing culture: Lavash, Katyrma, Jupka, Yufka (UNESCO, 2016)",
+          "href": "https://ich.unesco.org/en/RL/flatbread-making-and-sharing-culture-lavash-katyrma-jupka-yufka-01181"
+        }
+      ],
+      "log": [
+        {
+          "date": "2026-10-19",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "連盟記録遺産として記録。",
+            "zh": "作为联合会记录遗产记录。"
+          }
+        }
+      ]
+    },
+    {
       "id": "tandoor",
       "number": "",
       "status": "record",
@@ -2326,10 +2427,10 @@
         "zh": ""
       },
       "text": {
-        "en": "A jar-shaped oven of clay; food is pressed to its walls or hung inside.",
-        "ko": "흙으로 빚은 항아리 화덕의 벽에 붙이거나 안에 매달아 굽는다.",
-        "ja": "",
-        "zh": ""
+        "en": "An oven of clay, standing as a jar or sunk into the ground, heated from within; food is pressed to its walls or lowered inside, and the mouth is closed.",
+        "ko": "흙으로 빚어 세우거나 땅에 묻은 화덕을 안에서 달군다. 음식을 벽에 붙이거나 안으로 내려 넣고, 입구를 덮어 익힌다.",
+        "ja": "土で築いて据えた、あるいは地中に埋めたかまどを内側から熱する。食べ物を壁に貼りつけるか中に吊り下げ、口を覆って火を通す。",
+        "zh": "以泥土筑成、立于地面或埋入地下的炉，从内部加热；将食物贴于炉壁或垂入炉内，再封住炉口烹熟。"
       }
     },
     {
