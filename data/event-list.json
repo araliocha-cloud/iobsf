@@ -17,7 +17,7 @@
         "zh": ""
       },
       "nation": "KR",
-      "tier": "national",
+      "tier": "partner",
       "status": "completed",
       "summary": {
         "en": "Details and results to be recorded.",
@@ -29,7 +29,7 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "federation"
     },
     {
       "id": "2027-aobe-guangzhou",
