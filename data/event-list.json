@@ -191,7 +191,62 @@
           },
           "href": "https://www.asiabbqexpo.com"
         }
-      ]
+      ],
+      "speech": {
+        "title": {
+          "en": "Summit Keynote",
+          "ko": "서밋 기조연설",
+          "ja": "サミット基調講演",
+          "zh": "峰会主旨演讲"
+        },
+        "subject": {
+          "en": "Sports Barbecue and the Pro Barbecuer",
+          "ko": "스포츠바비큐와 프로바비큐어",
+          "ja": "スポーツバーベキューとプロバーベキュアー",
+          "zh": "运动烧烤与职业烧烤师"
+        },
+        "subtitle": {
+          "en": "Reshaping the Global Barbecue Market",
+          "ko": "세계 바비큐 시장의 거대한 변화",
+          "ja": "世界のバーベキュー市場の大きな変化",
+          "zh": "世界烧烤市场的巨大变革"
+        },
+        "speaker": {
+          "name": {
+            "en": "Shaka Chaa",
+            "ko": "차영기",
+            "ja": "車英基（シャカ・チャ）",
+            "zh": "车英基（Shaka Chaa）"
+          },
+          "href": "barbecuer.html?id=shaka-chaa"
+        },
+        "lead": {
+          "en": "From warring states to an ordered system.",
+          "ko": "춘추전국시대에서 예측 가능한 체계사회로.",
+          "ja": "群雄割拠の時代から、予測できる体系の社会へ。",
+          "zh": "从春秋战国走向可预期的体系社会。"
+        },
+        "points": [
+          {
+            "en": "Method: cooking and competition gain a standard for the first time.",
+            "ko": "방식: 조리와 경기의 방식에 처음으로 기준이 생긴다.",
+            "ja": "方式：調理と競技の方式に初めて基準が生まれる。",
+            "zh": "方式：烹饪与比赛的方式首次有了标准。"
+          },
+          {
+            "en": "Profession: the Pro Barbecuer links equipment, education and certification.",
+            "ko": "직업: 프로바비큐어가 장비, 교육, 인증을 하나로 잇는다.",
+            "ja": "職業：プロバーベキュアーが機器、教育、認証をひとつにつなぐ。",
+            "zh": "职业：职业烧烤师将设备、教育与认证连为一体。"
+          },
+          {
+            "en": "Participation: a market that only ate becomes a market that takes part.",
+            "ko": "참여: 먹기만 하던 시장이 직접 참여하는 시장으로 넓어진다.",
+            "ja": "参加：食べるだけの市場が、自ら参加する市場へと広がる。",
+            "zh": "参与：只会品尝的市场扩展为亲身参与的市场。"
+          }
+        ]
+      }
     },
     {
       "id": "2010-yeongdong-amateur",

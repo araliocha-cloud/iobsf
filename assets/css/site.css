@@ -800,3 +800,9 @@ hr, .rule { border-color: var(--ember-line); }
 .speech .member-intro { margin-top: 14px; font-style: italic; }
 .speech-points { margin-top: 22px; }
 .speech-points > li { margin-bottom: 14px; }
+.speech-subject { font-family: var(--f-display); font-size: 28px; line-height: 1.25; margin: 22px 0 0; color: var(--bone); }
+.speech-subject .speech-sub { display: block; font-size: 20px; font-style: italic; color: var(--copper-light); margin-top: 4px; }
+.speech-subject-s { margin-top: 6px; }
+.speech-by { margin: 14px 0 0; color: var(--ash); font-size: 17px; }
+.speech-lead { margin-top: 22px; padding-left: 16px; border-left: 2px solid var(--copper); font-family: var(--f-display); font-size: 22px; font-style: italic; }
+.speech-lead .s { font-style: normal; }
