@@ -655,3 +655,27 @@ a.event-row:hover .title { color: var(--copper-light); }
 /* gold plaque: centred vertically against the record */
 .heritage-item.has-plaque { align-items: center; }
 .origin-plaque { align-self: center; }
+/* heritage item page: centred column, readable plaque and text */
+body[data-page="heritageitem"] #hitem { max-width: 880px; margin: 0 auto; }
+body[data-page="heritageitem"] .form-kind { text-align: center; text-align-last: center; border-bottom: 0; }
+body[data-page="heritageitem"] .form-head-plain { display: flex; justify-content: center; }
+body[data-page="heritageitem"] .form-section h2 { text-align: center; text-align-last: center; }
+body[data-page="heritageitem"] .facts dt, body[data-page="heritageitem"] .facts dt * { text-align: left; text-align-last: left; }
+body[data-page="heritageitem"] .prose, body[data-page="heritageitem"] .decision { max-width: none; }
+body[data-page="heritageitem"] .decision .facts { grid-template-columns: 170px 1fr; }
+body[data-page="heritageitem"] .facts dt { color: #c9bca9; }
+body[data-page="heritageitem"] .s { color: #d2c6b4; }
+body[data-page="heritageitem"] .form-note { text-align: center; text-align-last: center; }
+body[data-page="heritageitem"] #hitem > p:last-child { text-align: center; }
+body[data-page="heritageitem"] .plaque.gold { margin: 28px auto 12px; max-width: 520px; }
+body[data-page="heritageitem"] .plaque.gold .plaque-head { font-size: 17px; letter-spacing: .1em; }
+body[data-page="heritageitem"] .plaque.gold .plaque-tier { font-size: 14px; letter-spacing: .14em; }
+body[data-page="heritageitem"] .plaque.gold .plaque-community { font-size: 15px; letter-spacing: .08em; }
+body[data-page="heritageitem"] .plaque.gold .plaque-text { font-size: 21px; line-height: 1.45; }
+body[data-page="heritageitem"] .plaque.gold { max-width: 540px; }
+body[data-page="heritageitem"] .plaque.gold .plaque-foot, body[data-page="heritageitem"] .plaque.gold .plaque-foot-en { font-size: 14px; letter-spacing: .08em; }
+@media (max-width: 600px) {
+  body[data-page="heritageitem"] .decision .facts { grid-template-columns: 1fr; }
+  body[data-page="heritageitem"] .plaque.gold .plaque-head { font-size: 13px; }
+  body[data-page="heritageitem"] .plaque.gold .plaque-text { font-size: 19px; }
+}

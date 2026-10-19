@@ -493,7 +493,7 @@
     return (d.specimen ? '<div class="specimen-banner">' + bi({ en: "Specimen. This page shows the inscription form. It is not an actual inscription.", ko: "견본. 등재양식을 보이기 위한 페이지이며, 실제 등재가 아니다." }) + "</div>" : "") +
       '<p class="form-kind">' + bi(d.status === "origin" ? { en: "Inscription Form, No. 0, the Origin", ko: "등재양식, 원점 제0호" } : { en: "Inscription Form, Federation Inscribed Heritage", ko: "등재양식, 연맹등재유산" }, "span", "", true) + "</p>" +
       '<div class="form-head form-head-plain">' + smallTrophy(d) + "</div>" +
-      plaque(d) +
+      plaque(d, "gold") +
       formSection(d.status === "origin" ? "Declaration" : "Decision", d.status === "origin" ? "선언문" : "결정문",
         '<dl class="facts form-facts">' +
           fieldRow({ en: "Number", ko: "번호" }, esc(ins.decision_no)) +
