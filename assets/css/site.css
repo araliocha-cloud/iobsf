@@ -624,3 +624,16 @@ a.event-row:hover .title { color: var(--copper-light); }
 .plaque.mini .plaque-text { font-size: 18px; font-weight: 500; }
 .plaque.mini .plaque-foot, .plaque.mini .plaque-foot-en, .plaque.mini .plaque-decision { font-size: 11.5px; letter-spacing: .08em; }
 .heritage-item.has-plaque { grid-template-columns: minmax(0, 1fr) 380px; }
+/* gold plaque, readability v2: flat light gold, solid dark lettering */
+.plaque.gold { color: #1a1002; text-shadow: none;
+  background: linear-gradient(160deg, #f4dfa2 0%, #e6c376 55%, #d8af5c 100%); }
+.plaque.gold > div { font-weight: 700 !important; }
+.plaque.gold .plaque-text { font-weight: 600 !important; font-style: italic; }
+.plaque.gold .plaque-rule { height: 2px; background: rgba(40, 24, 4, .55); box-shadow: none; }
+.plaque.mini .plaque-head { font-size: 14px; letter-spacing: .06em; }
+.plaque.mini .plaque-tier { font-size: 13px; letter-spacing: .1em; }
+.plaque.mini .plaque-no { font-size: 40px; }
+.plaque.mini .plaque-name { font-size: 30px; letter-spacing: .05em; }
+.plaque.mini .plaque-community { font-size: 13.5px; letter-spacing: .04em; }
+.plaque.mini .plaque-text { font-size: 19px; line-height: 1.45; }
+.plaque.mini .plaque-foot, .plaque.mini .plaque-foot-en, .plaque.mini .plaque-decision { font-size: 13px; letter-spacing: .04em; }
