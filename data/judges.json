@@ -12,7 +12,8 @@
         "en": "Sung, Chang-soo"
       },
       "photo": "assets/img/judges/sung-chang-soo.jpg",
-      "certified": "2016-05-15"
+      "certified": "2016-05-15",
+      "no": "2016-001"
     },
     {
       "id": "shin-seong-bong",
@@ -21,7 +22,8 @@
         "en": "Shin, Seong-bong"
       },
       "photo": "assets/img/judges/shin-seong-bong-2.jpg",
-      "certified": "2016-05-15"
+      "certified": "2016-05-15",
+      "no": "2016-002"
     },
     {
       "id": "kim-jae-goo",
@@ -30,7 +32,8 @@
         "en": "Kim, Jae-goo"
       },
       "photo": "assets/img/judges/kim-jae-goo.jpg",
-      "certified": "2016-05-15"
+      "certified": "2016-05-15",
+      "no": "2016-003"
     },
     {
       "id": "lee-jae-cheon",
@@ -39,7 +42,8 @@
         "en": "Lee, Jae-cheon"
       },
       "photo": "assets/img/judges/lee-jae-cheon-2.jpg",
-      "certified": "2016-05-15"
+      "certified": "2016-05-15",
+      "no": "2016-004"
     },
     {
       "id": "choi-woo-hyeok",
@@ -48,7 +52,8 @@
         "en": "Choi, Woo-hyeok"
       },
       "photo": "assets/img/judges/choi-woo-hyeok.jpg",
-      "certified": "2016-05-15"
+      "certified": "2016-05-15",
+      "no": "2016-005"
     },
     {
       "id": "oh-taek-soo",
@@ -57,7 +62,8 @@
         "en": "Oh, Taek-soo"
       },
       "photo": "assets/img/judges/oh-taek-soo.jpg",
-      "certified": "2012-04-15"
+      "certified": "2012-04-15",
+      "no": "2012-001"
     }
   ]
 }

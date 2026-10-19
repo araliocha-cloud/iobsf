@@ -251,4 +251,5 @@ collections:
                   - { name: en, label: "영문 이름 (예: Kim, Jae-goo)", widget: string }
               - { name: photo, label: "사진 (정사각형)", widget: image }
               - { name: certified, label: "인정일 (YYYY-MM-DD)", widget: string }
+              - { name: no, label: "자격번호 (인정 연도-일련번호, 예: 2016-006)", widget: string }
               - { name: id, label: "주소 이름 (영문 소문자와 하이픈)", widget: string, required: false }

@@ -305,7 +305,7 @@
       put("#events-judges", bi({ en: "Judges certified by KOOBA, the Federation’s member in Korea, in the standard form of the official judge card.", ko: "연맹의 한국 회원인 KOOBA가 인정한 공식 심판. 공식 심판증의 표준 양식으로 싣는다." }, "div", "prose member-intro") +
         '<div class="judge-cards">' + j.judges.map(function (x) {
           var d = day(x.certified);
-          return '<div class="judge-card"><div class="jc-title">Official Judge</div>' +
+          return '<div class="judge-card"><div class="jc-title">Official Judge</div>' + (x.no ? '<div class="jc-no">No. ' + esc(x.no) + "</div>" : "") +
             '<img class="jc-photo" src="' + esc(x.photo) + '" alt="' + esc(x.name.en) + '" loading="lazy">' +
             '<div class="jc-name-ko" lang="ko">' + spaced(x.name.ko) + '</div><div class="jc-name-en">' + esc(x.name.en) + "</div>" +
             '<p class="jc-ko" lang="ko">이 사람은 대한아웃도어바비큐협회가 인정하는 공식 심판임을 확인합니다.</p>' +

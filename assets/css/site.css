@@ -568,7 +568,8 @@ a.event-row:hover .title { color: var(--copper-light); }
 .judge-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 18px; }
 .judge-card { position: relative; background: linear-gradient(160deg, #fffdf8 0%, #f6efe2 55%, #e9dcc4 100%); color: #111; border: 0; border-radius: 4px; box-shadow: 0 10px 24px rgba(0,0,0,.45); padding: 16px 14px 12px; text-align: center; font-family: "Noto Sans KR", "Helvetica Neue", Arial, sans-serif; }
 .judge-card * { text-align: center !important; text-align-last: auto; }
-.jc-title { font-weight: 800; font-size: 22px; letter-spacing: .01em; margin-bottom: 10px; }
+.jc-title { font-weight: 800; font-size: 22px; letter-spacing: .01em; margin-bottom: 2px; }
+.jc-no { font-size: 12px; font-weight: 700; letter-spacing: .06em; color: #7a1f1f; margin-bottom: 10px; }
 .jc-photo { width: 104px; height: 104px; object-fit: cover; border-radius: 16px; display: block; margin: 0 auto 10px; }
 .jc-name-ko { font-weight: 700; font-size: 19px; }
 .jc-name-en { font-weight: 700; font-size: 14px; margin-bottom: 8px; }
