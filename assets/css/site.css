@@ -815,3 +815,31 @@ hr, .rule { border-color: var(--ember-line); }
 .partner-open { color: var(--ash); margin: 12px 0 0; font-style: italic; }
 .statement.definition .text { font-size: clamp(22px, 2.3vw, 30px); line-height: 1.5; max-width: 34em; margin-left: auto; margin-right: auto; }
 .statement.definition .text .s { font-size: .7em; line-height: 1.75; }
+/* section titles over statements: an engraved title plate in antique gold, flanked by hairlines */
+.placard-label, .statement .label {
+  display: flex; align-items: center; justify-content: center; gap: 16px;
+  font-family: var(--f-display); font-size: 21px; font-weight: 600;
+  letter-spacing: .16em; text-transform: uppercase; color: #d9ad6a;
+  margin: 0 auto 22px; max-width: 34em; }
+.placard-label::before, .placard-label::after, .statement .label::before, .statement .label::after {
+  content: ""; flex: 0 1 64px; height: 1px; background: linear-gradient(90deg, rgba(217, 173, 106, 0), rgba(217, 173, 106, .75)); }
+.placard-label::after, .statement .label::after { background: linear-gradient(90deg, rgba(217, 173, 106, .75), rgba(217, 173, 106, 0)); }
+@media (max-width: 600px) {
+  .placard-label, .statement .label { font-size: 17px; letter-spacing: .12em; gap: 12px; }
+  .placard-label::before, .placard-label::after, .statement .label::before, .statement .label::after { flex-basis: 36px; }
+}
+@media (max-width: 600px) {
+  .placard-label, .statement .label { font-size: 15.5px; letter-spacing: .09em; gap: 10px; white-space: nowrap; }
+  .placard-label::before, .placard-label::after, .statement .label::before, .statement .label::after { flex-basis: 28px; }
+}
+/* the same engraved antique-gold title for every small kicker across the site */
+.heritage-item .h-mark, .h-form, .founder-mark, .w-crumb, .w-refs h3, .story-date, .speech-by, .partner-role {
+  font-family: var(--f-display); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #d9ad6a; }
+.heritage-item .h-mark, .founder-mark, .w-crumb, .story-date { font-size: 17px; }
+.h-form, .w-refs h3 { font-size: 16px; }
+.heritage-item .h-mark .s, .founder-mark .s, .w-crumb .s, .w-refs h3 .s, .story-date .s { text-transform: none; letter-spacing: .02em; font-weight: 500; }
+.speech-by, .partner-role { font-size: 15px; }
+.speech-by .s, .partner-role .s { text-transform: none; letter-spacing: .02em; }
+@media (max-width: 600px) { .heritage-item .h-mark, .founder-mark, .w-crumb, .story-date { font-size: 15px; } }
+.nowrap { white-space: nowrap; }
+@media (max-width: 600px) { .heritage-item .h-mark { font-size: 14px; letter-spacing: .05em; } }

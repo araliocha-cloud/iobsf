@@ -778,7 +778,7 @@
       var mark = d.status === "origin" ? "No. 0, Origin" : d.status === "inscribed" ? "Federation Inscribed Heritage No. " + esc(d.number) : d.status === "review" ? "Federation Nominated Heritage" : "Federation Recorded Heritage";
       var metal = d.status === "inscribed" ? "gold" : d.status === "review" ? "silver" : d.status === "record" ? "bronze" : "";
       var src = (!brief && d.sources && d.sources.length) ? '<div class="h-sources">Sources: ' + d.sources.map(function (x) { return '<a href="' + esc(x.href) + '">' + esc(x.title) + "</a>"; }).join(", ") + "</div>" : "";
-      if (d.status === "record" && d.record_no) mark = "Federation Recorded Heritage " + esc(d.record_no);
+      if (d.status === "record" && d.record_no) mark = "Federation Recorded Heritage " + '<span class="nowrap">' + esc(d.record_no) + "</span>";
       var withPlaque = !brief && d.status === "origin" && d.inscription;
       return '<div class="heritage-item' + (d.status === "origin" ? " is-origin" : "") + (withPlaque ? " has-plaque" : "") + '">' + (withPlaque ? '<div class="origin-body">' : "") + '<div class="h-mark' + (d.status === "origin" ? " is-designated" : "") + '">' + (metal ? '<span class="dot t-' + metal + '"></span>' : "") + mark + "</div>" +
         '<div class="dish-name"><a class="h-link" href="heritage-item.html?id=' + esc(d.id) + '">' + esc(en(d.name)) + "</a>" + (d.original && d.original !== en(d.name) ? '<span class="orig">' + esc(d.original) + "</span>" : "") + "</div>" +
