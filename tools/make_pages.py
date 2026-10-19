@@ -11,13 +11,13 @@ HEAD = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="https://araliocha-cloud.github.io/iobsf/{file}">
+<link rel="canonical" href="https://iobsf.org/{file}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="IOBSF, International Outdoor Barbecue Sports Federation">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:url" content="https://araliocha-cloud.github.io/iobsf/{file}">
-<meta property="og:image" content="https://araliocha-cloud.github.io/iobsf/assets/img/emblem.png">
+<meta property="og:url" content="https://iobsf.org/{file}">
+<meta property="og:image" content="https://iobsf.org/assets/img/emblem.png">
 <meta name="twitter:card" content="summary">
 {jsonld}
 <link rel="icon" href="assets/img/emblem-small.png">
@@ -71,7 +71,7 @@ DESC = {
  "archives": "The IOBSF archives: barbecue humanities, civilization history and the histories of the nations' fires, with essays, books and papers by Shaka Chaa and KBRI.",
  "404": D,
 }
-JSONLD = """<script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsOrganization","name":"International Outdoor Barbecue Sports Federation","alternateName":["IOBSF","International Outdoor & Barbecue Sports Federation","국제아웃도어바비큐스포츠연맹"],"url":"https://araliocha-cloud.github.io/iobsf/","logo":"https://araliocha-cloud.github.io/iobsf/assets/img/emblem.png","foundingDate":"2018-12-08","slogan":"DO NOT DO IF NOT FUN","sport":"Sports Barbecue","sameAs":["https://professionalbarbecuer.com","https://kooba.kr"]}</script>"""
+JSONLD = """<script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsOrganization","name":"International Outdoor Barbecue Sports Federation","alternateName":["IOBSF","International Outdoor & Barbecue Sports Federation","국제아웃도어바비큐스포츠연맹"],"url":"https://iobsf.org/","logo":"https://iobsf.org/assets/img/emblem.png","foundingDate":"2018-12-08","slogan":"DO NOT DO IF NOT FUN","sport":"Sports Barbecue","sameAs":["https://professionalbarbecuer.com","https://kooba.kr"]}</script>"""
 
 pages = {
 "index": ("IOBSF | International Outdoor Barbecue Sports Federation", "home",

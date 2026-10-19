@@ -7,9 +7,9 @@ backend:
   commit_messages:
     update: "Update {{collection}} from admin"
 
-site_url: https://araliocha-cloud.github.io/iobsf/
-display_url: https://araliocha-cloud.github.io/iobsf/
-logo_url: https://araliocha-cloud.github.io/iobsf/assets/img/emblem-small.png
+site_url: https://iobsf.org/
+display_url: https://iobsf.org/
+logo_url: https://iobsf.org/assets/img/emblem-small.png
 media_folder: assets/img/uploads
 public_folder: assets/img/uploads
 

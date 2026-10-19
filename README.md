@@ -58,7 +58,7 @@ GitHub Pages로 운영한다. 빌드 과정이 없다. 저장소에 올리면 �
 
 ## 관리 화면 (/admin)
 
-주소: https://araliocha-cloud.github.io/iobsf/admin/
+주소: https://iobsf.org/admin/
 
 - 로그인: "Sign In Using Access Token"에 GitHub 개인 액세스 토큰을 붙여 넣는다.
   - 토큰 만들기: GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token
