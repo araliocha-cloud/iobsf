@@ -637,3 +637,18 @@ a.event-row:hover .title { color: var(--copper-light); }
 .plaque.mini .plaque-community { font-size: 13.5px; letter-spacing: .04em; }
 .plaque.mini .plaque-text { font-size: 19px; line-height: 1.45; }
 .plaque.mini .plaque-foot, .plaque.mini .plaque-foot-en, .plaque.mini .plaque-decision { font-size: 13px; letter-spacing: .04em; }
+/* gold plaque, compact: sits at the top, independent of the record's height */
+.heritage-item.has-plaque { grid-template-columns: minmax(0, 1fr) 290px; gap: 40px; align-items: start; }
+.origin-plaque { align-self: start; }
+.plaque.mini { max-width: 290px; padding: 22px 18px 20px; }
+.plaque.mini .plaque-emblem { width: 50px; margin-bottom: 8px; }
+.plaque.mini .plaque-head { font-size: 11px; letter-spacing: .05em; line-height: 1.5; }
+.plaque.mini .plaque-tier { font-size: 10.5px; letter-spacing: .08em; }
+.plaque.mini .plaque-no { font-size: 30px; margin-top: 6px; }
+.plaque.mini .plaque-name { font-size: 23px; letter-spacing: .04em; }
+.plaque.mini .plaque-community { font-size: 11px; margin-top: 6px; }
+.plaque.mini .plaque-rule { margin: 10px auto; }
+.plaque.mini .plaque-rule.short { margin: 10px auto 8px; }
+.plaque.mini .plaque-text { font-size: 15px; line-height: 1.4; }
+.plaque.mini .plaque-foot, .plaque.mini .plaque-foot-en, .plaque.mini .plaque-decision { font-size: 10.5px; letter-spacing: .03em; line-height: 1.6; }
+@media (max-width: 860px) { .heritage-item.has-plaque { grid-template-columns: 1fr; gap: 24px; } }
