@@ -467,9 +467,9 @@
       '<p style="margin-top:48px"><a href="heritage.html">Back to Heritage</a></p>';
   }
 
-  function plaque(d) {
+  function plaque(d, cls) {
     var ins = d.inscription;
-    return '<figure class="plaque' + (d.specimen ? " is-specimen" : "") + '" aria-label="Heritage plaque">' +
+    return '<figure class="plaque' + (cls ? " " + cls : "") + (d.specimen ? " is-specimen" : "") + '" aria-label="Heritage plaque">' +
       (d.specimen ? '<div class="plaque-watermark">SPECIMEN</div>' : "") +
       '<img class="plaque-emblem" src="assets/img/emblem-small.png" alt="">' +
       '<div class="plaque-head">International Outdoor Barbecue<br>Sports Federation</div>' +
@@ -740,11 +740,12 @@
       var metal = d.status === "inscribed" ? "gold" : d.status === "review" ? "silver" : d.status === "record" ? "bronze" : "";
       var src = (!brief && d.sources && d.sources.length) ? '<div class="h-sources">Sources: ' + d.sources.map(function (x) { return '<a href="' + esc(x.href) + '">' + esc(x.title) + "</a>"; }).join(", ") + "</div>" : "";
       if (d.status === "record" && d.record_no) mark = "Federation Recorded Heritage " + esc(d.record_no);
-      return '<div class="heritage-item' + (d.status === "origin" ? " is-origin" : "") + '"><div class="h-mark' + (d.status === "origin" ? " is-designated" : "") + '">' + (metal ? '<span class="dot t-' + metal + '"></span>' : "") + mark + "</div>" +
+      var withPlaque = !brief && d.status === "origin" && d.inscription;
+      return '<div class="heritage-item' + (d.status === "origin" ? " is-origin" : "") + (withPlaque ? " has-plaque" : "") + '">' + (withPlaque ? '<div class="origin-body">' : "") + '<div class="h-mark' + (d.status === "origin" ? " is-designated" : "") + '">' + (metal ? '<span class="dot t-' + metal + '"></span>' : "") + mark + "</div>" +
         '<div class="dish-name"><a class="h-link" href="heritage-item.html?id=' + esc(d.id) + '">' + esc(en(d.name)) + "</a>" + (d.original && d.original !== en(d.name) ? '<span class="orig">' + esc(d.original) + "</span>" : "") + "</div>" +
         bi({ ko: d.name.ko, ja: d.name.ja, zh: d.name.zh }, "div") +
         '<div class="h-community">' + bi(d.community) + (d.era ? bi(d.era, "div", "h-era") : "") + "</div>" + formLine(d) +
-        (brief ? "" : bi(d.text, "div", "h-text") + src) + "</div>";
+        (brief ? "" : bi(d.text, "div", "h-text") + src) + (withPlaque ? '</div><a class="origin-plaque" href="heritage-item.html?id=' + esc(d.id) + '" aria-label="Plaque of ' + esc(en(d.name)) + '">' + plaque(d, "gold mini") + "</a>" : "") + "</div>";
     }).join("") + "</div>";
   }
   function nationsStrip(na) {

@@ -590,3 +590,24 @@ a.event-row:hover .title { color: var(--copper-light); }
 .jc-date { position: relative; }
 .jc-seal { position: absolute; width: 44px; height: 44px; right: 9%; bottom: 8px; opacity: .9; transform: none; mix-blend-mode: multiply; pointer-events: none; }
 .jc-meta { font-size: 10.5px; color: #6b5a44; margin-top: 2px; }
+
+/* gold plaque beside the origin record */
+.plaque.gold { --bronze-1: #8a6420; --bronze-2: #e2bd62; --bronze-3: #5a3f12; --engrave: #fff3cf; --engrave-shadow: rgba(50, 30, 4, .85);
+  background: radial-gradient(ellipse at 28% 18%, rgba(255, 246, 200, .55), transparent 55%), linear-gradient(155deg, #f1d48a 0%, #c9993e 38%, #8a6420 70%, #5a3f12 100%);
+  box-shadow: inset 0 0 0 3px rgba(60, 36, 6, .55), inset 0 0 0 9px rgba(255, 226, 140, .45), inset 0 0 0 11px rgba(60, 36, 6, .5), 0 24px 50px rgba(0, 0, 0, .55); }
+.heritage-item.has-plaque { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 48px; align-items: center; }
+.origin-plaque { display: block; text-decoration: none; }
+.plaque.mini { margin: 0; max-width: 360px; padding: 30px 26px 26px; }
+.plaque.mini .plaque-emblem { width: 64px; margin-bottom: 10px; }
+.plaque.mini .plaque-head { font-size: 11px; }
+.plaque.mini .plaque-tier { font-size: 10px; }
+.plaque.mini .plaque-no { font-size: 32px; }
+.plaque.mini .plaque-name { font-size: 24px; }
+.plaque.mini .plaque-community { font-size: 11px; }
+.plaque.mini .plaque-text { font-size: 16px; }
+.plaque.mini .plaque-rule { margin: 14px auto; }
+.plaque.mini .plaque-foot, .plaque.mini .plaque-foot-en, .plaque.mini .plaque-decision { font-size: 10px; }
+@media (max-width: 860px) { .heritage-item.has-plaque { grid-template-columns: 1fr; gap: 28px; } .plaque.mini { margin: 0 auto; } }
+.plaque.gold { color: #3b2507; text-shadow: 0 1px 0 rgba(255, 240, 190, .55), 0 -1px 0 rgba(60, 36, 6, .25); }
+.plaque.gold .plaque-rule { background: rgba(70, 44, 10, .5); box-shadow: 0 1px 0 rgba(255, 240, 190, .5); }
+.plaque.gold { background: radial-gradient(ellipse at 28% 16%, rgba(255, 248, 210, .6), transparent 58%), linear-gradient(160deg, #f3da98 0%, #d7ac52 42%, #b8892f 75%, #9c7126 100%); }
