@@ -171,7 +171,7 @@
         "<div>" + bi(site.statements.motto.text, "div", "f-motto") + "</div>" +
         '<div class="f-bottom">' +
           '<div class="f-line">' + esc("Founded 8 December 2018, Seoul. Headquarters: Republic of Korea.") + "</div>" +
-          '<div class="f-line">' + esc("Secretary-General, International Outdoor Barbecue Sports Federation: Shaka Chaa") + "</div>" +
+          '<div class="f-line">' + esc("Secretary-General, IOBSF Headquarters and Korea Secretariat: Shaka Chaa") + "</div>" +
         "</div>" +
       "</div>");
     $("#site-footer").classList.add("site-footer");
