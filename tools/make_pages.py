@@ -146,7 +146,7 @@ pages = {
 
 "partners": ("Partners | IOBSF", "partners",
   head("Partners", "파트너", lede_id="partners-intro")
-  + section("Partnership Tiers", "파트너 등급", '<div id="partners"></div>')
+  + section("Our Partners", "연맹의 파트너", '<div id="partners"></div>')
   + section("Sanctioning", "대회 공인", '<div class="empty bi"><span class="p">Organisers who wish to host a sanctioned event will find the application process here.</span><span class="s" lang="ko">공인 대회를 열고자 하는 주최자를 위한 신청 절차가 이곳에 공개된다.</span></div>')),
 
 "writing": ("Essay | IOBSF", "writing",

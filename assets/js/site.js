@@ -628,9 +628,15 @@
       put("#partners-intro", bi(p.intro, "div", "lede"));
       put("#partners", p.tiers.map(function (t) {
         var list = p.partners.filter(function (x) { return x.tier === t.key; });
-        return '<div class="nation-block"><h3>' + esc(en(t.name)) + bi({ ko: t.name.ko }, "span") + "</h3><div>" +
-          (list.length ? list.map(function (x) { return '<a href="' + esc(x.href) + '">' + (x.logo ? '<img src="' + esc(x.logo) + '" alt="' + esc(x.name) + '" style="max-height:60px">' : esc(x.name)) + "</a>"; }).join("")
-            : '<p style="color:var(--ash);margin:0">Open to partners.</p>') + "</div></div>";
+        return '<div class="nation-block partner-tier"><h3>' + esc(en(t.name)) + bi({ ko: t.name.ko, ja: t.name.ja, zh: t.name.zh }, "span") + "</h3><div>" +
+          (t.text ? bi(t.text, "div", "prose member-intro") : "") +
+          (list.length ? '<div class="partner-list">' + list.map(function (x) {
+            var name = x.logo ? '<img src="' + esc(x.logo) + '" alt="' + esc(x.name) + '" style="max-height:60px">' : '<span class="partner-name">' + esc(x.name) + "</span>";
+            return '<div class="partner">' + (x.href ? '<a href="' + esc(x.href) + '">' + name + "</a>" : name) +
+              (x.full && en(x.full) !== x.name ? bi(x.full, "div", "partner-full") : (x.full ? bi({ ko: x.full.ko, ja: x.full.ja, zh: x.full.zh }, "div", "partner-full") : "")) +
+              (x.role ? bi(x.role, "div", "partner-role") : "") + "</div>";
+          }).join("") + "</div>"
+            : '<p class="partner-open">' + bi({ en: "Open to partners.", ko: "파트너를 기다린다.", ja: "パートナーを待っている。", zh: "期待合作伙伴。" }, "span", "", true) + "</p>") + "</div></div>";
       }).join(""));
     });
   };

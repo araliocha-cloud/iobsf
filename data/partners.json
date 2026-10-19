@@ -1,19 +1,116 @@
 {
   "_schema": {
-    "tiers": "후원 등급: key, name(다국어)",
-    "partners": "후원사: name, tier(key), logo(경로), href"
+    "tiers": "파트너 갈래: key, name(다국어), text(다국어)",
+    "partners": "파트너: name, full(다국어), role(다국어), tier(key), logo(경로), href"
   },
   "intro": {
     "en": "Partners of the Federation stand beside the fire with us, and share in the culture and the market it creates.",
     "ko": "연맹의 파트너는 불 곁에 함께 서서, 그 불이 만드는 문화와 시장을 함께 나눈다.",
-    "ja": "",
-    "zh": ""
+    "ja": "連盟のパートナーは火のそばにともに立ち、その火が生む文化と市場をともに分かち合う。",
+    "zh": "联合会的伙伴与我们并肩站在火旁，共享这团火所创造的文化与市场。"
   },
   "contact": "",
   "tiers": [
-    { "key": "founding", "name": { "en": "Founding Partners", "ko": "창립 파트너", "ja": "", "zh": "" } },
-    { "key": "official", "name": { "en": "Official Partners", "ko": "공식 파트너", "ja": "", "zh": "" } },
-    { "key": "supporting", "name": { "en": "Supporting Partners", "ko": "후원 파트너", "ja": "", "zh": "" } }
+    {
+      "key": "official",
+      "name": {
+        "en": "Official Partners",
+        "ko": "공식 파트너",
+        "ja": "公式パートナー",
+        "zh": "官方合作伙伴"
+      },
+      "text": {
+        "en": "Companies under contract with the Federation, in equipment, fuel, meat and more.",
+        "ko": "장비, 연료, 고기 등 연맹과 계약한 기업.",
+        "ja": "機器、燃料、肉など、連盟と契約した企業。",
+        "zh": "在设备、燃料、肉类等领域与联合会签约的企业。"
+      }
+    },
+    {
+      "key": "sponsor",
+      "name": {
+        "en": "Sponsors",
+        "ko": "후원사",
+        "ja": "スポンサー",
+        "zh": "赞助商"
+      },
+      "text": {
+        "en": "Those who give money or goods to a Federation event.",
+        "ko": "연맹 대회 단위로 돈이나 물품을 내는 곳.",
+        "ja": "連盟の大会ごとに資金や物品を提供するところ。",
+        "zh": "为联合会赛事提供资金或物资的机构。"
+      }
+    },
+    {
+      "key": "cooperating",
+      "name": {
+        "en": "Cooperating Institutions",
+        "ko": "협력 기관",
+        "ja": "協力機関",
+        "zh": "合作机构"
+      },
+      "text": {
+        "en": "Organisations that work with the Federation in research, membership, events and public life.",
+        "ko": "연구, 회원, 대회, 공공 영역에서 연맹과 함께하는 기관.",
+        "ja": "研究、会員、大会、公共の領域で連盟とともに歩む機関。",
+        "zh": "在研究、会员、赛事与公共领域与联合会携手的机构。"
+      }
+    }
   ],
-  "partners": []
+  "partners": [
+    {
+      "name": "KBRI",
+      "full": {
+        "en": "Korea Barbecue Research & Institute",
+        "ko": "한국바비큐연구원",
+        "ja": "韓国バーベキュー研究院",
+        "zh": "韩国烧烤研究院"
+      },
+      "role": {
+        "en": "Research and thought",
+        "ko": "연구와 사상",
+        "ja": "研究と思想",
+        "zh": "研究与思想"
+      },
+      "tier": "cooperating",
+      "logo": "",
+      "href": "https://professionalbarbecuer.com"
+    },
+    {
+      "name": "KOOBA",
+      "full": {
+        "en": "Korea Outdoor & Barbecue Association",
+        "ko": "사단법인 대한아웃도어바비큐협회",
+        "ja": "韓国アウトドア＆バーベキュー協会",
+        "zh": "韩国户外烧烤协会"
+      },
+      "role": {
+        "en": "Korea Member of IOBSF, national competitions",
+        "ko": "IOBSF 한국 회원, 국내 대회 주관",
+        "ja": "IOBSF韓国会員、国内大会の主管",
+        "zh": "IOBSF韩国会员，主办国内赛事"
+      },
+      "tier": "cooperating",
+      "logo": "",
+      "href": "https://kooba.kr"
+    },
+    {
+      "name": "Guangdong Grandeur International Exhibition Group",
+      "full": {
+        "en": "Guangdong Grandeur International Exhibition Group",
+        "ko": "광둥 그랜더 국제전시그룹",
+        "ja": "広東グランダー国際展覧グループ",
+        "zh": "广东鸿威国际会展集团"
+      },
+      "role": {
+        "en": "Organiser of AOBE, Guangzhou; summit keynote, 2027",
+        "ko": "광저우 AOBE 주최, 2027 서밋 기조연설",
+        "ja": "広州AOBE主催、2027年サミット基調講演",
+        "zh": "广州AOBE主办方，2027年峰会主旨演讲"
+      },
+      "tier": "cooperating",
+      "logo": "",
+      "href": "event.html?id=2027-aobe-guangzhou"
+    }
+  ]
 }

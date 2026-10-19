@@ -191,6 +191,16 @@
         "ja": "",
         "zh": ""
       }
+    },
+    {
+      "id": "partners",
+      "href": "partners.html",
+      "label": {
+        "en": "Partners",
+        "ko": "파트너",
+        "ja": "パートナー",
+        "zh": "合作伙伴"
+      }
     }
   ],
   "links": [
