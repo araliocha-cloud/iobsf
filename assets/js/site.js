@@ -311,7 +311,8 @@
             '<p class="jc-ko" lang="ko">이 사람은 대한아웃도어바비큐협회가 인정하는 공식 심판임을 확인합니다.</p>' +
             '<p class="jc-en">This person is an official judge certified by KOOBA.</p>' +
             '<div class="jc-date">' + esc(d.dot) + "<span>" + esc(d.en) + "</span></div>" +
-            '<img class="jc-strip" src="assets/img/judges/kooba-strip.png" alt="Korea Outdoor &amp; Barbecue Association"></div>';
+            '<img class="jc-strip" src="assets/img/judges/kooba-strip.png" alt="Korea Outdoor &amp; Barbecue Association">' +
+            '<img class="jc-seal" src="assets/img/judges/kooba-seal.png" alt="Seal of the Korea Outdoor &amp; Barbecue Association"></div>';
         }).join("") + "</div>" +
         '<p class="jc-confirm">' + bi({ en: "Confirmed as official judges of KOOBA on " + day(j.confirmed).en + ", by the Chairman of KOOBA.", ko: "상기인들이 사단법인 대한아웃도어바비큐협회 공식 심판임을 " + j.confirmed.replace(/-/g, ". ") + ". 협회장이 증명했다." }, "span", "", true) + "</p>");
     });
