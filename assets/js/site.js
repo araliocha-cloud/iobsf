@@ -193,6 +193,7 @@
       '<picture class="dawn-wrap"><source srcset="assets/img/dawn-march-4.webp" type="image/webp"><img class="dawn" src="assets/img/dawn-march-4.jpg" alt="A band of early humans with stone axes, spears and bows advancing out of the dawn"></picture>');
 
     put("#home-spirit",
+      (st.sports_barbecue ? '<div class="statement definition"><p class="label">' + esc(st.sports_barbecue.label.en) + "</p>" + bi(st.sports_barbecue.text, "p", "text") + '</div><div style="height:72px"></div>' : "") +
       '<div class="statement">' +
         '<p class="label">' + esc(st.spirit.label.en) + "</p>" +
         bi(st.spirit.text, "p", "text") +
