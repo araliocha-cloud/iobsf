@@ -215,6 +215,16 @@
         "ja": "パートナー",
         "zh": "合作伙伴"
       }
+    },
+    {
+      "id": "business",
+      "href": "business.html",
+      "label": {
+        "en": "Business",
+        "ko": "비즈니스",
+        "ja": "ビジネス",
+        "zh": "商务"
+      }
     }
   ],
   "links": [

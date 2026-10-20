@@ -67,6 +67,7 @@ DESC = {
  "chronicle": "Stories from the fire at IOBSF events.",
  "federation": "About IOBSF: founding members, institutions, history and charter.",
  "partners": "Partner with IOBSF, the International Outdoor Barbecue Sports Federation.",
+ "business": "The IOBSF Business Desk: event hosting and sanctioning, equipment certification, partnership, Pro Barbecuer education, research and advisory.",
  "writing": "An essay from the IOBSF archives, by Shaka Chaa.",
  "archives": "The IOBSF archives: barbecue humanities, civilization history and the histories of the nations' fires, with essays, books and papers by Shaka Chaa and KBRI.",
  "404": D,
@@ -147,7 +148,13 @@ pages = {
 "partners": ("Partners | IOBSF", "partners",
   head("Partners", "파트너", lede_id="partners-intro")
   + section("Our Partners", "연맹의 파트너", '<div id="partners"></div>')
-  + section("Sanctioning", "대회 공인", '<div class="empty bi"><span class="p">Organisers who wish to host a sanctioned event will find the application process here.</span><span class="s" lang="ko">공인 대회를 열고자 하는 주최자를 위한 신청 절차가 이곳에 공개된다.</span></div>')),
+  + '<section class="section"><div class="wrap"><p class="biz-link bi"><a class="p" href="business.html">To become a partner or host a sanctioned event, visit the Business Desk.</a><a class="s" lang="ko" href="business.html">파트너가 되거나 공인 대회를 열고자 하면 비즈니스 데스크로.</a></p></div></section>'),
+
+"business": ("Business Desk | IOBSF", "business",
+  '<section class="page-head biz-head"><div class="wrap"><div id="biz-hestia" class="biz-hestia" aria-hidden="true"></div><div id="biz-statement"></div></div></section>'
+  + section("Fields of Request", "의뢰 분야", '<div id="biz-areas"></div>')
+  + section("How It Works", "절차", '<div id="biz-steps"></div><div id="biz-principle"></div>')
+  + section("Request Form", "의뢰서", '<div id="biz-form"></div>')),
 
 "writing": ("Essay | IOBSF", "writing",
   '<section class="page-head"><div class="wrap" id="writing"></div></section>'),

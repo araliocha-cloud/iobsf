@@ -849,3 +849,30 @@ hr, .rule { border-color: var(--ember-line); }
 .statement.definition .text { max-width: none; font-size: clamp(19px, 2vw, 26px); }
 .statement.definition .text .s { font-size: .78em; }
 .statement .text .p, .statement .text .s { text-wrap: balance; }
+
+/* ---------- business desk ---------- */
+.biz-head .wrap { text-align: center; }
+.biz-hestia:empty { display: none; }
+.biz-hestia { width: min(320px, 70vw); margin: 0 auto 36px; }
+.biz-statement { margin-top: 8px; }
+.biz-desk { margin: 8px 0 2px; font-family: var(--f-display); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: #d9ad6a; }
+.biz-desk .s { text-transform: none; letter-spacing: .04em; }
+.biz-steps { margin-top: 8px; }
+.biz-principle { margin: 44px auto 0; max-width: 760px; text-align: center; font-style: italic; color: var(--ash); padding-top: 26px; border-top: 1px solid var(--ember-line); }
+.biz-form { text-align: center; padding: 12px 0 20px; }
+.biz-button { display: inline-block; padding: 18px 44px; border: 1px solid #b8893f; border-radius: 2px; color: #e8c88a; font-family: var(--f-display); font-size: 22px; letter-spacing: .08em; background: linear-gradient(180deg, rgba(184,137,63,.14), rgba(184,137,63,.04)); transition: background .25s, color .25s; }
+.biz-button:hover { background: rgba(184,137,63,.28); color: #f3dcaa; text-decoration: none; }
+.biz-button .s { display: block; font-size: 16px; letter-spacing: .02em; margin-top: 4px; }
+.biz-pending { color: var(--ash); font-style: italic; }
+.biz-link { text-align: center; font-size: 18px; }
+.biz-link a.s { display: block; margin-top: 4px; }
+@media (max-width: 720px) {
+  .biz-button { padding: 16px 28px; font-size: 19px; }
+}
+.biz-statement .text .s { margin-top: 40px; }
+.biz-steps p, .biz-steps .proc-ko, .biz-areas .form7-text { text-align: left; hyphens: none; }
+/* nine menu items: tighter spacing so the bar fits from 1301px up */
+@media (min-width: 1301px) {
+  .site-nav ul { gap: clamp(14px, 1.35vw, 34px); }
+  .site-nav a { font-size: clamp(17.5px, 1.3vw, 22px); letter-spacing: 0; }
+}

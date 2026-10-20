@@ -652,6 +652,23 @@
     });
   };
 
+  pages.business = function () {
+    load("business").then(function (b) {
+      put("#biz-statement", '<div class="statement definition biz-statement"><p class="label">' + esc(b.statement.label.en) + "</p>" + bi(b.statement.text, "p", "text") + "</div>");
+      put("#biz-areas", bi(b.areas_intro, "div", "prose member-intro") + '<div class="forms7 biz-areas">' + b.areas.map(function (a) {
+        return '<div class="form7"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3>" +
+          '<div class="biz-desk">' + bi(a.desk, "span", "", true) + "</div>" + bi(a.text, "div", "form7-text") + "</div>";
+      }).join("") + "</div>");
+      put("#biz-steps", '<ol class="sequence compact biz-steps">' + b.steps.map(function (x) {
+        return "<li><h3>" + esc(x.name.en) + "</h3>" + bi({ ko: x.name.ko, ja: x.name.ja, zh: x.name.zh }, "div") + '<p class="proc-en">' + esc(x.text.en) + "</p>" + bi({ ko: x.text.ko, ja: x.text.ja, zh: x.text.zh }, "div", "proc-ko") + "</li>";
+      }).join("") + "</ol>");
+      put("#biz-principle", bi(b.principle, "p", "biz-principle"));
+      put("#biz-form", '<div class="biz-form">' + (b.form_url
+        ? '<a class="biz-button" href="' + esc(b.form_url) + '" target="_blank" rel="noopener">' + bi(b.form_label, "span", "", true) + "</a>"
+        : bi(b.form_pending, "p", "biz-pending")) + "</div>");
+    });
+  };
+
   /* ---------- shared fragments ---------- */
   function rankingTable(rk, bb, na, limit) {
     var rows = rk.entries.slice().sort(function (a, b) { return b.points - a.points; });
