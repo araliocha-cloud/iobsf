@@ -783,7 +783,10 @@
       }).join("") + "</ol>");
       put("#biz-principle", bi(b.principle, "p", "biz-principle"));
       put("#biz-form", '<div class="biz-form">' + (b.form_url
-        ? '<a class="biz-button" href="' + esc(b.form_url) + '" target="_blank" rel="noopener">' + bi(b.form_label, "span", "", true) + "</a>"
+        ? '<a class="biz-button biz-plaque" href="' + esc(b.form_url) + '" target="_blank" rel="noopener">' +
+          '<span class="plaque-mark" aria-hidden="true"><svg viewBox="0 0 40 48"><defs><linearGradient id="pmg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4dca2"/><stop offset=".55" stop-color="#c99a4f"/><stop offset="1" stop-color="#7d5a24"/></linearGradient></defs>' +
+          '<path d="M20 3c3 7 11 11 11 21a11 11 0 0 1-22 0c0-6 3-9 5-12 0 4 2 6 4 6-2-6 0-11 2-15z" fill="url(#pmg)"/><path d="M6 44h28M10 40h20" stroke="url(#pmg)" stroke-width="2" stroke-linecap="round"/></svg></span>' +
+          bi(b.form_label, "span", "", true) + "</a>"
         : bi(b.form_pending, "p", "biz-pending")) + "</div>");
     });
   };
