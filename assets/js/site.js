@@ -746,6 +746,11 @@
   pages.business = function () {
     load("business").then(function (b) {
       put("#biz-hestia", hestiaFilm("")); runFilm(document.querySelector("#biz-hestia .hestia-film"));
+      if (document.getElementById("biz-scroll")) {
+        var v = (document.querySelector('script[src*="site.js"]') || {}).src; v = v && v.split("?v=")[1] || "1";
+        var l = document.createElement("link"); l.rel = "stylesheet"; l.href = "assets/css/papyrus.css?v=" + v; document.head.appendChild(l);
+        var sc = document.createElement("script"); sc.src = "assets/js/papyrus.js?v=" + v; sc.defer = true; document.body.appendChild(sc);
+      }
       put("#biz-statement", '<div class="statement definition biz-statement"><p class="label">' + esc(b.statement.label.en) + "</p>" + bi(b.statement.text, "p", "text") + "</div>");
       put("#biz-areas", bi(b.areas_intro, "div", "prose member-intro") + '<div class="forms7 biz-areas">' + b.areas.map(function (a) {
         return '<div class="form7"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3>" +

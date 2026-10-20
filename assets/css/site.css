@@ -999,3 +999,5 @@ html[data-second="ko"] .biz-button .bi.inline .s[lang="ko"], html[data-second="j
 .biz-tale a:hover { color: #f0c98a; text-decoration: none; }
 html[data-second] .biz-tale .bi.inline .s[lang] { display: none; }
 html[data-second="ko"] .biz-tale .s[lang="ko"], html[data-second="ja"] .biz-tale .s[lang="ja"], html[data-second="zh"] .biz-tale .s[lang="zh"] { display: block; margin-top: 4px; font-size: 16px; }
+
+.biz-epic { padding-top: 10px; }

@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Song+Myung&family=Cardo:wght@400;700&display=swap");
+
+/* Layout: one column on the dark ground of the federation site; a papyrus roll, tied with a cord, unrolls downward as the ink writes the poem. */
+.papyrus {
+  --tex: url(../img/papyrus/papyrus.jpg); --edge: url(../img/papyrus/edge.png); --holes: url(../img/papyrus/holes.png);
+  color: var(--ash); font-family: var(--text);
+  --ground: #1b1916;      /* the site's night ground */
+  --ink: #1c1007;         /* carbon ink, faded */
+  --rubric: #6e1f0b;      /* red ochre for headings, as scribes rubricated */
+  --wood: #6b4524;
+  --gold: #c9a15a;        /* the site's deep gold */
+  --ash: #a89a86;
+  --display: "Cormorant Garamond", "Noto Serif", Georgia, serif;
+  --text: "Song Myung", "Gowun Batang", "Noto Serif KR", "Apple SD Gothic Neo", serif;
+  --greek: "Cardo", "Noto Serif", Georgia, serif;
+}
+
+.papyrus-in { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.papyrus .hint { font-family: var(--display); letter-spacing: .18em; text-transform: uppercase; font-size: 14px; color: var(--gold); opacity: .85; text-align: center; }
+.papyrus .hint .ko { display: block; font-family: var(--text); letter-spacing: .02em; text-transform: none; font-size: 14px; color: var(--ash); margin-top: 6px; }
+
+/* the scroll */
+.papyrus .scroll { position: relative; width: 100%; cursor: pointer; outline: none; }
+.papyrus .scroll:focus-visible .rod { box-shadow: 0 0 0 2px var(--gold); }
+.papyrus .rod { position: relative; height: 22px; margin: 0 22px; border-radius: 11px; z-index: 3;
+  background: linear-gradient(180deg, #1d1007 0%, #4a2c14 18%, #9a6a38 46%, #c59660 52%, #7a4c24 70%, #2b170a 100%); }
+.papyrus .rod::before, .papyrus .rod::after { content: ""; position: absolute; top: 50%; width: 34px; height: 34px; border-radius: 50%; transform: translateY(-50%);
+  background: radial-gradient(circle at 38% 35%, #e9cf96 0%, #b8894a 32%, #6e4520 70%, #2a160a 100%); box-shadow: 0 2px 6px rgba(0,0,0,.6); }
+.papyrus .rod::before { left: -26px; } .papyrus .rod::after { right: -26px; }
+.papyrus .bundle { position: relative; height: 54px; margin: -6px 30px; border-radius: 27px; z-index: 2; overflow: hidden;
+  background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,0) 30%, rgba(255,230,180,.12) 50%, rgba(0,0,0,0) 70%, rgba(0,0,0,.6)), var(--tex) center/900px auto;
+  transition: height .9s cubic-bezier(.5,0,.2,1), margin .9s, opacity .6s; }
+.papyrus .cord { position: absolute; left: 50%; top: -4px; bottom: -4px; width: 120px; transform: translateX(-50%); z-index: 4; pointer-events: none; transition: opacity .5s, transform .7s; }
+.papyrus .cord i { position: absolute; top: 0; bottom: 0; width: 5px; border-radius: 3px; background: linear-gradient(90deg, #3a0f06, #8a2c14, #3a0f06); }
+.papyrus .cord i:nth-child(1) { left: 34px; transform: rotate(-6deg); } .papyrus .cord i:nth-child(2) { left: 80px; transform: rotate(5deg); }
+.papyrus .tag { position: absolute; left: calc(50% + 46px); top: 58px; z-index: 5; transform-origin: top left; transform: rotate(9deg);
+  padding: 7px 12px 8px; font-family: var(--greek); font-size: 13px; letter-spacing: .12em; color: var(--ink);
+  background: linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.25)), var(--tex) 30% 40%/600px auto; border-radius: 2px 2px 3px 3px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.6); transition: opacity .5s, transform .7s; }
+.papyrus .tag::before { content: ""; position: absolute; left: 10px; top: -16px; width: 2px; height: 18px; background: #6d2410; }
+.papyrus .sheet { position: relative; height: 0; margin: 0 30px; z-index: 1; transition: height .55s ease-out;
+  background: linear-gradient(90deg, rgba(0,0,0,.35), rgba(0,0,0,0) 8%, rgba(0,0,0,0) 92%, rgba(0,0,0,.35)), var(--tex) 0 0/900px auto; }
+.papyrus .sheet::before, .papyrus .sheet::after { content: ""; position: absolute; top: 0; bottom: 0; width: 40px; background: var(--edge) 0 0/40px auto repeat-y; pointer-events: none; }
+.papyrus .sheet::before { left: -39px; }
+.papyrus .sheet::after { right: -39px; transform: scaleX(-1); }
+.papyrus .clip { position: absolute; inset: 0; overflow: hidden;
+  /* the scribe wrote on the smoother, paler middle of the sheet: a pale wash quiets the fibres under the column */
+  background: radial-gradient(ellipse 62% 100% at 50% 50%, rgba(232,206,156,.58) 0%, rgba(232,206,156,.46) 55%, rgba(232,206,156,0) 100%); }
+.papyrus .clip::before, .papyrus .clip::after { content: ""; position: absolute; top: 0; bottom: 0; width: 34px; background: var(--holes) 0 0/34px 1400px repeat-y; pointer-events: none; z-index: 2; }
+.papyrus .clip::before { left: 2px; }
+.papyrus .clip::after { right: 0; background-position: 0 700px; transform: scaleX(-1); }
+
+.papyrus .text { position: absolute; left: 0; right: 0; top: 0; padding: 40px clamp(34px, 9%, 72px) 48px clamp(46px, 11%, 86px); color: var(--ink); }
+.papyrus .scroll.open .bundle { height: 0; margin: 0 30px; opacity: 0; }
+.papyrus .scroll.open .cord { opacity: 0; transform: translateX(-50%) scaleY(.2); visibility: hidden; transition: opacity .5s, transform .7s, visibility 0s .7s; }
+.papyrus .scroll { overflow-x: clip; }
+.papyrus .scroll.open .tag { opacity: 0; transform: rotate(40deg) translateY(30px); }
+.papyrus .scroll.open { cursor: default; }
+
+/* the writing */
+.papyrus .song { margin: 0 0 30px; }
+.papyrus .gr { font-family: var(--greek); letter-spacing: .08em; font-size: .92em; }
+.papyrus .song h2 { margin: 0 0 18px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; color: var(--rubric); font-weight: 400; font-size: 21px; line-height: 1.5; text-wrap: balance; }
+.papyrus .song h2 .gk { font-family: var(--greek); font-size: 26px; line-height: 1; }
+.papyrus .song h2 .gk.word { font-size: 18px; letter-spacing: .12em; }
+.papyrus .song h2 { word-break: keep-all; }
+.papyrus .stanza { margin: 0 0 18px; }
+.papyrus .ln { position: relative; display: block; word-break: keep-all; padding-left: 1.2em; text-indent: -1.2em; font-size: 19px; line-height: 1.95; letter-spacing: .02em; text-shadow: 0 0 .5px rgba(28,16,7,.55); }
+.papyrus .ln .no { font-size: 12px !important; position: absolute; text-indent: 0; left: -44px; width: 30px; text-align: right; font-family: var(--greek); font-size: 11px; color: rgba(42,26,13,.55); font-variant-numeric: tabular-nums; top: .45em; }
+.papyrus .ln.hidden, .papyrus .song h2.hidden, .papyrus .end.hidden { visibility: hidden; }
+.papyrus .ln.ink, .papyrus .song h2.ink, .papyrus .end.ink { animation: ink .9s ease-out both; }
+@keyframes ink { from { opacity: 0; filter: blur(3px); } 60% { opacity: .85; filter: blur(.4px); } to { opacity: 1; filter: blur(0); } }
+.papyrus .ch { opacity: 0; } .papyrus .ch.on { animation: ch .45s ease-out forwards; }
+@keyframes ch { from { opacity: 0; filter: blur(2px); } to { opacity: 1; filter: blur(0); } }
+.papyrus .end { margin-top: 26px; text-align: center; }
+.papyrus .end .coronis { font-family: var(--greek); font-size: 26px; color: var(--rubric); }
+.papyrus .end .sub { display: block; margin-top: 8px; font-family: var(--greek); letter-spacing: .28em; font-size: 15px; color: var(--ink); }
+.papyrus .end .sub.by { margin-top: 6px; color: var(--rubric); font-size: 16px; }
+.papyrus .end .byko { display: block; margin-top: 4px; font-size: 15px; color: var(--ink); }
+/* the colophon as a papyrus scribe wrote it: majuscule bookhand, lunate sigma, no word division, ruled above and below */
+.papyrus .end .coronis { display: block; }
+.papyrus .end .colophon { display: table; margin: 12px auto 0; padding: 9px 8px 7px; line-height: 0; color: var(--rubric); border-top: 1.5px solid rgba(110,31,11,.65); border-bottom: 1.5px solid rgba(110,31,11,.65); }
+.papyrus .end .colophon svg { height: 22px; width: auto; display: block; }
+@media (max-width: 520px) { .papyrus .end .colophon svg { height: 17px; } }
+.papyrus .tag { line-height: 0; }
+.papyrus .tag svg { height: 11px; width: auto; display: block; }
+.papyrus .end .note { display: block; word-break: keep-all; margin-top: 18px; font-size: 13.5px; font-style: italic; color: rgba(42,26,13,.75); }
+.papyrus .controls.done { position: static; background: none; }
+.papyrus .controls { position: sticky; bottom: max(14px, env(safe-area-inset-bottom, 0px)); z-index: 6; padding: 10px 14px; background: rgba(27,25,22,.88); border-radius: 3px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+.papyrus button.ctl { font-family: var(--text); font-size: 14px; color: var(--gold); background: transparent; border: 1px solid rgba(201,161,90,.55); padding: 9px 18px; border-radius: 2px; cursor: pointer; }
+.papyrus button.ctl:hover, .papyrus button.ctl:focus-visible { background: rgba(201,161,90,.12); outline: none; }
+@media (max-width: 520px) {
+  .papyrus .text { padding: 30px 22px 40px 40px; }
+  .papyrus .ln { font-size: 17px; }
+  .papyrus .ln .no { left: -34px; }
+  .papyrus .rod, .papyrus .sheet, .papyrus .bundle { margin-left: 18px; margin-right: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { .papyrus .ln.ink, .papyrus .song h2.ink, .papyrus .ch.on, .papyrus .end.ink { animation: none; opacity: 1; } .papyrus .sheet, .papyrus .bundle { transition: none; } }
+
+.papyrus button.ctl { font-family: var(--text); }
+.papyrus [hidden] { display: none !important; }
+.papyrus .song h2 { border: 0; padding: 0; text-transform: none; letter-spacing: 0; }
