@@ -665,7 +665,8 @@
       '<div class="hf-stage">' + media +
       '<span class="hf-glow"></span><canvas class="hf-sparks"></canvas><span class="hf-vignette"></span><span class="hf-black"></span></div>' +
       (overlay ? '<div class="hf-overlay">' + overlay + "</div>" : "") +
-      (hearth ? "" : '<button class="hf-replay" type="button" aria-label="Replay">&#8635;</button>') + "</div>";
+      (hearth ? "" : '<button class="hf-sound" type="button" aria-pressed="false" aria-label="Sound on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="hf-wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path class="hf-mute" d="M16 9l6 6M22 9l-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>' +
+        '<button class="hf-replay" type="button" aria-label="Replay">&#8635;</button>') + "</div>";
   }
   function sparks(film) {
     var cv = film.querySelector(".hf-sparks"); if (!cv || !cv.getContext) return;
@@ -748,6 +749,26 @@
         v.addEventListener("playing", function () { stage.style.transition = "none"; });
         v.addEventListener("ended", function () { stage.style.transition = "transform .9s cubic-bezier(.4,0,.2,1)"; });
         requestAnimationFrame(tick);
+      }
+      /* the score: silent until the visitor asks for it, then kept in step with the picture */
+      var snd = film.querySelector(".hf-sound"), au = null, soundOn = false;
+      var syncAudio = function () {
+        if (!au || !soundOn) return;
+        if (v.paused && !film.classList.contains("done")) { au.pause(); return; }
+        if (film.classList.contains("play") && Math.abs(au.currentTime - v.currentTime) > 0.2) au.currentTime = v.currentTime;
+        if (au.paused && film.classList.contains("play")) au.play().catch(function () {});
+      };
+      if (snd) {
+        snd.addEventListener("click", function () {
+          soundOn = !soundOn; snd.setAttribute("aria-pressed", soundOn ? "true" : "false"); snd.setAttribute("aria-label", soundOn ? "Sound off" : "Sound on");
+          film.classList.toggle("sound", soundOn);
+          if (!au) { au = new Audio("assets/audio/hestia-film.mp3"); au.preload = "auto"; }
+          if (soundOn) { if (film.classList.contains("play")) { au.currentTime = v.currentTime; au.play().catch(function () {}); } }
+          else au.pause();
+        });
+        v.addEventListener("play", function () { if (au && soundOn) { au.currentTime = v.currentTime; au.play().catch(function () {}); } });
+        v.addEventListener("pause", function () { if (au && soundOn && !v.ended) au.pause(); });
+        v.addEventListener("timeupdate", syncAudio);
       }
       var rp = film.querySelector(".hf-replay");
       if (rp) rp.addEventListener("click", function () { if (!failed) restart(); });
