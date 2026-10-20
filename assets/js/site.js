@@ -696,8 +696,8 @@
     var v = film.querySelector(".hf-video");
     if (v) {
       v.src = v.canPlayType('video/mp4; codecs="avc1.640028"')
-        ? "assets/video/hestia-welcome-4" + (window.innerWidth < 900 ? "-720" : "") + ".mp4"
-        : "assets/video/hestia-welcome-4.webm";
+        ? "assets/video/hestia-welcome-5" + (window.innerWidth < 900 ? "-720" : "") + ".mp4"
+        : "assets/video/hestia-welcome-5.webm";
       var finish = function () { film.classList.add("done"); film.classList.remove("play"); };
       var play = function () {
         film.classList.remove("done"); film.classList.add("play");
