@@ -951,3 +951,8 @@ html[data-second="ko"] .biz-button .bi.inline .s[lang="ko"], html[data-second="j
 /* the film ends on its own last frame, the hearth up close; glow and sparks keep it alive */
 .hestia-film.done .hf-video:not(.failed) { opacity: 1; }
 .hestia-film .hf-glow { left: 50%; top: 46%; width: 60%; }
+
+/* looping: a short fade to black between rounds; the words stay once they have appeared */
+.hf-black { position: absolute; inset: 0; background: #000; opacity: 0; z-index: 3; pointer-events: none; transition: opacity .9s ease; }
+.hestia-film.dim .hf-black { opacity: 1; }
+.hestia-film.seen .hf-overlay { opacity: 1 !important; }

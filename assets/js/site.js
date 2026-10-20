@@ -663,7 +663,7 @@
       '<video class="hf-video" muted playsinline preload="metadata" poster="assets/img/hestia/poster-1.webp" aria-hidden="true"></video>' + scene(4);
     return '<div class="hestia-film' + (hearth ? " hearth-only done" : "") + '" role="img" aria-label="A closed Greek temple at night. Its bronze doors open and Hestia, goddess of the hearth, steps out, greets the visitor and invites them inside, where her round hearth is blazing.">' +
       '<div class="hf-stage">' + media +
-      '<span class="hf-glow"></span><canvas class="hf-sparks"></canvas><span class="hf-vignette"></span></div>' +
+      '<span class="hf-glow"></span><canvas class="hf-sparks"></canvas><span class="hf-vignette"></span><span class="hf-black"></span></div>' +
       (overlay ? '<div class="hf-overlay">' + overlay + "</div>" : "") +
       (hearth ? "" : '<button class="hf-replay" type="button" aria-label="Replay">&#8635;</button>') + "</div>";
   }
@@ -698,20 +698,37 @@
       v.src = v.canPlayType('video/mp4; codecs="avc1.640028"')
         ? "assets/video/hestia-welcome-6" + (window.innerWidth < 900 ? "-720" : "") + ".mp4"
         : "assets/video/hestia-welcome-6.webm";
-      var finish = function () { film.classList.add("done"); film.classList.remove("play"); };
+      /* plays when in view, rests on the hearth for a few seconds, dims, and begins again */
+      var started = false, visible = false, failed = false, pending = false, timer = 0;
+      var fail = function () { failed = true; v.classList.add("failed"); film.classList.add("done", "seen"); film.classList.remove("play"); };
       var play = function () {
-        film.classList.remove("done"); film.classList.add("play");
+        started = true; pending = false; clearTimeout(timer);
+        film.classList.remove("done", "dim"); film.classList.add("play");
         try { v.currentTime = 0; } catch (e) {}
-        var p = v.play(); if (p && p.catch) p.catch(function () { v.classList.add("failed"); finish(); });
+        var p = v.play(); if (p && p.catch) p.catch(fail);
       };
-      v.addEventListener("ended", finish);
-      v.addEventListener("error", function () { v.classList.add("failed"); finish(); });
+      var restart = function () {
+        clearTimeout(timer); film.classList.add("dim");
+        timer = setTimeout(play, 900);
+      };
+      v.addEventListener("ended", function () {
+        film.classList.add("done", "seen"); film.classList.remove("play");
+        timer = setTimeout(function () { if (visible) restart(); else pending = true; }, 4000);
+      });
+      v.addEventListener("error", fail);
       if ("IntersectionObserver" in window) {
-        var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); play(); } }, { threshold: 0.6 });
-        io.observe(film.querySelector(".hf-stage"));
+        new IntersectionObserver(function (es) {
+          visible = es[0].isIntersecting;
+          if (failed) return;
+          if (visible) {
+            if (!started) play();
+            else if (pending) restart();
+            else if (film.classList.contains("play") && v.paused) v.play().catch(function () {});
+          } else if (film.classList.contains("play")) v.pause();
+        }, { threshold: 0.6 }).observe(film.querySelector(".hf-stage"));
       } else play();
       var rp = film.querySelector(".hf-replay");
-      if (rp) rp.addEventListener("click", play);
+      if (rp) rp.addEventListener("click", function () { if (!failed) restart(); });
     }
     if (!reduce) sparks(film);
   }
