@@ -696,16 +696,16 @@
     var v = film.querySelector(".hf-video");
     if (v) {
       v.src = v.canPlayType('video/mp4; codecs="avc1.640028"')
-        ? "assets/video/hestia-welcome-1" + (window.innerWidth < 900 ? "-720" : "") + ".mp4"
-        : "assets/video/hestia-welcome-1.webm";
+        ? "assets/video/hestia-welcome-3" + (window.innerWidth < 900 ? "-720" : "") + ".mp4"
+        : "assets/video/hestia-welcome-3.webm";
       var finish = function () { film.classList.add("done"); film.classList.remove("play"); };
       var play = function () {
         film.classList.remove("done"); film.classList.add("play");
         try { v.currentTime = 0; } catch (e) {}
-        var p = v.play(); if (p && p.catch) p.catch(finish);
+        var p = v.play(); if (p && p.catch) p.catch(function () { v.classList.add("failed"); finish(); });
       };
       v.addEventListener("ended", finish);
-      v.addEventListener("error", finish);
+      v.addEventListener("error", function () { v.classList.add("failed"); finish(); });
       if ("IntersectionObserver" in window) {
         var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); play(); } }, { threshold: 0.6 });
         io.observe(film.querySelector(".hf-stage"));

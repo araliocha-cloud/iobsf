@@ -947,3 +947,7 @@ html[data-second="ko"] .biz-button .bi.inline .s[lang="ko"], html[data-second="j
 .hestia-film.play .hf-overlay { opacity: 0; animation: none; }
 .hf-overlay { transition: opacity 1.2s ease; }
 .hestia-film:not(.done):not(.play) .hf-overlay { opacity: 1; }
+
+/* the film ends on its own last frame, the hearth up close; glow and sparks keep it alive */
+.hestia-film.done .hf-video:not(.failed) { opacity: 1; }
+.hestia-film .hf-glow { left: 50%; top: 46%; width: 60%; }
