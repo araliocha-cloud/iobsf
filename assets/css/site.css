@@ -983,3 +983,13 @@ html[data-second="ko"] .biz-button .bi.inline .s[lang="ko"], html[data-second="j
 }
 /* the words are there from the start: no empty space while the film plays */
 .hestia-film .hf-overlay, .hestia-film.play .hf-overlay { opacity: 1 !important; animation: none !important; }
+
+/* Business Desk: the film sits smaller so the title shows on the first screen and the words follow from its glow */
+.biz-head { padding-top: 18px !important; }
+.biz-hestia { margin: 0 auto !important; }
+.biz-hestia .hestia-film { max-width: 920px; }
+.biz-head .biz-statement { margin-top: -28px; position: relative; z-index: 4; }
+@media (max-width: 720px) {
+  .biz-hestia .hestia-film { max-width: none; }
+  .biz-head .biz-statement { margin-top: -18px; }
+}
