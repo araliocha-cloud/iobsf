@@ -728,7 +728,7 @@
 
   pages.business = function () {
     load("business").then(function (b) {
-      put("#biz-hestia", hestiaFilm("", "hearth")); runFilm(document.querySelector("#biz-hestia .hestia-film"));
+      put("#biz-hestia", hestiaFilm("")); runFilm(document.querySelector("#biz-hestia .hestia-film"));
       put("#biz-statement", '<div class="statement definition biz-statement"><p class="label">' + esc(b.statement.label.en) + "</p>" + bi(b.statement.text, "p", "text") + "</div>");
       put("#biz-areas", bi(b.areas_intro, "div", "prose member-intro") + '<div class="forms7 biz-areas">' + b.areas.map(function (a) {
         return '<div class="form7"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3>" +
