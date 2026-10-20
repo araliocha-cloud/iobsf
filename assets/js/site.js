@@ -702,8 +702,9 @@
       var ready = Promise.all(Array.prototype.map.call(film.querySelectorAll(".hf-scene"), function (im) {
         return im.decode ? im.decode().catch(function () {}) : Promise.resolve();
       }));
-      if (reduce) film.classList.add("done");
-      else if ("IntersectionObserver" in window) {
+      /* phones set to reduce motion still see the four scenes, as slow dissolves without zoom or flashes */
+      if (reduce) film.classList.add("calm");
+      if ("IntersectionObserver" in window) {
         var io = new IntersectionObserver(function (es) {
           if (es[0].isIntersecting) { io.disconnect(); ready.then(play); }
         }, { threshold: 0.6 });
