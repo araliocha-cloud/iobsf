@@ -993,3 +993,9 @@ html[data-second="ko"] .biz-button .bi.inline .s[lang="ko"], html[data-second="j
   .biz-hestia .hestia-film { max-width: none; }
   .biz-head .biz-statement { margin-top: -18px; }
 }
+
+.biz-tale { text-align: center; margin: 34px 0 0; font-family: var(--f-display); font-size: 19px; }
+.biz-tale a { color: #d9ad6a; border-bottom: 1px solid rgba(217,173,106,.4); padding-bottom: 2px; }
+.biz-tale a:hover { color: #f0c98a; text-decoration: none; }
+html[data-second] .biz-tale .bi.inline .s[lang] { display: none; }
+html[data-second="ko"] .biz-tale .s[lang="ko"], html[data-second="ja"] .biz-tale .s[lang="ja"], html[data-second="zh"] .biz-tale .s[lang="zh"] { display: block; margin-top: 4px; font-size: 16px; }

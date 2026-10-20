@@ -746,7 +746,8 @@
   pages.business = function () {
     load("business").then(function (b) {
       put("#biz-hestia", hestiaFilm("")); runFilm(document.querySelector("#biz-hestia .hestia-film"));
-      put("#biz-statement", '<div class="statement definition biz-statement"><p class="label">' + esc(b.statement.label.en) + "</p>" + bi(b.statement.text, "p", "text") + "</div>");
+      put("#biz-statement", '<div class="statement definition biz-statement"><p class="label">' + esc(b.statement.label.en) + "</p>" + bi(b.statement.text, "p", "text") + "</div>" +
+        '<p class="biz-tale"><a href="writing.html?id=hestia-eleuthera">' + bi({ en: "The legend of Hestia Eleuthera, the hearth goddess who opened the door", ko: "헤스티아 엘레우테라, 문을 연 화로의 여신의 전설", ja: "ヘスティア・エレウテラ、扉を開いた炉の女神の伝説", zh: "赫斯提亚·埃莱乌特拉，打开大门的炉火女神的传说" }, "span", "", true) + "</a></p>");
       put("#biz-areas", bi(b.areas_intro, "div", "prose member-intro") + '<div class="forms7 biz-areas">' + b.areas.map(function (a) {
         return '<div class="form7"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3>" +
           '<div class="biz-desk">' + bi(a.desk, "span", "", true) + "</div>" + bi(a.text, "div", "form7-text") + "</div>";
