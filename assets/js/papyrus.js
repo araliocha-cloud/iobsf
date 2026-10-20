@@ -49,7 +49,7 @@ var POEM = {"songs": [{"gk": "ΠΡΟΟΙΜΙΟΝ", "title": "서가", "stanzas":
     if (instant) { void sheet.offsetHeight; sheet.style.transition = ""; }
     if (follow && last && !instant) {
       var r = last.getBoundingClientRect(), target = r.bottom - window.innerHeight * 0.62;
-      if (target > 0) { lastAuto = Date.now(); window.scrollBy({ top: target, behavior: "smooth" }); }
+      if (target > 0) { lastAuto = Date.now(); window.scrollBy({ top: target, behavior: reduce ? "auto" : "smooth" }); }
     }
   }
   function show(item) {
@@ -86,7 +86,6 @@ var POEM = {"songs": [{"gk": "ΠΡΟΟΙΜΙΟΝ", "title": "서가", "stanzas":
     if (opened) return; opened = true; scroll.classList.add("open"); controls.hidden = false; hint.style.visibility = "hidden";
     document.getElementById("all").hidden = false;
     done = false; build();
-    if (reduce) { finish(); return; }
     later(run, 900);
   }
   function reset() {

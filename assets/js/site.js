@@ -699,8 +699,8 @@
     if (v) {
       v.muted = true; v.defaultMuted = true; v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("webkit-playsinline", "");
       v.src = v.canPlayType('video/mp4; codecs="avc1.640028"')
-        ? "assets/video/hestia-welcome-6" + (window.innerWidth < 900 ? "-720" : "") + ".mp4"
-        : "assets/video/hestia-welcome-6.webm";
+        ? "assets/video/hestia-welcome-7" + (window.innerWidth < 900 ? "-720" : "") + ".mp4"
+        : "assets/video/hestia-welcome-7.webm";
       /* plays when in view, rests on the hearth for a few seconds, dims, and begins again */
       var started = false, visible = false, failed = false, pending = false, timer = 0;
       var fail = function () { failed = true; v.classList.add("failed"); film.classList.add("done", "seen"); film.classList.remove("play"); };
@@ -727,7 +727,7 @@
       };
       v.addEventListener("ended", function () {
         film.classList.add("done", "seen"); film.classList.remove("play");
-        timer = setTimeout(function () { if (visible) restart(); else pending = true; }, 4000);
+        timer = setTimeout(function () { if (visible) restart(); else pending = true; }, 300);   /* the film itself now rests 4.4 s on the hearth */
       });
       v.addEventListener("error", fail);
       if ("IntersectionObserver" in window) {
@@ -763,26 +763,14 @@
         v.addEventListener("ended", function () { stage.style.transition = "transform .9s cubic-bezier(.4,0,.2,1)"; });
         requestAnimationFrame(tick);
       }
-      /* the score: silent until the visitor asks for it, then kept in step with the picture */
-      var snd = film.querySelector(".hf-sound"), au = null, soundOn = false;
-      var syncAudio = function () {
-        if (!au || !soundOn) return;
-        if (v.paused && !film.classList.contains("done")) { au.pause(); return; }
-        if (film.classList.contains("play") && Math.abs(au.currentTime - v.currentTime) > 0.2) au.currentTime = v.currentTime;
-        if (au.paused && film.classList.contains("play")) au.play().catch(function () {});
-      };
-      if (snd) {
-        snd.addEventListener("click", function () {
-          soundOn = !soundOn; snd.setAttribute("aria-pressed", soundOn ? "true" : "false"); snd.setAttribute("aria-label", soundOn ? "Sound off" : "Sound on");
-          film.classList.toggle("sound", soundOn);
-          if (!au) { au = new Audio("assets/audio/hestia-film.mp3"); au.preload = "auto"; }
-          if (soundOn) { if (film.classList.contains("play")) { au.currentTime = v.currentTime; au.play().catch(function () {}); } }
-          else au.pause();
-        });
-        v.addEventListener("play", function () { if (au && soundOn) { au.currentTime = v.currentTime; au.play().catch(function () {}); } });
-        v.addEventListener("pause", function () { if (au && soundOn && !v.ended) au.pause(); });
-        v.addEventListener("timeupdate", syncAudio);
-      }
+      /* the score is inside the film itself, so sound and picture never part; the button only lifts the mute */
+      var snd = film.querySelector(".hf-sound");
+      if (snd) snd.addEventListener("click", function () {
+        var on = v.muted; v.muted = !on; if (on) v.removeAttribute("muted"); else v.setAttribute("muted", "");
+        snd.setAttribute("aria-pressed", on ? "true" : "false"); snd.setAttribute("aria-label", on ? "Sound off" : "Sound on");
+        film.classList.toggle("sound", on);
+        if (on && v.paused && film.classList.contains("play")) v.play().catch(function () {});
+      });
       var rp = film.querySelector(".hf-replay");
       if (rp) rp.addEventListener("click", function () { if (!failed) restart(); });
     }
