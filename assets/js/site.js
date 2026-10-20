@@ -655,7 +655,7 @@
 
   /* Hestia at the door: four painted scenes played as one short film, then the hearth keeps burning */
   function scene(n) {
-    return '<img class="hf-scene hf-s' + n + '" src="assets/img/hestia/scene-' + n + '.webp" srcset="assets/img/hestia/scene-' + n + '-960.webp 960w, assets/img/hestia/scene-' + n + '.webp 1680w" sizes="(max-width: 960px) 960px, 1680px" alt="" decoding="async"' + (n === 4 ? "" : ' loading="lazy"') + ">";
+    return '<img class="hf-scene hf-s' + n + '" src="assets/img/hestia/scene-' + n + '.webp" srcset="assets/img/hestia/scene-' + n + '-960.webp 960w, assets/img/hestia/scene-' + n + '.webp 1680w" sizes="(max-width: 960px) 960px, 1680px" alt="" decoding="async">';
   }
   function hestiaFilm(overlay, mode) {
     var scenes = mode === "hearth" ? scene(4) : scene(1) + scene(2) + scene(3) + scene(4);
@@ -691,24 +691,26 @@
   function runFilm(film) {
     if (!film) return;
     var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    var seen = false; try { seen = sessionStorage.getItem("hestiaSeen") === "1"; } catch (e) {}
     if (!film.classList.contains("hearth-only")) {
-      if (reduce || seen) film.classList.add("done");
-      else {
-        var go = function () {
-          film.classList.add("play");
-          setTimeout(function () { film.classList.add("done"); film.classList.remove("play"); try { sessionStorage.setItem("hestiaSeen", "1"); } catch (e) {} }, 13600);
-        };
-        if ("IntersectionObserver" in window) {
-          var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); go(); } }, { threshold: 0.45 });
-          io.observe(film);
-        } else go();
-      }
-      var rp = film.querySelector(".hf-replay");
-      if (rp) rp.addEventListener("click", function () {
+      var timer = 0;
+      var play = function () {
+        clearTimeout(timer);
         film.classList.remove("done", "play"); void film.offsetWidth; film.classList.add("play");
-        setTimeout(function () { film.classList.add("done"); film.classList.remove("play"); }, 13600);
-      });
+        timer = setTimeout(function () { film.classList.add("done"); film.classList.remove("play"); }, 13600);
+      };
+      /* wait until all four scenes are loaded, so no scene is skipped on a slow connection */
+      var ready = Promise.all(Array.prototype.map.call(film.querySelectorAll(".hf-scene"), function (im) {
+        return im.decode ? im.decode().catch(function () {}) : Promise.resolve();
+      }));
+      if (reduce) film.classList.add("done");
+      else if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (es) {
+          if (es[0].isIntersecting) { io.disconnect(); ready.then(play); }
+        }, { threshold: 0.6 });
+        io.observe(film.querySelector(".hf-stage"));
+      } else ready.then(play);
+      var rp = film.querySelector(".hf-replay");
+      if (rp) rp.addEventListener("click", play);
     }
     if (!reduce) sparks(film);
   }
