@@ -936,3 +936,14 @@ html[data-second="ko"] .biz-button .bi.inline .s[lang="ko"], html[data-second="j
 
 .hestia-film.calm .hf-scene { transform: none !important; }
 .hestia-film.calm .hf-seam, .hestia-film.calm .hf-flash { display: none; }
+
+/* Hestia film as one continuous video; the hearth still takes over when it ends */
+.hf-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: opacity 1.2s ease; }
+.hestia-film .hf-s4 { opacity: 1; transform: none !important; animation: none !important; }
+.hestia-film.done .hf-video { opacity: 0; }
+.hf-glow, .hf-sparks, .hf-vignette { z-index: 2; }
+.hestia-film:not(.done) .hf-glow, .hestia-film:not(.done) .hf-sparks { opacity: 0 !important; animation: none !important; }
+.hestia-film.done .hf-sparks { opacity: 1; transition: opacity 1.5s; }
+.hestia-film.play .hf-overlay { opacity: 0; animation: none; }
+.hf-overlay { transition: opacity 1.2s ease; }
+.hestia-film:not(.done):not(.play) .hf-overlay { opacity: 1; }

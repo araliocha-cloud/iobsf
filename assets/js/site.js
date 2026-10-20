@@ -658,12 +658,14 @@
     return '<img class="hf-scene hf-s' + n + '" src="assets/img/hestia/scene-' + n + '.webp" srcset="assets/img/hestia/scene-' + n + '-960.webp 960w, assets/img/hestia/scene-' + n + '.webp 1680w" sizes="(max-width: 960px) 960px, 1680px" alt="" decoding="async">';
   }
   function hestiaFilm(overlay, mode) {
-    var scenes = mode === "hearth" ? scene(4) : scene(1) + scene(2) + scene(3) + scene(4);
-    return '<div class="hestia-film' + (mode === "hearth" ? " hearth-only done" : "") + '" role="img" aria-label="A closed Greek temple at night. Hestia, goddess of the hearth, opens its bronze doors and welcomes the visitor inside, where her round hearth is blazing.">' +
-      '<div class="hf-stage">' + scenes +
-      '<span class="hf-seam"></span><span class="hf-flash"></span><span class="hf-glow"></span><canvas class="hf-sparks"></canvas><span class="hf-vignette"></span></div>' +
+    var hearth = mode === "hearth";
+    var media = hearth ? scene(4) :
+      '<video class="hf-video" muted playsinline preload="metadata" poster="assets/img/hestia/poster-1.webp" aria-hidden="true"></video>' + scene(4);
+    return '<div class="hestia-film' + (hearth ? " hearth-only done" : "") + '" role="img" aria-label="A closed Greek temple at night. Its bronze doors open and Hestia, goddess of the hearth, steps out, greets the visitor and invites them inside, where her round hearth is blazing.">' +
+      '<div class="hf-stage">' + media +
+      '<span class="hf-glow"></span><canvas class="hf-sparks"></canvas><span class="hf-vignette"></span></div>' +
       (overlay ? '<div class="hf-overlay">' + overlay + "</div>" : "") +
-      (mode === "hearth" ? "" : '<button class="hf-replay" type="button" aria-label="Replay">&#8635;</button>') + "</div>";
+      (hearth ? "" : '<button class="hf-replay" type="button" aria-label="Replay">&#8635;</button>') + "</div>";
   }
   function sparks(film) {
     var cv = film.querySelector(".hf-sparks"); if (!cv || !cv.getContext) return;
@@ -691,25 +693,23 @@
   function runFilm(film) {
     if (!film) return;
     var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!film.classList.contains("hearth-only")) {
-      var timer = 0;
+    var v = film.querySelector(".hf-video");
+    if (v) {
+      v.src = v.canPlayType('video/mp4; codecs="avc1.640028"')
+        ? "assets/video/hestia-welcome-1" + (window.innerWidth < 900 ? "-720" : "") + ".mp4"
+        : "assets/video/hestia-welcome-1.webm";
+      var finish = function () { film.classList.add("done"); film.classList.remove("play"); };
       var play = function () {
-        clearTimeout(timer);
-        film.classList.remove("done", "play"); void film.offsetWidth; film.classList.add("play");
-        timer = setTimeout(function () { film.classList.add("done"); film.classList.remove("play"); }, 13600);
+        film.classList.remove("done"); film.classList.add("play");
+        try { v.currentTime = 0; } catch (e) {}
+        var p = v.play(); if (p && p.catch) p.catch(finish);
       };
-      /* wait until all four scenes are loaded, so no scene is skipped on a slow connection */
-      var ready = Promise.all(Array.prototype.map.call(film.querySelectorAll(".hf-scene"), function (im) {
-        return im.decode ? im.decode().catch(function () {}) : Promise.resolve();
-      }));
-      /* phones set to reduce motion still see the four scenes, as slow dissolves without zoom or flashes */
-      if (reduce) film.classList.add("calm");
+      v.addEventListener("ended", finish);
+      v.addEventListener("error", finish);
       if ("IntersectionObserver" in window) {
-        var io = new IntersectionObserver(function (es) {
-          if (es[0].isIntersecting) { io.disconnect(); ready.then(play); }
-        }, { threshold: 0.6 });
+        var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); play(); } }, { threshold: 0.6 });
         io.observe(film.querySelector(".hf-stage"));
-      } else ready.then(play);
+      } else play();
       var rp = film.querySelector(".hf-replay");
       if (rp) rp.addEventListener("click", play);
     }
