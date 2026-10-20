@@ -666,7 +666,8 @@
       '<span class="hf-glow"></span><canvas class="hf-sparks"></canvas><span class="hf-vignette"></span><span class="hf-black"></span></div>' +
       (overlay ? '<div class="hf-overlay">' + overlay + "</div>" : "") +
       (hearth ? "" : '<button class="hf-sound" type="button" aria-pressed="false" aria-label="Sound on"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="hf-wave" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path class="hf-mute" d="M16 9l6 6M22 9l-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>' +
-        '<button class="hf-replay" type="button" aria-label="Replay">&#8635;</button>') + "</div>";
+        '<button class="hf-replay" type="button" aria-label="Replay">&#8635;</button>' +
+        '<span class="hf-tap" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span>') + "</div>";
   }
   function sparks(film) {
     var cv = film.querySelector(".hf-sparks"); if (!cv || !cv.getContext) return;
@@ -696,6 +697,7 @@
     var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     var v = film.querySelector(".hf-video");
     if (v) {
+      v.muted = true; v.defaultMuted = true; v.setAttribute("muted", ""); v.setAttribute("playsinline", ""); v.setAttribute("webkit-playsinline", "");
       v.src = v.canPlayType('video/mp4; codecs="avc1.640028"')
         ? "assets/video/hestia-welcome-6" + (window.innerWidth < 900 ? "-720" : "") + ".mp4"
         : "assets/video/hestia-welcome-6.webm";
@@ -706,7 +708,18 @@
         started = true; pending = false; clearTimeout(timer);
         film.classList.remove("done", "dim"); film.classList.add("play");
         try { v.currentTime = 0; } catch (e) {}
-        var p = v.play(); if (p && p.catch) p.catch(fail);
+        var p = v.play(); if (p && p.catch) p.catch(function (e) { if (e && e.name === "NotAllowedError") blocked(); else fail(); });
+      };
+      /* phones in low-power or data-saving mode refuse to start a video on their own;
+         then the film waits on its first frame with a play mark, and the first touch starts it */
+      var blocked = function () {
+        film.classList.remove("play"); film.classList.add("blocked");
+        var go = function () {
+          if (!film.classList.contains("blocked")) return;
+          film.classList.remove("blocked"); play();
+          document.removeEventListener("touchend", go, true); document.removeEventListener("click", go, true);
+        };
+        document.addEventListener("touchend", go, true); document.addEventListener("click", go, true);
       };
       var restart = function () {
         clearTimeout(timer); film.classList.add("dim");

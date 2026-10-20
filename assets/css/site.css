@@ -1042,3 +1042,10 @@ html[data-second="ko"] .biz-tale .s[lang="ko"], html[data-second="ja"] .biz-tale
 .hestia-film.sound .hf-sound .hf-mute { display: none; }
 .hestia-film.sound .hf-sound { opacity: 1; box-shadow: 0 0 14px rgba(226,170,90,.35); }
 @media (max-width: 900px) { .hf-sound { right: calc(8% + 48px); } }
+
+/* when the phone will not start the film by itself: a bronze play mark over the first frame */
+.hf-tap { position: absolute; left: 50%; top: 48%; z-index: 3; width: 74px; height: 74px; margin: -37px 0 0 -37px; border-radius: 50%; display: none; place-items: center;
+  color: #f0cf8e; background: radial-gradient(circle, rgba(40,28,14,.85), rgba(10,8,6,.7)); border: 1px solid rgba(226,189,115,.7); box-shadow: 0 0 30px rgba(226,170,90,.35); pointer-events: none; }
+.hf-tap svg { width: 30px; height: 30px; margin-left: 4px; }
+.hestia-film.blocked .hf-tap { display: grid; }
+.hestia-film.blocked .hf-stage { cursor: pointer; }
