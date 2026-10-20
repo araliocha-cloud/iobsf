@@ -7,7 +7,10 @@ var POEM = {"songs": [{"gk": "ΠΡΟΟΙΜΙΟΝ", "title": "서가", "stanzas":
   var scroll = document.getElementById("scroll"), sheet = document.getElementById("sheet"), text = document.getElementById("text");
   var controls = document.getElementById("controls"), hint = document.getElementById("hint");
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var queue = [], timer = 0, opened = false, follow = true, lastAuto = 0;
+  var queue = [], timer = 0, opened = false, follow = true, lastAuto = 0, paused = false, pending = null, done = false;
+  function later(fn, ms) { pending = fn; timer = setTimeout(function () { pending = null; fn(); }, ms); }
+  function pause() { if (!pending) return; clearTimeout(timer); paused = true; scroll.classList.add("paused"); }
+  function resume() { paused = false; follow = true; scroll.classList.remove("paused"); var fn = pending; if (fn) later(fn, 150); }
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   var GR = /[\u0370-\u03FF\u1F00-\u1FFF]/;
@@ -59,7 +62,7 @@ var POEM = {"songs": [{"gk": "ΠΡΟΟΙΜΙΟΝ", "title": "서가", "stanzas":
       return new Promise(function (done) {
         (function step() {
           if (i >= spans.length) return done(260);
-          spans[i++].classList.add("on"); timer = setTimeout(step, 70);
+          spans[i++].classList.add("on"); later(step, 70);
         })();
       });
     }
@@ -69,11 +72,11 @@ var POEM = {"songs": [{"gk": "ΠΡΟΟΙΜΙΟΝ", "title": "서가", "stanzas":
   function run() {
     if (!queue.length) { finish(); return; }
     var item = queue.shift();
-    if (item.kind === "pause") { timer = setTimeout(run, 520); return; }
-    show(item).then(function (wait) { fit(false); timer = setTimeout(run, wait); });
+    if (item.kind === "pause") { later(run, 520); return; }
+    show(item).then(function (wait) { fit(false); later(run, wait); });
   }
   function finish() {
-    clearTimeout(timer);
+    clearTimeout(timer); done = true; paused = false; pending = null; scroll.classList.remove("paused");
     while (queue.length) { var it = queue.shift(); if (it.el) { it.el.classList.remove("hidden"); it.el.classList.add("ink"); } }
     text.querySelectorAll(".ch").forEach(function (c) { c.classList.add("on"); });
     fit(true); setTimeout(function () { fit(true); }, 950);
@@ -82,16 +85,16 @@ var POEM = {"songs": [{"gk": "ΠΡΟΟΙΜΙΟΝ", "title": "서가", "stanzas":
   function open() {
     if (opened) return; opened = true; scroll.classList.add("open"); controls.hidden = false; hint.style.visibility = "hidden";
     document.getElementById("all").hidden = false;
-    build();
+    done = false; build();
     if (reduce) { finish(); return; }
-    timer = setTimeout(run, 900);
+    later(run, 900);
   }
   function reset() {
-    clearTimeout(timer); opened = false; controls.classList.remove("done"); follow = true; scroll.classList.remove("open"); controls.hidden = true; hint.style.visibility = "";
+    clearTimeout(timer); opened = false; done = false; paused = false; pending = null; scroll.classList.remove("paused"); controls.classList.remove("done"); follow = true; scroll.classList.remove("open"); controls.hidden = true; hint.style.visibility = "";
     sheet.style.height = "0px"; text.innerHTML = ""; window.scrollTo({ top: 0, behavior: "smooth" });
   }
-  scroll.addEventListener("click", open);
-  scroll.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+  scroll.addEventListener("click", function () { if (!opened) open(); else if (!done) { paused ? resume() : pause(); } });
+  scroll.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); scroll.click(); } });
   document.getElementById("all").addEventListener("click", finish);
   document.getElementById("again").addEventListener("click", reset);
   // a reader who scrolls back up takes the wheel; the scroll stops following the pen

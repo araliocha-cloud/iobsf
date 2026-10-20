@@ -55,7 +55,9 @@
 .papyrus .scroll.open .cord { opacity: 0; transform: translateX(-50%) scaleY(.2); visibility: hidden; transition: opacity .5s, transform .7s, visibility 0s .7s; }
 .papyrus .scroll { overflow-x: clip; }
 .papyrus .scroll.open .tag { opacity: 0; transform: rotate(40deg) translateY(30px); }
-.papyrus .scroll.open { cursor: default; }
+.papyrus .scroll.open { cursor: pointer; }
+.papyrus .scroll.paused::after { content: "멈춤 · 다시 누르면 이어 쓴다"; position: sticky; bottom: 84px; display: table; margin: -40px auto 0; padding: 6px 14px; font-size: 13px; color: var(--gold); background: rgba(27,25,22,.88); border: 1px solid rgba(201,161,90,.45); border-radius: 2px; z-index: 7; pointer-events: none; }
+.papyrus .scroll.paused .ch:not(.on), .papyrus .scroll.paused .ink { animation-play-state: paused; }
 
 /* the writing */
 .papyrus .song { margin: 0 0 30px; }
