@@ -1001,3 +1001,7 @@ html[data-second] .biz-tale .bi.inline .s[lang] { display: none; }
 html[data-second="ko"] .biz-tale .s[lang="ko"], html[data-second="ja"] .biz-tale .s[lang="ja"], html[data-second="zh"] .biz-tale .s[lang="zh"] { display: block; margin-top: 4px; font-size: 16px; }
 
 .biz-epic { padding-top: 10px; }
+
+/* the film's frame grows with the doors and the hearth; keep it from widening the page */
+.home-business, .biz-head { overflow-x: clip; }
+.hf-stage { will-change: transform; }

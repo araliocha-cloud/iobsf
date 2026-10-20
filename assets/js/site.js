@@ -727,6 +727,28 @@
           } else if (film.classList.contains("play")) v.pause();
         }, { threshold: 0.6 }).observe(film.querySelector(".hf-stage"));
       } else play();
+      /* the frame itself breathes with the film: it widens as the temple doors open,
+         and grows again as the camera follows her into the hearth */
+      var stage = film.querySelector(".hf-stage");
+      if (!reduce && stage) {
+        var ease = function (x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
+        var size = function (t) {
+          if (t < 0.4) return 1;
+          if (t < 4.6) return 1 + 0.08 * ease((t - 0.4) / 4.2);          /* doors part */
+          if (t < 13.2) return 1.08;
+          return 1.08 + 0.17 * ease((t - 13.2) / 5.2);                   /* into the hearth */
+        };
+        var tick = function () {
+          var k = film.classList.contains("dim") ? 1 : film.classList.contains("play") || film.classList.contains("done") ? size(v.currentTime || 0) : 1;
+          stage.style.transform = "scale(" + k.toFixed(4) + ")";
+          requestAnimationFrame(tick);
+        };
+        stage.style.transformOrigin = "50% 52%";
+        stage.style.transition = "transform .9s cubic-bezier(.4,0,.2,1)";
+        v.addEventListener("playing", function () { stage.style.transition = "none"; });
+        v.addEventListener("ended", function () { stage.style.transition = "transform .9s cubic-bezier(.4,0,.2,1)"; });
+        requestAnimationFrame(tick);
+      }
       var rp = film.querySelector(".hf-replay");
       if (rp) rp.addEventListener("click", function () { if (!failed) restart(); });
     }
