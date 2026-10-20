@@ -80,7 +80,8 @@ pages = {
   '<section class="section"><div class="wrap" id="home-spirit"></div></section>\n'
   + section("Next Events", "다가오는 대회", '<div id="home-next"></div>', '<a class="more" href="events.html">All events</a>') + "\n"
   + section("Pro Barbecuers", "프로바비큐어", '<div id="home-roster"></div>', '<a class="more" href="barbecuers.html">All Pro Barbecuers</a>') + "\n"
-  + section("Heritage of the Fire", "불의 유산", '<div id="home-heritage-intro" class="prose" style="margin-bottom:32px"></div><div id="home-register"></div>', '<a class="more" href="heritage.html">Explore the heritage</a>')),
+  + section("Heritage of the Fire", "불의 유산", '<div id="home-heritage-intro" class="prose" style="margin-bottom:32px"></div><div id="home-register"></div>', '<a class="more" href="heritage.html">Explore the heritage</a>')
+  + '\n<section class="section home-business"><div class="wrap" id="home-business"></div></section>'),
 
 "fire": ("The Fire | IOBSF", "fire",
   head("The Fire", "불") + '<section class="section"><div class="wrap" id="fire-body"></div></section>'),

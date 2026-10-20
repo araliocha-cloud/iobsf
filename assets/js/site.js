@@ -190,6 +190,7 @@
 
   pages.home = function (site) {
     var st = site.statements, f = site.federation;
+    homeBusiness();
     put("#hero",
       '<img class="hero-emblem" src="assets/img/emblem.webp" alt="IOBSF emblem" onerror="this.outerHTML=\'<div class=&quot;hero-emblem-fallback&quot;>IOBSF</div>\'">' +
       bi(f.name, "p", "hero-name") +
@@ -652,8 +653,34 @@
     });
   };
 
+  /* Hestia at the door: gold line art revealed top to bottom, then the flame breathes */
+  var HESTIA_SRC = "assets/img/hestia-welcome-1.png";
+  function hestiaFigure() {
+    return '<figure class="hestia"><div class="hestia-art"><img src="' + HESTIA_SRC + '" alt="Hestia, goddess of the hearth, welcoming visitors at the door" onerror="this.closest(\'.hestia\').classList.add(\'missing\')"><span class="hestia-flame"></span></div></figure>';
+  }
+  function wakeHestia(root) {
+    var list = (root || document).querySelectorAll(".hestia:not(.awake)");
+    var go = function (el) { el.classList.add("awake"); };
+    if (!("IntersectionObserver" in window)) { Array.prototype.forEach.call(list, go); return; }
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { go(e.target); io.unobserve(e.target); } });
+    }, { threshold: 0.35 });
+    Array.prototype.forEach.call(list, function (el) { io.observe(el); });
+  }
+  function homeBusiness() {
+    load("business").then(function (b) {
+      var t = b.welcome;
+      put("#home-business", '<div class="biz-welcome">' + hestiaFigure() + '<div class="biz-welcome-text">' +
+        '<p class="placard-label">' + esc(b.statement.label.en) + "</p>" +
+        bi(t.text, "p", "biz-welcome-line lines") +
+        '<a class="biz-button" href="business.html">' + bi(t.button, "span", "", true) + "</a></div></div>");
+      wakeHestia(document.getElementById("home-business"));
+    });
+  }
+
   pages.business = function () {
     load("business").then(function (b) {
+      put("#biz-hestia", hestiaFigure()); wakeHestia(document.getElementById("biz-hestia"));
       put("#biz-statement", '<div class="statement definition biz-statement"><p class="label">' + esc(b.statement.label.en) + "</p>" + bi(b.statement.text, "p", "text") + "</div>");
       put("#biz-areas", bi(b.areas_intro, "div", "prose member-intro") + '<div class="forms7 biz-areas">' + b.areas.map(function (a) {
         return '<div class="form7"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3>" +

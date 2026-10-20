@@ -862,10 +862,12 @@ hr, .rule { border-color: var(--ember-line); }
 .biz-form { text-align: center; padding: 12px 0 20px; }
 .biz-button { display: inline-block; padding: 18px 44px; border: 1px solid #b8893f; border-radius: 2px; color: #e8c88a; font-family: var(--f-display); font-size: 22px; letter-spacing: .08em; background: linear-gradient(180deg, rgba(184,137,63,.14), rgba(184,137,63,.04)); transition: background .25s, color .25s; }
 .biz-button:hover { background: rgba(184,137,63,.28); color: #f3dcaa; text-decoration: none; }
-.biz-button .s { display: block; font-size: 16px; letter-spacing: .02em; margin-top: 4px; }
+.biz-button .s { font-size: 16px; letter-spacing: .02em; margin-top: 4px; }
+html[data-second] .biz-button .bi.inline .s[lang] { margin-left: 0; }
+html[data-second="ko"] .biz-button .bi.inline .s[lang="ko"], html[data-second="ja"] .biz-button .bi.inline .s[lang="ja"], html[data-second="zh"] .biz-button .bi.inline .s[lang="zh"] { display: block; }
 .biz-pending { color: var(--ash); font-style: italic; }
 .biz-link { text-align: center; font-size: 18px; }
-.biz-link a.s { display: block; margin-top: 4px; }
+.biz-link a.s { margin-top: 4px; }
 @media (max-width: 720px) {
   .biz-button { padding: 16px 28px; font-size: 19px; }
 }
@@ -875,4 +877,38 @@ hr, .rule { border-color: var(--ember-line); }
 @media (min-width: 1301px) {
   .site-nav ul { gap: clamp(14px, 1.35vw, 34px); }
   .site-nav a { font-size: clamp(17.5px, 1.3vw, 22px); letter-spacing: 0; }
+}
+
+/* ---------- Hestia at the door ---------- */
+.hestia { margin: 0; }
+.hestia.missing { display: none; }
+.hestia-art { position: relative; display: block; }
+.hestia-art img { display: block; width: 100%; height: auto; mix-blend-mode: screen; filter: saturate(.9) brightness(.95);
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 45%, transparent 55%, transparent 100%);
+  -webkit-mask-size: 100% 220%; mask-size: 100% 220%; -webkit-mask-position: 0 100%; mask-position: 0 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+.hestia.awake .hestia-art img { animation: hestiaReveal 3.2s cubic-bezier(.45,.05,.25,1) forwards; }
+@keyframes hestiaReveal { to { -webkit-mask-position: 0 0; mask-position: 0 0; } }
+.hestia-flame { position: absolute; left: 72%; top: 25%; width: 22%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,180,96,.55) 0%, rgba(201,140,60,.22) 38%, transparent 70%); opacity: 0; pointer-events: none; mix-blend-mode: screen; }
+.hestia.awake .hestia-flame { animation: flameWake 1.6s ease-out 1.4s forwards, flameBreath 3.6s ease-in-out 3s infinite; }
+@keyframes flameWake { to { opacity: .9; } }
+@keyframes flameBreath { 0%,100% { opacity: .9; transform: translate(-50%,-50%) scale(1); } 45% { opacity: .55; transform: translate(-50%,-52%) scale(.88); } 70% { opacity: 1; transform: translate(-50%,-50%) scale(1.06); } }
+@media (prefers-reduced-motion: reduce) {
+  .hestia-art img { -webkit-mask-image: none; mask-image: none; }
+  .hestia.awake .hestia-art img, .hestia.awake .hestia-flame { animation: none; }
+  .hestia .hestia-flame { opacity: .8; }
+}
+.biz-hestia .hestia { width: min(300px, 64vw); margin: 0 auto; }
+
+.home-business { border-top: 1px solid var(--ember-line); }
+.biz-welcome { display: grid; grid-template-columns: minmax(240px, 360px) minmax(0, 560px); justify-content: center; align-items: center; gap: 56px; }
+.biz-welcome-text { text-align: center; }
+.biz-welcome-text .placard-label { margin: 0 0 26px; }
+.biz-welcome-line { font-size: 22px; line-height: 1.75; margin: 0 0 36px; }
+.biz-welcome-line .s { margin-top: 18px; font-size: 18px; color: var(--ash); }
+.biz-welcome:has(.hestia.missing) { grid-template-columns: minmax(0, 640px); }
+@media (max-width: 820px) {
+  .biz-welcome { grid-template-columns: 1fr; gap: 28px; }
+  .biz-welcome .hestia { width: min(260px, 66vw); margin: 0 auto; }
+  .biz-welcome-line { font-size: 19px; }
 }

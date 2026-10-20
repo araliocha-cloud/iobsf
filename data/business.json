@@ -4,10 +4,16 @@
     "areas": "의뢰 분야: key, name(다국어), desk(맡는 곳, 다국어), text(다국어)",
     "steps": "절차: name(다국어), text(다국어)",
     "principle": "원칙 한 줄(다국어)",
-    "form_url": "구글 설문지 주소. 비어 있으면 '곧 열린다' 문구가 나온다"
+    "form_url": "구글 설문지 주소. 비어 있으면 '곧 열린다' 문구가 나온다",
+    "welcome": "첫 화면 맨 끝 환영 문구와 버튼(다국어)"
   },
   "statement": {
-    "label": { "en": "The Business Desk", "ko": "비즈니스 데스크", "ja": "ビジネスデスク", "zh": "商务窗口" },
+    "label": {
+      "en": "The Business Desk",
+      "ko": "비즈니스 데스크",
+      "ja": "ビジネスデスク",
+      "zh": "商务窗口"
+    },
     "text": {
       "en": "Fire grows as the wind rises, and grows warmer as it is shared.\nWe are those who have taken the meaning of this fire into our souls.\n\nThe Federation sets the standard for the contest and the competitor who stand before the fire,\nand on that standard it connects industry and people.\n\nThis is an agora (ἀγορά) of the humanities,\nand a market where trade is done.\n\nThe Business Desk is a door open wide to all who ask the way.\n\nThe Federation keeps this door,\nand shares the gain with those who pass through it.",
       "ko": "불은 바람이 불수록 커지고, 나눌수록 따뜻해진다.\n우리는 이 불의 의미를 영혼으로 받아들인 사람들이다.\n\n연맹은 불 앞에 선 경기와 선수에 기준을 세우고,\n그 기준 위에서 산업과 사람을 연결한다.\n\n이곳은 인문학의 아고라(Agora)이며,\n거래가 이루어지는 시장이다.\n\n비즈니스 데스크는 길을 묻는 모든 이들에게 활짝 열린 문이다.\n\n연맹은 이 문을 지키고,\n이익은 이 문을 드나드는 이들과 함께 나눈다.",
@@ -24,8 +30,18 @@
   "areas": [
     {
       "key": "sanctioning",
-      "name": { "en": "Hosting and Sanctioning", "ko": "대회 유치와 공인", "ja": "大会誘致と公認", "zh": "赛事申办与认证" },
-      "desk": { "en": "Federation, Events Committee", "ko": "연맹 대회위원회", "ja": "連盟 大会委員会", "zh": "联合会 赛事委员会" },
+      "name": {
+        "en": "Hosting and Sanctioning",
+        "ko": "대회 유치와 공인",
+        "ja": "大会誘致と公認",
+        "zh": "赛事申办与认证"
+      },
+      "desk": {
+        "en": "Federation, Events Committee",
+        "ko": "연맹 대회위원회",
+        "ja": "連盟 大会委員会",
+        "zh": "联合会 赛事委员会"
+      },
       "text": {
         "en": "For cities, institutions and companies that wish to host a sanctioned Sports Barbecue event. The Federation guides the rules, the appointment of judges and the sanctioning process.",
         "ko": "공인 스포츠바비큐 대회를 열고자 하는 지자체, 기관, 기업의 의뢰를 받는다. 대회 규정, 심판 배정, 공인 절차를 안내한다.",
@@ -35,8 +51,18 @@
     },
     {
       "key": "certification",
-      "name": { "en": "Equipment Certification", "ko": "장비 인증", "ja": "装備認証", "zh": "器材认证" },
-      "desk": { "en": "Federation, Equipment Committee", "ko": "연맹 장비위원회", "ja": "連盟 装備委員会", "zh": "联合会 器材委员会" },
+      "name": {
+        "en": "Equipment Certification",
+        "ko": "장비 인증",
+        "ja": "装備認証",
+        "zh": "器材认证"
+      },
+      "desk": {
+        "en": "Federation, Equipment Committee",
+        "ko": "연맹 장비위원회",
+        "ja": "連盟 装備委員会",
+        "zh": "联合会 器材委员会"
+      },
       "text": {
         "en": "Grills, fire pits, fuels and measuring instruments used in competition are examined and certified against the Federation's standard.",
         "ko": "경기에 쓰이는 그릴, 화로, 연료, 계측 장비가 연맹의 경기 기준에 맞는지 심사하고 인증한다.",
@@ -46,8 +72,18 @@
     },
     {
       "key": "partnership",
-      "name": { "en": "Partnership and Sponsorship", "ko": "파트너십과 후원", "ja": "パートナーシップと協賛", "zh": "合作与赞助" },
-      "desk": { "en": "Federation Secretariat", "ko": "연맹 사무국", "ja": "連盟 事務局", "zh": "联合会 秘书处" },
+      "name": {
+        "en": "Partnership and Sponsorship",
+        "ko": "파트너십과 후원",
+        "ja": "パートナーシップと協賛",
+        "zh": "合作与赞助"
+      },
+      "desk": {
+        "en": "Federation Secretariat",
+        "ko": "연맹 사무국",
+        "ja": "連盟 事務局",
+        "zh": "联合会 秘书处"
+      },
       "text": {
         "en": "Official partnership contracts, title sponsorship of events, and support in cash or in kind.",
         "ko": "공식 파트너 계약, 대회 타이틀 후원, 현금과 현물 후원을 협의한다.",
@@ -57,8 +93,18 @@
     },
     {
       "key": "education",
-      "name": { "en": "Pro Barbecuer Education", "ko": "프로바비큐어 교육 도입", "ja": "プロバーベキュアー教育の導入", "zh": "职业烧烤师教育引进" },
-      "desk": { "en": "Federation, Education Committee and KOOBA", "ko": "연맹 교육위원회, KOOBA", "ja": "連盟 教育委員会、KOOBA", "zh": "联合会 教育委员会、KOOBA" },
+      "name": {
+        "en": "Pro Barbecuer Education",
+        "ko": "프로바비큐어 교육 도입",
+        "ja": "プロバーベキュアー教育の導入",
+        "zh": "职业烧烤师教育引进"
+      },
+      "desk": {
+        "en": "Federation, Education Committee and KOOBA",
+        "ko": "연맹 교육위원회, KOOBA",
+        "ja": "連盟 教育委員会、KOOBA",
+        "zh": "联合会 教育委员会、KOOBA"
+      },
       "text": {
         "en": "Helps institutions and associations of each nation bring in and run the Pro Barbecuer pathway.",
         "ko": "각국의 기관과 단체가 프로바비큐어 육성 과정을 들여와 운영하도록 돕는다.",
@@ -68,8 +114,18 @@
     },
     {
       "key": "advisory",
-      "name": { "en": "Research and Advisory", "ko": "연구와 자문", "ja": "研究と助言", "zh": "研究与咨询" },
-      "desk": { "en": "KBRI, Korea Barbecue Research & Institute", "ko": "한국바비큐연구원(KBRI)", "ja": "韓国バーベキュー研究院（KBRI）", "zh": "韩国烧烤研究院（KBRI）" },
+      "name": {
+        "en": "Research and Advisory",
+        "ko": "연구와 자문",
+        "ja": "研究と助言",
+        "zh": "研究与咨询"
+      },
+      "desk": {
+        "en": "KBRI, Korea Barbecue Research & Institute",
+        "ko": "한국바비큐연구원(KBRI)",
+        "ja": "韓国バーベキュー研究院（KBRI）",
+        "zh": "韩国烧烤研究院（KBRI）"
+      },
       "text": {
         "en": "Research and advice on equipment development, market analysis and content planning are carried out by KBRI.",
         "ko": "장비 개발, 시장 분석, 콘텐츠 기획 같은 연구와 자문은 한국바비큐연구원(KBRI)이 맡는다.",
@@ -79,8 +135,18 @@
     },
     {
       "key": "proposal",
-      "name": { "en": "Opinions and Proposals", "ko": "의견과 제안", "ja": "意見と提案", "zh": "意见与建议" },
-      "desk": { "en": "Federation Secretariat", "ko": "연맹 사무국", "ja": "連盟 事務局", "zh": "联合会 秘书处" },
+      "name": {
+        "en": "Opinions and Proposals",
+        "ko": "의견과 제안",
+        "ja": "意見と提案",
+        "zh": "意见与建议"
+      },
+      "desk": {
+        "en": "Federation Secretariat",
+        "ko": "연맹 사무국",
+        "ja": "連盟 事務局",
+        "zh": "联合会 秘书处"
+      },
       "text": {
         "en": "Opinions on the work of the Federation and on barbecue culture, and new proposals of every kind.",
         "ko": "연맹의 활동과 바비큐 문화에 관한 의견, 그리고 모든 새로운 제안을 받는다.",
@@ -91,20 +157,60 @@
   ],
   "steps": [
     {
-      "name": { "en": "Request", "ko": "의뢰서 제출", "ja": "依頼書の提出", "zh": "提交委托书" },
-      "text": { "en": "Fill in the request form below.", "ko": "아래 의뢰서를 작성해 보낸다.", "ja": "下の依頼書に記入して送る。", "zh": "填写并提交下方的委托书。" }
+      "name": {
+        "en": "Request",
+        "ko": "의뢰서 제출",
+        "ja": "依頼書の提出",
+        "zh": "提交委托书"
+      },
+      "text": {
+        "en": "Fill in the request form below.",
+        "ko": "아래 의뢰서를 작성해 보낸다.",
+        "ja": "下の依頼書に記入して送る。",
+        "zh": "填写并提交下方的委托书。"
+      }
     },
     {
-      "name": { "en": "Review", "ko": "검토와 배정", "ja": "検討と担当決定", "zh": "审阅与分派" },
-      "text": { "en": "The Secretariat reviews it and assigns the Federation, KBRI or KOOBA.", "ko": "사무국이 검토해 연맹, KBRI, KOOBA 중 맡을 곳을 정한다.", "ja": "事務局が検討し、連盟、KBRI、KOOBAのうち担当を決める。", "zh": "秘书处审阅后，在联合会、KBRI与KOOBA中确定负责方。" }
+      "name": {
+        "en": "Review",
+        "ko": "검토와 배정",
+        "ja": "検討と担当決定",
+        "zh": "审阅与分派"
+      },
+      "text": {
+        "en": "The Secretariat reviews it and assigns the Federation, KBRI or KOOBA.",
+        "ko": "사무국이 검토해 연맹, KBRI, KOOBA 중 맡을 곳을 정한다.",
+        "ja": "事務局が検討し、連盟、KBRI、KOOBAのうち担当を決める。",
+        "zh": "秘书处审阅后，在联合会、KBRI与KOOBA中确定负责方。"
+      }
     },
     {
-      "name": { "en": "Reply", "ko": "회신과 협의", "ja": "回答と協議", "zh": "回复与协商" },
-      "text": { "en": "The body responsible replies and discusses the details.", "ko": "맡은 곳이 회신하고 세부를 협의한다.", "ja": "担当機関が回答し、詳細を協議する。", "zh": "负责方回复并协商细节。" }
+      "name": {
+        "en": "Reply",
+        "ko": "회신과 협의",
+        "ja": "回答と協議",
+        "zh": "回复与协商"
+      },
+      "text": {
+        "en": "The body responsible replies and discusses the details.",
+        "ko": "맡은 곳이 회신하고 세부를 협의한다.",
+        "ja": "担当機関が回答し、詳細を協議する。",
+        "zh": "负责方回复并协商细节。"
+      }
     },
     {
-      "name": { "en": "Agreement", "ko": "계약과 공인", "ja": "契約と公認", "zh": "签约与认证" },
-      "text": { "en": "A contract is signed, or the sanctioning or certification process begins.", "ko": "계약을 맺거나 공인, 인증 절차에 들어간다.", "ja": "契約を結ぶか、公認、認証の手続きに入る。", "zh": "签订合同，或进入认证程序。" }
+      "name": {
+        "en": "Agreement",
+        "ko": "계약과 공인",
+        "ja": "契約と公認",
+        "zh": "签约与认证"
+      },
+      "text": {
+        "en": "A contract is signed, or the sanctioning or certification process begins.",
+        "ko": "계약을 맺거나 공인, 인증 절차에 들어간다.",
+        "ja": "契約を結ぶか、公認、認証の手続きに入る。",
+        "zh": "签订合同，或进入认证程序。"
+      }
     }
   ],
   "principle": {
@@ -114,6 +220,30 @@
     "zh": "联合会不认证其曾提供咨询的器材。认证与咨询由不同机构分别负责。"
   },
   "form_url": "",
-  "form_label": { "en": "Submit a Request", "ko": "의뢰서 작성", "ja": "依頼書を作成する", "zh": "填写委托书" },
-  "form_pending": { "en": "The request form will open soon.", "ko": "의뢰서 접수는 곧 열린다.", "ja": "依頼書の受付はまもなく始まる。", "zh": "委托书受理即将开放。" }
+  "form_label": {
+    "en": "Submit a Request",
+    "ko": "의뢰서 작성",
+    "ja": "依頼書を作成する",
+    "zh": "填写委托书"
+  },
+  "form_pending": {
+    "en": "The request form will open soon.",
+    "ko": "의뢰서 접수는 곧 열린다.",
+    "ja": "依頼書の受付はまもなく始まる。",
+    "zh": "委托书受理即将开放。"
+  },
+  "welcome": {
+    "text": {
+      "en": "Fire grows as the wind rises, and grows warmer as it is shared.\nThe Business Desk is a door open wide to all who ask the way.",
+      "ko": "불은 바람이 불수록 커지고, 나눌수록 따뜻해진다.\n비즈니스 데스크는 길을 묻는 모든 이들에게 활짝 열린 문이다.",
+      "ja": "火は風が吹くほど大きくなり、分かち合うほど温かくなる。\nビジネスデスクは道を尋ねるすべての人に大きく開かれた扉である。",
+      "zh": "火，风越吹越旺，越分享越温暖。\n商务窗口是向所有问路之人敞开的大门。"
+    },
+    "button": {
+      "en": "Enter the Business Desk",
+      "ko": "비즈니스 데스크로 들어가기",
+      "ja": "ビジネスデスクへ入る",
+      "zh": "进入商务窗口"
+    }
+  }
 }
