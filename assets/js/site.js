@@ -653,34 +653,79 @@
     });
   };
 
-  /* Hestia at the door: gold line art revealed top to bottom, then the flame breathes */
-  var HESTIA_SRC = "assets/img/hestia-welcome-1.png";
-  function hestiaFigure() {
-    return '<figure class="hestia"><div class="hestia-art"><img src="' + HESTIA_SRC + '" alt="Hestia, goddess of the hearth, welcoming visitors at the door" onerror="this.closest(\'.hestia\').classList.add(\'missing\')"><span class="hestia-flame"></span></div></figure>';
+  /* Hestia at the door: four painted scenes played as one short film, then the hearth keeps burning */
+  function scene(n) {
+    return '<img class="hf-scene hf-s' + n + '" src="assets/img/hestia/scene-' + n + '.webp" srcset="assets/img/hestia/scene-' + n + '-960.webp 960w, assets/img/hestia/scene-' + n + '.webp 1680w" sizes="(max-width: 960px) 960px, 1680px" alt="" decoding="async"' + (n === 4 ? "" : ' loading="lazy"') + ">";
   }
-  function wakeHestia(root) {
-    var list = (root || document).querySelectorAll(".hestia:not(.awake)");
-    var go = function (el) { el.classList.add("awake"); };
-    if (!("IntersectionObserver" in window)) { Array.prototype.forEach.call(list, go); return; }
-    var io = new IntersectionObserver(function (es) {
-      es.forEach(function (e) { if (e.isIntersecting) { go(e.target); io.unobserve(e.target); } });
-    }, { threshold: 0.35 });
-    Array.prototype.forEach.call(list, function (el) { io.observe(el); });
+  function hestiaFilm(overlay, mode) {
+    var scenes = mode === "hearth" ? scene(4) : scene(1) + scene(2) + scene(3) + scene(4);
+    return '<div class="hestia-film' + (mode === "hearth" ? " hearth-only done" : "") + '" role="img" aria-label="A closed Greek temple at night. Hestia, goddess of the hearth, opens its bronze doors and welcomes the visitor inside, where her round hearth is blazing.">' +
+      '<div class="hf-stage">' + scenes +
+      '<span class="hf-seam"></span><span class="hf-flash"></span><span class="hf-glow"></span><canvas class="hf-sparks"></canvas><span class="hf-vignette"></span></div>' +
+      (overlay ? '<div class="hf-overlay">' + overlay + "</div>" : "") +
+      (mode === "hearth" ? "" : '<button class="hf-replay" type="button" aria-label="Replay">&#8635;</button>') + "</div>";
+  }
+  function sparks(film) {
+    var cv = film.querySelector(".hf-sparks"); if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext("2d"), ps = [], on = false, raf = 0;
+    function size() { var r = cv.getBoundingClientRect(), d = Math.min(window.devicePixelRatio || 1, 2); cv.width = r.width * d; cv.height = r.height * d; }
+    function spawn() { var w = cv.width, h = cv.height; return { x: w * (0.5 + (Math.random() - 0.5) * 0.09), y: h * 0.6, vx: (Math.random() - 0.5) * w * 0.0006, vy: -h * (0.0016 + Math.random() * 0.0028), life: 0, max: 70 + Math.random() * 90, r: (0.6 + Math.random() * 1.6) * (cv.width / 900) }; }
+    function tick() {
+      if (!on) return;
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      if (ps.length < 38 && Math.random() < 0.5) ps.push(spawn());
+      ps = ps.filter(function (p) {
+        p.life++; p.x += p.vx + Math.sin((p.life + p.max) * 0.07) * cv.width * 0.0004; p.y += p.vy;
+        var t = p.life / p.max, a = t < 0.2 ? t / 0.2 : 1 - (t - 0.2) / 0.8;
+        ctx.beginPath(); ctx.fillStyle = "rgba(255," + Math.round(170 + 60 * (1 - t)) + ",90," + (a * 0.85).toFixed(3) + ")";
+        ctx.arc(p.x, p.y, p.r, 0, 6.283); ctx.fill();
+        return p.life < p.max;
+      });
+      raf = requestAnimationFrame(tick);
+    }
+    size(); window.addEventListener("resize", size);
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) {
+      es.forEach(function (e) { var v = e.isIntersecting; if (v && !on) { on = true; tick(); } else if (!v) { on = false; cancelAnimationFrame(raf); } });
+    }).observe(film);
+  }
+  function runFilm(film) {
+    if (!film) return;
+    var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var seen = false; try { seen = sessionStorage.getItem("hestiaSeen") === "1"; } catch (e) {}
+    if (!film.classList.contains("hearth-only")) {
+      if (reduce || seen) film.classList.add("done");
+      else {
+        var go = function () {
+          film.classList.add("play");
+          setTimeout(function () { film.classList.add("done"); film.classList.remove("play"); try { sessionStorage.setItem("hestiaSeen", "1"); } catch (e) {} }, 13600);
+        };
+        if ("IntersectionObserver" in window) {
+          var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { io.disconnect(); go(); } }, { threshold: 0.45 });
+          io.observe(film);
+        } else go();
+      }
+      var rp = film.querySelector(".hf-replay");
+      if (rp) rp.addEventListener("click", function () {
+        film.classList.remove("done", "play"); void film.offsetWidth; film.classList.add("play");
+        setTimeout(function () { film.classList.add("done"); film.classList.remove("play"); }, 13600);
+      });
+    }
+    if (!reduce) sparks(film);
   }
   function homeBusiness() {
     load("business").then(function (b) {
       var t = b.welcome;
-      put("#home-business", '<div class="biz-welcome">' + hestiaFigure() + '<div class="biz-welcome-text">' +
+      put("#home-business", hestiaFilm(
         '<p class="placard-label">' + esc(b.statement.label.en) + "</p>" +
         bi(t.text, "p", "biz-welcome-line lines") +
-        '<a class="biz-button" href="business.html">' + bi(t.button, "span", "", true) + "</a></div></div>");
-      wakeHestia(document.getElementById("home-business"));
+        '<a class="biz-button" href="business.html">' + bi(t.button, "span", "", true) + "</a>"));
+      runFilm(document.querySelector("#home-business .hestia-film"));
     });
   }
 
   pages.business = function () {
     load("business").then(function (b) {
-      put("#biz-hestia", hestiaFigure()); wakeHestia(document.getElementById("biz-hestia"));
+      put("#biz-hestia", hestiaFilm("", "hearth")); runFilm(document.querySelector("#biz-hestia .hestia-film"));
       put("#biz-statement", '<div class="statement definition biz-statement"><p class="label">' + esc(b.statement.label.en) + "</p>" + bi(b.statement.text, "p", "text") + "</div>");
       put("#biz-areas", bi(b.areas_intro, "div", "prose member-intro") + '<div class="forms7 biz-areas">' + b.areas.map(function (a) {
         return '<div class="form7"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3>" +
