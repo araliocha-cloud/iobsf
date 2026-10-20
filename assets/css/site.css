@@ -843,3 +843,9 @@ hr, .rule { border-color: var(--ember-line); }
 @media (max-width: 600px) { .heritage-item .h-mark, .founder-mark, .w-crumb, .story-date { font-size: 15px; } }
 .nowrap { white-space: nowrap; }
 @media (max-width: 600px) { .heritage-item .h-mark { font-size: 14px; letter-spacing: .05em; } }
+/* statements whose line breaks are part of the text */
+.lines, .lines .p, .lines .s { white-space: pre-line; }
+.prose.lines, .facts dd .lines { text-align: left; text-align-last: auto; hyphens: manual; }
+.statement.definition .text { max-width: none; font-size: clamp(19px, 2vw, 26px); }
+.statement.definition .text .s { font-size: .78em; }
+.statement .text .p, .statement .text .s { text-wrap: balance; }

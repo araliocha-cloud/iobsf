@@ -229,8 +229,8 @@
         return '<div class="statement" style="margin-bottom:72px"><p class="label">' + esc(st[k].label.en) + "</p>" + bi(st[k].text, "p", "text") + "</div>";
       }).join("") +
       '<div class="split" style="margin-top:40px">' +
-        '<div><h2>' + esc(st.mission.label.en) + "</h2>" + bi(st.mission.text, "div", "prose lede") + "</div>" +
-        '<div><h2>' + esc(st.pro_barbecuer.label.en) + "</h2>" + bi(st.pro_barbecuer.text, "div", "prose lede") + "</div>" +
+        '<div><h2>' + esc(st.mission.label.en) + "</h2>" + bi(st.mission.text, "div", "prose lede lines") + "</div>" +
+        '<div><h2>' + esc(st.pro_barbecuer.label.en) + "</h2>" + bi(st.pro_barbecuer.text, "div", "prose lede lines") + "</div>" +
       "</div>");
   };
 
@@ -592,8 +592,8 @@
         "<dt>Name</dt><dd>" + bi(f.name) + "</dd>" +
         "<dt>Founded</dt><dd>" + bi({ en: "8 December 2018, " + f.founded_place.en, ko: "2018년 12월 8일, " + f.founded_place.ko, ja: "2018年12月8日、" + tr(f.founded_place.ko, "ja"), zh: "2018年12月8日，" + tr(f.founded_place.ko, "zh") }) + "</dd>" +
         "<dt>Headquarters</dt><dd>" + bi(f.headquarters) + "</dd>" +
-        (st.sports_barbecue ? "<dt>" + esc(st.sports_barbecue.label.en) + "</dt><dd>" + bi(st.sports_barbecue.text) + "</dd>" : "") +
-        "<dt>" + esc(st.mission.label.en) + "</dt><dd>" + bi(st.mission.text) + "</dd>" +
+        (st.sports_barbecue ? "<dt>" + esc(st.sports_barbecue.label.en) + "</dt><dd>" + bi(st.sports_barbecue.text, "div", "lines") + "</dd>" : "") +
+        "<dt>" + esc(st.mission.label.en) + "</dt><dd>" + bi(st.mission.text, "div", "lines") + "</dd>" +
         (site.secretariat ? "<dt>Secretariat</dt><dd>" + bi(site.secretariat.name) + bi(site.secretariat.head) + "</dd>" : "") +
       "</dl>");
     if (site.institutions) put("#fed-institutions", '<div class="forms7">' + site.institutions.map(function (x) {
