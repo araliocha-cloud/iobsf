@@ -544,8 +544,12 @@
       },
       "sources": [
         {
-          "title": "貊炙 문헌 정리 (天下雜誌 換日線)",
+          "title": "貊炙 문헌 정리: 釋名, 搜神記 권7, 宋書 五行志 (天下雜誌 換日線)",
           "href": "https://crossing.cw.com.tw/article/11895"
+        },
+        {
+          "title": "Jeok (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Jeok"
         }
       ],
       "record_no": "R-2026-004",
@@ -563,10 +567,30 @@
           "ja": "",
           "zh": ""
         },
-        "fire": {},
-        "sharing": {},
-        "history": {},
-        "living": {}
+        "fire": {
+          "en": "The whole animal is roasted at the fire, and each person cuts their own portion with their own knife.",
+          "ko": "짐승을 통째로 불에 굽고, 먹는 이가 저마다 제 칼로 잘라 먹는다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "Maekjeok was eaten by cutting from one roast shared by all. In Jin-dynasty China it was set first at auspicious feasts for honoured guests.",
+          "ko": "하나의 고기를 모두가 함께 둘러앉아 저마다 잘라 먹었다. 진(晉)나라 중원에서는 귀한 손님을 맞는 경사스러운 잔치에서 맥적을 가장 먼저 올렸다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "The earliest surviving record is the Shiming (釋名) of Liu Xi, Later Han (c. 2nd century): \"貊炙，全體炙之，各自以刀割，出於胡貊之為也.\" Maekjeok is roasted whole, each cuts with their own knife; it comes from the Hu and the Maek.\n\nThe Soushen ji (搜神記, book 7) of Gan Bao, Jin dynasty: \"胡床、貊槃，翟之器也；羌煮、貊炙，翟之食也。自太始以來，中國尚之。貴人富室，必畜其器；吉享嘉賓，皆以為先.\" The Hu folding seat and the Maek tray (貊槃) are vessels of the northern peoples; Qiang stew and maekjeok are their foods. From the Taishi era (265–274) the Central Plains prized them. Noble and wealthy houses kept these vessels without fail, and at auspicious feasts for honoured guests they were set first of all. The same account appears in the Treatise on the Five Phases of the Song shu (宋書), which writes the tray as 貊盤.\n\nThe Maek are commonly read as the Buyeo and Goguryeo line, which is why maekjeok is called the source of Korean grilled meat. In the Qing dynasty, Wang Xianqian glossed maekjeok as the roast pork of his own day.",
+          "ko": "가장 오래 남은 기록은 후한(2세기 무렵) 유희(劉熙)의 『석명(釋名)』이다. 「貊炙，全體炙之，各自以刀割，出於胡貊之為也」. 맥적은 통째로 굽고, 각자 칼로 잘라 먹으며, 호(胡)와 맥(貊)에서 나왔다는 뜻이다.\n\n진(晉)나라 간보(干寶)의 『수신기(搜神記)』 권7은 이렇게 적는다. 「胡床、貊槃，翟之器也；羌煮、貊炙，翟之食也。自太始以來，中國尚之。貴人富室，必畜其器；吉享嘉賓，皆以為先」. 호상(胡床, 접는 의자)과 맥반(貊槃, 맥의 쟁반)은 북방 민족의 그릇이고, 강자(羌煮, 강족의 삶은 고기)와 맥적은 그들의 음식이다. 태시(泰始, 265~274) 연간부터 중원이 이를 숭상했다. 귀한 집과 부유한 집은 반드시 그 그릇을 갖추었고, 경사스러운 잔치에서 귀한 손님을 맞을 때면 모두 이것을 가장 먼저 내놓았다. 같은 기록이 『송서(宋書)』 오행지에도 실려 있으며, 쟁반은 맥반(貊盤)으로 적었다.\n\n맥은 흔히 부여와 고구려 계통으로 해석된다. 그래서 맥적은 한국 고기구이의 연원으로 불린다. 청나라의 왕선겸(王先謙)은 맥적을 당시의 통돼지구이(燒豬)라고 풀이했다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "The name and the ancient way of eating survive in the records; Korean grilled meat, from seolyamyeokjeok to bulgogi, is often traced back to it.",
+          "ko": "이름과 옛 먹는 법은 기록으로 남았다. 설야멱적에서 불고기에 이르는 한국의 고기구이는 흔히 그 뿌리를 맥적에서 찾는다.",
+          "ja": "",
+          "zh": ""
+        }
       },
       "log": [
         {
@@ -574,6 +598,15 @@
           "text": {
             "en": "Entered as Federation Recorded Heritage.",
             "ko": "연맹기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        },
+        {
+          "date": "2026-10-21",
+          "text": {
+            "en": "Sources strengthened: the full Soushen ji passage (book 7) and the Song shu Treatise on the Five Phases.",
+            "ko": "문헌 보강: 『수신기』 권7 원문과 『송서』 오행지를 더함.",
             "ja": "",
             "zh": ""
           }
@@ -743,6 +776,115 @@
       "original_lang": {
         "en": "Japanese",
         "ko": "일본어",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "id": "mangal",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "name": {
+        "en": "Mangal",
+        "ko": "망갈",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Mangal / منقل (manqal)",
+      "community": {
+        "en": "Türkiye and the former Ottoman lands, the Arab world, Israel, the Caucasus, Russia and Central Asia",
+        "ko": "튀르키예와 옛 오스만 땅, 아랍 세계, 이스라엘, 캅카스, 러시아와 중앙아시아",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Ottoman braziers recorded in the 19th century",
+        "ko": "19세기 오스만의 화로 기록",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "The mangal is a charcoal brazier, carried or set on legs, around which meat is grilled and people gather. Once mainly a heater for tents and rooms, it became the grill of outdoor feasts: in Türkiye a mangal gathering is a social ritual, in Israel the mangal is the Independence Day barbecue, and in Russia and Central Asia shashlik is grilled on it.",
+        "ko": "망갈(mangal)은 숯을 담아 들고 다니거나 다리 위에 올려 쓰는 화로다. 그 둘레에서 고기를 굽고 사람들이 모인다. 처음에는 주로 천막과 방을 데우는 난방 기구였다. 그러다 바깥 잔치의 화로가 되었다. 튀르키예에서 망갈 모임은 하나의 사회적 의례이고, 이스라엘에서 망갈은 독립기념일의 바비큐 자체를 뜻하며, 러시아와 중앙아시아에서는 그 위에 샤슐릭을 굽는다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "Mangal (barbecue) (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Mangal_(barbecue)"
+        },
+        {
+          "title": "Balashon, Hebrew Language Detective: mangal",
+          "href": "https://www.balashon.com/2008/05/mangal.html"
+        },
+        {
+          "title": "Mangal, the Middle Eastern barbecue (Josper)",
+          "href": "https://jospergrill.com/mangal-the-middle-eastern-barbecue/"
+        },
+        {
+          "title": "Кто и как придумал мангал (TechInsider)",
+          "href": "https://www.techinsider.ru/editorial/1610069-gotovim-vkusno-kto-izobrel-mangal/"
+        }
+      ],
+      "record_no": "R-2026-023",
+      "recorded": "2026-10-21",
+      "recorder": {
+        "en": "IOBSF Headquarters and Korea Secretariat, with KBRI",
+        "ko": "IOBSF 연맹본부 및 한국사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "The mangal is a charcoal brazier, carried or set on legs, around which meat is grilled and people gather. Once mainly a heater for tents and rooms, it became the grill of outdoor feasts: in Türkiye a mangal gathering is a social ritual, in Israel the mangal is the Independence Day barbecue, and in Russia and Central Asia shashlik is grilled on it.",
+          "ko": "망갈(mangal)은 숯을 담아 들고 다니거나 다리 위에 올려 쓰는 화로다. 그 둘레에서 고기를 굽고 사람들이 모인다. 처음에는 주로 천막과 방을 데우는 난방 기구였다. 그러다 바깥 잔치의 화로가 되었다. 튀르키예에서 망갈 모임은 하나의 사회적 의례이고, 이스라엘에서 망갈은 독립기념일의 바비큐 자체를 뜻하며, 러시아와 중앙아시아에서는 그 위에 샤슐릭을 굽는다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "Live charcoal is laid in an open metal box or dish, on legs or carried by hand, and meat on skewers or a grate is grilled over it: kebab, shashlik, chicken, fish, then onions, tomatoes and potatoes in the last of the coals.",
+          "ko": "쇠로 만든 열린 상자나 접시에 달군 숯을 담는다. 다리 위에 세우거나 손에 들고 옮긴다. 그 위에 꼬챙이나 석쇠를 얹어 케밥, 샤슐릭, 닭고기, 생선을 굽고, 남은 숯불에 양파와 토마토, 감자를 굽는다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "A mangal is lit for family and friends in gardens and picnic grounds, in every season, and the meal runs long. The work is shared: some light the fire, some tend the coals and watch the meat. In Israel the mangal has become a symbol of Independence Day, almost as much as the flag.",
+          "ko": "망갈은 가족과 친구를 위해 정원과 소풍터에서 철을 가리지 않고 피우며, 식사는 길게 이어진다. 일은 나눠 맡는다. 누구는 불을 붙이고, 누구는 숯을 돌보며 고기를 지킨다. 이스라엘에서 망갈은 국기에 버금가는 독립기념일의 상징이 되었다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "The word is traced to Arabic manqal, from a root meaning to carry, for a portable stove; Amnon Shapira of the Academy of the Hebrew Language holds that Turkish took it from Arabic. Other accounts hold the Arabic word to be a loan from Greek mangali, a brazier. The direction of the borrowing is not settled.\n\nBedouins are said to have used the manqal to warm their tents on cold desert nights. Nineteenth-century sources describe the Ottoman mangal as a large dish of live charcoal that warmed rooms, with cooking secondary. The word passed into Romanian and Albanian, where it came to mean charcoal.\n\nAs a grill, the mangal spread wherever Ottoman and Middle Eastern cooking reached. In Russia the word names the brazier on which shashlik is grilled, and one account dates its wide popularity there to the 1990s.",
+          "ko": "낱말은 아랍어 만칼(manqal)에서 찾는다. '나르다'를 뜻하는 뿌리에서 온, 들고 다니는 화로라는 말이다. 히브리어 아카데미의 암논 샤피라(Amnon Shapira)는 튀르키예어가 이 말을 아랍어에서 빌려 왔다고 본다. 반대로 아랍어가 '화로'를 뜻하는 그리스어 망갈리(mangali)에서 빌려 왔다는 설명도 있다. 어느 쪽에서 어느 쪽으로 건너갔는지는 정해지지 않았다.\n\n베두인이 사막의 추운 밤에 천막을 데우려고 만칼을 썼다고 전한다. 19세기 문헌은 오스만의 망갈을 방을 데우는, 달군 숯을 담은 큰 접시로 그리며, 요리는 부차적이었다고 적는다. 이 말은 루마니아어와 알바니아어로도 건너가 '숯'을 뜻하게 되었다.\n\n굽는 화로로서 망갈은 오스만과 중동의 요리가 닿는 곳마다 퍼졌다. 러시아에서는 샤슐릭을 굽는 화로를 망갈(мангал)이라 부르며, 그곳에서 널리 퍼진 것은 1990년대부터라는 설명이 있다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Living and widespread. Lit at picnics, gardens and celebrations from Türkiye and the Middle East to the Caucasus, Russia and Central Asia, and sold everywhere as camping and garden equipment.",
+          "ko": "살아 있고 널리 퍼져 있다. 튀르키예와 중동에서 캅카스, 러시아, 중앙아시아까지 소풍과 정원, 잔치에서 피우며, 캠핑과 정원 용품으로 어디서나 팔린다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "log": [
+        {
+          "date": "2026-10-21",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage.",
+            "ko": "연맹기록유산으로 기록.",
+            "ja": "",
+            "zh": ""
+          }
+        }
+      ],
+      "forms": [
+        "brazier"
+      ],
+      "original_lang": {
+        "en": "Turkish mangal, from Arabic manqal",
+        "ko": "튀르키예어 mangal, 아랍어 manqal에서 옴",
         "ja": "",
         "zh": ""
       }
