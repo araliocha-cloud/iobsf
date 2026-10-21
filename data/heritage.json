@@ -11,8 +11,8 @@
     "naming": "모든 유산 이름은 영어(name.en), 한국어(name.ko), 원어(original)와 원어의 언어(original_lang)를 함께 적는다. forms는 forms 목록의 key 배열"
   },
   "intro": {
-    "en": "The Heritage of the Fire is the Federation's register of humankind's barbecue. Here the Federation recognises the representative barbecue traditions of the world and records the history behind them.",
-    "ko": "불의 유산은 인류 바비큐에 대한 연맹의 등재부다. 연맹은 이곳에서 세계의 대표 바비큐 전통을 인정하고, 그 뒤에 놓인 역사를 기록한다.",
+    "en": "The Heritage of the Fire is the Federation's register of humankind's barbecue.\nHere the Federation recognises the representative barbecue traditions of the world,\nand records the history behind them.",
+    "ko": "불의 유산은 인류 바비큐에 대한 연맹의 등재부다.\n연맹은 이곳에서 세계의 대표 바비큐 전통을 인정하고,\n그 뒤에 놓인 역사를 기록한다.",
     "ja": "",
     "zh": ""
   },

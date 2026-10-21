@@ -1054,3 +1054,6 @@ html[data-second="ko"] .biz-tale .s[lang="ko"], html[data-second="ja"] .biz-tale
 .trophy-legend { display: grid !important; grid-template-columns: auto; justify-content: center; justify-items: start; align-items: center; gap: 14px; width: fit-content; max-width: 100%; margin: 36px auto 0; }
 .trophy-legend li { text-align: left; }
 @media (max-width: 700px) { .trophy-legend { justify-content: stretch; width: auto; } .trophy-legend li { padding-left: 18px; text-indent: -18px; } }
+
+/* intros set line by line: centred, never hyphenated */
+.lede.lines, .lede.lines .p, .lede.lines .s { text-align: center !important; text-align-last: center !important; hyphens: manual !important; word-break: keep-all; }

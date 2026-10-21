@@ -217,7 +217,7 @@
         : empty({ en: "The next sanctioned event will be announced here.", ko: "다음 공인 대회가 이곳에 발표된다." }));
       put("#home-roster", roster(bb.slice(0, 4), na));
     });
-    load("heritage").then(function (h) { (h.forms || []).forEach(function (f) { FORMS[f.key] = f; }); put("#home-heritage-intro", bi(h.intro, "div", "lede")); put("#home-register", registerList(h.register, true)); });
+    load("heritage").then(function (h) { (h.forms || []).forEach(function (f) { FORMS[f.key] = f; }); put("#home-heritage-intro", bi(h.intro, "div", "lede lines")); put("#home-register", registerList(h.register, true)); });
   };
 
   pages.fire = function (site) {
@@ -395,7 +395,7 @@
         return '<div class="form7"><h3>' + esc(f.name.en) + bi({ ko: f.name.ko }, "span") + "</h3>" + bi(f.text, "div", "form7-text") +
           '<div class="form7-list">' + (list.length ? list.map(function (d) { return '<a href="heritage-item.html?id=' + esc(d.id) + '">' + esc(en(d.name)) + "</a>"; }).join(", ") : '<span style="color:var(--ash)">' + bi({ en: "Awaiting its first record", ko: "첫 기록을 기다린다" }, "span", "", true) + "</span>") + "</div></div>";
       }).join("") + "</div>");
-      put("#heritage-intro", bi(h.intro, "div", "lede"));
+      put("#heritage-intro", bi(h.intro, "div", "lede lines"));
       put("#trophies", trophyStage());
       put("#heritage-principle", '<div class="statement"><p class="label">Principles</p>' + h.principles.map(function (x) { return bi(x, "p", "text principle-line"); }).join("") + "</div>");
       put("#heritage-criteria", '<dl class="facts">' + h.criteria.map(function (c) {
