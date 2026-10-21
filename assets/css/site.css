@@ -1060,4 +1060,7 @@ html[data-second="ko"] .biz-tale .s[lang="ko"], html[data-second="ja"] .biz-tale
 
 /* seven forms intro: the second-language line runs on one line where the screen allows */
 @media (min-width: 900px) { .forms-intro .s { white-space: nowrap; } }
-@media (min-width: 900px) { .prose:has(> .forms-intro) { max-width: 980px; } }
+
+
+/* section intros and notes use the full width of their section, so they do not break early and leave the right side empty */
+.section .prose, .section .lede, .page-head .lede { max-width: none; }
