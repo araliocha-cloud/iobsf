@@ -1049,3 +1049,8 @@ html[data-second="ko"] .biz-tale .s[lang="ko"], html[data-second="ja"] .biz-tale
 .hf-tap svg { width: 30px; height: 30px; margin-left: 4px; }
 .hestia-film.blocked .hf-tap { display: grid; }
 .hestia-film.blocked .hf-stage { cursor: pointer; }
+
+/* heritage legend: three lines, the block centred, the dots aligned on one left edge */
+.trophy-legend { display: grid !important; grid-template-columns: auto; justify-content: center; justify-items: start; align-items: center; gap: 14px; width: fit-content; max-width: 100%; margin: 36px auto 0; }
+.trophy-legend li { text-align: left; }
+@media (max-width: 700px) { .trophy-legend { justify-content: stretch; width: auto; } .trophy-legend li { padding-left: 18px; text-indent: -18px; } }
