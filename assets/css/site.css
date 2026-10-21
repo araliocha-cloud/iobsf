@@ -1057,3 +1057,7 @@ html[data-second="ko"] .biz-tale .s[lang="ko"], html[data-second="ja"] .biz-tale
 
 /* intros set line by line: centred, never hyphenated */
 .lede.lines, .lede.lines .p, .lede.lines .s { text-align: center !important; text-align-last: center !important; hyphens: manual !important; word-break: keep-all; }
+
+/* seven forms intro: the second-language line runs on one line where the screen allows */
+@media (min-width: 900px) { .forms-intro .s { white-space: nowrap; } }
+@media (min-width: 900px) { .prose:has(> .forms-intro) { max-width: 980px; } }
