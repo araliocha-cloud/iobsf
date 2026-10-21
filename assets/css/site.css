@@ -1067,3 +1067,19 @@ html[data-second="ko"] .biz-tale .s[lang="ko"], html[data-second="ja"] .biz-tale
 
 /* record sections keep their paragraph breaks */
 .form-section .prose .p, .form-section .prose .s { white-space: pre-line; }
+
+/* seven forms: the title opens the form's own page */
+.form7 h3 .form7-link { color: inherit; text-decoration: none; display: inline-block; }
+.form7 h3 .form7-link:hover { color: #f0c98a; }
+.form7 h3 .form7-go { margin-left: 10px; font-size: .7em; opacity: 0; transition: opacity .25s, margin .25s; }
+.form7 h3 .form7-link:hover .form7-go, .form7 h3 .form7-link:focus-visible .form7-go { opacity: .9; margin-left: 14px; }
+@media (hover: none) { .form7 h3 .form7-go { opacity: .7; } }
+/* the form page */
+body[data-page="fireform"] .form-no { color: var(--ash); letter-spacing: .12em; text-transform: uppercase; font-size: 13px; margin: 18px 0 6px; }
+body[data-page="fireform"] .form-ko { color: var(--ash); font-size: 20px; margin-top: 4px; }
+body[data-page="fireform"] .form-count { color: var(--ash); margin-bottom: 18px; }
+.form-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--ember-line); }
+.form-nav a { display: inline-flex; align-items: baseline; gap: 8px; padding: 9px 16px; border: 1px solid rgba(184,137,63,.35); border-radius: 2px; color: var(--bone); text-decoration: none; }
+.form-nav a .fn-no { color: #c99a4f; font-size: 13px; }
+.form-nav a .s { color: var(--ash); font-size: 14px; }
+.form-nav a:hover, .form-nav a.on { border-color: #c99a4f; background: rgba(184,137,63,.12); }

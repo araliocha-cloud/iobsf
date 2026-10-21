@@ -67,6 +67,7 @@ DESC = {
  "chronicle": "Stories from the fire at IOBSF events.",
  "federation": "About IOBSF: founding members, institutions, history and charter.",
  "partners": "Partner with IOBSF, the International Outdoor Barbecue Sports Federation.",
+ "fire-form": "Heritage of the Fire, by form of fire: the barbecue traditions recorded under one of the seven forms.",
  "business": "The IOBSF Business Desk: event hosting and sanctioning, equipment certification, partnership, Pro Barbecuer education, research and advisory.",
  "writing": "An essay from the IOBSF archives, by Shaka Chaa.",
  "archives": "The IOBSF archives: barbecue humanities, civilization history and the histories of the nations' fires, with essays, books and papers by Shaka Chaa and KBRI.",
@@ -128,6 +129,10 @@ pages = {
   + section("Federation Recorded Heritage", "연맹기록유산", '<div class="prose" style="margin-bottom:28px;color:var(--ash)"><div class="bi"><span class="p">The register records living traditions. These are the traditions the Federation has recorded for study and preservation, awaiting the Committee’s review. Record numbers follow the order in which the Federation records them, not age or rank.</span><span class="s" lang="ko">등재부는 살아 있는 전통을 기록한다. 이것은 연맹이 연구와 보존을 위해 기록한 전통이며, 위원회의 심의를 기다린다. 기록 번호는 연맹이 기록한 순서이며, 오래된 순서나 우열이 아니다.</span></div></div><div id="heritage-records"></div>')
   + section("Criteria", "등재 기준", '<div id="heritage-criteria"></div>')
   + section("Forms", "양식", '<div id="heritage-forms" class="prose"></div>')),
+
+"fire-form": ("Form of Fire | IOBSF", "fireform",
+  '<section class="page-head"><div class="wrap" id="form-head"></div></section>'
+  + '<section class="section"><div class="wrap"><div id="form-register"></div><div id="form-nav"></div></div></section>'),
 
 "heritage-item": ("Heritage Record | IOBSF", "heritageitem",
   '<section class="page-head"><div class="wrap"><div id="hitem"></div></div></section>'),

@@ -387,12 +387,32 @@
     });
   };
 
+  /* one form of fire: its definition and only the heritage recorded under it */
+  pages.fireform = function () {
+    load("heritage").then(function (h) {
+      (h.forms || []).forEach(function (f) { FORMS[f.key] = f; });
+      var key = param("form"), f = (h.forms || []).filter(function (x) { return x.key === key; })[0];
+      if (!f) { put("#form-head", empty({ en: "This form of fire was not found.", ko: "불의 형식을 찾을 수 없다." })); return; }
+      document.title = f.name.en + " | Heritage of the Fire | IOBSF";
+      var n = h.forms.indexOf(f) + 1;
+      put("#form-head", '<p class="w-crumb"><a href="heritage.html">Heritage of the Fire</a> / <a href="heritage.html#heritage-forms7">Seven Forms of Fire</a></p>' +
+        '<p class="form-no">' + bi({ en: "Form " + n + " of 7", ko: "일곱 형식 중 " + n + "번째" }, "span", "", true) + "</p>" +
+        "<h1>" + esc(f.name.en) + "</h1>" + bi({ ko: f.name.ko, ja: f.name.ja, zh: f.name.zh }, "div", "form-ko") + bi(f.text, "div", "lede"));
+      var list = h.register.filter(function (d) { return (d.forms || []).indexOf(f.key) >= 0; });
+      put("#form-register", list.length ? '<p class="form-count">' + bi({ en: list.length + (list.length > 1 ? " traditions" : " tradition") + " recorded under this form", ko: "이 형식으로 기록된 전통 " + list.length + "가지" }, "span", "", true) + "</p>" + registerList(list) :
+        empty({ en: "Awaiting its first record.", ko: "첫 기록을 기다린다." }));
+      put("#form-nav", '<nav class="form-nav" aria-label="Seven forms of fire">' + h.forms.map(function (x, i) {
+        return '<a href="fire-form.html?form=' + esc(x.key) + '"' + (x.key === key ? ' class="on" aria-current="page"' : "") + '><span class="fn-no">' + (i + 1) + "</span>" + esc(x.name.en) + bi({ ko: x.name.ko }, "span", "", true) + "</a>";
+      }).join("") + "</nav>");
+    });
+  };
+
   pages.heritage = function () {
     load("heritage").then(function (h) {
       (h.forms || []).forEach(function (f) { FORMS[f.key] = f; });
       put("#heritage-forms7", '<div class="forms7">' + h.forms.map(function (f) {
         var list = h.register.filter(function (d) { return (d.forms || []).indexOf(f.key) >= 0; });
-        return '<div class="form7"><h3>' + esc(f.name.en) + bi({ ko: f.name.ko }, "span") + "</h3>" + bi(f.text, "div", "form7-text") +
+        return '<div class="form7"><h3><a class="form7-link" href="fire-form.html?form=' + esc(f.key) + '">' + esc(f.name.en) + bi({ ko: f.name.ko }, "span") + '<span class="form7-go" aria-hidden="true">&rarr;</span></a></h3>' + bi(f.text, "div", "form7-text") +
           '<div class="form7-list">' + (list.length ? list.map(function (d) { return '<a href="heritage-item.html?id=' + esc(d.id) + '">' + esc(en(d.name)) + "</a>"; }).join(", ") : '<span style="color:var(--ash)">' + bi({ en: "Awaiting its first record", ko: "첫 기록을 기다린다" }, "span", "", true) + "</span>") + "</div></div>";
       }).join("") + "</div>");
       put("#heritage-intro", bi(h.intro, "div", "lede lines"));
