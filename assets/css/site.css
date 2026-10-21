@@ -1064,3 +1064,6 @@ html[data-second="ko"] .biz-tale .s[lang="ko"], html[data-second="ja"] .biz-tale
 
 /* section intros and notes use the full width of their section, so they do not break early and leave the right side empty */
 .section .prose, .section .lede, .page-head .lede { max-width: none; }
+
+/* record sections keep their paragraph breaks */
+.form-section .prose .p, .form-section .prose .s { white-space: pre-line; }

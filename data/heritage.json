@@ -902,6 +902,127 @@
       }
     },
     {
+      "id": "kebab",
+      "number": "",
+      "status": "record",
+      "designated": "",
+      "name": {
+        "en": "Kebab",
+        "ko": "케밥",
+        "ja": "",
+        "zh": ""
+      },
+      "original": "Kebap / كباب (kabāb)",
+      "community": {
+        "en": "Anatolia, Iran and the Arab world, the Caucasus, Greece and the Balkans, and the diasporas that carried it across Europe",
+        "ko": "아나톨리아, 이란과 아랍 세계, 캅카스, 그리스와 발칸, 그리고 이를 유럽으로 옮긴 이주민 사회",
+        "ja": "",
+        "zh": ""
+      },
+      "era": {
+        "en": "Origin contested",
+        "ko": "기원은 논쟁 중",
+        "ja": "",
+        "zh": ""
+      },
+      "text": {
+        "en": "A great family of meat threaded on skewers, or stacked and sliced, and roasted at the fire: şiş kebap, döner, Iran's chelow kabab and the Balkan ćevapi all stand under this name. Who roasted it first, where the word comes from, and who made today's döner are argued among nations and scholars. The Federation does not decide between them; it records the debate as it stands.",
+        "ko": "고기를 꼬챙이에 꿰거나 겹겹이 쌓아 저며 불에 굽는 음식의 큰 갈래다. 쉬시 케밥(şiş kebap), 되네르(döner), 이란의 첼로 카바브(chelow kabab), 발칸의 체바피(ćevapi)가 모두 이 이름 아래 있다. 누가 처음 구웠는지, 이름이 어디서 왔는지, 지금의 되네르를 누가 만들었는지를 두고 여러 나라와 학자가 서로 다른 주장을 편다. 연맹은 어느 한쪽으로 정하지 않고, 논쟁을 있는 그대로 기록한다.",
+        "ja": "",
+        "zh": ""
+      },
+      "sources": [
+        {
+          "title": "Kebab (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Kebab"
+        },
+        {
+          "title": "Souvlaki (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Souvlaki"
+        },
+        {
+          "title": "The ancient roots of Greek souvlaki (GreekReporter)",
+          "href": "https://greekreporter.com/2023/09/16/ancient-roots-greek-souvlaki/"
+        },
+        {
+          "title": "Death of döner kebab inventor stirs debate (Eurasianet)",
+          "href": "https://eurasianet.org/death-of-doner-kebab-inventor-stirs-debate"
+        },
+        {
+          "title": "Kebab war ignites as Germany fights Turkey over food protection (Euronews, 2024)",
+          "href": "https://www.euronews.com/my-europe/2024/07/25/kebab-war-ignites-as-germany-fights-turkey-over-food-protection"
+        },
+        {
+          "title": "Germany wins doner kebab war as Turkey retreats (GreekReporter, 2025)",
+          "href": "https://greekreporter.com/2025/09/29/germany-wins-doner-kebab-war-turkey-retreats/"
+        },
+        {
+          "title": "EU to reject Türkiye's bid on traditional doner kebab (Türkiye Today)",
+          "href": "https://www.turkiyetoday.com/lifestyle/eu-to-reject-turkiyes-bid-to-trademark-traditional-doner-kebab-recipe-3207247"
+        }
+      ],
+      "record_no": "R-2026-022",
+      "recorded": "2026-10-21",
+      "recorder": {
+        "en": "IOBSF Headquarters and Korea Secretariat, with KBRI",
+        "ko": "IOBSF 연맹본부 및 한국사무국, 한국바비큐연구원(KBRI)",
+        "ja": "",
+        "zh": ""
+      },
+      "sections": {
+        "summary": {
+          "en": "A great family of meat threaded on skewers, or stacked and sliced, and roasted at the fire: şiş kebap, döner, Iran's chelow kabab and the Balkan ćevapi all stand under this name. Who roasted it first, where the word comes from, and who made today's döner are argued among nations and scholars. The Federation does not decide between them; it records the debate as it stands.",
+          "ko": "고기를 꼬챙이에 꿰거나 겹겹이 쌓아 저며 불에 굽는 음식의 큰 갈래다. 쉬시 케밥(şiş kebap), 되네르(döner), 이란의 첼로 카바브(chelow kabab), 발칸의 체바피(ćevapi)가 모두 이 이름 아래 있다. 누가 처음 구웠는지, 이름이 어디서 왔는지, 지금의 되네르를 누가 만들었는지를 두고 여러 나라와 학자가 서로 다른 주장을 편다. 연맹은 어느 한쪽으로 정하지 않고, 논쟁을 있는 그대로 기록한다.",
+          "ja": "",
+          "zh": ""
+        },
+        "fire": {
+          "en": "For şiş, pieces of meat are threaded on iron skewers and turned over charcoal. For döner, seasoned meat is stacked on an upright spit, turned before a fire from the side, and shaved off in thin slices as it browns. Other branches, like Iranian kabab koobideh and the Balkan ćevapi, press minced meat onto the skewer or shape it by hand.",
+          "ko": "쉬시는 고기를 토막 내 쇠꼬챙이에 꿰고 숯불 위에서 돌려 가며 굽는다. 되네르는 양념한 고기를 세운 꼬챙이에 겹겹이 쌓고, 옆에서 오는 불 앞에서 돌려 구우며, 익은 겉을 얇게 저며 낸다. 이란의 카바브 쿠비데(kabab koobideh)처럼 다진 고기를 꼬챙이에 붙여 굽거나, 발칸의 체바피처럼 손으로 빚어 굽는 갈래도 있다.",
+          "ja": "",
+          "zh": ""
+        },
+        "sharing": {
+          "en": "Kebab is roasted at roadside hearths, in markets and at feasts, and shared wrapped in bread. Döner travelled to Germany with Turkish workers in the 1960s and 1970s, became a street food in bread, and spread across Europe.",
+          "ko": "길가의 화덕과 시장, 잔치의 불 앞에서 구워 빵에 싸서 나눈다. 되네르는 1960~70년대 튀르키예 이주 노동자들과 함께 독일로 건너가, 빵에 끼운 거리 음식이 되어 유럽 전역으로 퍼졌다.",
+          "ja": "",
+          "zh": ""
+        },
+        "history": {
+          "en": "The origin of kebab is still argued. The Federation does not rule on it; it sets down the competing claims as they are.\n\nThe word. The Turkish Language Association derives kebap from Arabic kabāb. The linguist Sevan Nişanyan derives it from Persian kabāb, and traces that to Akkadian kabābu and Aramaic kbabā, words for burning or roasting. The food historian Gil Marks also holds that the Persian word probably came from Aramaic.\n\nThe skewer. Greece points to stone skewer supports found at Akrotiri on Santorini, in use before the island's eruption in the 17th century BC, and to the spits (obelos) of Homer, and places the roots of souvlaki in Greece. Turkish tradition tells that şiş began with medieval soldiers roasting meat on their swords. Iran holds chelow kabab as its national dish, and kabāb already appears in a 10th-century Baghdad cookbook, the Kitab al-Tabikh. Greece and Türkiye still contend over who first made souvlaki and şiş.\n\nDöner. One account places vertical roasting in 19th-century Bursa, where İskender Efendi is said to have turned the spit upright in 1867. Others note that 18th-century Ottoman travel writings already describe meat cooked this way. Today's döner in bread is credited to Turkish immigrants in 1970s Berlin, but the claims of Kadir Nurman and of Mahmut Aygün conflict, and döner is reported to have been sold in Britain as early as 1966.\n\nWhose name it is. In April 2024 Türkiye applied to the European Union to register döner as a Traditional Speciality Guaranteed, with rules down to the kind of meat and the thickness of each slice. Germany's Federal Ministry of Food and Agriculture objected, pointing to a döner that had changed over decades to suit German tastes. In 2025 some reports said Türkiye had dropped the bid; others, that the EU would turn it down.\n\nWhose fire came first is not settled. The argument itself shows how widely the fire of the skewer has been shared.",
+          "ko": "케밥의 기원은 아직 논쟁 중이다. 연맹은 판정하지 않고, 서로 다른 주장을 있는 그대로 적는다.\n\n이름. 튀르키예 언어협회는 케밥(kebap)이 아랍어 카바브(kabāb)에서 왔다고 본다. 언어학자 세반 니샤냔(Sevan Nişanyan)은 페르시아어 카바브에서 왔다고 보며, 그 뿌리를 '태우다, 굽다'를 뜻하는 아카드어 카바부(kabābu)와 아람어 크바바(kbabā)에서 찾는다. 음식사학자 길 마크스(Gil Marks)도 페르시아어 낱말이 아람어에서 왔을 것으로 본다.\n\n꼬챙이. 그리스는 산토리니 아크로티리(Akrotiri)에서 나온 돌 꼬챙이 받침을 든다. 기원전 17세기 섬의 화산 폭발 이전에 쓰던 것이다. 호메로스가 노래한 꼬챙이(ὀβελός)도 함께 들며, 수블라키(souvlaki)의 뿌리가 그리스에 있다고 말한다. 튀르키예의 전승은 중세 병사들이 칼에 고기를 꿰어 구운 데서 쉬시가 비롯했다고 전한다. 이란은 첼로 카바브를 나라의 음식으로 여긴다. 10세기 바그다드의 요리서 『키타브 알타비흐(Kitab al-Tabikh)』에도 이미 카바브가 나온다. 그리스와 튀르키예는 수블라키와 쉬시의 원조를 두고 지금도 맞선다.\n\n되네르. 고기를 세워 돌려 굽는 방식이 19세기 부르사(Bursa)에서 시작되었다는 설이 있다. 이스켄데르 에펜디(İskender Efendi)가 1867년에 꼬챙이를 세웠다고 전한다. 18세기 오스만의 여행기에 이미 이런 굽기가 나온다는 지적도 있다. 빵에 끼운 오늘의 되네르는 1970년대 베를린의 튀르키예 이주민이 만들었다고 한다. 그러나 그 주인공을 두고 카디르 누르만(Kadir Nurman)과 마흐무트 아이귄(Mahmut Aygün)의 주장이 엇갈린다. 영국에서는 그보다 앞선 1966년에 이미 되네르가 팔렸다는 기록도 전한다.\n\n이름의 주인. 2024년 4월 튀르키예는 유럽연합에 되네르를 '전통 특산품 보증(TSG)'으로 등록해 달라고 신청했다. 고기의 종류와 저미는 두께까지 정한 안이었다. 독일 연방식품농업부는 오랜 세월 독일인의 입맛에 맞게 바뀌어 온 되네르를 들어 이의를 냈다. 2025년에는 튀르키예가 신청을 접었다는 보도와, 유럽연합이 받아들이지 않을 것이라는 보도가 함께 나왔다.\n\n누구의 불이 먼저였는지는 정해지지 않았다. 이 논쟁 자체가 꼬챙이의 불이 얼마나 넓게 나뉘어 왔는지를 보여 준다.",
+          "ja": "",
+          "zh": ""
+        },
+        "living": {
+          "en": "Living and spread worldwide. An everyday food in Türkiye, Iran, the Arab world, the Caucasus, the Balkans and Greece, and carried by migrants into the streets of cities across Europe and the world.",
+          "ko": "살아 있고 세계로 퍼져 있다. 튀르키예, 이란, 아랍 세계, 캅카스, 발칸, 그리스의 일상 음식이며, 이주민과 함께 유럽과 세계 여러 도시의 거리 음식이 되었다.",
+          "ja": "",
+          "zh": ""
+        }
+      },
+      "log": [
+        {
+          "date": "2026-10-21",
+          "text": {
+            "en": "Entered as Federation Recorded Heritage, with its origin recorded as contested.",
+            "ko": "연맹기록유산으로 기록. 기원은 논쟁 중인 것으로 적음.",
+            "ja": "",
+            "zh": ""
+          }
+        }
+      ],
+      "forms": [
+        "spit"
+      ],
+      "original_lang": {
+        "en": "Turkish kebap; Persian and Arabic kabāb",
+        "ko": "튀르키예어 kebap, 페르시아어와 아랍어 kabāb",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
       "id": "churrasco",
       "number": "",
       "status": "record",
