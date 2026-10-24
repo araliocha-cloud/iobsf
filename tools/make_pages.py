@@ -23,7 +23,7 @@ HEAD = """<!doctype html>
 <link rel="icon" href="assets/img/emblem-small.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500&family=Noto+Serif+KR:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500&family=Noto+Serif+KR:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css?v=VERSION">
 </head>
 <body data-page="{page}">
@@ -62,12 +62,14 @@ DESC = {
  "events": "IOBSF sanctioned Sports Barbecue events, the eight-stage ritual of every event, and results.",
  "event": "An IOBSF Sports Barbecue event.",
  "pathway": "How a Pro Barbecuer is raised: Beginner, Intermediate and Advanced amateur courses, then Semi-Pro and Pro; and how judges are selected.",
- "heritage": "Heritage of the Fire: the IOBSF register of the barbecue traditions of humankind, in seven forms of fire.",
+ "heritage": "Global Human Barbecue Heritage (GHBH): the IOBSF archive and register of the barbecue heritage of humankind, beyond borders and ownership.",
+ "charter": "The Charter of Global Human Barbecue Heritage and the Criteria for Inscription, enacted by IOBSF and KBRI on 24 October 2026.",
+ "heritage-archive": "Federation Archived Heritage: 163 pure-fire barbecue traditions of humankind in the IOBSF archive.",
+ "heritage-record": "A record in the Global Human Barbecue Heritage archive, in ten standard fields.",
  "heritage-item": "A record in the IOBSF Heritage of the Fire register.",
  "chronicle": "Stories from the fire at IOBSF events.",
  "federation": "About IOBSF: founding members, institutions, history and charter.",
  "partners": "Partner with IOBSF, the International Outdoor Barbecue Sports Federation.",
- "fire-form": "Heritage of the Fire, by form of fire: the barbecue traditions recorded under one of the seven forms.",
  "business": "The IOBSF Business Desk: event hosting and sanctioning, equipment certification, partnership, Pro Barbecuer education, research and advisory.",
  "writing": "An essay from the IOBSF archives, by Shaka Chaa.",
  "archives": "The IOBSF archives: barbecue humanities, civilization history and the histories of the nations' fires, with essays, books and papers by Shaka Chaa and KBRI.",
@@ -81,7 +83,7 @@ pages = {
   '<section class="section"><div class="wrap" id="home-spirit"></div></section>\n'
   + section("Next Events", "다가오는 대회", '<div id="home-next"></div>', '<a class="more" href="events.html">All events</a>') + "\n"
   + section("Pro Barbecuers", "프로바비큐어", '<div id="home-roster"></div>', '<a class="more" href="barbecuers.html">All Pro Barbecuers</a>') + "\n"
-  + section("Heritage of the Fire", "불의 유산", '<div id="home-heritage-intro" class="prose" style="margin-bottom:32px"></div><div id="home-register"></div>', '<a class="more" href="heritage.html">Explore the heritage</a>')
+  + section("Global Human Barbecue Heritage", "세계인류바비큐유산", '<div id="home-heritage-intro" class="prose" style="margin-bottom:32px"></div><div id="home-register"></div>', '<a class="more" href="heritage.html">Explore the heritage</a>')
   + '\n<section class="section home-business"><div class="wrap" id="home-business"></div></section>'),
 
 "fire": ("The Fire | IOBSF", "fire",
@@ -118,21 +120,26 @@ pages = {
   + '<section class="section" id="judges"><div class="wrap"><div class="section-head"><h2 class="bi"><span class="p">Judges</span><span class="s" lang="ko">심판 과정</span></h2></div><div id="pathway-judges"></div></div></section>'
   + section("Academy Reading", "아카데미 기초 읽기", '<div id="pathway-reading"></div>')),
 
-"heritage": ("Heritage | IOBSF", "heritage",
-  '<section class="heritage-hero"><img class="hero-emblem" src="assets/img/emblem.webp" alt="IOBSF emblem">'
-  '<h1><span class="p">Heritage of the Fire</span><span class="bi"><span class="s" lang="ko">불의 유산</span></span></h1>'
-  '<div id="trophies"></div><div id="heritage-intro"></div></section>'
-  + '<section class="section"><div class="wrap" id="heritage-principle"></div></section>'
-  + section("Seven Forms of Fire", "일곱 가지 불의 형식", '<div class="prose" style="margin-bottom:28px;color:var(--ash)"><div class="bi forms-intro"><span class="p">Humankind has kept and shared its fire in seven forms. Every heritage is recorded under the form of its fire.</span><span class="s" lang="ko">인류는 일곱 가지 형식으로 불을 지키고 나눠 왔다. 모든 유산은 그 불의 형식과 함께 기록된다.</span></div></div><div id="heritage-forms7"></div>')
-  + section("From Record to Inscription", "기록에서 등재까지", '<div id="heritage-process"></div>')
-  + section("Federation Inscribed Heritage", "연맹등재유산", '<div class="prose" style="margin-bottom:28px;color:var(--ash)"><div class="bi"><span class="p">Inscribed by agreement of the Heritage Committee. The first inscriptions will appear after the Committee’s first session.</span><span class="s" lang="ko">등재위원회의 합의로 오른 유산. 위원회의 첫 심의 후 첫 등재유산이 이곳에 오른다.</span></div></div><div id="heritage-register"></div>')
-  + section("Federation Recorded Heritage", "연맹기록유산", '<div class="prose" style="margin-bottom:28px;color:var(--ash)"><div class="bi"><span class="p">The register records living traditions. These are the traditions the Federation has recorded for study and preservation, awaiting the Committee’s review. Record numbers follow the order in which the Federation records them, not age or rank.</span><span class="s" lang="ko">등재부는 살아 있는 전통을 기록한다. 이것은 연맹이 연구와 보존을 위해 기록한 전통이며, 위원회의 심의를 기다린다. 기록 번호는 연맹이 기록한 순서이며, 오래된 순서나 우열이 아니다.</span></div></div><div id="heritage-records"></div>')
-  + section("Criteria", "등재 기준", '<div id="heritage-criteria"></div>')
-  + section("Forms", "양식", '<div id="heritage-forms" class="prose"></div>')),
+"heritage": ("Global Human Barbecue Heritage | IOBSF", "heritage",
+  '<section class="heritage-hero ghbh-hero"><img class="hero-emblem" src="assets/img/emblem.webp" alt="IOBSF emblem">'
+  '<h1><span class="p">Global Human Barbecue Heritage</span><span class="bi"><span class="s" lang="ko">세계인류바비큐유산 (GHBH)</span></span></h1>'
+  '<div id="ghbh-intro" class="wrap"></div></section>'
+  + section("Origin", "원점", '<div id="ghbh-origin"></div>')
+  + section("Three Forms of Heritage", "3가지 유산 형태 및 관리 체계", '<div id="ghbh-system"></div>')
+  + section("The Archive", "연맹기록유산 아카이브", '<div id="ghbh-archive-door"></div>')
+  + section("Applicants and Techniques", "글로벌 등재 신청 주체 및 심사 평가 다변화", '<div id="ghbh-applicants"></div>')
+  + section("Ten Standard Fields", "유산 아카이빙 데이터베이스 10대 표준 필드", '<div id="ghbh-fields"></div>')
+  + section("Charter and Criteria", "헌장과 등재기준", '<div id="ghbh-charter-door"></div>')),
 
-"fire-form": ("Form of Fire | IOBSF", "fireform",
-  '<section class="page-head"><div class="wrap" id="form-head"></div></section>'
-  + '<section class="section"><div class="wrap"><div id="form-register"></div><div id="form-nav"></div></div></section>'),
+"charter": ("Charter of Global Human Barbecue Heritage | IOBSF", "charter",
+  '<section class="section charter-page"><div class="wrap" id="charter-docs"></div></section>'),
+
+"heritage-archive": ("Archive | Global Human Barbecue Heritage | IOBSF", "ghbharchive",
+  head("Federation Archived Heritage", "연맹기록유산 아카이브", lede_html='<div id="ga-head"></div>')
+  + '<section class="section"><div class="wrap"><div id="ga-tools"></div><p class="ga-count" id="ga-count"></p><div id="ga-list"></div></div></section>'),
+
+"heritage-record": ("Heritage Record | IOBSF", "ghbhrecord",
+  '<section class="page-head"><div class="wrap" id="gr"></div></section>'),
 
 "heritage-item": ("Heritage Record | IOBSF", "heritageitem",
   '<section class="page-head"><div class="wrap"><div id="hitem"></div></div></section>'),

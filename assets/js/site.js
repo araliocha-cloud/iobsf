@@ -217,7 +217,10 @@
         : empty({ en: "The next sanctioned event will be announced here.", ko: "다음 공인 대회가 이곳에 발표된다." }));
       put("#home-roster", roster(bb.slice(0, 4), na));
     });
-    load("heritage").then(function (h) { (h.forms || []).forEach(function (f) { FORMS[f.key] = f; }); put("#home-heritage-intro", bi(h.intro, "div", "lede lines")); put("#home-register", registerList(h.register, true)); });
+    load("ghbh").then(function (g) {
+      put("#home-heritage-intro", gb(g.standard.s1, "p", "ghbh-lede"));
+      put("#home-register", ghbhDoor(g, false));
+    });
   };
 
   pages.fire = function (site) {
@@ -387,52 +390,6 @@
     });
   };
 
-  /* one form of fire: its definition and only the heritage recorded under it */
-  pages.fireform = function () {
-    load("heritage").then(function (h) {
-      (h.forms || []).forEach(function (f) { FORMS[f.key] = f; });
-      var key = param("form"), f = (h.forms || []).filter(function (x) { return x.key === key; })[0];
-      if (!f) { put("#form-head", empty({ en: "This form of fire was not found.", ko: "불의 형식을 찾을 수 없다." })); return; }
-      document.title = f.name.en + " | Heritage of the Fire | IOBSF";
-      var n = h.forms.indexOf(f) + 1;
-      put("#form-head", '<p class="w-crumb"><a href="heritage.html">Heritage of the Fire</a> / <a href="heritage.html#heritage-forms7">Seven Forms of Fire</a></p>' +
-        '<p class="form-no">' + bi({ en: "Form " + n + " of 7", ko: "일곱 형식 중 " + n + "번째" }, "span", "", true) + "</p>" +
-        "<h1>" + esc(f.name.en) + "</h1>" + bi({ ko: f.name.ko, ja: f.name.ja, zh: f.name.zh }, "div", "form-ko") + bi(f.text, "div", "lede"));
-      var list = h.register.filter(function (d) { return (d.forms || []).indexOf(f.key) >= 0; });
-      put("#form-register", list.length ? '<p class="form-count">' + bi({ en: list.length + (list.length > 1 ? " traditions" : " tradition") + " recorded under this form", ko: "이 형식으로 기록된 전통 " + list.length + "가지" }, "span", "", true) + "</p>" + registerList(list) :
-        empty({ en: "Awaiting its first record.", ko: "첫 기록을 기다린다." }));
-      put("#form-nav", '<nav class="form-nav" aria-label="Seven forms of fire">' + h.forms.map(function (x, i) {
-        return '<a href="fire-form.html?form=' + esc(x.key) + '"' + (x.key === key ? ' class="on" aria-current="page"' : "") + '><span class="fn-no">' + (i + 1) + "</span>" + esc(x.name.en) + bi({ ko: x.name.ko }, "span", "", true) + "</a>";
-      }).join("") + "</nav>");
-    });
-  };
-
-  pages.heritage = function () {
-    load("heritage").then(function (h) {
-      (h.forms || []).forEach(function (f) { FORMS[f.key] = f; });
-      put("#heritage-forms7", '<div class="forms7">' + h.forms.map(function (f) {
-        var list = h.register.filter(function (d) { return (d.forms || []).indexOf(f.key) >= 0; });
-        return '<div class="form7"><h3><a class="form7-link" href="fire-form.html?form=' + esc(f.key) + '">' + esc(f.name.en) + bi({ ko: f.name.ko }, "span") + '<span class="form7-go" aria-hidden="true">&rarr;</span></a></h3>' + bi(f.text, "div", "form7-text") +
-          '<div class="form7-list">' + (list.length ? list.map(function (d) { return '<a href="heritage-item.html?id=' + esc(d.id) + '">' + esc(en(d.name)) + "</a>"; }).join(", ") : '<span style="color:var(--ash)">' + bi({ en: "Awaiting its first record", ko: "첫 기록을 기다린다" }, "span", "", true) + "</span>") + "</div></div>";
-      }).join("") + "</div>");
-      put("#heritage-intro", bi(h.intro, "div", "lede lines"));
-      put("#trophies", trophyStage());
-      put("#heritage-principle", '<div class="statement"><p class="label">Principles</p>' + h.principles.map(function (x) { return bi(x, "p", "text principle-line"); }).join("") + "</div>");
-      put("#heritage-criteria", '<dl class="facts">' + h.criteria.map(function (c) {
-        return "<dt>" + bi(c.name, "span", "", true) + "</dt><dd>" + bi(c.text) + "</dd>";
-      }).join("") + "</dl>");
-      var PM = { record: "bronze", review: "silver", inscribed: "gold", inscription: "gold" };
-      put("#heritage-process", '<ol class="sequence compact three proc-list">' + h.process.map(function (x) {
-        return '<li><div class="proc-trophy">' + (PM[x.key] ? trophySVG(PM[x.key]) : "") + "</div><h3>" + esc(x.name.en) + "</h3>" + bi({ ko: x.name.ko, ja: x.name.ja, zh: x.name.zh }, "div") + '<p class="proc-en">' + esc(x.text.en) + "</p>" + bi({ ko: x.text.ko, ja: x.text.ja, zh: x.text.zh }, "div", "proc-ko") + "</li>";
-      }).join("") + "</ol>");
-      var ins = h.register.filter(function (d) { return d.status === "origin" || d.status === "inscribed"; });
-      var rec = h.register.filter(function (d) { return d.status === "record" || d.status === "review"; });
-      put("#heritage-register", registerList(ins));
-      put("#heritage-records", registerList(rec));
-      put("#heritage-forms", '<p>' + bi({ en: "Federation Recorded Heritage follows the record form. Federation Inscribed Heritage follows the inscription form, with its plaque.", ko: "연맹기록유산은 기록양식을, 연맹등재유산은 명판을 포함한 등재양식을 따른다." }) + '</p><p style="margin-top:18px"><a class="more" href="heritage-item.html?id=ignis-primus&form=record">See the record form (No. 0, Ignis Primus)</a><br><a class="more" href="heritage-item.html?id=ignis-primus">See the inscription form and plaque (No. 0, Origin)</a></p>');
-
-    });
-  };
   pages.archives = function () {
     Promise.all([load("heritage"), load("writings").catch(function () { return { writings: [] }; })]).then(function (r) { renderArchives(r[0], r[1].writings || []); });
   };
@@ -832,6 +789,219 @@
           '<path d="M20 3c3 7 11 11 11 21a11 11 0 0 1-22 0c0-6 3-9 5-12 0 4 2 6 4 6-2-6 0-11 2-15z" fill="url(#pmg)"/><path d="M6 44h28M10 40h20" stroke="url(#pmg)" stroke-width="2" stroke-linecap="round"/></svg></span>' +
           bi(b.form_label, "span", "", true) + "</a>"
         : bi(b.form_pending, "p", "biz-pending")) + "</div>");
+    });
+  };
+
+  /* ---------- Global Human Barbecue Heritage (GHBH) ---------- */
+  /* English first; the second language (ko, ja, zh) beneath, as on the rest of the site */
+  function gb(o, tag, cls) {
+    tag = tag || "p";
+    if (!o || typeof o !== "object") o = { en: o };
+    var h = "<" + tag + ' class="p" lang="en">' + inline(o.en || "") + "</" + tag + ">";
+    SECONDS.forEach(function (k) {
+      var v = o[k] || (k !== "ko" && o.ko ? tr(o.ko, k) : "");
+      if (v) h += "<" + tag + ' class="s" lang="' + k + '">' + inline(v) + "</" + tag + ">";
+    });
+    return '<div class="bi gb' + (cls ? " " + cls : "") + '">' + h + "</div>";
+  }
+  function gs(o) { var k = getSecond(); return (o && (o[k] || o.ko)) || ""; }
+  var GU = {
+    door: { en: "Federation Archived Heritage", ko: "연맹기록유산", ja: "連盟記録遺産", zh: "联盟记录遗产" },
+    open: { en: "Open the archive", ko: "아카이브 열기", ja: "アーカイブを開く", zh: "打开档案" },
+    field: { en: "Standard field", ko: "표준 필드명", ja: "標準フィールド名", zh: "标准字段名" },
+    desc: { en: "Description and contents", ko: "설명 및 수록 내용", ja: "説明および収録内容", zh: "说明与收录内容" },
+    charterSub: { en: "Preamble, Chapters I to III with Articles 1 to 9, Ratification", ko: "전문, 제1장~제3장 제9조, 결어", ja: "前文、第1章～第3章（第1条～第9条）、結語", zh: "序言、第一章至第三章（第一条至第九条）、结语" },
+    criteriaSub: { en: "Six criteria, Three Pillars of Verification, grounds for exclusion, review under Fluid Truth", ko: "6대 세부 평가 기준, 3대 필수 검증 요건, 배제 사유, 재심 규정", ja: "6大細部評価基準、3大必須検証要件、除外事由、再審規定", zh: "六大细项评估标准、三大必要验证条件、排除事由、复审规定" },
+    charterTab: { en: "Charter", ko: "헌장", ja: "憲章", zh: "宪章" },
+    criteriaTab: { en: "Criteria", ko: "등재기준", ja: "登録基準", zh: "登录标准" },
+    all: { en: "All", ko: "전체", ja: "すべて", zh: "全部" },
+    allNat: { en: "All nations and regions", ko: "모든 나라와 지역", ja: "すべての国と地域", zh: "所有国家和地区" },
+    none: { en: "No heritage found.", ko: "찾는 유산이 없다.", ja: "該当する遺産はない。", zh: "未找到相应遗产。" },
+    list: { en: "Archive", ko: "목록", ja: "一覧", zh: "目录" },
+    tier: ["Tier I", "Tier II", "Tier III"]
+  };
+  function countLine(n, conts, nations) {
+    return { en: n + " records, " + conts + " continents, " + nations + " nations and regions",
+      ko: "연맹기록유산 " + n + "건, " + conts + "개 대륙, " + nations + "개 나라와 지역",
+      ja: "連盟記録遺産 " + n + "件、" + conts + "大陸、" + nations + "の国と地域",
+      zh: "联盟记录遗产 " + n + " 项，" + conts + " 大洲，" + nations + " 个国家和地区" };
+  }
+  var CONT_ORDER = ["아시아", "유럽", "아프리카", "북아메리카", "남아메리카", "오세아니아"];
+  function contObj(arch, k) { for (var i = 0; i < arch.length; i++) if (arch[i].continent.ko === k) return arch[i].continent; return { en: k, ko: k }; }
+
+  function ghbhCounts(arch) {
+    var c = {}, nations = {};
+    arch.forEach(function (r) { c[r.continent.ko] = (c[r.continent.ko] || 0) + 1; nations[r.custodian.ko] = 1; });
+    return { byCont: c, nations: Object.keys(nations).length };
+  }
+  function ghbhDoor(g, withConts) {
+    var c = ghbhCounts(g.archive);
+    return '<a class="ghbh-door" href="heritage-archive.html"><span class="gd-label">' + esc(GU.door.en) + '</span><span class="gd-num">' + g.archive.length + "</span>" +
+      bi(countLine(g.archive.length, CONT_ORDER.length, c.nations), "span", "gd-ko") +
+      (withConts ? '<span class="gd-conts">' + CONT_ORDER.map(function (k) { return "<span><b>" + (c.byCont[k] || 0) + "</b> " + bi(contObj(g.archive, k), "span", "", true) + "</span>"; }).join("") + "</span>" : "") +
+      '<span class="gd-go">' + bi(GU.open, "span", "", true) + " &rarr;</span></a>";
+  }
+
+  function ghbhFlow() {
+    /* wide: three tiers in a row, track B rising from below; tall: the same, stacked, for phones */
+    var NAMES = [
+      { en: "Archived Heritage", ko: "연맹기록유산", ja: "連盟記録遺産", zh: "联盟记录遗产" },
+      { en: "Candidate Heritage", ko: "연맹심사유산", ja: "連盟審査遺産", zh: "联盟审查遗产" },
+      { en: "Inscribed Heritage", ko: "연맹등재유산", ja: "連盟登録遺産", zh: "联盟登录遗产" }];
+    var sub = function (o, x, y) { return SECONDS.map(function (k) { return '<text class="gf-sub s-' + k + '" x="' + x + '" y="' + y + '" lang="' + k + '">' + esc(o[k]) + "</text>"; }).join(""); };
+    var box = function (x, y, w, h, metal, n, i, code, line1, line2) {
+      var id = "gfm-" + metal;
+      return '<g class="gf-box gf-' + metal + '" filter="url(#gfsh)">' +
+        '<rect class="gf-slab" x="' + x + '" y="' + (y + 6) + '" width="' + w + '" height="' + h + '" rx="12"/>' +
+        '<rect class="gf-face" x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="12" fill="url(#gff-' + metal + ')"/>' +
+        '<rect class="gf-bevel" x="' + (x + 5) + '" y="' + (y + 5) + '" width="' + (w - 10) + '" height="' + (h - 10) + '" rx="8" stroke="url(#' + id + ')"/>' +
+        '<rect class="gf-sheen" x="' + (x + 6) + '" y="' + (y + 6) + '" width="' + (w - 12) + '" height="' + (h * 0.42) + '" rx="7" fill="url(#gfsheen)"/>' +
+        '<circle cx="' + (x + 36) + '" cy="' + (y + 42) + '" r="19" fill="url(#gfr-' + metal + ')" class="gf-medal"/><circle cx="' + (x + 36) + '" cy="' + (y + 42) + '" r="15" class="gf-medal-in" stroke="url(#' + id + ')"/>' +
+        '<text class="gf-n" x="' + (x + 36) + '" y="' + (y + 49) + '">' + n + "</text>" +
+        '<text class="gf-name" x="' + (x + 66) + '" y="' + (y + 40) + '">' + NAMES[i].en + "</text>" + sub(NAMES[i], x + 66, y + 63) +
+        '<text class="gf-code" x="' + (x + w - 18) + '" y="' + (y + 63) + '">' + code + "</text>" +
+        '<line class="gf-hair" x1="' + (x + 24) + '" y1="' + (y + 82) + '" x2="' + (x + w - 24) + '" y2="' + (y + 82) + '" stroke="url(#' + id + ')"/>' +
+        '<text class="gf-line" x="' + (x + 24) + '" y="' + (y + 110) + '">' + line1 + '</text><text class="gf-line" x="' + (x + 24) + '" y="' + (y + 134) + '">' + line2 + "</text></g>";
+    };
+    var tag = function (x, y, w, t) { return '<g class="gf-tag"><rect x="' + (x - w / 2) + '" y="' + (y - 17) + '" width="' + w + '" height="30" rx="15"/><text x="' + x + '" y="' + (y + 4) + '">' + t + "</text></g>"; };
+    var metal = function (k, a, b, c) { return '<linearGradient id="gfm-' + k + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + a + '"/><stop offset=".5" stop-color="' + b + '"/><stop offset="1" stop-color="' + c + '"/></linearGradient>'; };
+    var face = function (k, a, b) { return '<linearGradient id="gff-' + k + '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + a + '"/><stop offset="1" stop-color="' + b + '"/></linearGradient>'; };
+    var medal = function (k, a, b) { return '<radialGradient id="gfr-' + k + '" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="' + a + '"/><stop offset="1" stop-color="' + b + '"/></radialGradient>'; };
+    var defs = "<defs>" +
+      '<marker id="gfa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#c98a52"/></marker>' +
+      '<filter id="gfsh" x="-10%" y="-10%" width="120%" height="135%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000" flood-opacity=".55"/></filter>' +
+      '<linearGradient id="gfsheen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".09"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>' +
+      metal("bronze", "#e2a675", "#9a5b30", "#5a3118") + metal("silver", "#eef1f4", "#9aa1aa", "#565b62") + metal("gold", "#f4dc9a", "#c9a24a", "#7a5a1c") +
+      face("bronze", "#3a2615", "#1e140b") + face("silver", "#30333a", "#17181b") + face("gold", "#3b2f12", "#1d170a") +
+      medal("bronze", "#f0b98a", "#7a4220") + medal("silver", "#ffffff", "#6b7178") + medal("gold", "#fbe7a8", "#8a6418") + "</defs>";
+    var wide = '<svg class="gf gf-wide" viewBox="0 0 1100 430" role="img" aria-label="Archived Heritage advances to Candidate Heritage by Track A (designated by the Federation) or Track B (application by a global body), then through a three-stage review to Inscribed Heritage.">' + defs +
+      box(10, 30, 300, 160, "bronze", "1", 0, "GHBH-A", "Researched by the Federation,", "entered in the academic archive") +
+      box(400, 30, 300, 160, "silver", "2", 1, "GHBH-C", "A living practice and proper name,", "entered into formal review") +
+      box(790, 30, 300, 160, "gold", "3", 2, "GHBH-I", "Six criteria and Three Pillars met,", "inscribed on the formal List") +
+      '<line class="gf-ar" x1="314" y1="110" x2="394" y2="110" marker-end="url(#gfa)"/>' + tag(354, 72, 80, "Track A") +
+      '<line class="gf-ar" x1="704" y1="110" x2="784" y2="110" marker-end="url(#gfa)"/>' + tag(744, 72, 80, "Review") +
+      '<g class="gf-steps"><text x="940" y="240">Three-stage review</text><text x="940" y="270">1 Document review</text><text x="940" y="296">2 Records and sources</text><text x="940" y="322">3 Field inspection</text></g>' +
+      '<line class="gf-ar" x1="550" y1="326" x2="550" y2="206" marker-end="url(#gfa)"/>' + tag(488, 268, 100, "Track B") +
+      '<g class="gf-app"><rect x="330" y="330" width="440" height="74" rx="37"/><text class="gf-app-t" x="550" y="360">Application by a global body</text><text class="gf-app-s" x="550" y="386">Communities, pitmasters, scholars, NGOs, local self-government</text></g></svg>';
+    var tall = '<svg class="gf gf-tall" viewBox="0 0 360 780" role="img" aria-label="Archived Heritage, Candidate Heritage, Inscribed Heritage">' + defs +
+      box(20, 10, 320, 150, "bronze", "1", 0, "GHBH-A", "Researched by the Federation,", "entered in the academic archive") +
+      '<line class="gf-ar" x1="120" y1="172" x2="120" y2="244" marker-end="url(#gfa)"/>' + tag(120, 208, 90, "Track A") +
+      '<line class="gf-ar" x1="260" y1="172" x2="260" y2="244" marker-end="url(#gfa)"/>' + tag(260, 208, 90, "Track B") +
+      box(20, 250, 320, 150, "silver", "2", 1, "GHBH-C", "A living practice and proper name,", "entered into formal review") +
+      '<line class="gf-ar" x1="80" y1="412" x2="80" y2="574" marker-end="url(#gfa)"/>' + tag(80, 492, 90, "Review") +
+      '<g class="gf-steps gf-steps-tall"><text x="150" y="464">1 Document review</text><text x="150" y="494">2 Records and sources</text><text x="150" y="524">3 Field inspection</text></g>' +
+      box(20, 580, 320, 150, "gold", "3", 2, "GHBH-I", "Six criteria and Three Pillars met,", "inscribed on the formal List") + "</svg>";
+    tall = tall.replace(/id="gf/g, 'id="gt').replace(/url\(#gf/g, "url(#gt");
+    return '<figure class="ghbh-fig">' + wide + tall + "</figure>";
+  }
+
+  pages.heritage = function () {
+    Promise.all([load("ghbh"), load("heritage")]).then(function (r) {
+      var g = r[0], s = g.standard, h = r[1];
+      put("#ghbh-intro", gb(s.s1, "p", "ghbh-lede") + '<div class="ghbh-principles">' + gb(s.principles_title, "p", "label") + s.principles.map(function (p, i) {
+        return '<div class="gp"><span class="gp-n">' + (i + 1) + "</span><div>" + gb(p.name, "h3") + gb(p.text, "p", "gp-t") + "</div></div>";
+      }).join("") + "</div>");
+      var origin = (h.register || []).filter(function (d) { return d.status === "origin"; });
+      put("#ghbh-origin", origin.length ? registerList(origin) : "");
+      put("#ghbh-system", gb(s.s2, "p", "ghbh-p") + ghbhFlow() + gb(s.fig_caption, "p", "ghbh-cap") +
+        '<div class="ghbh-tiers">' + s.tiers.map(function (t, i) {
+          return '<article class="ghbh-tier t-' + t.metal + '"><p class="gt-no"><span class="dot t-' + t.metal + '"></span>' + GU.tier[i] + "</p>" + gb(t.name, "h3", "gt-name") + '<p class="gt-code">' + esc(t.code.en) + "</p>" +
+            '<dl class="gt-rows">' + t.rows.map(function (row) { return "<dt>" + gb(row[0], "span") + "</dt><dd>" + gb(row[1], "span") + "</dd>"; }).join("") + "</dl>" +
+            (t.review ? gb(t.review_title, "p", "gt-rev-t") + '<ol class="gt-rev">' + t.review.map(function (x) {
+              var head = {}; ["en", "ko", "ja", "zh"].forEach(function (k) { head[k] = (x[0][k] || "") + (k === "en" ? ": " : "  ") + (x[1][k] || ""); });
+              return "<li>" + gb(head, "b", "gt-rev-h") + gb(x[2], "span", "gt-rev-d") + "</li>"; }).join("") + "</ol>" : "") + "</article>";
+        }).join("") + "</div>");
+      put("#ghbh-archive-door", ghbhDoor(g, true));
+      put("#ghbh-applicants", gb(s.s31_title, "h3", "ghbh-h") + gb(s.s31, "p", "ghbh-p") + '<ul class="ghbh-list">' + s.applicants.map(function (a) { return "<li>" + gb(a, "span") + "</li>"; }).join("") + "</ul>" +
+        gb(s.s32_title, "h3", "ghbh-h") + gb(s.s32, "p", "ghbh-p") + gb(s.types_title, "p", "label ghbh-types-t") + '<div class="ghbh-types">' + s.types.map(function (t, i) {
+          return '<div class="gty"><span class="gty-n">' + (i + 1) + "</span>" + gb(t[0], "h4") + '<p class="gty-en">' + esc(t[1].en) + "</p>" + gb(t[2], "p", "gty-d") + "</div>"; }).join("") + "</div>");
+      put("#ghbh-fields", gb(s.s4, "p", "ghbh-p") + '<div class="w-table"><table class="table ghbh-ftable"><thead><tr><th>No.</th><th>' + bi(GU.field, "span") + "</th><th>" + bi(GU.desc, "span") + "</th></tr></thead><tbody>" +
+        s.fields.map(function (f, i) { return "<tr><td>" + (i + 1) + "</td><td>" + gb(f[0], "b", "gf-fname") + "</td><td>" + gb(f[2], "span") + "</td></tr>"; }).join("") + "</tbody></table></div>");
+      put("#ghbh-charter-door", '<div class="ghbh-docs"><a href="charter.html#charter"><span class="gdc-k">Charter</span>' + gb(g.charter.title, "b", "gdc-t") + gb(GU.charterSub, "span", "gdc-s") + "</a>" +
+        '<a href="charter.html#criteria"><span class="gdc-k">Criteria</span>' + gb(g.criteria.title, "b", "gdc-t") + gb(GU.criteriaSub, "span", "gdc-s") + "</a></div>");
+    });
+  };
+
+  /* the charter and the criteria, set like a constitution */
+  function constitution(doc, id, kicker) {
+    var body = doc.body.map(function (n) {
+      if (n.k === "part") return gb(n.text, "h3", "cn-part");
+      if (n.k === "chapter") return gb(n.text, "h3", "cn-chapter");
+      if (n.k === "article") return gb(n.text, "h4", "cn-article");
+      if (n.k === "labelled") return gb(n.text, "p", "cn-clause cn-lab");
+      if (n.k === "ul") return '<ul class="cn-items">' + n.items.map(function (x) { return "<li>" + gb(x, "span") + "</li>"; }).join("") + "</ul>";
+      if (n.k === "ol") return '<ol class="cn-items cn-num">' + n.items.map(function (x) { return "<li>" + gb(x, "span") + "</li>"; }).join("") + "</ol>";
+      return gb(n.text, "p", "cn-clause");
+    }).join("");
+    return '<article class="constitution" id="' + id + '"><p class="cn-kicker">' + esc(kicker) + '</p><img class="cn-seal" src="assets/img/emblem.webp" alt="">' +
+      gb(doc.title, "h2", "cn-title") + '<div class="cn-rule"><span></span></div>' +
+      (doc.meta ? '<div class="cn-meta">' + doc.meta.map(function (m) { return gb(m, "p"); }).join("") + "</div>" : "") +
+      '<div class="cn-body">' + body + '</div><div class="cn-rule"><span></span></div><div class="cn-sign">' + doc.sign.map(function (m) { return gb(m, "p"); }).join("") + "</div></article>";
+  }
+  pages.charter = function () {
+    load("ghbh").then(function (g) {
+      put("#charter-docs", '<nav class="cn-tabs"><a href="#charter">' + bi(GU.charterTab, "span", "", true) + '</a><a href="#criteria">' + bi(GU.criteriaTab, "span", "", true) + "</a></nav>" +
+        constitution(g.charter, "charter", "Global Human Barbecue Heritage") + constitution(g.criteria, "criteria", "Global Human Barbecue Heritage"));
+      if (location.hash) { var t = document.querySelector(location.hash); if (t) setTimeout(function () { t.scrollIntoView(); }, 60); }
+    });
+  };
+
+  /* the archive: every name, found by search, continent and nation */
+  pages.ghbharchive = function () {
+    load("ghbh").then(function (g) {
+      var arch = g.archive, state = { q: "", cont: "", nat: "" };
+      var c = ghbhCounts(arch);
+      var nats = {}; arch.forEach(function (r) { var k = r.custodian.ko; if (!nats[k]) nats[k] = { o: r.custodian, n: 0 }; nats[k].n++; });
+      var natKeys = Object.keys(nats).sort(function (a, b) { return nats[a].o.en.localeCompare(nats[b].o.en, "en"); });
+      put("#ga-head", gb(g.archive_title, "p", "ga-sub"));
+      put("#ga-tools", '<div class="ga-tools"><input id="ga-q" type="search" placeholder="Search by name, native name, nation or ID" aria-label="Search the archive">' +
+        '<div class="ga-conts" role="group" aria-label="Continent"><button type="button" data-c="" class="on">' + bi(GU.all, "span", "", true) + " <b>" + arch.length + "</b></button>" +
+        CONT_ORDER.map(function (k) { return '<button type="button" data-c="' + k + '">' + bi(contObj(arch, k), "span", "", true) + " <b>" + (c.byCont[k] || 0) + "</b></button>"; }).join("") + "</div>" +
+        '<select id="ga-nat" aria-label="Nation"></select></div>');
+      function fillNations() {
+        var sel = document.getElementById("ga-nat");
+        sel.innerHTML = '<option value="">' + esc(GU.allNat.en + "  " + gs(GU.allNat)) + "</option>" + natKeys.map(function (k) {
+          var o = nats[k].o; return '<option value="' + esc(k) + '"' + (state.nat === k ? " selected" : "") + ">" + esc(o.en + "  " + gs(o) + "  (" + nats[k].n + ")") + "</option>"; }).join("");
+      }
+      function hay(r) { var t = r.title, u = r.custodian; return [r.id, t.en, t.ko, t.ja, t.zh, r.native, u.en, u.ko, u.ja, u.zh].join(" ").toLowerCase(); }
+      function draw() {
+        var q = state.q.trim().toLowerCase();
+        var list = arch.filter(function (r) {
+          if (state.cont && r.continent.ko !== state.cont) return false;
+          if (state.nat && r.custodian.ko !== state.nat) return false;
+          if (q && hay(r).indexOf(q) < 0) return false;
+          return true;
+        });
+        put("#ga-count", list.length + (list.length === arch.length ? "" : " / " + arch.length) + " records");
+        put("#ga-list", list.length ? '<ol class="ga-list">' + list.map(function (r) {
+          return '<li><a href="heritage-record.html?id=' + esc(r.id) + '"><span class="ga-id">' + esc(r.id) + '</span><span class="ga-name">' + bi(r.title, "span", "", true) + '</span><span class="ga-native">' + esc(r.native || "") + '</span><span class="ga-cus">' + bi(r.custodian, "span") + "</span></a></li>";
+        }).join("") + "</ol>" : empty(GU.none));
+      }
+      fillNations(); draw();
+      document.getElementById("ga-q").addEventListener("input", function (e) { state.q = e.target.value; draw(); });
+      document.getElementById("ga-nat").addEventListener("change", function (e) { state.nat = e.target.value; draw(); });
+      document.querySelectorAll(".ga-conts button").forEach(function (b) {
+        b.addEventListener("click", function () { state.cont = b.getAttribute("data-c"); document.querySelectorAll(".ga-conts button").forEach(function (x) { x.classList.toggle("on", x === b); }); draw(); });
+      });
+      document.addEventListener("click", function (e) { if (e.target.closest && e.target.closest(".lang-switch button")) setTimeout(fillNations, 0); });
+    });
+  };
+
+  /* one record: the ten standard fields */
+  pages.ghbhrecord = function () {
+    load("ghbh").then(function (g) {
+      var id = param("id"), r = g.archive.filter(function (x) { return x.id === id; })[0];
+      if (!r) { put("#gr", empty({ en: "This record was not found.", ko: "기록을 찾을 수 없다.", ja: "記録が見つからない。", zh: "未找到该记录。" })); return; }
+      document.title = r.title.en + " | " + r.id + " | IOBSF";
+      var F = g.standard.fields, v = [r.id, r.status, r.track, r.title, r.native, r.custodian, r.criteria.en, r.technique, r.trajectory, r.fragments];
+      var i = g.archive.indexOf(r), prev = g.archive[i - 1], next = g.archive[i + 1];
+      put("#gr", '<p class="w-crumb"><a href="heritage.html">Global Human Barbecue Heritage</a> / <a href="heritage-archive.html">Archive</a></p>' +
+        '<p class="gr-id"><span class="dot t-bronze"></span>' + esc(r.id) + "  " + bi(r.status, "span", "", true) + "</p>" + gb(r.title, "h1", "gr-title") + (r.native ? '<p class="gr-native">' + esc(r.native) + "</p>" : "") +
+        '<dl class="gr-fields">' + F.map(function (f, k) {
+          var val = v[k] && typeof v[k] === "object" ? gb(v[k], "span") : esc(v[k] || "");
+          return '<div><dt><span class="gr-n">' + (k + 1) + "</span>" + gb(f[0], "span") + "</dt><dd>" + val + "</dd></div>"; }).join("") + "</dl>" +
+        '<nav class="gr-nav">' + (prev ? '<a href="heritage-record.html?id=' + esc(prev.id) + '">&larr; ' + esc(prev.id) + " " + bi(prev.title, "span", "", true) + "</a>" : "<span></span>") +
+        '<a href="heritage-archive.html">' + bi(GU.list, "span", "", true) + "</a>" + (next ? '<a href="heritage-record.html?id=' + esc(next.id) + '">' + esc(next.id) + " " + bi(next.title, "span", "", true) + " &rarr;</a>" : "<span></span>") + "</nav>");
     });
   };
 
