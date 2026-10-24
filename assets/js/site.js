@@ -917,8 +917,8 @@
           return '<div class="gty"><span class="gty-n">' + (i + 1) + "</span>" + gb(t[0], "h4") + '<p class="gty-en">' + esc(t[1].en) + "</p>" + gb(t[2], "p", "gty-d") + "</div>"; }).join("") + "</div>");
       put("#ghbh-fields", gb(s.s4, "p", "ghbh-p") + '<div class="w-table"><table class="table ghbh-ftable"><thead><tr><th>No.</th><th>' + bi(GU.field, "span") + "</th><th>" + bi(GU.desc, "span") + "</th></tr></thead><tbody>" +
         s.fields.map(function (f, i) { return "<tr><td>" + (i + 1) + "</td><td>" + gb(f[0], "b", "gf-fname") + "</td><td>" + gb(f[2], "span") + "</td></tr>"; }).join("") + "</tbody></table></div>");
-      put("#ghbh-charter-door", '<div class="ghbh-docs"><a href="charter.html#charter"><span class="gdc-k">Charter</span>' + gb(g.charter.title, "b", "gdc-t") + gb(GU.charterSub, "span", "gdc-s") + "</a>" +
-        '<a href="charter.html#criteria"><span class="gdc-k">Criteria</span>' + gb(g.criteria.title, "b", "gdc-t") + gb(GU.criteriaSub, "span", "gdc-s") + "</a></div>");
+      put("#ghbh-charter-door", '<div class="ghbh-docs"><a href="charter.html"><span class="gdc-k">Charter</span>' + gb(g.charter.title, "b", "gdc-t") + gb(GU.charterSub, "span", "gdc-s") + "</a>" +
+        '<a href="criteria.html"><span class="gdc-k">Criteria</span>' + gb(g.criteria.title, "b", "gdc-t") + gb(GU.criteriaSub, "span", "gdc-s") + "</a></div>");
     });
   };
 
@@ -938,12 +938,14 @@
       (doc.meta ? '<div class="cn-meta">' + doc.meta.map(function (m) { return gb(m, "p"); }).join("") + "</div>" : "") +
       '<div class="cn-body">' + body + '</div><div class="cn-rule"><span></span></div><div class="cn-sign">' + doc.sign.map(function (m) { return gb(m, "p"); }).join("") + "</div></article>";
   }
+  function docNav(on) {
+    return '<nav class="cn-tabs"><a href="charter.html"' + (on === "charter" ? ' class="on" aria-current="page"' : "") + ">" + bi(GU.charterTab, "span", "", true) + '</a><a href="criteria.html"' + (on === "criteria" ? ' class="on" aria-current="page"' : "") + ">" + bi(GU.criteriaTab, "span", "", true) + "</a></nav>";
+  }
   pages.charter = function () {
-    load("ghbh").then(function (g) {
-      put("#charter-docs", '<nav class="cn-tabs"><a href="#charter">' + bi(GU.charterTab, "span", "", true) + '</a><a href="#criteria">' + bi(GU.criteriaTab, "span", "", true) + "</a></nav>" +
-        constitution(g.charter, "charter", "Global Human Barbecue Heritage") + constitution(g.criteria, "criteria", "Global Human Barbecue Heritage"));
-      if (location.hash) { var t = document.querySelector(location.hash); if (t) setTimeout(function () { t.scrollIntoView(); }, 60); }
-    });
+    load("ghbh").then(function (g) { put("#charter-docs", docNav("charter") + constitution(g.charter, "charter", "Global Human Barbecue Heritage")); });
+  };
+  pages.criteria = function () {
+    load("ghbh").then(function (g) { put("#charter-docs", docNav("criteria") + constitution(g.criteria, "criteria", "Global Human Barbecue Heritage")); });
   };
 
   /* the archive: every name, found by search, continent and nation */

@@ -1385,3 +1385,4 @@ html[data-second="ko"] .gf-sub.s-ko, html[data-second="ja"] .gf-sub.s-ja, html[d
 .cn-clause > .p { text-indent: 1em; }
 @media (max-width: 560px) { .cn-clause, .cn-items, .cn-items li { text-align: justify; } }
 .gb > span.p { display: block; }
+.cn-tabs a.on { background: rgba(184,137,63,.16); border-color: #e2bd73; }

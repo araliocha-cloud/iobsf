@@ -63,7 +63,8 @@ DESC = {
  "event": "An IOBSF Sports Barbecue event.",
  "pathway": "How a Pro Barbecuer is raised: Beginner, Intermediate and Advanced amateur courses, then Semi-Pro and Pro; and how judges are selected.",
  "heritage": "Global Human Barbecue Heritage (GHBH): the IOBSF archive and register of the barbecue heritage of humankind, beyond borders and ownership.",
- "charter": "The Charter of Global Human Barbecue Heritage and the Criteria for Inscription, enacted by IOBSF and KBRI on 24 October 2026.",
+ "charter": "The Charter of Global Human Barbecue Heritage, enacted by IOBSF and KBRI on 24 October 2026.",
+ "criteria": "The Criteria for Inscription on the Global Human Barbecue Heritage List, enacted by IOBSF and KBRI on 24 October 2026.",
  "heritage-archive": "Federation Archived Heritage: 163 pure-fire barbecue traditions of humankind in the IOBSF archive.",
  "heritage-record": "A record in the Global Human Barbecue Heritage archive, in ten standard fields.",
  "heritage-item": "A record in the IOBSF Heritage of the Fire register.",
@@ -132,6 +133,9 @@ pages = {
   + section("Charter and Criteria", "헌장과 등재기준", '<div id="ghbh-charter-door"></div>')),
 
 "charter": ("Charter of Global Human Barbecue Heritage | IOBSF", "charter",
+  '<section class="section charter-page"><div class="wrap" id="charter-docs"></div></section>'),
+
+"criteria": ("Criteria for Inscription | Global Human Barbecue Heritage | IOBSF", "criteria",
   '<section class="section charter-page"><div class="wrap" id="charter-docs"></div></section>'),
 
 "heritage-archive": ("Archive | Global Human Barbecue Heritage | IOBSF", "ghbharchive",
