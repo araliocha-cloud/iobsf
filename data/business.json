@@ -164,10 +164,10 @@
         "zh": "提交委托书"
       },
       "text": {
-        "en": "Fill in the request form below.",
-        "ko": "아래 의뢰서를 작성해 보낸다.",
-        "ja": "下の依頼書に記入して送る。",
-        "zh": "填写并提交下方的委托书。"
+        "en": "Choose a field above and fill in the request form.",
+        "ko": "위의 의뢰 분야에서 의뢰서를 작성해 보낸다.",
+        "ja": "上の依頼分野から依頼書に記入して送る。",
+        "zh": "在上方的委托领域中填写并提交委托书。"
       }
     },
     {
