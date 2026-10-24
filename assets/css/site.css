@@ -1376,3 +1376,12 @@ html[data-second="ko"] .gf-sub.s-ko, html[data-second="ja"] .gf-sub.s-ja, html[d
 .gb > [lang="ja"], .gb > [lang="zh"], .gb > [lang="en"] { word-break: normal; overflow-wrap: break-word; } .gp > div, .ghbh-tier, .gty { min-width: 0; }
 .gt-rows dd .p { font-size: 16.5px; line-height: 1.65; } .gt-rows dd .s { font-size: 14.5px; line-height: 1.8; }
 .gr-fields dt { display: flex; align-items: baseline; } .gr-fields dt .gb { flex: 1; min-width: 0; }
+
+/* GHBH: every running text justified (2026-10-25) */
+.ghbh-lede > *, .ghbh-p > *, .gp-t > *, .gt-rows dd .gb > *, .gt-rev-d > *, .gty-d > *, .ghbh-list li .gb > *,
+.cn-clause > *, .cn-items li .gb > *, .gr-fields dd .gb > *, .gdc-s > *, .ghbh-ftable td .gb > span, .ga-sub > *, #home-heritage-intro .gb > * {
+  text-align: justify; text-justify: inter-word;
+}
+.cn-clause > .p { text-indent: 1em; }
+@media (max-width: 560px) { .cn-clause, .cn-items, .cn-items li { text-align: justify; } }
+.gb > span.p { display: block; }
