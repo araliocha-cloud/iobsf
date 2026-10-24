@@ -817,8 +817,10 @@
       }
       put("#biz-statement", '<div class="statement definition biz-statement"><p class="label">' + esc(b.statement.label.en) + "</p>" + bi(b.statement.text, "p", "text") + "</div>");
       put("#biz-areas", bi(b.areas_intro, "div", "prose member-intro") + '<div class="forms7 biz-areas">' + b.areas.map(function (a) {
-        return '<div class="form7"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3>" +
-          '<div class="biz-desk">' + bi(a.desk, "span", "", true) + "</div>" + bi(a.text, "div", "form7-text") + "</div>";
+        /* the whole field is the door to the request form */
+        var inner = "<h3>" + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3>" +
+          '<div class="biz-desk">' + bi(a.desk, "span", "", true) + "</div>" + bi(a.text, "div", "form7-text");
+        return b.form_url ? '<a class="form7 biz-area biz-area-card" href="' + esc(b.form_url) + '" target="_blank" rel="noopener">' + inner + "</a>" : '<div class="form7 biz-area">' + inner + "</div>";
       }).join("") + "</div>");
       put("#biz-steps", '<ol class="sequence compact biz-steps">' + b.steps.map(function (x) {
         return "<li><h3>" + esc(x.name.en) + "</h3>" + bi({ ko: x.name.ko, ja: x.name.ja, zh: x.name.zh }, "div") + '<p class="proc-en">' + esc(x.text.en) + "</p>" + bi({ ko: x.text.ko, ja: x.text.ja, zh: x.text.zh }, "div", "proc-ko") + "</li>";

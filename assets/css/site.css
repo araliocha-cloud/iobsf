@@ -1083,3 +1083,19 @@ body[data-page="fireform"] .form-count { color: var(--ash); margin-bottom: 18px;
 .form-nav a .fn-no { color: #c99a4f; font-size: 13px; }
 .form-nav a .s { color: var(--ash); font-size: 14px; }
 .form-nav a:hover, .form-nav a.on { border-color: #c99a4f; background: rgba(184,137,63,.12); }
+
+/* business desk: every field leads straight to the request form */
+.biz-area .biz-area-link { color: inherit; text-decoration: none; }
+.biz-area .biz-area-link:hover { color: #f0c98a; }
+.biz-area-go { display: inline-flex; align-items: baseline; gap: 10px; margin-top: 16px; padding: 9px 18px; border: 1px solid rgba(201,161,90,.55); border-radius: 2px; color: #e2bd73; text-decoration: none; letter-spacing: .04em; background: linear-gradient(180deg, rgba(184,137,63,.12), rgba(184,137,63,.03)); transition: background .25s, border-color .25s; }
+.biz-area-go .s { color: #cdb88f; }
+.biz-area-go .arr { transition: transform .25s; }
+.biz-area-go:hover, .biz-area-go:focus-visible { background: rgba(184,137,63,.22); border-color: #e2bd73; text-decoration: none; outline: none; }
+.biz-area-go:hover .arr { transform: translateX(4px); }
+html[data-second] .biz-area-go .bi.inline .s[lang] { display: none; }
+html[data-second="ko"] .biz-area-go .bi.inline .s[lang="ko"], html[data-second="ja"] .biz-area-go .bi.inline .s[lang="ja"], html[data-second="zh"] .biz-area-go .bi.inline .s[lang="zh"] { display: inline; margin-left: 8px; }
+
+/* business desk: a whole field card opens the request form */
+a.biz-area-card { display: block; color: inherit; text-decoration: none; cursor: pointer; padding: 14px 16px; margin: -14px -16px; border-radius: 2px; transition: background .3s, box-shadow .3s; }
+a.biz-area-card:hover, a.biz-area-card:focus-visible { background: rgba(184,137,63,.07); box-shadow: inset 0 0 0 1px rgba(201,161,90,.35); outline: none; text-decoration: none; }
+a.biz-area-card:hover h3 { color: #f0c98a; }
