@@ -817,8 +817,10 @@
       }
       put("#biz-statement", '<div class="statement definition biz-statement"><p class="label">' + esc(b.statement.label.en) + "</p>" + bi(b.statement.text, "p", "text") + "</div>");
       put("#biz-areas", bi(b.areas_intro, "div", "prose member-intro") + '<div class="forms7 biz-areas">' + b.areas.map(function (a) {
-        return '<div class="form7"><h3>' + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + "</h3>" +
-          '<div class="biz-desk">' + bi(a.desk, "span", "", true) + "</div>" + bi(a.text, "div", "form7-text") + "</div>";
+        /* each field opens the request form directly */
+        var go = b.form_url ? '<a class="biz-area-go" href="' + esc(b.form_url) + '" target="_blank" rel="noopener">' + bi({ en: "Submit a request", ko: "의뢰서 작성", ja: "依頼書を作成する", zh: "填写委托书" }, "span", "", true) + '<span class="arr" aria-hidden="true">&rarr;</span></a>' : "";
+        return '<div class="form7 biz-area"><h3>' + (b.form_url ? '<a class="biz-area-link" href="' + esc(b.form_url) + '" target="_blank" rel="noopener">' : "") + esc(a.name.en) + bi({ ko: a.name.ko, ja: a.name.ja, zh: a.name.zh }, "span") + (b.form_url ? "</a>" : "") + "</h3>" +
+          '<div class="biz-desk">' + bi(a.desk, "span", "", true) + "</div>" + bi(a.text, "div", "form7-text") + go + "</div>";
       }).join("") + "</div>");
       put("#biz-steps", '<ol class="sequence compact biz-steps">' + b.steps.map(function (x) {
         return "<li><h3>" + esc(x.name.en) + "</h3>" + bi({ ko: x.name.ko, ja: x.name.ja, zh: x.name.zh }, "div") + '<p class="proc-en">' + esc(x.text.en) + "</p>" + bi({ ko: x.text.ko, ja: x.text.ja, zh: x.text.zh }, "div", "proc-ko") + "</li>";
