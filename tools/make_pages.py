@@ -160,7 +160,8 @@ pages = {
   '<section class="page-head biz-head"><div class="wrap"><div id="biz-hestia" class="biz-hestia" aria-hidden="true"></div><div id="biz-statement"></div></div></section>'
   + '<section class="section biz-epic"><div class="wrap"><div id="biz-scroll"></div></div></section>'
   + section("Fields of Request", "의뢰 분야", '<div id="biz-areas"></div>')
-  + section("How It Works", "절차", '<div id="biz-steps"></div><div id="biz-principle"></div>')),
+  + section("How It Works", "절차", '<div id="biz-steps"></div><div id="biz-principle"></div>')
+  + section("Request Form", "의뢰서", '<div id="biz-form"></div>')),
 
 "writing": ("Essay | IOBSF", "writing",
   '<section class="page-head"><div class="wrap" id="writing"></div></section>'),
