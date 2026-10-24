@@ -1386,3 +1386,48 @@ html[data-second="ko"] .gf-sub.s-ko, html[data-second="ja"] .gf-sub.s-ja, html[d
 @media (max-width: 560px) { .cn-clause, .cn-items, .cn-items li { text-align: justify; } }
 .gb > span.p { display: block; }
 .cn-tabs a.on { background: rgba(184,137,63,.16); border-color: #e2bd73; }
+
+/* record page: gold plaque with ribbon beside the fields, and a print button */
+.gr-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; grid-template-areas: "head side" "fields side"; column-gap: 56px; align-items: start; }
+.gr-head { grid-area: head; }
+.gr-side { grid-area: side; position: sticky; top: 110px; padding-top: 30px; padding-bottom: 120px; }
+.gr-grid .gr-fields { grid-area: fields; }
+.gr-plaque { position: relative; overflow: visible !important; margin: 0 auto; max-width: 320px; padding-bottom: 78px !important; color: var(--engrave, #fff3cf); }
+.gr-plaque .plaque-no { font-size: 30px; }
+.gr-plaque .plaque-name { font-size: 22px; letter-spacing: .06em; overflow-wrap: anywhere; }
+.gr-plaque .plaque-orig { font-size: 16px; }
+.rosette { position: absolute; left: 50%; bottom: -104px; width: 112px; height: 160px; z-index: 2; transform: translateX(-50%); filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .5)); }
+@media (max-width: 960px) {
+  .gr-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "side" "fields"; }
+  .gr-side { position: static; padding: 24px 0 110px; }
+}
+.gr-printline { margin: 34px 0 0; display: flex; justify-content: center; }
+.gr-print { display: inline-flex; align-items: center; gap: 10px; padding: 12px 26px; font-family: var(--f-display); font-size: 18px; letter-spacing: .06em; color: #f4dc9a; cursor: pointer;
+  border: 1px solid #7a6228; border-radius: 4px; background: linear-gradient(180deg, #3a3020, #1f1b15); box-shadow: inset 0 1px 0 rgba(255, 228, 160, .2), 0 3px 0 #0c0a07, 0 12px 24px rgba(0, 0, 0, .45); }
+.gr-print:hover { border-color: #e2bd73; }
+.gr-print svg { width: 22px; height: 22px; }
+.gr-print .bi.inline .s { color: var(--ash); }
+.gr-printfoot { display: none; }
+
+@media print {
+  @page { size: A4; margin: 14mm 14mm 16mm; }
+  html, body { background: #fff !important; color: #1b1610 !important; }
+  #site-header, #site-footer, .w-crumb, .gr-nav, .gr-printline, .noscript { display: none !important; }
+  .page-head { padding: 0 !important; border: 0 !important; background: none !important; }
+  .page-head .wrap { max-width: none; padding: 0; }
+  #gr, #gr * { color: #1b1610 !important; }
+  .gr-grid { grid-template-columns: minmax(0, 1fr) 58mm !important; grid-template-areas: "head side" "fields fields" !important; column-gap: 8mm; }
+  .gr-side { position: static; padding: 0 0 22mm !important; }
+  .gr-plaque { max-width: 58mm; padding: 16px 12px 52px !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .gr-plaque, .gr-plaque * { color: #fff3cf !important; }
+  .gr-plaque .plaque-emblem { width: 40px; }
+  .gr-plaque .plaque-head { font-size: 8px; } .gr-plaque .plaque-tier { font-size: 7.5px; }
+  .gr-plaque .plaque-no { font-size: 20px; } .gr-plaque .plaque-name { font-size: 14px; } .gr-plaque .plaque-orig, .gr-plaque .plaque-community, .gr-plaque .plaque-foot, .gr-plaque .plaque-foot-en { font-size: 8px; }
+  .rosette { width: 70px; height: 100px; bottom: -65px; filter: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #gr .gr-title > .p { font-size: 34px; }
+  .gr-fields > div { grid-template-columns: 52mm minmax(0, 1fr); padding: 7px 0; border-color: #c9b48a !important; break-inside: avoid; }
+  .gr-fields { border-color: #c9b48a !important; margin-top: 14px; }
+  .gr-fields .gb > .s { color: #5a4630 !important; }
+  .gr-n, .gr-id, .dot { color: #8a5a1c !important; }
+  .gr-printfoot { display: block; margin-top: 10mm; font-size: 9px; text-align: center; color: #6b5236 !important; letter-spacing: .04em; }
+}

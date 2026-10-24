@@ -989,6 +989,19 @@
     });
   };
 
+  var ROSETTE = '<svg class="rosette" viewBox="0 0 140 200" aria-hidden="true"><defs><linearGradient id="rsg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe7a8"/><stop offset=".45" stop-color="#d4a84a"/><stop offset="1" stop-color="#7a5418"/></linearGradient><linearGradient id="rst" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a6018"/><stop offset=".5" stop-color="#e9c66e"/><stop offset="1" stop-color="#8a6018"/></linearGradient><radialGradient id="rsc" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#f6dd95"/><stop offset="1" stop-color="#9a6e1e"/></radialGradient></defs><path d="M48 96 L30 196 L46 184 L58 198 L72 104 Z" fill="url(#rst)" stroke="#6a4a12" stroke-width=".8"/><path d="M92 96 L110 196 L94 184 L82 198 L68 104 Z" fill="url(#rst)" stroke="#6a4a12" stroke-width=".8"/><polygon points="70.0,8.0 74.7,16.2 80.8,8.9 84.0,17.8 91.2,11.7 92.8,21.1 101.0,16.3 101.0,25.8 109.9,22.5 108.2,31.8 117.5,30.1 114.2,39.0 123.7,39.0 118.9,47.2 128.3,48.8 122.2,56.0 131.1,59.2 123.8,65.3 132.0,70.0 123.8,74.7 131.1,80.8 122.2,84.0 128.3,91.2 118.9,92.8 123.7,101.0 114.2,101.0 117.5,109.9 108.2,108.2 109.9,117.5 101.0,114.2 101.0,123.7 92.8,118.9 91.2,128.3 84.0,122.2 80.8,131.1 74.7,123.8 70.0,132.0 65.3,123.8 59.2,131.1 56.0,122.2 48.8,128.3 47.2,118.9 39.0,123.7 39.0,114.2 30.1,117.5 31.8,108.2 22.5,109.9 25.8,101.0 16.3,101.0 21.1,92.8 11.7,91.2 17.8,84.0 8.9,80.8 16.2,74.7 8.0,70.0 16.2,65.3 8.9,59.2 17.8,56.0 11.7,48.8 21.1,47.2 16.3,39.0 25.8,39.0 22.5,30.1 31.8,31.8 30.1,22.5 39.0,25.8 39.0,16.3 47.2,21.1 48.8,11.7 56.0,17.8 59.2,8.9 65.3,16.2" fill="url(#rsg)" stroke="#6a4a12" stroke-width=".8"/><circle cx="70" cy="70" r="47" fill="url(#rsc)" stroke="#5a3d10" stroke-width="1.2"/><circle cx="70" cy="70" r="42" fill="none" stroke="#fff1c4" stroke-opacity=".7" stroke-width="1"/><image href="assets/img/emblem-small.png" x="36" y="36" width="68" height="68"/></svg>';
+  function ghbhPlaque(r) {
+    return '<figure class="plaque gold mini gr-plaque" aria-label="Heritage plaque"><img class="plaque-emblem" src="assets/img/emblem-small.png" alt="">' +
+      '<div class="plaque-head">International Outdoor Barbecue<br>Sports Federation</div><div class="plaque-rule short"></div>' +
+      '<div class="plaque-tier">Global Human Barbecue Heritage<br>' + esc(r.status.en) + "</div>" +
+      '<div class="plaque-no">' + esc(r.id.replace("GHBH-A-", "No. ")) + "</div>" +
+      '<div class="plaque-name">' + esc(r.title.en) + "</div>" +
+      (r.native && r.native !== r.title.en ? '<div class="plaque-orig">' + esc(r.native) + "</div>" : "") +
+      '<div class="plaque-community">' + esc(r.custodian.en) + "</div><div class=\"plaque-rule\"></div>" +
+      '<div class="plaque-foot">' + esc(r.id) + "<br>Recorded 2026-10-24</div>" +
+      '<div class="plaque-foot-en">IOBSF  &amp;  KBRI</div>' + ROSETTE + "</figure>";
+  }
+
   /* one record: the ten standard fields */
   pages.ghbhrecord = function () {
     load("ghbh").then(function (g) {
@@ -997,13 +1010,18 @@
       document.title = r.title.en + " | " + r.id + " | IOBSF";
       var F = g.standard.fields, v = [r.id, r.status, r.track, r.title, r.native, r.custodian, r.criteria.en, r.technique, r.trajectory, r.fragments];
       var i = g.archive.indexOf(r), prev = g.archive[i - 1], next = g.archive[i + 1];
+      var PR = { en: "Print this record", ko: "이 기록 인쇄", ja: "この記録を印刷", zh: "打印此记录" };
       put("#gr", '<p class="w-crumb"><a href="heritage.html">Global Human Barbecue Heritage</a> / <a href="heritage-archive.html">Archive</a></p>' +
-        '<p class="gr-id"><span class="dot t-bronze"></span>' + esc(r.id) + "  " + bi(r.status, "span", "", true) + "</p>" + gb(r.title, "h1", "gr-title") + (r.native ? '<p class="gr-native">' + esc(r.native) + "</p>" : "") +
+        '<div class="gr-grid"><div class="gr-head"><p class="gr-id"><span class="dot t-bronze"></span>' + esc(r.id) + "  " + bi(r.status, "span", "", true) + "</p>" + gb(r.title, "h1", "gr-title") + (r.native ? '<p class="gr-native">' + esc(r.native) + "</p>" : "") + "</div>" +
+        '<aside class="gr-side">' + ghbhPlaque(r) + "</aside>" +
         '<dl class="gr-fields">' + F.map(function (f, k) {
           var val = v[k] && typeof v[k] === "object" ? gb(v[k], "span") : esc(v[k] || "");
-          return '<div><dt><span class="gr-n">' + (k + 1) + "</span>" + gb(f[0], "span") + "</dt><dd>" + val + "</dd></div>"; }).join("") + "</dl>" +
+          return '<div><dt><span class="gr-n">' + (k + 1) + "</span>" + gb(f[0], "span") + "</dt><dd>" + val + "</dd></div>"; }).join("") + "</dl></div>" +
+        '<p class="gr-printline"><button type="button" class="gr-print" id="gr-print"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>' + bi(PR, "span", "", true) + "</button></p>" +
+        '<p class="gr-printfoot">International Outdoor Barbecue Sports Federation (IOBSF) &amp; Korea Barbecue Research &amp; Institute (KBRI)  |  iobsf.org/heritage-record.html?id=' + esc(r.id) + "</p>" +
         '<nav class="gr-nav">' + (prev ? '<a href="heritage-record.html?id=' + esc(prev.id) + '">&larr; ' + esc(prev.id) + " " + bi(prev.title, "span", "", true) + "</a>" : "<span></span>") +
         '<a href="heritage-archive.html">' + bi(GU.list, "span", "", true) + "</a>" + (next ? '<a href="heritage-record.html?id=' + esc(next.id) + '">' + esc(next.id) + " " + bi(next.title, "span", "", true) + " &rarr;</a>" : "<span></span>") + "</nav>");
+      var pb = document.getElementById("gr-print"); if (pb) pb.addEventListener("click", function () { window.print(); });
     });
   };
 
