@@ -1035,6 +1035,21 @@
       '<span class="gr-sign-line"></span><p class="gr-sign-name">Shaka Chaa</p></div></section>';
   }
 
+  /* the humanist narrative of a record: English first, the chosen second language beneath when it exists */
+  function ghbhStory(r) {
+    var o = r.narrative; if (!o || !o.en) return "";
+    var H = { en: "The Story of the Fire", ko: "불 곁의 이야기", ja: "火のほとりの物語", zh: "火边的故事" };
+    var S = { en: "Sources", ko: "근거 자료", ja: "典拠", zh: "资料来源" };
+    var h = '<p class="p" lang="en">' + esc(o.en) + "</p>";
+    SECONDS.forEach(function (k) { if (o[k]) h += '<p class="s" lang="' + k + '">' + esc(o[k]) + "</p>"; });
+    var src = (r.narrative_sources || []).map(function (u) {
+      var t = u.replace(/^https?:\/\/(www\.)?/i, ""); try { t = decodeURIComponent(t); } catch (e) {}
+      return '<li><a href="' + esc(u) + '" target="_blank" rel="noopener">' + esc(t.length > 72 ? t.slice(0, 72) + "\u2026" : t) + "</a></li>"; }).join("");
+    return '<section class="gr-story"><h2 class="gr-story-h">' + bi(H, "span", "", true) + "</h2>" +
+      '<div class="bi gb gr-story-t">' + h + "</div>" +
+      (src ? '<details class="gr-src"><summary>' + bi(S, "span", "", true) + "</summary><ol>" + src + "</ol></details>" : "") + "</section>";
+  }
+
   /* one record: the ten standard fields */
   pages.ghbhrecord = function () {
     load("ghbh").then(function (g) {
@@ -1048,6 +1063,7 @@
         '<div class="gr-grid"><div class="gr-head"><p class="gr-id"><span class="dot t-bronze"></span>' + esc(r.id) + "  " + bi(r.status, "span", "", true) + "</p>" + gb(r.title, "h1", "gr-title") + (r.native ? '<p class="gr-native">' + esc(r.native) + "</p>" : "") + "</div>" +
         '<aside class="gr-side">' + ghbhPlaque(r) + "</aside>" +
         '<div class="gr-print-title"><p class="gr-id">' + esc(r.id) + "  " + bi(r.status, "span", "", true) + "</p>" + gb(r.title, "h1", "gr-title") + (r.native ? '<p class="gr-native">' + esc(r.native) + "</p>" : "") + "</div>" +
+        ghbhStory(r) +
         '<dl class="gr-fields">' + F.map(function (f, k) {
           var val = v[k] && typeof v[k] === "object" ? gb(v[k], "span") : esc(v[k] || "");
           return '<div><dt><span class="gr-n">' + (k + 1) + "</span>" + gb(f[0], "span") + "</dt><dd>" + val + "</dd></div>"; }).join("") + "</dl></div>" +

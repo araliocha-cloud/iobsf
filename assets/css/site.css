@@ -1594,3 +1594,32 @@ html[data-second="ko"] .gf-sub.s-ko, html[data-second="ja"] .gf-sub.s-ja, html[d
 @media print { .gr-sign-block .gr-sign-seal { right: 24mm; } }
 @media print { .gr-sig { transform: none !important; } }
 .gr-side { position: static !important; top: auto; }
+
+/* ---------- record narrative: the story of the fire (2026-10-25) ---------- */
+.gr-grid { grid-template-areas: "head side" "story side" "fields side"; }
+.gr-story { grid-area: story; margin: 30px 0 0; padding: 30px 34px 26px; position: relative;
+  background: linear-gradient(180deg, rgba(58, 46, 28, .55), rgba(24, 20, 14, .75)); border: 1px solid #5e4a24; border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 228, 160, .14), inset 0 0 0 6px rgba(0, 0, 0, .18), inset 0 0 0 7px rgba(226, 189, 115, .18), 0 14px 30px rgba(0, 0, 0, .45); }
+.gr-story-h { margin: 0 0 18px; text-align: center; font-family: var(--f-display); font-weight: 600; font-size: 24px; letter-spacing: .08em; color: #e6cf9d; }
+.gr-story-h::after { content: ""; display: block; width: 120px; height: 1px; margin: 12px auto 0; background: linear-gradient(90deg, transparent, #e2bd73, transparent); }
+.gr-story-h .s { margin-left: 12px; font-family: "Noto Serif KR", var(--f-body); font-size: 14px; letter-spacing: .2em; color: var(--ash); }
+.gr-story-t > .p { display: block; margin: 0; font-family: var(--f-display); font-size: 19px; line-height: 1.75; color: var(--bone); text-align: justify; hyphens: auto; }
+.gr-story-t > .s { margin: 18px 0 0; padding-top: 16px; border-top: 1px dotted rgba(226, 189, 115, .35); font-family: "Noto Serif KR", var(--f-body); font-size: 16px; line-height: 1.95; color: #d9cbb0; text-align: justify; word-break: keep-all; }
+.gr-story-t > .s[lang="ja"], .gr-story-t > .s[lang="zh"] { word-break: normal; }
+.gr-src { margin-top: 18px; font-size: 13px; color: var(--ash); }
+.gr-src summary { cursor: pointer; letter-spacing: .06em; }
+.gr-src ol { margin: 8px 0 0; padding-left: 1.4em; word-break: break-all; }
+.gr-src a { color: var(--ash); }
+@media (max-width: 960px) { .gr-grid { grid-template-columns: minmax(0, 1fr) !important; grid-template-areas: "head" "side" "story" "fields"; } }
+@media (max-width: 560px) { .gr-story { padding: 22px 18px 18px; } .gr-story-t > .p { font-size: 17.5px; } .gr-story-t > .s { font-size: 15px; } }
+@media print {
+  .gr-story { margin: 6mm 0 2mm; padding: 6mm 7mm 5mm; background: none !important; border: 1px solid #c9b48a !important; box-shadow: none !important; break-inside: auto; }
+  .gr-story-h { font-size: 17px; margin-bottom: 4mm; }
+  .gr-story-h .s { font-size: 10.5px; color: #5a4630 !important; }
+  .gr-story-t > .p { font-size: 13.5px; line-height: 1.6; }
+  .gr-story-t > .s { font-size: 11.5px; line-height: 1.75; margin-top: 3mm; padding-top: 3mm; border-color: #c9b48a !important; color: #3a2e20 !important; }
+  .gr-src { display: none; }
+  .gr-fields > div { padding: 4px 0 !important; }
+  .gr-fields dd { line-height: 1.55 !important; }
+  .gr-sign { margin-top: 7mm !important; }
+}
