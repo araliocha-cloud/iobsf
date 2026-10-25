@@ -1592,3 +1592,4 @@ html[data-second="ko"] .gf-sub.s-ko, html[data-second="ja"] .gf-sub.s-ja, html[d
 }
 @media print { .gr-sign-block { width: 170mm; } .gr-sign-fed { font-size: 14px; letter-spacing: .14em; white-space: nowrap; } }
 @media print { .gr-sign-block .gr-sign-seal { right: 24mm; } }
+@media print { .gr-sig { transform: none !important; } }
