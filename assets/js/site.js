@@ -989,17 +989,50 @@
     });
   };
 
-  var ROSETTE = '<svg class="rosette" viewBox="0 0 140 200" aria-hidden="true"><defs><linearGradient id="rsg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbe7a8"/><stop offset=".45" stop-color="#d4a84a"/><stop offset="1" stop-color="#7a5418"/></linearGradient><linearGradient id="rst" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8a6018"/><stop offset=".5" stop-color="#e9c66e"/><stop offset="1" stop-color="#8a6018"/></linearGradient><radialGradient id="rsc" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#f6dd95"/><stop offset="1" stop-color="#9a6e1e"/></radialGradient></defs><path d="M48 96 L30 196 L46 184 L58 198 L72 104 Z" fill="url(#rst)" stroke="#6a4a12" stroke-width=".8"/><path d="M92 96 L110 196 L94 184 L82 198 L68 104 Z" fill="url(#rst)" stroke="#6a4a12" stroke-width=".8"/><polygon points="70.0,8.0 74.7,16.2 80.8,8.9 84.0,17.8 91.2,11.7 92.8,21.1 101.0,16.3 101.0,25.8 109.9,22.5 108.2,31.8 117.5,30.1 114.2,39.0 123.7,39.0 118.9,47.2 128.3,48.8 122.2,56.0 131.1,59.2 123.8,65.3 132.0,70.0 123.8,74.7 131.1,80.8 122.2,84.0 128.3,91.2 118.9,92.8 123.7,101.0 114.2,101.0 117.5,109.9 108.2,108.2 109.9,117.5 101.0,114.2 101.0,123.7 92.8,118.9 91.2,128.3 84.0,122.2 80.8,131.1 74.7,123.8 70.0,132.0 65.3,123.8 59.2,131.1 56.0,122.2 48.8,128.3 47.2,118.9 39.0,123.7 39.0,114.2 30.1,117.5 31.8,108.2 22.5,109.9 25.8,101.0 16.3,101.0 21.1,92.8 11.7,91.2 17.8,84.0 8.9,80.8 16.2,74.7 8.0,70.0 16.2,65.3 8.9,59.2 17.8,56.0 11.7,48.8 21.1,47.2 16.3,39.0 25.8,39.0 22.5,30.1 31.8,31.8 30.1,22.5 39.0,25.8 39.0,16.3 47.2,21.1 48.8,11.7 56.0,17.8 59.2,8.9 65.3,16.2" fill="url(#rsg)" stroke="#6a4a12" stroke-width=".8"/><circle cx="70" cy="70" r="47" fill="url(#rsc)" stroke="#5a3d10" stroke-width="1.2"/><circle cx="70" cy="70" r="42" fill="none" stroke="#fff1c4" stroke-opacity=".7" stroke-width="1"/><image href="assets/img/emblem-small.png" x="36" y="36" width="68" height="68"/></svg>';
+  var ROSETTE = '<svg class="rosette" viewBox="0 0 200 290" aria-label="Bronze rosette of Global Human Barbecue Heritage, IOBSF" role="img"><defs><linearGradient id="rzp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3c79a"/><stop offset=".35" stop-color="#b9773f"/><stop offset=".7" stop-color="#7a4520"/><stop offset="1" stop-color="#4e2a12"/></linearGradient><linearGradient id="rzt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a3016"/><stop offset=".45" stop-color="#d79a62"/><stop offset=".55" stop-color="#e8b27c"/><stop offset="1" stop-color="#5a3016"/></linearGradient><radialGradient id="rzm" cx=".38" cy=".3" r=".8"><stop offset="0" stop-color="#f0c08e"/><stop offset=".55" stop-color="#a8683a"/><stop offset="1" stop-color="#5e3418"/></radialGradient><radialGradient id="rzc" cx=".4" cy=".32" r=".75"><stop offset="0" stop-color="#e9b47e"/><stop offset="1" stop-color="#7a4421"/></radialGradient><path id="rzTop" d="M 42.9 126.6 A 63 63 0 1 1 157.1 126.6"/><path id="rzBot" d="M 31 100 A 69 69 0 0 0 169 100"/></defs><path d="M70 150 L44 284 L66 266 L82 288 L102 160 Z" fill="url(#rzt)" stroke="#3e2210" stroke-width="1"/><path d="M130 150 L156 284 L134 266 L118 288 L98 160 Z" fill="url(#rzt)" stroke="#3e2210" stroke-width="1"/><polygon points="100.0,3.0 106.8,13.3 115.2,4.2 120.3,15.4 130.0,7.7 133.3,19.6 144.0,13.6 145.5,25.8 157.0,21.5 156.5,33.8 168.6,31.4 166.2,43.5 178.5,43.0 174.2,54.5 186.4,56.0 180.4,66.7 192.3,70.0 184.6,79.7 195.8,84.8 186.7,93.2 197.0,100.0 186.7,106.8 195.8,115.2 184.6,120.3 192.3,130.0 180.4,133.3 186.4,144.0 174.2,145.5 178.5,157.0 166.2,156.5 168.6,168.6 156.5,166.2 157.0,178.5 145.5,174.2 144.0,186.4 133.3,180.4 130.0,192.3 120.3,184.6 115.2,195.8 106.8,186.7 100.0,197.0 93.2,186.7 84.8,195.8 79.7,184.6 70.0,192.3 66.7,180.4 56.0,186.4 54.5,174.2 43.0,178.5 43.5,166.2 31.4,168.6 33.8,156.5 21.5,157.0 25.8,145.5 13.6,144.0 19.6,133.3 7.7,130.0 15.4,120.3 4.2,115.2 13.3,106.8 3.0,100.0 13.3,93.2 4.2,84.8 15.4,79.7 7.7,70.0 19.6,66.7 13.6,56.0 25.8,54.5 21.5,43.0 33.8,43.5 31.4,31.4 43.5,33.8 43.0,21.5 54.5,25.8 56.0,13.6 66.7,19.6 70.0,7.7 79.7,15.4 84.8,4.2 93.2,13.3" fill="url(#rzp)" stroke="#3e2210" stroke-width="1"/><circle cx="100" cy="100" r="80" fill="url(#rzm)" stroke="#3e2210" stroke-width="1.4"/><circle cx="100" cy="100" r="76" fill="none" stroke="#ffe1b8" stroke-opacity=".55" stroke-width="1"/><circle cx="100" cy="100" r="48" fill="url(#rzc)" stroke="#3e2210" stroke-width="1.4"/><circle cx="100" cy="100" r="44" fill="none" stroke="#ffe1b8" stroke-opacity=".5" stroke-width=".9"/><g class="rz-t" fill="#2e1808"><text font-size="10.2" letter-spacing=".9"><textPath href="#rzTop" startOffset="50%" text-anchor="middle">GLOBAL HUMAN BARBECUE HERITAGE</textPath></text><text font-size="15" letter-spacing="5"><textPath href="#rzBot" startOffset="50%" text-anchor="middle" dominant-baseline="hanging">IOBSF</textPath></text><text x="100" y="106" font-size="17" letter-spacing="2.2" text-anchor="middle" font-weight="700">BRONZE</text></g></svg>';
+  /* the federation seal: sixteen characters in four columns, read from the right */
+  function ghbhSeal(cls) {
+    var line = function (y, t, size, w) { return '<text x="55" y="' + y + '" font-size="' + size + '" textLength="' + w + '" lengthAdjust="spacing">' + t + "</text>"; };
+    return '<svg class="seal ' + (cls || "") + '" viewBox="0 0 110 110" aria-label="Official seal of the International Outdoor Barbecue Sports Federation" role="img">' +
+      '<defs><filter id="sealrough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="7" result="n"/>' +
+      '<feDisplacementMap in="SourceGraphic" in2="n" scale="1.4" result="d"/><feComponentTransfer in="n" result="m"><feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 0 1"/></feComponentTransfer>' +
+      '<feComposite in="d" in2="m" operator="in"/></filter></defs>' +
+      '<g filter="url(#sealrough)" fill="#b3261c"><rect x="4" y="4" width="102" height="102" rx="4" fill="none" stroke="#b3261c" stroke-width="5"/>' +
+      '<rect x="11" y="11" width="88" height="88" rx="1.5" fill="none" stroke="#b3261c" stroke-width="1.3"/>' +
+      '<g class="seal-t">' + line(25, "INTERNATIONAL OUTDOOR", 6.2, 84) + line(35.5, "BARBECUE SPORTS", 6.9, 68) + line(46, "FEDERATION", 6.9, 54) +
+      '<rect x="22" y="51.5" width="66" height="1.2"/>' + line(73, "IOBSF", 21, 64) + '<rect x="22" y="79" width="66" height="1.2"/>' +
+      line(92, "OFFICIAL SEAL", 7, 62) + "</g></g></svg>";
+  }
   function ghbhPlaque(r) {
-    return '<figure class="plaque gold mini gr-plaque" aria-label="Heritage plaque"><img class="plaque-emblem" src="assets/img/emblem-small.png" alt="">' +
-      '<div class="plaque-head">International Outdoor Barbecue<br>Sports Federation</div><div class="plaque-rule short"></div>' +
-      '<div class="plaque-tier">Global Human Barbecue Heritage<br>' + esc(r.status.en) + "</div>" +
-      '<div class="plaque-no">' + esc(r.id.replace("GHBH-A-", "No. ")) + "</div>" +
-      '<div class="plaque-name">' + esc(r.title.en) + "</div>" +
-      (r.native && r.native !== r.title.en ? '<div class="plaque-orig">' + esc(r.native) + "</div>" : "") +
-      '<div class="plaque-community">' + esc(r.custodian.en) + "</div><div class=\"plaque-rule\"></div>" +
-      '<div class="plaque-foot">' + esc(r.id) + "<br>Recorded 2026-10-24</div>" +
-      '<div class="plaque-foot-en">IOBSF  &amp;  KBRI</div>' + ROSETTE + "</figure>";
+    var n = r.title.en.length, size = n > 26 ? " bp-long" : n > 16 ? " bp-mid" : "";
+    return '<figure class="bp" aria-label="Plaque of ' + esc(r.title.en) + '"><div class="bp-cast">' +
+      '<i class="bp-rivet r1"></i><i class="bp-rivet r2"></i><i class="bp-rivet r3"></i><i class="bp-rivet r4"></i>' +
+      '<div class="bp-field"><div class="bp-frame"><div class="bp-body">' +
+        '<p class="bp-tier">Global Human Barbecue Heritage</p>' +
+        '<p class="bp-status">' + esc(r.status.en) + "</p>" +
+        '<img class="bp-emblem" src="assets/img/emblem.webp" alt="">' +
+        '<p class="bp-rule"><span></span></p>' +
+        '<p class="bp-recno"><span>Record No.</span>' + esc(r.id) + "</p>" +
+        '<h2 class="bp-name' + size + '">' + esc(r.title.en) + "</h2>" +
+        (r.native && r.native !== r.title.en ? '<p class="bp-native">' + esc(r.native) + "</p>" : "") +
+        '<p class="bp-cus' + (r.custodian.en.length > 22 ? " bp-cus-long" : "") + '"><span>Custodian</span>' + esc(r.custodian.en) + "</p>" +
+        '<p class="bp-rule"><span></span></p>' +
+        '<p class="bp-cert">Recorded in the Federation Archive of Global Human Barbecue Heritage under the Charter of 24 October 2026</p>' +
+        '<div class="bp-foot">' + ROSETTE + '<div class="bp-no"><span>24 October 2026</span><span class="bp-by">IOBSF &amp; KBRI</span></div>' + ghbhSeal("bp-seal") + "</div>" +
+        '<p class="bp-fed">International Outdoor<br>Barbecue Sports Federation</p>' +
+      "</div></div></div></div></figure>";
+  }
+  function ghbhSign(r) {
+    var d = new Date(), iso = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+    return '<section class="gr-sign">' +
+      gb({ en: "This is to certify that the heritage above is recorded in the Federation Archive of Global Human Barbecue Heritage under record number " + r.id + ".",
+           ko: "위 유산이 세계인류바비큐유산 연맹기록유산 아카이브에 기록번호 " + r.id + "로 기록되어 있음을 증명한다.",
+           ja: "上記の遺産が世界人類バーベキュー遺産の連盟記録遺産アーカイブに記録番号 " + r.id + " として記録されていることを証明する。",
+           zh: "兹证明上述遗产已以记录编号 " + r.id + " 载入世界人类烧烤遗产联盟记录遗产档案。" }, "p", "gr-sign-t") +
+      '<p class="gr-sign-date">Issued <span class="gr-sign-iso">' + iso + "</span></p>" +
+      '<div class="gr-sign-block"><p class="gr-sign-fed">International Outdoor Barbecue Sports Federation</p><p class="gr-sign-role">Secretary-General</p>' +
+      '<div class="gr-sign-row"><span class="gr-sig">Shaka Chaa</span>' + ghbhSeal("gr-sign-seal") + "</div>" +
+      '<span class="gr-sign-line"></span><p class="gr-sign-name">Shaka Chaa</p></div></section>';
   }
 
   /* one record: the ten standard fields */
@@ -1014,14 +1047,17 @@
       put("#gr", '<p class="w-crumb"><a href="heritage.html">Global Human Barbecue Heritage</a> / <a href="heritage-archive.html">Archive</a></p>' +
         '<div class="gr-grid"><div class="gr-head"><p class="gr-id"><span class="dot t-bronze"></span>' + esc(r.id) + "  " + bi(r.status, "span", "", true) + "</p>" + gb(r.title, "h1", "gr-title") + (r.native ? '<p class="gr-native">' + esc(r.native) + "</p>" : "") + "</div>" +
         '<aside class="gr-side">' + ghbhPlaque(r) + "</aside>" +
+        '<div class="gr-print-title"><p class="gr-id">' + esc(r.id) + "  " + bi(r.status, "span", "", true) + "</p>" + gb(r.title, "h1", "gr-title") + (r.native ? '<p class="gr-native">' + esc(r.native) + "</p>" : "") + "</div>" +
         '<dl class="gr-fields">' + F.map(function (f, k) {
           var val = v[k] && typeof v[k] === "object" ? gb(v[k], "span") : esc(v[k] || "");
           return '<div><dt><span class="gr-n">' + (k + 1) + "</span>" + gb(f[0], "span") + "</dt><dd>" + val + "</dd></div>"; }).join("") + "</dl></div>" +
         '<p class="gr-printline"><button type="button" class="gr-print" id="gr-print"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2M7 14h10v7H7z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>' + bi(PR, "span", "", true) + "</button></p>" +
+        ghbhSign(r) +
         '<p class="gr-printfoot">International Outdoor Barbecue Sports Federation (IOBSF) &amp; Korea Barbecue Research &amp; Institute (KBRI)  |  iobsf.org/heritage-record.html?id=' + esc(r.id) + "</p>" +
         '<nav class="gr-nav">' + (prev ? '<a href="heritage-record.html?id=' + esc(prev.id) + '">&larr; ' + esc(prev.id) + " " + bi(prev.title, "span", "", true) + "</a>" : "<span></span>") +
         '<a href="heritage-archive.html">' + bi(GU.list, "span", "", true) + "</a>" + (next ? '<a href="heritage-record.html?id=' + esc(next.id) + '">' + esc(next.id) + " " + bi(next.title, "span", "", true) + " &rarr;</a>" : "<span></span>") + "</nav>");
-      var pb = document.getElementById("gr-print"); if (pb) pb.addEventListener("click", function () { window.print(); });
+      var fontReady = document.fonts && document.fonts.load ? document.fonts.load('42px "Pinyon Script"', "Shaka Chaa") : Promise.resolve();
+      var pb = document.getElementById("gr-print"); if (pb) pb.addEventListener("click", function () { fontReady.then(function () { window.print(); }, function () { window.print(); }); });
     });
   };
 

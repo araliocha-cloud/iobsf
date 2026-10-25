@@ -1419,7 +1419,7 @@ html[data-second="ko"] .gf-sub.s-ko, html[data-second="ja"] .gf-sub.s-ja, html[d
   .gr-grid { grid-template-columns: minmax(0, 1fr) 58mm !important; grid-template-areas: "head side" "fields fields" !important; column-gap: 8mm; }
   .gr-side { position: static; padding: 0 0 22mm !important; }
   .gr-plaque { max-width: 58mm; padding: 16px 12px 52px !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .gr-plaque, .gr-plaque * { color: #fff3cf !important; }
+  .gr-plaque, .gr-plaque * { color: #f3dfb8 !important; }
   .gr-plaque .plaque-emblem { width: 40px; }
   .gr-plaque .plaque-head { font-size: 8px; } .gr-plaque .plaque-tier { font-size: 7.5px; }
   .gr-plaque .plaque-no { font-size: 20px; } .gr-plaque .plaque-name { font-size: 14px; } .gr-plaque .plaque-orig, .gr-plaque .plaque-community, .gr-plaque .plaque-foot, .gr-plaque .plaque-foot-en { font-size: 8px; }
@@ -1431,3 +1431,164 @@ html[data-second="ko"] .gf-sub.s-ko, html[data-second="ja"] .gf-sub.s-ja, html[d
   .gr-n, .gr-id, .dot { color: #8a5a1c !important; }
   .gr-printfoot { display: block; margin-top: 10mm; font-size: 9px; text-align: center; color: #6b5236 !important; letter-spacing: .04em; }
 }
+
+/* ---------- the record plaque: cast bronze, A4 proportion (2026-10-25) ---------- */
+@font-face { font-family: "Pinyon Script"; src: url("../fonts/pinyon-script.woff2") format("woff2"); font-display: swap; }
+.gr-grid { grid-template-columns: minmax(0, 1fr) 400px; }
+.gr-side { padding-bottom: 40px; }
+.bp { container-type: inline-size; position: relative; width: 100%; max-width: 400px; aspect-ratio: 210 / 297; margin: 0 auto; }
+.bp-cast { position: absolute; inset: 0; border-radius: 1.4cqw;
+  background:
+    linear-gradient(135deg, rgba(255, 228, 190, .55) 0%, transparent 22%, transparent 70%, rgba(0, 0, 0, .35) 100%),
+    linear-gradient(160deg, #d9a26e 0%, #a5683a 22%, #6e4120 48%, #b27a46 66%, #5c3418 86%, #8f5a2f 100%);
+  box-shadow: inset 0 .45cqw .25cqw rgba(255, 232, 196, .65), inset 0 -.6cqw .5cqw rgba(30, 14, 4, .7), inset .45cqw 0 .3cqw rgba(255, 220, 180, .25), inset -.45cqw 0 .4cqw rgba(30, 14, 4, .45),
+    0 .5cqw 0 #3a2010, 0 1.1cqw 0 #24130a, 0 1.4cqw .4cqw rgba(0, 0, 0, .5), 0 5cqw 9cqw rgba(0, 0, 0, .65); }
+.bp-rivet { position: absolute; width: 3.2cqw; height: 3.2cqw; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffe3bd 0%, #c08450 35%, #6a3a18 75%, #3a1e0a 100%);
+  box-shadow: 0 .25cqw .3cqw rgba(0, 0, 0, .7), inset 0 -.2cqw .2cqw rgba(0, 0, 0, .45); z-index: 3; }
+.bp-rivet.r1 { left: 1.8cqw; top: 1.8cqw; } .bp-rivet.r2 { right: 1.8cqw; top: 1.8cqw; } .bp-rivet.r3 { left: 1.8cqw; bottom: 1.8cqw; } .bp-rivet.r4 { right: 1.8cqw; bottom: 1.8cqw; }
+.bp-field { position: absolute; inset: 6.4cqw; border-radius: .7cqw; overflow: hidden;
+  background:
+    radial-gradient(ellipse at 28% 14%, rgba(255, 210, 160, .32), transparent 58%),
+    radial-gradient(ellipse at 78% 92%, rgba(20, 8, 2, .5), transparent 62%),
+    linear-gradient(165deg, #8f5f33 0%, #6c4322 42%, #4c2d15 100%);
+  box-shadow: inset 0 .9cqw 1.4cqw rgba(0, 0, 0, .7), inset 0 -.4cqw .5cqw rgba(255, 214, 170, .28), inset .5cqw 0 1cqw rgba(0, 0, 0, .35), inset -.5cqw 0 1cqw rgba(0, 0, 0, .35); }
+.bp-field::before { content: ""; position: absolute; inset: 0; opacity: .32; mix-blend-mode: overlay; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .35 0 0 0 0 .2 0 0 0 1.1 -.2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.bp-frame { position: absolute; inset: 2.6cqw; border: .32cqw solid rgba(36, 18, 6, .75); border-radius: .4cqw;
+  box-shadow: 0 .22cqw 0 rgba(255, 220, 176, .32), inset 0 .22cqw 0 rgba(255, 220, 176, .28); }
+.bp-frame::after { content: ""; position: absolute; inset: 1.1cqw; border: .16cqw solid rgba(36, 18, 6, .6); box-shadow: 0 .14cqw 0 rgba(255, 220, 176, .22); pointer-events: none; }
+.bp-body { position: absolute; inset: 3.4cqw 4.6cqw 3cqw; display: flex; flex-direction: column; align-items: center; text-align: center;
+  font-family: var(--f-display); color: #f2d6a8; }
+.bp-body > * { margin: 0; text-align: center !important; text-align-last: center; }
+.bp-body p, .bp-body h2 { text-shadow: 0 -.12cqw 0 rgba(255, 238, 206, .55), 0 .2cqw .06cqw rgba(24, 10, 2, .92), 0 .45cqw .7cqw rgba(0, 0, 0, .35); }
+.bp-emblem { width: 17cqw; height: auto; margin-top: 1.4cqw; filter: drop-shadow(0 .5cqw .6cqw rgba(0, 0, 0, .6)); }
+.bp-fed { margin-top: 2.6cqw !important; font-size: 3.1cqw; letter-spacing: .32em; text-transform: uppercase; line-height: 1.5; font-weight: 600; max-width: 60cqw; }
+.bp-rule { width: 46cqw; height: 1.4cqw; margin: 3.2cqw 0 !important; position: relative; }
+.bp-rule::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: .3cqw; background: linear-gradient(90deg, transparent, #d9ab6e 20%, #f3d39c 50%, #d9ab6e 80%, transparent); box-shadow: 0 .18cqw 0 rgba(20, 8, 2, .8); }
+.bp-rule span { position: absolute; left: 50%; top: 50%; width: 1.6cqw; height: 1.6cqw; transform: translate(-50%, -50%) rotate(45deg); background: #f0cd92; box-shadow: .12cqw .12cqw 0 rgba(20, 8, 2, .8); }
+.bp-tier { font-size: 4.1cqw; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; line-height: 1.25; }
+.bp-status { margin-top: 1cqw !important; font-size: 3.7cqw; font-style: italic; font-weight: 500; letter-spacing: .04em; color: #ecc993; }
+.bp-name { margin-top: auto !important; font-size: 8.6cqw; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; line-height: 1.12; text-wrap: balance;
+  background: linear-gradient(180deg, #fff2d4 0%, #f2c98c 46%, #c58a4e 54%, #f3d6a2 100%); -webkit-background-clip: text; background-clip: text; color: transparent;
+  text-shadow: none !important; filter: drop-shadow(0 .22cqw .05cqw rgba(24, 10, 2, .95)) drop-shadow(0 -.1cqw 0 rgba(255, 236, 200, .45)); }
+.bp-name.bp-mid { font-size: 6.6cqw; } .bp-name.bp-long { font-size: 5.2cqw; letter-spacing: .05em; }
+.bp-native { margin-top: 2.2cqw !important; font-family: var(--f-ko); font-size: 4.4cqw; font-weight: 500; color: #f0d1a0; }
+.bp-cus { margin-top: 2.6cqw !important; font-size: 3.5cqw; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
+.bp-cus span { display: block; font-size: 2.4cqw; letter-spacing: .3em; font-weight: 500; opacity: .85; margin-bottom: .6cqw; }
+.bp-cert { margin-bottom: auto !important; font-size: 3.1cqw; font-style: italic; line-height: 1.5; max-width: 62cqw; color: #ecd0a2; }
+.bp-foot { width: 100%; display: grid; grid-template-columns: 22cqw 1fr 18cqw; align-items: end; gap: 2cqw; }
+.bp-foot .rosette { position: static; transform: none; width: 22cqw; height: auto; filter: drop-shadow(0 .6cqw .8cqw rgba(0, 0, 0, .55)); }
+.rz-t text { font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif; font-weight: 700; }
+.bp-no { display: grid; gap: .5cqw; padding-bottom: 2cqw; font-size: 2.5cqw; letter-spacing: .2em; text-transform: uppercase; color: #ecd0a2;
+  text-shadow: 0 .16cqw .04cqw rgba(24, 10, 2, .9); }
+.bp-no b { font-size: 3.5cqw; letter-spacing: .12em; font-weight: 600; color: #f6dcae; }
+.bp-no .bp-by { margin-top: .8cqw; letter-spacing: .26em; }
+.seal { display: block; }
+.seal-t text { font-family: "Noto Serif KR", "Noto Serif CJK KR", serif; font-weight: 700; text-anchor: middle; stroke: #b3261c; stroke-width: .9; }
+.bp-seal { width: 18cqw; height: 18cqw; margin-bottom: 1.6cqw; transform: rotate(-4deg); opacity: .93; filter: drop-shadow(0 .1cqw 0 rgba(255, 220, 190, .2)); }
+
+/* signature, shown only on paper */
+.gr-sign { display: none; }
+@media (max-width: 960px) { .bp { max-width: 420px; } }
+
+@media print {
+  .gr-grid { display: block !important; }
+  .gr-head { display: none; }
+  .gr-side { padding: 0 !important; break-after: page; page-break-after: always; }
+  .bp { max-width: none; width: 176mm; margin: 0 auto; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .bp *, .bp-cast, .bp-field { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .bp-body, .bp-body * { color: #f2d6a8; }
+  #gr .bp-body p, #gr .bp-body .bp-no, #gr .bp-body .bp-no b { color: #f2d6a8 !important; }
+  #gr .bp-name { color: transparent !important; }
+  .gr-print-title { display: block !important; }
+  .gr-sign { display: block; margin-top: 12mm; break-inside: avoid; }
+  .gr-sign-t > .p { font-size: 13px; line-height: 1.6; }
+  .gr-sign-t > .s { font-size: 11px; }
+  .gr-sign-date { margin: 6mm 0 0; font-size: 12px; letter-spacing: .06em; }
+  .gr-sign-row { display: flex; align-items: center; justify-content: flex-end; gap: 4mm; margin-top: 4mm; }
+  .gr-sign-hand { display: grid; justify-items: center; min-width: 78mm; }
+  .gr-sig { font-family: "Pinyon Script", cursive; font-size: 42px; line-height: 1; color: #1a2a55 !important; transform: rotate(-3deg); margin-bottom: -2mm; }
+  .gr-sign-line { display: block; width: 100%; height: 0; border-top: 1px solid #3a2a18; margin: 1mm 0 2mm; }
+  .gr-sign-name { font-family: var(--f-display); font-size: 15px; letter-spacing: .12em; text-transform: uppercase; }
+  .gr-sign-role { font-size: 11px; color: #5a4630 !important; }
+  .gr-sign-seal { width: 28mm; height: 28mm; margin-left: -14mm; transform: rotate(-6deg); -webkit-print-color-adjust: exact; print-color-adjust: exact; mix-blend-mode: multiply; }
+  .gr-sign-seal text, .gr-sign-seal rect { color: #b3261c !important; }
+}
+.gr-print-title { display: none; }
+/* plaque balance */
+.bp-body { inset: 3cqw 4cqw 2.6cqw; }
+.bp-emblem { width: 13cqw; margin-top: .6cqw; }
+.bp-fed { margin-top: 1.8cqw !important; font-size: 2.55cqw; letter-spacing: .28em; max-width: 64cqw; }
+.bp-rule { margin: 2.2cqw 0 !important; width: 40cqw; }
+.bp-tier { font-size: 3.4cqw; letter-spacing: .18em; }
+.bp-status { margin-top: .6cqw !important; font-size: 3.2cqw; }
+.bp-name { font-size: 7.4cqw; }
+.bp-name.bp-mid { font-size: 5.8cqw; } .bp-name.bp-long { font-size: 4.6cqw; }
+.bp-native { margin-top: 1.6cqw !important; font-size: 3.8cqw; }
+.bp-cus { margin-top: 2cqw !important; font-size: 3cqw; }
+.bp-cus span { font-size: 2.1cqw; }
+.bp-cert { font-size: 2.6cqw; max-width: 58cqw; }
+.bp-foot { grid-template-columns: 19cqw 1fr 16cqw; }
+.bp-foot .rosette { width: 19cqw; }
+.bp-no { font-size: 2.1cqw; padding-bottom: 1.4cqw; }
+.bp-no b { font-size: 2.9cqw; }
+.bp-seal { width: 16cqw; height: 16cqw; margin-bottom: 1.2cqw; }
+.gr-grid { grid-template-columns: minmax(0, 1fr) 440px; column-gap: 48px; }
+.bp { max-width: 440px; }
+.bp-cert { text-wrap: balance; }
+@media print {
+  #gr .bp-body *:not(.bp-name):not(.bp-emblem) { color: #f2d6a8 !important; }
+  #gr .bp-no, #gr .bp-no * { color: #ecd0a2 !important; }
+  .gr-sign-row { justify-content: flex-end; align-items: flex-start; gap: 0; }
+  .gr-sign-hand { min-width: 96mm; }
+  .gr-sign-role { font-size: 10.5px; }
+  .gr-sign-seal { width: 24mm; height: 24mm; margin: -3mm 0 0 -16mm; }
+}
+.bp-cus.bp-cus-long { font-size: 2.4cqw; line-height: 1.5; max-width: 60cqw; }
+@media print { .bp { max-width: none !important; width: 176mm !important; } }
+@media print { .bp-cast { box-shadow: inset 0 .45cqw .25cqw rgba(255, 232, 196, .65), inset 0 -.6cqw .5cqw rgba(30, 14, 4, .7), inset .45cqw 0 .3cqw rgba(255, 220, 180, .25), inset -.45cqw 0 .4cqw rgba(30, 14, 4, .45), 0 .5cqw 0 #3a2010, 0 1.1cqw 0 #24130a !important; } }
+/* plaque order: heritage title on top, federation at the foot (2026-10-25) */
+.bp-tier { margin-top: .6cqw !important; font-size: 3.55cqw; letter-spacing: .14em; white-space: nowrap; }
+.bp-status { margin-top: .8cqw !important; }
+.bp-emblem { width: 12cqw; margin-top: 2.4cqw; }
+.bp-rule { margin: 2.4cqw 0 !important; }
+.bp-recno { font-size: 3.3cqw; letter-spacing: .16em; font-weight: 600; color: #f3d7aa; }
+.bp-recno span { display: block; font-size: 2.1cqw; letter-spacing: .3em; font-weight: 500; opacity: .85; margin-bottom: .5cqw; text-transform: uppercase; }
+.bp-name { margin-top: 2.6cqw !important; }
+.bp-cert { margin-bottom: auto !important; }
+.bp-no { padding-bottom: 2.2cqw; font-size: 2.3cqw; gap: 1cqw; }
+.bp-seal { transform: none; opacity: .95; }
+.seal-t text { font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif; font-weight: 700; text-anchor: middle; dominant-baseline: auto; stroke: #b3261c; stroke-width: .35; letter-spacing: 0; }
+.bp-fed { margin-top: 1.6cqw !important; font-size: 2.55cqw; letter-spacing: .3em; max-width: none; white-space: nowrap; }
+@media print { .gr-sign-seal { transform: none; } }
+.bp-tier { font-size: 3.2cqw; letter-spacing: .12em; }
+.bp-fed { font-size: 2.15cqw; letter-spacing: .2em; }
+.bp-foot { grid-template-columns: 19cqw 1fr 19cqw; }
+.bp-seal { width: 19cqw; height: 19cqw; }
+.seal-t text { stroke-width: .15; }
+.bp-fed { font-size: 3cqw; letter-spacing: .24em; line-height: 1.55; margin-top: 2cqw !important; white-space: normal; }
+.bp-body { inset: 2.6cqw 4cqw 2.2cqw; }
+.bp-emblem { width: 10.5cqw; margin-top: 1.6cqw; }
+.bp-rule { margin: 1.8cqw 0 !important; }
+.bp-name { margin-top: 2cqw !important; }
+.bp-native { margin-top: 1.2cqw !important; }
+.bp-cus { margin-top: 1.6cqw !important; }
+.bp-foot { grid-template-columns: 17cqw 1fr 17cqw; margin-top: 1.4cqw; }
+.bp-foot .rosette { width: 17cqw; }
+.bp-seal { width: 17cqw; height: 17cqw; margin-bottom: .6cqw; }
+.bp-no { padding-bottom: 1.2cqw; }
+.bp-fed { margin-top: 1.4cqw !important; font-size: 2.9cqw; }
+@media print {
+  .gr-sign-block { width: 130mm; margin: 14mm auto 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .gr-sign-fed { margin: 0; font-family: var(--f-display); font-size: 15px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+  .gr-sign-block .gr-sign-role { margin: 2mm 0 0; font-family: var(--f-display); font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: #3a2a18 !important; }
+  .gr-sign-block .gr-sign-row { display: flex; align-items: center; justify-content: center; margin-top: 5mm; position: relative; width: 100%; min-height: 26mm; }
+  .gr-sig { font-size: 52px; transform: rotate(-3deg); margin: 0; }
+  .gr-sign-block .gr-sign-seal { position: absolute; right: 0; top: 50%; width: 24mm; height: 24mm; margin: 0 !important; transform: translateY(-50%) !important; }
+  .gr-sign-block .gr-sign-line { display: block; width: 90mm !important; margin: 1mm 0 2mm !important; border-top: 1px solid #3a2a18; }
+  .gr-sign-name { margin: 0; font-family: var(--f-display); font-size: 14px; letter-spacing: .18em; text-transform: uppercase; }
+  .gr-sign-date { text-align: center; }
+}
+@media print { .gr-sign-block { width: 170mm; } .gr-sign-fed { font-size: 14px; letter-spacing: .14em; white-space: nowrap; } }
+@media print { .gr-sign-block .gr-sign-seal { right: 24mm; } }
