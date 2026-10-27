@@ -1676,3 +1676,19 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
   .rv3-row { grid-template-columns: 1fr; gap: 40px; }
   .rv3-arrow { transform: rotate(90deg); margin: -26px 0; }
 }
+
+/* three-stage review v2: extruded 3D slabs, justified text */
+.rv3-row { perspective: 1400px; padding: 0 14px 18px 0; }
+.rv3-box { border: 1px solid #7a5f3c; border-radius: 4px;
+  background: linear-gradient(160deg, #4a3d2f 0%, #2e261e 38%, #1e1914 100%);
+  box-shadow: inset 2px 2px 0 rgba(255, 230, 180, .22), inset -2px -2px 0 rgba(0, 0, 0, .55), inset 0 0 0 6px rgba(20, 16, 12, .35), inset 0 0 0 7px rgba(201, 161, 90, .28),
+    1px 1px 0 #5a4630, 2px 2px 0 #5a4630, 3px 3px 0 #3a2d1f, 4px 4px 0 #3a2d1f, 5px 5px 0 #3a2d1f, 6px 6px 0 #3a2d1f, 7px 7px 0 #3a2d1f, 8px 8px 0 #241b12, 9px 9px 0 #241b12, 10px 10px 0 #241b12, 11px 11px 0 #241b12, 12px 12px 0 #241b12, 13px 13px 0 #241b12, 14px 14px 0 #241b12, 26px 30px 40px rgba(0, 0, 0, .7);
+  transform: rotateX(7deg) rotateY(-5deg); transform-style: preserve-3d; transition: transform .3s, box-shadow .3s; }
+.rv3-box:hover { transform: rotateX(0) rotateY(0) translate(-4px, -6px);
+  box-shadow: inset 2px 2px 0 rgba(255, 230, 180, .26), inset -2px -2px 0 rgba(0, 0, 0, .55), inset 0 0 0 6px rgba(20, 16, 12, .35), inset 0 0 0 7px rgba(201, 161, 90, .34),
+    1px 1px 0 #5a4630, 2px 2px 0 #5a4630, 3px 3px 0 #3a2d1f, 4px 4px 0 #3a2d1f, 5px 5px 0 #3a2d1f, 6px 6px 0 #3a2d1f, 7px 7px 0 #3a2d1f, 8px 8px 0 #241b12, 9px 9px 0 #241b12, 10px 10px 0 #241b12, 11px 11px 0 #241b12, 12px 12px 0 #241b12, 13px 13px 0 #241b12, 14px 14px 0 #241b12, 34px 40px 50px rgba(0, 0, 0, .72); }
+.rv3-box::before { content: ""; position: absolute; inset: 0; border-radius: 4px; pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 236, 196, .12) 0%, transparent 35%, transparent 70%, rgba(0, 0, 0, .25) 100%); }
+.rv3-n { transform: translateX(-50%) translateZ(30px); }
+.rv3-d, .rv3-d > *, .rv3-d .s { text-align: justify !important; text-align-last: left !important; word-break: keep-all; }
+@media (max-width: 900px) { .rv3-box { transform: none; } .rv3-row { padding-right: 14px; } }
