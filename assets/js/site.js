@@ -621,7 +621,67 @@
           (links ? '<div class="wbt-links">' + links + "</div>" : "") + "</div></section>"; }).join(""));
       if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 50); }
     });
+    wbtEmbers(); wbtSound();
   };
+  /* embers rising from the hearth */
+  function wbtEmbers() {
+    var box = $("#wbt-embers"); if (!box) return;
+    var h = "";
+    for (var i = 0; i < 46; i++) {
+      var size = (1.5 + Math.random() * 3.5).toFixed(1), left = (4 + Math.random() * 92).toFixed(1);
+      var dur = (6 + Math.random() * 9).toFixed(1), delay = (-Math.random() * 15).toFixed(1), drift = ((Math.random() - .5) * 160).toFixed(0);
+      h += '<i style="--s:' + size + "px;--x:" + left + "%;--d:" + dur + "s;--t:" + delay + "s;--dx:" + drift + 'px"></i>';
+    }
+    box.innerHTML = h;
+  }
+  /* the sound of burning wood, made in the browser: a low roar and the crackle of the logs */
+  function wbtSound() {
+    var btn = $("#wbt-sound"); if (!btn) return;
+    var ctx = null, master = null, on = false, timer = null;
+    var label = { on: { en: "Sound of the fire", ko: "불 소리" }, off: { en: "Sound of the fire", ko: "불 소리" } };
+    function noiseBuffer(sec, brown) {
+      var len = ctx.sampleRate * sec, b = ctx.createBuffer(1, len, ctx.sampleRate), d = b.getChannelData(0), last = 0;
+      for (var i = 0; i < len; i++) { var w = Math.random() * 2 - 1; if (brown) { last = (last + 0.02 * w) / 1.02; d[i] = last * 3.5; } else d[i] = w; }
+      return b;
+    }
+    function start() {
+      ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+      master = ctx.createGain(); master.gain.value = 0; master.connect(ctx.destination);
+      master.gain.linearRampToValueAtTime(0.9, ctx.currentTime + 1.5);
+      var roar = ctx.createBufferSource(); roar.buffer = noiseBuffer(4, true); roar.loop = true;
+      var lp = ctx.createBiquadFilter(); lp.type = "lowpass"; lp.frequency.value = 520;
+      var rg = ctx.createGain(); rg.gain.value = 0.55;
+      var lfo = ctx.createOscillator(), lg = ctx.createGain(); lfo.frequency.value = 0.18; lg.gain.value = 0.18; lfo.connect(lg); lg.connect(rg.gain); lfo.start();
+      roar.connect(lp); lp.connect(rg); rg.connect(master); roar.start();
+      var hiss = ctx.createBufferSource(); hiss.buffer = noiseBuffer(3, false); hiss.loop = true;
+      var hp = ctx.createBiquadFilter(); hp.type = "bandpass"; hp.frequency.value = 5200; hp.Q.value = 0.6;
+      var hg = ctx.createGain(); hg.gain.value = 0.025; hiss.connect(hp); hp.connect(hg); hg.connect(master); hiss.start();
+      var white = noiseBuffer(1, false);
+      (function crackle() {
+        if (!on) return;
+        var n = Math.random() < 0.18 ? 3 + Math.floor(Math.random() * 5) : 1;
+        for (var k = 0; k < n; k++) {
+          var t = ctx.currentTime + k * (0.012 + Math.random() * 0.05), src = ctx.createBufferSource(); src.buffer = white;
+          var bp = ctx.createBiquadFilter(); bp.type = "bandpass"; bp.frequency.value = 900 + Math.random() * 3800; bp.Q.value = 1.2 + Math.random() * 4;
+          var g = ctx.createGain(), peak = 0.12 + Math.random() * (Math.random() < 0.1 ? 0.9 : 0.35), len = 0.006 + Math.random() * 0.03;
+          g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(peak, t + 0.001); g.gain.exponentialRampToValueAtTime(0.0008, t + len);
+          src.connect(bp); bp.connect(g); g.connect(master); src.start(t, Math.random() * 0.9, len + 0.02);
+        }
+        timer = setTimeout(crackle, 40 + Math.random() * (Math.random() < 0.3 ? 700 : 220));
+      })();
+      btn._nodes = [roar, hiss, lfo];
+    }
+    function stop() {
+      clearTimeout(timer);
+      if (master) { var m = master; m.gain.cancelScheduledValues(ctx.currentTime); m.gain.setValueAtTime(m.gain.value, ctx.currentTime); m.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.8);
+        var nodes = btn._nodes || []; setTimeout(function () { nodes.forEach(function (n) { try { n.stop(); } catch (e) {} }); m.disconnect(); }, 900); }
+    }
+    btn.querySelector(".wbt-sound-l").innerHTML = bi(label.on, "span", "", true);
+    btn.addEventListener("click", function () {
+      on = !on; btn.setAttribute("aria-pressed", on ? "true" : "false"); btn.classList.toggle("on", on);
+      if (on) { start(); if (ctx.state === "suspended") ctx.resume(); } else stop();
+    });
+  }
 
   pages.federation = function (site) {
     renderJudges();
