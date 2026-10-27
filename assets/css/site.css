@@ -1434,7 +1434,7 @@ html[data-second="ko"] .gf-sub.s-ko, html[data-second="ja"] .gf-sub.s-ja, html[d
 
 /* ---------- the record plaque: cast bronze, A4 proportion (2026-10-25) ---------- */
 @font-face { font-family: "Pinyon Script"; src: url("../fonts/pinyon-script.woff2") format("woff2"); font-display: swap; }
-.gr-grid { grid-template-columns: minmax(0, 1fr) 400px; }
+.gr-grid { grid-template-columns: minmax(0, 1fr) 440px; }
 .gr-side { padding-bottom: 40px; }
 .bp { container-type: inline-size; position: relative; width: 100%; max-width: 400px; aspect-ratio: 210 / 297; margin: 0 auto; }
 .bp-cast { position: absolute; inset: 0; border-radius: 1.4cqw;
@@ -1642,3 +1642,15 @@ html[data-second="ko"] .gf-sub.s-ko, html[data-second="ja"] .gf-sub.s-ja, html[d
 .plaque.mini .plaque-community { font-size: 12px; }
 .plaque.mini .plaque-text { font-size: 16.5px; }
 .plaque.mini .plaque-foot, .plaque.mini .plaque-foot-en { font-size: 11.5px; }
+/* No. 0 gold plaque: A4 proportion, level seal, signature of the Secretary-General */
+.plaque.gold:has(.plaque-sealrow) { aspect-ratio: 210 / 297; display: flex; flex-direction: column; justify-content: space-between; align-items: stretch; }
+.plaque.mini:has(.plaque-sealrow) { max-width: 440px; width: 100%; padding: 30px 28px 28px; }
+.heritage-item.has-plaque:has(.plaque-sealrow) { grid-template-columns: minmax(0, 1fr) 440px; }
+.plaque-sealrow { grid-template-columns: 24% 1fr 22%; align-items: center; }
+.plaque-sealrow .pq-seal { transform: none; margin: 0; }
+.pq-sign { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.pq-sig { font-family: "Pinyon Script", cursive; font-size: 34px; line-height: 1.1; font-weight: 400 !important; font-style: normal; color: #14204a; text-shadow: none; padding: 0 6px 2px; border-bottom: 1px solid rgba(30, 16, 2, .6); }
+.pq-sig-title { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+body[data-page="heritageitem"] .pq-sig { font-size: 46px; }
+body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
+@media (max-width: 860px) { .heritage-item.has-plaque:has(.plaque-sealrow) { grid-template-columns: 1fr; } .plaque.mini:has(.plaque-sealrow) { margin: 0 auto; } }
