@@ -160,10 +160,10 @@
       "id": "events",
       "href": "events.html",
       "label": {
-        "en": "Events",
-        "ko": "대회",
-        "ja": "",
-        "zh": ""
+        "en": "Tour",
+        "ko": "투어",
+        "ja": "ツアー",
+        "zh": "巡回赛"
       }
     },
     {
