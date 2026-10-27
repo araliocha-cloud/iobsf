@@ -488,7 +488,9 @@
       '<div class="plaque-rule"></div>' +
       '<div class="plaque-text">' + esc(ins.plaque.en) + "</div>" +
       '<div class="plaque-rule"></div>' +
+      (d.status === "origin" ? '<div class="plaque-sealrow">' + ROSETTE_GOLD : "") +
       '<div class="plaque-foot">' + (d.status === "origin" ? "Declared " : "Inscribed ") + esc(ins.date) + "<br>" + (d.status === "origin" ? "" : "Decision ") + esc(ins.decision_no) + "</div>" +
+      (d.status === "origin" ? ghbhSeal("pq-seal") + "</div>" : "") +
       '<div class="plaque-foot-en">' + (d.status === "origin" ? "Heritage of the Fire, No. " + esc(d.number) + ", The Origin" : "Federation Inscribed Heritage, No. " + esc(d.number)) + "</div>" +
     "</figure>";
   }
@@ -990,6 +992,16 @@
   };
 
   var ROSETTE = '<svg class="rosette" viewBox="0 0 200 290" aria-label="Bronze rosette of Global Human Barbecue Heritage, IOBSF" role="img"><defs><linearGradient id="rzp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3c79a"/><stop offset=".35" stop-color="#b9773f"/><stop offset=".7" stop-color="#7a4520"/><stop offset="1" stop-color="#4e2a12"/></linearGradient><linearGradient id="rzt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a3016"/><stop offset=".45" stop-color="#d79a62"/><stop offset=".55" stop-color="#e8b27c"/><stop offset="1" stop-color="#5a3016"/></linearGradient><radialGradient id="rzm" cx=".38" cy=".3" r=".8"><stop offset="0" stop-color="#f0c08e"/><stop offset=".55" stop-color="#a8683a"/><stop offset="1" stop-color="#5e3418"/></radialGradient><radialGradient id="rzc" cx=".4" cy=".32" r=".75"><stop offset="0" stop-color="#e9b47e"/><stop offset="1" stop-color="#7a4421"/></radialGradient><path id="rzTop" d="M 42.9 126.6 A 63 63 0 1 1 157.1 126.6"/><path id="rzBot" d="M 31 100 A 69 69 0 0 0 169 100"/></defs><path d="M70 150 L44 284 L66 266 L82 288 L102 160 Z" fill="url(#rzt)" stroke="#3e2210" stroke-width="1"/><path d="M130 150 L156 284 L134 266 L118 288 L98 160 Z" fill="url(#rzt)" stroke="#3e2210" stroke-width="1"/><polygon points="100.0,3.0 106.8,13.3 115.2,4.2 120.3,15.4 130.0,7.7 133.3,19.6 144.0,13.6 145.5,25.8 157.0,21.5 156.5,33.8 168.6,31.4 166.2,43.5 178.5,43.0 174.2,54.5 186.4,56.0 180.4,66.7 192.3,70.0 184.6,79.7 195.8,84.8 186.7,93.2 197.0,100.0 186.7,106.8 195.8,115.2 184.6,120.3 192.3,130.0 180.4,133.3 186.4,144.0 174.2,145.5 178.5,157.0 166.2,156.5 168.6,168.6 156.5,166.2 157.0,178.5 145.5,174.2 144.0,186.4 133.3,180.4 130.0,192.3 120.3,184.6 115.2,195.8 106.8,186.7 100.0,197.0 93.2,186.7 84.8,195.8 79.7,184.6 70.0,192.3 66.7,180.4 56.0,186.4 54.5,174.2 43.0,178.5 43.5,166.2 31.4,168.6 33.8,156.5 21.5,157.0 25.8,145.5 13.6,144.0 19.6,133.3 7.7,130.0 15.4,120.3 4.2,115.2 13.3,106.8 3.0,100.0 13.3,93.2 4.2,84.8 15.4,79.7 7.7,70.0 19.6,66.7 13.6,56.0 25.8,54.5 21.5,43.0 33.8,43.5 31.4,31.4 43.5,33.8 43.0,21.5 54.5,25.8 56.0,13.6 66.7,19.6 70.0,7.7 79.7,15.4 84.8,4.2 93.2,13.3" fill="url(#rzp)" stroke="#3e2210" stroke-width="1"/><circle cx="100" cy="100" r="80" fill="url(#rzm)" stroke="#3e2210" stroke-width="1.4"/><circle cx="100" cy="100" r="76" fill="none" stroke="#ffe1b8" stroke-opacity=".55" stroke-width="1"/><circle cx="100" cy="100" r="48" fill="url(#rzc)" stroke="#3e2210" stroke-width="1.4"/><circle cx="100" cy="100" r="44" fill="none" stroke="#ffe1b8" stroke-opacity=".5" stroke-width=".9"/><g class="rz-t" fill="#2e1808"><text font-size="10.2" letter-spacing=".9"><textPath href="#rzTop" startOffset="50%" text-anchor="middle">GLOBAL HUMAN BARBECUE HERITAGE</textPath></text><text font-size="15" letter-spacing="5"><textPath href="#rzBot" startOffset="50%" text-anchor="middle" dominant-baseline="hanging">IOBSF</textPath></text><text x="100" y="106" font-size="17" letter-spacing="2.2" text-anchor="middle" font-weight="700">BRONZE</text></g></svg>';
+  /* the gold rosette of No. 0, the Origin: the bronze rosette recast in gold */
+  var ROSETTE_GOLD = (function () {
+    var c = { "#f3c79a": "#fff0b8", "#b9773f": "#e0b04a", "#7a4520": "#9c6f1a", "#4e2a12": "#5e4008", "#5a3016": "#6b4a0c", "#d79a62": "#f0cc6a", "#e8b27c": "#fde49a",
+      "#f0c08e": "#fbe39a", "#a8683a": "#c9962e", "#5e3418": "#6e4c0e", "#e9b47e": "#f6d47a", "#7a4421": "#9a6c16", "#3e2210": "#4a3206", "#ffe1b8": "#fff6d6", "#2e1808": "#2a1a02" };
+    return ROSETTE.replace(/#[0-9a-f]{6}/g, function (h) { return c[h] || h; })
+      .replace(/"rz/g, '"gz').replace(/#rz/g, "#gz")
+      .replace("Bronze rosette of Global Human Barbecue Heritage, IOBSF", "Gold rosette of the Heritage of the Fire, No. 0, the Origin, IOBSF")
+      .replace("GLOBAL HUMAN BARBECUE HERITAGE", "HERITAGE OF THE FIRE").replace(">BRONZE<", ">ORIGIN<")
+      .replace('class="rosette"', 'class="rosette rosette-gold"');
+  })();
   /* the federation seal: sixteen characters in four columns, read from the right */
   function ghbhSeal(cls) {
     var line = function (y, t, size, w) { return '<text x="55" y="' + y + '" font-size="' + size + '" textLength="' + w + '" lengthAdjust="spacing">' + t + "</text>"; };

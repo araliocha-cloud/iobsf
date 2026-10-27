@@ -1623,3 +1623,22 @@ html[data-second="ko"] .gf-sub.s-ko, html[data-second="ja"] .gf-sub.s-ja, html[d
   .gr-fields dd { line-height: 1.55 !important; }
   .gr-sign { margin-top: 7mm !important; }
 }
+
+/* No. 0 gold plaque: rosette and seal, as on the bronze plaques */
+.plaque-sealrow { display: grid; grid-template-columns: 27% 1fr 23%; align-items: end; gap: 8px; margin-top: 4px; }
+.plaque-sealrow .plaque-foot { margin: 0 0 6px; }
+.plaque-sealrow .rosette { position: static; transform: none; width: 100%; height: auto; filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .45)); }
+.plaque-sealrow .pq-seal { width: 100%; height: auto; margin-bottom: 4px; transform: rotate(-4deg); opacity: .92; mix-blend-mode: multiply; }
+.plaque.gold:has(.plaque-sealrow) { overflow: visible; padding-bottom: 30px; }
+.plaque.gold .plaque-sealrow + .plaque-foot-en { margin-top: 10px; }
+/* No. 0 gold plaque, a little larger */
+.heritage-item.has-plaque { grid-template-columns: minmax(0, 1fr) 330px; }
+.plaque.mini { max-width: 330px; padding: 26px 22px 30px; }
+.plaque.mini .plaque-emblem { width: 58px; }
+.plaque.mini .plaque-head { font-size: 12px; }
+.plaque.mini .plaque-tier { font-size: 11.5px; }
+.plaque.mini .plaque-no { font-size: 34px; }
+.plaque.mini .plaque-name { font-size: 26px; }
+.plaque.mini .plaque-community { font-size: 12px; }
+.plaque.mini .plaque-text { font-size: 16.5px; }
+.plaque.mini .plaque-foot, .plaque.mini .plaque-foot-en { font-size: 11.5px; }
