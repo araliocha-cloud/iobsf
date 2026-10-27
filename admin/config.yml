@@ -262,3 +262,100 @@ collections:
                 widget: list
                 required: false
                 field: { name: event, label: "대회 주소 이름 (event id)", widget: string }
+
+  - name: wbt
+    label: "WBT 세계 바비큐 투어"
+    files:
+      - name: wbt
+        label: "WBT 여섯 갈래 (투어 소개, 시즌, 대회, 순위, 규정과 의식, 개최 도시)"
+        file: data/wbt.json
+        format: json
+        fields:
+          - name: tagline
+            label: "표어"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: en, label: "영어", widget: string }
+              - { name: ko, label: "한국어", widget: string }
+              - { name: ja, label: "일본어", widget: string, required: false }
+              - { name: zh, label: "중국어", widget: string, required: false }
+          - { name: full_name, label: "정식 명칭", widget: string }
+          - name: soon
+            label: "글이 없을 때 표시"
+            widget: object
+            collapsed: true
+            fields:
+              - { name: en, label: "영어", widget: string }
+              - { name: ko, label: "한국어", widget: string }
+              - { name: ja, label: "일본어", widget: string, required: false }
+              - { name: zh, label: "중국어", widget: string, required: false }
+          - name: sections
+            label: "갈래"
+            label_singular: "갈래"
+            widget: list
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
+            summary: "{{fields.title.ko}}"
+            fields:
+              - { name: id, label: "주소 이름 (바꾸지 말 것)", widget: string }
+              - name: title
+                label: "갈래 이름"
+                widget: object
+                collapsed: true
+                fields:
+                  - { name: en, label: "영어", widget: string }
+                  - { name: ko, label: "한국어", widget: string }
+                  - { name: ja, label: "일본어", widget: string, required: false }
+                  - { name: zh, label: "중국어", widget: string, required: false }
+              - name: lede
+                label: "갈래 소개 한 단락"
+                widget: object
+                collapsed: true
+                fields:
+                  - { name: en, label: "영어", widget: text }
+                  - { name: ko, label: "한국어", widget: text }
+                  - { name: ja, label: "일본어", widget: text, required: false }
+                  - { name: zh, label: "중국어", widget: text, required: false }
+              - name: posts
+                label: "글"
+                label_singular: "글"
+                widget: list
+                add_to_top: true
+                required: false
+                summary: "{{fields.title.ko}}"
+                fields:
+                  - name: title
+                    label: "제목"
+                    widget: object
+                    fields:
+                      - { name: en, label: "영어 제목", widget: string }
+                      - { name: ko, label: "한국어 제목", widget: string, required: false }
+                      - { name: ja, label: "일본어 제목", widget: string, required: false }
+                      - { name: zh, label: "중국어 제목", widget: string, required: false }
+                  - { name: date, label: "날짜 (예: 2027-05-15, 선택)", widget: string, required: false }
+                  - { name: image, label: "사진 (선택)", widget: image, required: false }
+                  - name: body
+                    label: "본문 (빈 줄로 단락을 나눈다)"
+                    widget: object
+                    fields:
+                      - { name: en, label: "영어 본문", widget: text, required: false }
+                      - { name: ko, label: "한국어 본문", widget: text, required: false }
+                      - { name: ja, label: "일본어 본문", widget: text, required: false }
+                      - { name: zh, label: "중국어 본문", widget: text, required: false }
+              - name: links
+                label: "이어지는 링크"
+                label_singular: "링크"
+                widget: list
+                required: false
+                fields:
+                  - { name: href, label: "주소", widget: string }
+                  - name: label
+                    label: "링크 글자"
+                    widget: object
+                    fields:
+                      - { name: en, label: "영어", widget: string }
+                      - { name: ko, label: "한국어", widget: string }
+                      - { name: ja, label: "일본어", widget: string, required: false }
+                      - { name: zh, label: "중국어", widget: string, required: false }

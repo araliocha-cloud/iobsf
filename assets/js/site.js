@@ -120,7 +120,10 @@
   function renderChrome(site) {
     var page = document.body.dataset.page;
     var nav = site.nav.map(function (n) {
-      return '<li><a href="' + n.href + '"' + (n.id === page ? ' aria-current="page"' : "") + ">" + esc(n.label.en) + "</a></li>";
+      var cur = n.id === page || (n.pages && n.pages.indexOf(page) > -1);
+      var kids = n.children && n.children.length ? '<ul class="nav-sub">' + n.children.map(function (c) {
+        return '<li><a href="' + c.href + '">' + esc(c.label.en) + "</a></li>"; }).join("") + "</ul>" : "";
+      return '<li' + (kids ? ' class="has-sub"' : "") + '><a href="' + n.href + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label.en) + "</a>" + kids + "</li>";
     }).join("");
     var langs = site.second_languages.map(function (l) {
       return '<button type="button" data-lang="' + l.code + '" aria-pressed="false" title="Second language">' + esc(l.name) + "</button>";
@@ -590,6 +593,35 @@
   }
 
   pages.judge = function () { renderJudges(param("id")); };
+
+  /* WBT: World Barbecue Tour, its six branches written from the admin */
+  function paras(o) {
+    var one = function (t, tag) { return String(t || "").split(/\n\s*\n/).filter(function (x) { return x.trim(); }).map(function (x) { return "<p>" + inline(x.trim()).replace(/\n/g, "<br>") + "</p>"; }).join(""); };
+    var h = '<div class="p" lang="en">' + one(o.en) + "</div>";
+    SECONDS.forEach(function (k) { var v = o[k] || (k !== "ko" && o.ko ? "" : ""); if (v) h += '<div class="s" lang="' + k + '">' + one(v) + "</div>"; });
+    return '<div class="bi gb wbt-body">' + h + "</div>";
+  }
+  pages.wbt = function () {
+    load("wbt").then(function (w) {
+      put("#wbt-tag", '<p class="wbt-tag">' + esc(w.tagline.en) + "</p>" + gb({ en: "", ko: w.tagline.ko, ja: w.tagline.ja, zh: w.tagline.zh }, "p", "wbt-tag-2") + '<p class="wbt-full">' + esc(w.full_name) + "</p>");
+      put("#wbt-sub", w.sections.map(function (x) { return '<a href="#' + esc(x.id) + '">' + gb(x.title, "span") + "</a>"; }).join(""));
+      put("#wbt-grid", w.sections.map(function (x, i) {
+        var n = (x.posts || []).length;
+        return '<a class="wbt-card rv3-box" href="#' + esc(x.id) + '"><span class="rv3-n">' + (i + 1) + "</span>" + gb(x.title, "h3", "wbt-card-t") + gb(x.lede, "p", "wbt-card-d") +
+          '<span class="wbt-soon">' + (n ? n + (n === 1 ? " entry" : " entries") : gb(w.soon, "span")) + "</span></a>"; }).join(""));
+      put("#wbt-sections", w.sections.map(function (x) {
+        var posts = (x.posts || []).filter(function (q) { return q && q.title; });
+        var links = (x.links || []).map(function (l) { return '<a class="wbt-link" href="' + esc(l.href) + '">' + gb(l.label, "span") + "</a>"; }).join("");
+        var h2 = '<h2 class="bi"><span class="p">' + esc(x.title.en) + "</span>" + SECONDS.map(function (k) { return x.title[k] ? '<span class="s" lang="' + k + '">' + esc(x.title[k]) + "</span>" : ""; }).join("") + "</h2>";
+        return '<section class="section wbt-sec" id="' + esc(x.id) + '"><div class="wrap"><div class="section-head">' + h2 + "</div>" + gb(x.lede, "p", "wbt-lede") +
+          (posts.length ? '<div class="wbt-posts">' + posts.map(function (q) {
+            return '<article class="wbt-post rv3-box">' + (q.image ? '<img class="wbt-post-img" src="' + esc(q.image) + '" alt="" loading="lazy">' : "") +
+              (q.date ? '<p class="wbt-date">' + esc(q.date) + "</p>" : "") + gb(q.title, "h3", "wbt-post-t") + (q.body ? paras(q.body) : "") + "</article>"; }).join("") + "</div>"
+            : '<p class="wbt-empty">' + gb(w.soon, "span") + "</p>") +
+          (links ? '<div class="wbt-links">' + links + "</div>" : "") + "</div></section>"; }).join(""));
+      if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 50); }
+    });
+  };
 
   pages.federation = function (site) {
     renderJudges();

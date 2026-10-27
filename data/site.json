@@ -157,14 +157,75 @@
       }
     },
     {
-      "id": "events",
-      "href": "events.html",
+      "id": "wbt",
+      "href": "wbt.html",
       "label": {
-        "en": "Tour",
-        "ko": "투어",
-        "ja": "ツアー",
-        "zh": "巡回赛"
-      }
+        "en": "WBT",
+        "ko": "세계 바비큐 투어",
+        "ja": "ワールドバーベキューツアー",
+        "zh": "世界烧烤巡回赛"
+      },
+      "pages": [
+        "wbt",
+        "events",
+        "event"
+      ],
+      "children": [
+        {
+          "href": "wbt.html#tour",
+          "label": {
+            "en": "The Tour",
+            "ko": "투어 소개",
+            "ja": "ツアー紹介",
+            "zh": "巡回赛介绍"
+          }
+        },
+        {
+          "href": "wbt.html#season",
+          "label": {
+            "en": "Season",
+            "ko": "시즌",
+            "ja": "シーズン",
+            "zh": "赛季"
+          }
+        },
+        {
+          "href": "wbt.html#origins",
+          "label": {
+            "en": "Origins",
+            "ko": "대회",
+            "ja": "大会",
+            "zh": "赛事"
+          }
+        },
+        {
+          "href": "wbt.html#ranking",
+          "label": {
+            "en": "Ranking",
+            "ko": "순위",
+            "ja": "ランキング",
+            "zh": "排名"
+          }
+        },
+        {
+          "href": "wbt.html#rules",
+          "label": {
+            "en": "Rules",
+            "ko": "규정과 의식",
+            "ja": "規定と儀式",
+            "zh": "规则与仪式"
+          }
+        },
+        {
+          "href": "wbt.html#host",
+          "label": {
+            "en": "Host",
+            "ko": "개최 도시",
+            "ja": "開催都市",
+            "zh": "主办城市"
+          }
+        }
+      ]
     },
     {
       "id": "pathway",
