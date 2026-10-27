@@ -1790,3 +1790,7 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .ap-zoom-nav { flex: none; width: 46px; height: 46px; border: 1px solid #b08a3e; border-radius: 50%; background: #2a221a; color: #f1dcb0; font-size: 30px; line-height: 1; cursor: pointer; }
 .ap-zoom-x:hover, .ap-zoom-nav:hover { background: #3a2e22; border-color: #e6bd5c; }
 @media (max-width: 600px) { .ap-zoom { padding: 60px 8px 8px; gap: 6px; } .ap-zoom-nav { width: 36px; height: 36px; font-size: 24px; } .ap-zoom-fig img { max-width: calc(100vw - 100px); } }
+.ap-zoom-fig { flex-direction: column; align-items: center; gap: 10px; }
+.ap-zoom-fig img { max-height: calc(100vh - 84px); }
+.ap-zoom-n { font-family: var(--display); font-size: 13px; letter-spacing: .3em; color: #d9a93a; }
+.ap-zoom-nav:disabled { opacity: .25; cursor: default; }

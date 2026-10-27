@@ -932,17 +932,22 @@
     '<g transform="rotate(-38 70 70)"><path d="M70 6 C88 18 92 46 76 82 L70 98 L64 82 C48 46 52 18 70 6 Z" fill="url(#apQ2)" stroke="#8c7d60" stroke-width=".9"/>' +
     '<path d="M70 12 V96" stroke="#9c8a66" stroke-width="1.1"/><g stroke="#b5a582" stroke-width=".7" opacity=".8"><path d="M70 26 L60 34"/><path d="M70 38 L58 48"/><path d="M70 50 L59 60"/><path d="M70 30 L80 38"/><path d="M70 44 L82 54"/><path d="M70 58 L80 68"/></g>' +
     '<path d="M66 96 L70 116 L74 96 Z" fill="url(#apN2)" stroke="#4a3206" stroke-width=".8"/></g></g></svg>';
-  /* a page of the form, opened large inside the page */
-  function bindZoom() {
-    document.querySelectorAll("[data-zoom]").forEach(function (a) {
-      a.addEventListener("click", function (ev) {
+  /* the whole form, opened large inside the page, starting from the page chosen */
+  function fullPage(a, n) { return a.full.replace("{n}", (n < 10 ? "0" : "") + n); }
+  function bindZoom(a) {
+    document.querySelectorAll("[data-zoom]").forEach(function (link) {
+      link.addEventListener("click", function (ev) {
         ev.preventDefault();
-        var all = Array.prototype.slice.call(document.querySelectorAll("[data-zoom]")), i = all.indexOf(a);
+        var total = a.pages, i = +link.getAttribute("data-zoom");
         var box = document.createElement("div"); box.className = "ap-zoom"; box.setAttribute("role", "dialog"); box.setAttribute("aria-modal", "true");
         box.innerHTML = '<button type="button" class="ap-zoom-x" aria-label="Close">&times;</button>' +
-          '<button type="button" class="ap-zoom-nav prev" aria-label="Previous page">&lsaquo;</button><figure class="ap-zoom-fig"><img alt=""></figure><button type="button" class="ap-zoom-nav next" aria-label="Next page">&rsaquo;</button>';
-        var img = box.querySelector("img");
-        var show = function (k) { i = (k + all.length) % all.length; img.src = all[i].getAttribute("data-zoom"); img.alt = all[i].querySelector("img").alt; };
+          '<button type="button" class="ap-zoom-nav prev" aria-label="Previous page">&lsaquo;</button><figure class="ap-zoom-fig"><img alt=""><figcaption class="ap-zoom-n"></figcaption></figure><button type="button" class="ap-zoom-nav next" aria-label="Next page">&rsaquo;</button>';
+        var img = box.querySelector("img"), cap = box.querySelector(".ap-zoom-n");
+        var show = function (k) {
+          i = Math.min(Math.max(k, 1), total); img.src = fullPage(a, i); img.alt = "Page " + i + " of the application form"; cap.textContent = i + " / " + total;
+          box.querySelector(".prev").disabled = i === 1; box.querySelector(".next").disabled = i === total;
+          if (i < total) { var pre = new Image(); pre.src = fullPage(a, i + 1); }
+        };
         var close = function () { document.removeEventListener("keydown", key); box.remove(); document.body.style.overflow = ""; };
         var key = function (e) { if (e.key === "Escape") close(); else if (e.key === "ArrowLeft") show(i - 1); else if (e.key === "ArrowRight") show(i + 1); };
         box.addEventListener("click", function (e) { if (e.target === box || e.target.classList.contains("ap-zoom-x")) close(); });
@@ -966,7 +971,7 @@
       "</div>" +
       '<div class="ap-form">' + box("", '<img class="ap-emblem" src="assets/img/emblem-small.png" alt="">' + gb(a.form_title, "h3", "ap-form-t") + gb(a.form_note, "p", "ap-form-n") +
         (a.preview ? '<div class="ap-pages">' + a.preview.map(function (pg, i) {
-          return '<a class="ap-page ap-page-' + (i + 1) + '" href="' + pg.img.replace(".webp", "-large.webp") + '" data-zoom="' + pg.img.replace(".webp", "-large.webp") + '"><span class="ap-sheet"><img src="' + pg.img + '" alt="' + esc(pg.label.en) + ' of the application form" loading="lazy"></span>' + gb(pg.label, "span", "ap-page-l") + "</a>"; }).join("") + "</div>" + gb(a.preview_hint, "p", "ap-pages-h") : "") +
+          return '<a class="ap-page ap-page-' + (i + 1) + '" href="' + fullPage(a, pg.page) + '" data-zoom="' + pg.page + '"><span class="ap-sheet"><img src="' + pg.img + '" alt="' + esc(pg.label.en) + ' of the application form" loading="lazy"></span>' + gb(pg.label, "span", "ap-page-l") + "</a>"; }).join("") + "</div>" + gb(a.preview_hint, "p", "ap-pages-h") : "") +
         '<div class="ap-dls">' + dl(a.pdf, ICON_PDF, a.pdf_label, "PDF") + dl(a.docx, ICON_DOC, a.docx_label, "DOCX") + "</div>" +
         '<p class="ap-mail">' + gb(a.submit, "span", "ap-mail-k") + '<a href="mailto:' + esc(a.email) + '?subject=GHBH%20Application">' + esc(a.email) + "</a></p>", "ap-form-box") + "</div>";
   }
@@ -995,7 +1000,7 @@
           return '<div class="gty"><span class="gty-n">' + (i + 1) + "</span>" + gb(t[0], "h4") + '<p class="gty-en">' + esc(t[1].en) + "</p>" + gb(t[2], "p", "gty-d") + "</div>"; }).join("") + "</div>");
       put("#ghbh-fields", gb(s.s4, "p", "ghbh-p") + '<div class="w-table"><table class="table ghbh-ftable"><thead><tr><th>No.</th><th>' + bi(GU.field, "span") + "</th><th>" + bi(GU.desc, "span") + "</th></tr></thead><tbody>" +
         s.fields.map(function (f, i) { return "<tr><td>" + (i + 1) + "</td><td>" + gb(f[0], "b", "gf-fname") + "</td><td>" + gb(f[2], "span") + "</td></tr>"; }).join("") + "</tbody></table></div>");
-      if (s.apply) { put("#ghbh-apply", applyBlock(s.apply)); bindZoom(); }
+      if (s.apply) { put("#ghbh-apply", applyBlock(s.apply)); bindZoom(s.apply); }
       put("#ghbh-charter-door", '<div class="ghbh-docs"><a href="charter.html"><span class="gdc-k">Charter</span>' + gb(g.charter.title, "b", "gdc-t") + gb(GU.charterSub, "span", "gdc-s") + "</a>" +
         '<a href="criteria.html"><span class="gdc-k">Criteria</span>' + gb(g.criteria.title, "b", "gdc-t") + gb(GU.criteriaSub, "span", "gdc-s") + "</a></div>");
     });
