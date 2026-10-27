@@ -1744,3 +1744,7 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .ap-dl:hover .ap-ico { transform: none; }
 .ap-dl-hit:hover .ap-ico { transform: scale(1.06) rotate(-2deg); }
 @media (max-width: 760px) { .ap-dl-hit { margin: 0; padding: 0; } }
+/* the form slab stays still and flat, so its face never covers the buttons on it */
+.ap-box { transform-style: flat; }
+.ap-form-box, .ap-form-box:hover { transform: none !important; }
+.ap-dl-hit { position: relative; z-index: 2; }
