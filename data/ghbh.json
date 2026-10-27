@@ -14191,7 +14191,7 @@
    },
    "email": "araliocha@gmail.com",
    "pdf": "assets/forms/GHBH-01_Application_Form.pdf",
-   "docx": "https://raw.githubusercontent.com/araliocha-cloud/iobsf/main/assets/forms/GHBH-01_Application_Form.docx",
+   "docx": "assets/forms/GHBH-01_Application_Form.docx",
    "pdf_label": {
     "en": "PDF for printing",
     "ko": "인쇄용 PDF",
