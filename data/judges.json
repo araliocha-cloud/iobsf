@@ -9,7 +9,9 @@
       "id": "sung-chang-soo",
       "name": {
         "ko": "성창수",
-        "en": "Sung, Chang-soo"
+        "en": "Sung, Chang-soo",
+        "ja": "ソン チャンス",
+        "zh": ""
       },
       "photo": "assets/img/judges/sung-chang-soo-v3.jpg",
       "certified": "2012",
@@ -21,7 +23,9 @@
       "id": "shin-seong-bong",
       "name": {
         "ko": "신성봉",
-        "en": "Shin, Seong-bong"
+        "en": "Shin, Seong-bong",
+        "ja": "シン ソンボン",
+        "zh": ""
       },
       "photo": "assets/img/judges/shin-seong-bong-v3.jpg",
       "certified": "2012",
@@ -33,7 +37,9 @@
       "id": "kim-jae-goo",
       "name": {
         "ko": "김재구",
-        "en": "Kim, Jae-goo"
+        "en": "Kim, Jae-goo",
+        "ja": "キム ジェグ",
+        "zh": ""
       },
       "photo": "assets/img/judges/kim-jae-goo-v3.jpg",
       "certified": "2012",
@@ -45,7 +51,9 @@
       "id": "lee-jae-cheon",
       "name": {
         "ko": "이재천",
-        "en": "Lee, Jae-cheon"
+        "en": "Lee, Jae-cheon",
+        "ja": "イ ジェチョン",
+        "zh": ""
       },
       "photo": "assets/img/judges/lee-jae-cheon-v3.jpg",
       "certified": "2012",
@@ -57,7 +65,9 @@
       "id": "choi-woo-hyeok",
       "name": {
         "ko": "최우혁",
-        "en": "Choi, Woo-hyeok"
+        "en": "Choi, Woo-hyeok",
+        "ja": "チェ ウヒョク",
+        "zh": ""
       },
       "photo": "assets/img/judges/choi-woo-hyeok-v3.jpg",
       "certified": "2012",
@@ -69,7 +79,9 @@
       "id": "oh-taek-soo",
       "name": {
         "ko": "오택수",
-        "en": "Oh, Taek-soo"
+        "en": "Oh, Taek-soo",
+        "ja": "オ テクス",
+        "zh": ""
       },
       "photo": "assets/img/judges/oh-taek-soo-v3.jpg",
       "certified": "2012",
@@ -77,5 +89,23 @@
       "issued": "2012-04-15",
       "reissued": false
     }
-  ]
+  ],
+  "nationality": {
+    "en": "Republic of Korea",
+    "ko": "대한민국",
+    "ja": "大韓民国",
+    "zh": "韩国"
+  },
+  "affiliation": {
+    "en": "KOOBA and IOBSF",
+    "ko": "대한아웃도어바비큐협회(KOOBA), 국제아웃도어바비큐스포츠연맹(IOBSF)",
+    "ja": "大韓アウトドアバーベキュー協会（KOOBA）、国際アウトドアバーベキュースポーツ連盟（IOBSF）",
+    "zh": "大韩户外烧烤协会（KOOBA）、国际户外烧烤运动联盟（IOBSF）"
+  },
+  "lede": {
+    "en": "Official judges of the Federation, certified by KOOBA, the Federation's member in Korea, and serving jointly under KOOBA and the IOBSF.",
+    "ko": "연맹의 공식 심판이다. 연맹의 한국 회원인 KOOBA가 인증하였으며, KOOBA와 연맹에 공동으로 소속되어 활동한다.",
+    "ja": "連盟の公式審判である。連盟の韓国会員であるKOOBAが認定し、KOOBAと連盟に共同で所属して活動する。",
+    "zh": "联盟的正式裁判。由联盟韩国会员KOOBA认证，共同隶属于KOOBA与联盟。"
+  }
 }

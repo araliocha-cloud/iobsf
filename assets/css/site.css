@@ -1794,3 +1794,28 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .ap-zoom-fig img { max-height: calc(100vh - 84px); }
 .ap-zoom-n { font-family: var(--display); font-size: 13px; letter-spacing: .3em; color: #d9a93a; }
 .ap-zoom-nav:disabled { opacity: .25; cursor: default; }
+/* Official Judges: the judge card beside the judge's record */
+.oj-lede { max-width: 820px; margin: 0 auto 50px; }
+.oj-lede .p, .oj-lede .s { text-align: justify; text-align-last: left; word-break: keep-all; }
+.oj-row { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: start; margin: 0 0 60px; padding-right: 14px; }
+.oj-row .judge-card { margin: 0; }
+.oj-prof { padding: 28px 30px 26px; text-align: left; }
+.oj-name { text-align: center; margin: 0 0 18px; }
+.oj-name .p { font-size: 26px; color: #f1dcb0; }
+.oj-name .s { font-size: 17px; color: #c9a15a; }
+.oj-facts { display: grid; grid-template-columns: 140px 1fr; gap: 10px 16px; margin: 0 0 22px; padding-bottom: 18px; border-bottom: 1px solid rgba(201,161,90,.3); }
+.oj-facts dt, .oj-facts dd { margin: 0; text-align: left; }
+.oj-facts .gb { text-align: left; }
+.oj-facts dt .p, .oj-facts dt .s { color: #c9a15a; font-size: 14px; }
+.oj-facts dd .p, .oj-plain { color: var(--bone); font-size: 15px; }
+.oj-facts dd .s { font-size: 13.5px; color: var(--ash); }
+.oj-ch { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 0 0 14px; text-align: center; }
+.oj-ch .p { font-size: 18px; color: #ead2a4; }
+.oj-ch .s { font-size: 14px; color: #c9a15a; }
+.oj-n { padding: 1px 10px; border: 1px solid #b08a3e; border-radius: 12px; font-size: 13px; color: #d9a93a; }
+.oj-career { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; }
+.oj-career li { display: grid; grid-template-columns: 44px 1fr; gap: 10px; font-size: 14.5px; line-height: 1.5; }
+.oj-y { color: #d9a93a; font-family: var(--display); }
+.oj-e { text-align: left; }
+.oj-e .s { font-size: 13px; color: var(--ash); }
+@media (max-width: 900px) { .oj-row { grid-template-columns: 1fr; } .oj-row .judge-card { margin: 0 auto; } .oj-career { grid-template-columns: 1fr; } }

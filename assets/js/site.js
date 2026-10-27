@@ -320,24 +320,6 @@
         (before.length ? '<h3 class="pf-head">Before the Federation' + bi({ ko: "연맹 이전의 불" }, "span") + "</h3>" + eventRows(before, ev, na) : ""));
       put("#ritual", ritualList(ev.ritual_stages, null, true));
     });
-    load("judges").then(function (j) {
-      var spaced = function (t) { return esc(t).split("").join(" "); };
-      var day = function (d) { var x = new Date(d + "T00:00:00"); return { dot: d.replace(/-/g, ". ") + ".", en: x.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) }; };
-      put("#events-judges", bi({ en: "Judges certified by KOOBA, the Federation’s member in Korea, in the standard form of the official judge card.", ko: "연맹의 한국 회원인 KOOBA가 인정한 공식 심판. 공식 심판증의 표준 양식으로 싣는다." }, "div", "prose member-intro") +
-        '<div class="judge-cards">' + j.judges.map(function (x) {
-          var d = day(x.issued || x.certified);
-          return '<div class="judge-card"><div class="jc-title">Official Judge</div>' + (x.no ? '<div class="jc-no">No. ' + esc(x.no) + "</div>" : "") +
-            '<img class="jc-photo" src="' + esc(x.photo) + '" alt="' + esc(x.name.en) + '" loading="lazy">' +
-            '<div class="jc-name-ko" lang="ko">' + spaced(x.name.ko) + '</div><div class="jc-name-en">' + esc(x.name.en) + "</div>" +
-            '<p class="jc-ko" lang="ko">이 사람은 대한아웃도어바비큐협회가 인정하는 공식 심판임을 확인합니다.</p>' +
-            '<p class="jc-en">This person is an official judge certified by KOOBA.</p>' +
-            '<div class="jc-date">' + esc(d.en) + "</div>" +
-            '<div class="jc-meta">' + (x.reissued ? "Certified " + esc(String(x.certified).slice(0, 4)) + ", reissued " + esc((x.issued || "").slice(0, 4)) : "Certified " + esc(String(x.certified).slice(0, 4))) + "</div>" +
-            '<img class="jc-strip" src="assets/img/judges/kooba-strip.png" alt="Korea Outdoor &amp; Barbecue Association">' +
-            '<img class="jc-seal" src="assets/img/judges/kooba-seal.png" alt="Seal of the Korea Outdoor &amp; Barbecue Association"></div>';
-        }).join("") + "</div>" +
-        '<p class="jc-confirm">' + bi({ en: "Confirmed as official judges of KOOBA on " + day(j.confirmed).en + ", by the Chairman of KOOBA.", ko: "상기인들이 사단법인 대한아웃도어바비큐협회 공식 심판임을 " + j.confirmed.replace(/-/g, ". ") + ". 협회장이 증명했다." }, "span", "", true) + "</p>");
-    });
   };
 
   pages.event = function () {
@@ -566,7 +548,41 @@
     });
   };
 
+  /* Official Judges: the judge card beside the judge's record */
+  function renderJudges() {
+    Promise.all([load("judges"), load("events")]).then(function (r) {
+      var j = r[0], all = (r[1].events || []).filter(function (e) { return e.status === "completed"; })
+        .sort(function (a, b) { return a.year - b.year || String(a.date || "").localeCompare(String(b.date || "")); });
+      var spaced = function (t) { return esc(t).split("").join(" "); };
+      var L = function (en, ko, ja, zh) { return { en: en, ko: ko, ja: ja, zh: zh }; };
+      put("#fed-judges", gb(j.lede, "p", "oj-lede") + '<div class="oj-list">' + j.judges.map(function (x) {
+        var ev = x.career && x.career.length ? all.filter(function (e) { return x.career.indexOf(e.id) > -1; }) : all;
+        var nm = { en: x.name.en, ko: x.name.ko, ja: x.name.ja || x.name.en, zh: x.name.zh || x.name.en };
+        var card = '<div class="judge-card"><div class="jc-title">Official Judge</div>' + (x.no ? '<div class="jc-no">No. ' + esc(x.no) + "</div>" : "") +
+          '<img class="jc-photo" src="' + esc(x.photo) + '" alt="' + esc(x.name.en) + '" loading="lazy">' +
+          '<div class="jc-name-ko" lang="ko">' + spaced(x.name.ko) + '</div><div class="jc-name-en">' + esc(x.name.en) + "</div>" +
+          '<p class="jc-ko" lang="ko">이 사람은 대한아웃도어바비큐협회가 인정하는 공식 심판임을 확인합니다.</p>' +
+          '<p class="jc-en">This person is an official judge certified by KOOBA.</p>' +
+          '<div class="jc-date">' + esc(new Date((x.issued || x.certified + "-01-01") + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })) + "</div>" +
+          '<div class="jc-meta">' + (x.reissued ? "Certified " + esc(String(x.certified).slice(0, 4)) + ", reissued " + esc((x.issued || "").slice(0, 4)) : "Certified " + esc(String(x.certified).slice(0, 4))) + "</div>" +
+          '<img class="jc-strip" src="assets/img/judges/kooba-strip.png" alt="Korea Outdoor &amp; Barbecue Association">' +
+          '<img class="jc-seal" src="assets/img/judges/kooba-seal.png" alt="Seal of the Korea Outdoor &amp; Barbecue Association"></div>';
+        var prof = '<div class="oj-prof rv3-box">' + gb(nm, "h3", "oj-name") +
+          '<dl class="oj-facts"><dt>' + gb(L("Nationality", "국적", "国籍", "国籍"), "span") + "</dt><dd>" + gb(j.nationality, "span") + "</dd>" +
+          "<dt>" + gb(L("Affiliation", "소속", "所属", "所属"), "span") + "</dt><dd>" + gb(j.affiliation, "span") + "</dd>" +
+          "<dt>" + gb(L("Certified", "인증", "認定", "认证"), "span") + "</dt><dd><span class=\"oj-plain\">" + esc(String(x.certified)) + (x.no ? ", No. " + esc(x.no) : "") + "</span></dd></dl>" +
+          '<div class="oj-ch">' + gb(L("Career as Official Judge", "공식 심판 경력", "公式審判の経歴", "正式裁判经历"), "span") + '<span class="oj-n">' + ev.length + "</span></div>" +
+          '<ol class="oj-career">' + ev.map(function (e) {
+            var n = typeof e.name === "object" ? e.name : { en: e.name };
+            return '<li><span class="oj-y">' + esc(String(e.year)) + "</span>" + gb({ en: n.en, ko: n.ko || n.en, ja: n.ja, zh: n.zh }, "span", "oj-e") + "</li>"; }).join("") + "</ol></div>";
+        return '<article class="oj-row">' + card + prof + "</article>";
+      }).join("") + "</div>" +
+        (j.confirmed ? '<p class="jc-confirm">' + bi({ en: "Confirmed as official judges of KOOBA on " + new Date(j.confirmed + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) + ", by the Chairman of KOOBA.", ko: "상기인들이 사단법인 대한아웃도어바비큐협회 공식 심판임을 " + j.confirmed.replace(/-/g, ". ") + ". 협회장이 증명했다." }, "span", "", true) + "</p>" : ""));
+    });
+  }
+
   pages.federation = function (site) {
+    renderJudges();
     var st = site.statements, f = site.federation;
     put("#fed-facts",
       '<dl class="facts">' +

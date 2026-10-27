@@ -249,9 +249,16 @@ collections:
                 fields:
                   - { name: ko, label: "한국어 이름", widget: string }
                   - { name: en, label: "영문 이름 (예: Kim, Jae-goo)", widget: string }
+                  - { name: ja, label: "일본어 이름 (예: キム ジェグ)", widget: string, required: false }
+                  - { name: zh, label: "중국어 이름 (한자, 비우면 영문 이름)", widget: string, required: false }
               - { name: photo, label: "사진 (정사각형)", widget: image }
               - { name: certified, label: "자격 공인 연도 (예: 2012)", widget: string }
               - { name: issued, label: "증명서 발급일 (YYYY-MM-DD)", widget: string }
               - { name: reissued, label: "재발급 또는 갱신", widget: boolean, default: false }
               - { name: no, label: "자격번호 (공인 연도-일련번호, 예: 2012-007)", widget: string }
               - { name: id, label: "주소 이름 (영문 소문자와 하이픈)", widget: string, required: false }
+              - name: career
+                label: "심판 경력 (비우면 모든 완료 대회)"
+                widget: list
+                required: false
+                field: { name: event, label: "대회 주소 이름 (event id)", widget: string }
