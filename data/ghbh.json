@@ -14009,7 +14009,202 @@
      "zh": "民众口述历史（Oral History）、烧烤师传承、实地考察与精密史料"
     }
    ]
-  ]
+  ],
+  "apply": {
+   "title": {
+    "en": "How to Apply",
+    "ko": "신청 안내",
+    "ja": "申請案内",
+    "zh": "申请指南"
+   },
+   "lede": [
+    {
+     "en": "Fire was the first thing humankind shared. The Record is open to every barbecue on earth: one practised today, one that has been lost, and one that has been revived.",
+     "ko": "불은 인류가 처음으로 함께 나눈 것이다. 기록은 지구상의 모든 바비큐에 열려 있다. 지금 행해지는 바비큐도, 끊긴 바비큐도, 다시 살아난 바비큐도 기록할 수 있다.",
+     "ja": "火は人類が初めて共に分かち合ったものである。記録は地球上のすべてのバーベキューに開かれている。いま営まれているもの、途絶えたもの、再び息を吹き返したもの、そのいずれも記録できる。",
+     "zh": "火是人类最早共同分享之物。记录向地球上所有的烧烤敞开。今日仍在实践的、已经断绝的、重新复兴的，都可以记录。"
+    },
+    {
+     "en": "Inscription requires review, and the heaviest weight falls on what the fire has done for its community. The applicant is not a state. It is the people who have kept the fire.",
+     "ko": "등재는 심사를 거친다. 가장 무겁게 보는 것은 그 불이 공동체에 무엇을 해 왔는가이다. 신청하는 주체는 국가가 아니다. 그 불을 지켜 온 사람들이다.",
+     "ja": "登録には審査を経る。最も重く見るのは、その火が共同体に何をもたらしてきたかである。申請の主体は国家ではない。その火を守ってきた人々である。",
+     "zh": "登录须经审查。最受重视的是这团火为共同体带来了什么。申请主体不是国家，而是守护这团火的人们。"
+    },
+    {
+     "en": "Where it is established that a heritage, in its formation or transmission, rests on the plunder, exploitation or sacrifice of human beings, the Federation shall judge it to violate human dignity and the sanctity of community, and shall exclude it from inscription.",
+     "ko": "해당 유산이 그 성립이나 전승에 있어서 인간에 대한 수탈, 착취, 희생에 근거한 사실이 확인될 경우, 이를 인간의 존엄과 공동체의 숭고함을 훼손한 것으로 판단하여 등재 대상에서 제외한다.",
+     "ja": "当該遺産がその成立または伝承において、人間に対する収奪、搾取、犠牲に基づく事実が確認された場合、これを人間の尊厳と共同体の崇高さを損なうものと判断し、登録対象から除外する。",
+     "zh": "若确认该遗产在其形成或传承中以对人的掠夺、剥削、牺牲为依据，则判定其损害了人的尊严与共同体的崇高，将其排除于登录对象之外。"
+    }
+   ],
+   "types_title": {
+    "en": "Four Types of Application",
+    "ko": "신청 유형",
+    "ja": "申請の種類",
+    "zh": "申请类型"
+   },
+   "types": [
+    [
+     {
+      "en": "Record",
+      "ko": "기록 신청",
+      "ja": "記録申請",
+      "zh": "记录申请"
+     },
+     {
+      "en": "Entry in the Federation Archive only. No review follows.",
+      "ko": "연맹기록유산 수록만 신청한다. 심사는 받지 않는다.",
+      "ja": "連盟記録遺産への収録のみを申請する。審査は受けない。",
+      "zh": "仅申请收录为联盟记录遗产，不接受审查。"
+     }
+    ],
+    [
+     {
+      "en": "Record and Review",
+      "ko": "기록 및 심사 신청",
+      "ja": "記録および審査申請",
+      "zh": "记录及审查申请"
+     },
+     {
+      "en": "Entry in the Archive, followed at once by review.",
+      "ko": "기록유산으로 수록한 뒤 곧바로 심사에 회부한다.",
+      "ja": "記録遺産に収録した後、直ちに審査に付す。",
+      "zh": "收录为记录遗产后立即提交审查。"
+     }
+    ],
+    [
+     {
+      "en": "Advancement",
+      "ko": "심사 승격 신청",
+      "ja": "審査昇格申請",
+      "zh": "审查晋升申请"
+     },
+     {
+      "en": "Review of a heritage already in the Archive, at any time.",
+      "ko": "이미 기록유산에 오른 유산의 심사를 언제든 신청한다.",
+      "ja": "すでに記録遺産に収められた遺産の審査を、いつでも申請できる。",
+      "zh": "已列入记录遗产的遗产可随时申请审查。"
+     }
+    ],
+    [
+     {
+      "en": "Revived Heritage",
+      "ko": "복원 유산 심사 신청",
+      "ja": "復元遺産審査申請",
+      "zh": "复兴遗产审查申请"
+     },
+     {
+      "en": "Review of a heritage once lost and now practised again by its community, resting on the record and sustained over time.",
+      "ko": "끊겼다가 다시 살아난 유산의 심사를 신청한다. 복원은 기록에 근거하고, 공동체가 실천하며, 일정 기간 지속되어야 한다.",
+      "ja": "途絶えた後に再び息を吹き返した遺産の審査を申請する。復元は記録に基づき、共同体が実践し、一定期間継続していなければならない。",
+      "zh": "申请审查曾经断绝而后复兴的遗产。复兴须以记录为依据，由共同体实践，并持续一定时期。"
+     }
+    ]
+   ],
+   "principles_title": {
+    "en": "Principles of Writing",
+    "ko": "작성의 원칙",
+    "ja": "作成の原則",
+    "zh": "填写原则"
+   },
+   "principles": [
+    {
+     "en": "Separate fact from inference. Mark each source as documented, inferred or oral.",
+     "ko": "사실과 추정을 나눈다. 출처마다 확정 사료, 추정, 구전을 구분해 적는다.",
+     "ja": "事実と推定を分ける。出典ごとに確定史料、推定、口承を区別して記す。",
+     "zh": "区分事实与推测。每一出处注明为确凿史料、推测或口传。"
+    },
+    {
+     "en": "Do not hide the shadow. Histories of plunder and rupture are part of the record.",
+     "ko": "그림자의 역사를 감추지 않는다. 수탈과 단절의 역사도 기록의 일부다.",
+     "ja": "影の歴史を隠さない。収奪と断絶の歴史もまた記録の一部である。",
+     "zh": "不隐藏阴影的历史。掠夺与断绝的历史也是记录的一部分。"
+    },
+    {
+     "en": "Write in the community's own words, and give the name in its original language.",
+     "ko": "공동체의 말로 쓴다. 유산의 이름은 원어로 적는다.",
+     "ja": "共同体の言葉で書く。遺産の名称は原語で記す。",
+     "zh": "以共同体自己的语言书写。遗产名称以原语注明。"
+    },
+    {
+     "en": "Write only what is established. A record can be supplemented after entry.",
+     "ko": "확인된 만큼만 쓴다. 기록은 수록된 뒤에도 계속 보강할 수 있다.",
+     "ja": "確認できた範囲だけを書く。記録は収録後も補い続けることができる。",
+     "zh": "只写已确认的内容。记录收录后仍可持续补充。"
+    },
+    {
+     "en": "Obtain the community's free, prior and informed consent first.",
+     "ko": "공동체의 자유롭고 사전에 고지된 동의를 먼저 받는다.",
+     "ja": "共同体の自由で事前の、十分な情報に基づく同意をまず得る。",
+     "zh": "须先取得共同体自由、事先、知情的同意。"
+    }
+   ],
+   "steps_title": {
+    "en": "Submission and Procedure",
+    "ko": "제출과 절차",
+    "ja": "提出と手続",
+    "zh": "提交与程序"
+   },
+   "steps": [
+    {
+     "en": "Complete the form in English and send it with its attachments by email.",
+     "ko": "신청서를 영어로 작성해 첨부 자료와 함께 전자우편으로 보낸다.",
+     "ja": "申請書を英語で作成し、添付資料とともに電子メールで送る。",
+     "zh": "以英文填写申请书，连同附件通过电子邮件提交。"
+    },
+    {
+     "en": "The Federation conducts a record survey and assigns a record number, GHBH-A.",
+     "ko": "연맹은 기록 조사를 거쳐 기록번호(GHBH-A)를 부여한다.",
+     "ja": "連盟は記録調査を行い、記録番号（GHBH-A）を付与する。",
+     "zh": "联盟进行记录调查，并赋予记录编号（GHBH-A）。"
+    },
+    {
+     "en": "Where review is requested, it assigns a review number, GHBH-C, and refers the heritage to the three-stage review.",
+     "ko": "심사를 신청한 경우 심사번호(GHBH-C)를 부여하고 3단계 심사에 회부한다.",
+     "ja": "審査を申請した場合は審査番号（GHBH-C）を付与し、3段階審査に付す。",
+     "zh": "申请审查者，赋予审查编号（GHBH-C），提交三阶段审查。"
+    },
+    {
+     "en": "A heritage that passes is inscribed and receives an inscription number, GHBH-I.",
+     "ko": "심사를 통과한 유산은 등재되어 등재번호(GHBH-I)를 받는다.",
+     "ja": "審査を通過した遺産は登録され、登録番号（GHBH-I）を受ける。",
+     "zh": "通过审查的遗产予以登录，并获得登录编号（GHBH-I）。"
+    }
+   ],
+   "form_title": {
+    "en": "Application Form for Global Human Barbecue Heritage",
+    "ko": "세계인류바비큐유산 신청서",
+    "ja": "世界人類バーベキュー遺産　申請書",
+    "zh": "世界人类烧烤遗产申请书"
+   },
+   "form_note": {
+    "en": "Form GHBH-01. Purpose, form and guidance in one file. The form is completed in English.",
+    "ko": "서식 GHBH-01. 취지, 기입양식, 작성요령이 한 파일에 담겨 있다. 신청서는 영어로 작성한다.",
+    "ja": "様式GHBH-01。趣旨、記入様式、作成要領を一つのファイルに収める。申請書は英語で作成する。",
+    "zh": "表格GHBH-01。宗旨、填写表格与填写说明合为一个文件。申请书以英文填写。"
+   },
+   "submit": {
+    "en": "Send to",
+    "ko": "제출처",
+    "ja": "提出先",
+    "zh": "提交至"
+   },
+   "email": "araliocha@gmail.com",
+   "pdf": "assets/forms/GHBH-01_Application_Form.pdf",
+   "docx": "assets/forms/GHBH-01_Application_Form.docx",
+   "pdf_label": {
+    "en": "PDF for printing",
+    "ko": "인쇄용 PDF",
+    "ja": "印刷用PDF",
+    "zh": "打印用PDF"
+   },
+   "docx_label": {
+    "en": "Word for writing",
+    "ko": "작성용 Word",
+    "ja": "記入用Word",
+    "zh": "填写用Word"
+   }
+  }
  },
  "archive_title": {
   "en": "Global Human Barbecue Heritage (GHBH): Final Archive of 163 Barbecues of Pure Cooking with Fire",

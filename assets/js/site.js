@@ -898,6 +898,56 @@
     return '<figure class="ghbh-fig">' + wide + tall + "</figure>";
   }
 
+  /* How to Apply: the application form, set below the Charter and the Criteria */
+  var ICON_PDF = '<svg class="ap-ico" viewBox="0 0 120 150" aria-hidden="true"><defs>' +
+    '<linearGradient id="apG1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2c4"/><stop offset=".3" stop-color="#e6bd5c"/><stop offset=".62" stop-color="#a87a22"/><stop offset="1" stop-color="#5e400a"/></linearGradient>' +
+    '<linearGradient id="apP1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf4e2"/><stop offset=".6" stop-color="#eadcb8"/><stop offset="1" stop-color="#cdb98a"/></linearGradient>' +
+    '<linearGradient id="apF1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9c79c"/><stop offset="1" stop-color="#9c8456"/></linearGradient>' +
+    '<radialGradient id="apW1" cx=".38" cy=".32" r=".75"><stop offset="0" stop-color="#e2563f"/><stop offset=".55" stop-color="#a5221a"/><stop offset="1" stop-color="#5c0c08"/></radialGradient>' +
+    '<filter id="apS1" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="3" dy="6" stdDeviation="4" flood-color="#000" flood-opacity=".6"/></filter></defs>' +
+    '<g filter="url(#apS1)"><rect x="6" y="6" width="96" height="132" rx="5" fill="url(#apG1)" stroke="#4a3206" stroke-width="1.4"/>' +
+    '<rect x="10" y="10" width="88" height="124" rx="3" fill="none" stroke="#fff4c8" stroke-opacity=".7" stroke-width="1"/>' +
+    '<path d="M16 16 H72 L92 36 V128 H16 Z" fill="url(#apP1)" stroke="#7a5a1c" stroke-width="1"/>' +
+    '<path d="M72 16 V36 H92 Z" fill="url(#apF1)" stroke="#7a5a1c" stroke-width="1"/>' +
+    '<g stroke="#8a6a32" stroke-width="2" stroke-linecap="round" opacity=".75"><path d="M26 46 H66"/><path d="M26 56 H82"/><path d="M26 66 H82"/><path d="M26 76 H74"/><path d="M26 86 H82"/></g>' +
+    '<text x="42" y="36" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="700" font-size="11" letter-spacing="1.2" fill="#5e400a">GHBH</text>' +
+    '<g transform="translate(70 108)"><path d="M-8 6 L-14 30 L-7 25 L-3 32 L0 10 Z" fill="#8f1d16"/><path d="M8 6 L14 30 L7 25 L3 32 L0 10 Z" fill="#7a1611"/>' +
+    '<path d="M0 -20 C7 -20 9 -16 14 -14 C19 -10 20 -6 20 0 C20 7 17 10 14 14 C9 19 6 20 0 20 C-7 20 -10 17 -14 14 C-19 9 -20 6 -20 0 C-20 -7 -17 -10 -14 -14 C-9 -18 -6 -20 0 -20 Z" fill="url(#apW1)" stroke="#4a0806" stroke-width="1"/>' +
+    '<circle r="12" fill="none" stroke="#f08a70" stroke-opacity=".45" stroke-width="1.2"/>' +
+    '<text y="4" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="700" font-size="10.5" fill="#ffd9c8" fill-opacity=".9">PDF</text></g></g></svg>';
+  var ICON_DOC = '<svg class="ap-ico" viewBox="0 0 120 150" aria-hidden="true"><defs>' +
+    '<linearGradient id="apG2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2c4"/><stop offset=".3" stop-color="#e6bd5c"/><stop offset=".62" stop-color="#a87a22"/><stop offset="1" stop-color="#5e400a"/></linearGradient>' +
+    '<linearGradient id="apP2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf4e2"/><stop offset=".6" stop-color="#eadcb8"/><stop offset="1" stop-color="#cdb98a"/></linearGradient>' +
+    '<linearGradient id="apQ2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#ece4d2"/><stop offset="1" stop-color="#b9ab8c"/></linearGradient>' +
+    '<linearGradient id="apN2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0b0"/><stop offset=".5" stop-color="#d9a93a"/><stop offset="1" stop-color="#6e4a0e"/></linearGradient>' +
+    '<radialGradient id="apI2" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#5a6a8a"/><stop offset=".5" stop-color="#1a2440"/><stop offset="1" stop-color="#05080f"/></radialGradient>' +
+    '<filter id="apS2" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="3" dy="6" stdDeviation="4" flood-color="#000" flood-opacity=".6"/></filter></defs>' +
+    '<g filter="url(#apS2)"><rect x="6" y="6" width="96" height="132" rx="5" fill="url(#apG2)" stroke="#4a3206" stroke-width="1.4"/>' +
+    '<rect x="10" y="10" width="88" height="124" rx="3" fill="none" stroke="#fff4c8" stroke-opacity=".7" stroke-width="1"/>' +
+    '<rect x="16" y="16" width="76" height="112" rx="2" fill="url(#apP2)" stroke="#7a5a1c" stroke-width="1"/>' +
+    '<g stroke="#8a6a32" stroke-width="1.6" stroke-linecap="round" opacity=".55"><path d="M24 34 H84"/><path d="M24 46 H84"/><path d="M24 58 H84"/><path d="M24 70 H70"/></g>' +
+    '<path d="M24 86 C34 78 40 94 50 86 S64 80 70 88" fill="none" stroke="#1a2440" stroke-width="1.6" stroke-linecap="round"/>' +
+    '<g transform="translate(82 112)"><ellipse cx="0" cy="12" rx="17" ry="5" fill="#2a1c06" opacity=".5"/><path d="M-14 -6 H14 L12 12 H-12 Z" fill="url(#apI2)" stroke="#000" stroke-width=".8"/>' +
+    '<rect x="-16" y="-10" width="32" height="6" rx="2" fill="url(#apN2)" stroke="#4a3206" stroke-width=".8"/><ellipse cx="0" cy="-10" rx="8" ry="2.4" fill="#05080f"/></g>' +
+    '<g transform="rotate(-38 70 70)"><path d="M70 6 C88 18 92 46 76 82 L70 98 L64 82 C48 46 52 18 70 6 Z" fill="url(#apQ2)" stroke="#8c7d60" stroke-width=".9"/>' +
+    '<path d="M70 12 V96" stroke="#9c8a66" stroke-width="1.1"/><g stroke="#b5a582" stroke-width=".7" opacity=".8"><path d="M70 26 L60 34"/><path d="M70 38 L58 48"/><path d="M70 50 L59 60"/><path d="M70 30 L80 38"/><path d="M70 44 L82 54"/><path d="M70 58 L80 68"/></g>' +
+    '<path d="M66 96 L70 116 L74 96 Z" fill="url(#apN2)" stroke="#4a3206" stroke-width=".8"/></g></g></svg>';
+  function applyBlock(a) {
+    var box = function (n, inner, cls) { return '<div class="rv3-box ap-box' + (cls ? " " + cls : "") + '">' + (n ? '<span class="rv3-n">' + n + "</span>" : "") + inner + "</div>"; };
+    var dl = function (href, icon, label, ext) {
+      return '<a class="ap-dl" href="' + href + '" download>' + icon + '<span class="ap-dl-t">' + gb(label, "span", "ap-dl-l") + '<span class="ap-dl-x">' + ext + "</span></span></a>"; };
+    return '<div class="ap-lede">' + a.lede.map(function (p) { return gb(p, "p", "ap-p"); }).join("") + "</div>" +
+      gb(a.types_title, "h3", "ap-h") +
+      '<div class="ap-types">' + a.types.map(function (t, i) { return box(i + 1, gb(t[0], "h4", "rv3-name") + gb(t[1], "p", "rv3-d")); }).join("") + "</div>" +
+      '<div class="ap-two">' +
+        box("", gb(a.principles_title, "h3", "ap-h ap-h-in") + '<ol class="ap-list">' + a.principles.map(function (p) { return "<li>" + gb(p, "span", "rv3-d") + "</li>"; }).join("") + "</ol>") +
+        box("", gb(a.steps_title, "h3", "ap-h ap-h-in") + '<ol class="ap-list">' + a.steps.map(function (p) { return "<li>" + gb(p, "span", "rv3-d") + "</li>"; }).join("") + "</ol>") +
+      "</div>" +
+      '<div class="ap-form">' + box("", '<img class="ap-emblem" src="assets/img/emblem-small.png" alt="">' + gb(a.form_title, "h3", "ap-form-t") + gb(a.form_note, "p", "ap-form-n") +
+        '<div class="ap-dls">' + dl(a.pdf, ICON_PDF, a.pdf_label, "PDF") + dl(a.docx, ICON_DOC, a.docx_label, "DOCX") + "</div>" +
+        '<p class="ap-mail">' + gb(a.submit, "span", "ap-mail-k") + '<a href="mailto:' + esc(a.email) + '?subject=GHBH%20Application">' + esc(a.email) + "</a></p>", "ap-form-box") + "</div>";
+  }
+
   pages.heritage = function () {
     Promise.all([load("ghbh"), load("heritage")]).then(function (r) {
       var g = r[0], s = g.standard, h = r[1];
@@ -922,6 +972,7 @@
           return '<div class="gty"><span class="gty-n">' + (i + 1) + "</span>" + gb(t[0], "h4") + '<p class="gty-en">' + esc(t[1].en) + "</p>" + gb(t[2], "p", "gty-d") + "</div>"; }).join("") + "</div>");
       put("#ghbh-fields", gb(s.s4, "p", "ghbh-p") + '<div class="w-table"><table class="table ghbh-ftable"><thead><tr><th>No.</th><th>' + bi(GU.field, "span") + "</th><th>" + bi(GU.desc, "span") + "</th></tr></thead><tbody>" +
         s.fields.map(function (f, i) { return "<tr><td>" + (i + 1) + "</td><td>" + gb(f[0], "b", "gf-fname") + "</td><td>" + gb(f[2], "span") + "</td></tr>"; }).join("") + "</tbody></table></div>");
+      if (s.apply) put("#ghbh-apply", applyBlock(s.apply));
       put("#ghbh-charter-door", '<div class="ghbh-docs"><a href="charter.html"><span class="gdc-k">Charter</span>' + gb(g.charter.title, "b", "gdc-t") + gb(GU.charterSub, "span", "gdc-s") + "</a>" +
         '<a href="criteria.html"><span class="gdc-k">Criteria</span>' + gb(g.criteria.title, "b", "gdc-t") + gb(GU.criteriaSub, "span", "gdc-s") + "</a></div>");
     });
