@@ -140,6 +140,17 @@
         '<div class="lang-switch" role="group" aria-label="Second language">' + langs + "</div>" +
       "</div>");
     var header = $("#site-header"); header.classList.add("site-header");
+    /* the submenu of the current section, as a band under the page title (WBT draws its own) */
+    site.nav.forEach(function (n) {
+      if (page === "wbt" || !n.children || !n.children.length) return;
+      if (!(n.id === page || (n.pages && n.pages.indexOf(page) > -1))) return;
+      var band = document.createElement("nav"); band.className = "wbt-sub page-sub"; band.setAttribute("aria-label", n.label.en);
+      band.innerHTML = n.children.map(function (c) {
+        var here = c.href.split("#")[0] === location.pathname.split("/").pop() && c.href.indexOf("#") < 0;
+        return '<a href="' + c.href + '"' + (here ? ' aria-current="page"' : "") + ">" + gb(c.label, "span") + "</a>"; }).join("");
+      var head = document.querySelector("main > .page-head"), main = document.querySelector("main");
+      if (head) head.insertAdjacentElement("afterend", band); else if (main) main.insertAdjacentElement("afterbegin", band);
+    });
     /* the emblem always returns to the home page as first opened: top of the page, no saved position */
     var brand = header.querySelector(".brand");
     if (brand) brand.addEventListener("click", function (ev) {
