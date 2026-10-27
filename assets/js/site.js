@@ -910,10 +910,12 @@
         '<div class="ghbh-tiers">' + s.tiers.map(function (t, i) {
           return '<article class="ghbh-tier t-' + t.metal + '"><p class="gt-no"><span class="dot t-' + t.metal + '"></span>' + GU.tier[i] + "</p>" + gb(t.name, "h3", "gt-name") + '<p class="gt-code">' + esc(t.code.en) + "</p>" +
             '<dl class="gt-rows">' + t.rows.map(function (row) { return "<dt>" + gb(row[0], "span") + "</dt><dd>" + gb(row[1], "span") + "</dd>"; }).join("") + "</dl>" +
-            (t.review ? gb(t.review_title, "p", "gt-rev-t") + '<ol class="gt-rev">' + t.review.map(function (x) {
-              var head = {}; ["en", "ko", "ja", "zh"].forEach(function (k) { head[k] = (x[0][k] || "") + (k === "en" ? ": " : "  ") + (x[1][k] || ""); });
-              return "<li>" + gb(head, "b", "gt-rev-h") + gb(x[2], "span", "gt-rev-d") + "</li>"; }).join("") + "</ol>" : "") + "</article>";
-        }).join("") + "</div>");
+            "</article>";
+        }).join("") + "</div>" + s.tiers.filter(function (t) { return t.review; }).map(function (t) {
+          return '<section class="rv3"><span class="rv3-k">' + esc(t.name.en) + "</span>" + gb(t.review_title, "h3", "rv3-t") + '<ol class="rv3-row">' + t.review.map(function (x, i) {
+            return (i ? '<li class="rv3-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></li>' : "") +
+              '<li class="rv3-box"><span class="rv3-n">' + (i + 1) + "</span>" + gb(x[0], "p", "rv3-stage") + gb(x[1], "h4", "rv3-name") + gb(x[2], "p", "rv3-d") + "</li>"; }).join("") + "</ol></section>";
+        }).join(""));
       put("#ghbh-archive-door", ghbhDoor(g, true));
       put("#ghbh-applicants", gb(s.s31_title, "h3", "ghbh-h") + gb(s.s31, "p", "ghbh-p") + '<ul class="ghbh-list">' + s.applicants.map(function (a) { return "<li>" + gb(a, "span") + "</li>"; }).join("") + "</ul>" +
         gb(s.s32_title, "h3", "ghbh-h") + gb(s.s32, "p", "ghbh-p") + gb(s.types_title, "p", "label ghbh-types-t") + '<div class="ghbh-types">' + s.types.map(function (t, i) {
