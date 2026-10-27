@@ -558,7 +558,7 @@
       if (!one) {
         put("#fed-judges", gb(j.lede, "p", "oj-lede") + '<div class="oj-names">' + j.judges.map(function (x) {
           var nm = { en: x.name.en, ko: x.name.ko, ja: x.name.ja || x.name.en, zh: x.name.zh || x.name.en };
-          return '<a class="oj-tile rv3-box" href="judge.html?id=' + esc(x.id) + '">' + gb(nm, "span", "oj-tile-n") + '<span class="oj-tile-no">No. ' + esc(x.no || "") + "</span></a>"; }).join("") + "</div>");
+          return '<a class="oj-tile rv3-box" href="judge.html?id=' + esc(x.id) + '"><span class="oj-tile-top"><span class="oj-tile-en">' + esc(x.name.en) + '</span><span class="oj-tile-nat">' + esc(j.nationality.en) + "</span></span>" + gb({ en: "", ko: nm.ko, ja: nm.ja, zh: nm.zh }, "span", "oj-tile-n") + '<span class="oj-tile-no">No. ' + esc(x.no || "") + "</span></a>"; }).join("") + "</div>");
         return;
       }
       var x0 = j.judges.filter(function (x) { return x.id === one; })[0];
