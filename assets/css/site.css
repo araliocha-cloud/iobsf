@@ -1781,3 +1781,12 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .ap-dl-l .s { font-size: 13px; }
 .ap-dl-x { font-size: 11px; }
 .ap-dls { gap: 30px; }
+/* page zoom */
+.ap-zoom { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; gap: 18px; padding: 24px; background: rgba(10, 8, 6, .9); backdrop-filter: blur(3px); }
+.ap-zoom-fig { margin: 0; max-height: 100%; display: flex; }
+.ap-zoom-fig img { display: block; max-height: calc(100vh - 48px); max-width: min(760px, calc(100vw - 140px)); width: auto; height: auto; background: #fbf6ea; border: 1px solid #c9b48a;
+  box-shadow: 1px 1px 0 #e4d6b8, 2px 2px 0 #d8c7a2, 3px 3px 0 #cbb88e, 4px 4px 0 #b9a47a, 24px 30px 50px rgba(0, 0, 0, .7); }
+.ap-zoom-x { position: absolute; top: 14px; right: 20px; width: 44px; height: 44px; border: 1px solid #b08a3e; border-radius: 50%; background: #2a221a; color: #f1dcb0; font-size: 26px; line-height: 1; cursor: pointer; }
+.ap-zoom-nav { flex: none; width: 46px; height: 46px; border: 1px solid #b08a3e; border-radius: 50%; background: #2a221a; color: #f1dcb0; font-size: 30px; line-height: 1; cursor: pointer; }
+.ap-zoom-x:hover, .ap-zoom-nav:hover { background: #3a2e22; border-color: #e6bd5c; }
+@media (max-width: 600px) { .ap-zoom { padding: 60px 8px 8px; gap: 6px; } .ap-zoom-nav { width: 36px; height: 36px; font-size: 24px; } .ap-zoom-fig img { max-width: calc(100vw - 100px); } }
