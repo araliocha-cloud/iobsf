@@ -1819,3 +1819,16 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .oj-e { text-align: left; }
 .oj-e .s { font-size: 13px; color: var(--ash); }
 @media (max-width: 900px) { .oj-row { grid-template-columns: 1fr; } .oj-row .judge-card { margin: 0 auto; } .oj-career { grid-template-columns: 1fr; } }
+/* Official Judges on the Federation page: names only */
+.oj-names { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px 28px; max-width: 980px; margin: 0 auto; padding: 0 14px 18px 0; }
+.oj-tile { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 26px 18px 22px; text-decoration: none !important; text-align: center; }
+.oj-tile-n .p { font-size: 22px; color: #f1dcb0; }
+.oj-tile-n .s { font-size: 15px; color: #c9a15a; }
+.oj-tile-no { font-size: 12px; letter-spacing: .2em; color: #a8865a; }
+.oj-tile:hover .oj-tile-n .p { color: #ffd27a; }
+.oj-crumb { text-align: center; font-size: 13px; letter-spacing: .22em; text-transform: uppercase; color: #c9a15a; margin-bottom: 30px; }
+.oj-crumb a { color: #e2bd73; }
+.oj-back { text-align: center; margin: 10px 0 20px; }
+@media (max-width: 760px) { .oj-names { grid-template-columns: 1fr 1fr; } }
+.oj-tile, .oj-tile:hover { transform: none; }
+.oj-tile:hover { border-color: #e6bd5c; }

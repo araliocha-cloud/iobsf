@@ -549,13 +549,21 @@
   };
 
   /* Official Judges: the judge card beside the judge's record */
-  function renderJudges() {
+    function renderJudges(one) {
     Promise.all([load("judges"), load("events")]).then(function (r) {
       var j = r[0], all = (r[1].events || []).filter(function (e) { return e.status === "completed"; })
         .sort(function (a, b) { return a.year - b.year || String(a.date || "").localeCompare(String(b.date || "")); });
       var spaced = function (t) { return esc(t).split("").join(" "); };
       var L = function (en, ko, ja, zh) { return { en: en, ko: ko, ja: ja, zh: zh }; };
-      put("#fed-judges", gb(j.lede, "p", "oj-lede") + '<div class="oj-list">' + j.judges.map(function (x) {
+      if (!one) {
+        put("#fed-judges", gb(j.lede, "p", "oj-lede") + '<div class="oj-names">' + j.judges.map(function (x) {
+          var nm = { en: x.name.en, ko: x.name.ko, ja: x.name.ja || x.name.en, zh: x.name.zh || x.name.en };
+          return '<a class="oj-tile rv3-box" href="judge.html?id=' + esc(x.id) + '">' + gb(nm, "span", "oj-tile-n") + '<span class="oj-tile-no">No. ' + esc(x.no || "") + "</span></a>"; }).join("") + "</div>");
+        return;
+      }
+      var x0 = j.judges.filter(function (x) { return x.id === one; })[0];
+      if (!x0) { put("#judge", '<p><a href="federation.html">Federation</a></p>'); return; }
+      put("#judge", '<p class="oj-crumb"><a href="federation.html">Federation</a> &rsaquo; Official Judges</p><div class="oj-list">' + [x0].map(function (x) {
         var ev = x.career && x.career.length ? all.filter(function (e) { return x.career.indexOf(e.id) > -1; }) : all;
         var nm = { en: x.name.en, ko: x.name.ko, ja: x.name.ja || x.name.en, zh: x.name.zh || x.name.en };
         var card = '<div class="judge-card"><div class="jc-title">Official Judge</div>' + (x.no ? '<div class="jc-no">No. ' + esc(x.no) + "</div>" : "") +
@@ -576,10 +584,12 @@
             var n = typeof e.name === "object" ? e.name : { en: e.name };
             return '<li><span class="oj-y">' + esc(String(e.year)) + "</span>" + gb({ en: n.en, ko: n.ko || n.en, ja: n.ja, zh: n.zh }, "span", "oj-e") + "</li>"; }).join("") + "</ol></div>";
         return '<article class="oj-row">' + card + prof + "</article>";
-      }).join("") + "</div>" +
+      }).join("") + "</div>" + '<p class="oj-back"><a href="federation.html#fed-judges">' + bi({ en: "All Official Judges", ko: "공식 심판 전체", ja: "公式審判一覧", zh: "全部正式裁判" }, "span", "", true) + "</a></p>" +
         (j.confirmed ? '<p class="jc-confirm">' + bi({ en: "Confirmed as official judges of KOOBA on " + new Date(j.confirmed + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) + ", by the Chairman of KOOBA.", ko: "상기인들이 사단법인 대한아웃도어바비큐협회 공식 심판임을 " + j.confirmed.replace(/-/g, ". ") + ". 협회장이 증명했다.", ja: "上記の者が社団法人大韓アウトドアバーベキュー協会の公式審判であることを、" + j.confirmed.replace(/-/g, ". ") + ". 協会長が証明した。", zh: "上述人员为社团法人大韩户外烧烤协会正式裁判，" + j.confirmed.replace(/-/g, ". ") + ". 由协会会长证明。" }, "span", "", true) + "</p>" : ""));
     });
   }
+
+  pages.judge = function () { renderJudges(param("id")); };
 
   pages.federation = function (site) {
     renderJudges();
