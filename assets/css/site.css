@@ -1692,3 +1692,7 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .rv3-n { transform: translateX(-50%) translateZ(30px); }
 .rv3-d, .rv3-d > *, .rv3-d .s { text-align: justify !important; text-align-last: left !important; word-break: keep-all; }
 @media (max-width: 900px) { .rv3-box { transform: none; } .rv3-row { padding-right: 14px; } }
+/* three-stage review v3: upright at rest, tilts on hover */
+.rv3-box { transform: none; }
+.rv3-box:hover { transform: rotateX(7deg) rotateY(-5deg) translate(-4px, -6px); }
+@media (max-width: 900px) { .rv3-box:hover { transform: translateY(-4px); } }
