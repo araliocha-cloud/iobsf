@@ -144,7 +144,58 @@
         "ko": "불",
         "ja": "",
         "zh": ""
-      }
+      },
+      "pages": [
+        "fire",
+        "chronicle"
+      ],
+      "children": [
+        {
+          "href": "fire.html#spirit",
+          "label": {
+            "en": "Spirit",
+            "ko": "정신",
+            "ja": "精神",
+            "zh": "精神"
+          }
+        },
+        {
+          "href": "fire.html#news",
+          "label": {
+            "en": "News",
+            "ko": "소식",
+            "ja": "ニュース",
+            "zh": "新闻"
+          }
+        },
+        {
+          "href": "fire.html#announcements",
+          "label": {
+            "en": "Announcements",
+            "ko": "공지",
+            "ja": "お知らせ",
+            "zh": "公告"
+          }
+        },
+        {
+          "href": "chronicle.html",
+          "label": {
+            "en": "Chronicle",
+            "ko": "기록",
+            "ja": "記録",
+            "zh": "纪事"
+          }
+        },
+        {
+          "href": "fire.html#press",
+          "label": {
+            "en": "Press",
+            "ko": "언론 보도",
+            "ja": "報道",
+            "zh": "媒体报道"
+          }
+        }
+      ]
     },
     {
       "id": "barbecuers",
@@ -231,10 +282,10 @@
       "id": "pathway",
       "href": "pathway.html",
       "label": {
-        "en": "Pathway",
-        "ko": "육성 과정",
-        "ja": "育成課程",
-        "zh": "培养路径"
+        "en": "Academy",
+        "ko": "아카데미",
+        "ja": "アカデミー",
+        "zh": "学院"
       }
     },
     {
@@ -265,27 +316,78 @@
         "ko": "연맹",
         "ja": "",
         "zh": ""
-      }
-    },
-    {
-      "id": "partners",
-      "href": "partners.html",
-      "label": {
-        "en": "Partners",
-        "ko": "파트너",
-        "ja": "パートナー",
-        "zh": "合作伙伴"
-      }
-    },
-    {
-      "id": "business",
-      "href": "business.html",
-      "label": {
-        "en": "Business",
-        "ko": "비즈니스",
-        "ja": "ビジネス",
-        "zh": "商务"
-      }
+      },
+      "pages": [
+        "federation",
+        "partners",
+        "business",
+        "judge"
+      ],
+      "children": [
+        {
+          "href": "federation.html#about",
+          "label": {
+            "en": "About",
+            "ko": "개요",
+            "ja": "概要",
+            "zh": "概况"
+          }
+        },
+        {
+          "href": "federation.html#judges",
+          "label": {
+            "en": "Official Judges",
+            "ko": "공식 심판",
+            "ja": "公式審判",
+            "zh": "正式裁判"
+          }
+        },
+        {
+          "href": "federation.html#history-sec",
+          "label": {
+            "en": "History",
+            "ko": "연혁",
+            "ja": "沿革",
+            "zh": "沿革"
+          }
+        },
+        {
+          "href": "federation.html#articles",
+          "label": {
+            "en": "Articles",
+            "ko": "연맹 정관",
+            "ja": "連盟定款",
+            "zh": "联盟章程"
+          }
+        },
+        {
+          "href": "federation.html#roadmap",
+          "label": {
+            "en": "Roadmap",
+            "ko": "로드맵",
+            "ja": "ロードマップ",
+            "zh": "路线图"
+          }
+        },
+        {
+          "href": "partners.html",
+          "label": {
+            "en": "Partners",
+            "ko": "파트너",
+            "ja": "パートナー",
+            "zh": "合作伙伴"
+          }
+        },
+        {
+          "href": "business.html",
+          "label": {
+            "en": "Business",
+            "ko": "사업",
+            "ja": "事業",
+            "zh": "业务"
+          }
+        }
+      ]
     }
   ],
   "links": [

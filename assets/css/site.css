@@ -1947,3 +1947,13 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .wbt-sound-l .s { margin-left: 6px; color: #c9a15a; }
 @media (prefers-reduced-motion: reduce) { .wbt-glow, .wbt-bed, .wbt-embers i { animation: none; } .wbt-embers { display: none; } }
 @media (max-width: 640px) { .wbt-sound { right: 12px; bottom: 10px; } }
+/* main menu with seven items: more air between them */
+.site-nav ul { gap: 46px; }
+.site-nav ul.nav-sub { gap: 0; }
+@media (max-width: 1400px) { .site-nav ul { gap: 34px; } }
+#spirit, #about, #judges, #history-sec, #articles, #roadmap { scroll-margin-top: 90px; }
+.wbt-more { margin: 14px 0 0; }
+.wbt-more a { color: #e2bd73; }
+.wbt-empty .gb, .wbt-empty .p, .wbt-empty .s { text-align: center !important; text-align-last: center !important; }
+.wbt-empty .p { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: #a8865a; }
+.wbt-empty .s { font-size: 13px; color: #8e7a5c; }

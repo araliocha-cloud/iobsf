@@ -226,7 +226,32 @@
     });
   };
 
+  /* The Fire: news, announcements, chronicle and press below the statements, written from the admin */
+  function fireNews() {
+    Promise.all([load("news"), load("chronicle")]).then(function (r) {
+      var n = r[0], c = r[1];
+      var h2 = function (t) { return '<h2 class="bi"><span class="p">' + esc(t.en) + "</span>" + SECONDS.map(function (k) { return t[k] ? '<span class="s" lang="' + k + '">' + esc(t[k]) + "</span>" : ""; }).join("") + "</h2>"; };
+      var sec = function (x) {
+        var posts = (x.posts || []).filter(function (q) { return q && q.title; });
+        return '<section class="section wbt-sec" id="' + esc(x.id) + '"><div class="wrap"><div class="section-head">' + h2(x.title) + "</div>" + gb(x.lede, "p", "wbt-lede") +
+          (posts.length ? '<div class="wbt-posts">' + posts.map(function (q) {
+            return '<article class="wbt-post rv3-box">' + (q.image ? '<img class="wbt-post-img" src="' + esc(q.image) + '" alt="" loading="lazy">' : "") +
+              (q.date ? '<p class="wbt-date">' + esc(q.date) + (q.source ? "  |  " + esc(q.source) : "") + "</p>" : "") + gb(q.title, "h3", "wbt-post-t") + (q.body ? paras(q.body) : "") +
+              (q.link ? '<p class="wbt-more"><a href="' + esc(q.link) + '" target="_blank" rel="noopener">' + bi({ en: "Read the original", ko: "원문 보기", ja: "原文を読む", zh: "阅读原文" }, "span", "", true) + "</a></p>" : "") + "</article>"; }).join("") + "</div>"
+            : '<p class="wbt-empty">' + gb(n.soon, "span") + "</p>") + "</div></section>"; };
+      var byId = {}; n.sections.forEach(function (x) { byId[x.id] = x; });
+      var stories = (c.stories || []).slice().sort(function (a, b) { return (b.date || "") > (a.date || "") ? 1 : -1; });
+      var chron = '<section class="section wbt-sec" id="chronicle"><div class="wrap"><div class="section-head">' + h2({ en: "Chronicle", ko: "기록", ja: "記録", zh: "纪事" }) + "</div>" +
+        gb({ en: "Stories of the Federation's fires, told after the day.", ko: "연맹의 불이 피어난 날의 이야기.", ja: "連盟の火が灯った日の物語。", zh: "联盟之火燃起之日的故事。" }, "p", "wbt-lede") +
+        '<div class="wbt-links">' + stories.slice(0, 4).map(function (st) { return '<a class="wbt-link" href="chronicle.html#' + esc(st.id) + '">' + gb(st.title, "span") + "</a>"; }).join("") +
+        '<a class="wbt-link" href="chronicle.html">' + gb({ en: "All stories", ko: "모든 이야기", ja: "すべての物語", zh: "全部故事" }, "span") + "</a></div></div></section>";
+      put("#fire-news", (byId.news ? sec(byId.news) : "") + (byId.announcements ? sec(byId.announcements) : "") + chron + (byId.press ? sec(byId.press) : ""));
+      if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 60); }
+    });
+  }
+
   pages.fire = function (site) {
+    fireNews();
     var st = site.statements;
     put("#fire-body",
       (st.sports_barbecue ? '<div class="statement definition"><p class="label">' + esc(st.sports_barbecue.label.en) + "</p>" + bi(st.sports_barbecue.text, "p", "text") + '</div><div style="height:80px"></div>' : "") +
