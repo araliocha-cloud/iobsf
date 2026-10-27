@@ -935,7 +935,7 @@
   function applyBlock(a) {
     var box = function (n, inner, cls) { return '<div class="rv3-box ap-box' + (cls ? " " + cls : "") + '">' + (n ? '<span class="rv3-n">' + n + "</span>" : "") + inner + "</div>"; };
     var dl = function (href, icon, label, ext) {
-      return '<a class="ap-dl" href="' + href + '" download>' + icon + '<span class="ap-dl-t">' + gb(label, "span", "ap-dl-l") + '<span class="ap-dl-x">' + ext + "</span></span></a>"; };
+      return '<a class="ap-dl-hit" href="' + href + '" download><span class="ap-dl">' + icon + '<span class="ap-dl-t">' + gb(label, "span", "ap-dl-l") + '<span class="ap-dl-x">' + ext + "</span></span></span></a>"; };
     return '<div class="ap-lede">' + a.lede.map(function (p) { return gb(p, "p", "ap-p"); }).join("") + "</div>" +
       gb(a.types_title, "h3", "ap-h") +
       '<div class="ap-types">' + a.types.map(function (t, i) { return box(i + 1, gb(t[0], "h4", "rv3-name") + gb(t[1], "p", "rv3-d")); }).join("") + "</div>" +

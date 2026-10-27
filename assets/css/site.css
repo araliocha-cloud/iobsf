@@ -1736,3 +1736,11 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 @media (max-width: 760px) { .ap-types, .ap-two { grid-template-columns: 1fr; } .ap-dls { flex-direction: column; align-items: stretch; } }
 .ap-ico { width: 92px; height: 115px; }
 .ap-dl { padding: 20px 32px 20px 22px; gap: 22px; }
+/* download buttons: a still frame catches the pointer, only the slab inside moves (no flicker at the edge) */
+.ap-dl-hit { display: block; text-decoration: none !important; padding: 8px 14px 14px 8px; margin: -8px -14px -14px -8px; perspective: 900px; }
+.ap-dl:hover { transform: none; }
+.ap-dl-hit:hover .ap-dl { transform: translate(-3px, -5px) rotateX(6deg) rotateY(-4deg); border-color: #e6bd5c; }
+.ap-dl-hit:active .ap-dl { transform: translate(4px, 5px); }
+.ap-dl:hover .ap-ico { transform: none; }
+.ap-dl-hit:hover .ap-ico { transform: scale(1.06) rotate(-2deg); }
+@media (max-width: 760px) { .ap-dl-hit { margin: 0; padding: 0; } }
