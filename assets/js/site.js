@@ -944,6 +944,8 @@
         box("", gb(a.steps_title, "h3", "ap-h ap-h-in") + '<ol class="ap-list">' + a.steps.map(function (p) { return "<li>" + gb(p, "span", "rv3-d") + "</li>"; }).join("") + "</ol>") +
       "</div>" +
       '<div class="ap-form">' + box("", '<img class="ap-emblem" src="assets/img/emblem-small.png" alt="">' + gb(a.form_title, "h3", "ap-form-t") + gb(a.form_note, "p", "ap-form-n") +
+        (a.preview ? '<div class="ap-pages">' + a.preview.map(function (pg, i) {
+          return '<a class="ap-page ap-page-' + (i + 1) + '" href="' + a.pdf + "#page=" + pg.page + '" target="_blank" rel="noopener"><span class="ap-sheet"><img src="' + pg.img + '" alt="' + esc(pg.label.en) + ' of the application form" loading="lazy"></span>' + gb(pg.label, "span", "ap-page-l") + "</a>"; }).join("") + "</div>" + gb(a.preview_hint, "p", "ap-pages-h") : "") +
         '<div class="ap-dls">' + dl(a.pdf, ICON_PDF, a.pdf_label, "PDF") + dl(a.docx, ICON_DOC, a.docx_label, "DOCX") + "</div>" +
         '<p class="ap-mail">' + gb(a.submit, "span", "ap-mail-k") + '<a href="mailto:' + esc(a.email) + '?subject=GHBH%20Application">' + esc(a.email) + "</a></p>", "ap-form-box") + "</div>";
   }

@@ -14203,6 +14203,44 @@
     "ko": "작성용 Word",
     "ja": "記入用Word",
     "zh": "填写用Word"
+   },
+   "preview": [
+    {
+     "img": "assets/forms/preview/page-1.webp",
+     "page": 1,
+     "label": {
+      "en": "Cover",
+      "ko": "표지",
+      "ja": "表紙",
+      "zh": "封面"
+     }
+    },
+    {
+     "img": "assets/forms/preview/page-4.webp",
+     "page": 4,
+     "label": {
+      "en": "Application Form",
+      "ko": "기입양식",
+      "ja": "記入様式",
+      "zh": "填写表格"
+     }
+    },
+    {
+     "img": "assets/forms/preview/page-10.webp",
+     "page": 10,
+     "label": {
+      "en": "Guidance",
+      "ko": "작성요령",
+      "ja": "作成要領",
+      "zh": "填写说明"
+     }
+    }
+   ],
+   "preview_hint": {
+    "en": "Select a page to view it in full.",
+    "ko": "쪽을 누르면 크게 볼 수 있다.",
+    "ja": "ページを選ぶと全体を表示する。",
+    "zh": "点击页面可查看全文。"
    }
   }
  },

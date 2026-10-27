@@ -1748,3 +1748,26 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .ap-box { transform-style: flat; }
 .ap-form-box, .ap-form-box:hover { transform: none !important; }
 .ap-dl-hit { position: relative; z-index: 2; }
+/* preview: three pages of the form laid out like papers on a desk */
+.ap-pages { display: flex; justify-content: center; align-items: flex-end; margin: 6px auto 0; padding: 18px 0 8px; }
+.ap-page { position: relative; display: grid; justify-items: center; gap: 12px; width: 31%; max-width: 190px; margin: 0 -14px; text-decoration: none !important; z-index: 1; }
+.ap-page-1 { transform: rotate(-7deg) translateY(10px); }
+.ap-page-2 { transform: translateY(-6px); z-index: 2; }
+.ap-page-3 { transform: rotate(7deg) translateY(10px); }
+.ap-sheet { display: block; width: 100%; aspect-ratio: 210 / 297; background: #fbf6ea; padding: 0; border: 1px solid #c9b48a; border-radius: 2px;
+  box-shadow: 1px 1px 0 #e4d6b8, 2px 2px 0 #d8c7a2, 3px 3px 0 #cbb88e, 4px 4px 0 #b9a47a, 14px 18px 26px rgba(0, 0, 0, .65);
+  transition: transform .3s, box-shadow .3s; }
+.ap-sheet img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ap-page:hover { z-index: 3; }
+.ap-page:hover .ap-sheet { transform: translateY(-14px) scale(1.06); box-shadow: 1px 1px 0 #e4d6b8, 2px 2px 0 #d8c7a2, 3px 3px 0 #cbb88e, 4px 4px 0 #b9a47a, 22px 30px 36px rgba(0, 0, 0, .7); }
+.ap-page-l .p { font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: #d9a93a; }
+.ap-page-l .s { font-size: 12.5px; color: #cdbb98; }
+.ap-pages-h { margin: 14px 0 26px; font-size: 13px; color: var(--ash); }
+.ap-pages-h .p, .ap-pages-h .s { font-size: 13px; }
+@media (max-width: 600px) { .ap-page { margin: 0 -8px; } .ap-page-l .p { font-size: 11px; letter-spacing: .08em; } }
+/* only the sheet turns; the label stays level and the link area stays still */
+.ap-page-1, .ap-page-2, .ap-page-3 { transform: none; }
+.ap-page-1 { --r: -7deg; --y: 10px; } .ap-page-2 { --r: 0deg; --y: -6px; } .ap-page-3 { --r: 7deg; --y: 10px; }
+.ap-sheet { transform: rotate(var(--r)) translateY(var(--y)); }
+.ap-page:hover .ap-sheet { transform: rotate(var(--r)) translateY(calc(var(--y) - 14px)) scale(1.06); }
+.ap-page-l { margin-top: 10px; }
