@@ -577,7 +577,7 @@
             return '<li><span class="oj-y">' + esc(String(e.year)) + "</span>" + gb({ en: n.en, ko: n.ko || n.en, ja: n.ja, zh: n.zh }, "span", "oj-e") + "</li>"; }).join("") + "</ol></div>";
         return '<article class="oj-row">' + card + prof + "</article>";
       }).join("") + "</div>" +
-        (j.confirmed ? '<p class="jc-confirm">' + bi({ en: "Confirmed as official judges of KOOBA on " + new Date(j.confirmed + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) + ", by the Chairman of KOOBA.", ko: "상기인들이 사단법인 대한아웃도어바비큐협회 공식 심판임을 " + j.confirmed.replace(/-/g, ". ") + ". 협회장이 증명했다." }, "span", "", true) + "</p>" : ""));
+        (j.confirmed ? '<p class="jc-confirm">' + bi({ en: "Confirmed as official judges of KOOBA on " + new Date(j.confirmed + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) + ", by the Chairman of KOOBA.", ko: "상기인들이 사단법인 대한아웃도어바비큐협회 공식 심판임을 " + j.confirmed.replace(/-/g, ". ") + ". 협회장이 증명했다.", ja: "上記の者が社団法人大韓アウトドアバーベキュー協会の公式審判であることを、" + j.confirmed.replace(/-/g, ". ") + ". 協会長が証明した。", zh: "上述人员为社团法人大韩户外烧烤协会正式裁判，" + j.confirmed.replace(/-/g, ". ") + ". 由协会会长证明。" }, "span", "", true) + "</p>" : ""));
     });
   }
 
