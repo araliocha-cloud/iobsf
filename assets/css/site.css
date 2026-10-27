@@ -1961,3 +1961,9 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .wbt-sub a[aria-current="page"] .p { color: #ffd27a; }
 .wbt-sub a[aria-current="page"] { position: relative; }
 .wbt-sub a[aria-current="page"]::after { content: ""; position: absolute; left: 20%; right: 20%; bottom: -8px; height: 2px; background: #d9a93a; border-radius: 2px; }
+/* mobile menu: main items only (each page shows its own submenu band), and never taller than the screen */
+@media (max-width: 1220px) {
+  .site-nav ul.nav-sub { display: none !important; }
+  .site-nav { max-height: calc(100vh - 68px); max-height: calc(100dvh - 68px); overflow-y: auto; -webkit-overflow-scrolling: touch; }
+}
+@media (max-width: 1220px) { .site-nav ul { gap: 0; } }
