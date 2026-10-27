@@ -1958,3 +1958,6 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .wbt-empty .p { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: #a8865a; }
 .wbt-empty .s { font-size: 13px; color: #8e7a5c; }
 .page-sub a[aria-current="page"] .p { color: #ffd27a; }
+.wbt-sub a[aria-current="page"] .p { color: #ffd27a; }
+.wbt-sub a[aria-current="page"] { position: relative; }
+.wbt-sub a[aria-current="page"]::after { content: ""; position: absolute; left: 20%; right: 20%; bottom: -8px; height: 2px; background: #d9a93a; border-radius: 2px; }

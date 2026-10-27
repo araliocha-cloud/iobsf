@@ -630,6 +630,34 @@
 
   pages.judge = function () { renderJudges(param("id")); };
 
+  /* mark, in a submenu band, the branch now on screen */
+  function subSpy() {
+    var page = location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll(".wbt-sub").forEach(function (band) {
+      var links = Array.prototype.slice.call(band.querySelectorAll("a")).map(function (a) {
+        var href = a.getAttribute("href"), parts = href.split("#"), file = parts[0] || page;
+        return { a: a, id: file === page && parts[1] ? parts[1] : null };
+      });
+      var local = links.filter(function (l) { return l.id && document.getElementById(l.id); });
+      if (!local.length) return;
+      var mark = function (id) { links.forEach(function (l) { if (l.id || l.a.getAttribute("href").split("#")[0] === page) l.a.removeAttribute("aria-current"); if (l.id === id) l.a.setAttribute("aria-current", "page"); }); };
+      var spy = function () {
+        var y = window.innerHeight * 0.35, cur = local[0].id;
+        local.forEach(function (l) { var t = document.getElementById(l.id); if (t && t.getBoundingClientRect().top <= y) cur = l.id; });
+        mark(cur);
+      };
+      window.addEventListener("scroll", spy, { passive: true });
+      window.addEventListener("hashchange", function () { setTimeout(spy, 80); });
+      setTimeout(spy, 300); setTimeout(spy, 1200);
+    });
+  }
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      if (location.hash && document.querySelector(".wbt-sub")) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+      subSpy();
+    }, 700);
+  });
+
   /* WBT: World Barbecue Tour, its six branches written from the admin */
   function paras(o) {
     var one = function (t, tag) { return String(t || "").split(/\n\s*\n/).filter(function (x) { return x.trim(); }).map(function (x) { return "<p>" + inline(x.trim()).replace(/\n/g, "<br>") + "</p>"; }).join(""); };
