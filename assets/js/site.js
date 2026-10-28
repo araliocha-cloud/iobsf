@@ -272,7 +272,9 @@
         .sort(function (a, b) { return (a.date || a.year) > (b.date || b.year) ? 1 : -1; });
       put("#home-next", up.length ? eventRows(up.slice(0, 3), ev, na)
         : empty({ en: "The next sanctioned event will be announced here.", ko: "다음 공인 대회가 이곳에 발표된다." }));
-      put("#home-roster", roster(bb.slice(0, 4), na));
+      var fd = bb.filter(function (x) { return x.founder; }), rest = bb.filter(function (x) { return !x.founder; });
+      put("#home-roster", (fd.length ? roster(fd, na) + (site.founder_note ? '<p class="fn-mark">' + gb(F_label(site.founder_note), "span") + "</p>" : "") : "") +
+        (rest.length ? roster(rest.slice(0, 4), na) : (site.founder_note ? '<p class="fn-await">' + gb(site.founder_note.awaiting, "span") + "</p>" : "")));
     });
     load("ghbh").then(function (g) {
       put("#home-heritage-intro", gb(g.standard.s1, "p", "ghbh-lede"));
