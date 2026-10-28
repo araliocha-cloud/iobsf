@@ -1996,21 +1996,23 @@ html [id] { scroll-margin-top: var(--stick, 110px) !important; }
 
 /* judge page: the portrait rests inside the plaque, top left; the certificate's words live in the body */
 .oj-row.oj-one { display: block; }
-.oj-top { display: grid; grid-template-columns: 210px 1fr; gap: 44px; align-items: start; margin-bottom: 34px; }
-.oj-photo { margin: 38px 0 0; width: 210px; aspect-ratio: 4 / 5; position: relative; transition: transform .5s cubic-bezier(.2,.7,.2,1);
+.oj-top { display: grid; grid-template-columns: 160px 1fr; gap: 40px; align-items: start; margin-bottom: 34px; }
+.oj-photo { margin: 38px 0 0; width: 160px; aspect-ratio: 4 / 5; position: relative; transition: transform .5s cubic-bezier(.2,.7,.2,1);
   box-shadow: 1px 1px 0 #3a2a1a, 2px 2px 0 #33251a, 3px 3px 0 #2c2016, 4px 4px 0 #251b12, 5px 5px 0 #1e160f, 16px 24px 36px rgba(0,0,0,.65); }
 .oj-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; border: 0; filter: saturate(.92) contrast(1.03); }
 .oj-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(160deg, rgba(255,230,180,.10), rgba(0,0,0,0) 40%, rgba(20,10,0,.28)); pointer-events: none; }
-.oj-photo:hover { transform: perspective(900px) rotateY(-6deg) rotateX(2deg); }
+
 .oj-kicker { font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--ember, #c9a15a); margin: 4px 0 6px; }
 .oj-kicker span { margin-left: 14px; letter-spacing: .12em; color: #b98f52; }
 .oj-head .oj-name, .oj-head .oj-name * { text-align: left !important; }
 .oj-cert { margin: 18px 0 0; color: var(--ash); font-size: 15px; line-height: 1.7; text-align: justify; }
 @media (max-width: 760px) {
   .oj-top { grid-template-columns: 1fr; gap: 26px; }
-  .oj-photo { margin: 0 auto; width: 180px; }
-  .oj-photo:hover { transform: none; }
+  .oj-photo { margin: 0 auto; width: 150px; }
   .oj-kicker, .oj-head .oj-name, .oj-head .oj-name * { text-align: center !important; }
 }
 /* footer: short Korean lines must not stretch around one long word */
 .site-footer .f-link, .site-footer .f-link * { text-align: left; text-align-last: auto; word-break: keep-all; }
+
+/* judge page holds still under the cursor: plaque and portrait never move */
+.oj-prof, .oj-prof:hover, .oj-photo, .oj-photo:hover { transform: none !important; transition: none !important; }
