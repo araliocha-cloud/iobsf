@@ -65,6 +65,26 @@
             "ko": "초급",
             "ja": "初級",
             "zh": "初级"
+          },
+          "key": "beginner",
+          "title": "Beginners",
+          "hours": {
+            "en": "8 hours",
+            "ko": "8시간",
+            "ja": "8時間",
+            "zh": "8小时"
+          },
+          "aim": {
+            "en": "History and theory of barbecue",
+            "ko": "바비큐 역사와 이론",
+            "ja": "バーベキューの歴史と理論",
+            "zh": "烧烤历史与理论"
+          },
+          "content": {
+            "en": "History of barbecue, theory, terminology, understanding equipment, grill control, safe cooking",
+            "ko": "바비큐 역사, 바비큐 이론, 용어, 장비 이해, 그릴 제어 방법, 안전 조리 방법",
+            "ja": "バーベキューの歴史、理論、用語、装備の理解、グリル制御、安全な調理法",
+            "zh": "烧烤历史、理论、术语、设备认识、烤炉控制、安全烹饪方法"
           }
         },
         {
@@ -73,6 +93,26 @@
             "ko": "중급",
             "ja": "中級",
             "zh": "中级"
+          },
+          "key": "intermediate",
+          "title": "Expert",
+          "hours": {
+            "en": "42 hours",
+            "ko": "42시간",
+            "ja": "42時間",
+            "zh": "42小时"
+          },
+          "aim": {
+            "en": "Seven practical categories",
+            "ko": "실전 7종",
+            "ja": "実戦7種",
+            "zh": "实战7类"
+          },
+          "content": {
+            "en": "Practical cooking across seven categories, including pork, duck and chicken",
+            "ko": "돼지고기, 오리, 닭고기 등 실전 7종",
+            "ja": "豚肉、鴨、鶏肉など実戦7種",
+            "zh": "猪肉、鸭、鸡肉等实战7类"
           }
         },
         {
@@ -87,6 +127,26 @@
             "ko": "아마추어 최고 과정.",
             "ja": "アマチュアの最高課程。",
             "zh": "业余最高课程。"
+          },
+          "key": "advanced",
+          "title": "Instructor Master (Grill Master)",
+          "hours": {
+            "en": "36 hours",
+            "ko": "36시간",
+            "ja": "36時間",
+            "zh": "36小时"
+          },
+          "aim": {
+            "en": "Six practical categories",
+            "ko": "실전 6종",
+            "ja": "実戦6種",
+            "zh": "实战6类"
+          },
+          "content": {
+            "en": "Pork, beef, chicken, lamb, fish and seafood, with an introduction to drinks",
+            "ko": "돼지고기, 소고기, 닭고기, 양고기, 생선과 해산물, 음료와 주류 소개",
+            "ja": "豚肉、牛肉、鶏肉、羊肉、魚と海産物、飲料と酒類の紹介",
+            "zh": "猪肉、牛肉、鸡肉、羊肉、鱼与海鲜，以及饮品与酒类介绍"
           }
         }
       ]
@@ -112,6 +172,26 @@
             "ko": "세미프로",
             "ja": "セミプロ",
             "zh": "半职业"
+          },
+          "key": "semi-pro",
+          "title": "Master (Pit Master)",
+          "hours": {
+            "en": "Three rounds",
+            "ko": "3차전",
+            "ja": "3回戦",
+            "zh": "三轮"
+          },
+          "aim": {
+            "en": "Task-solving in competition format; advanced real barbecue",
+            "ko": "과제 해결 경기 진행 방식, 리얼 바비큐 심화 과정",
+            "ja": "課題解決の競技方式、リアルバーベキュー深化課程",
+            "zh": "以比赛形式解决课题，真实烧烤深化课程"
+          },
+          "content": {
+            "en": "Detailed barbecue skills and meat processing; full menu with desserts and drinks; entry to the Pro Tour and international competitions",
+            "ko": "바비큐 세부 스킬과 육가공 관련 지식, 전체 요리, 디저트, 음료와 주류, 프로 투어와 국제대회 출전",
+            "ja": "バーベキューの細部技術と食肉加工の知識、料理全般、デザート、飲料と酒類、プロツアーと国際大会への出場",
+            "zh": "烧烤细节技能与肉品加工知识、全套菜品、甜点、饮品与酒类；参加职业巡回赛与国际赛事"
           }
         },
         {
@@ -126,6 +206,26 @@
             "ko": "프로바비큐어, 불의 집전자.",
             "ja": "プロバーベキュアー、火の執典者。",
             "zh": "职业烧烤师，火的执典者。"
+          },
+          "key": "pro",
+          "title": "Professional Barbecuer, General Master (Barbecue Master)",
+          "hours": {
+            "en": "Two rounds",
+            "ko": "2차전",
+            "ja": "2回戦",
+            "zh": "两轮"
+          },
+          "aim": {
+            "en": "Task-solving in competition format; completing the detail",
+            "ko": "과제 해결 경기 진행 방식, 디테일의 완성",
+            "ja": "課題解決の競技方式、ディテールの完成",
+            "zh": "以比赛形式解决课题，细节的完成"
+          },
+          "content": {
+            "en": "Training barbecue experts and the whole of meat processing; full menu with desserts and drinks; selection for the national team and international competitions",
+            "ko": "바비큐 전문가 양성과 육가공 전반, 전체 요리, 디저트, 음료와 주류, 국가대표 선발과 국제대회 출전",
+            "ja": "バーベキュー専門家の養成と食肉加工全般、料理全般、デザート、飲料と酒類、国家代表の選抜と国際大会への出場",
+            "zh": "培养烧烤专家与肉品加工全面知识、全套菜品、甜点、饮品与酒类；国家队选拔与国际赛事"
           }
         }
       ]
@@ -144,5 +244,11 @@
       "ja": "審判養成課程は、経歴10年以上または上級課程資格の取得者の中から、審査を経て選抜する。",
       "zh": "裁判培养课程从从业经历十年以上或取得高级课程资格者中，经审查程序选拔。"
     }
+  },
+  "basis": {
+    "en": "As of 1 January 2026",
+    "ko": "2026년 1월 1일 기준",
+    "ja": "2026年1月1日現在",
+    "zh": "截至2026年1月1日"
   }
 }

@@ -362,8 +362,11 @@
     load("pathway").then(function (pw) {
       var steps = [];
       (pw.tracks || []).forEach(function (tk) { (tk.steps || []).forEach(function (st) { steps.push(st.name); }); });
+      var keys = []; (pw.tracks || []).forEach(function (tk) { (tk.steps || []).forEach(function (st) { keys.push(st.key); }); });
+      var item = function (nm, i, href, cls) { return '<li class="pb-step' + cls + '"><a href="' + href + '"><span class="pb-k">' + i + "</span>" + gb(nm, "span", "pb-name") + "</a></li>"; };
       put("#pb-path", '<ol class="pb-steps">' + steps.map(function (nm, i) {
-        return '<li class="pb-step' + (i === steps.length - 1 ? " pb-pro" : "") + '"><span class="pb-k">' + (i + 1) + "</span>" + gb(nm, "span", "pb-name") + "</li>"; }).join("") + "</ol>");
+        return item(nm, i + 1, "pathway.html#course-" + keys[i], i === steps.length - 1 ? " pb-pro" : ""); }).join("") +
+        item({ en: "Judges", ko: "심판 양성", ja: "審判養成", zh: "裁判培养" }, "+", "pathway.html#judges", " pb-judge") + "</ol>");
     });
     Promise.all([load("barbecuers"), load("nations")]).then(function (r) {
       var bb = r[0].barbecuers, na = r[1].nations;
@@ -508,9 +511,12 @@
       put("#pathway", (p.tracks || []).map(function (t) {
         return '<div class="track"><h2 class="track-name">' + esc(t.name.en) + bi({ ko: t.name.ko, ja: t.name.ja, zh: t.name.zh }, "span") + "</h2>" + bi(t.rule, "div", "prose member-intro") +
           '<ol class="sequence compact track-steps">' + t.steps.map(function (s) { n++;
-            return '<li value="' + n + '"><h3>' + esc(s.name.en) + "</h3>" + bi({ ko: s.name.ko, ja: s.name.ja, zh: s.name.zh }, "div") + (s.note ? bi(s.note, "p") : "") + "</li>";
+            var row = function (lab, v) { return v ? '<div class="crs-row"><span class="crs-k">' + bi(lab, "span", "", true) + "</span>" + gb(v, "span", "crs-v") + "</div>" : ""; };
+            return '<li value="' + n + '" id="course-' + esc(s.key || n) + '"><h3>' + esc(s.name.en) + (s.title ? ' <span class="crs-title">' + esc(s.title) + "</span>" : "") + "</h3>" + bi({ ko: s.name.ko, ja: s.name.ja, zh: s.name.zh }, "div") + (s.note ? bi(s.note, "p") : "") +
+              '<div class="crs">' + row({ en: "Duration", ko: "교육 시간", ja: "教育時間", zh: "培训时长" }, s.hours) + row({ en: "Aim", ko: "교육 목적", ja: "教育目的", zh: "培训目的" }, s.aim) + row({ en: "Content", ko: "교육 내용", ja: "教育内容", zh: "培训内容" }, s.content) + "</div></li>";
           }).join("") + "</ol></div>";
       }).join(""));
+      if (p.basis) put("#pathway-intro", bi(p.intro, "div", "lede") + '<p class="crs-basis">' + gb(p.basis, "span") + "</p>");
       if (p.judges) put("#pathway-judges", bi(p.judges.text, "div", "prose"));
       if (p.reading && p.reading.length) put("#pathway-reading", bi(p.reading_intro, "div", "prose") + '<div style="margin-top:24px">' + entryList(p.reading) + "</div>");
     });
