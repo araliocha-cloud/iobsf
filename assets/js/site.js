@@ -9,12 +9,12 @@
   var cache = {};
 
   /* ---------- second language ---------- */
-  /* one language on screen at a time; the first visit follows the browser, otherwise English */
+  /* one language on screen at a time; every first visit opens in English */
   var LANGS = ["en", "ko", "ja", "zh"];
   function getSecond() {
     var v = null;
     try { v = localStorage.getItem("iobsf-lang"); } catch (e) {}
-    if (LANGS.indexOf(v) < 0) { var n = String(navigator.language || "en").slice(0, 2).toLowerCase(); v = LANGS.indexOf(n) >= 0 ? n : "en"; }
+    if (LANGS.indexOf(v) < 0) v = "en";
     return v;
   }
   function setSecond(code) {
