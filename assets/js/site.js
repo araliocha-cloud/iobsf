@@ -158,6 +158,8 @@
     /* every submenu sits at the very top, right under the main menu */
     var ws = document.getElementById("wbt-sub"), mn = document.querySelector("main");
     if (ws && mn) mn.insertAdjacentElement("afterbegin", ws);
+    /* on a phone, the current item slides into view */
+    setTimeout(function () { document.querySelectorAll(".wbt-sub").forEach(function (bd) { var c = bd.querySelector('[aria-current="page"]'); if (c && bd.scrollWidth > bd.clientWidth) bd.scrollLeft = c.offsetLeft - 16; }); }, 1500);
     /* the emblem always returns to the home page as first opened: top of the page, no saved position */
     var brand = header.querySelector(".brand");
     if (brand) brand.addEventListener("click", function (ev) {
