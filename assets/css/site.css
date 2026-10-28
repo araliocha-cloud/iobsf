@@ -2111,3 +2111,10 @@ a.gt-box:hover { transform: translateY(-4px); text-decoration: none; box-shadow:
 
 .hub-sec { padding-top: 10px; padding-bottom: 30px; }
 .hub-grid { gap: 40px 28px; }
+/* hub cards: slimmer slabs */
+.hub-grid { gap: 34px 24px; }
+.hub-grid .wbt-card { padding: 26px 18px 14px; }
+.hub-grid .rv3-n { width: 38px; height: 38px; top: -19px; font-size: 17px; }
+.hub-grid .wbt-card-t { margin: 0 0 6px; }
+.hub-grid .wbt-card-t .p { font-size: 21px; }
+.hub-grid .wbt-card-d { margin: 0; font-size: 15px; line-height: 1.5; text-align: center; }
