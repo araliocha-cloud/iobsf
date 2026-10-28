@@ -179,7 +179,7 @@
       Array.prototype.slice.call(main.children).forEach(function (el) { if (el.tagName === "SECTION" && el !== head && !el.classList.contains("hub-part")) lastOwn = el; });
       n.children.forEach(function (c) {
         var f = c.orig.split("#")[0], h = c.orig.split("#")[1];
-        if (f === file && h) { var t = document.getElementById(h); if (t) cursor = settle(t.closest("section") || t); return; }
+        if (f === file && h) { var t = document.getElementById(h); cursor = t ? settle(t.closest("section") || t) : (lastOwn || cursor); return; }
         if (f === file) { var first = origFirst;
           if (first) { if (!first.id) first.id = c.id; else if (!document.getElementById(c.id)) { var mk = document.createElement("span"); mk.id = c.id; first.prepend(mk); } } cursor = lastOwn || cursor; return; }
         var sec = document.createElement("section"); sec.className = "section hub-part"; sec.id = c.id;

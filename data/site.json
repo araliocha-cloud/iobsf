@@ -336,21 +336,6 @@
           }
         },
         {
-          "href": "chronicle.html",
-          "label": {
-            "en": "Chronicle",
-            "ko": "기록",
-            "ja": "記録",
-            "zh": "记录"
-          },
-          "desc": {
-            "en": "Stories of the Federation, told in pictures and words.",
-            "ko": "사진과 글로 남긴 연맹의 이야기.",
-            "ja": "写真と文で残す連盟の物語。",
-            "zh": "以图文记录的联合会故事。"
-          }
-        },
-        {
           "href": "fire.html#press",
           "label": {
             "en": "Press Releases",
@@ -363,6 +348,21 @@
             "ko": "보도자료와 언론 자료.",
             "ja": "プレスリリースと報道資料。",
             "zh": "新闻稿与媒体资料。"
+          }
+        },
+        {
+          "href": "chronicle.html",
+          "label": {
+            "en": "Chronicle",
+            "ko": "기록",
+            "ja": "記録",
+            "zh": "记录"
+          },
+          "desc": {
+            "en": "Stories of the Federation, told in pictures and words.",
+            "ko": "사진과 글로 남긴 연맹의 이야기.",
+            "ja": "写真と文で残す連盟の物語。",
+            "zh": "以图文记录的联合会故事。"
           }
         }
       ]
