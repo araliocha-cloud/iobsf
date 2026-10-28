@@ -129,7 +129,7 @@
             "zh": "业余最高课程。"
           },
           "key": "advanced",
-          "title": "Instructor Master (Grill Master)",
+          "title": "Pitmaster, Barbecue Master",
           "hours": {
             "en": "36 hours",
             "ko": "36시간",
@@ -174,7 +174,6 @@
             "zh": "半职业"
           },
           "key": "semi-pro",
-          "title": "Master (Pit Master)",
           "hours": {
             "en": "Three rounds",
             "ko": "3차전",
@@ -208,7 +207,6 @@
             "zh": "职业烧烤师，火的执典者。"
           },
           "key": "pro",
-          "title": "Professional Barbecuer, General Master (Barbecue Master)",
           "hours": {
             "en": "Two rounds",
             "ko": "2차전",
