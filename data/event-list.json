@@ -29,7 +29,109 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "federation"
+      "org": "federation",
+      "gallery": [
+        {
+          "src": "assets/img/events/2025-korea-japan-1.webp",
+          "thumb": "assets/img/events/2025-korea-japan-1-t.webp",
+          "caption": {
+            "en": "Winners",
+            "ko": "수상자",
+            "ja": "受賞者",
+            "zh": "获奖者"
+          }
+        },
+        {
+          "src": "assets/img/events/2025-korea-japan-2.webp",
+          "thumb": "assets/img/events/2025-korea-japan-2-t.webp",
+          "caption": {
+            "en": "Participants",
+            "ko": "참가자 단체",
+            "ja": "参加者",
+            "zh": "参赛者合影"
+          }
+        },
+        {
+          "src": "assets/img/events/2025-korea-japan-3.webp",
+          "thumb": "assets/img/events/2025-korea-japan-3-t.webp",
+          "caption": {
+            "en": "At the grill",
+            "ko": "그릴 앞에서",
+            "ja": "グリルの前で",
+            "zh": "烤炉前"
+          }
+        },
+        {
+          "src": "assets/img/events/2025-korea-japan-4.webp",
+          "thumb": "assets/img/events/2025-korea-japan-4-t.webp",
+          "caption": {
+            "en": "At the grill",
+            "ko": "그릴 앞에서",
+            "ja": "グリルの前で",
+            "zh": "烤炉前"
+          }
+        },
+        {
+          "src": "assets/img/events/2025-korea-japan-5.webp",
+          "thumb": "assets/img/events/2025-korea-japan-5-t.webp",
+          "caption": {
+            "en": "Steaks on the grill",
+            "ko": "그릴 위의 스테이크",
+            "ja": "グリルの上のステーキ",
+            "zh": "烤架上的牛排"
+          }
+        },
+        {
+          "src": "assets/img/events/2025-korea-japan-6.webp",
+          "thumb": "assets/img/events/2025-korea-japan-6-t.webp",
+          "caption": {
+            "en": "An entry",
+            "ko": "출품작",
+            "ja": "出品作",
+            "zh": "参赛作品"
+          }
+        },
+        {
+          "src": "assets/img/events/2025-korea-japan-7.webp",
+          "thumb": "assets/img/events/2025-korea-japan-7-t.webp",
+          "caption": {
+            "en": "Judging",
+            "ko": "심사",
+            "ja": "審査",
+            "zh": "评审"
+          }
+        },
+        {
+          "src": "assets/img/events/2025-korea-japan-8.webp",
+          "thumb": "assets/img/events/2025-korea-japan-8-t.webp",
+          "caption": {
+            "en": "Judging",
+            "ko": "심사",
+            "ja": "審査",
+            "zh": "评审"
+          }
+        },
+        {
+          "src": "assets/img/events/2025-korea-japan-9.webp",
+          "thumb": "assets/img/events/2025-korea-japan-9-t.webp",
+          "caption": {
+            "en": "Judging",
+            "ko": "심사",
+            "ja": "審査",
+            "zh": "评审"
+          }
+        },
+        {
+          "src": "assets/img/events/2025-korea-japan-10.webp",
+          "thumb": "assets/img/events/2025-korea-japan-10-t.webp",
+          "caption": {
+            "en": "Opening performance",
+            "ko": "개막 공연",
+            "ja": "開幕公演",
+            "zh": "开幕演出"
+          }
+        }
+      ]
     },
     {
       "id": "2027-aobe-guangzhou",
@@ -277,7 +379,39 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "gallery": [
+        {
+          "src": "assets/img/events/2010-yeongdong-1.webp",
+          "thumb": "assets/img/events/2010-yeongdong-1-t.webp",
+          "caption": {
+            "en": "Awards ceremony",
+            "ko": "시상식",
+            "ja": "表彰式",
+            "zh": "颁奖典礼"
+          }
+        },
+        {
+          "src": "assets/img/events/2010-yeongdong-2.webp",
+          "thumb": "assets/img/events/2010-yeongdong-2-t.webp",
+          "caption": {
+            "en": "Prize presentation",
+            "ko": "상금 수여",
+            "ja": "賞金の授与",
+            "zh": "颁发奖金"
+          }
+        },
+        {
+          "src": "assets/img/events/2010-yeongdong-3.webp",
+          "thumb": "assets/img/events/2010-yeongdong-3-t.webp",
+          "caption": {
+            "en": "Winners",
+            "ko": "수상자",
+            "ja": "受賞者",
+            "zh": "获奖者"
+          }
+        }
+      ]
     },
     {
       "id": "2010-mungyeong-hanton",
@@ -308,7 +442,29 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "gallery": [
+        {
+          "src": "assets/img/events/2010-mungyeong-1.webp",
+          "thumb": "assets/img/events/2010-mungyeong-1-t.webp",
+          "caption": {
+            "en": "Grilling at night",
+            "ko": "밤의 경기 장면",
+            "ja": "夜の競技の場面",
+            "zh": "夜间比赛现场"
+          }
+        },
+        {
+          "src": "assets/img/events/2010-mungyeong-2.webp",
+          "thumb": "assets/img/events/2010-mungyeong-2-t.webp",
+          "caption": {
+            "en": "The contest ground",
+            "ko": "대회 현장",
+            "ja": "大会の会場",
+            "zh": "比赛现场"
+          }
+        }
+      ]
     },
     {
       "id": "2012-namwon-invitational",
@@ -339,7 +495,59 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "gallery": [
+        {
+          "src": "assets/img/events/2012-namwon-1.webp",
+          "thumb": "assets/img/events/2012-namwon-1-t.webp",
+          "caption": {
+            "en": "Cheering participants",
+            "ko": "응원하는 참가자들",
+            "ja": "応援する参加者",
+            "zh": "欢呼的参赛者"
+          }
+        },
+        {
+          "src": "assets/img/events/2012-namwon-2.webp",
+          "thumb": "assets/img/events/2012-namwon-2-t.webp",
+          "caption": {
+            "en": "Awards ceremony",
+            "ko": "시상식",
+            "ja": "表彰式",
+            "zh": "颁奖典礼"
+          }
+        },
+        {
+          "src": "assets/img/events/2012-namwon-3.webp",
+          "thumb": "assets/img/events/2012-namwon-3-t.webp",
+          "caption": {
+            "en": "Team briefing",
+            "ko": "경기 전 설명",
+            "ja": "競技前の説明",
+            "zh": "赛前说明"
+          }
+        },
+        {
+          "src": "assets/img/events/2012-namwon-4.webp",
+          "thumb": "assets/img/events/2012-namwon-4-t.webp",
+          "caption": {
+            "en": "Tasting",
+            "ko": "시식",
+            "ja": "試食",
+            "zh": "品尝"
+          }
+        },
+        {
+          "src": "assets/img/events/2012-namwon-5.webp",
+          "thumb": "assets/img/events/2012-namwon-5-t.webp",
+          "caption": {
+            "en": "Sharing at the table",
+            "ko": "나눔의 식탁",
+            "ja": "分かち合いの食卓",
+            "zh": "分享的餐桌"
+          }
+        }
+      ]
     },
     {
       "id": "2013-namwon-invitational",
@@ -402,7 +610,29 @@
       "table": [],
       "acclaimed_by": "",
       "org": "KR",
-      "when": "17–18 May 2013"
+      "when": "17–18 May 2013",
+      "gallery": [
+        {
+          "src": "assets/img/events/2013-jaraseom-1.webp",
+          "thumb": "assets/img/events/2013-jaraseom-1-t.webp",
+          "caption": {
+            "en": "Grill tables on the lawn",
+            "ko": "잔디밭의 그릴 테이블",
+            "ja": "芝生のグリルテーブル",
+            "zh": "草坪上的烤炉餐桌"
+          }
+        },
+        {
+          "src": "assets/img/events/2013-jaraseom-2.webp",
+          "thumb": "assets/img/events/2013-jaraseom-2-t.webp",
+          "caption": {
+            "en": "Booths",
+            "ko": "부스 거리",
+            "ja": "ブース通り",
+            "zh": "展位街"
+          }
+        }
+      ]
     },
     {
       "id": "2013-intl-bike-camping",
@@ -433,7 +663,49 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "gallery": [
+        {
+          "src": "assets/img/events/2013-gimpo-1.webp",
+          "thumb": "assets/img/events/2013-gimpo-1-t.webp",
+          "caption": {
+            "en": "Riders at the festival",
+            "ko": "축제의 참가자",
+            "ja": "祭りの参加者",
+            "zh": "节庆参与者"
+          }
+        },
+        {
+          "src": "assets/img/events/2013-gimpo-2.webp",
+          "thumb": "assets/img/events/2013-gimpo-2-t.webp",
+          "caption": {
+            "en": "Riders at the festival",
+            "ko": "축제의 참가자",
+            "ja": "祭りの参加者",
+            "zh": "节庆参与者"
+          }
+        },
+        {
+          "src": "assets/img/events/2013-gimpo-3.webp",
+          "thumb": "assets/img/events/2013-gimpo-3-t.webp",
+          "caption": {
+            "en": "Riders at the festival",
+            "ko": "축제의 참가자",
+            "ja": "祭りの参加者",
+            "zh": "节庆参与者"
+          }
+        },
+        {
+          "src": "assets/img/events/2013-gimpo-4.webp",
+          "thumb": "assets/img/events/2013-gimpo-4-t.webp",
+          "caption": {
+            "en": "Riders at the festival",
+            "ko": "축제의 참가자",
+            "ja": "祭りの参加者",
+            "zh": "节庆参与者"
+          }
+        }
+      ]
     },
     {
       "id": "2013-korea-open-cheonan",
@@ -538,7 +810,7 @@
         "ja": "第1回全国アウトドア民俗遊び競技大会",
         "zh": "第一届全国户外民俗游戏大赛"
       },
-      "date": "",
+      "date": "2014-02-15",
       "year": 2014,
       "place": {
         "en": "Yangpyeong",
@@ -559,7 +831,69 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "gallery": [
+        {
+          "src": "assets/img/events/2014-yangpyeong-1.webp",
+          "thumb": "assets/img/events/2014-yangpyeong-1-t.webp",
+          "caption": {
+            "en": "The stage",
+            "ko": "대회 무대",
+            "ja": "大会の舞台",
+            "zh": "比赛舞台"
+          }
+        },
+        {
+          "src": "assets/img/events/2014-yangpyeong-2.webp",
+          "thumb": "assets/img/events/2014-yangpyeong-2-t.webp",
+          "caption": {
+            "en": "Tuho, the arrow toss",
+            "ko": "투호",
+            "ja": "投壺",
+            "zh": "投壶"
+          }
+        },
+        {
+          "src": "assets/img/events/2014-yangpyeong-3.webp",
+          "thumb": "assets/img/events/2014-yangpyeong-3-t.webp",
+          "caption": {
+            "en": "Brackets for each game",
+            "ko": "종목별 대진표",
+            "ja": "種目別の対戦表",
+            "zh": "各项目对阵表"
+          }
+        },
+        {
+          "src": "assets/img/events/2014-yangpyeong-4.webp",
+          "thumb": "assets/img/events/2014-yangpyeong-4-t.webp",
+          "caption": {
+            "en": "Children at the game table",
+            "ko": "어린이 경기",
+            "ja": "子どもの競技",
+            "zh": "儿童比赛"
+          }
+        },
+        {
+          "src": "assets/img/events/2014-yangpyeong-5.webp",
+          "thumb": "assets/img/events/2014-yangpyeong-5-t.webp",
+          "caption": {
+            "en": "Children at the game table",
+            "ko": "어린이 경기",
+            "ja": "子どもの競技",
+            "zh": "儿童比赛"
+          }
+        },
+        {
+          "src": "assets/img/events/2014-yangpyeong-6.webp",
+          "thumb": "assets/img/events/2014-yangpyeong-6-t.webp",
+          "caption": {
+            "en": "Children at the game table",
+            "ko": "어린이 경기",
+            "ja": "子どもの競技",
+            "zh": "儿童比赛"
+          }
+        }
+      ]
     },
     {
       "id": "2015-hongseong-carnival",
@@ -590,7 +924,23 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "gallery": [
+        {
+          "src": "assets/img/events/2015-hongseong-1.webp",
+          "thumb": "assets/img/events/2015-hongseong-1-t.webp",
+          "caption": {
+            "en": "Roasting over open fire",
+            "ko": "장작불 통구이",
+            "ja": "薪火の丸焼き",
+            "zh": "柴火整烤"
+          },
+          "credit": {
+            "en": "Photo: Economic Review",
+            "ko": "사진: 이코노믹리뷰"
+          }
+        }
+      ]
     },
     {
       "id": "2016-masters-pocheon",
