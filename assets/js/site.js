@@ -176,7 +176,7 @@
       var settle = function (el) { while (el && el.nextElementSibling && el.nextElementSibling.tagName === "SECTION" && !el.nextElementSibling.id) el = el.nextElementSibling; return el; };
       var cursor = head, lastOwn = null, origFirst = head ? head.nextElementSibling : main.querySelector("section");
       while (origFirst && origFirst.tagName !== "SECTION") origFirst = origFirst.nextElementSibling;
-      Array.prototype.slice.call(main.children).forEach(function (el) { if (el.tagName === "SECTION" && el !== head && !el.classList.contains("hub-part")) lastOwn = el; });
+      Array.prototype.slice.call(main.children).forEach(function (el) { if (el !== head && el.tagName !== "SCRIPT" && el.tagName !== "NAV" && !el.classList.contains("hub-part")) lastOwn = el; });
       n.children.forEach(function (c) {
         var f = c.orig.split("#")[0], h = c.orig.split("#")[1];
         if (f === file && h) { var t = document.getElementById(h); cursor = t ? settle(t.closest("section") || t) : (lastOwn || cursor); return; }
