@@ -345,7 +345,17 @@
       "</div>");
   };
 
-  pages.barbecuers = function () {
+  pages.barbecuers = function (site) {
+    if (site && site.statements && site.statements.pro_barbecuer) {
+      var pb = site.statements.pro_barbecuer;
+      put("#pb-profession", '<div class="statement">' + bi(pb.text, "p", "text") + "</div>");
+    }
+    load("pathway").then(function (pw) {
+      var steps = [];
+      (pw.tracks || []).forEach(function (tk) { (tk.steps || []).forEach(function (st) { steps.push(st.name); }); });
+      put("#pb-path", '<ol class="pb-steps">' + steps.map(function (nm, i) {
+        return '<li class="pb-step' + (i === steps.length - 1 ? " pb-pro" : "") + '"><span class="pb-k">' + (i + 1) + "</span>" + gb(nm, "span", "pb-name") + "</li>"; }).join("") + "</ol>");
+    });
     Promise.all([load("barbecuers"), load("nations")]).then(function (r) {
       var bb = r[0].barbecuers, na = r[1].nations;
       var active = bb.filter(function (b) { return b.status !== "hall_of_fame"; });

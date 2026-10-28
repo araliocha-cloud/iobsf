@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-second="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pro Barbecuer Certification | IOBSF</title>
+<meta name="description" content="Apply for certification as a Pro Barbecuer of IOBSF.">
+<link rel="canonical" href="https://iobsf.org/certify.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IOBSF, International Outdoor Barbecue Sports Federation">
+<meta property="og:title" content="Pro Barbecuer Certification | IOBSF">
+<meta property="og:description" content="Apply for certification as a Pro Barbecuer of IOBSF.">
+<meta property="og:url" content="https://iobsf.org/certify.html">
+<meta property="og:image" content="https://iobsf.org/assets/img/emblem.png">
+<link rel="icon" href="assets/img/emblem-small.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500&family=Noto+Serif+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=202610281705">
+</head>
+<body data-page="certify">
+<header id="site-header"></header>
+<main>
+<section class="page-head"><div class="wrap">
+<h1><span class="p">Pro Barbecuer Certification</span><span class="bi"><span class="s" lang="ko">프로바비큐어 인증 신청</span><span class="s" lang="ja">プロバーベキュアー認証申請</span><span class="s" lang="zh">职业烧烤师认证申请</span></span></h1>
+<div class="lede bi"><span class="p">Barbecuers apply here for certification as a Pro Barbecuer. Every application is reviewed by the Federation, and the secretariat replies by email.</span><span class="s" lang="ko">바비큐어는 이곳에서 프로바비큐어 인증을 신청한다. 모든 신청은 연맹이 검토하고, 사무국이 이메일로 회신한다.</span><span class="s" lang="ja">バーベキュアーはここでプロバーベキュアーの認証を申請する。すべての申請は連盟が審査し、事務局がメールで返信する。</span><span class="s" lang="zh">烧烤师可在此申请职业烧烤师认证。所有申请由联合会审核，秘书处将通过电子邮件回复。</span></div>
+</div></section>
+<section class="section"><div class="wrap">
+<form id="host-form" class="hf" novalidate>
+<p class="hf-note">Pro Barbecuer Certification Application, PB-01. Please complete the form in English.</p>
+<fieldset><legend>1. Applicant</legend>
+<label>Full name<input name="Full name" required></label>
+<label>Nationality<input name="Nationality" required></label>
+<label>City of residence<input name="City"></label>
+<label>Team or affiliation<input name="Affiliation"></label>
+<label>Email<input type="email" name="email" required></label>
+<label>Telephone<input name="Telephone"></label>
+</fieldset>
+<fieldset><legend>2. Career at the fire</legend>
+<label>Years of barbecue practice<input name="Years of practice" inputmode="numeric" required></label>
+<label>Current course or level<input name="Current level" placeholder="e.g. Advanced, Semi-Pro"></label>
+<label class="wide">Competitions entered and results<textarea name="Competitions and results" rows="4"></textarea></label>
+</fieldset>
+<fieldset><legend>3. Education and qualifications</legend>
+<label class="wide">Courses completed (IOBSF, KOOBA or other) and other qualifications<textarea name="Education" rows="4"></textarea></label>
+</fieldset>
+<fieldset><legend>4. Fire and heritage</legend>
+<label class="wide">Forms of fire you master and the barbecue heritage you carry<textarea name="Fire and heritage" rows="4"></textarea></label>
+</fieldset>
+<fieldset><legend>5. Statement</legend>
+<label class="wide">Why do you seek to become a Pro Barbecuer?<textarea name="Statement" rows="5" required></textarea></label>
+</fieldset>
+<fieldset><legend>6. Declaration</legend>
+<label class="hf-check"><input type="checkbox" name="Declaration" value="Agreed" required> I confirm that the information given is true, and I will sign the Charter of the Pro Barbecuer and keep it.</label>
+</fieldset>
+<input type="text" name="_honey" class="hf-honey" tabindex="-1" autocomplete="off">
+<div class="hf-send"><button type="submit" class="hf-btn"><span class="hf-flame" aria-hidden="true"><svg viewBox="0 0 40 48"><defs><linearGradient id="hfg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4dca2"/><stop offset=".55" stop-color="#c99a4f"/><stop offset="1" stop-color="#7d5a24"/></linearGradient></defs><path d="M20 3c3 7 11 11 11 21a11 11 0 0 1-22 0c0-6 3-9 5-12 0 4 2 6 4 6-2-6 0-11 2-15z" fill="url(#hfg)"/><path d="M6 44h28M10 40h20" stroke="url(#hfg)" stroke-width="2" stroke-linecap="round"/></svg></span><span>Submit Application</span></button>
+<p class="hf-status" role="status"></p></div>
+</form>
+</div></section>
+</main>
+<footer id="site-footer"></footer>
+<script>
+(function () {
+  var f = document.getElementById("host-form"), st = f.querySelector(".hf-status"), btn = f.querySelector(".hf-btn");
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!f.checkValidity()) { f.reportValidity(); return; }
+    var d = {}; new FormData(f).forEach(function (v, k) { d[k] = v; });
+    if (d._honey) return;
+    d._subject = "Pro Barbecuer Certification: " + (d["Full name"] || "") + ", " + (d.Nationality || "");
+    d._template = "table"; d._replyto = d.email;
+    btn.disabled = true; st.textContent = "Sending...";
+    fetch("https://formsubmit.co/ajax/araliocha@gmail.com", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(d) })
+      .then(function (r) { return r.json(); })
+      .then(function (r) { if (String(r.success) === "true") { f.reset(); st.textContent = "Thank you. Your application has been sent to the IOBSF secretariat."; } else throw 0; })
+      .catch(function () { st.textContent = "The application could not be sent. Please try again, or email araliocha@gmail.com."; })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+</script>
+<script src="assets/js/site.js?v=202610281705"></script>
+</body>
+</html>

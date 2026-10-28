@@ -124,14 +124,14 @@
       "label": {
         "en": "The Pro Barbecuer",
         "ko": "프로바비큐어",
-        "ja": "",
-        "zh": ""
+        "ja": "プロバーベキュアー",
+        "zh": "职业烧烤师"
       },
       "text": {
         "en": "A Pro Barbecuer officiates the ritual on the foundation of barbecue humanities and philosophical humanism,\nand carries a sense of mission for the common prosperity of humankind.",
         "ko": "프로바비큐어는 바비큐 인문학과 철학적 인본을 바탕으로 의식을 집전하며,\n인류공영의 사명감을 갖는다.",
-        "ja": "",
-        "zh": ""
+        "ja": "プロバーベキュアーは、バーベキュー人文学と哲学的人本を土台に儀式を執り行い、\n人類共栄の使命感を持つ。",
+        "zh": "职业烧烤师以烧烤人文学与哲学人本为根基主持仪式，\n怀有人类共荣的使命感。"
       }
     }
   },
@@ -210,22 +210,44 @@
       "pages": [
         "barbecuers",
         "barbecuer",
-        "rankings"
+        "rankings",
+        "certify"
       ],
       "children": [
         {
-          "href": "barbecuers.html",
+          "href": "barbecuers.html#profession",
           "label": {
-            "en": "Roster",
-            "ko": "명부",
-            "ja": "名簿",
-            "zh": "名录"
-          },
-          "desc": {
-            "en": "The certified Pro Barbecuers of the Federation and their records.",
-            "ko": "연맹이 인증한 프로바비큐어와 그 기록.",
-            "ja": "連盟が認証したプロバーベキュアーとその記録。",
-            "zh": "联合会认证的职业烧烤师及其记录。"
+            "en": "The Profession",
+            "ko": "직업",
+            "ja": "職業",
+            "zh": "职业"
+          }
+        },
+        {
+          "href": "barbecuers.html#founding",
+          "label": {
+            "en": "Founding Pro Barbecuers",
+            "ko": "창립 프로바비큐어",
+            "ja": "創立プロバーベキュアー",
+            "zh": "创始职业烧烤师"
+          }
+        },
+        {
+          "href": "barbecuers.html#path",
+          "label": {
+            "en": "The Path to Pro",
+            "ko": "프로로 가는 길",
+            "ja": "プロへの道",
+            "zh": "职业之路"
+          }
+        },
+        {
+          "href": "barbecuers.html#certification",
+          "label": {
+            "en": "Certification",
+            "ko": "인증 신청",
+            "ja": "認証申請",
+            "zh": "认证申请"
           }
         },
         {
