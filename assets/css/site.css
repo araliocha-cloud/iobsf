@@ -2161,3 +2161,22 @@ a.gt-box:hover { transform: translateY(-4px); text-decoration: none; box-shadow:
 .track-steps > li { padding: 18px 24px 16px 60px; border: 1px solid rgba(201,161,90,.25); border-radius: 6px; background: linear-gradient(180deg, #241b13, #1a140e); }
 .crs-row { grid-template-columns: 120px 1fr; }
 [id^="course-"] { scroll-margin-top: calc(var(--stick, 110px) + 14px) !important; }
+
+/* Path to Pro: slim slabs with deep thickness */
+.pb-steps { grid-template-columns: repeat(5, 1fr) !important; gap: 18px; margin-bottom: 26px; }
+.pb-step { border-radius: 5px; border: 1px solid #7a5f3c; background: linear-gradient(180deg, #3d2d1d 0%, #2a1e14 55%, #1d150e 100%);
+  box-shadow: inset 0 1px 0 rgba(255,228,178,.28), inset 0 -1px 0 rgba(0,0,0,.6), 0 2px 0 #5a442c, 0 4px 0 #46351f, 0 6px 0 #352816, 0 8px 0 #251b10, 0 10px 0 #1a120a, 0 24px 34px rgba(0,0,0,.65); }
+.pb-step a { padding: 9px 8px 10px; gap: 2px; }
+.pb-k { font-size: 12px; }
+.pb-name { font-size: 18px; }
+.pb-pro { border-color: #e0b35e; background: linear-gradient(180deg, #5a4024 0%, #3a2917 55%, #261a0f 100%); }
+/* judges: a separate, honoured tier */
+.pb-officials { display: flex; align-items: center; gap: 20px; max-width: 820px; margin: 6px 0 28px; padding: 16px 26px; border-radius: 6px; text-decoration: none; color: inherit;
+  background: radial-gradient(130% 120% at 0% 0%, #2b2417 0%, #15110b 70%); border: 1px solid #c9a15a; outline: 1px solid rgba(201,161,90,.35); outline-offset: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,228,178,.3), 0 2px 0 #6a5230, 0 4px 0 #4a3a22, 0 6px 0 #2e2414, 0 8px 0 #1b150b, 0 26px 38px rgba(0,0,0,.7); }
+.pb-officials:hover { text-decoration: none; border-color: #f0cf86; }
+.pbo-mark { font-size: 26px; color: #e8c27a; text-shadow: 0 0 12px rgba(232,194,122,.45); }
+.pbo-txt { display: flex; flex-direction: column; gap: 4px; }
+.pbo-name { font-family: var(--f-display); font-size: 21px; color: #f3dcaa; letter-spacing: .04em; }
+.pbo-sub { font-size: 14px; color: #c9b089; line-height: 1.6; text-align: left; }
+@media (max-width: 700px) { .pb-steps { grid-template-columns: 1fr 1fr !important; } .pb-officials { padding: 14px 16px; } }

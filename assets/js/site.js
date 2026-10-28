@@ -366,7 +366,9 @@
       var item = function (nm, i, href, cls) { return '<li class="pb-step' + cls + '"><a href="' + href + '"><span class="pb-k">' + i + "</span>" + gb(nm, "span", "pb-name") + "</a></li>"; };
       put("#pb-path", '<ol class="pb-steps">' + steps.map(function (nm, i) {
         return item(nm, i + 1, "pathway.html#course-" + keys[i], i === steps.length - 1 ? " pb-pro" : ""); }).join("") +
-        item({ en: "Judges", ko: "심판 양성", ja: "審判養成", zh: "裁判培养" }, "+", "pathway.html#judges", " pb-judge") + "</ol>");
+        "</ol>" +
+        '<a class="pb-officials" href="pathway.html#judges"><span class="pbo-mark" aria-hidden="true">&#10022;</span><span class="pbo-txt">' + gb({ en: "Judges", ko: "심판 양성", ja: "審判養成", zh: "裁判培养" }, "span", "pbo-name") +
+        gb(pw.judges ? pw.judges.text : { en: "" }, "span", "pbo-sub") + "</span></a>");
     });
     Promise.all([load("barbecuers"), load("nations")]).then(function (r) {
       var bb = r[0].barbecuers, na = r[1].nations;
