@@ -1293,7 +1293,7 @@
       var natKeys = Object.keys(nats).sort(function (a, b) { return nats[a].o.en.localeCompare(nats[b].o.en, "en"); });
       /* three tiers of the repository: archived, under review, inscribed */
       var tier = function (n, num, label, sub, href) {
-        var inner = '<span class="gt-n">' + num + '</span>' + gb(label, "span", "gt-label") + gb(sub, "span", "gt-sub");
+        var inner = '<span class="gt-n">' + num + '</span><span class="gt-txt">' + gb(label, "span", "gt-label") + gb(sub, "span", "gt-sub") + "</span>";
         return href ? '<a class="gt-box" href="' + href + '">' + inner + "</a>" : '<div class="gt-box gt-empty">' + inner + "</div>"; };
       put("#ga-tiers", '<div class="gt-row">' +
         tier(1, arch.length, { en: "Archived Heritage", ko: "기록유산", ja: "記録遺産", zh: "记录遗产" }, { en: "Recorded in the Federation archive", ko: "연맹 아카이브에 기록된 유산", ja: "連盟アーカイブに記録された遺産", zh: "记录于联合会档案的遗产" }, "#ga-tools") +
