@@ -638,15 +638,19 @@
           '<div class="jc-meta">' + (x.reissued ? "Certified " + esc(String(x.certified).slice(0, 4)) + ", reissued " + esc((x.issued || "").slice(0, 4)) : "Certified " + esc(String(x.certified).slice(0, 4))) + "</div>" +
           '<img class="jc-strip" src="assets/img/judges/kooba-strip.png" alt="Korea Outdoor &amp; Barbecue Association">' +
           '<img class="jc-seal" src="assets/img/judges/kooba-seal.png" alt="Seal of the Korea Outdoor &amp; Barbecue Association"></div>';
-        var prof = '<div class="oj-prof rv3-box">' + gb(nm, "h3", "oj-name") +
+        var issued = new Date((x.issued || x.certified + "-01-01") + "T00:00:00"), isd = issued.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+        var photo = '<figure class="oj-photo"><img src="' + esc(x.photo) + '" alt="' + esc(x.name.en) + '"></figure>';
+        var prof = '<div class="oj-prof rv3-box"><div class="oj-top">' + photo + '<div class="oj-head">' + '<div class="oj-kicker">Official Judge' + (x.no ? '<span>No. ' + esc(x.no) + "</span>" : "") + "</div>" + gb(nm, "h3", "oj-name") +
           '<dl class="oj-facts"><dt>' + gb(L("Nationality", "국적", "国籍", "国籍"), "span") + "</dt><dd>" + gb(j.nationality, "span") + "</dd>" +
           "<dt>" + gb(L("Affiliation", "소속", "所属", "所属"), "span") + "</dt><dd>" + gb(j.affiliation, "span") + "</dd>" +
-          "<dt>" + gb(L("Certified", "인증", "認定", "认证"), "span") + "</dt><dd><span class=\"oj-plain\">" + esc(String(x.certified)) + (x.no ? ", No. " + esc(x.no) : "") + "</span></dd></dl>" +
+          "<dt>" + gb(L("Certified", "인증", "認定", "认证"), "span") + "</dt><dd><span class=\"oj-plain\">" + esc(String(x.certified)) + (x.no ? ", No. " + esc(x.no) : "") + "</span></dd>" +
+          "<dt>" + gb(L("Issued", "발급", "発行", "签发"), "span") + "</dt><dd>" + gb({ en: isd + (x.reissued ? " (reissued)" : ""), ko: issued.getFullYear() + "년 " + (issued.getMonth() + 1) + "월 " + issued.getDate() + "일" + (x.reissued ? " (재발급)" : ""), ja: issued.getFullYear() + "年" + (issued.getMonth() + 1) + "月" + issued.getDate() + "日" + (x.reissued ? "（再発行）" : ""), zh: issued.getFullYear() + "年" + (issued.getMonth() + 1) + "月" + issued.getDate() + "日" + (x.reissued ? "（补发）" : "") }, "span") + "</dd></dl>" +
+          gb({ en: "This person is an official judge certified by the Korea Outdoor & Barbecue Association (KOOBA).", ko: "이 사람은 사단법인 대한아웃도어바비큐협회가 인정하는 공식 심판임을 확인한다.", ja: "この者が社団法人大韓アウトドアバーベキュー協会の認める公式審判であることを確認する。", zh: "兹确认此人为社团法人大韩户外烧烤协会认可的正式裁判。" }, "p", "oj-cert") + "</div></div>" +
           '<div class="oj-ch">' + gb(L("Career as Official Judge", "공식 심판 경력", "公式審判の経歴", "正式裁判经历"), "span") + '<span class="oj-n">' + ev.length + "</span></div>" +
           '<ol class="oj-career">' + ev.map(function (e) {
             var n = typeof e.name === "object" ? e.name : { en: e.name };
             return '<li><span class="oj-y">' + esc(String(e.year)) + "</span>" + gb({ en: n.en, ko: n.ko || n.en, ja: n.ja, zh: n.zh }, "span", "oj-e") + "</li>"; }).join("") + "</ol></div>";
-        return '<article class="oj-row">' + card + prof + "</article>";
+        return '<article class="oj-row oj-one">' + prof + "</article>";
       }).join("") + "</div>" + '<p class="oj-back"><a href="federation.html#fed-judges">' + bi({ en: "All Official Judges", ko: "공식 심판 전체", ja: "公式審判一覧", zh: "全部正式裁判" }, "span", "", true) + "</a></p>" +
         (j.confirmed ? '<p class="jc-confirm">' + bi({ en: "Confirmed as official judges of KOOBA on " + new Date(j.confirmed + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) + ", by the Chairman of KOOBA.", ko: "상기인들이 사단법인 대한아웃도어바비큐협회 공식 심판임을 " + j.confirmed.replace(/-/g, ". ") + ". 협회장이 증명했다.", ja: "上記の者が社団法人大韓アウトドアバーベキュー協会の公式審判であることを、" + j.confirmed.replace(/-/g, ". ") + ". 協会長が証明した。", zh: "上述人员为社团法人大韩户外烧烤协会正式裁判，" + j.confirmed.replace(/-/g, ". ") + ". 由协会会长证明。" }, "span", "", true) + "</p>" : ""));
     });
