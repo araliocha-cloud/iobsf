@@ -2016,3 +2016,5 @@ html [id] { scroll-margin-top: var(--stick, 110px) !important; }
 
 /* judge page holds still under the cursor: plaque and portrait never move */
 .oj-prof, .oj-prof:hover, .oj-photo, .oj-photo:hover { transform: none !important; transition: none !important; }
+.oj-head { min-width: 0; } .oj-facts dd { overflow-wrap: anywhere; }
+.oj-facts { grid-template-columns: 140px minmax(0, 1fr); } .oj-facts dd { min-width: 0; } @media (max-width: 760px) { .oj-facts { grid-template-columns: 96px minmax(0, 1fr); } }
