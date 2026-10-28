@@ -480,15 +480,15 @@
     },
     {
       "code": "ko",
-      "name": "한국어"
+      "name": "KO"
     },
     {
       "code": "ja",
-      "name": "日本語"
+      "name": "JA"
     },
     {
       "code": "zh",
-      "name": "中文"
+      "name": "ZH"
     }
   ],
   "institutions": [
