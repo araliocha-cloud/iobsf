@@ -1291,6 +1291,14 @@
       var c = ghbhCounts(arch);
       var nats = {}; arch.forEach(function (r) { var k = r.custodian.ko; if (!nats[k]) nats[k] = { o: r.custodian, n: 0 }; nats[k].n++; });
       var natKeys = Object.keys(nats).sort(function (a, b) { return nats[a].o.en.localeCompare(nats[b].o.en, "en"); });
+      /* three tiers of the repository: archived, under review, inscribed */
+      var tier = function (n, num, label, sub, href) {
+        var inner = '<span class="gt-n">' + num + '</span>' + gb(label, "span", "gt-label") + gb(sub, "span", "gt-sub");
+        return href ? '<a class="gt-box" href="' + href + '">' + inner + "</a>" : '<div class="gt-box gt-empty">' + inner + "</div>"; };
+      put("#ga-tiers", '<div class="gt-row">' +
+        tier(1, arch.length, { en: "Archived Heritage", ko: "기록유산", ja: "記録遺産", zh: "记录遗产" }, { en: "Recorded in the Federation archive", ko: "연맹 아카이브에 기록된 유산", ja: "連盟アーカイブに記録された遺産", zh: "记录于联合会档案的遗产" }, "#ga-tools") +
+        tier(2, 0, { en: "Heritage under Review", ko: "심사유산", ja: "審査遺産", zh: "审查遗产" }, { en: "Applications under review", ko: "등재 심사 중인 유산", ja: "登録審査中の遺産", zh: "正在审查中的遗产" }) +
+        tier(3, 0, { en: "Inscribed Heritage", ko: "등재유산", ja: "登録遺産", zh: "列入遗产" }, { en: "Inscribed by decision of the Federation", ko: "연맹의 결정으로 등재된 유산", ja: "連盟の決定により登録された遺産", zh: "经联合会决定列入的遗产" }) + "</div>");
       put("#ga-head", gb(g.archive_title, "p", "ga-sub"));
       put("#ga-tools", '<div class="ga-tools"><input id="ga-q" type="search" placeholder="Search by name, native name, nation or ID" aria-label="Search the archive">' +
         '<div class="ga-conts" role="group" aria-label="Continent"><button type="button" data-c="" class="on">' + bi(GU.all, "span", "", true) + " <b>" + arch.length + "</b></button>" +
