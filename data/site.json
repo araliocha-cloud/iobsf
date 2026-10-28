@@ -301,7 +301,8 @@
       },
       "pages": [
         "fire",
-        "post-fire"
+        "post-fire",
+        "chronicle"
       ],
       "children": [
         {
@@ -332,6 +333,21 @@
             "ko": "연맹의 공식 공지.",
             "ja": "連盟の公式告知。",
             "zh": "联合会的官方通知。"
+          }
+        },
+        {
+          "href": "chronicle.html",
+          "label": {
+            "en": "Chronicle",
+            "ko": "기록",
+            "ja": "記録",
+            "zh": "记录"
+          },
+          "desc": {
+            "en": "Stories of the Federation, told in pictures and words.",
+            "ko": "사진과 글로 남긴 연맹의 이야기.",
+            "ja": "写真と文で残す連盟の物語。",
+            "zh": "以图文记录的联合会故事。"
           }
         },
         {
@@ -466,8 +482,7 @@
         "business",
         "judge",
         "events",
-        "event",
-        "chronicle"
+        "event"
       ],
       "children": [
         {
