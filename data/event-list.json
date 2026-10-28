@@ -52,6 +52,16 @@
           }
         },
         {
+          "src": "assets/img/events/2025-korea-japan-11.webp",
+          "thumb": "assets/img/events/2025-korea-japan-11-t.webp",
+          "caption": {
+            "en": "Participants",
+            "ko": "참가자들",
+            "ja": "参加者",
+            "zh": "参赛者"
+          }
+        },
+        {
           "src": "assets/img/events/2025-korea-japan-3.webp",
           "thumb": "assets/img/events/2025-korea-japan-3-t.webp",
           "caption": {
