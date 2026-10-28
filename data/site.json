@@ -476,19 +476,19 @@
   "second_languages": [
     {
       "code": "en",
-      "name": "EN"
+      "name": "English"
     },
     {
       "code": "ko",
-      "name": "KO"
+      "name": "Korean"
     },
     {
       "code": "ja",
-      "name": "JA"
+      "name": "Japanese"
     },
     {
       "code": "zh",
-      "name": "ZH"
+      "name": "Chinese"
     }
   ],
   "institutions": [
