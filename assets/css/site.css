@@ -2093,3 +2093,9 @@ a.gt-box:hover { transform: translateY(-4px); text-decoration: none; box-shadow:
 .gt-label { font-family: var(--f-display); font-size: 21px; color: #e6cf9d; }
 .gt-sub { font-size: 13.5px; color: var(--ash); margin-top: 6px; }
 @media (max-width: 700px) { .gt-row { grid-template-columns: 1fr; gap: 18px; } .gt-n { font-size: 46px; } }
+.gt-row { grid-template-columns: repeat(3, 190px); gap: 20px; justify-content: start; }
+.gt-box { padding: 22px 12px 18px; }
+.gt-n { font-size: 44px; margin-bottom: 8px; }
+.gt-label { font-size: 18px; }
+.gt-sub { font-size: 12.5px; }
+@media (max-width: 700px) { .gt-row { grid-template-columns: repeat(3, 1fr); gap: 10px; } .gt-box { padding: 16px 6px 14px; } .gt-n { font-size: 32px; } .gt-label { font-size: 15px; } .gt-sub { display: none; } }
