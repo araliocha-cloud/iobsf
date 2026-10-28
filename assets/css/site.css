@@ -2012,3 +2012,5 @@ html [id] { scroll-margin-top: var(--stick, 110px) !important; }
   .oj-photo:hover { transform: none; }
   .oj-kicker, .oj-head .oj-name, .oj-head .oj-name * { text-align: center !important; }
 }
+/* footer: short Korean lines must not stretch around one long word */
+.site-footer .f-link, .site-footer .f-link * { text-align: left; text-align-last: auto; word-break: keep-all; }
