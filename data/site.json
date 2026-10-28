@@ -224,6 +224,15 @@
           }
         },
         {
+          "href": "barbecuers.html#founder",
+          "label": {
+            "en": "Founder",
+            "ko": "창직자",
+            "ja": "創職者",
+            "zh": "创职者"
+          }
+        },
+        {
           "href": "barbecuers.html#founding",
           "label": {
             "en": "Founding Pro Barbecuers",
@@ -818,5 +827,93 @@
         "href": "post.html?b=fire&s=news&p=2026-10-28-aobe-2027-in-guangzhou-the-federation-delivers-the-summit-keynote"
       }
     ]
+  },
+  "founder_note": {
+    "label": {
+      "en": "Founder of the Profession",
+      "ko": "프로바비큐어 창직자",
+      "ja": "プロバーベキュアー創職者",
+      "zh": "职业烧烤师创职者"
+    },
+    "dates": {
+      "en": "In use since 2000, formally named in 2013",
+      "ko": "2000년 사용, 2013년 정식 명명",
+      "ja": "2000年より使用、2013年に正式命名",
+      "zh": "2000年起使用，2013年正式命名"
+    },
+    "precedent_title": {
+      "en": "Precedent",
+      "ko": "선례",
+      "ja": "先例",
+      "zh": "先例"
+    },
+    "precedent": {
+      "en": [
+        "When a new professional qualification is created, the person who sets the first examination does not sit it.",
+        "Professional bodies recognise those who took part in their founding without examination. The <a href=\"https://en.wikipedia.org/wiki/List_of_founder_fellows_of_the_Royal_Society\" target=\"_blank\" rel=\"noopener\">Founder Fellows</a> of the Royal Society were those present at its first meeting in 1660. The Royal College of Radiologists grants <a href=\"https://rcr.ac.uk/membership/membership-categories-fees/fellowship-without-examination\" target=\"_blank\" rel=\"noopener\">Fellowship without Examination</a> to those who have contributed to the field, with the same rights as Fellows who passed the examination.",
+        "There is also the principle of recognising those who did the work before the system existed. This is the <a href=\"https://lbopg.treepl.co/About/requirements\" target=\"_blank\" rel=\"noopener\">Grandfather Clause</a>, used in licensing systems in many countries."
+      ],
+      "ko": [
+        "새로운 직업 자격이 생길 때, 첫 시험을 만든 사람은 그 시험을 치르지 않는다.",
+        "전문직 단체는 창설에 참여한 구성원에게 시험 없이 자격을 인정한다. 영국 왕립학회(Royal Society)의 <a href=\"https://en.wikipedia.org/wiki/List_of_founder_fellows_of_the_Royal_Society\" target=\"_blank\" rel=\"noopener\">창립 회원(Founder Fellows)</a>은 1660년 첫 모임에 참석한 이들로 정해졌다. 영국 왕립영상의학회(Royal College of Radiologists)는 분야에 기여한 이에게 <a href=\"https://rcr.ac.uk/membership/membership-categories-fees/fellowship-without-examination\" target=\"_blank\" rel=\"noopener\">시험 없이 펠로 자격(Fellowship without Examination)</a>을 주며, 그 권리는 시험을 거친 펠로와 같다.",
+        "제도가 생기기 전부터 그 일을 해 온 사람의 자격을 인정하는 원칙도 있다. 이를 <a href=\"https://lbopg.treepl.co/About/requirements\" target=\"_blank\" rel=\"noopener\">기득 인정 원칙(Grandfather Clause)</a>이라 하며, 여러 나라의 면허 제도에서 쓰인다."
+      ],
+      "ja": [
+        "新しい職業資格が生まれるとき、最初の試験を作った者はその試験を受けない。",
+        "専門職団体は、創設に参加した構成員に試験なしで資格を認める。英国王立協会（Royal Society）の<a href=\"https://en.wikipedia.org/wiki/List_of_founder_fellows_of_the_Royal_Society\" target=\"_blank\" rel=\"noopener\">創立会員（Founder Fellows）</a>は、1660年の最初の会合に出席した人々と定められた。英国王立放射線医学会（Royal College of Radiologists）は、分野に貢献した者に<a href=\"https://rcr.ac.uk/membership/membership-categories-fees/fellowship-without-examination\" target=\"_blank\" rel=\"noopener\">試験なしのフェロー資格（Fellowship without Examination）</a>を与え、その権利は試験を経たフェローと同じである。",
+        "制度が生まれる前からその仕事をしてきた者の資格を認める原則もある。これを<a href=\"https://lbopg.treepl.co/About/requirements\" target=\"_blank\" rel=\"noopener\">既得権条項（Grandfather Clause）</a>といい、多くの国の免許制度で用いられている。"
+      ],
+      "zh": [
+        "新的职业资格诞生时，出第一场考试的人不参加那场考试。",
+        "专业团体对参与创立的成员免试认可资格。英国皇家学会（Royal Society）的<a href=\"https://en.wikipedia.org/wiki/List_of_founder_fellows_of_the_Royal_Society\" target=\"_blank\" rel=\"noopener\">创始会士（Founder Fellows）</a>即1660年首次会议的出席者。英国皇家放射科医师学会（Royal College of Radiologists）向对该领域有贡献者授予<a href=\"https://rcr.ac.uk/membership/membership-categories-fees/fellowship-without-examination\" target=\"_blank\" rel=\"noopener\">免试会士资格（Fellowship without Examination）</a>，其权利与通过考试的会士相同。",
+        "也有一项原则，认可在制度建立之前便已从事该工作者的资格，称为<a href=\"https://lbopg.treepl.co/About/requirements\" target=\"_blank\" rel=\"noopener\">祖父条款（Grandfather Clause）</a>，在许多国家的执照制度中使用。"
+      ]
+    },
+    "birth_title": {
+      "en": "The Birth of Sports Barbecue and the Pro Barbecuer",
+      "ko": "스포츠바비큐와 프로바비큐어의 탄생",
+      "ja": "スポーツバーベキューとプロバーベキュアーの誕生",
+      "zh": "运动烧烤与职业烧烤师的诞生"
+    },
+    "birth": {
+      "en": [
+        "In 2000, Cha Young-ki (Shaka Chaa) took up barbecue in earnest. Using the terms Sports Barbecue and Pro Barbecuer, he began to lay the foundation of a new culture.",
+        "The starting point was American Competition Barbecue. There are rules, there is judging, and rankings are decided. The form was already a sport, but the name remained a contest. Sports Barbecue is the concept that goes several steps further. When barbecue becomes a sport, the experts once called pitmasters and barbecue masters become professional athletes: Pro Barbecuers. Sports Barbecue and the Pro Barbecuer are two advanced names born of this one idea.",
+        "In 2009 he founded the Korea Outdoor & Barbecue Association (KOOBA), an incorporated association, and began holding competitions.",
+        "In 2013 the Pro Barbecuer was formally named on Creative Korea, tvN's national project for the creation of new professions.",
+        "He then built a system for developing professional athletes, from the amateur Beginner, Intermediate and Advanced courses to Semi-Pro and Pro. Running a course for training judges alongside it, he has produced official judges since 2012. Graduates of the Advanced course continue to come forward.",
+        "The Semi-Pro and Pro certification examinations will be held once the foundation of competitions is in place. The first examination will be held after May 2027. Those who pass receive certification numbers from PB-001."
+      ],
+      "ko": [
+        "2000년, 차영기(Shaka Chaa)는 바비큐를 본격적으로 시작했다. 스포츠바비큐와 프로바비큐어라는 용어를 사용하면서 새로운 문화의 기반을 닦기 시작했다.",
+        "출발점은 미국의 경쟁 바비큐(Competition Barbecue)였다. 규칙이 있고, 심사가 있고, 순위가 결정된다. 형식은 이미 스포츠였지만, 이름은 경연에 머물렀다. 여기서 몇 걸음 더 나아간 개념이 스포츠바비큐다. 바비큐가 스포츠가 되면, 핏마스터(Pitmaster)와 바비큐 마스터라고 불리던 전문가는 프로바비큐어라는 직업 선수가 된다. 스포츠바비큐와 프로바비큐어는 이 하나의 구상에서 나온 두 개의 진보된 이름이다.",
+        "2009년, 사단법인 대한아웃도어바비큐협회(KOOBA)를 세우고 대회를 열었다.",
+        "2013년, 프로바비큐어는 tvN 대국민 창직 프로젝트 「크리에이티브 코리아(Creative Korea)」에서 정식으로 명명되었다.",
+        "이후 아마추어 초급, 중급, 고급 과정과 세미프로, 프로로 이어지는 전문 선수 육성 체계를 세웠다. 심판 양성 과정도 함께 운영하면서 2012년부터 공식 심판을 배출했다. 고급 과정 수료자는 지속적으로 배출되고 있다.",
+        "세미프로와 프로 인증 시험은 대회 기반이 갖추어진 뒤에 실시한다. 첫 시험은 2027년 5월 이후에 열린다. 통과자는 PB-001부터 인증 번호를 받는다."
+      ],
+      "ja": [
+        "2000年、車英基（Shaka Chaa）はバーベキューを本格的に始めた。スポーツバーベキューとプロバーベキュアーという用語を使いながら、新しい文化の基盤を築き始めた。",
+        "出発点はアメリカの競技バーベキュー（Competition Barbecue）だった。規則があり、審査があり、順位が決まる。形式はすでにスポーツだったが、名前は競演にとどまった。そこから何歩も先へ進んだ概念がスポーツバーベキューである。バーベキューがスポーツになれば、ピットマスター（Pitmaster）やバーベキューマスターと呼ばれていた専門家は、プロバーベキュアーという職業選手になる。スポーツバーベキューとプロバーベキュアーは、この一つの構想から生まれた二つの進んだ名前である。",
+        "2009年、社団法人大韓アウトドアバーベキュー協会（KOOBA）を設立し、大会を開いた。",
+        "2013年、プロバーベキュアーはtvNの国民創職プロジェクト「クリエイティブ・コリア（Creative Korea）」で正式に命名された。",
+        "その後、アマチュアの初級、中級、上級課程からセミプロ、プロへと続く専門選手育成体系を築いた。審判養成課程もあわせて運営し、2012年から公式審判を輩出してきた。上級課程の修了者は継続して輩出されている。",
+        "セミプロとプロの認証試験は、大会の基盤が整った後に実施する。最初の試験は2027年5月以降に行われる。合格者はPB-001から認証番号を受ける。"
+      ],
+      "zh": [
+        "2000年，车英基（Shaka Chaa）正式投身烧烤。他开始使用运动烧烤与职业烧烤师这两个用语，为一种新文化奠定基础。",
+        "起点是美国的竞技烧烤（Competition Barbecue）。有规则，有评审，有名次。形式早已是体育，名称却停留在竞赛。运动烧烤是由此更进几步的概念。烧烤一旦成为体育，曾被称为烤肉大师（Pitmaster）或烧烤大师的专家，便成为职业烧烤师这一职业选手。运动烧烤与职业烧烤师，是同一构想所生的两个进步的名称。",
+        "2009年，他创立社团法人大韩户外烧烤协会（KOOBA），开始举办赛事。",
+        "2013年，职业烧烤师在tvN全民创职项目《创意韩国（Creative Korea）》中被正式命名。",
+        "此后，他建立了从业余初级、中级、高级课程到半职业、职业的专业选手培养体系。同时运营裁判培养课程，自2012年起培养正式裁判。高级课程结业者持续涌现。",
+        "半职业与职业认证考试将在赛事基础具备后实施。首次考试于2027年5月以后举行。通过者获得自PB-001起的认证编号。"
+      ]
+    },
+    "awaiting": {
+      "en": "Those who pass the first certification examination will take their place here.",
+      "ko": "첫 인증 시험을 통과한 이들이 이곳에 이름을 올린다.",
+      "ja": "最初の認証試験に合格した者がここに名を連ねる。",
+      "zh": "通过首次认证考试者将在此留名。"
+    }
   }
 }

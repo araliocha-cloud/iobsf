@@ -6,7 +6,7 @@
   "use strict";
 
   var SECONDS = ["ko", "ja", "zh"];
-  var cache = {};
+  var cache = {}, SITE = null;
 
   /* ---------- second language ---------- */
   /* one language on screen at a time; every first visit opens in English */
@@ -345,7 +345,16 @@
       "</div>");
   };
 
+  /* the Founder of the Profession: precedent, and the birth of Sports Barbecue and the Pro Barbecuer */
+  function F_label(F) { return { en: F.label.en + ". " + F.dates.en + ".", ko: F.label.ko + ". " + F.dates.ko + ".", ja: F.label.ja + "。" + F.dates.ja + "。", zh: F.label.zh + "。" + F.dates.zh + "。" }; }
+  function founderNote(F) {
+    var paras = function (o) { var h = '<div class="p" lang="en">' + o.en.map(function (t) { return "<p>" + t + "</p>"; }).join("") + "</div>";
+      ["ko", "ja", "zh"].forEach(function (k) { h += '<div class="s" lang="' + k + '">' + o[k].map(function (t) { return "<p>" + t + "</p>"; }).join("") + "</div>"; });
+      return '<div class="bi gb prose fn-body">' + h + "</div>"; };
+    return '<div class="fn">' + paras(F.precedent) + gb(F.birth_title, "h3", "fn-h") + paras(F.birth) + "</div>";
+  }
   pages.barbecuers = function (site) {
+    var FN = site && site.founder_note;
     if (site && site.statements && site.statements.pro_barbecuer) {
       var pb = site.statements.pro_barbecuer;
       put("#pb-profession", '<div class="statement">' + bi(pb.text, "p", "text") + "</div>");
@@ -358,9 +367,11 @@
     });
     Promise.all([load("barbecuers"), load("nations")]).then(function (r) {
       var bb = r[0].barbecuers, na = r[1].nations;
-      var active = bb.filter(function (b) { return b.status !== "hall_of_fame"; });
+      var founders = bb.filter(function (b) { return b.founder; });
+      if (FN && founders.length) put("#pb-founder", roster(founders, na) + '<p class="fn-mark">' + gb(F_label(FN), "span") + "</p>" + founderNote(FN));
+      var active = bb.filter(function (b) { return b.status !== "hall_of_fame" && !b.founder; });
       var hof = bb.filter(function (b) { return b.status === "hall_of_fame"; });
-      put("#roster", active.length ? roster(active, na) : empty({ en: "Certified Pro Barbecuers will be listed here.", ko: "인증된 프로바비큐어가 이곳에 오른다." }));
+      put("#roster", active.length ? roster(active, na) : '<p class="fn-await">' + gb(FN ? FN.awaiting : { en: "Certified Pro Barbecuers will be listed here.", ko: "인증된 프로바비큐어가 이곳에 오른다." }, "span") + "</p>");
       if (hof.length) put("#hall", roster(hof, na)); else { var hs = $("#hall"); if (hs) hs.closest("section").remove(); }
     });
   };
@@ -390,7 +401,7 @@
         '<div class="split profile-head">' +
           '<div class="person"><div class="portrait">' + (b.photo ? '<img src="' + esc(b.photo) + '" alt="' + esc(en(b.name)) + '">' : "<span>" + esc(initials(b.name)) + "</span>") + "</div></div>" +
           "<div>" +
-            (b.founder ? '<p class="founder-mark">' + bi({ en: "Founder of the Profession, 2013", ko: "프로바비큐어 창직자, 2013" }, "span", "", true) + "</p>" : "") +
+            (b.founder ? '<p class="founder-mark">' + bi(SITE && SITE.founder_note ? F_label(SITE.founder_note) : { en: "Founder of the Profession" }, "span", "", true) + "</p>" : "") +
             "<h1>" + esc(en(b.name)) + sampleBadge(b) + bi({ ko: b.name.ko, ja: b.name.ja, zh: b.name.zh }, "span") + "</h1>" +
             (b.titles && b.titles.length ? '<ul class="titles">' + b.titles.map(function (t) { return "<li>" + bi(t) + "</li>"; }).join("") + "</ul>" : "") +
             '<dl class="facts form-facts">' +
@@ -398,12 +409,14 @@
               (b.born_year ? "<dt>" + bi({ en: "Born", ko: "출생연도" }, "span", "", true) + "</dt><dd>" + esc(b.born_year) + "</dd>" : "") +
               "<dt>" + bi({ en: "Birthplace", ko: "출생지" }, "span", "", true) + "</dt><dd>" + val(b.birthplace) + "</dd>" +
               "<dt>" + bi({ en: "Raised", ko: "성장지" }, "span", "", true) + "</dt><dd>" + val(b.raised) + "</dd>" +
-              "<dt>" + bi({ en: "Pro Barbecuer since", ko: "프로바비큐어" }, "span", "", true) + "</dt><dd>" + (b.certified ? esc(b.certified) : tbc) + "</dd>" +
+              (b.founder && SITE && SITE.founder_note ? "<dt>" + bi({ en: "Pro Barbecuer", ko: "프로바비큐어", ja: "プロバーベキュアー", zh: "职业烧烤师" }, "span", "", true) + "</dt><dd>" + bi(SITE.founder_note.dates) + "</dd>"
+                : "<dt>" + bi({ en: "Pro Barbecuer since", ko: "프로바비큐어" }, "span", "", true) + "</dt><dd>" + (b.certified ? esc(b.certified) : tbc) + "</dd>") +
               (b.pledge_signed ? "<dt>" + bi({ en: "Charter pledge", ko: "헌장 서약" }, "span", "", true) + "</dt><dd>" + esc(b.pledge_signed) + "</dd>" : "") +
             "</dl>" +
           "</div>" +
         "</div>" +
         '<div class="statement officiant"><p class="label">Officiant\'s Statement</p>' + bi(b.statement, "p", "text") + "</div>" +
+        (b.founder && SITE && SITE.founder_note ? formSection("Founder of the Profession", "프로바비큐어 창직자", founderNote(SITE.founder_note)) : "") +
         formSection("Narrative", "서사", b.narrative ? bi(b.narrative, "div", "prose narrative") : bi(b.bio, "div", "prose")) +
         (career ? formSection("Barbecue Career", "바비큐 경력", career) : "") +
         (portfolio ? formSection("Portfolio", "포트폴리오", portfolio) : "") +
@@ -1641,6 +1654,7 @@
     var site = r[0]; DICT = r[1] || {};
     translateStatic(document);
     renderChrome(site);
+    SITE = site;
     var fn = pages[document.body.dataset.page];
     if (fn) fn(site);
     restoreScroll();
