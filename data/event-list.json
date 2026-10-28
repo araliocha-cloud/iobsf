@@ -253,16 +253,16 @@
       "name": {
         "en": "Yeongdong Amateur Barbecue Contest",
         "ko": "영동 아마추어 바비큐 컨테스트",
-        "ja": "",
-        "zh": ""
+        "ja": "永同アマチュア・バーベキュー・コンテスト",
+        "zh": "永同业余烧烤大赛"
       },
       "date": "",
       "year": 2010,
       "place": {
         "en": "Yeongdong",
         "ko": "영동",
-        "ja": "",
-        "zh": ""
+        "ja": "永同",
+        "zh": "永同"
       },
       "nation": "KR",
       "tier": "national",
@@ -270,8 +270,8 @@
       "summary": {
         "en": "Hosted by KOOBA.",
         "ko": "KOOBA 주최.",
-        "ja": "",
-        "zh": ""
+        "ja": "KOOBA主催。",
+        "zh": "KOOBA主办。"
       },
       "ritual": [],
       "results": [],
@@ -284,16 +284,16 @@
       "name": {
         "en": "Mungyeong Hanton Low-Fat Cuts Competition",
         "ko": "문경 한돈 저지방부위 경기대회",
-        "ja": "",
-        "zh": ""
+        "ja": "聞慶 韓豚低脂肪部位競技大会",
+        "zh": "闻庆韩猪低脂部位烹饪大赛"
       },
       "date": "",
       "year": 2010,
       "place": {
         "en": "Mungyeong",
         "ko": "문경",
-        "ja": "",
-        "zh": ""
+        "ja": "聞慶",
+        "zh": "闻庆"
       },
       "nation": "KR",
       "tier": "national",
@@ -301,8 +301,8 @@
       "summary": {
         "en": "Hosted by KOOBA.",
         "ko": "KOOBA 주최.",
-        "ja": "",
-        "zh": ""
+        "ja": "KOOBA主催。",
+        "zh": "KOOBA主办。"
       },
       "ritual": [],
       "results": [],
@@ -315,16 +315,16 @@
       "name": {
         "en": "Namwon Invitational Barbecue Competition",
         "ko": "남원 초청 바비큐 경기대회",
-        "ja": "",
-        "zh": ""
+        "ja": "南原招待バーベキュー競技大会",
+        "zh": "南原邀请烧烤大赛"
       },
       "date": "",
       "year": 2012,
       "place": {
         "en": "Namwon",
         "ko": "남원",
-        "ja": "",
-        "zh": ""
+        "ja": "南原",
+        "zh": "南原"
       },
       "nation": "KR",
       "tier": "national",
@@ -332,8 +332,8 @@
       "summary": {
         "en": "With Namwon City.",
         "ko": "남원시와 함께.",
-        "ja": "",
-        "zh": ""
+        "ja": "南原市と共に。",
+        "zh": "与南原市合办。"
       },
       "ritual": [],
       "results": [],
@@ -346,16 +346,16 @@
       "name": {
         "en": "Namwon Invitational Barbecue Competition",
         "ko": "남원 초청 바비큐 경기대회",
-        "ja": "",
-        "zh": ""
+        "ja": "南原招待バーベキュー競技大会",
+        "zh": "南原邀请烧烤大赛"
       },
       "date": "",
       "year": 2013,
       "place": {
         "en": "Namwon",
         "ko": "남원",
-        "ja": "",
-        "zh": ""
+        "ja": "南原",
+        "zh": "南原"
       },
       "nation": "KR",
       "tier": "national",
@@ -363,8 +363,8 @@
       "summary": {
         "en": "With Namwon City.",
         "ko": "남원시와 함께.",
-        "ja": "",
-        "zh": ""
+        "ja": "南原市と共に。",
+        "zh": "与南原市合办。"
       },
       "ritual": [],
       "results": [],
@@ -377,47 +377,48 @@
       "name": {
         "en": "Gapyeong Jaraseom Rhythm & Barbecue Festival",
         "ko": "가평 자라섬 리듬 앤 바비큐 페스티벌",
-        "ja": "",
-        "zh": ""
+        "ja": "加平チャラ島リズム＆バーベキュー・フェスティバル",
+        "zh": "加平紫岛节奏与烧烤音乐节"
       },
       "date": "",
       "year": 2013,
       "place": {
         "en": "Gapyeong",
         "ko": "가평",
-        "ja": "",
-        "zh": ""
+        "ja": "加平",
+        "zh": "加平"
       },
       "nation": "KR",
       "tier": "national",
       "status": "completed",
       "summary": {
-        "en": "Hosted by KOOBA.",
-        "ko": "KOOBA 주최.",
-        "ja": "",
-        "zh": ""
+        "en": "Hosted by KOOBA. A spring festival of barbecue and jazz on Jarasum Island, Gapyeong, held on 17 and 18 May 2013. About 7,000 people came over the two days.",
+        "ko": "KOOBA 주최. 2013년 5월 17일과 18일 가평 자라섬에서 열린 바비큐와 재즈의 봄 축제. 이틀 동안 약 7천 명이 찾았다.",
+        "ja": "KOOBA主催。2013年5月17日と18日に加平チャラ島で開かれたバーベキューとジャズの春の祭り。2日間で約7千人が訪れた。",
+        "zh": "KOOBA主办。2013年5月17日至18日在加平紫岛举行的烧烤与爵士春季节庆，两天约有7千人到场。"
       },
       "ritual": [],
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "when": "17–18 May 2013"
     },
     {
       "id": "2013-intl-bike-camping",
       "name": {
         "en": "International Bike Camping Festival",
         "ko": "국제 바이크 캠핑 페스티벌",
-        "ja": "",
-        "zh": ""
+        "ja": "国際バイク・キャンピング・フェスティバル",
+        "zh": "国际自行车露营节"
       },
       "date": "",
       "year": 2013,
       "place": {
         "en": "Gimpo",
-        "ko": "대한민국",
-        "ja": "",
-        "zh": ""
+        "ko": "김포",
+        "ja": "金浦",
+        "zh": "金浦"
       },
       "nation": "KR",
       "tier": "national",
@@ -425,8 +426,8 @@
       "summary": {
         "en": "With the Korea Tourism Organization.",
         "ko": "한국관광공사와 함께.",
-        "ja": "",
-        "zh": ""
+        "ja": "韓国観光公社と共に。",
+        "zh": "与韩国观光公社合办。"
       },
       "ritual": [],
       "results": [],
@@ -439,25 +440,25 @@
       "name": {
         "en": "Korea Open Cheonan Barbecue Championship",
         "ko": "코리아오픈 천안 바비큐 챔피언쉽",
-        "ja": "",
-        "zh": ""
+        "ja": "コリアオープン天安バーベキュー選手権",
+        "zh": "韩国公开赛天安烧烤锦标赛"
       },
       "date": "",
       "year": 2013,
       "place": {
         "en": "Cheonan",
         "ko": "천안",
-        "ja": "",
-        "zh": ""
+        "ja": "天安",
+        "zh": "天安"
       },
       "nation": "KR",
       "tier": "national",
       "status": "completed",
       "summary": {
-        "en": "Hosted by KOOBA.",
-        "ko": "KOOBA 주최.",
-        "ja": "",
-        "zh": ""
+        "en": "Hosted by KOOBA. Held under the title 2013 Korea Open Handon Cup Barbecue Championship, with prizes in the Professional and Expert divisions.",
+        "ko": "KOOBA 주최. 2013 코리아오픈 한돈컵 바비큐 챔피언십이라는 이름으로 열렸고, 프로페셔널과 엑스퍼트 부문으로 시상했다.",
+        "ja": "KOOBA主催。2013コリアオープン韓豚カップ・バーベキュー選手権の名で開かれ、プロフェッショナルとエキスパートの部門で表彰した。",
+        "zh": "KOOBA主办。以2013韩国公开赛韩猪杯烧烤锦标赛之名举行，设职业组与专家组颁奖。"
       },
       "ritual": [],
       "results": [],
@@ -534,16 +535,16 @@
       "name": {
         "en": "1st National Outdoor Folk Games Competition",
         "ko": "제1회 전국 아웃도어 민속놀이 경기대회",
-        "ja": "",
-        "zh": ""
+        "ja": "第1回全国アウトドア民俗遊び競技大会",
+        "zh": "第一届全国户外民俗游戏大赛"
       },
       "date": "",
       "year": 2014,
       "place": {
         "en": "Yangpyeong",
-        "ko": "대한민국",
-        "ja": "",
-        "zh": ""
+        "ko": "양평",
+        "ja": "楊平",
+        "zh": "杨平"
       },
       "nation": "KR",
       "tier": "national",
@@ -551,8 +552,8 @@
       "summary": {
         "en": "Hosted by KOOBA.",
         "ko": "KOOBA 주최.",
-        "ja": "",
-        "zh": ""
+        "ja": "KOOBA主催。",
+        "zh": "KOOBA主办。"
       },
       "ritual": [],
       "results": [],
@@ -565,16 +566,16 @@
       "name": {
         "en": "Hongseong Outdoor Barbecue Carnival",
         "ko": "홍성 아웃도어 바비큐 카니발",
-        "ja": "",
-        "zh": ""
+        "ja": "洪城アウトドア・バーベキュー・カーニバル",
+        "zh": "洪城户外烧烤嘉年华"
       },
       "date": "",
       "year": 2015,
       "place": {
         "en": "Hongseong",
         "ko": "홍성",
-        "ja": "",
-        "zh": ""
+        "ja": "洪城",
+        "zh": "洪城"
       },
       "nation": "KR",
       "tier": "national",
@@ -582,8 +583,8 @@
       "summary": {
         "en": "Hosted by KOOBA.",
         "ko": "KOOBA 주최.",
-        "ja": "",
-        "zh": ""
+        "ja": "KOOBA主催。",
+        "zh": "KOOBA主办。"
       },
       "ritual": [],
       "results": [],
@@ -596,25 +597,25 @@
       "name": {
         "en": "Korea Barbecue Masters, Pocheon",
         "ko": "코리아 바비큐 마스터즈 포천대회",
-        "ja": "",
-        "zh": ""
+        "ja": "コリア・バーベキュー・マスターズ抱川大会",
+        "zh": "韩国烧烤大师赛抱川大会"
       },
       "date": "",
       "year": 2016,
       "place": {
         "en": "Pocheon",
         "ko": "포천",
-        "ja": "",
-        "zh": ""
+        "ja": "抱川",
+        "zh": "抱川"
       },
       "nation": "KR",
       "tier": "national",
       "status": "completed",
       "summary": {
-        "en": "Hosted by KOOBA.",
-        "ko": "KOOBA 주최.",
-        "ja": "",
-        "zh": ""
+        "en": "Hosted by KOOBA. Held as the 2016 Gyeonggi Local Livestock Barbecue Masters, Pocheon.",
+        "ko": "KOOBA 주최. 2016 경기도 로컬축산물 바비큐 마스터즈 포천대회로 열렸다.",
+        "ja": "KOOBA主催。2016京畿道ローカル畜産物バーベキュー・マスターズ抱川大会として開かれた。",
+        "zh": "KOOBA主办。以2016京畿道本地畜产品烧烤大师赛抱川大会之名举行。"
       },
       "ritual": [],
       "results": [],
@@ -639,25 +640,25 @@
       "name": {
         "en": "Korea Barbecue Masters, Icheon",
         "ko": "코리아 바비큐 마스터즈 이천대회",
-        "ja": "",
-        "zh": ""
+        "ja": "コリア・バーベキュー・マスターズ利川大会",
+        "zh": "韩国烧烤大师赛利川大会"
       },
       "date": "",
       "year": 2016,
       "place": {
         "en": "Icheon",
         "ko": "이천",
-        "ja": "",
-        "zh": ""
+        "ja": "利川",
+        "zh": "利川"
       },
       "nation": "KR",
       "tier": "national",
       "status": "completed",
       "summary": {
-        "en": "Hosted by KOOBA.",
-        "ko": "KOOBA 주최.",
-        "ja": "",
-        "zh": ""
+        "en": "Hosted by KOOBA. Held as the 2016 Gyeonggi Local Livestock Barbecue Masters, Icheon, on the outdoor stage of Seolbong Park.",
+        "ko": "KOOBA 주최. 2016 경기도 로컬축산물 바비큐 마스터즈 이천대회로 이천 설봉공원 야외무대에서 열렸다.",
+        "ja": "KOOBA主催。2016京畿道ローカル畜産物バーベキュー・マスターズ利川大会として、利川雪峰公園の野外舞台で開かれた。",
+        "zh": "KOOBA主办。以2016京畿道本地畜产品烧烤大师赛利川大会之名，在利川雪峰公园露天舞台举行。"
       },
       "ritual": [],
       "results": [],
@@ -686,25 +687,25 @@
       "name": {
         "en": "Korea Barbecue Masters, Yeoju",
         "ko": "코리아 바비큐 마스터즈 여주대회",
-        "ja": "",
-        "zh": ""
+        "ja": "コリア・バーベキュー・マスターズ驪州大会",
+        "zh": "韩国烧烤大师赛骊州大会"
       },
       "date": "",
       "year": 2017,
       "place": {
         "en": "Yeoju",
         "ko": "여주",
-        "ja": "",
-        "zh": ""
+        "ja": "驪州",
+        "zh": "骊州"
       },
       "nation": "KR",
       "tier": "national",
       "status": "completed",
       "summary": {
-        "en": "Hosted by KOOBA.",
-        "ko": "KOOBA 주최.",
-        "ja": "",
-        "zh": ""
+        "en": "Hosted by KOOBA. Held as the 2017 Gyeonggi Local Barbecue Masters in Yeoju, from 15 to 17 September 2017, at the special arena of Yeoju Rural Theme Park. Competitors could sell their barbecue to visitors.",
+        "ko": "KOOBA 주최. 2017 경기 로컬 바비큐 마스터즈 여주대회로 2017년 9월 15일부터 17일까지 여주 농촌테마공원 특별경기장에서 열렸다. 참가팀은 만든 바비큐를 관람객에게 판매할 수 있었다.",
+        "ja": "KOOBA主催。2017京畿ローカル・バーベキュー・マスターズ驪州大会として、2017年9月15日から17日まで驪州農村テーマパーク特設競技場で開かれた。参加チームは作ったバーベキューを観覧客に販売できた。",
+        "zh": "KOOBA主办。以2017京畿本地烧烤大师赛骊州大会之名，于2017年9月15日至17日在骊州农村主题公园特设赛场举行。参赛队伍可向观众出售自己制作的烧烤。"
       },
       "ritual": [],
       "results": [],
@@ -732,7 +733,8 @@
             "zh": "颁奖典礼"
           }
         }
-      ]
+      ],
+      "when": "15–17 Sep 2017"
     },
     {
       "id": "2027-bbq-world-cup-las-vegas",
