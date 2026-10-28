@@ -9,14 +9,18 @@
   var cache = {};
 
   /* ---------- second language ---------- */
+  /* one language on screen at a time; the first visit follows the browser, otherwise English */
+  var LANGS = ["en", "ko", "ja", "zh"];
   function getSecond() {
-    var v = "ko";
-    try { v = localStorage.getItem("iobsf-second") || "ko"; } catch (e) {}
-    return SECONDS.indexOf(v) >= 0 ? v : "ko";
+    var v = null;
+    try { v = localStorage.getItem("iobsf-lang"); } catch (e) {}
+    if (LANGS.indexOf(v) < 0) { var n = String(navigator.language || "en").slice(0, 2).toLowerCase(); v = LANGS.indexOf(n) >= 0 ? n : "en"; }
+    return v;
   }
   function setSecond(code) {
     document.documentElement.setAttribute("data-second", code);
-    try { localStorage.setItem("iobsf-second", code); } catch (e) {}
+    try { localStorage.setItem("iobsf-lang", code); } catch (e) {}
+    document.documentElement.setAttribute("lang", code === "zh" ? "zh-CN" : code);
     var btns = document.querySelectorAll(".lang-switch button");
     for (var i = 0; i < btns.length; i++) btns[i].setAttribute("aria-pressed", btns[i].dataset.lang === code ? "true" : "false");
   }
@@ -122,11 +126,11 @@
     var nav = site.nav.map(function (n) {
       var cur = n.id === page || (n.pages && n.pages.indexOf(page) > -1);
       var kids = n.children && n.children.length ? '<ul class="nav-sub">' + n.children.map(function (c) {
-        return '<li><a href="' + c.href + '">' + esc(c.label.en) + "</a></li>"; }).join("") + "</ul>" : "";
-      return '<li' + (kids ? ' class="has-sub"' : "") + '><a href="' + n.href + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label.en) + "</a>" + kids + "</li>";
+        return '<li><a href="' + c.href + '">' + bi(c.label, "span", "", true) + "</a></li>"; }).join("") + "</ul>" : "";
+      return '<li' + (kids ? ' class="has-sub"' : "") + '><a href="' + n.href + '"' + (cur ? ' aria-current="page"' : "") + ">" + bi(n.label, "span", "", true) + "</a>" + kids + "</li>";
     }).join("");
     var langs = site.second_languages.map(function (l) {
-      return '<button type="button" data-lang="' + l.code + '" aria-pressed="false" title="Second language">' + esc(l.name) + "</button>";
+      return '<button type="button" data-lang="' + l.code + '" aria-pressed="false" title="Language">' + esc(l.name) + "</button>";
     }).join("");
 
     put("#site-header",
@@ -137,7 +141,7 @@
         "</a>" +
         '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>' +
         '<nav class="site-nav" id="site-nav" aria-label="Main"><ul>' + nav + "</ul></nav>" +
-        '<div class="lang-switch" role="group" aria-label="Second language">' + langs + "</div>" +
+        '<div class="lang-switch" role="group" aria-label="Language">' + langs + "</div>" +
       "</div>");
     var header = $("#site-header"); header.classList.add("site-header");
     /* the submenu of the current section, as a band under the page title (WBT draws its own) */
@@ -285,8 +289,9 @@
     });
   }
 
-  pages.fire = function (site) {
-    fireNews();
+  pages.fire = function (site) { fireNews(); };
+  /* the Spirit of the Federation: now the opening of Inside IOBSF > About */
+  function spiritBody(site) {
     var st = site.statements;
     put("#fire-body",
       (st.sports_barbecue ? '<div class="statement definition"><p class="label">' + esc(st.sports_barbecue.label.en) + "</p>" + bi(st.sports_barbecue.text, "p", "text") + '</div><div style="height:80px"></div>' : "") +
@@ -807,6 +812,7 @@
   }
 
   pages.federation = function (site) {
+    if ($("#fire-body")) spiritBody(site);
     renderJudges();
     var st = site.statements, f = site.federation;
     put("#fed-facts",

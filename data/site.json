@@ -137,29 +137,148 @@
   },
   "nav": [
     {
-      "id": "fire",
-      "href": "fire.html",
+      "id": "wbt",
+      "href": "wbt.html",
       "label": {
-        "en": "The Fire",
-        "ko": "불",
-        "ja": "",
-        "zh": ""
+        "en": "WBT",
+        "ko": "WBT",
+        "ja": "WBT",
+        "zh": "WBT"
       },
       "pages": [
-        "fire",
-        "chronicle",
-        "post-fire"
+        "wbt",
+        "post-wbt"
       ],
       "children": [
         {
-          "href": "fire.html#spirit",
+          "href": "wbt.html#season",
           "label": {
-            "en": "Spirit",
-            "ko": "정신",
-            "ja": "精神",
-            "zh": "精神"
+            "en": "Calendar",
+            "ko": "일정",
+            "ja": "日程",
+            "zh": "赛历"
           }
         },
+        {
+          "href": "wbt.html#origins",
+          "label": {
+            "en": "Origins",
+            "ko": "오리진",
+            "ja": "オリジン",
+            "zh": "起源赛"
+          }
+        },
+        {
+          "href": "wbt.html#rules",
+          "label": {
+            "en": "Regulations",
+            "ko": "규정",
+            "ja": "規定",
+            "zh": "规程"
+          }
+        },
+        {
+          "href": "wbt.html#ranking",
+          "label": {
+            "en": "Rankings",
+            "ko": "순위",
+            "ja": "ランキング",
+            "zh": "排名"
+          }
+        },
+        {
+          "href": "wbt.html#host",
+          "label": {
+            "en": "Host a WBT",
+            "ko": "개최 신청",
+            "ja": "開催申請",
+            "zh": "申办"
+          }
+        }
+      ]
+    },
+    {
+      "id": "barbecuers",
+      "href": "barbecuers.html",
+      "label": {
+        "en": "Pro Barbecuers",
+        "ko": "프로바비큐어",
+        "ja": "プロバーベキュアー",
+        "zh": "职业烧烤师"
+      },
+      "pages": [
+        "barbecuers",
+        "barbecuer",
+        "rankings"
+      ],
+      "children": [
+        {
+          "href": "barbecuers.html",
+          "label": {
+            "en": "Roster",
+            "ko": "명부",
+            "ja": "名簿",
+            "zh": "名录"
+          }
+        },
+        {
+          "href": "rankings.html",
+          "label": {
+            "en": "Rankings",
+            "ko": "순위",
+            "ja": "ランキング",
+            "zh": "排名"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pathway",
+      "href": "pathway.html",
+      "label": {
+        "en": "Development",
+        "ko": "육성",
+        "ja": "育成",
+        "zh": "发展"
+      },
+      "pages": [
+        "pathway"
+      ],
+      "children": [
+        {
+          "href": "pathway.html",
+          "label": {
+            "en": "Pathway",
+            "ko": "과정",
+            "ja": "課程",
+            "zh": "路径"
+          }
+        },
+        {
+          "href": "pathway.html#judges",
+          "label": {
+            "en": "Officials Education",
+            "ko": "심판 교육",
+            "ja": "審判教育",
+            "zh": "裁判培训"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fire",
+      "href": "fire.html",
+      "label": {
+        "en": "News",
+        "ko": "소식",
+        "ja": "ニュース",
+        "zh": "新闻"
+      },
+      "pages": [
+        "fire",
+        "post-fire"
+      ],
+      "children": [
         {
           "href": "fire.html#news",
           "label": {
@@ -172,176 +291,143 @@
         {
           "href": "fire.html#announcements",
           "label": {
-            "en": "Announcements",
+            "en": "Official Notices",
             "ko": "공지",
-            "ja": "お知らせ",
-            "zh": "公告"
-          }
-        },
-        {
-          "href": "chronicle.html",
-          "label": {
-            "en": "Chronicle",
-            "ko": "기록",
-            "ja": "記録",
-            "zh": "纪事"
+            "ja": "公式告知",
+            "zh": "官方通知"
           }
         },
         {
           "href": "fire.html#press",
           "label": {
-            "en": "Press",
-            "ko": "언론 보도",
-            "ja": "報道",
-            "zh": "媒体报道"
+            "en": "Press Releases",
+            "ko": "보도자료",
+            "ja": "プレスリリース",
+            "zh": "新闻稿"
           }
         }
       ]
-    },
-    {
-      "id": "barbecuers",
-      "href": "barbecuers.html",
-      "label": {
-        "en": "Pro Barbecuers",
-        "ko": "프로바비큐어",
-        "ja": "",
-        "zh": ""
-      }
-    },
-    {
-      "id": "wbt",
-      "href": "wbt.html",
-      "label": {
-        "en": "WBT",
-        "ko": "세계 바비큐 투어",
-        "ja": "ワールドバーベキューツアー",
-        "zh": "世界烧烤巡回赛"
-      },
-      "pages": [
-        "wbt",
-        "events",
-        "event",
-        "post-wbt"
-      ],
-      "children": [
-        {
-          "href": "wbt.html#tour",
-          "label": {
-            "en": "The Tour",
-            "ko": "투어 소개",
-            "ja": "ツアー紹介",
-            "zh": "巡回赛介绍"
-          }
-        },
-        {
-          "href": "wbt.html#season",
-          "label": {
-            "en": "Season",
-            "ko": "시즌",
-            "ja": "シーズン",
-            "zh": "赛季"
-          }
-        },
-        {
-          "href": "wbt.html#origins",
-          "label": {
-            "en": "Origins",
-            "ko": "대회",
-            "ja": "大会",
-            "zh": "赛事"
-          }
-        },
-        {
-          "href": "wbt.html#ranking",
-          "label": {
-            "en": "Ranking",
-            "ko": "순위",
-            "ja": "ランキング",
-            "zh": "排名"
-          }
-        },
-        {
-          "href": "wbt.html#rules",
-          "label": {
-            "en": "Rules",
-            "ko": "규정과 의식",
-            "ja": "規定と儀式",
-            "zh": "规则与仪式"
-          }
-        },
-        {
-          "href": "wbt.html#host",
-          "label": {
-            "en": "Host",
-            "ko": "개최 도시",
-            "ja": "開催都市",
-            "zh": "主办城市"
-          }
-        }
-      ]
-    },
-    {
-      "id": "pathway",
-      "href": "pathway.html",
-      "label": {
-        "en": "Academy",
-        "ko": "아카데미",
-        "ja": "アカデミー",
-        "zh": "学院"
-      }
     },
     {
       "id": "heritage",
       "href": "heritage.html",
       "label": {
         "en": "Heritage",
-        "ko": "헤리티지",
-        "ja": "",
-        "zh": ""
-      }
-    },
-    {
-      "id": "archives",
-      "href": "archives.html",
-      "label": {
-        "en": "Archives",
-        "ko": "서고",
-        "ja": "書庫",
-        "zh": "书库"
-      }
+        "ko": "유산",
+        "ja": "遺産",
+        "zh": "遗产"
+      },
+      "pages": [
+        "heritage",
+        "heritage-item",
+        "heritage-record",
+        "heritage-archive",
+        "charter",
+        "criteria",
+        "archives",
+        "writing"
+      ],
+      "children": [
+        {
+          "href": "charter.html",
+          "label": {
+            "en": "Charter",
+            "ko": "헌장",
+            "ja": "憲章",
+            "zh": "宪章"
+          }
+        },
+        {
+          "href": "criteria.html",
+          "label": {
+            "en": "Criteria",
+            "ko": "등재기준",
+            "ja": "登録基準",
+            "zh": "列入标准"
+          }
+        },
+        {
+          "href": "heritage.html",
+          "label": {
+            "en": "Register",
+            "ko": "유산 목록",
+            "ja": "遺産一覧",
+            "zh": "遗产名录"
+          }
+        },
+        {
+          "href": "heritage-archive.html",
+          "label": {
+            "en": "Archive",
+            "ko": "기록유산",
+            "ja": "記録遺産",
+            "zh": "档案遗产"
+          }
+        },
+        {
+          "href": "archives.html",
+          "label": {
+            "en": "Library",
+            "ko": "서고",
+            "ja": "書庫",
+            "zh": "书库"
+          }
+        }
+      ]
     },
     {
       "id": "federation",
       "href": "federation.html",
       "label": {
-        "en": "Federation",
+        "en": "Inside IOBSF",
         "ko": "연맹",
-        "ja": "",
-        "zh": ""
+        "ja": "連盟",
+        "zh": "联合会"
       },
       "pages": [
         "federation",
         "partners",
         "business",
-        "judge"
+        "judge",
+        "events",
+        "event",
+        "chronicle"
       ],
       "children": [
         {
           "href": "federation.html#about",
           "label": {
             "en": "About",
-            "ko": "개요",
+            "ko": "소개",
             "ja": "概要",
-            "zh": "概况"
+            "zh": "简介"
+          }
+        },
+        {
+          "href": "federation.html#articles",
+          "label": {
+            "en": "Governance",
+            "ko": "거버넌스",
+            "ja": "ガバナンス",
+            "zh": "治理"
+          }
+        },
+        {
+          "href": "federation.html#members",
+          "label": {
+            "en": "Members",
+            "ko": "회원국",
+            "ja": "加盟国",
+            "zh": "会员国"
           }
         },
         {
           "href": "federation.html#judges",
           "label": {
-            "en": "Official Judges",
-            "ko": "공식 심판",
-            "ja": "公式審判",
-            "zh": "正式裁判"
+            "en": "Judges and Officials",
+            "ko": "심판",
+            "ja": "審判",
+            "zh": "裁判"
           }
         },
         {
@@ -354,39 +440,12 @@
           }
         },
         {
-          "href": "federation.html#articles",
-          "label": {
-            "en": "Articles",
-            "ko": "연맹 정관",
-            "ja": "連盟定款",
-            "zh": "联盟章程"
-          }
-        },
-        {
-          "href": "federation.html#roadmap",
-          "label": {
-            "en": "Roadmap",
-            "ko": "로드맵",
-            "ja": "ロードマップ",
-            "zh": "路线图"
-          }
-        },
-        {
           "href": "partners.html",
           "label": {
             "en": "Partners",
             "ko": "파트너",
             "ja": "パートナー",
             "zh": "合作伙伴"
-          }
-        },
-        {
-          "href": "business.html",
-          "label": {
-            "en": "Business",
-            "ko": "사업",
-            "ja": "事業",
-            "zh": "业务"
           }
         }
       ]
@@ -415,6 +474,10 @@
     }
   ],
   "second_languages": [
+    {
+      "code": "en",
+      "name": "EN"
+    },
     {
       "code": "ko",
       "name": "한국어"

@@ -2034,3 +2034,17 @@ html [id] { scroll-margin-top: var(--stick, 110px) !important; }
 .ev-lightbox img { max-width: 100%; max-height: 92vh; border-radius: 14px; box-shadow: 0 30px 60px rgba(0,0,0,.7); }
 @media (max-width: 600px) { .ev-gallery { grid-template-columns: 1fr 1fr; gap: 16px 12px; } .ev-shot figcaption { font-size: 13px; } }
 .ev-shot img { object-position: center 22%; }
+
+/* ===== one language at a time =====
+   English shows .p; any other choice hides .p wherever that language exists and shows it full size in its place */
+html[data-second="en"] .s { display: none !important; }
+html[data-second="ko"] :is(.bi, .gb, h1, h2, h3, h4, .lede, p, li, dd, dt, figcaption, a, span):has(> .s[lang="ko"]) > .p,
+html[data-second="ja"] :is(.bi, .gb, h1, h2, h3, h4, .lede, p, li, dd, dt, figcaption, a, span):has(> .s[lang="ja"]) > .p,
+html[data-second="zh"] :is(.bi, .gb, h1, h2, h3, h4, .lede, p, li, dd, dt, figcaption, a, span):has(> .s[lang="zh"]) > .p { display: none !important; }
+html[data-second="ko"] :is(h1, h2, h3, h4, .lede):has(.s[lang="ko"]) > .p,
+html[data-second="ja"] :is(h1, h2, h3, h4, .lede):has(.s[lang="ja"]) > .p,
+html[data-second="zh"] :is(h1, h2, h3, h4, .lede):has(.s[lang="zh"]) > .p { display: none !important; }
+html:not([data-second="en"]) .s { font-size: inherit !important; color: inherit !important; margin-top: 0 !important; margin-left: 0 !important; font-weight: inherit; }
+html:not([data-second="en"]) .bi.inline .s { margin-left: 0 !important; }
+
+.hist-links { margin-top: 26px; font-size: 18px; } .hist-links a { color: var(--copper-light); }

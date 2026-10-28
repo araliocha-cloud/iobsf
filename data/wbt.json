@@ -33,10 +33,10 @@
     {
       "id": "season",
       "title": {
-        "en": "Season",
-        "ko": "시즌",
-        "ja": "シーズン",
-        "zh": "赛季"
+        "en": "Calendar",
+        "ko": "일정",
+        "ja": "日程",
+        "zh": "赛历"
       },
       "lede": {
         "en": "The cities and dates of this season's WBT ORIGIN, and the route the Origin Flame will travel.",
@@ -77,7 +77,7 @@
     {
       "id": "ranking",
       "title": {
-        "en": "Ranking",
+        "en": "Rankings",
         "ko": "순위",
         "ja": "ランキング",
         "zh": "排名"
@@ -94,10 +94,10 @@
     {
       "id": "rules",
       "title": {
-        "en": "Rules",
-        "ko": "규정과 의식",
-        "ja": "規定と儀式",
-        "zh": "规则与仪式"
+        "en": "Regulations",
+        "ko": "규정",
+        "ja": "規定",
+        "zh": "规程"
       },
       "lede": {
         "en": "The rules of the Games, the role of the Officiant, and the stages of the rite before the fire.",
@@ -121,10 +121,10 @@
     {
       "id": "host",
       "title": {
-        "en": "Host",
-        "ko": "개최 도시",
-        "ja": "開催都市",
-        "zh": "主办城市"
+        "en": "Host a WBT",
+        "ko": "개최 신청",
+        "ja": "開催申請",
+        "zh": "申办"
       },
       "lede": {
         "en": "Cities and institutions apply to host a WBT ORIGIN and to receive the Origin Flame.",
