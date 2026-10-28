@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-second="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Host a WBT | IOBSF</title>
+<meta name="description" content="Apply to host a WBT ORIGIN, the World Barbecue Tour of IOBSF.">
+<link rel="canonical" href="https://iobsf.org/host.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="IOBSF, International Outdoor Barbecue Sports Federation">
+<meta property="og:title" content="Host a WBT | IOBSF">
+<meta property="og:description" content="Apply to host a WBT ORIGIN, the World Barbecue Tour of IOBSF.">
+<meta property="og:url" content="https://iobsf.org/host.html">
+<meta property="og:image" content="https://iobsf.org/assets/img/wbt-origin-logo.png">
+<link rel="icon" href="assets/img/emblem-small.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500&family=Noto+Serif+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=202610281549">
+</head>
+<body data-page="host">
+<header id="site-header"></header>
+<main>
+<section class="page-head"><div class="wrap">
+<h1><span class="p">Host a WBT</span><span class="bi"><span class="s" lang="ko">WBT 개최 신청</span><span class="s" lang="ja">WBT開催申請</span><span class="s" lang="zh">申办WBT</span></span></h1>
+<div class="lede bi"><span class="p">Cities and institutions apply here to host a WBT ORIGIN and to receive the Origin Flame. Every application is reviewed by the Federation, and the secretariat replies by email.</span><span class="s" lang="ko">도시와 기관은 이곳에서 WBT ORIGIN 개최와 오리진 불씨 수령을 신청한다. 모든 신청은 연맹이 검토하고, 사무국이 이메일로 회신한다.</span><span class="s" lang="ja">都市と機関はここでWBT ORIGINの開催とオリジンの火種の受け入れを申請する。すべての申請は連盟が審査し、事務局がメールで返信する。</span><span class="s" lang="zh">城市与机构可在此申办WBT ORIGIN并迎接起源火种。所有申请由联合会审核，秘书处将通过电子邮件回复。</span></div>
+</div></section>
+<section class="section"><div class="wrap">
+<form id="host-form" class="hf" novalidate>
+<p class="hf-note">Host Application Form, WBT-01. Please complete the form in English.</p>
+<fieldset><legend>1. Applicant</legend>
+<label>Organisation or city<input name="Organisation" required></label>
+<label>Country<input name="Country" required></label>
+<label>Representative<input name="Representative"></label>
+<label>Contact person<input name="Contact person" required></label>
+<label>Email<input type="email" name="email" required></label>
+<label>Telephone<input name="Telephone"></label>
+</fieldset>
+<fieldset><legend>2. The event</legend>
+<label>Proposed dates<input name="Proposed dates" placeholder="e.g. 10 to 12 October 2027" required></label>
+<label>Host city and venue<input name="Venue" required></label>
+<label>Expected number of teams<input name="Teams" inputmode="numeric"></label>
+<label>Expected number of visitors<input name="Visitors" inputmode="numeric"></label>
+</fieldset>
+<fieldset><legend>3. Facilities</legend>
+<label class="wide">Fire and competition areas, water and power, judging room, seating, parking<textarea name="Facilities" rows="4"></textarea></label>
+</fieldset>
+<fieldset><legend>4. Local barbecue heritage</legend>
+<label class="wide">The fire and meat traditions handed down in your region<textarea name="Local heritage" rows="4"></textarea></label>
+<label class="wide">Plan for the Origin Flame reception<textarea name="Origin Flame plan" rows="3"></textarea></label>
+</fieldset>
+<fieldset><legend>5. Organisation and finance</legend>
+<label class="wide">Local organising committee, budget and sources of funding, sponsors<textarea name="Organisation and finance" rows="4"></textarea></label>
+</fieldset>
+<fieldset><legend>6. Administration and safety</legend>
+<label class="wide">Support of the local government, fire permits, fire safety and emergency plan, environmental measures<textarea name="Administration and safety" rows="4"></textarea></label>
+</fieldset>
+<fieldset><legend>7. Accommodation, transport and promotion</legend>
+<label class="wide">Accommodation and transport for teams, media and promotion plan<textarea name="Accommodation transport promotion" rows="4"></textarea></label>
+</fieldset>
+<fieldset><legend>8. Declaration</legend>
+<label class="hf-check"><input type="checkbox" name="Declaration" value="Agreed" required> I confirm that the information given is true and that the applicant intends to host a WBT ORIGIN under the regulations of IOBSF.</label>
+</fieldset>
+<input type="text" name="_honey" class="hf-honey" tabindex="-1" autocomplete="off">
+<div class="hf-send"><button type="submit" class="hf-btn"><span class="hf-flame" aria-hidden="true"><svg viewBox="0 0 40 48"><defs><linearGradient id="hfg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4dca2"/><stop offset=".55" stop-color="#c99a4f"/><stop offset="1" stop-color="#7d5a24"/></linearGradient></defs><path d="M20 3c3 7 11 11 11 21a11 11 0 0 1-22 0c0-6 3-9 5-12 0 4 2 6 4 6-2-6 0-11 2-15z" fill="url(#hfg)"/><path d="M6 44h28M10 40h20" stroke="url(#hfg)" stroke-width="2" stroke-linecap="round"/></svg></span><span>Submit Application</span></button>
+<p class="hf-status" role="status"></p></div>
+</form>
+</div></section>
+</main>
+<footer id="site-footer"></footer>
+<script>
+(function () {
+  var f = document.getElementById("host-form"), st = f.querySelector(".hf-status"), btn = f.querySelector(".hf-btn");
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!f.checkValidity()) { f.reportValidity(); return; }
+    var d = {}; new FormData(f).forEach(function (v, k) { d[k] = v; });
+    if (d._honey) return;
+    d._subject = "WBT Host Application: " + (d.Organisation || "") + ", " + (d.Country || "");
+    d._template = "table"; d._replyto = d.email;
+    btn.disabled = true; st.textContent = "Sending...";
+    fetch("https://formsubmit.co/ajax/araliocha@gmail.com", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(d) })
+      .then(function (r) { return r.json(); })
+      .then(function (r) { if (String(r.success) === "true") { f.reset(); st.textContent = "Thank you. Your application has been sent to the IOBSF secretariat."; } else throw 0; })
+      .catch(function () { st.textContent = "The application could not be sent. Please try again, or email araliocha@gmail.com."; })
+      .then(function () { btn.disabled = false; });
+  });
+})();
+</script>
+<script src="assets/js/site.js?v=202610281549"></script>
+</body>
+</html>

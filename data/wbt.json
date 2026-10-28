@@ -132,7 +132,17 @@
         "ja": "都市と機関がWBT ORIGINの開催を申請し、オリジンの火種を迎え入れる。",
         "zh": "城市与机构申请举办WBT ORIGIN，迎接起源火种。"
       },
-      "links": [],
+      "links": [
+        {
+          "href": "host.html",
+          "label": {
+            "en": "Host Application",
+            "ko": "개최 신청서",
+            "ja": "開催申請書",
+            "zh": "申办申请表"
+          }
+        }
+      ],
       "posts": []
     }
   ]

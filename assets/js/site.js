@@ -741,11 +741,11 @@
           '<span class="wbt-soon">' + (n ? n + (n === 1 ? " entry" : " entries") : gb(w.soon, "span")) + "</span></a>"; }).join(""));
       put("#wbt-sections", w.sections.map(function (x) {
         var posts = (x.posts || []).filter(function (q) { return q && q.title; });
-        var links = (x.links || []).map(function (l) { return '<a class="wbt-link" href="' + esc(l.href) + '">' + gb(l.label, "span") + "</a>"; }).join("");
+        var links = (x.links || []).map(function (l) { return '<a class="wbt-link' + (l.href === "host.html" ? " host-apply" : "") + '" href="' + esc(l.href) + '">' + gb(l.label, "span") + "</a>"; }).join("");
         var h2 = '<h2 class="bi"><span class="p">' + esc(x.title.en) + "</span>" + SECONDS.map(function (k) { return x.title[k] ? '<span class="s" lang="' + k + '">' + esc(x.title[k]) + "</span>" : ""; }).join("") + "</h2>";
         return '<section class="section wbt-sec" id="' + esc(x.id) + '"><div class="wrap"><div class="section-head">' + h2 + "</div>" + gb(x.lede, "p", "wbt-lede") +
           (posts.length ? boardList("wbt", x.id, posts)
-            : '<p class="wbt-empty">' + gb(w.soon, "span") + "</p>") +
+            : links ? "" : '<p class="wbt-empty">' + gb(w.soon, "span") + "</p>") +
           (links ? '<div class="wbt-links">' + links + "</div>" : "") + "</div></section>"; }).join(""));
       if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 50); }
     });

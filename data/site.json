@@ -147,7 +147,8 @@
       },
       "pages": [
         "wbt",
-        "post-wbt"
+        "post-wbt",
+        "host"
       ],
       "children": [
         {
@@ -187,7 +188,7 @@
           }
         },
         {
-          "href": "wbt.html#host",
+          "href": "host.html",
           "label": {
             "en": "Host a WBT",
             "ko": "개최 신청",
