@@ -398,6 +398,12 @@
         '<p class="meta" style="color:var(--ash)">' + esc(fmtDate(e)) + ", " + esc(en(e.place)) + ", " + esc(en(ev.tiers[e.tier] || "")) + "</p>" +
         "<h1>" + esc(en(e.name)) + "</h1>" +
         bi(e.summary, "div", "prose lede") +
+        (e.gallery && e.gallery.length ? '<div class="section ev-gallery-sec"><h2>Scenes' + bi({ ko: "현장", ja: "現場", zh: "现场" }, "span") + '</h2><div class="ev-gallery">' + e.gallery.map(function (g, i) {
+          var cap = '<figcaption>' + bi(g.caption, "span", "", true) + (g.credit ? '<span class="ev-credit">' + esc(en(g.credit)) + "</span>" : "") + "</figcaption>";
+          return g.kind === "video"
+            ? '<figure class="ev-shot ev-video"><video src="' + esc(g.src) + '" poster="' + esc(g.poster || "") + '" controls playsinline preload="none"></video>' + cap + "</figure>"
+            : '<figure class="ev-shot"><button type="button" class="ev-open" data-full="' + esc(g.src) + '" aria-label="' + esc(en(g.caption)) + '"><img src="' + esc(g.thumb || g.src) + '" alt="' + esc(en(g.caption)) + '" loading="lazy"></button>' + cap + "</figure>";
+        }).join("") + "</div></div>" : "") +
         (e.facts && e.facts.length ? '<div class="section"><h2>At a Glance' + bi({ ko: "개요", ja: "概要", zh: "概况" }, "span") + '</h2><dl class="facts" style="margin-top:24px">' + e.facts.map(function (f) {
           return "<dt>" + bi(f.label, "span", "", true) + "</dt><dd>" + (f.href ? '<a href="' + esc(f.href) + '">' + esc(en(f.value)) + "</a>" : bi(f.value)) + "</dd>"; }).join("") + "</dl></div>" : "") +
         (e.speech ? '<div class="section speech"><h2>' + esc(en(e.speech.title)) + bi({ ko: e.speech.title.ko, ja: e.speech.title.ja, zh: e.speech.title.zh }, "span") + "</h2>" +
@@ -420,6 +426,14 @@
     });
   };
 
+  /* event scenes: a quiet lightbox, closed by a click or Escape */
+  document.addEventListener("click", function (ev) {
+    var t = ev.target.closest && ev.target.closest(".ev-open");
+    if (t) { var box = document.createElement("div"); box.className = "ev-lightbox"; box.innerHTML = '<img src="' + t.getAttribute("data-full") + '" alt="">'; document.body.appendChild(box);
+      requestAnimationFrame(function () { box.classList.add("on"); }); return; }
+    var lb = ev.target.closest && ev.target.closest(".ev-lightbox"); if (lb) lb.remove();
+  });
+  document.addEventListener("keydown", function (ev) { if (ev.key === "Escape") { var lb = document.querySelector(".ev-lightbox"); if (lb) lb.remove(); } });
   pages.pathway = function () {
     load("pathway").then(function (p) {
       put("#pathway-intro", bi(p.intro, "div", "lede"));

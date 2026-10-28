@@ -463,7 +463,71 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "gallery": [
+        {
+          "src": "assets/img/events/2013-cheonan-1.webp",
+          "thumb": "assets/img/events/2013-cheonan-1-t.webp",
+          "caption": {
+            "en": "Opening address",
+            "ko": "개회 인사",
+            "ja": "開会の挨拶",
+            "zh": "开幕致辞"
+          }
+        },
+        {
+          "src": "assets/img/events/2013-cheonan-2.webp",
+          "thumb": "assets/img/events/2013-cheonan-2-t.webp",
+          "caption": {
+            "en": "At the grill",
+            "ko": "경기 장면",
+            "ja": "競技の場面",
+            "zh": "比赛现场"
+          }
+        },
+        {
+          "src": "assets/img/events/2013-cheonan-3.webp",
+          "thumb": "assets/img/events/2013-cheonan-3-t.webp",
+          "caption": {
+            "en": "Preparing the meat",
+            "ko": "고기 손질",
+            "ja": "肉の仕込み",
+            "zh": "处理肉品"
+          }
+        },
+        {
+          "src": "assets/img/events/2013-cheonan-4.webp",
+          "thumb": "assets/img/events/2013-cheonan-4-t.webp",
+          "caption": {
+            "en": "Awards ceremony",
+            "ko": "시상식",
+            "ja": "表彰式",
+            "zh": "颁奖典礼"
+          }
+        },
+        {
+          "kind": "video",
+          "src": "assets/img/events/2013-cheonan-v1.mp4",
+          "poster": "assets/img/events/2013-cheonan-v1.jpg",
+          "caption": {
+            "en": "Night concert on the festival stage",
+            "ko": "축제 무대의 밤 공연",
+            "ja": "祭りの舞台の夜の公演",
+            "zh": "节庆舞台的夜间演出"
+          }
+        },
+        {
+          "kind": "video",
+          "src": "assets/img/events/2013-cheonan-v2.mp4",
+          "poster": "assets/img/events/2013-cheonan-v2.jpg",
+          "caption": {
+            "en": "Families at the night festival",
+            "ko": "밤 축제를 즐기는 가족",
+            "ja": "夜の祭りを楽しむ家族",
+            "zh": "享受夜间节庆的家庭"
+          }
+        }
+      ]
     },
     {
       "id": "2014-national-outdoor-folk-games",
@@ -556,7 +620,19 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "gallery": [
+        {
+          "src": "assets/img/events/2016-pocheon-1.webp",
+          "thumb": "assets/img/events/2016-pocheon-1-t.webp",
+          "caption": {
+            "en": "Awards ceremony",
+            "ko": "시상식",
+            "ja": "表彰式",
+            "zh": "颁奖典礼"
+          }
+        }
+      ]
     },
     {
       "id": "2016-masters-icheon",
@@ -587,7 +663,23 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "gallery": [
+        {
+          "src": "assets/img/events/2016-icheon-1.webp",
+          "thumb": "assets/img/events/2016-icheon-1-t.webp",
+          "caption": {
+            "en": "Awards ceremony",
+            "ko": "시상식",
+            "ja": "表彰式",
+            "zh": "颁奖典礼"
+          },
+          "credit": {
+            "en": "Photo: Domin Ilbo",
+            "ko": "사진: 도민일보"
+          }
+        }
+      ]
     },
     {
       "id": "2017-masters-yeoju",
@@ -618,7 +710,29 @@
       "results": [],
       "table": [],
       "acclaimed_by": "",
-      "org": "KR"
+      "org": "KR",
+      "gallery": [
+        {
+          "src": "assets/img/events/2017-yeoju-1.webp",
+          "thumb": "assets/img/events/2017-yeoju-1-t.webp",
+          "caption": {
+            "en": "Expert division, third place",
+            "ko": "엑스퍼트 부문 3위 시상",
+            "ja": "エキスパート部門3位の表彰",
+            "zh": "专家组第三名颁奖"
+          }
+        },
+        {
+          "src": "assets/img/events/2017-yeoju-2.webp",
+          "thumb": "assets/img/events/2017-yeoju-2-t.webp",
+          "caption": {
+            "en": "Awards ceremony",
+            "ko": "시상식",
+            "ja": "表彰式",
+            "zh": "颁奖典礼"
+          }
+        }
+      ]
     },
     {
       "id": "2027-bbq-world-cup-las-vegas",
