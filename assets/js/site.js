@@ -152,9 +152,12 @@
       band.innerHTML = n.children.map(function (c) {
         var here = c.href.split("#")[0] === location.pathname.split("/").pop() && c.href.indexOf("#") < 0;
         return '<a href="' + c.href + '"' + (here ? ' aria-current="page"' : "") + ">" + gb(c.label, "span") + "</a>"; }).join("");
-      var head = document.querySelector("main > .page-head"), main = document.querySelector("main");
-      if (head) head.insertAdjacentElement("afterend", band); else if (main) main.insertAdjacentElement("afterbegin", band);
+      var main = document.querySelector("main");
+      if (main) main.insertAdjacentElement("afterbegin", band);
     });
+    /* every submenu sits at the very top, right under the main menu */
+    var ws = document.getElementById("wbt-sub"), mn = document.querySelector("main");
+    if (ws && mn) mn.insertAdjacentElement("afterbegin", ws);
     /* the emblem always returns to the home page as first opened: top of the page, no saved position */
     var brand = header.querySelector(".brand");
     if (brand) brand.addEventListener("click", function (ev) {
