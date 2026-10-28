@@ -16,19 +16,23 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=EB+Garamond:wght@400;500&family=Noto+Serif+KR:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css?v=202610281805">
+<link rel="stylesheet" href="assets/css/site.css?v=202610281810">
 </head>
 <body data-page="certify">
 <header id="site-header"></header>
 <main>
 <section class="page-head"><div class="wrap">
 <h1><span class="p">Pro Barbecuer Certification</span><span class="bi"><span class="s" lang="ko">프로바비큐어 인증 신청</span><span class="s" lang="ja">プロバーベキュアー認証申請</span><span class="s" lang="zh">职业烧烤师认证申请</span></span></h1>
-<div class="lede bi"><span class="p">This application is submitted by a member federation of IOBSF, not by individuals. The member federation reviews its candidate first and puts forward only those who meet the standards of the Federation. The secretariat replies by email.</span><span class="s" lang="ko">이 신청서는 개인이 아니라 IOBSF 회원국 연맹이 제출한다. 회원국 연맹이 먼저 후보자를 심사하고, 연맹 기준을 충족한 자에 한해 신청한다. 사무국이 이메일로 회신한다.</span><span class="s" lang="ja">この申請書は個人ではなく、IOBSF加盟国連盟が提出する。加盟国連盟がまず候補者を審査し、連盟の基準を満たした者に限り申請する。事務局がメールで返信する。</span><span class="s" lang="zh">本申请表由IOBSF会员国联合会提交，而非个人。会员国联合会先审查候选人，仅对符合联合会标准者提出申请。秘书处将通过电子邮件回复。</span></div>
+<div class="lede bi"><span class="p">As a rule, certification as a Pro Barbecuer is not requested by individuals. A member federation reviews its candidate and, where the standards of the Federation are met, applies to the Federation in its capacity as a member. Nationals of countries without a member federation may apply to the Federation directly, and the Federation reviews them and decides on registration.</span><span class="s" lang="ko">프로바비큐어 인증은 개인이 신청하지 않는 것을 원칙으로 한다. 회원국이 후보자를 심사하고, 연맹 기준을 충족한 경우 회원국 자격으로 연맹에 신청한다. 회원국이 없는 나라의 국적자는 연맹에 직접 신청할 수 있으며, 연맹이 심사해 등록을 결정한다.</span><span class="s" lang="ja">プロバーベキュアーの認証は、個人が申請しないことを原則とする。加盟国が候補者を審査し、連盟の基準を満たした場合、加盟国の資格で連盟に申請する。加盟国のない国の国籍者は連盟に直接申請でき、連盟が審査して登録を決定する。</span><span class="s" lang="zh">原则上，职业烧烤师认证不由个人申请。由会员国审查候选人，符合联合会标准者，以会员国身份向联合会提出申请。无会员国的国家的公民可直接向联合会申请，由联合会审查并决定是否登记。</span> <span class="p">The secretariat replies by email.</span><span class="s" lang="ko">사무국이 이메일로 회신한다.</span><span class="s" lang="ja">事務局がメールで返信する。</span><span class="s" lang="zh">秘书处将通过电子邮件回复。</span></div>
 </div></section>
 <section class="section"><div class="wrap">
 <form id="host-form" class="hf" novalidate>
-<p class="hf-note">Pro Barbecuer Certification Application by Member Federation, PB-01. Please complete the form in English.</p>
-<fieldset><legend>1. Member federation</legend>
+<p class="hf-note">Pro Barbecuer Certification Application, PB-01. Please complete the form in English.</p>
+<fieldset class="hf-route"><legend>Route of application</legend>
+<label class="hf-check"><input type="radio" name="Route" value="Member federation" checked> Application by a member federation, after its own review</label>
+<label class="hf-check"><input type="radio" name="Route" value="Direct application"> Direct application by a national of a country without a member federation</label>
+</fieldset>
+<fieldset class="hf-mf"><legend>1. Member federation</legend>
 <label>Member federation<input name="Member federation" required></label>
 <label>Country<input name="Country" required></label>
 <label>Authorised officer<input name="Officer" required></label>
@@ -42,7 +46,7 @@
 <label>Team or affiliation<input name="Candidate affiliation"></label>
 <label>Level sought<input name="Level sought" placeholder="Semi-Pro or Pro" required></label>
 </fieldset>
-<fieldset><legend>3. Review by the member federation</legend>
+<fieldset class="hf-mf"><legend>3. Review by the member federation</legend>
 <label>Date of review<input name="Review date" required></label>
 <label>Reviewed by<input name="Reviewers"></label>
 <label class="wide">Result of the review and how the candidate meets the standards of the Federation<textarea name="Review result" rows="4" required></textarea></label>
@@ -62,7 +66,7 @@
 <label class="wide">Why does the candidate seek to become a Pro Barbecuer?<textarea name="Statement" rows="5" required></textarea></label>
 </fieldset>
 <fieldset><legend>8. Declaration</legend>
-<label class="hf-check"><input type="checkbox" name="Declaration" value="Agreed" required> On behalf of the member federation, I confirm that the candidate has passed our review, that the information given is true, and that the candidate will sign the Charter of the Pro Barbecuer and keep it.</label>
+<label class="hf-check"><input type="checkbox" name="Declaration" value="Agreed" required> I confirm that the information given is true, that any review stated above has been passed, and that the candidate will sign the Charter of the Pro Barbecuer and keep it.</label>
 </fieldset>
 <input type="text" name="_honey" class="hf-honey" tabindex="-1" autocomplete="off">
 <div class="hf-send"><button type="submit" class="hf-btn"><span class="hf-flame" aria-hidden="true"><svg viewBox="0 0 40 48"><defs><linearGradient id="hfg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4dca2"/><stop offset=".55" stop-color="#c99a4f"/><stop offset="1" stop-color="#7d5a24"/></linearGradient></defs><path d="M20 3c3 7 11 11 11 21a11 11 0 0 1-22 0c0-6 3-9 5-12 0 4 2 6 4 6-2-6 0-11 2-15z" fill="url(#hfg)"/><path d="M6 44h28M10 40h20" stroke="url(#hfg)" stroke-width="2" stroke-linecap="round"/></svg></span><span>Submit Application</span></button>
@@ -74,12 +78,16 @@
 <script>
 (function () {
   var f = document.getElementById("host-form"), st = f.querySelector(".hf-status"), btn = f.querySelector(".hf-btn");
+  var mf = f.querySelectorAll(".hf-mf");
+  var route = function () { var direct = f.querySelector('input[name="Route"]:checked').value !== "Member federation";
+    mf.forEach(function (fs) { fs.hidden = direct; fs.querySelectorAll("input,textarea").forEach(function (i) { if (i.dataset.req === undefined) i.dataset.req = i.required ? "1" : "0"; i.required = !direct && i.dataset.req === "1"; }); }); };
+  f.querySelectorAll('input[name="Route"]').forEach(function (r) { r.addEventListener("change", route); }); route();
   f.addEventListener("submit", function (e) {
     e.preventDefault();
     if (!f.checkValidity()) { f.reportValidity(); return; }
     var d = {}; new FormData(f).forEach(function (v, k) { d[k] = v; });
     if (d._honey) return;
-    d._subject = "Pro Barbecuer Certification: " + (d["Candidate name"] || "") + ", " + (d["Member federation"] || "");
+    d._subject = "Pro Barbecuer Certification: " + (d["Candidate name"] || "") + ", " + (d["Member federation"] || d["Candidate nationality"] || "") + ", " + d.Route;
     d._template = "table"; d._replyto = d.email;
     btn.disabled = true; st.textContent = "Sending...";
     fetch("https://formsubmit.co/ajax/araliocha@gmail.com", { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(d) })
@@ -90,6 +98,6 @@
   });
 })();
 </script>
-<script src="assets/js/site.js?v=202610281805"></script>
+<script src="assets/js/site.js?v=202610281810"></script>
 </body>
 </html>
