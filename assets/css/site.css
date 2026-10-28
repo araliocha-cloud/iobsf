@@ -2108,3 +2108,6 @@ a.gt-box:hover { transform: translateY(-4px); text-decoration: none; box-shadow:
 .gt-sub { font-size: 12.5px; margin-top: 2px; }
 .gt-box .gt-txt { display: flex; flex-direction: column; }
 @media (max-width: 700px) { .gt-row { grid-template-columns: 1fr; gap: 12px; } .gt-box { padding: 12px 16px; } .gt-n { font-size: 32px; } .gt-sub { display: block; } }
+
+.hub-sec { padding-top: 10px; padding-bottom: 30px; }
+.hub-grid { gap: 40px 28px; }

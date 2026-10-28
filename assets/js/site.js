@@ -155,6 +155,19 @@
       var main = document.querySelector("main");
       if (main) main.insertAdjacentElement("afterbegin", band);
     });
+    /* every main menu page opens with its submenu as numbered cards, as WBT does */
+    site.nav.forEach(function (n) {
+      if (n.id !== page || page === "wbt" || !n.children || !n.children.length) return;
+      var file = location.pathname.split("/").pop() || "index.html";
+      if (file !== n.href) return;
+      var first = document.querySelector("main > .page-head, main > .heritage-hero");
+      var sec = document.createElement("section"); sec.className = "section hub-sec";
+      sec.innerHTML = '<div class="wrap"><div class="wbt-grid hub-grid">' + n.children.map(function (c, i) {
+        var href = c.href.split("#")[0] === file && c.href.indexOf("#") < 0 ? "#hub-end" : c.href;
+        return '<a class="wbt-card rv3-box" href="' + href + '"><span class="rv3-n">' + (i + 1) + "</span>" + gb(c.label, "h3", "wbt-card-t") + (c.desc ? gb(c.desc, "p", "wbt-card-d") : "") + "</a>"; }).join("") +
+        '</div></div><div id="hub-end"></div>';
+      if (first) first.insertAdjacentElement("afterend", sec); else { var mm = document.querySelector("main"); if (mm) mm.appendChild(sec); }
+    });
     /* every submenu sits at the very top, right under the main menu */
     var ws = document.getElementById("wbt-sub"), mn = document.querySelector("main");
     if (ws && mn) mn.insertAdjacentElement("afterbegin", ws);
