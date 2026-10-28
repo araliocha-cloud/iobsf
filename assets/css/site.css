@@ -1986,3 +1986,10 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 @media (max-width: 640px) { .board { padding: 4px 16px; } .board-list a { grid-template-columns: 1fr; gap: 4px; padding: 14px 0; } .post-full { padding: 26px 20px; } .post-h1 .p { font-size: 24px; } }
 /* posts and boards stay still under the pointer: no tilt, no lift */
 .wbt-post, .wbt-post:hover, .post-full, .post-full:hover, .board, .board:hover { transform: none !important; }
+
+/* anchors land below the sticky header and submenu band */
+html [id] { scroll-margin-top: var(--stick, 110px) !important; }
+.form7 { position: relative; }
+.form7 h3 a::after { content: ""; position: absolute; inset: 0; }
+.form7:has(h3 a) { cursor: pointer; }
+.form7:has(h3 a):hover h3 a { color: #ffd27a; }

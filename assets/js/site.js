@@ -675,6 +675,25 @@
       setTimeout(spy, 300); setTimeout(spy, 1200);
     });
   }
+  /* sticky header + submenu band: every anchor lands just below them, and stays there while late content above it settles */
+  function setStick() {
+    var hd = document.getElementById("site-header"), band = document.querySelector(".wbt-sub");
+    var h = hd ? hd.getBoundingClientRect().height : 80;
+    if (band && getComputedStyle(band).position === "sticky") h = Math.max(h, parseFloat(getComputedStyle(band).top) || 0) + band.getBoundingClientRect().height;
+    document.documentElement.style.setProperty("--stick", Math.round(h + 18) + "px");
+  }
+  function settleHash() {
+    if (!location.hash) return;
+    var stop = false, quit = function () { stop = true; };
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (e) { window.addEventListener(e, quit, { once: true, passive: true }); });
+    [0, 120, 350, 700, 1200, 2000, 3000].forEach(function (ms) { setTimeout(function () {
+      if (stop) return; setStick();
+      var t = document.getElementById(decodeURIComponent(location.hash.slice(1))); if (t) t.scrollIntoView();
+    }, ms); });
+  }
+  window.addEventListener("hashchange", settleHash);
+  window.addEventListener("resize", setStick);
+  window.addEventListener("load", function () { setStick(); settleHash(); });
   window.addEventListener("load", function () {
     setTimeout(function () {
       if (location.hash && document.querySelector(".wbt-sub")) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
