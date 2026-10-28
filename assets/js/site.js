@@ -123,6 +123,16 @@
   /* ---------- header & footer ---------- */
   function renderChrome(site) {
     var page = document.body.dataset.page;
+    site.nav.forEach(function (n) {
+      if (n.id === "wbt" || !n.children) return;
+      n.children.forEach(function (c) {
+        if (c.orig) return;
+        c.orig = c.href; c.id = c.id || "sec-" + slug(c.label.en);
+        var f = c.href.split("#")[0];
+        if (f !== n.href) c.href = n.href + "#" + c.id;
+        else if (c.href.indexOf("#") < 0) c.href = n.href + "#" + c.id;
+      });
+    });
     var nav = site.nav.map(function (n) {
       var cur = n.id === page || (n.pages && n.pages.indexOf(page) > -1);
       var kids = n.children && n.children.length ? '<ul class="nav-sub">' + n.children.map(function (c) {
@@ -150,23 +160,34 @@
       if (!(n.id === page || (n.pages && n.pages.indexOf(page) > -1))) return;
       var band = document.createElement("nav"); band.className = "wbt-sub page-sub"; band.setAttribute("aria-label", n.label.en);
       band.innerHTML = n.children.map(function (c) {
-        var here = c.href.split("#")[0] === location.pathname.split("/").pop() && c.href.indexOf("#") < 0;
+        var here = (c.orig || c.href).split("#")[0] === location.pathname.split("/").pop() && (c.orig || c.href).split("#")[0] !== n.href;
         return '<a href="' + c.href + '"' + (here ? ' aria-current="page"' : "") + ">" + gb(c.label, "span") + "</a>"; }).join("");
       var main = document.querySelector("main");
       if (main) main.insertAdjacentElement("afterbegin", band);
     });
-    /* every main menu page opens with its submenu as numbered cards, as WBT does */
+    /* each main menu page holds all of its submenu parts in one scroll; a part that lives on its own page
+       appears here as a short section with a link to the full page */
     site.nav.forEach(function (n) {
       if (n.id !== page || page === "wbt" || !n.children || !n.children.length) return;
       var file = location.pathname.split("/").pop() || "index.html";
       if (file !== n.href) return;
-      var first = document.querySelector("main > .page-head, main > .heritage-hero");
-      var sec = document.createElement("section"); sec.className = "section hub-sec";
-      sec.innerHTML = '<div class="wrap"><div class="wbt-grid hub-grid">' + n.children.map(function (c, i) {
-        var href = c.href.split("#")[0] === file && c.href.indexOf("#") < 0 ? "#hub-end" : c.href;
-        return '<a class="wbt-card rv3-box" href="' + href + '"><span class="rv3-n">' + (i + 1) + "</span>" + gb(c.label, "h3", "wbt-card-t") + (c.desc ? gb(c.desc, "p", "wbt-card-d") : "") + "</a>"; }).join("") +
-        '</div></div><div id="hub-end"></div>';
-      if (first) first.insertAdjacentElement("afterend", sec); else { var mm = document.querySelector("main"); if (mm) mm.appendChild(sec); }
+      var main = document.querySelector("main"); if (!main) return;
+      var head = document.querySelector("main > .page-head, main > .heritage-hero");
+      var settle = function (el) { while (el && el.nextElementSibling && el.nextElementSibling.tagName === "SECTION" && !el.nextElementSibling.id) el = el.nextElementSibling; return el; };
+      var cursor = head, lastOwn = null, origFirst = head ? head.nextElementSibling : main.querySelector("section");
+      while (origFirst && origFirst.tagName !== "SECTION") origFirst = origFirst.nextElementSibling;
+      Array.prototype.slice.call(main.children).forEach(function (el) { if (el.tagName === "SECTION" && el !== head && !el.classList.contains("hub-part")) lastOwn = el; });
+      n.children.forEach(function (c) {
+        var f = c.orig.split("#")[0], h = c.orig.split("#")[1];
+        if (f === file && h) { var t = document.getElementById(h); if (t) cursor = settle(t.closest("section") || t); return; }
+        if (f === file) { var first = origFirst;
+          if (first) { if (!first.id) first.id = c.id; else if (!document.getElementById(c.id)) { var mk = document.createElement("span"); mk.id = c.id; first.prepend(mk); } } cursor = lastOwn || cursor; return; }
+        var sec = document.createElement("section"); sec.className = "section hub-part"; sec.id = c.id;
+        sec.innerHTML = '<div class="wrap"><div class="section-head">' + '<h2 class="bi"><span class="p">' + esc(c.label.en) + "</span>" + ["ko", "ja", "zh"].map(function (k) { return c.label[k] ? '<span class="s" lang="' + k + '">' + esc(c.label[k]) + "</span>" : ""; }).join("") + "</h2></div>" +
+          (c.desc ? gb(c.desc, "p", "hub-desc") : "") + '<a class="hub-more" href="' + c.orig + '">' + bi({ en: "View in full", ko: "자세히 보기", ja: "詳しく見る", zh: "查看详情" }, "span", "", true) + "</a></div>";
+        if (cursor) cursor.insertAdjacentElement("afterend", sec); else main.appendChild(sec);
+        cursor = sec;
+      });
     });
     /* every submenu sits at the very top, right under the main menu */
     var ws = document.getElementById("wbt-sub"), mn = document.querySelector("main");
