@@ -444,6 +444,15 @@
           }
         },
         {
+          "href": "events.html",
+          "label": {
+            "en": "Roots",
+            "ko": "뿌리",
+            "ja": "ルーツ",
+            "zh": "根基"
+          }
+        },
+        {
           "href": "partners.html",
           "label": {
             "en": "Partners",
