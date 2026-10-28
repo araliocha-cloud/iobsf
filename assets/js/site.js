@@ -237,6 +237,33 @@
     });
   };
 
+  /* boards: titles only on the list; the post opens on its own page */
+  function postSlug(q) { return ((q.date || "") + "-" + ((q.title && q.title.en) || "")).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, ""); }
+  function boardList(board, sec, posts) {
+    return '<div class="board rv3-box"><ol class="board-list">' + posts.map(function (q) {
+      return '<li><a href="post.html?b=' + board + "&s=" + encodeURIComponent(sec) + "&p=" + encodeURIComponent(postSlug(q)) + '">' +
+        '<span class="board-date">' + esc(q.date || "") + "</span>" + gb(q.title, "span", "board-t") +
+        (q.source ? '<span class="board-src">' + esc(q.source) + "</span>" : "") + "</a></li>"; }).join("") + "</ol></div>";
+  }
+  function renderPost() {
+    var b = param("b") === "wbt" ? "wbt" : "fire", sec = param("s"), slug = param("p");
+    load(b === "wbt" ? "wbt" : "news").then(function (d) {
+      var x = (d.sections || []).filter(function (z) { return z.id === sec; })[0];
+      var q = x && (x.posts || []).filter(function (z) { return z && z.title && postSlug(z) === slug; })[0];
+      var home = b === "wbt" ? "wbt.html" : "fire.html", back = home + "#" + (x ? x.id : "");
+      var bt = b === "wbt" ? { en: "WBT", ko: "세계 바비큐 투어", ja: "ワールドバーベキューツアー", zh: "世界烧烤巡回赛" } : { en: "The Fire", ko: "불", ja: "火", zh: "火" };
+      if (!q) { put("#post", '<p class="oj-crumb"><a href="' + home + '">' + esc(bt.en) + "</a></p>" + '<p class="wbt-empty">' + bi({ en: "This entry could not be found.", ko: "글을 찾을 수 없다.", ja: "記事が見つからない。", zh: "未找到该内容。" }, "span", "", true) + "</p>"); return; }
+      document.title = q.title.en + " | IOBSF";
+      document.querySelectorAll(".wbt-sub a").forEach(function (a) { if ((a.getAttribute("href") || "").split("#")[1] === x.id) a.setAttribute("aria-current", "page"); });
+      put("#post", '<p class="oj-crumb"><a href="' + home + '">' + esc(bt.en) + "</a> &rsaquo; " + '<a href="' + back + '">' + esc(x.title.en) + "</a></p>" +
+        '<article class="wbt-post post-full rv3-box">' + (q.image ? '<img class="wbt-post-img" src="' + esc(q.image) + '" alt="" loading="lazy">' : "") +
+        (q.date ? '<p class="wbt-date">' + esc(q.date) + (q.source ? "  |  " + esc(q.source) : "") + "</p>" : "") + gb(q.title, "h1", "wbt-post-t post-h1") + (q.body ? paras(q.body) : "") +
+        (q.link ? '<p class="wbt-more"><a href="' + esc(q.link) + '" target="_blank" rel="noopener">' + bi({ en: "Read the original", ko: "원문 보기", ja: "原文を読む", zh: "阅读原文" }, "span", "", true) + "</a></p>" : "") + "</article>" +
+        '<p class="oj-back"><a href="' + back + '">' + bi({ en: "Back to " + x.title.en, ko: (x.title.ko || "") + " 목록으로", ja: (x.title.ja || "") + "の一覧へ", zh: "返回" + (x.title.zh || "") }, "span", "", true) + "</a></p>");
+    });
+  }
+  pages["post-fire"] = renderPost; pages["post-wbt"] = renderPost;
+
   /* The Fire: news, announcements, chronicle and press below the statements, written from the admin */
   function fireNews() {
     Promise.all([load("news"), load("chronicle")]).then(function (r) {
@@ -245,10 +272,7 @@
       var sec = function (x) {
         var posts = (x.posts || []).filter(function (q) { return q && q.title; });
         return '<section class="section wbt-sec" id="' + esc(x.id) + '"><div class="wrap"><div class="section-head">' + h2(x.title) + "</div>" + gb(x.lede, "p", "wbt-lede") +
-          (posts.length ? '<div class="wbt-posts">' + posts.map(function (q) {
-            return '<article class="wbt-post rv3-box">' + (q.image ? '<img class="wbt-post-img" src="' + esc(q.image) + '" alt="" loading="lazy">' : "") +
-              (q.date ? '<p class="wbt-date">' + esc(q.date) + (q.source ? "  |  " + esc(q.source) : "") + "</p>" : "") + gb(q.title, "h3", "wbt-post-t") + (q.body ? paras(q.body) : "") +
-              (q.link ? '<p class="wbt-more"><a href="' + esc(q.link) + '" target="_blank" rel="noopener">' + bi({ en: "Read the original", ko: "원문 보기", ja: "原文を読む", zh: "阅读原文" }, "span", "", true) + "</a></p>" : "") + "</article>"; }).join("") + "</div>"
+          (posts.length ? boardList("fire", x.id, posts)
             : '<p class="wbt-empty">' + gb(n.soon, "span") + "</p>") + "</div></section>"; };
       var byId = {}; n.sections.forEach(function (x) { byId[x.id] = x; });
       var stories = (c.stories || []).slice().sort(function (a, b) { return (b.date || "") > (a.date || "") ? 1 : -1; });
@@ -678,9 +702,7 @@
         var links = (x.links || []).map(function (l) { return '<a class="wbt-link" href="' + esc(l.href) + '">' + gb(l.label, "span") + "</a>"; }).join("");
         var h2 = '<h2 class="bi"><span class="p">' + esc(x.title.en) + "</span>" + SECONDS.map(function (k) { return x.title[k] ? '<span class="s" lang="' + k + '">' + esc(x.title[k]) + "</span>" : ""; }).join("") + "</h2>";
         return '<section class="section wbt-sec" id="' + esc(x.id) + '"><div class="wrap"><div class="section-head">' + h2 + "</div>" + gb(x.lede, "p", "wbt-lede") +
-          (posts.length ? '<div class="wbt-posts">' + posts.map(function (q) {
-            return '<article class="wbt-post rv3-box">' + (q.image ? '<img class="wbt-post-img" src="' + esc(q.image) + '" alt="" loading="lazy">' : "") +
-              (q.date ? '<p class="wbt-date">' + esc(q.date) + "</p>" : "") + gb(q.title, "h3", "wbt-post-t") + (q.body ? paras(q.body) : "") + "</article>"; }).join("") + "</div>"
+          (posts.length ? boardList("wbt", x.id, posts)
             : '<p class="wbt-empty">' + gb(w.soon, "span") + "</p>") +
           (links ? '<div class="wbt-links">' + links + "</div>" : "") + "</div></section>"; }).join(""));
       if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 50); }

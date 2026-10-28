@@ -147,7 +147,8 @@
       },
       "pages": [
         "fire",
-        "chronicle"
+        "chronicle",
+        "post-fire"
       ],
       "children": [
         {
@@ -219,7 +220,8 @@
       "pages": [
         "wbt",
         "events",
-        "event"
+        "event",
+        "post-wbt"
       ],
       "children": [
         {
