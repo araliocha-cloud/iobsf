@@ -1,22 +1,23 @@
-2026-10-29 05:16 UTC
-limit gemini-flash-latest 429 GenerateRequestsPerDayPerProjectPerModel-FreeTier retry in 6764s
-repaired 20261029009982.json ja left: none
-translated 20261029009980.json en 2100 -> 4443
-translated 20261029009980.json ja 2100 -> 1867
-translated 20261029009980.json zh 2100 -> 1412
-translated 20261029009979.json en 8283 -> 16393
-translated 20261029009979.json ja 8283 -> 7373
-translated 20261029009979.json zh 8283 -> 5704
-translated 20261029009978.json en 5347 -> 12521
-translated 20261029009978.json ja 5347 -> 4784
-check by hand: 20261029009978.json zh Korean script left: ['원의']
-translated 20261029009978.json zh 5347 -> 3855
-translated 20261029009977.json en 2735 -> 6307
-translated 20261029009977.json ja 2735 -> 2428
-translated 20261029009977.json zh 2735 -> 2066
-translated 20261029009976.json en 8408 -> 19619
+2026-10-29 05:27 UTC
+limit gemini-flash-latest 429 GenerateRequestsPerDayPerProjectPerModel-FreeTier retry in 6193s
+repaired 20261029009978.json zh left: none
+repaired 20261029009976.json ja left: none
+translated 20261029009976.json zh 8408 -> 6131
+translated 20261029009975.json en 8805 -> 20335
+translated 20261029009975.json ja 8805 -> 7780
+translated 20261029009975.json zh 8805 -> 6180
 limit gemini-flash-lite-latest 503 {   "error": {     "code": 503,     "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later retry in None
-check by hand: 20261029009976.json ja Korean script left: ['운트']
-translated 20261029009976.json ja 8408 -> 7681
-stopped: call cap reached (the rest follows on the next run)
-calls 30
+limit gemini-flash-lite-latest 503 {   "error": {     "code": 503,     "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later retry in None
+translated 20261029009974.json en 3369 -> 7752
+translated 20261029009974.json ja 3369 -> 2859
+translated 20261029009974.json zh 3369 -> 2321
+translated 20261029009973.json en 5766 -> 12633
+translated 20261029009973.json ja 5766 -> 5089
+translated 20261029009973.json zh 5766 -> 3682
+translated 20261029009972.json en 3299 -> 7065
+translated 20261029009972.json ja 3299 -> 2921
+translated 20261029009972.json zh 3299 -> 2231
+translated 20261029009971.json en 3693 -> 8861
+translated 20261029009971.json ja 3693 -> 3310
+translated 20261029009971.json zh 3693 -> 2478
+calls 28
