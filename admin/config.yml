@@ -1,435 +1,817 @@
 # IOBSF 관리 화면 설정 (Sveltia CMS)
-# 저장하면 GitHub 저장소 araliocha-cloud/iobsf 의 main 브랜치에 바로 반영되고, 1~2분 뒤 홈페이지에 나타난다.
+# 글 한 편이 파일 한 개다 (content/ 아래 폴더). 저장하면 GitHub 저장소 main 브랜치에 기록되고,
+# GitHub Actions가 tools/build_content.py로 사이트가 읽는 data/*.json을 다시 묶는다. 1~2분 뒤 홈페이지에 나타난다.
 backend:
   name: github
   repo: araliocha-cloud/iobsf
   branch: main
   commit_messages:
-    update: "Update {{collection}} from admin"
-
+    create: Create {{collection}} {{slug}} from admin
+    update: Update {{collection}} {{slug}} from admin
+    delete: Delete {{collection}} {{slug}} from admin
 site_url: https://iobsf.org/
 display_url: https://iobsf.org/
 logo_url: https://iobsf.org/assets/img/emblem-small.png
 media_folder: assets/img/uploads
 public_folder: assets/img/uploads
-
 collections:
-  - name: writings
-    label: "서고 글 (Writings)"
-    files:
-      - name: writings
-        label: "서사 기록의 글 (Archive essays)"
-        file: data/writings.json
-        format: json
-        fields:
-          - name: writings
-            label: "글 목록"
-            label_singular: "글"
-            widget: list
-            add_to_top: true
-            summary: "{{fields.title.ko}}"
-            fields:
-              - name: category
-                label: "분류 (서사 기록 칸)"
-                widget: select
-                options:
-                  - { label: "인류바비큐문명사 (Civilization History)", value: civilization }
-                  - { label: "바비큐 인문학 (Barbecue Humanities)", value: humanities }
-                  - { label: "각국 바비큐의 역사 서사 (Histories of the Nations' Fires)", value: narratives }
-                  - { label: "인간과 사회 (The Human and Society)", value: society }
-              - name: title
-                label: "제목"
-                widget: object
-                fields:
-                  - { name: ko, label: "한국어 제목", widget: string }
-                  - { name: en, label: "영어 제목 (목록에 크게 표시)", widget: string }
-              - name: subtitle
-                label: "부제"
-                widget: object
-                required: false
-                fields:
-                  - { name: ko, label: "한국어 부제", widget: string, required: false }
-                  - { name: en, label: "영어 부제", widget: string, required: false }
-              - name: id
-                label: "주소 이름 (영문 소문자와 하이픈, 비워 두면 영어 제목으로 자동 생성)"
-                widget: string
-                required: false
-              - name: image
-                label: "대표 이미지"
-                widget: image
-                required: false
-              - { name: image_caption, label: "이미지 설명 (출처 등, 선택)", widget: string, required: false }
-              - name: body
-                label: "본문"
-                widget: markdown
-                hint: "문단은 빈 줄로 나눈다. 소제목은 맨 앞에 ### 를, 인용은 > 를 붙인다."
-              - name: refs
-                label: "참고문헌"
-                widget: list
-                required: false
-                field: { name: ref, label: "문헌", widget: string }
-              - name: published
-                label: "처음 실린 곳 (선택)"
-                widget: object
-                required: false
-                collapsed: true
-                fields:
-                  - { name: outlet, label: "매체 이름 (예: Korea Post)", widget: string, required: false }
-                  - { name: date, label: "날짜 (YYYY-MM-DD)", widget: string, required: false }
-                  - { name: href, label: "원문 주소", widget: string, required: false }
-              - name: by
-                label: "필자"
-                widget: object
-                required: false
-                collapsed: true
-                fields:
-                  - { name: en, label: "영어", widget: string, default: "Shaka Chaa", required: false }
-                  - { name: ko, label: "한국어", widget: string, default: "차영기", required: false }
-
-  - name: events
-    label: "대회 (Events)"
-    files:
-      - name: event-list
-        label: "대회 목록"
-        file: data/event-list.json
-        format: json
-        fields:
-          - name: events
-            label: "대회 목록"
-            label_singular: "대회"
-            widget: list
-            add_to_top: true
-            summary: "{{fields.year}} {{fields.name.en}}"
-            fields:
-              - name: name
-                label: "대회 이름"
-                widget: object
-                fields:
-                  - { name: en, label: "영어", widget: string }
-                  - { name: ko, label: "한국어", widget: string, required: false }
-              - name: status
-                label: "상태"
-                widget: select
-                options:
-                  - { label: "다가오는 대회 (Upcoming)", value: upcoming }
-                  - { label: "지난 대회 (Completed)", value: completed }
-              - name: tier
-                label: "등급"
-                widget: select
-                options:
-                  - { label: "World Championship 세계선수권", value: world }
-                  - { label: "Pro Tour 프로 투어", value: tour }
-                  - { label: "Challenger Series 챌린저 시리즈", value: challenger }
-                  - { label: "Partner Event 협력 대회", value: partner }
-                  - { label: "National Event 국내 대회", value: national }
-                  - { label: "League 리그", value: league }
-              - { name: year, label: "연도", widget: number, value_type: int }
-              - { name: date, label: "날짜 (YYYY-MM-DD, 선택)", widget: string, required: false }
-              - { name: when, label: "날짜 대신 쓸 말 (예: May 2027, In preparation)", widget: string, required: false }
-              - name: place
-                label: "장소"
-                widget: object
-                fields:
-                  - { name: en, label: "영어", widget: string, required: false }
-                  - { name: ko, label: "한국어", widget: string, required: false }
-              - { name: nation, label: "국가 코드 (예: KR, JP, CN, US)", widget: string, default: KR, required: false }
-              - name: summary
-                label: "요약"
-                widget: object
-                required: false
-                fields:
-                  - { name: en, label: "영어", widget: text, required: false }
-                  - { name: ko, label: "한국어", widget: text, required: false }
-              - { name: id, label: "주소 이름 (비워 두면 영어 이름으로 자동 생성)", widget: string, required: false }
-              - name: results
-                label: "결과"
-                widget: list
-                required: false
-                collapsed: true
-                fields:
-                  - { name: rank, label: "순위", widget: string, required: false }
-                  - { name: barbecuer, label: "프로바비큐어 주소 이름 (예: shaka-chaa)", widget: string, required: false }
-                  - { name: team, label: "팀 이름", widget: string, required: false }
-                  - { name: score, label: "점수", widget: string, required: false }
-              - name: table
-                label: "식탁의 이야기"
-                widget: list
-                required: false
-                collapsed: true
-                fields:
-                  - { name: barbecuer, label: "프로바비큐어 주소 이름", widget: string, required: false }
-                  - { name: team, label: "팀 이름", widget: string, required: false }
-                  - name: story
-                    label: "이야기"
-                    widget: object
-                    fields:
-                      - { name: en, label: "영어", widget: text, required: false }
-                      - { name: ko, label: "한국어", widget: text, required: false }
-              - name: ritual
-                label: "의례 메모"
-                widget: list
-                required: false
-                collapsed: true
-                field: { name: note, label: "메모", widget: string }
-              - { name: acclaimed_by, label: "추대 메모", widget: string, required: false }
-
-  - name: chronicle
-    label: "기록 (Chronicle)"
-    files:
-      - name: chronicle
-        label: "대회 이야기"
-        file: data/chronicle.json
-        format: json
-        fields:
-          - name: intro
-            label: "머리말"
-            widget: object
-            collapsed: true
-            fields:
-              - { name: en, label: "영어", widget: text }
-              - { name: ko, label: "한국어", widget: text }
-          - name: stories
-            label: "이야기 목록"
-            label_singular: "이야기"
-            widget: list
-            add_to_top: true
-            required: false
-            summary: "{{fields.date}} {{fields.title.ko}}"
-            fields:
-              - { name: date, label: "날짜 (YYYY-MM-DD)", widget: string, required: false }
-              - name: title
-                label: "제목"
-                widget: object
-                fields:
-                  - { name: en, label: "영어", widget: string }
-                  - { name: ko, label: "한국어", widget: string, required: false }
-              - name: text
-                label: "본문"
-                widget: object
-                fields:
-                  - { name: en, label: "영어", widget: text, required: false }
-                  - { name: ko, label: "한국어", widget: text, required: false }
-              - { name: event, label: "대회 주소 이름 (선택)", widget: string, required: false }
-              - { name: video, label: "YouTube 주소 (선택)", widget: string, required: false }
-              - { name: image, label: "대표 이미지 (선택)", widget: image, required: false }
-              - name: images
-                label: "사진 묶음 (선택, 첫 장이 크게 보인다)"
-                widget: list
-                required: false
-                fields:
-                  - { name: src, label: "사진", widget: image }
-                  - { name: alt, label: "사진 설명", widget: string, required: false }
-              - { name: id, label: "주소 이름 (선택)", widget: string, required: false }
-
+- name: writings
+  label: 서고 글 (Writings)
+  label_singular: 글
+  description: 서고(Archives)에 실리는 글. 「새 글」을 누르면 빈 글 한 편이 열린다.
+  folder: content/writings
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}'
+  summary: '{{title.ko}}'
+  sortable_fields:
+    fields:
+    - slug
+    default:
+      field: slug
+      direction: descending
+  fields:
+  - name: category
+    label: 분류 (서사 기록 칸)
+    widget: select
+    options:
+    - label: 인류바비큐문명사 (Civilization History)
+      value: civilization
+    - label: 바비큐 인문학 (Barbecue Humanities)
+      value: humanities
+    - label: 각국 바비큐의 역사 서사 (Histories of the Nations' Fires)
+      value: narratives
+    - label: 인간과 사회 (The Human and Society)
+      value: society
+  - name: title
+    label: 제목
+    widget: object
+    fields:
+    - name: ko
+      label: 한국어 제목
+      widget: string
+    - name: en
+      label: 영어 제목 (목록에 크게 표시)
+      widget: string
+  - name: subtitle
+    label: 부제
+    widget: object
+    required: false
+    fields:
+    - name: ko
+      label: 한국어 부제
+      widget: string
+      required: false
+    - name: en
+      label: 영어 부제
+      widget: string
+      required: false
+  - name: id
+    label: 주소 이름 (영문 소문자와 하이픈, 비워 두면 영어 제목으로 자동 생성)
+    widget: string
+    required: false
+  - name: image
+    label: 대표 이미지
+    widget: image
+    required: false
+  - name: image_caption
+    label: 이미지 설명 (출처 등, 선택)
+    widget: string
+    required: false
+  - name: body
+    label: 본문
+    widget: markdown
+    hint: '문단은 빈 줄로 나눈다. 소제목은 맨 앞에 ### 를, 인용은 > 를 붙인다.'
+  - name: refs
+    label: 참고문헌
+    widget: list
+    required: false
+    field:
+      name: ref
+      label: 문헌
+      widget: string
+  - name: published
+    label: 처음 실린 곳 (선택)
+    widget: object
+    required: false
+    collapsed: true
+    fields:
+    - name: outlet
+      label: '매체 이름 (예: Korea Post)'
+      widget: string
+      required: false
+    - name: date
+      label: 날짜 (YYYY-MM-DD)
+      widget: string
+      required: false
+    - name: href
+      label: 원문 주소
+      widget: string
+      required: false
+  - name: by
+    label: 필자
+    widget: object
+    required: false
+    collapsed: true
+    fields:
+    - name: en
+      label: 영어
+      widget: string
+      default: Shaka Chaa
+      required: false
+    - name: ko
+      label: 한국어
+      widget: string
+      default: 차영기
+      required: false
+- name: news
+  label: 소식과 공지 (The Fire)
+  label_singular: 소식
+  description: 소식, 공지, 언론 보도. 글마다 맨 위에서 갈래를 고른다.
+  folder: content/news
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}'
+  summary: '{{date}} {{title.ko}}'
+  sortable_fields:
+    fields:
+    - slug
+    default:
+      field: slug
+      direction: descending
+  fields:
+  - name: section
+    label: 갈래
+    widget: select
+    options:
+    - label: 소식
+      value: news
+    - label: 공지
+      value: announcements
+    - label: 언론 보도
+      value: press
+    default: news
+  - name: title
+    label: 제목
+    widget: object
+    fields:
+    - name: en
+      label: 영어 제목
+      widget: string
+    - name: ko
+      label: 한국어 제목
+      widget: string
+      required: false
+    - name: ja
+      label: 일본어 제목
+      widget: string
+      required: false
+    - name: zh
+      label: 중국어 제목
+      widget: string
+      required: false
+  - name: date
+    label: '날짜 (예: 2026-10-27)'
+    widget: string
+    required: false
+  - name: source
+    label: 매체 이름 (언론 보도일 때, 선택)
+    widget: string
+    required: false
+  - name: link
+    label: 원문 주소 (선택)
+    widget: string
+    required: false
+  - name: image
+    label: 사진 (선택)
+    widget: image
+    required: false
+  - name: body
+    label: 본문 (빈 줄로 단락을 나눈다)
+    widget: object
+    fields:
+    - name: en
+      label: 영어 본문
+      widget: text
+      required: false
+    - name: ko
+      label: 한국어 본문
+      widget: text
+      required: false
+    - name: ja
+      label: 일본어 본문
+      widget: text
+      required: false
+    - name: zh
+      label: 중국어 본문
+      widget: text
+      required: false
+- name: wbt
+  label: WBT 글
+  label_singular: WBT 글
+  description: WBT 여섯 갈래에 실리는 글. 글마다 맨 위에서 갈래를 고른다.
+  folder: content/wbt
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}'
+  summary: '{{title.ko}}'
+  sortable_fields:
+    fields:
+    - slug
+    default:
+      field: slug
+      direction: descending
+  fields:
+  - name: section
+    label: 갈래
+    widget: select
+    options:
+    - label: 투어 소개
+      value: tour
+    - label: 일정
+      value: season
+    - label: 대회
+      value: origins
+    - label: 순위
+      value: ranking
+    - label: 규정
+      value: rules
+    - label: 개최 신청
+      value: host
+    default: tour
+  - name: title
+    label: 제목
+    widget: object
+    fields:
+    - name: en
+      label: 영어 제목
+      widget: string
+    - name: ko
+      label: 한국어 제목
+      widget: string
+      required: false
+    - name: ja
+      label: 일본어 제목
+      widget: string
+      required: false
+    - name: zh
+      label: 중국어 제목
+      widget: string
+      required: false
+  - name: date
+    label: '날짜 (예: 2027-05-15, 선택)'
+    widget: string
+    required: false
+  - name: image
+    label: 사진 (선택)
+    widget: image
+    required: false
+  - name: body
+    label: 본문 (빈 줄로 단락을 나눈다)
+    widget: object
+    fields:
+    - name: en
+      label: 영어 본문
+      widget: text
+      required: false
+    - name: ko
+      label: 한국어 본문
+      widget: text
+      required: false
+    - name: ja
+      label: 일본어 본문
+      widget: text
+      required: false
+    - name: zh
+      label: 중국어 본문
+      widget: text
+      required: false
+- name: events
+  label: 대회 (Events)
+  label_singular: 대회
+  description: 대회 한 건이 한 편이다.
+  folder: content/events
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}'
+  summary: '{{year}} {{name.en}}'
+  sortable_fields:
+    fields:
+    - slug
+    default:
+      field: slug
+      direction: descending
+  fields:
+  - name: name
+    label: 대회 이름
+    widget: object
+    fields:
+    - name: en
+      label: 영어
+      widget: string
+    - name: ko
+      label: 한국어
+      widget: string
+      required: false
+  - name: status
+    label: 상태
+    widget: select
+    options:
+    - label: 다가오는 대회 (Upcoming)
+      value: upcoming
+    - label: 지난 대회 (Completed)
+      value: completed
+  - name: tier
+    label: 등급
+    widget: select
+    options:
+    - label: World Championship 세계선수권
+      value: world
+    - label: Pro Tour 프로 투어
+      value: tour
+    - label: Challenger Series 챌린저 시리즈
+      value: challenger
+    - label: Partner Event 협력 대회
+      value: partner
+    - label: National Event 국내 대회
+      value: national
+    - label: League 리그
+      value: league
+  - name: year
+    label: 연도
+    widget: number
+    value_type: int
+  - name: date
+    label: 날짜 (YYYY-MM-DD, 선택)
+    widget: string
+    required: false
+  - name: when
+    label: '날짜 대신 쓸 말 (예: May 2027, In preparation)'
+    widget: string
+    required: false
+  - name: place
+    label: 장소
+    widget: object
+    fields:
+    - name: en
+      label: 영어
+      widget: string
+      required: false
+    - name: ko
+      label: 한국어
+      widget: string
+      required: false
+  - name: nation
+    label: '국가 코드 (예: KR, JP, CN, US)'
+    widget: string
+    default: KR
+    required: false
+  - name: summary
+    label: 요약
+    widget: object
+    required: false
+    fields:
+    - name: en
+      label: 영어
+      widget: text
+      required: false
+    - name: ko
+      label: 한국어
+      widget: text
+      required: false
+  - name: id
+    label: 주소 이름 (비워 두면 영어 이름으로 자동 생성)
+    widget: string
+    required: false
+  - name: results
+    label: 결과
+    widget: list
+    required: false
+    collapsed: true
+    fields:
+    - name: rank
+      label: 순위
+      widget: string
+      required: false
+    - name: barbecuer
+      label: '프로바비큐어 주소 이름 (예: shaka-chaa)'
+      widget: string
+      required: false
+    - name: team
+      label: 팀 이름
+      widget: string
+      required: false
+    - name: score
+      label: 점수
+      widget: string
+      required: false
+  - name: table
+    label: 식탁의 이야기
+    widget: list
+    required: false
+    collapsed: true
+    fields:
+    - name: barbecuer
+      label: 프로바비큐어 주소 이름
+      widget: string
+      required: false
+    - name: team
+      label: 팀 이름
+      widget: string
+      required: false
+    - name: story
+      label: 이야기
+      widget: object
+      fields:
+      - name: en
+        label: 영어
+        widget: text
+        required: false
+      - name: ko
+        label: 한국어
+        widget: text
+        required: false
+  - name: ritual
+    label: 의례 메모
+    widget: list
+    required: false
+    collapsed: true
+    field:
+      name: note
+      label: 메모
+      widget: string
+  - name: acclaimed_by
+    label: 추대 메모
+    widget: string
+    required: false
+- name: chronicle
+  label: 기록 (Chronicle)
+  label_singular: 이야기
+  description: 대회 이야기 한 편이 한 편이다.
+  folder: content/chronicle
+  extension: json
+  format: json
+  create: true
+  delete: true
+  slug: '{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}'
+  summary: '{{date}} {{title.ko}}'
+  sortable_fields:
+    fields:
+    - slug
+    default:
+      field: slug
+      direction: descending
+  fields:
+  - name: date
+    label: 날짜 (YYYY-MM-DD)
+    widget: string
+    required: false
+  - name: title
+    label: 제목
+    widget: object
+    fields:
+    - name: en
+      label: 영어
+      widget: string
+    - name: ko
+      label: 한국어
+      widget: string
+      required: false
+  - name: text
+    label: 본문
+    widget: object
+    fields:
+    - name: en
+      label: 영어
+      widget: text
+      required: false
+    - name: ko
+      label: 한국어
+      widget: text
+      required: false
+  - name: event
+    label: 대회 주소 이름 (선택)
+    widget: string
+    required: false
+  - name: video
+    label: YouTube 주소 (선택)
+    widget: string
+    required: false
+  - name: image
+    label: 대표 이미지 (선택)
+    widget: image
+    required: false
+  - name: images
+    label: 사진 묶음 (선택, 첫 장이 크게 보인다)
+    widget: list
+    required: false
+    fields:
+    - name: src
+      label: 사진
+      widget: image
+    - name: alt
+      label: 사진 설명
+      widget: string
+      required: false
+  - name: id
+    label: 주소 이름 (선택)
+    widget: string
+    required: false
+- name: judges
+  label: 공식 심판 (Judges)
+  files:
   - name: judges
-    label: "공식 심판 (Judges)"
-    files:
-      - name: judges
-        label: "KOOBA 공식 심판"
-        file: data/judges.json
-        format: json
+    label: KOOBA 공식 심판
+    file: data/judges.json
+    format: json
+    fields:
+    - name: issuer
+      label: 발급 기관
+      widget: object
+      collapsed: true
+      fields:
+      - name: en
+        label: 영어
+        widget: string
+      - name: ko
+        label: 한국어
+        widget: string
+    - name: confirmed
+      label: 일괄 증명일 (YYYY-MM-DD)
+      widget: string
+    - name: judges
+      label: 심판 명단
+      label_singular: 심판
+      widget: list
+      summary: '{{fields.name.ko}}'
+      fields:
+      - name: name
+        label: 이름
+        widget: object
         fields:
-          - name: issuer
-            label: "발급 기관"
-            widget: object
-            collapsed: true
-            fields:
-              - { name: en, label: "영어", widget: string }
-              - { name: ko, label: "한국어", widget: string }
-          - { name: confirmed, label: "일괄 증명일 (YYYY-MM-DD)", widget: string }
-          - name: judges
-            label: "심판 명단"
-            label_singular: "심판"
-            widget: list
-            summary: "{{fields.name.ko}}"
-            fields:
-              - name: name
-                label: "이름"
-                widget: object
-                fields:
-                  - { name: ko, label: "한국어 이름", widget: string }
-                  - { name: en, label: "영문 이름 (예: Kim, Jae-goo)", widget: string }
-                  - { name: ja, label: "일본어 이름 (예: キム ジェグ)", widget: string, required: false }
-                  - { name: zh, label: "중국어 이름 (한자, 비우면 영문 이름)", widget: string, required: false }
-              - { name: photo, label: "사진 (정사각형)", widget: image }
-              - { name: certified, label: "자격 공인 연도 (예: 2012)", widget: string }
-              - { name: issued, label: "증명서 발급일 (YYYY-MM-DD)", widget: string }
-              - { name: reissued, label: "재발급 또는 갱신", widget: boolean, default: false }
-              - { name: no, label: "자격번호 (공인 연도-일련번호, 예: 2012-007)", widget: string }
-              - { name: id, label: "주소 이름 (영문 소문자와 하이픈)", widget: string, required: false }
-              - name: career
-                label: "심판 경력 (비우면 모든 완료 대회)"
-                widget: list
-                required: false
-                field: { name: event, label: "대회 주소 이름 (event id)", widget: string }
-
-  - name: wbt
-    label: "WBT 세계 바비큐 투어"
-    files:
-      - name: wbt
-        label: "WBT 여섯 갈래 (투어 소개, 시즌, 대회, 순위, 규정과 의식, 개최 도시)"
-        file: data/wbt.json
-        format: json
+        - name: ko
+          label: 한국어 이름
+          widget: string
+        - name: en
+          label: '영문 이름 (예: Kim, Jae-goo)'
+          widget: string
+        - name: ja
+          label: '일본어 이름 (예: キム ジェグ)'
+          widget: string
+          required: false
+        - name: zh
+          label: 중국어 이름 (한자, 비우면 영문 이름)
+          widget: string
+          required: false
+      - name: photo
+        label: 사진 (정사각형)
+        widget: image
+      - name: certified
+        label: '자격 공인 연도 (예: 2012)'
+        widget: string
+      - name: issued
+        label: 증명서 발급일 (YYYY-MM-DD)
+        widget: string
+      - name: reissued
+        label: 재발급 또는 갱신
+        widget: boolean
+        default: false
+      - name: 'no'
+        label: '자격번호 (공인 연도-일련번호, 예: 2012-007)'
+        widget: string
+      - name: id
+        label: 주소 이름 (영문 소문자와 하이픈)
+        widget: string
+        required: false
+      - name: career
+        label: 심판 경력 (비우면 모든 완료 대회)
+        widget: list
+        required: false
+        field:
+          name: event
+          label: 대회 주소 이름 (event id)
+          widget: string
+- name: settings
+  label: 설정 (자주 바꾸지 않는 것)
+  files:
+  - name: news-settings
+    label: '소식과 공지: 갈래 이름과 소개'
+    file: content/settings/news.json
+    format: json
+    fields:
+    - name: soon
+      label: 글이 없을 때 표시
+      widget: object
+      collapsed: true
+      fields:
+      - name: en
+        label: 영어
+        widget: string
+      - name: ko
+        label: 한국어
+        widget: string
+      - name: ja
+        label: 일본어
+        widget: string
+        required: false
+      - name: zh
+        label: 중국어
+        widget: string
+        required: false
+    - name: sections
+      label: 갈래 (소식, 공지, 언론 보도)
+      label_singular: 갈래
+      widget: list
+      allow_add: false
+      allow_remove: false
+      allow_reorder: false
+      summary: '{{fields.title.ko}}'
+      fields:
+      - name: id
+        label: 주소 이름 (바꾸지 말 것)
+        widget: string
+      - name: title
+        label: 갈래 이름
+        widget: object
+        collapsed: true
         fields:
-          - name: tagline
-            label: "표어"
-            widget: object
-            collapsed: true
-            fields:
-              - { name: en, label: "영어", widget: string }
-              - { name: ko, label: "한국어", widget: string }
-              - { name: ja, label: "일본어", widget: string, required: false }
-              - { name: zh, label: "중국어", widget: string, required: false }
-          - { name: full_name, label: "정식 명칭", widget: string }
-          - name: soon
-            label: "글이 없을 때 표시"
-            widget: object
-            collapsed: true
-            fields:
-              - { name: en, label: "영어", widget: string }
-              - { name: ko, label: "한국어", widget: string }
-              - { name: ja, label: "일본어", widget: string, required: false }
-              - { name: zh, label: "중국어", widget: string, required: false }
-          - name: sections
-            label: "갈래"
-            label_singular: "갈래"
-            widget: list
-            allow_add: false
-            allow_remove: false
-            allow_reorder: false
-            summary: "{{fields.title.ko}}"
-            fields:
-              - { name: id, label: "주소 이름 (바꾸지 말 것)", widget: string }
-              - name: title
-                label: "갈래 이름"
-                widget: object
-                collapsed: true
-                fields:
-                  - { name: en, label: "영어", widget: string }
-                  - { name: ko, label: "한국어", widget: string }
-                  - { name: ja, label: "일본어", widget: string, required: false }
-                  - { name: zh, label: "중국어", widget: string, required: false }
-              - name: lede
-                label: "갈래 소개 한 단락"
-                widget: object
-                collapsed: true
-                fields:
-                  - { name: en, label: "영어", widget: text }
-                  - { name: ko, label: "한국어", widget: text }
-                  - { name: ja, label: "일본어", widget: text, required: false }
-                  - { name: zh, label: "중국어", widget: text, required: false }
-              - name: posts
-                label: "글"
-                label_singular: "글"
-                widget: list
-                add_to_top: true
-                required: false
-                summary: "{{fields.title.ko}}"
-                fields:
-                  - name: title
-                    label: "제목"
-                    widget: object
-                    fields:
-                      - { name: en, label: "영어 제목", widget: string }
-                      - { name: ko, label: "한국어 제목", widget: string, required: false }
-                      - { name: ja, label: "일본어 제목", widget: string, required: false }
-                      - { name: zh, label: "중국어 제목", widget: string, required: false }
-                  - { name: date, label: "날짜 (예: 2027-05-15, 선택)", widget: string, required: false }
-                  - { name: image, label: "사진 (선택)", widget: image, required: false }
-                  - name: body
-                    label: "본문 (빈 줄로 단락을 나눈다)"
-                    widget: object
-                    fields:
-                      - { name: en, label: "영어 본문", widget: text, required: false }
-                      - { name: ko, label: "한국어 본문", widget: text, required: false }
-                      - { name: ja, label: "일본어 본문", widget: text, required: false }
-                      - { name: zh, label: "중국어 본문", widget: text, required: false }
-              - name: links
-                label: "이어지는 링크"
-                label_singular: "링크"
-                widget: list
-                required: false
-                fields:
-                  - { name: href, label: "주소", widget: string }
-                  - name: label
-                    label: "링크 글자"
-                    widget: object
-                    fields:
-                      - { name: en, label: "영어", widget: string }
-                      - { name: ko, label: "한국어", widget: string }
-                      - { name: ja, label: "일본어", widget: string, required: false }
-                      - { name: zh, label: "중국어", widget: string, required: false }
-
-  - name: news
-    label: "소식과 공지 (The Fire)"
-    files:
-      - name: news
-        label: "소식, 공지, 언론 보도"
-        file: data/news.json
-        format: json
+        - name: en
+          label: 영어
+          widget: string
+        - name: ko
+          label: 한국어
+          widget: string
+        - name: ja
+          label: 일본어
+          widget: string
+          required: false
+        - name: zh
+          label: 중국어
+          widget: string
+          required: false
+      - name: lede
+        label: 갈래 소개 한 단락
+        widget: object
+        collapsed: true
         fields:
-          - name: soon
-            label: "글이 없을 때 표시"
-            widget: object
-            collapsed: true
-            fields:
-              - { name: en, label: "영어", widget: string }
-              - { name: ko, label: "한국어", widget: string }
-              - { name: ja, label: "일본어", widget: string, required: false }
-              - { name: zh, label: "중국어", widget: string, required: false }
-          - name: sections
-            label: "갈래 (소식, 공지, 언론 보도)"
-            label_singular: "갈래"
-            widget: list
-            allow_add: false
-            allow_remove: false
-            allow_reorder: false
-            summary: "{{fields.title.ko}}"
-            fields:
-              - { name: id, label: "주소 이름 (바꾸지 말 것)", widget: string }
-              - name: title
-                label: "갈래 이름"
-                widget: object
-                collapsed: true
-                fields:
-                  - { name: en, label: "영어", widget: string }
-                  - { name: ko, label: "한국어", widget: string }
-                  - { name: ja, label: "일본어", widget: string, required: false }
-                  - { name: zh, label: "중국어", widget: string, required: false }
-              - name: lede
-                label: "갈래 소개 한 단락"
-                widget: object
-                collapsed: true
-                fields:
-                  - { name: en, label: "영어", widget: text }
-                  - { name: ko, label: "한국어", widget: text }
-                  - { name: ja, label: "일본어", widget: text, required: false }
-                  - { name: zh, label: "중국어", widget: text, required: false }
-              - name: posts
-                label: "글"
-                label_singular: "글"
-                widget: list
-                add_to_top: true
-                required: false
-                summary: "{{fields.date}} {{fields.title.ko}}"
-                fields:
-                  - name: title
-                    label: "제목"
-                    widget: object
-                    fields:
-                      - { name: en, label: "영어 제목", widget: string }
-                      - { name: ko, label: "한국어 제목", widget: string, required: false }
-                      - { name: ja, label: "일본어 제목", widget: string, required: false }
-                      - { name: zh, label: "중국어 제목", widget: string, required: false }
-                  - { name: date, label: "날짜 (예: 2026-10-27)", widget: string, required: false }
-                  - { name: source, label: "매체 이름 (언론 보도일 때, 선택)", widget: string, required: false }
-                  - { name: link, label: "원문 주소 (선택)", widget: string, required: false }
-                  - { name: image, label: "사진 (선택)", widget: image, required: false }
-                  - name: body
-                    label: "본문 (빈 줄로 단락을 나눈다)"
-                    widget: object
-                    fields:
-                      - { name: en, label: "영어 본문", widget: text, required: false }
-                      - { name: ko, label: "한국어 본문", widget: text, required: false }
-                      - { name: ja, label: "일본어 본문", widget: text, required: false }
-                      - { name: zh, label: "중국어 본문", widget: text, required: false }
+        - name: en
+          label: 영어
+          widget: text
+        - name: ko
+          label: 한국어
+          widget: text
+        - name: ja
+          label: 일본어
+          widget: text
+          required: false
+        - name: zh
+          label: 중국어
+          widget: text
+          required: false
+  - name: wbt-settings
+    label: 'WBT: 표어, 갈래 이름과 소개, 링크'
+    file: content/settings/wbt.json
+    format: json
+    fields:
+    - name: tagline
+      label: 표어
+      widget: object
+      collapsed: true
+      fields:
+      - name: en
+        label: 영어
+        widget: string
+      - name: ko
+        label: 한국어
+        widget: string
+      - name: ja
+        label: 일본어
+        widget: string
+        required: false
+      - name: zh
+        label: 중국어
+        widget: string
+        required: false
+    - name: full_name
+      label: 정식 명칭
+      widget: string
+    - name: soon
+      label: 글이 없을 때 표시
+      widget: object
+      collapsed: true
+      fields:
+      - name: en
+        label: 영어
+        widget: string
+      - name: ko
+        label: 한국어
+        widget: string
+      - name: ja
+        label: 일본어
+        widget: string
+        required: false
+      - name: zh
+        label: 중국어
+        widget: string
+        required: false
+    - name: sections
+      label: 갈래
+      label_singular: 갈래
+      widget: list
+      allow_add: false
+      allow_remove: false
+      allow_reorder: false
+      summary: '{{fields.title.ko}}'
+      fields:
+      - name: id
+        label: 주소 이름 (바꾸지 말 것)
+        widget: string
+      - name: title
+        label: 갈래 이름
+        widget: object
+        collapsed: true
+        fields:
+        - name: en
+          label: 영어
+          widget: string
+        - name: ko
+          label: 한국어
+          widget: string
+        - name: ja
+          label: 일본어
+          widget: string
+          required: false
+        - name: zh
+          label: 중국어
+          widget: string
+          required: false
+      - name: lede
+        label: 갈래 소개 한 단락
+        widget: object
+        collapsed: true
+        fields:
+        - name: en
+          label: 영어
+          widget: text
+        - name: ko
+          label: 한국어
+          widget: text
+        - name: ja
+          label: 일본어
+          widget: text
+          required: false
+        - name: zh
+          label: 중국어
+          widget: text
+          required: false
+      - name: links
+        label: 이어지는 링크
+        label_singular: 링크
+        widget: list
+        required: false
+        fields:
+        - name: href
+          label: 주소
+          widget: string
+        - name: label
+          label: 링크 글자
+          widget: object
+          fields:
+          - name: en
+            label: 영어
+            widget: string
+          - name: ko
+            label: 한국어
+            widget: string
+          - name: ja
+            label: 일본어
+            widget: string
+            required: false
+          - name: zh
+            label: 중국어
+            widget: string
+            required: false
+  - name: chronicle-settings
+    label: '기록: 머리말'
+    file: content/settings/chronicle.json
+    format: json
+    fields:
+    - name: intro
+      label: 머리말
+      widget: object
+      collapsed: true
+      fields:
+      - name: en
+        label: 영어
+        widget: text
+      - name: ko
+        label: 한국어
+        widget: text

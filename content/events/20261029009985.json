@@ -1,0 +1,162 @@
+{
+  "id": "2027-bbq-world-cup-las-vegas",
+  "name": {
+    "en": "BBQ World Cup & Expo 2027",
+    "ko": "바비큐 월드컵 앤 엑스포 2027",
+    "ja": "バーベキュー・ワールドカップ＆エキスポ 2027",
+    "zh": "烧烤世界杯暨博览会 2027"
+  },
+  "date": "2027-04-08",
+  "year": 2027,
+  "when": "8–11 April 2027",
+  "place": {
+    "en": "Las Vegas, United States",
+    "ko": "미국 라스베이거스",
+    "ja": "アメリカ・ラスベガス",
+    "zh": "美国拉斯维加斯"
+  },
+  "nation": "US",
+  "tier": "international",
+  "kind": "external",
+  "status": "upcoming",
+  "summary": {
+    "en": "The first world championship of competition barbecue. One hundred teams, qualified through events in the United States and twelve other countries, cook for a prize of one million dollars on the Las Vegas Strip.",
+    "ko": "컴페티션 바비큐의 첫 세계 결선이다. 미국과 12개국의 예선을 거친 100개 팀이 라스베이거스 스트립에서 상금 100만 달러를 두고 겨룬다.",
+    "ja": "コンペティション・バーベキュー初の世界決勝。アメリカと12か国の予選を勝ち抜いた100チームが、ラスベガス・ストリップで賞金100万ドルをかけて競う。",
+    "zh": "竞技烧烤的首届世界总决赛。经美国及12个国家预选赛选出的100支队伍，在拉斯维加斯大道角逐100万美元奖金。"
+  },
+  "facts": [
+    {
+      "label": {
+        "en": "Dates",
+        "ko": "일정",
+        "ja": "日程",
+        "zh": "日期"
+      },
+      "value": {
+        "en": "8–11 April 2027 (four days)",
+        "ko": "2027년 4월 8일~11일 (4일간)",
+        "ja": "2027年4月8日～11日（4日間）",
+        "zh": "2027年4月8日至11日（共四天）"
+      }
+    },
+    {
+      "label": {
+        "en": "Venue",
+        "ko": "장소",
+        "ja": "会場",
+        "zh": "地点"
+      },
+      "value": {
+        "en": "Lot C on the Las Vegas Strip, beside Caesars Forum and behind the High Roller wheel (six and a half acres)",
+        "ko": "라스베이거스 스트립 Lot C, 시저스 포럼 옆, 하이롤러 대관람차 뒤 (약 2만 6천㎡)",
+        "ja": "ラスベガス・ストリップのLot C、シーザーズ・フォーラム隣、ハイローラー観覧車の裏（約2万6千㎡）",
+        "zh": "拉斯维加斯大道 Lot C，凯撒论坛会议中心旁、豪客摩天轮后方（约2.6万平方米）"
+      }
+    },
+    {
+      "label": {
+        "en": "Host",
+        "ko": "개최",
+        "ja": "開催",
+        "zh": "承办"
+      },
+      "value": {
+        "en": "BBQ United, hosted by Caesars Entertainment",
+        "ko": "BBQ United 주최, 시저스 엔터테인먼트 개최",
+        "ja": "BBQ United主催、シーザーズ・エンターテインメント開催",
+        "zh": "BBQ United主办，凯撒娱乐承办"
+      }
+    },
+    {
+      "label": {
+        "en": "Founders",
+        "ko": "창설자",
+        "ja": "創設者",
+        "zh": "创办人"
+      },
+      "value": {
+        "en": "Scott Erdmann (CEO) and Shannon Pruitt (President)",
+        "ko": "스콧 에르드만(CEO), 섀넌 프루잇(사장)",
+        "ja": "スコット・アードマン（CEO）、シャノン・プルイット（社長）",
+        "zh": "斯科特·厄德曼（首席执行官）、香农·普鲁伊特（总裁）"
+      }
+    },
+    {
+      "label": {
+        "en": "Prize",
+        "ko": "상금",
+        "ja": "賞金",
+        "zh": "奖金"
+      },
+      "value": {
+        "en": "US$1,000,000",
+        "ko": "100만 달러",
+        "ja": "100万ドル",
+        "zh": "100万美元"
+      }
+    },
+    {
+      "label": {
+        "en": "Field",
+        "ko": "출전",
+        "ja": "出場",
+        "zh": "参赛"
+      },
+      "value": {
+        "en": "100 teams",
+        "ko": "100개 팀",
+        "ja": "100チーム",
+        "zh": "100支队伍"
+      }
+    },
+    {
+      "label": {
+        "en": "Qualifying",
+        "ko": "예선",
+        "ja": "予選",
+        "zh": "预选"
+      },
+      "value": {
+        "en": "Season One, Road to $1 Million: about 50 qualifiers in the United States and 12 countries (Australia, Belgium, Brazil, Canada, Croatia, France, Lithuania, Mexico, New Zealand, South Africa, UAE, UK)",
+        "ko": "시즌 1, Road to $1 Million. 미국과 12개국(호주, 벨기에, 브라질, 캐나다, 크로아티아, 프랑스, 리투아니아, 멕시코, 뉴질랜드, 남아공, 아랍에미리트, 영국)에서 약 50개 예선",
+        "ja": "シーズン1「Road to $1 Million」。アメリカと12か国（オーストラリア、ベルギー、ブラジル、カナダ、クロアチア、フランス、リトアニア、メキシコ、ニュージーランド、南アフリカ、UAE、イギリス）で約50の予選",
+        "zh": "第一季“Road to $1 Million”：在美国及12个国家（澳大利亚、比利时、巴西、加拿大、克罗地亚、法国、立陶宛、墨西哥、新西兰、南非、阿联酋、英国）举办约50场预选赛"
+      }
+    },
+    {
+      "label": {
+        "en": "Format",
+        "ko": "형식",
+        "ja": "形式",
+        "zh": "赛制"
+      },
+      "value": {
+        "en": "Cut rounds on Friday and Saturday narrow the field before the final day; festival campus with concert stage and the first BBQ World Expo",
+        "ko": "금요일과 토요일에 절반 이상을 탈락시키는 컷 방식. 공연 무대와 첫 바비큐 월드 엑스포가 함께 열리는 축제형 행사",
+        "ja": "金曜と土曜に半数以上が脱落するカット方式。コンサートステージと初のバーベキュー・ワールド・エキスポを併設",
+        "zh": "周五与周六淘汰过半队伍的晋级制，同期设有音乐舞台与首届烧烤世界博览会"
+      }
+    },
+    {
+      "label": {
+        "en": "Official site",
+        "ko": "공식 사이트",
+        "ja": "公式サイト",
+        "zh": "官方网站"
+      },
+      "value": {
+        "en": "bbqworldcup.com",
+        "ko": "bbqworldcup.com",
+        "ja": "bbqworldcup.com",
+        "zh": "bbqworldcup.com"
+      },
+      "href": "https://bbqworldcup.com"
+    }
+  ],
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "federation"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "2010-mungyeong-hanton",
+  "name": {
+    "en": "Mungyeong Hanton Low-Fat Cuts Competition",
+    "ko": "문경 한돈 저지방부위 경기대회",
+    "ja": "聞慶 韓豚低脂肪部位競技大会",
+    "zh": "闻庆韩猪低脂部位烹饪大赛"
+  },
+  "date": "",
+  "year": 2010,
+  "place": {
+    "en": "Mungyeong",
+    "ko": "문경",
+    "ja": "聞慶",
+    "zh": "闻庆"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "Hosted by KOOBA.",
+    "ko": "KOOBA 주최.",
+    "ja": "KOOBA主催。",
+    "zh": "KOOBA主办。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "gallery": [
+    {
+      "src": "assets/img/events/2010-mungyeong-1.webp",
+      "thumb": "assets/img/events/2010-mungyeong-1-t.webp",
+      "caption": {
+        "en": "Grilling at night",
+        "ko": "밤의 경기 장면",
+        "ja": "夜の競技の場面",
+        "zh": "夜间比赛现场"
+      }
+    },
+    {
+      "src": "assets/img/events/2010-mungyeong-2.webp",
+      "thumb": "assets/img/events/2010-mungyeong-2-t.webp",
+      "caption": {
+        "en": "The contest ground",
+        "ko": "대회 현장",
+        "ja": "大会の会場",
+        "zh": "比赛现场"
+      }
+    }
+  ]
+}

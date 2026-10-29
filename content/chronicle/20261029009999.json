@@ -1,0 +1,60 @@
+{
+  "id": "founding-general-meeting",
+  "date": "2018-12-08",
+  "title": {
+    "en": "The Founding General Meeting",
+    "ko": "창립총회",
+    "ja": "創立総会",
+    "zh": "创立大会"
+  },
+  "text": {
+    "en": "At 7 pm on 8 December 2018, the Founding General Meeting of the International Outdoor Barbecue Sports Federation was held in Seoul. Korea led, with Japan, Malaysia and the Philippines.\n\nThe meeting adopted the articles of the Federation and appointed its founding officers. The representatives of Korea and Japan took up their member plaques and shook hands.\n\nAround one table, sharing one meal, the Federation took its first step as a community before the fire.",
+    "ko": "2018년 12월 8일 저녁 7시, 서울에서 국제아웃도어바비큐스포츠연맹 창립총회가 열렸다. 한국이 주도하고 일본, 말레이시아, 필리핀이 함께했다.\n\n이날 연맹의 정관을 채택하고 창립 임원을 선임했다. 한국과 일본의 대표는 회원국 현판을 나눠 들고 손을 맞잡았다.\n\n한 식탁에 둘러앉아 한 끼를 나누며, 연맹은 불 앞의 공동체로 첫걸음을 내디뎠다.",
+    "ja": "2018年12月8日午後7時、ソウルで国際アウトドアバーベキュースポーツ連盟の創立総会が開かれた。韓国が主導し、日本、マレーシア、フィリピンがともにした。\n\nこの日、連盟の定款を採択し、創立役員を選任した。韓国と日本の代表は会員国の銘板を分け持ち、手を握り合った。\n\n一つの食卓を囲み、一つの食事を分かち合いながら、連盟は火の前の共同体として第一歩を踏み出した。",
+    "zh": "2018年12月8日晚7点，国际户外烧烤运动联合会创立大会在首尔举行。由韩国主导，日本、马来西亚、菲律宾共同参与。\n\n当天通过了联合会章程，并选任了创始管理人员。韩国与日本的代表各自举起会员国铭牌，彼此握手。\n\n围坐同一张餐桌，分享同一餐饭，联合会作为火前的共同体迈出了第一步。"
+  },
+  "event": "",
+  "video": "",
+  "images": [
+    {
+      "src": "assets/img/chronicle/founding-banner.jpg",
+      "alt": "Banner of the Founding General Meeting, 8 December 2018",
+      "caption": {
+        "en": "Founding General Meeting, Seoul, 8 December 2018",
+        "ko": "2018년 12월 8일, 서울 창립총회",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "src": "assets/img/chronicle/founding-plaques.jpg",
+      "alt": "The representatives of Japan and Korea with their member plaques",
+      "caption": {
+        "en": "Japan and Korea take up their member plaques",
+        "ko": "회원국 현판을 든 일본과 한국 대표",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "src": "assets/img/chronicle/founding-meeting.jpg",
+      "alt": "Delegates at the founding meeting",
+      "caption": {
+        "en": "The delegates in session",
+        "ko": "회의에 임한 대표들",
+        "ja": "",
+        "zh": ""
+      }
+    },
+    {
+      "src": "assets/img/chronicle/founding-group.jpg",
+      "alt": "Founding members around the table",
+      "caption": {
+        "en": "One table, one meal",
+        "ko": "한 식탁, 한 끼의 나눔",
+        "ja": "",
+        "zh": ""
+      }
+    }
+  ]
+}

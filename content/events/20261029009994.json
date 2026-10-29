@@ -1,0 +1,45 @@
+{
+  "id": "2013-namwon-invitational",
+  "name": {
+    "en": "Namwon Invitational Barbecue Competition",
+    "ko": "남원 초청 바비큐 경기대회",
+    "ja": "南原招待バーベキュー競技大会",
+    "zh": "南原邀请烧烤大赛"
+  },
+  "date": "",
+  "year": 2013,
+  "place": {
+    "en": "Namwon",
+    "ko": "남원",
+    "ja": "南原",
+    "zh": "南原"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "With Namwon City. Held from 1 to 5 August 2013 as part of the Herb and Black Food Festival in Namwon.",
+    "ko": "남원시와 함께. 2013년 8월 1일부터 5일까지 남원 허브 앤 블랙푸드 페스티벌에서 열렸다.",
+    "ja": "南原市と共に。2013年8月1日から5日まで、南原ハーブ＆ブラックフード・フェスティバルで開かれた。",
+    "zh": "与南原市合办。2013年8月1日至5日在南原香草与黑色食品节期间举行。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "gallery": [
+    {
+      "kind": "video",
+      "src": "assets/img/events/2013-namwon-v1.mp4",
+      "poster": "assets/img/events/2013-namwon-v1.jpg",
+      "caption": {
+        "en": "Awards ceremony",
+        "ko": "시상식",
+        "ja": "表彰式",
+        "zh": "颁奖典礼"
+      }
+    }
+  ],
+  "when": "1–5 Aug 2013"
+}

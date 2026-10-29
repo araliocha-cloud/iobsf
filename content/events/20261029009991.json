@@ -1,0 +1,95 @@
+{
+  "id": "2013-korea-open-cheonan",
+  "name": {
+    "en": "Korea Open Cheonan Barbecue Championship",
+    "ko": "코리아오픈 천안 바비큐 챔피언쉽",
+    "ja": "コリアオープン天安バーベキュー選手権",
+    "zh": "韩国公开赛天安烧烤锦标赛"
+  },
+  "date": "",
+  "year": 2013,
+  "place": {
+    "en": "Cheonan",
+    "ko": "천안",
+    "ja": "天安",
+    "zh": "天安"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "Hosted by KOOBA. Held under the title 2013 Korea Open Handon Cup Barbecue Championship, with prizes in the Professional and Expert divisions.",
+    "ko": "KOOBA 주최. 2013 코리아오픈 한돈컵 바비큐 챔피언십이라는 이름으로 열렸고, 프로페셔널과 엑스퍼트 부문으로 시상했다.",
+    "ja": "KOOBA主催。2013コリアオープン韓豚カップ・バーベキュー選手権の名で開かれ、プロフェッショナルとエキスパートの部門で表彰した。",
+    "zh": "KOOBA主办。以2013韩国公开赛韩猪杯烧烤锦标赛之名举行，设职业组与专家组颁奖。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "gallery": [
+    {
+      "src": "assets/img/events/2013-cheonan-1.webp",
+      "thumb": "assets/img/events/2013-cheonan-1-t.webp",
+      "caption": {
+        "en": "Opening address",
+        "ko": "개회 인사",
+        "ja": "開会の挨拶",
+        "zh": "开幕致辞"
+      }
+    },
+    {
+      "src": "assets/img/events/2013-cheonan-2.webp",
+      "thumb": "assets/img/events/2013-cheonan-2-t.webp",
+      "caption": {
+        "en": "At the grill",
+        "ko": "경기 장면",
+        "ja": "競技の場面",
+        "zh": "比赛现场"
+      }
+    },
+    {
+      "src": "assets/img/events/2013-cheonan-3.webp",
+      "thumb": "assets/img/events/2013-cheonan-3-t.webp",
+      "caption": {
+        "en": "Preparing the meat",
+        "ko": "고기 손질",
+        "ja": "肉の仕込み",
+        "zh": "处理肉品"
+      }
+    },
+    {
+      "src": "assets/img/events/2013-cheonan-4.webp",
+      "thumb": "assets/img/events/2013-cheonan-4-t.webp",
+      "caption": {
+        "en": "Awards ceremony",
+        "ko": "시상식",
+        "ja": "表彰式",
+        "zh": "颁奖典礼"
+      }
+    },
+    {
+      "kind": "video",
+      "src": "assets/img/events/2013-cheonan-v1.mp4",
+      "poster": "assets/img/events/2013-cheonan-v1.jpg",
+      "caption": {
+        "en": "Night concert on the festival stage",
+        "ko": "축제 무대의 밤 공연",
+        "ja": "祭りの舞台の夜の公演",
+        "zh": "节庆舞台的夜间演出"
+      }
+    },
+    {
+      "kind": "video",
+      "src": "assets/img/events/2013-cheonan-v2.mp4",
+      "poster": "assets/img/events/2013-cheonan-v2.jpg",
+      "caption": {
+        "en": "Families at the night festival",
+        "ko": "밤 축제를 즐기는 가족",
+        "ja": "夜の祭りを楽しむ家族",
+        "zh": "享受夜间节庆的家庭"
+      }
+    }
+  ]
+}

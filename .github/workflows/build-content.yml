@@ -1,0 +1,33 @@
+# The admin writes one file per post under content/.
+# This puts them together into the data files the site reads, then asks GitHub Pages to publish.
+name: Build content
+on:
+  push:
+    branches: [main]
+    paths: ["content/**", "tools/build_content.py"]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: build-content
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/build_content.py .
+      - name: Commit data
+        run: |
+          if git diff --quiet -- data; then echo "no change"; exit 0; fi
+          git config user.name "IOBSF admin"
+          git config user.email "admin@iobsf.org"
+          git add data
+          git commit -m "Build data from content"
+          git pull --rebase origin main
+          git push
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || true

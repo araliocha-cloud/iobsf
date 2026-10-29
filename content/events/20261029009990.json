@@ -1,0 +1,93 @@
+{
+  "id": "2014-national-outdoor-folk-games",
+  "name": {
+    "en": "1st National Outdoor Folk Games Competition",
+    "ko": "제1회 전국 아웃도어 민속놀이 경기대회",
+    "ja": "第1回全国アウトドア民俗遊び競技大会",
+    "zh": "第一届全国户外民俗游戏大赛"
+  },
+  "date": "2014-02-15",
+  "year": 2014,
+  "place": {
+    "en": "Yangpyeong",
+    "ko": "양평",
+    "ja": "楊平",
+    "zh": "杨平"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "Hosted by KOOBA.",
+    "ko": "KOOBA 주최.",
+    "ja": "KOOBA主催。",
+    "zh": "KOOBA主办。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "gallery": [
+    {
+      "src": "assets/img/events/2014-yangpyeong-1.webp",
+      "thumb": "assets/img/events/2014-yangpyeong-1-t.webp",
+      "caption": {
+        "en": "The stage",
+        "ko": "대회 무대",
+        "ja": "大会の舞台",
+        "zh": "比赛舞台"
+      }
+    },
+    {
+      "src": "assets/img/events/2014-yangpyeong-2.webp",
+      "thumb": "assets/img/events/2014-yangpyeong-2-t.webp",
+      "caption": {
+        "en": "Tuho, the arrow toss",
+        "ko": "투호",
+        "ja": "投壺",
+        "zh": "投壶"
+      }
+    },
+    {
+      "src": "assets/img/events/2014-yangpyeong-3.webp",
+      "thumb": "assets/img/events/2014-yangpyeong-3-t.webp",
+      "caption": {
+        "en": "Brackets for each game",
+        "ko": "종목별 대진표",
+        "ja": "種目別の対戦表",
+        "zh": "各项目对阵表"
+      }
+    },
+    {
+      "src": "assets/img/events/2014-yangpyeong-4.webp",
+      "thumb": "assets/img/events/2014-yangpyeong-4-t.webp",
+      "caption": {
+        "en": "Children at the game table",
+        "ko": "어린이 경기",
+        "ja": "子どもの競技",
+        "zh": "儿童比赛"
+      }
+    },
+    {
+      "src": "assets/img/events/2014-yangpyeong-5.webp",
+      "thumb": "assets/img/events/2014-yangpyeong-5-t.webp",
+      "caption": {
+        "en": "Children at the game table",
+        "ko": "어린이 경기",
+        "ja": "子どもの競技",
+        "zh": "儿童比赛"
+      }
+    },
+    {
+      "src": "assets/img/events/2014-yangpyeong-6.webp",
+      "thumb": "assets/img/events/2014-yangpyeong-6-t.webp",
+      "caption": {
+        "en": "Children at the game table",
+        "ko": "어린이 경기",
+        "ja": "子どもの競技",
+        "zh": "儿童比赛"
+      }
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "2016-masters-icheon",
+  "name": {
+    "en": "Korea Barbecue Masters, Icheon",
+    "ko": "코리아 바비큐 마스터즈 이천대회",
+    "ja": "コリア・バーベキュー・マスターズ利川大会",
+    "zh": "韩国烧烤大师赛利川大会"
+  },
+  "date": "",
+  "year": 2016,
+  "place": {
+    "en": "Icheon",
+    "ko": "이천",
+    "ja": "利川",
+    "zh": "利川"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "Hosted by KOOBA. Held as the 2016 Gyeonggi Local Livestock Barbecue Masters, Icheon, on the outdoor stage of Seolbong Park.",
+    "ko": "KOOBA 주최. 2016 경기도 로컬축산물 바비큐 마스터즈 이천대회로 이천 설봉공원 야외무대에서 열렸다.",
+    "ja": "KOOBA主催。2016京畿道ローカル畜産物バーベキュー・マスターズ利川大会として、利川雪峰公園の野外舞台で開かれた。",
+    "zh": "KOOBA主办。以2016京畿道本地畜产品烧烤大师赛利川大会之名，在利川雪峰公园露天舞台举行。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "gallery": [
+    {
+      "src": "assets/img/events/2016-icheon-1.webp",
+      "thumb": "assets/img/events/2016-icheon-1-t.webp",
+      "caption": {
+        "en": "Awards ceremony",
+        "ko": "시상식",
+        "ja": "表彰式",
+        "zh": "颁奖典礼"
+      },
+      "credit": {
+        "en": "Photo: Domin Ilbo",
+        "ko": "사진: 도민일보"
+      }
+    }
+  ]
+}

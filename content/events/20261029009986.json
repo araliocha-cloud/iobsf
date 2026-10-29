@@ -1,0 +1,54 @@
+{
+  "id": "2017-masters-yeoju",
+  "name": {
+    "en": "Korea Barbecue Masters, Yeoju",
+    "ko": "코리아 바비큐 마스터즈 여주대회",
+    "ja": "コリア・バーベキュー・マスターズ驪州大会",
+    "zh": "韩国烧烤大师赛骊州大会"
+  },
+  "date": "",
+  "year": 2017,
+  "place": {
+    "en": "Yeoju",
+    "ko": "여주",
+    "ja": "驪州",
+    "zh": "骊州"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "Hosted by KOOBA. Held as the 2017 Gyeonggi Local Barbecue Masters in Yeoju, from 15 to 17 September 2017, at the special arena of Yeoju Rural Theme Park. Competitors could sell their barbecue to visitors.",
+    "ko": "KOOBA 주최. 2017 경기 로컬 바비큐 마스터즈 여주대회로 2017년 9월 15일부터 17일까지 여주 농촌테마공원 특별경기장에서 열렸다. 참가팀은 만든 바비큐를 관람객에게 판매할 수 있었다.",
+    "ja": "KOOBA主催。2017京畿ローカル・バーベキュー・マスターズ驪州大会として、2017年9月15日から17日まで驪州農村テーマパーク特設競技場で開かれた。参加チームは作ったバーベキューを観覧客に販売できた。",
+    "zh": "KOOBA主办。以2017京畿本地烧烤大师赛骊州大会之名，于2017年9月15日至17日在骊州农村主题公园特设赛场举行。参赛队伍可向观众出售自己制作的烧烤。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "gallery": [
+    {
+      "src": "assets/img/events/2017-yeoju-1.webp",
+      "thumb": "assets/img/events/2017-yeoju-1-t.webp",
+      "caption": {
+        "en": "Expert division, third place",
+        "ko": "엑스퍼트 부문 3위 시상",
+        "ja": "エキスパート部門3位の表彰",
+        "zh": "专家组第三名颁奖"
+      }
+    },
+    {
+      "src": "assets/img/events/2017-yeoju-2.webp",
+      "thumb": "assets/img/events/2017-yeoju-2-t.webp",
+      "caption": {
+        "en": "Awards ceremony",
+        "ko": "시상식",
+        "ja": "表彰式",
+        "zh": "颁奖典礼"
+      }
+    }
+  ],
+  "when": "15–17 Sep 2017"
+}

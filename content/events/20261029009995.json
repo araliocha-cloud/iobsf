@@ -1,0 +1,104 @@
+{
+  "id": "2012-namwon-invitational",
+  "name": {
+    "en": "Namwon Invitational Barbecue Competition",
+    "ko": "남원 초청 바비큐 경기대회",
+    "ja": "南原招待バーベキュー競技大会",
+    "zh": "南原邀请烧烤大赛"
+  },
+  "date": "",
+  "year": 2012,
+  "place": {
+    "en": "Namwon",
+    "ko": "남원",
+    "ja": "南原",
+    "zh": "南原"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "With Namwon City. Held from 7 to 9 September 2012 as part of the Herb and Black Food Festival in Namwon.",
+    "ko": "남원시와 함께. 2012년 9월 7일부터 9일까지 남원 허브 앤 블랙푸드 페스티벌에서 열렸다.",
+    "ja": "南原市と共に。2012年9月7日から9日まで、南原ハーブ＆ブラックフード・フェスティバルで開かれた。",
+    "zh": "与南原市合办。2012年9月7日至9日在南原香草与黑色食品节期间举行。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "gallery": [
+    {
+      "src": "assets/img/events/2012-namwon-1.webp",
+      "thumb": "assets/img/events/2012-namwon-1-t.webp",
+      "caption": {
+        "en": "Cheering participants",
+        "ko": "응원하는 참가자들",
+        "ja": "応援する参加者",
+        "zh": "欢呼的参赛者"
+      }
+    },
+    {
+      "src": "assets/img/events/2012-namwon-6.webp",
+      "thumb": "assets/img/events/2012-namwon-6-t.webp",
+      "caption": {
+        "en": "A competitor's joy",
+        "ko": "참가자의 환호",
+        "ja": "参加者の歓声",
+        "zh": "参赛者的欢呼"
+      }
+    },
+    {
+      "src": "assets/img/events/2012-namwon-2.webp",
+      "thumb": "assets/img/events/2012-namwon-2-t.webp",
+      "caption": {
+        "en": "Awards ceremony",
+        "ko": "시상식",
+        "ja": "表彰式",
+        "zh": "颁奖典礼"
+      }
+    },
+    {
+      "src": "assets/img/events/2012-namwon-7.webp",
+      "thumb": "assets/img/events/2012-namwon-7-t.webp",
+      "caption": {
+        "en": "Prize winners",
+        "ko": "수상팀",
+        "ja": "受賞チーム",
+        "zh": "获奖队伍"
+      }
+    },
+    {
+      "src": "assets/img/events/2012-namwon-3.webp",
+      "thumb": "assets/img/events/2012-namwon-3-t.webp",
+      "caption": {
+        "en": "Team briefing",
+        "ko": "경기 전 설명",
+        "ja": "競技前の説明",
+        "zh": "赛前说明"
+      }
+    },
+    {
+      "src": "assets/img/events/2012-namwon-4.webp",
+      "thumb": "assets/img/events/2012-namwon-4-t.webp",
+      "caption": {
+        "en": "Tasting",
+        "ko": "시식",
+        "ja": "試食",
+        "zh": "品尝"
+      }
+    },
+    {
+      "src": "assets/img/events/2012-namwon-5.webp",
+      "thumb": "assets/img/events/2012-namwon-5-t.webp",
+      "caption": {
+        "en": "Sharing at the table",
+        "ko": "나눔의 식탁",
+        "ja": "分かち合いの食卓",
+        "zh": "分享的餐桌"
+      }
+    }
+  ],
+  "when": "7–9 Sep 2012"
+}

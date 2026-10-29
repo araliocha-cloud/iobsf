@@ -1,0 +1,63 @@
+{
+  "id": "2010-yeongdong-amateur",
+  "name": {
+    "en": "Yeongdong Amateur Barbecue Contest",
+    "ko": "영동 아마추어 바비큐 컨테스트",
+    "ja": "永同アマチュア・バーベキュー・コンテスト",
+    "zh": "永同业余烧烤大赛"
+  },
+  "date": "",
+  "year": 2010,
+  "place": {
+    "en": "Yeongdong",
+    "ko": "영동",
+    "ja": "永同",
+    "zh": "永同"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "Hosted by KOOBA.",
+    "ko": "KOOBA 주최.",
+    "ja": "KOOBA主催。",
+    "zh": "KOOBA主办。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "gallery": [
+    {
+      "src": "assets/img/events/2010-yeongdong-1.webp",
+      "thumb": "assets/img/events/2010-yeongdong-1-t.webp",
+      "caption": {
+        "en": "Awards ceremony",
+        "ko": "시상식",
+        "ja": "表彰式",
+        "zh": "颁奖典礼"
+      }
+    },
+    {
+      "src": "assets/img/events/2010-yeongdong-2.webp",
+      "thumb": "assets/img/events/2010-yeongdong-2-t.webp",
+      "caption": {
+        "en": "Prize presentation",
+        "ko": "상금 수여",
+        "ja": "賞金の授与",
+        "zh": "颁发奖金"
+      }
+    },
+    {
+      "src": "assets/img/events/2010-yeongdong-3.webp",
+      "thumb": "assets/img/events/2010-yeongdong-3-t.webp",
+      "caption": {
+        "en": "Winners",
+        "ko": "수상자",
+        "ja": "受賞者",
+        "zh": "获奖者"
+      }
+    }
+  ]
+}

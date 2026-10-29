@@ -1,0 +1,47 @@
+{
+  "id": "2015-hongseong-carnival",
+  "name": {
+    "en": "Hongseong Outdoor Barbecue Carnival",
+    "ko": "홍성 아웃도어 바비큐 카니발",
+    "ja": "洪城アウトドア・バーベキュー・カーニバル",
+    "zh": "洪城户外烧烤嘉年华"
+  },
+  "date": "",
+  "year": 2015,
+  "place": {
+    "en": "Hongseong",
+    "ko": "홍성",
+    "ja": "洪城",
+    "zh": "洪城"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "Hosted by KOOBA.",
+    "ko": "KOOBA 주최.",
+    "ja": "KOOBA主催。",
+    "zh": "KOOBA主办。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "gallery": [
+    {
+      "src": "assets/img/events/2015-hongseong-1.webp",
+      "thumb": "assets/img/events/2015-hongseong-1-t.webp",
+      "caption": {
+        "en": "Roasting over open fire",
+        "ko": "장작불 통구이",
+        "ja": "薪火の丸焼き",
+        "zh": "柴火整烤"
+      },
+      "credit": {
+        "en": "Photo: Economic Review",
+        "ko": "사진: 이코노믹리뷰"
+      }
+    }
+  ]
+}

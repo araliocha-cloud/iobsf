@@ -1,0 +1,54 @@
+{
+  "id": "2013-jaraseom-rhythm-barbecue",
+  "name": {
+    "en": "Gapyeong Jaraseom Rhythm & Barbecue Festival",
+    "ko": "가평 자라섬 리듬 앤 바비큐 페스티벌",
+    "ja": "加平チャラ島リズム＆バーベキュー・フェスティバル",
+    "zh": "加平紫岛节奏与烧烤音乐节"
+  },
+  "date": "",
+  "year": 2013,
+  "place": {
+    "en": "Gapyeong",
+    "ko": "가평",
+    "ja": "加平",
+    "zh": "加平"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "Hosted by KOOBA. A spring festival of barbecue and jazz on Jarasum Island, Gapyeong, held on 17 and 18 May 2013. About 7,000 people came over the two days.",
+    "ko": "KOOBA 주최. 2013년 5월 17일과 18일 가평 자라섬에서 열린 바비큐와 재즈의 봄 축제. 이틀 동안 약 7천 명이 찾았다.",
+    "ja": "KOOBA主催。2013年5月17日と18日に加平チャラ島で開かれたバーベキューとジャズの春の祭り。2日間で約7千人が訪れた。",
+    "zh": "KOOBA主办。2013年5月17日至18日在加平紫岛举行的烧烤与爵士春季节庆，两天约有7千人到场。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "when": "17–18 May 2013",
+  "gallery": [
+    {
+      "src": "assets/img/events/2013-jaraseom-1.webp",
+      "thumb": "assets/img/events/2013-jaraseom-1-t.webp",
+      "caption": {
+        "en": "Grill tables on the lawn",
+        "ko": "잔디밭의 그릴 테이블",
+        "ja": "芝生のグリルテーブル",
+        "zh": "草坪上的烤炉餐桌"
+      }
+    },
+    {
+      "src": "assets/img/events/2013-jaraseom-2.webp",
+      "thumb": "assets/img/events/2013-jaraseom-2-t.webp",
+      "caption": {
+        "en": "Booths",
+        "ko": "부스 거리",
+        "ja": "ブース通り",
+        "zh": "展位街"
+      }
+    }
+  ]
+}

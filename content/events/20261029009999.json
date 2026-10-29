@@ -1,0 +1,143 @@
+{
+  "id": "2025-korea-japan-sca-asia",
+  "name": {
+    "en": "KOREA × JAPAN SCA Asia STEAK COOK OFF in KOREA",
+    "ko": "KOREA × JAPAN SCA Asia STEAK COOK OFF in KOREA",
+    "ja": "",
+    "zh": ""
+  },
+  "date": "",
+  "year": 2025,
+  "place": {
+    "en": "Korea",
+    "ko": "대한민국",
+    "ja": "",
+    "zh": ""
+  },
+  "nation": "KR",
+  "tier": "partner",
+  "status": "completed",
+  "summary": {
+    "en": "Details and results to be recorded.",
+    "ko": "상세 내용과 결과를 기록할 예정이다.",
+    "ja": "",
+    "zh": ""
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "federation",
+  "gallery": [
+    {
+      "src": "assets/img/events/2025-korea-japan-1.webp",
+      "thumb": "assets/img/events/2025-korea-japan-1-t.webp",
+      "caption": {
+        "en": "Winners",
+        "ko": "수상자",
+        "ja": "受賞者",
+        "zh": "获奖者"
+      }
+    },
+    {
+      "src": "assets/img/events/2025-korea-japan-2.webp",
+      "thumb": "assets/img/events/2025-korea-japan-2-t.webp",
+      "caption": {
+        "en": "Participants",
+        "ko": "참가자 단체",
+        "ja": "参加者",
+        "zh": "参赛者合影"
+      }
+    },
+    {
+      "src": "assets/img/events/2025-korea-japan-11.webp",
+      "thumb": "assets/img/events/2025-korea-japan-11-t.webp",
+      "caption": {
+        "en": "Participants",
+        "ko": "참가자들",
+        "ja": "参加者",
+        "zh": "参赛者"
+      }
+    },
+    {
+      "src": "assets/img/events/2025-korea-japan-3.webp",
+      "thumb": "assets/img/events/2025-korea-japan-3-t.webp",
+      "caption": {
+        "en": "At the grill",
+        "ko": "그릴 앞에서",
+        "ja": "グリルの前で",
+        "zh": "烤炉前"
+      }
+    },
+    {
+      "src": "assets/img/events/2025-korea-japan-4.webp",
+      "thumb": "assets/img/events/2025-korea-japan-4-t.webp",
+      "caption": {
+        "en": "At the grill",
+        "ko": "그릴 앞에서",
+        "ja": "グリルの前で",
+        "zh": "烤炉前"
+      }
+    },
+    {
+      "src": "assets/img/events/2025-korea-japan-5.webp",
+      "thumb": "assets/img/events/2025-korea-japan-5-t.webp",
+      "caption": {
+        "en": "Steaks on the grill",
+        "ko": "그릴 위의 스테이크",
+        "ja": "グリルの上のステーキ",
+        "zh": "烤架上的牛排"
+      }
+    },
+    {
+      "src": "assets/img/events/2025-korea-japan-6.webp",
+      "thumb": "assets/img/events/2025-korea-japan-6-t.webp",
+      "caption": {
+        "en": "An entry",
+        "ko": "출품작",
+        "ja": "出品作",
+        "zh": "参赛作品"
+      }
+    },
+    {
+      "src": "assets/img/events/2025-korea-japan-7.webp",
+      "thumb": "assets/img/events/2025-korea-japan-7-t.webp",
+      "caption": {
+        "en": "Judging",
+        "ko": "심사",
+        "ja": "審査",
+        "zh": "评审"
+      }
+    },
+    {
+      "src": "assets/img/events/2025-korea-japan-8.webp",
+      "thumb": "assets/img/events/2025-korea-japan-8-t.webp",
+      "caption": {
+        "en": "Judging",
+        "ko": "심사",
+        "ja": "審査",
+        "zh": "评审"
+      }
+    },
+    {
+      "src": "assets/img/events/2025-korea-japan-9.webp",
+      "thumb": "assets/img/events/2025-korea-japan-9-t.webp",
+      "caption": {
+        "en": "Judging",
+        "ko": "심사",
+        "ja": "審査",
+        "zh": "评审"
+      }
+    },
+    {
+      "src": "assets/img/events/2025-korea-japan-10.webp",
+      "thumb": "assets/img/events/2025-korea-japan-10-t.webp",
+      "caption": {
+        "en": "Opening performance",
+        "ko": "개막 공연",
+        "ja": "開幕公演",
+        "zh": "开幕演出"
+      }
+    }
+  ]
+}

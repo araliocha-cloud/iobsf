@@ -1,0 +1,43 @@
+{
+  "id": "2016-masters-pocheon",
+  "name": {
+    "en": "Korea Barbecue Masters, Pocheon",
+    "ko": "코리아 바비큐 마스터즈 포천대회",
+    "ja": "コリア・バーベキュー・マスターズ抱川大会",
+    "zh": "韩国烧烤大师赛抱川大会"
+  },
+  "date": "",
+  "year": 2016,
+  "place": {
+    "en": "Pocheon",
+    "ko": "포천",
+    "ja": "抱川",
+    "zh": "抱川"
+  },
+  "nation": "KR",
+  "tier": "national",
+  "status": "completed",
+  "summary": {
+    "en": "Hosted by KOOBA. Held as the 2016 Gyeonggi Local Livestock Barbecue Masters, Pocheon.",
+    "ko": "KOOBA 주최. 2016 경기도 로컬축산물 바비큐 마스터즈 포천대회로 열렸다.",
+    "ja": "KOOBA主催。2016京畿道ローカル畜産物バーベキュー・マスターズ抱川大会として開かれた。",
+    "zh": "KOOBA主办。以2016京畿道本地畜产品烧烤大师赛抱川大会之名举行。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "KR",
+  "gallery": [
+    {
+      "src": "assets/img/events/2016-pocheon-1.webp",
+      "thumb": "assets/img/events/2016-pocheon-1-t.webp",
+      "caption": {
+        "en": "Awards ceremony",
+        "ko": "시상식",
+        "ja": "表彰式",
+        "zh": "颁奖典礼"
+      }
+    }
+  ]
+}

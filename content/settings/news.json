@@ -1,0 +1,55 @@
+{
+  "soon": {
+    "en": "No entries yet",
+    "ko": "아직 올라온 글이 없다",
+    "ja": "まだ投稿はない",
+    "zh": "尚无内容"
+  },
+  "sections": [
+    {
+      "id": "news",
+      "title": {
+        "en": "News",
+        "ko": "소식",
+        "ja": "ニュース",
+        "zh": "新闻"
+      },
+      "lede": {
+        "en": "News of the Tour, the member nations and the Federation's partners.",
+        "ko": "투어와 회원국, 연맹 협력 기관의 소식.",
+        "ja": "ツアー、加盟国、連盟の協力機関のニュース。",
+        "zh": "巡回赛、成员国及联盟合作机构的新闻。"
+      }
+    },
+    {
+      "id": "announcements",
+      "title": {
+        "en": "Announcements",
+        "ko": "공지",
+        "ja": "お知らせ",
+        "zh": "公告"
+      },
+      "lede": {
+        "en": "Official announcements of the Federation: decisions, revisions of the rules and calls.",
+        "ko": "연맹의 공식 발표, 규정 개정, 모집 안내.",
+        "ja": "連盟の公式発表、規定改定、募集案内。",
+        "zh": "联盟的正式公告、规则修订与招募通知。"
+      }
+    },
+    {
+      "id": "press",
+      "title": {
+        "en": "Press",
+        "ko": "언론 보도",
+        "ja": "報道",
+        "zh": "媒体报道"
+      },
+      "lede": {
+        "en": "Reports on the Federation and Sports Barbecue in the press.",
+        "ko": "연맹과 스포츠바비큐를 다룬 언론 보도.",
+        "ja": "連盟とスポーツバーベキューを取り上げた報道。",
+        "zh": "关于联盟与运动烧烤的媒体报道。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "tagline": {
+    "en": "One Fire. One World. One Tour.",
+    "ko": "하나의 불, 하나의 세계, 하나의 투어",
+    "ja": "一つの火、一つの世界、一つのツアー",
+    "zh": "一团火，一个世界，一个巡回赛"
+  },
+  "full_name": "World Barbecue Tour",
+  "soon": {
+    "en": "In preparation",
+    "ko": "준비 중",
+    "ja": "準備中",
+    "zh": "筹备中"
+  },
+  "sections": [
+    {
+      "id": "tour",
+      "title": {
+        "en": "The Tour",
+        "ko": "투어 소개",
+        "ja": "ツアー紹介",
+        "zh": "巡回赛介绍"
+      },
+      "lede": {
+        "en": "One fire travels the earth each year. Pro Barbecuers follow it, cook the heritage of each land, and leave a shared table in every city.",
+        "ko": "하나의 불이 해마다 지구를 돈다. 프로바비큐어는 그 불을 따라 각 땅의 유산을 굽고, 도시마다 나눔의 식탁을 남긴다.",
+        "ja": "一つの火が毎年地球を巡る。プロバーベキュアーはその火を追い、各地の遺産を焼き、都市ごとに分かち合いの食卓を残す。",
+        "zh": "一团火每年环绕地球。职业烧烤师追随这团火，烤制各地的遗产，在每座城市留下分享的餐桌。"
+      },
+      "links": []
+    },
+    {
+      "id": "season",
+      "title": {
+        "en": "Calendar",
+        "ko": "일정",
+        "ja": "日程",
+        "zh": "赛历"
+      },
+      "lede": {
+        "en": "The cities and dates of this season's WBT ORIGIN, and the route the Origin Flame will travel.",
+        "ko": "이번 시즌 WBT ORIGIN이 열리는 도시와 날짜, 그리고 오리진 불씨가 지나갈 길.",
+        "ja": "今シーズンのWBT ORIGINが開かれる都市と日程、そしてオリジンの火種が通る道。",
+        "zh": "本赛季WBT ORIGIN的举办城市与日期，以及起源火种将经过的路线。"
+      },
+      "links": []
+    },
+    {
+      "id": "origins",
+      "title": {
+        "en": "Origins",
+        "ko": "대회",
+        "ja": "大会",
+        "zh": "赛事"
+      },
+      "lede": {
+        "en": "Every WBT ORIGIN on its own page: the guide before, the results during, the official record after.",
+        "ko": "WBT ORIGIN 대회마다 한 페이지. 대회 전에는 안내를, 대회 중에는 결과를, 대회 뒤에는 공식 기록을 싣는다.",
+        "ja": "WBT ORIGINの大会ごとに一つのページ。大会前には案内を、大会中には結果を、大会後には公式記録を載せる。",
+        "zh": "每场WBT ORIGIN各有一页。赛前刊载指南，赛中刊载结果，赛后刊载正式记录。"
+      },
+      "links": [
+        {
+          "href": "events.html#events-past",
+          "label": {
+            "en": "Before the Tour: the fires of Member Nation Korea, 2010 to 2025",
+            "ko": "투어 이전의 불: 회원국 한국의 대회, 2010~2025",
+            "ja": "ツアー以前の火：加盟国韓国の大会、2010～2025",
+            "zh": "巡回赛之前的火：成员国韩国的赛事，2010～2025"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ranking",
+      "title": {
+        "en": "Rankings",
+        "ko": "순위",
+        "ja": "ランキング",
+        "zh": "排名"
+      },
+      "lede": {
+        "en": "The season and career standing of Pro Barbecuers, kept together with the record of acclamation.",
+        "ko": "프로바비큐어의 시즌 순위와 통산 순위. 추대의 기록을 함께 남긴다.",
+        "ja": "プロバーベキュアーのシーズン順位と通算順位。推戴の記録も共に残す。",
+        "zh": "职业烧烤师的赛季排名与生涯排名，并一同保留推戴的记录。"
+      },
+      "links": []
+    },
+    {
+      "id": "rules",
+      "title": {
+        "en": "Regulations",
+        "ko": "규정",
+        "ja": "規定",
+        "zh": "规程"
+      },
+      "lede": {
+        "en": "The rules of the Games, the role of the Officiant, and the stages of the rite before the fire.",
+        "ko": "경기 규정, 집전자의 역할, 그리고 불 앞에서 치르는 의식의 단계.",
+        "ja": "競技規定、執典者の役割、そして火の前で行う儀式の段階。",
+        "zh": "比赛规则、执典者的职责，以及在火前举行的仪式阶段。"
+      },
+      "links": [
+        {
+          "href": "events.html#ritual",
+          "label": {
+            "en": "The eight stages of the rite",
+            "ko": "의식의 8단계",
+            "ja": "儀式の8段階",
+            "zh": "仪式的八个阶段"
+          }
+        }
+      ]
+    },
+    {
+      "id": "host",
+      "title": {
+        "en": "Host a WBT",
+        "ko": "개최 신청",
+        "ja": "開催申請",
+        "zh": "申办"
+      },
+      "lede": {
+        "en": "Cities and institutions apply to host a WBT ORIGIN and to receive the Origin Flame.",
+        "ko": "도시와 기관이 WBT ORIGIN 개최를 신청하고 오리진 불씨를 맞아들인다.",
+        "ja": "都市と機関がWBT ORIGINの開催を申請し、オリジンの火種を迎え入れる。",
+        "zh": "城市与机构申请举办WBT ORIGIN，迎接起源火种。"
+      },
+      "links": [
+        {
+          "href": "host.html",
+          "label": {
+            "en": "Host Application",
+            "ko": "개최 신청서",
+            "ja": "開催申請書",
+            "zh": "申办申请表"
+          }
+        }
+      ]
+    }
+  ]
+}

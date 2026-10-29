@@ -1,0 +1,217 @@
+{
+  "id": "2027-aobe-guangzhou",
+  "name": {
+    "en": "AOBE 2027, Asia Outdoor Kitchen & Barbecue Equipment Expo",
+    "ko": "AOBE 2027 아시아 아웃도어 키친 앤 바비큐 장비 박람회",
+    "ja": "AOBE 2027 アジア・アウトドアキッチン＆バーベキュー機器博覧会",
+    "zh": "AOBE 2027 亚洲户外厨房与烧烤设备博览会"
+  },
+  "date": "2027-05-15",
+  "year": 2027,
+  "when": "15–17 May 2027",
+  "place": {
+    "en": "Canton Fair Complex, Guangzhou, China",
+    "ko": "중국 광저우, 캔톤페어 전시장(중국수출입상품교역회 전시관)",
+    "ja": "中国・広州 広州交易会展示場（中国輸出入商品交易会展示館）",
+    "zh": "中国广州 广交会展馆（中国进出口商品交易会展馆）"
+  },
+  "nation": "CN",
+  "tier": "partner",
+  "status": "upcoming",
+  "summary": {
+    "en": "Asia's trade and public expo for barbecue, grilling and outdoor cooking, held each year in Guangzhou. The organiser, Guangdong Grandeur International Exhibition Group, proposed cooperation with IOBSF, and the Federation delivers the keynote at the summit.",
+    "ko": "광저우에서 해마다 열리는 아시아의 바비큐, 그릴, 아웃도어 쿠킹 산업 박람회다. 업계와 일반 관람객이 함께 찾는다. 주최사 광둥 그랜더 국제전시그룹이 먼저 IOBSF에 협력을 제안했고, 연맹이 서밋 기조연설을 맡는다.",
+    "ja": "広州で毎年開かれる、アジアのバーベキュー、グリル、アウトドアクッキング産業の博覧会。業界関係者と一般来場者がともに訪れる。主催の広東グランダー国際展覧グループが先にIOBSFへ協力を提案し、連盟がサミットの基調講演を担う。",
+    "zh": "每年在广州举办的亚洲烧烤、烤炉与户外烹饪产业博览会，面向业界与公众。主办方广东鸿威国际会展集团率先向IOBSF提出合作，联合会将在峰会上发表主旨演讲。"
+  },
+  "ritual": [],
+  "results": [],
+  "table": [],
+  "acclaimed_by": "",
+  "org": "federation",
+  "kind": "summit",
+  "facts": [
+    {
+      "label": {
+        "en": "Dates",
+        "ko": "일정",
+        "ja": "日程",
+        "zh": "日期"
+      },
+      "value": {
+        "en": "15–17 May 2027 (three days)",
+        "ko": "2027년 5월 15일~17일 (3일간)",
+        "ja": "2027年5月15日～17日（3日間）",
+        "zh": "2027年5月15日至17日（共三天）"
+      }
+    },
+    {
+      "label": {
+        "en": "Venue",
+        "ko": "장소",
+        "ja": "会場",
+        "zh": "地点"
+      },
+      "value": {
+        "en": "Canton Fair Complex (China Import and Export Fair Complex), 380 Yuejiang Middle Road, Haizhu District, Guangzhou",
+        "ko": "광저우 하이주구 웨장중로 380, 캔톤페어 전시장(중국수출입상품교역회 전시관)",
+        "ja": "広州市海珠区閲江中路380号 広州交易会展示場（中国輸出入商品交易会展示館）",
+        "zh": "广州市海珠区阅江中路380号 广交会展馆（中国进出口商品交易会展馆）"
+      }
+    },
+    {
+      "label": {
+        "en": "Organiser",
+        "ko": "주최",
+        "ja": "主催",
+        "zh": "主办"
+      },
+      "value": {
+        "en": "Guangdong Grandeur International Exhibition Group",
+        "ko": "광둥 그랜더 국제전시그룹",
+        "ja": "広東グランダー国際展覧グループ",
+        "zh": "广东鸿威国际会展集团"
+      }
+    },
+    {
+      "label": {
+        "en": "Frequency",
+        "ko": "개최 주기",
+        "ja": "開催周期",
+        "zh": "举办周期"
+      },
+      "value": {
+        "en": "Annual",
+        "ko": "매년",
+        "ja": "毎年",
+        "zh": "每年"
+      }
+    },
+    {
+      "label": {
+        "en": "Scale",
+        "ko": "규모",
+        "ja": "規模",
+        "zh": "规模"
+      },
+      "value": {
+        "en": "About 300 exhibitors and 25,000 visitors (listed estimate)",
+        "ko": "출품 약 300개사, 관람 약 2만 5천 명 (전시 정보 사이트 추정치)",
+        "ja": "出展約300社、来場約2万5千人（展示会情報サイトの推計）",
+        "zh": "约300家展商，约2.5万名观众（展会信息网站估计）"
+      }
+    },
+    {
+      "label": {
+        "en": "Exhibits",
+        "ko": "전시 품목",
+        "ja": "出展品目",
+        "zh": "展品"
+      },
+      "value": {
+        "en": "Gas, charcoal, pellet and electric grills, smokers, outdoor kitchen systems, seasonings and sauces, catering and restaurant equipment",
+        "ko": "가스, 숯, 펠릿, 전기 그릴, 스모커, 아웃도어 키친 시스템, 시즈닝과 소스, 외식과 케이터링 장비",
+        "ja": "ガス、炭、ペレット、電気グリル、スモーカー、アウトドアキッチン、シーズニングとソース、外食とケータリング機器",
+        "zh": "燃气、木炭、颗粒与电烤炉，烟熏炉，户外厨房系统，调味料与酱料，餐饮设备"
+      }
+    },
+    {
+      "label": {
+        "en": "Visitors",
+        "ko": "관람 대상",
+        "ja": "来場者",
+        "zh": "观众"
+      },
+      "value": {
+        "en": "Retailers, distributors, importers and exporters, restaurant and hotel operators, and the general public",
+        "ko": "유통, 수출입 업계, 외식과 호텔 업계, 그리고 일반 관람객",
+        "ja": "小売、流通、輸出入業者、外食とホテル業界、一般来場者",
+        "zh": "零售商、经销商、进出口商、餐饮与酒店业者及普通公众"
+      }
+    },
+    {
+      "label": {
+        "en": "IOBSF role",
+        "ko": "연맹의 역할",
+        "ja": "連盟の役割",
+        "zh": "联合会的角色"
+      },
+      "value": {
+        "en": "Keynote at the summit, at the organiser's invitation",
+        "ko": "주최 측 초청으로 서밋 기조연설",
+        "ja": "主催者の招待によりサミットで基調講演",
+        "zh": "应主办方邀请在峰会发表主旨演讲"
+      }
+    },
+    {
+      "label": {
+        "en": "Official site",
+        "ko": "공식 사이트",
+        "ja": "公式サイト",
+        "zh": "官方网站"
+      },
+      "value": {
+        "en": "www.asiabbqexpo.com",
+        "ko": "www.asiabbqexpo.com",
+        "ja": "www.asiabbqexpo.com",
+        "zh": "www.asiabbqexpo.com"
+      },
+      "href": "https://www.asiabbqexpo.com"
+    }
+  ],
+  "speech": {
+    "title": {
+      "en": "Summit Keynote, Scheduled",
+      "ko": "서밋 기조연설 예정",
+      "ja": "サミット基調講演 予定",
+      "zh": "峰会主旨演讲 预定"
+    },
+    "subject": {
+      "en": "Sports Barbecue and the Pro Barbecuer",
+      "ko": "스포츠바비큐와 프로바비큐어",
+      "ja": "スポーツバーベキューとプロバーベキュアー",
+      "zh": "运动烧烤与职业烧烤师"
+    },
+    "subtitle": {
+      "en": "Reshaping the Global Barbecue Market",
+      "ko": "세계 바비큐 시장의 거대한 변화",
+      "ja": "世界のバーベキュー市場の大きな変化",
+      "zh": "世界烧烤市场的巨大变革"
+    },
+    "speaker": {
+      "name": {
+        "en": "Shaka Chaa",
+        "ko": "차영기",
+        "ja": "車英基（シャカ・チャ）",
+        "zh": "车英基（Shaka Chaa）"
+      },
+      "href": "barbecuer.html?id=shaka-chaa"
+    },
+    "lead": {
+      "en": "From warring states to an ordered system.",
+      "ko": "춘추전국시대에서 예측 가능한 체계사회로.",
+      "ja": "群雄割拠の時代から、予測できる体系の社会へ。",
+      "zh": "从春秋战国走向可预期的体系社会。"
+    },
+    "points": [
+      {
+        "en": "Method: cooking and competition gain a standard for the first time.",
+        "ko": "방식: 조리와 경기의 방식에 처음으로 기준이 생긴다.",
+        "ja": "方式：調理と競技の方式に初めて基準が生まれる。",
+        "zh": "方式：烹饪与比赛的方式首次有了标准。"
+      },
+      {
+        "en": "Profession: the Pro Barbecuer links equipment, education and certification.",
+        "ko": "직업: 프로바비큐어가 장비, 교육, 인증을 하나로 잇는다.",
+        "ja": "職業：プロバーベキュアーが機器、教育、認証をひとつにつなぐ。",
+        "zh": "职业：职业烧烤师将设备、教育与认证连为一体。"
+      },
+      {
+        "en": "Participation: a market that only ate becomes a market that takes part.",
+        "ko": "참여: 먹기만 하던 시장이 직접 참여하는 시장으로 넓어진다.",
+        "ja": "参加：食べるだけの市場が、自ら参加する市場へと広がる。",
+        "zh": "参与：只会品尝的市场扩展为亲身参与的市场。"
+      }
+    ]
+  }
+}
