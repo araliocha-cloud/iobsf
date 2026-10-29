@@ -5,7 +5,7 @@ name: Build content
 on:
   push:
     branches: [main]
-    paths: ["content/**", "tools/build_content.py"]
+    paths: ["content/**", "tools/build_content.py", "tools/translate.py"]
   workflow_dispatch:
   schedule:
     - cron: "17 18 * * *"   # once a day (03:17 in Korea): finishes any translation the free tier left for later

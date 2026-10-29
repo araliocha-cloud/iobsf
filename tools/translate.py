@@ -104,13 +104,18 @@ def gemini(system, text, as_json=False):
         body["generationConfig"]["responseMimeType"] = "application/json"
     last = None
     for model in list(MODELS):
+        # translation needs no long deliberation: thinking off keeps each answer quick
+        cfg = dict(body["generationConfig"])
+        if model.startswith("gemini-2.5"):
+            cfg["thinkingConfig"] = {"thinkingBudget": 0}
+        body_m = dict(body, generationConfig=cfg)
         for attempt in range(3):
             req = urllib.request.Request(
                 f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-                data=json.dumps(body).encode("utf-8"),
+                data=json.dumps(body_m).encode("utf-8"),
                 headers={"Content-Type": "application/json", "x-goog-api-key": KEY})
             try:
-                with urllib.request.urlopen(req, timeout=600) as r:
+                with urllib.request.urlopen(req, timeout=300) as r:
                     out = json.loads(r.read().decode("utf-8"))
                 cand = (out.get("candidates") or [{}])[0]
                 if cand.get("finishReason") not in (None, "STOP"):
