@@ -32,7 +32,8 @@ jobs:
           git config user.name "IOBSF admin"
           git config user.email "admin@iobsf.org"
           git commit -m "Translate and build data from content"
-          git pull --rebase origin main
+          # another run or an admin save may have landed meanwhile; if the two cannot be joined, the next run does this again
+          git pull --rebase origin main || { git rebase --abort; echo "could not join with newer changes; next run repeats"; exit 0; }
           git push
       - name: Publish
         env:

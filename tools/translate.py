@@ -141,6 +141,30 @@ def gemini(system, text, as_json=False):
     raise RuntimeError(last or "no model")
 
 
+def repair(t, ko, k, name):
+    """Ask again only for the lines that still carry Korean script, and put the answers back in place."""
+    lines = t.split("\n")
+    idx = [i for i, l in enumerate(lines) if stray(l, k)][:40]
+    if not idx:
+        return t
+    ask = ("Below is a Korean original and some lines of its " + name + " translation that still contain Korean script by mistake. "
+           "Return JSON {\"lines\": [...]} with each line corrected, in the same order, fully in " + name +
+           ", with no Hangul (English may keep a Korean original only inside brackets). Change nothing else in the line.\n\n"
+           "Lines:\n" + json.dumps([lines[i] for i in idx], ensure_ascii=False) + "\n\nKorean original:\n" + ko)
+    try:
+        fixed = json.loads(gemini(RULES.format(lang=name, glossary=GLOSSARY), ask, as_json=True)).get("lines") or []
+    except Stop:
+        raise
+    except Exception as e:
+        say("repair failed:", e)
+        return t
+    if len(fixed) == len(idx):
+        for i, l in zip(idx, fixed):
+            if isinstance(l, str) and l.strip() and stray(l, k) <= stray(lines[i], k):
+                lines[i] = l
+    return "\n".join(lines)
+
+
 def translate_post(f):
     post = json.loads(f.read_text(encoding="utf-8"))
     sf = STATE / f.name
@@ -160,6 +184,15 @@ def translate_post(f):
         tries = st.get(k + "_tries", 0) if st.get(k + "_src") == src else 0
         if cur and st.get(k + "_src") == src and (stray(cur, k) == 0 or tries >= 3):
             continue
+        if cur and st.get(k + "_src") == src:
+            t = repair(cur, ko, k, name)
+            st[k + "_tries"] = 3
+            if t != cur:
+                post[field] = t; st[k] = sha(t); changed = True
+                f.write_text(json.dumps(post, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                say("repaired", f.name, k, "left:", HANGUL.findall(t)[:5] if stray(t, k) else "none")
+            sf.write_text(json.dumps(st, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            continue
         best = None
         for _ in range(2):
             t = gemini(RULES.format(lang=name, glossary=GLOSSARY), ko)
@@ -173,6 +206,8 @@ def translate_post(f):
         if best is None:
             raise RuntimeError(f"{f.name} {k}: translation suspiciously short, not saved")
         t = best
+        if stray(t, k):
+            t = repair(t, ko, k, name)
         if stray(t, k):
             say("check by hand:", f.name, k, "Korean script left:", HANGUL.findall(t)[:5])
         post[field] = t
