@@ -20,22 +20,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Settings
+        run: |
+          git config user.name "IOBSF admin"
+          git config user.email "admin@iobsf.org"
+          cat > /tmp/save.sh <<'SH'
+          git add -A content data
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
+          git commit -m "$1"
+          # another run or an admin save may have landed meanwhile; if the two cannot be joined, the next run does this again
+          git pull --rebase origin main || { git rebase --abort; echo "could not join with newer changes; next run repeats"; exit 0; }
+          git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+          SH
+      # 1. the post goes up at once in its Korean original
+      - name: Publish the original
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 tools/build_content.py .
+          bash /tmp/save.sh "Build data from content"
+      # 2. then the translations follow, and the page is published again
       - name: Translate
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 tools/translate.py .
-      - run: python3 tools/build_content.py .
-      - name: Commit data
-        run: |
-          git add -A content data
-          if git diff --cached --quiet; then echo "no change"; exit 0; fi
-          git config user.name "IOBSF admin"
-          git config user.email "admin@iobsf.org"
-          git commit -m "Translate and build data from content"
-          # another run or an admin save may have landed meanwhile; if the two cannot be joined, the next run does this again
-          git pull --rebase origin main || { git rebase --abort; echo "could not join with newer changes; next run repeats"; exit 0; }
-          git push
-      - name: Publish
+      - name: Publish the translations
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
+        run: |
+          python3 tools/build_content.py .
+          bash /tmp/save.sh "Translate and build data from content"

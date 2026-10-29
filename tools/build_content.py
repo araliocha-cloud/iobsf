@@ -10,11 +10,24 @@ import json, pathlib, sys
 root = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else ".")
 C, D = root / "content", root / "data"
 
+import re
+
+
+def slug(t):
+    return re.sub(r"[^a-z0-9]+", "-", (t or "").lower()).strip("-")[:80]
+
+
 def posts(folder):
     out = []
     for f in sorted((C / folder).glob("*.json"), key=lambda p: p.name, reverse=True):
         try:
-            out.append(json.loads(f.read_text(encoding="utf-8")))
+            p = json.loads(f.read_text(encoding="utf-8"))
+            # every post has an address: its own id, else its English title, else its file name
+            if isinstance(p, dict) and not (p.get("id") or "").strip():
+                t = p.get("title") if isinstance(p.get("title"), dict) else {}
+                n = p.get("name") if isinstance(p.get("name"), dict) else {}
+                p["id"] = slug(t.get("en") or n.get("en")) or f.stem
+            out.append(p)
         except Exception as e:
             print("skip", f, e)
     return out

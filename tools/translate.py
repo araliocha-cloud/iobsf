@@ -8,13 +8,13 @@ Runs in GitHub Actions before tools/build_content.py, when the secret GEMINI_API
 - When the Korean original changes, the machine-made fields are translated again.
 - Free-tier limits: a few seconds between calls, and a cap per run. Whatever is left is done on the next run.
 """
-import hashlib, json, os, pathlib, sys, time, urllib.request, urllib.error
+import hashlib, http.client, json, os, pathlib, sys, time, urllib.request, urllib.error
 
 ROOT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else ".")
 POSTS = ROOT / "content" / "writings"
 STATE = ROOT / "content" / ".translations"
 KEY = os.environ.get("GEMINI_API_KEY", "").strip()
-MODELS = [m for m in [os.environ.get("GEMINI_MODEL", "").strip(), "gemini-flash-latest", "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-lite-latest"] if m]
+MODELS = [m for m in [os.environ.get("GEMINI_MODEL", "").strip(), "gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite", "gemini-flash-lite-latest"] if m]
 MAX_CALLS = int(os.environ.get("TRANSLATE_MAX_CALLS", "30"))
 PAUSE = float(os.environ.get("TRANSLATE_PAUSE", "7"))
 LANGS = {"en": "English", "ja": "Japanese", "zh": "Simplified Chinese"}
@@ -136,6 +136,13 @@ def gemini(system, text, as_json=False):
                     last = f"{model}: limit"
                     break
                 raise RuntimeError(f"{model}: HTTP {e.code} {raw[:300]}")
+            except (urllib.error.URLError, http.client.HTTPException, TimeoutError, ConnectionError) as e:
+                # the connection dropped during a long answer: try again, then the next model
+                say("connection", model, type(e).__name__, str(e)[:120])
+                last = f"{model}: connection"
+                if attempt < 2:
+                    time.sleep(15); continue
+                break
     if last and "limit" in last:
         raise Stop("all models at their free-tier limit")
     raise RuntimeError(last or "no model")
@@ -165,10 +172,44 @@ def repair(t, ko, k, name):
     return "\n".join(lines)
 
 
+CHUNK = int(os.environ.get("TRANSLATE_CHUNK", "4500"))
+
+
+def chunks(text):
+    """Long essays go in parts cut at paragraph breaks, so no single answer runs long enough to be dropped."""
+    parts, cur = [], ""
+    for para in text.split("\n\n"):
+        if cur and len(cur) + len(para) + 2 > CHUNK:
+            parts.append(cur); cur = para
+        else:
+            cur = cur + "\n\n" + para if cur else para
+    if cur:
+        parts.append(cur)
+    return parts
+
+
+def translate_text(ko, name):
+    parts = chunks(ko)
+    if len(parts) == 1:
+        return gemini(RULES.format(lang=name, glossary=GLOSSARY), ko)
+    out = []
+    for i, part in enumerate(parts, 1):
+        note = (f"This is part {i} of {len(parts)} of one essay. Translate only this part, completely, "
+                "and continue the same style and terms as the other parts.\n\n")
+        t = gemini(RULES.format(lang=name, glossary=GLOSSARY), note + part)
+        if len(t) < len(part) * 0.4:
+            raise RuntimeError(f"part {i} of {len(parts)} came back too short")
+        out.append(t.strip())
+    return "\n\n".join(out)
+
+
 def translate_post(f):
     post = json.loads(f.read_text(encoding="utf-8"))
     sf = STATE / f.name
     st = json.loads(sf.read_text(encoding="utf-8")) if sf.exists() else {}
+    if not (post.get("id") or "").strip() and not ((post.get("title") or {}).get("en") or "").strip():
+        post["id"] = f.stem
+        f.write_text(json.dumps(post, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     ko = post.get("body") or ""
     if not ko.strip():
         return False
@@ -195,7 +236,13 @@ def translate_post(f):
             continue
         best = None
         for _ in range(2):
-            t = gemini(RULES.format(lang=name, glossary=GLOSSARY), ko)
+            try:
+                t = translate_text(ko, name)
+            except Stop:
+                raise
+            except Exception as e:
+                say("error in", f.name, k, ":", str(e)[:200], "(tried again on the next run)")
+                break
             tries += 1
             if len(t) < len(ko) * 0.4:
                 continue
@@ -204,7 +251,7 @@ def translate_post(f):
             if stray(best, k) == 0:
                 break
         if best is None:
-            raise RuntimeError(f"{f.name} {k}: translation suspiciously short, not saved")
+            continue
         t = best
         if stray(t, k):
             t = repair(t, ko, k, name)

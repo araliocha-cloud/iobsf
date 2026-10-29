@@ -587,7 +587,7 @@
   var KINDS = { book: { en: "Book", ko: "저서" }, paper: { en: "Paper", ko: "논문" }, article: { en: "Article", ko: "연구 글" }, video: { en: "Video", ko: "영상" }, media: { en: "Media", ko: "매체" }, role: { en: "Role", ko: "직책" }, event: { en: "Event", ko: "대회" }, essay: { en: "Essay", ko: "글" } };
   function entryList(list) {
     return '<ul class="entries">' + list.map(function (x) {
-      var t = x.href ? '<a href="' + esc(x.href) + '">' + esc(en(x.title)) + "</a>" : '<span class="entry-title">' + esc(en(x.title)) + "</span>";
+      var t = x.href ? '<a href="' + esc(x.href) + '">' + esc(en(x.title) || x.title.ko) + "</a>" : '<span class="entry-title">' + esc(en(x.title) || x.title.ko) + "</span>";
       var k = KINDS[x.kind] ? '<span class="entry-kind">' + bi(KINDS[x.kind], "span", "", true) + "</span>" : "";
       return "<li>" + k + t + bi({ ko: x.title.ko, ja: x.title.ja, zh: x.title.zh }, "div", "entry-sub") + (x.by ? '<div class="entry-by">' + esc(x.by) + "</div>" : "") + "</li>";
     }).join("") + "</ul>";
@@ -700,7 +700,7 @@
       var w = byId(r[0].writings, param("id"));
       if (!w) { put("#writing", empty({ en: "This essay was not found.", ko: "글을 찾을 수 없다." })); return; }
       var cat = (r[1].archives || []).filter(function (a) { return a.key === w.category; })[0];
-      document.title = en(w.title) + " | IOBSF";
+      document.title = (en(w.title) || w.title.ko) + " | IOBSF";
       /* the Korean original and its translations: one shows at a time, by the chosen language; a missing translation shows the original */
       var tw = { en: !!w.body_en, ja: !!w.body_ja, zh: !!w.body_zh };
       var bodyOf = function (k, txt, l) { return '<div class="w-text" data-l="' + k + '" lang="' + l + '">' + md(txt) + "</div>"; };
@@ -710,7 +710,7 @@
       put("#writing",
         '<article class="writing">' +
           '<p class="w-crumb"><a href="archives.html">' + bi({ en: "Archives", ko: "서고", ja: "書庫", zh: "书库" }, "span", "", true) + "</a>" + (cat ? " / " + bi(cat.name, "span", "", true) : "") + "</p>" +
-          "<h1>" + esc(en(w.title)) + "</h1>" +
+          "<h1>" + esc(en(w.title) || w.title.ko) + "</h1>" +
           (w.subtitle && w.subtitle.en ? '<p class="w-sub-en">' + esc(w.subtitle.en) + "</p>" : "") +
           '<div class="w-ko">' + bi({ ko: w.title.ko, ja: w.title.ja, zh: w.title.zh }, "div", "w-title-ko") + (w.subtitle && w.subtitle.ko ? bi({ ko: w.subtitle.ko, ja: w.subtitle.ja, zh: w.subtitle.zh }, "div", "w-sub-ko") : "") + "</div>" +
           '<p class="w-by">' + bi({ en: (w.by && w.by.en) || "Shaka Chaa", ko: (w.by && w.by.ko) || "차영기", ja: (w.by && w.by.ja) || "車英基（Shaka Chaa）", zh: (w.by && w.by.zh) || "车英基（Shaka Chaa）" }, "span", "", true) + "</p>" + pub +

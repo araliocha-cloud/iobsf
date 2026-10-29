@@ -53,8 +53,9 @@ collections:
       label: 한국어 제목
       widget: string
     - name: en
-      label: 영어 제목 (목록에 크게 표시)
+      label: 영어 제목 (비워 두면 자동 번역)
       widget: string
+      required: false
     - name: ja
       label: 일본어 제목 (비워 두면 자동 번역)
       widget: string
