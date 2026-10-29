@@ -1,30 +1,25 @@
-2026-10-29 04:55 UTC
-translated 20261029009996.json ja 8807 -> 8109
-limit gemini-flash-latest 429 GenerateRequestsPerDayPerProjectPerModel-FreeTier retry in 7930s
-check by hand: 20261029009996.json zh Korean script left: ['둠', '헤겔']
-translated 20261029009996.json zh 8807 -> 6168
-check by hand: 20261029009995.json ja Korean script left: ['랭엄']
-translated 20261029009995.json ja 6039 -> 5188
-check by hand: 20261029009995.json zh Korean script left: ['적', '적', '적', '적', '적']
-translated 20261029009995.json zh 6039 -> 4047
-translated 20261029009994.json ja 9911 -> 8935
-check by hand: 20261029009994.json zh Korean script left: ['차키스']
-translated 20261029009994.json zh 9911 -> 6891
-translated 20261029009991.json zh 10182 -> 6616
-translated 20261029009990.json ja 7080 -> 6095
-check by hand: 20261029009989.json ja Korean script left: ['샌델']
-translated 20261029009989.json ja 5566 -> 4965
-translated 20261029009989.json zh 5566 -> 3923
-translated 20261029009988.json en 4460 -> 9790
-translated 20261029009988.json ja 4460 -> 3840
-translated 20261029009988.json zh 4460 -> 2975
-translated 20261029009987.json en 8235 -> 18354
-check by hand: 20261029009987.json ja Korean script left: ['담', '따진']
-translated 20261029009987.json ja 8235 -> 7132
-check by hand: 20261029009987.json zh Korean script left: ['리카도', '리카도']
-translated 20261029009987.json zh 8235 -> 5819
-translated 20261029009986.json en 4885 -> 10632
-check by hand: 20261029009986.json ja Korean script left: ['삶']
-translated 20261029009986.json ja 4885 -> 4393
+2026-10-29 05:06 UTC
+repaired 20261029009989.json ja left: none
+limit gemini-flash-latest 429 GenerateRequestsPerDayPerProjectPerModel-FreeTier retry in 7157s
+repaired 20261029009987.json zh left: none
+repaired 20261029009986.json ja left: none
+translated 20261029009986.json zh 4885 -> 3210
+translated 20261029009985.json en 8127 -> 19177
+check by hand: 20261029009985.json ja Korean script left: ['고사', '제']
+translated 20261029009985.json ja 8127 -> 7378
+translated 20261029009985.json zh 8127 -> 5647
+translated 20261029009984.json en 2601 -> 5546
+translated 20261029009984.json ja 2601 -> 2286
+translated 20261029009984.json zh 2601 -> 1745
+translated 20261029009983.json en 2405 -> 5667
+translated 20261029009983.json ja 2405 -> 2171
+translated 20261029009983.json zh 2405 -> 1626
+translated 20261029009982.json en 4676 -> 10414
+check by hand: 20261029009982.json ja Korean script left: ['기']
+translated 20261029009982.json ja 4676 -> 4199
+translated 20261029009982.json zh 4676 -> 3266
+translated 20261029009981.json en 1125 -> 2523
+translated 20261029009981.json ja 1125 -> 1043
+translated 20261029009981.json zh 1125 -> 767
 stopped: call cap reached (the rest follows on the next run)
 calls 30
