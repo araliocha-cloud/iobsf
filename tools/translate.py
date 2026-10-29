@@ -53,6 +53,7 @@ Translate the Korean text into {lang}.
 - Keep the tone: an essayist and scholar, declarative and clean, dignified. No casual register.
 - Where the original pairs a word with its source in brackets (Hanja, Greek, Latin, English), keep that pairing in the translation.
 - Proper names of people, books and theories: render them as they are known in {lang}; keep the original in brackets where the original does.
+- When the original pairs a term with the very same word in brackets, as in 호모날라리언스(HomoNallarians), write the word once in the translation: HomoNallarians, not HomoNallarians (HomoNallarians).
 - Do not use em-dashes to introduce explanations. Do not use the middle dot (·) as a separator; use commas.
 - Output only the translated text, with no preface and no notes.
 
@@ -68,6 +69,13 @@ class Stop(Exception):
 
 
 calls = 0
+REPORT = []
+
+
+def say(*a):
+    line = " ".join(str(x) for x in a)
+    print(line)
+    REPORT.append(line)
 
 
 def gemini(system, text, as_json=False):
@@ -132,7 +140,7 @@ def translate_post(f):
         changed = True
         f.write_text(json.dumps(post, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         sf.write_text(json.dumps(st, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        print("translated", f.name, k)
+        say("translated", f.name, k, len(ko), "->", len(t))
     # titles and subtitles: fill only the empty languages
     title, sub = post.get("title") or {}, post.get("subtitle") or {}
     want = {k: [x for x, o in (("title", title), ("subtitle", sub)) if (o.get("ko") or "").strip() and not (o.get(k) or "").strip()]
@@ -164,11 +172,12 @@ def main():
         try:
             translate_post(f)
         except Stop as e:
-            print("stopped:", e, "(the rest follows on the next run)")
+            say("stopped:", e, "(the rest follows on the next run)")
             break
         except Exception as e:
-            print("error in", f.name, ":", e)
-    print("calls", calls)
+            say("error in", f.name, ":", e)
+    say("calls", calls)
+    (STATE / "_last_run.txt").write_text(time.strftime("%Y-%m-%d %H:%M UTC\n", time.gmtime()) + "\n".join(REPORT) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
