@@ -18,11 +18,24 @@
     return v;
   }
   function setSecond(code) {
+    /* hold the line being read: whatever sits under the header stays where it is when the words change */
+    var hd = document.getElementById("site-header"), top = hd ? Math.max(0, hd.getBoundingClientRect().bottom) + 8 : 8;
+    var anchor = null, before = 0;
+    if (window.scrollY > 0) {
+      /* the first small block that begins at or below the reading line */
+      var all = document.querySelectorAll("main *"), best = Infinity;
+      for (var j = 0; j < all.length; j++) {
+        var r = all[j].getBoundingClientRect();
+        if (r.height > 0 && r.height < 300 && r.top >= top && r.top < best) { best = r.top; anchor = all[j]; if (r.top - top < 2) break; }
+      }
+      before = anchor ? anchor.getBoundingClientRect().top : 0;
+    }
     document.documentElement.setAttribute("data-second", code);
     try { localStorage.setItem("iobsf-lang", code); } catch (e) {}
     document.documentElement.setAttribute("lang", code === "zh" ? "zh-CN" : code);
     var btns = document.querySelectorAll(".lang-switch button");
     for (var i = 0; i < btns.length; i++) btns[i].setAttribute("aria-pressed", btns[i].dataset.lang === code ? "true" : "false");
+    if (anchor && anchor.isConnected) { var d = anchor.getBoundingClientRect().top - before; if (Math.abs(d) >= 1) window.scrollBy(0, d); }
   }
   document.documentElement.setAttribute("data-second", getSecond());
 
@@ -61,11 +74,14 @@
     return "<" + tag + ' class="bi' + (inline ? " inline" : "") + (cls ? " " + cls : "") + '">' + h + "</" + tag + ">";
   }
 
+  var PENDING = 0;
   function fetchJSON(name) {
+    PENDING++;
+    var done = function () { setTimeout(function () { PENDING--; }, 0); };
     return fetch("data/" + name + ".json", { cache: "no-cache" }).then(function (r) {
       if (!r.ok) throw new Error(name + ".json " + r.status);
       return r.json();
-    });
+    }).then(function (j) { done(); return j; }, function (e) { done(); throw e; });
   }
   function load(name) {
     if (!cache[name]) {
@@ -146,7 +162,7 @@
     put("#site-header",
       '<div class="wrap">' +
         '<a class="brand" href="index.html" aria-label="IOBSF home">' +
-          '<img src="assets/img/emblem-small.png" alt="" onerror="this.remove()">' +
+          '<img src="assets/img/emblem-small.png" width="96" height="81" alt="" onerror="this.remove()">' +
           '<span class="brand-mark">IOBSF</span>' +
         "</a>" +
         '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>' +
@@ -249,14 +265,14 @@
     var st = site.statements, f = site.federation;
     homeBusiness();
     put("#hero",
-      '<img class="hero-emblem" src="assets/img/emblem.webp" alt="IOBSF emblem" onerror="this.outerHTML=\'<div class=&quot;hero-emblem-fallback&quot;>IOBSF</div>\'">' +
+      '<img class="hero-emblem" src="assets/img/emblem.webp" width="760" height="639" alt="IOBSF emblem" onerror="this.outerHTML=\'<div class=&quot;hero-emblem-fallback&quot;>IOBSF</div>\'">' +
       bi(f.name, "p", "hero-name") +
       bi(st.motto.text, "p", "motto") +
       '<div class="placard">' +
         '<p class="placard-label">' + esc(st.creed.label.en) + "</p>" +
         bi(st.creed.text, "p", "placard-text") +
       "</div>" +
-      '<picture class="dawn-wrap"><source srcset="assets/img/dawn-march-4.webp" type="image/webp"><img class="dawn" src="assets/img/dawn-march-4.jpg" alt="A band of early humans with stone axes, spears and bows advancing out of the dawn"></picture>');
+      '<picture class="dawn-wrap"><source srcset="assets/img/dawn-march-4.webp" type="image/webp"><img class="dawn" src="assets/img/dawn-march-4.jpg" width="2033" height="428" alt="A band of early humans with stone axes, spears and bows advancing out of the dawn"></picture>');
 
     put("#home-spirit",
       (st.sports_barbecue ? '<div class="statement definition"><p class="label">' + esc(st.sports_barbecue.label.en) + "</p>" + bi(st.sports_barbecue.text, "p", "text") + '</div><div style="height:72px"></div>' : "") +
@@ -613,7 +629,7 @@
     var ins = d.inscription;
     return '<figure class="plaque' + (cls ? " " + cls : "") + (d.specimen ? " is-specimen" : "") + '" aria-label="Heritage plaque">' +
       (d.specimen ? '<div class="plaque-watermark">SPECIMEN</div>' : "") +
-      '<img class="plaque-emblem" src="assets/img/emblem-small.png" alt="">' +
+      '<img class="plaque-emblem" src="assets/img/emblem-small.png" width="96" height="81" alt="">' +
       '<div class="plaque-head">International Outdoor Barbecue<br>Sports Federation</div>' +
       '<div class="plaque-rule short"></div>' +
       '<div class="plaque-tier">' + (d.status === "origin" ? "Heritage of the Fire<br>The Origin" : "Federation Inscribed Heritage") + "</div>" +
@@ -727,8 +743,8 @@
           '<p class="jc-en">This person is an official judge certified by KOOBA.</p>' +
           '<div class="jc-date">' + esc(new Date((x.issued || x.certified + "-01-01") + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })) + "</div>" +
           '<div class="jc-meta">' + (x.reissued ? "Certified " + esc(String(x.certified).slice(0, 4)) + ", reissued " + esc((x.issued || "").slice(0, 4)) : "Certified " + esc(String(x.certified).slice(0, 4))) + "</div>" +
-          '<img class="jc-strip" src="assets/img/judges/kooba-strip.png" alt="Korea Outdoor &amp; Barbecue Association">' +
-          '<img class="jc-seal" src="assets/img/judges/kooba-seal.png" alt="Seal of the Korea Outdoor &amp; Barbecue Association"></div>';
+          '<img class="jc-strip" src="assets/img/judges/kooba-strip.png" width="496" height="58" alt="Korea Outdoor &amp; Barbecue Association">' +
+          '<img class="jc-seal" src="assets/img/judges/kooba-seal.png" width="240" height="240" alt="Seal of the Korea Outdoor &amp; Barbecue Association"></div>';
         var issued = new Date((x.issued || x.certified + "-01-01") + "T00:00:00"), isd = issued.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
         var photo = '<figure class="oj-photo"><img src="' + esc(x.photo) + '" alt="' + esc(x.name.en) + '"></figure>';
         var prof = '<div class="oj-prof rv3-box"><div class="oj-top">' + photo + '<div class="oj-head">' + '<div class="oj-kicker">Official Judge' + (x.no ? '<span>No. ' + esc(x.no) + "</span>" : "") + "</div>" + gb(nm, "h3", "oj-name") +
@@ -1288,7 +1304,7 @@
         box("", gb(a.principles_title, "h3", "ap-h ap-h-in") + '<ol class="ap-list">' + a.principles.map(function (p) { return "<li>" + gb(p, "span", "rv3-d") + "</li>"; }).join("") + "</ol>") +
         box("", gb(a.steps_title, "h3", "ap-h ap-h-in") + '<ol class="ap-list">' + a.steps.map(function (p) { return "<li>" + gb(p, "span", "rv3-d") + "</li>"; }).join("") + "</ol>") +
       "</div>" +
-      '<div class="ap-form">' + box("", '<img class="ap-emblem" src="assets/img/emblem-small.png" alt="">' + gb(a.form_title, "h3", "ap-form-t") + gb(a.form_note, "p", "ap-form-n") +
+      '<div class="ap-form">' + box("", '<img class="ap-emblem" src="assets/img/emblem-small.png" width="96" height="81" alt="">' + gb(a.form_title, "h3", "ap-form-t") + gb(a.form_note, "p", "ap-form-n") +
         (a.preview ? '<div class="ap-pages">' + a.preview.map(function (pg, i) {
           return '<a class="ap-page ap-page-' + (i + 1) + '" href="' + fullPage(a, pg.page) + '" data-zoom="' + pg.page + '"><span class="ap-sheet"><img src="' + pg.img + '" alt="' + esc(pg.label.en) + ' of the application form" loading="lazy"></span>' + gb(pg.label, "span", "ap-page-l") + "</a>"; }).join("") + "</div>" + gb(a.preview_hint, "p", "ap-pages-h") : "") +
         '<div class="ap-dls">' + dl(a.pdf, ICON_PDF, a.pdf_label, "PDF") + dl(a.docx, ICON_DOC, a.docx_label, "DOCX") + "</div>" +
@@ -1336,7 +1352,7 @@
       if (n.k === "ol") return '<ol class="cn-items cn-num">' + n.items.map(function (x) { return "<li>" + gb(x, "span") + "</li>"; }).join("") + "</ol>";
       return gb(n.text, "p", "cn-clause");
     }).join("");
-    return '<article class="constitution" id="' + id + '"><p class="cn-kicker">' + esc(kicker) + '</p><img class="cn-seal" src="assets/img/emblem.webp" alt="">' +
+    return '<article class="constitution" id="' + id + '"><p class="cn-kicker">' + esc(kicker) + '</p><img class="cn-seal" src="assets/img/emblem.webp" width="760" height="639" alt="">' +
       gb(doc.title, "h2", "cn-title") + '<div class="cn-rule"><span></span></div>' +
       (doc.meta ? '<div class="cn-meta">' + doc.meta.map(function (m) { return gb(m, "p"); }).join("") + "</div>" : "") +
       '<div class="cn-body">' + body + '</div><div class="cn-rule"><span></span></div><div class="cn-sign">' + doc.sign.map(function (m) { return gb(m, "p"); }).join("") + "</div></article>";
@@ -1431,7 +1447,7 @@
       '<div class="bp-field"><div class="bp-frame"><div class="bp-body">' +
         '<p class="bp-tier">Global Human Barbecue Heritage</p>' +
         '<p class="bp-status">' + esc(r.status.en) + "</p>" +
-        '<img class="bp-emblem" src="assets/img/emblem.webp" alt="">' +
+        '<img class="bp-emblem" src="assets/img/emblem.webp" width="760" height="639" alt="">' +
         '<p class="bp-rule"><span></span></p>' +
         '<p class="bp-recno"><span>Record No.</span>' + esc(r.id) + "</p>" +
         '<h2 class="bp-name' + size + '">' + esc(r.title.en) + "</h2>" +
@@ -1640,10 +1656,19 @@
   }
 
   /* ---------- boot ---------- */
-  /* keep the reading position on reload: content is drawn after load, so restore once it is there */
+  /* keep the reading position on reload and back/forward.
+     The browser is not trusted with it: the page is almost empty when it tries, because content is drawn from data afterwards.
+     The position is saved while reading, and returned only when every piece of data has been drawn and the layout has settled.
+     Until then the page stays veiled (class set in the document head), so nothing is seen to move. */
   var SKEY = "iobsf-scroll:" + location.pathname + location.search;
   try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
-  window.addEventListener("pagehide", function () { try { sessionStorage.setItem(SKEY, String(window.scrollY)); } catch (e) {} });
+  var restoring = true;
+  function saveScroll() { if (restoring) return; try { sessionStorage.setItem(SKEY, String(Math.round(window.scrollY))); } catch (e) {} }
+  var saveT = 0;
+  window.addEventListener("scroll", function () { clearTimeout(saveT); saveT = setTimeout(saveScroll, 120); }, { passive: true });
+  window.addEventListener("pagehide", saveScroll);
+  document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") saveScroll(); });
+  function unveil() { restoring = false; document.documentElement.classList.remove("iobsf-veil"); }
   function restoreScroll() {
     var nt = "navigate";
     try { var ne = performance.getEntriesByType("navigation")[0]; if (ne) nt = ne.type; else if (performance.navigation) nt = performance.navigation.type === 1 ? "reload" : performance.navigation.type === 2 ? "back_forward" : "navigate"; } catch (e) {}
@@ -1651,13 +1676,32 @@
     /* only a reload or back/forward returns to the old position; a link (the emblem included) always opens at the top */
     if (nt === "reload" || nt === "back_forward") { try { y = parseInt(sessionStorage.getItem(SKEY) || "0", 10) || 0; } catch (e) {} }
     else { try { sessionStorage.removeItem(SKEY); } catch (e) {} }
-    var target = location.hash ? document.getElementById(location.hash.slice(1)) : null;
-    if (!y && !target) return;
-    var t0 = Date.now();
+    var hash = location.hash ? decodeURIComponent(location.hash.slice(1)) : "";
+    var t0 = Date.now(), lastH = -1, still = 0;
+    function place() {
+      var target = hash ? document.getElementById(hash) : null;
+      if (y) window.scrollTo(0, Math.min(y, document.documentElement.scrollHeight - window.innerHeight));
+      else if (target) target.scrollIntoView();
+    }
+    /* wait until no data is in flight and the page height has held still for a few frames (4 s at most) */
     (function tick() {
-      if (target) { target.scrollIntoView(); return; }
-      if (document.documentElement.scrollHeight >= y + window.innerHeight || Date.now() - t0 > 4000) { window.scrollTo(0, y); return; }
-      setTimeout(tick, 60);
+      var h = document.documentElement.scrollHeight;
+      if (PENDING === 0 && h === lastH) still++; else still = 0;
+      lastH = h;
+      if (still >= 3 || Date.now() - t0 > 4000) {
+        place();
+        unveil();
+        /* hold the place while late images or fonts settle, unless the reader moves first */
+        if (y || hash) {
+          var moved = false, stop = function () { moved = true; };
+          ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (e) { window.addEventListener(e, stop, { once: true, passive: true }); });
+          var t1 = Date.now();
+          (function hold() { if (moved || Date.now() - t1 > 1500) return; place(); setTimeout(hold, 100); })();
+          if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { if (!moved) place(); });
+        }
+        return;
+      }
+      requestAnimationFrame(function () { setTimeout(tick, 30); });
     })();
   }
   Promise.all([load("site"), fetchJSON("i18n").catch(function () { return {}; })]).then(function (r) {
@@ -1669,6 +1713,7 @@
     if (fn) fn(site);
     restoreScroll();
   }).catch(function (err) {
+    unveil();
     var m = document.createElement("p");
     m.className = "noscript";
     m.textContent = "Content could not be loaded (" + err.message + "). Check that the data folder is published with the site.";

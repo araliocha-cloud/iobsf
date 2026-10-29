@@ -93,6 +93,7 @@ html[data-second="zh"] .bi.inline .s[lang="zh"] { display: inline; }
   .lang-switch { order: 3; }
   .site-header .wrap { gap: 12px; }
   .lang-switch button { padding: 3px 5px; font-size: 13px; }
+  html .lang-switch button { width: 4.1em; padding-left: 0; padding-right: 0; }
 }
 
 /* ---------- hero (home) ---------- */
@@ -2035,17 +2036,60 @@ html [id] { scroll-margin-top: var(--stick, 110px) !important; }
 @media (max-width: 600px) { .ev-gallery { grid-template-columns: 1fr 1fr; gap: 16px 12px; } .ev-shot figcaption { font-size: 13px; } }
 .ev-shot img { object-position: center 22%; }
 
-/* ===== one language at a time =====
-   English shows .p; any other choice hides .p wherever that language exists and shows it full size in its place */
-html[data-second="en"] .s { display: none !important; }
-html[data-second="ko"] :is(.bi, .gb, h1, h2, h3, h4, .lede, p, li, dd, dt, figcaption, a, span):has(> .s[lang="ko"]) > .p,
-html[data-second="ja"] :is(.bi, .gb, h1, h2, h3, h4, .lede, p, li, dd, dt, figcaption, a, span):has(> .s[lang="ja"]) > .p,
-html[data-second="zh"] :is(.bi, .gb, h1, h2, h3, h4, .lede, p, li, dd, dt, figcaption, a, span):has(> .s[lang="zh"]) > .p { display: none !important; }
-html[data-second="ko"] :is(h1, h2, h3, h4, .lede):has(.s[lang="ko"]) > .p,
-html[data-second="ja"] :is(h1, h2, h3, h4, .lede):has(.s[lang="ja"]) > .p,
-html[data-second="zh"] :is(h1, h2, h3, h4, .lede):has(.s[lang="zh"]) > .p { display: none !important; }
-html:not([data-second="en"]) .s { font-size: inherit !important; color: inherit !important; margin-top: 0 !important; margin-left: 0 !important; font-weight: inherit; }
-html:not([data-second="en"]) .bi.inline .s { margin-left: 0 !important; }
+/* ===== one language at a time, on the English frame =====
+   English is the frame, drawn exactly as before. With another language chosen, that language is laid into
+   the same grid cell as the English, and the English only turns invisible; it keeps its room. So a translation never makes a box smaller than the English one,
+   and the English page is exactly as it was. Language changes the words, not the structure. */
+html:not([data-second="en"]) .bi { display: grid; }
+html:not([data-second="en"]) :is(.bi.inline, .wbt-sound-l .bi) { display: inline-grid; }
+.bi > .p, .bi > .s { grid-area: 1 / 1; }
+.bi > .s { display: none; }
+html[data-second="ko"] .bi > .s[lang="ko"],
+html[data-second="ja"] .bi > .s[lang="ja"],
+html[data-second="zh"] .bi > .s[lang="zh"] { display: block; visibility: visible; }
+html[data-second="ko"] .bi:has(> .s[lang="ko"]) > .p,
+html[data-second="ja"] .bi:has(> .s[lang="ja"]) > .p,
+html[data-second="zh"] .bi:has(> .s[lang="zh"]) > .p { visibility: hidden; }
+/* menus: a translated label sits in the middle of the English label's place */
+html:not([data-second="en"]) :is(.site-nav, .nav-sub, .wbt-sub) .bi { justify-items: center; }
+/* page titles: the English title and its .bi of translations share one cell */
+html:not([data-second="en"]) :is(h1, h2, h3, h4, .lede):not(.bi):has(> .p + .bi) { display: grid; }
+:is(h1, h2, h3, h4, .lede):not(.bi):has(> .p + .bi) > :is(.p, .bi) { grid-area: 1 / 1; }
+html[data-second="ko"] :is(h1, h2, h3, h4, .lede):not(.bi):has(> .bi > .s[lang="ko"]) > .p,
+html[data-second="ja"] :is(h1, h2, h3, h4, .lede):not(.bi):has(> .bi > .s[lang="ja"]) > .p,
+html[data-second="zh"] :is(h1, h2, h3, h4, .lede):not(.bi):has(> .bi > .s[lang="zh"]) > .p { visibility: hidden; }
+/* texts outside a .bi still swap as before */
+html[data-second="en"] .s:not(.bi > .s) { display: none !important; }
+html[data-second="ko"] :is(.gb, h1, h2, h3, h4, .lede, p, li, dd, dt, figcaption, a, span):not(.bi):has(> .s[lang="ko"]) > .p,
+html[data-second="ja"] :is(.gb, h1, h2, h3, h4, .lede, p, li, dd, dt, figcaption, a, span):not(.bi):has(> .s[lang="ja"]) > .p,
+html[data-second="zh"] :is(.gb, h1, h2, h3, h4, .lede, p, li, dd, dt, figcaption, a, span):not(.bi):has(> .s[lang="zh"]) > .p { display: none !important; }
+/* a translation takes the place of the English at the same size, colour and line height */
+.s { font-size: inherit !important; color: inherit !important; margin-top: 0 !important; margin-left: 0 !important; font-weight: inherit; }
+.bi.inline .s { margin-left: 0 !important; }
+
+/* ===== square scripts: optical size =====
+   A Hangul syllable, a kana or a hanzi fills its whole em box; a Latin lower-case letter fills about half.
+   At the same nominal size these scripts look larger, so they are set at 92% with a slightly closer track.
+   Only on elements that carry the language themselves, so nothing shrinks twice. */
+.s:is([lang="ko"], [lang="ja"], [lang="zh"]) { font-size: .92em !important; letter-spacing: -.015em; }
+:not(html):not(.s):is([lang="ko"], [lang="ja"], [lang^="zh"]):not(:is(:not(html)[lang="ko"], :not(html)[lang="ja"], :not(html)[lang^="zh"]) *) { font-size: .92em; letter-spacing: -.015em; }
+.bi > .p { word-break: normal; overflow-wrap: break-word; line-break: auto; }
+.bi > .s { word-break: normal; overflow-wrap: break-word; line-break: strict; }
+.bi > .s[lang="ko"] { word-break: keep-all; overflow-wrap: anywhere; }
+/* Japanese and Chinese have no spaces: keep-all would make a whole sentence one unbreakable word */
+html .bi > .s:is([lang="ja"], [lang="zh"]), html .bi > .s:is([lang="ja"], [lang="zh"]) * { word-break: normal !important; }
+
+/* ===== steadiness =====
+   The scrollbar keeps its place whether the page is short or long, so the width never jumps. */
+html { scrollbar-gutter: stable; }
+/* images carry their intrinsic size so their place is held before they load; the drawn size stays with the CSS */
+:where(img[width][height]) { height: auto; }
+/* language buttons: one fixed width each, so the header never slides */
+.lang-switch { flex-shrink: 0; }
+.lang-switch button { width: 4.6em; padding-left: 0; padding-right: 0; text-align: center; overflow: hidden; }
+/* reload and back/forward: the page is veiled until it stands at the old position, and the dawn does not rise again */
+html.iobsf-veil main, html.iobsf-veil #site-footer { visibility: hidden; }
+html.iobsf-return .hero .dawn, html.iobsf-return .hero::after { animation: none !important; }
 
 .hist-links { margin-top: 26px; font-size: 18px; } .hist-links a { color: var(--copper-light); }
 /* WBT host application: a quiet form inside a deep slab */
