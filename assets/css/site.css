@@ -2051,8 +2051,6 @@ html[data-second="ko"] .bi:has(> .s[lang="ko"]) > .p,
 html[data-second="ja"] .bi:has(> .s[lang="ja"]) > .p,
 html[data-second="zh"] .bi:has(> .s[lang="zh"]) > .p { visibility: hidden; }
 /* menus: a translated label sits in the middle of the English label's place */
-html:not([data-second="en"]) .wbt-sub .bi { justify-items: center; }
-@media (min-width: 1221px) { html:not([data-second="en"]) :is(.site-nav, .nav-sub) .bi { justify-items: center; } }
 /* a translation with no English beside it sits on the line, not above it */
 html:not([data-second="en"]) .bi > .p:empty { display: none; }
 /* page titles: the English title and its .bi of translations share one cell */
@@ -2238,9 +2236,13 @@ html[data-second="ja"] .w-body > [data-l="ja"], html[data-second="zh"] .w-body >
 .w-body > :is([lang="en"], [lang="ja"], [lang="zh"]) p { word-break: normal; }
 .w-body > :is([lang="ja"], [lang="zh"]) p { text-indent: 2em; }
 
-/* the essay's breadcrumb runs as one line of text: the chosen language simply replaces the English */
-html:not([data-second="en"]) .w-crumb .bi { display: inline; }
-html[data-second="ko"] .w-crumb .bi:has(> .s[lang="ko"]) > .p, html[data-second="ja"] .w-crumb .bi:has(> .s[lang="ja"]) > .p,
-html[data-second="zh"] .w-crumb .bi:has(> .s[lang="zh"]) > .p { display: none; }
-html:not([data-second="en"]) .w-crumb .bi > .s { display: none; }
-html[data-second="ko"] .w-crumb .bi > .s[lang="ko"], html[data-second="ja"] .w-crumb .bi > .s[lang="ja"], html[data-second="zh"] .w-crumb .bi > .s[lang="zh"] { display: inline; }
+/* menus and the essay's breadcrumb: the chosen language simply replaces the English, at its own natural width,
+   so the spacing between items stays even. The menus are centred, so nothing around them moves. */
+html:not([data-second="en"]) :is(.w-crumb, .site-nav, .wbt-sub) .bi { display: inline; }
+html[data-second="ko"] :is(.w-crumb, .site-nav, .wbt-sub) .bi:has(> .s[lang="ko"]) > .p,
+html[data-second="ja"] :is(.w-crumb, .site-nav, .wbt-sub) .bi:has(> .s[lang="ja"]) > .p,
+html[data-second="zh"] :is(.w-crumb, .site-nav, .wbt-sub) .bi:has(> .s[lang="zh"]) > .p { display: none; }
+html:not([data-second="en"]) :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s { display: none; }
+html[data-second="ko"] :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s[lang="ko"],
+html[data-second="ja"] :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s[lang="ja"],
+html[data-second="zh"] :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s[lang="zh"] { display: inline; visibility: visible; }
