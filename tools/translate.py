@@ -14,7 +14,7 @@ ROOT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else ".")
 POSTS = ROOT / "content" / "writings"
 STATE = ROOT / "content" / ".translations"
 KEY = os.environ.get("GEMINI_API_KEY", "").strip()
-MODELS = [m for m in [os.environ.get("GEMINI_MODEL", "").strip(), "gemini-flash-latest", "gemini-2.5-flash"] if m]
+MODELS = [m for m in [os.environ.get("GEMINI_MODEL", "").strip(), "gemini-flash-latest", "gemini-2.5-flash", "gemini-2.5-flash-lite", "gemini-flash-lite-latest"] if m]
 MAX_CALLS = int(os.environ.get("TRANSLATE_MAX_CALLS", "30"))
 PAUSE = float(os.environ.get("TRANSLATE_PAUSE", "7"))
 LANGS = {"en": "English", "ja": "Japanese", "zh": "Simplified Chinese"}
@@ -91,25 +91,41 @@ def gemini(system, text, as_json=False):
     if as_json:
         body["generationConfig"]["responseMimeType"] = "application/json"
     last = None
-    for model in MODELS:
-        req = urllib.request.Request(
-            f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
-            data=json.dumps(body).encode("utf-8"),
-            headers={"Content-Type": "application/json", "x-goog-api-key": KEY})
-        try:
-            with urllib.request.urlopen(req, timeout=600) as r:
-                out = json.loads(r.read().decode("utf-8"))
-            cand = (out.get("candidates") or [{}])[0]
-            if cand.get("finishReason") not in (None, "STOP"):
-                raise RuntimeError("unfinished: " + str(cand.get("finishReason")))
-            return "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", [])).strip()
-        except urllib.error.HTTPError as e:
-            msg = e.read().decode("utf-8", "replace")[:300]
-            if e.code == 429:
-                raise Stop("free-tier limit reached: " + msg)
-            if e.code == 404:
-                last = f"{model}: not found"; continue
-            raise RuntimeError(f"{model}: HTTP {e.code} {msg}")
+    for model in list(MODELS):
+        for attempt in range(3):
+            req = urllib.request.Request(
+                f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                data=json.dumps(body).encode("utf-8"),
+                headers={"Content-Type": "application/json", "x-goog-api-key": KEY})
+            try:
+                with urllib.request.urlopen(req, timeout=600) as r:
+                    out = json.loads(r.read().decode("utf-8"))
+                cand = (out.get("candidates") or [{}])[0]
+                if cand.get("finishReason") not in (None, "STOP"):
+                    raise RuntimeError(model + " unfinished: " + str(cand.get("finishReason")))
+                return "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", [])).strip()
+            except urllib.error.HTTPError as e:
+                raw = e.read().decode("utf-8", "replace")
+                if e.code == 404:
+                    last = f"{model}: not found"; break
+                if e.code in (429, 503):
+                    try:
+                        det = json.loads(raw)["error"].get("details", [])
+                    except Exception:
+                        det = []
+                    quota = ",".join(v.get("quotaId", "") for d in det for v in d.get("violations", []))
+                    delay = next((d.get("retryDelay") for d in det if d.get("retryDelay")), None)
+                    say("limit", model, e.code, quota or raw[:160].replace("\n", " "), "retry in", delay)
+                    if e.code == 503 or ("PerDay" not in quota and delay):
+                        secs = float(str(delay or "30s").rstrip("s")) + 2
+                        if secs <= 90 and attempt < 2:
+                            time.sleep(secs); continue
+                    MODELS.remove(model)  # this model is spent for today; the next one carries on
+                    last = f"{model}: limit"
+                    break
+                raise RuntimeError(f"{model}: HTTP {e.code} {raw[:300]}")
+    if last and "limit" in last:
+        raise Stop("all models at their free-tier limit")
     raise RuntimeError(last or "no model")
 
 
