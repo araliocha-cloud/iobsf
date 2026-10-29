@@ -4,5 +4,6 @@
     "ko": "우승자만이 아니다. 불을 지킨 모든 팀에게 남길 이야기가 있다.",
     "ja": "",
     "zh": ""
-  }
+  },
+  "_note": "Settings for the Chronicle page. Stories are one file each in content/chronicle."
 }
