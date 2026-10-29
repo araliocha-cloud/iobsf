@@ -55,9 +55,21 @@ Translate the Korean text into {lang}.
 - Proper names of people, books and theories: render them as they are known in {lang}; keep the original in brackets where the original does.
 - When the original pairs a term with the very same word in brackets, as in 호모날라리언스(HomoNallarians), write the word once in the translation: HomoNallarians, not HomoNallarians (HomoNallarians).
 - Do not use em-dashes to introduce explanations. Do not use the middle dot (·) as a separator; use commas.
+- The output must not contain Korean script (Hangul) where it does not belong. Write every Korean name, title and term in the target language: romanised in English, in kanji or katakana in Japanese, in hanzi in Chinese. In English a Korean original may stay only inside brackets after its English rendering, and only where the Korean text itself gives such a pairing. In Japanese and Chinese no Hangul at all.
 - Output only the translated text, with no preface and no notes.
 
 {glossary}"""
+
+
+import re
+HANGUL = re.compile(r"[\u1100-\u11ff\u3130-\u318f\uac00-\ud7a3]+")
+
+
+def stray(t, k):
+    """Hangul left where it does not belong: none at all in Japanese and Chinese, only inside brackets in English."""
+    if k == "en":
+        t = re.sub(r"\([^()]*\)", "", t)
+    return len(HANGUL.findall(t or ""))
 
 
 def sha(t):
@@ -145,14 +157,28 @@ def translate_post(f):
         by_hand = bool(cur) and made != sha(cur)
         if by_hand:
             continue
-        if cur and st.get(k + "_src") == src:
+        tries = st.get(k + "_tries", 0) if st.get(k + "_src") == src else 0
+        if cur and st.get(k + "_src") == src and (stray(cur, k) == 0 or tries >= 3):
             continue
-        t = gemini(RULES.format(lang=name, glossary=GLOSSARY), ko)
-        if len(t) < len(ko) * 0.4:
+        best = None
+        for _ in range(2):
+            t = gemini(RULES.format(lang=name, glossary=GLOSSARY), ko)
+            tries += 1
+            if len(t) < len(ko) * 0.4:
+                continue
+            if best is None or stray(t, k) < stray(best, k):
+                best = t
+            if stray(best, k) == 0:
+                break
+        if best is None:
             raise RuntimeError(f"{f.name} {k}: translation suspiciously short, not saved")
+        t = best
+        if stray(t, k):
+            say("check by hand:", f.name, k, "Korean script left:", HANGUL.findall(t)[:5])
         post[field] = t
         st[k] = sha(t)
         st[k + "_src"] = src
+        st[k + "_tries"] = tries
         changed = True
         f.write_text(json.dumps(post, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         sf.write_text(json.dumps(st, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
