@@ -1,25 +1,22 @@
-2026-10-29 05:06 UTC
-repaired 20261029009989.json ja left: none
-limit gemini-flash-latest 429 GenerateRequestsPerDayPerProjectPerModel-FreeTier retry in 7157s
-repaired 20261029009987.json zh left: none
-repaired 20261029009986.json ja left: none
-translated 20261029009986.json zh 4885 -> 3210
-translated 20261029009985.json en 8127 -> 19177
-check by hand: 20261029009985.json ja Korean script left: ['고사', '제']
-translated 20261029009985.json ja 8127 -> 7378
-translated 20261029009985.json zh 8127 -> 5647
-translated 20261029009984.json en 2601 -> 5546
-translated 20261029009984.json ja 2601 -> 2286
-translated 20261029009984.json zh 2601 -> 1745
-translated 20261029009983.json en 2405 -> 5667
-translated 20261029009983.json ja 2405 -> 2171
-translated 20261029009983.json zh 2405 -> 1626
-translated 20261029009982.json en 4676 -> 10414
-check by hand: 20261029009982.json ja Korean script left: ['기']
-translated 20261029009982.json ja 4676 -> 4199
-translated 20261029009982.json zh 4676 -> 3266
-translated 20261029009981.json en 1125 -> 2523
-translated 20261029009981.json ja 1125 -> 1043
-translated 20261029009981.json zh 1125 -> 767
+2026-10-29 05:16 UTC
+limit gemini-flash-latest 429 GenerateRequestsPerDayPerProjectPerModel-FreeTier retry in 6764s
+repaired 20261029009982.json ja left: none
+translated 20261029009980.json en 2100 -> 4443
+translated 20261029009980.json ja 2100 -> 1867
+translated 20261029009980.json zh 2100 -> 1412
+translated 20261029009979.json en 8283 -> 16393
+translated 20261029009979.json ja 8283 -> 7373
+translated 20261029009979.json zh 8283 -> 5704
+translated 20261029009978.json en 5347 -> 12521
+translated 20261029009978.json ja 5347 -> 4784
+check by hand: 20261029009978.json zh Korean script left: ['원의']
+translated 20261029009978.json zh 5347 -> 3855
+translated 20261029009977.json en 2735 -> 6307
+translated 20261029009977.json ja 2735 -> 2428
+translated 20261029009977.json zh 2735 -> 2066
+translated 20261029009976.json en 8408 -> 19619
+limit gemini-flash-lite-latest 503 {   "error": {     "code": 503,     "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later retry in None
+check by hand: 20261029009976.json ja Korean script left: ['운트']
+translated 20261029009976.json ja 8408 -> 7681
 stopped: call cap reached (the rest follows on the next run)
 calls 30
