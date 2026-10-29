@@ -1,7 +1,26 @@
-2026-10-29 04:05 UTC
-translated 20261029009999.json ja 3169 -> 2993
-stopped: free-tier limit reached: {
-  "error": {
-    "code": 429,
-    "message": "You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota ex (the rest follows on the next run)
-calls 2
+2026-10-29 04:13 UTC
+limit gemini-flash-latest 429 GenerateRequestsPerDayPerProjectPerModel-FreeTier retry in 10417s
+translated 20261029009999.json zh 3169 -> 2285
+translated 20261029009998.json ja 2385 -> 2196
+translated 20261029009998.json zh 2385 -> 1709
+translated 20261029009997.json en 5485 -> 10645
+translated 20261029009997.json ja 5485 -> 4869
+translated 20261029009997.json zh 5485 -> 3892
+translated 20261029009996.json en 8807 -> 17352
+translated 20261029009996.json ja 8807 -> 7850
+translated 20261029009996.json zh 8807 -> 6303
+translated 20261029009995.json en 6039 -> 13680
+translated 20261029009995.json ja 6039 -> 5070
+translated 20261029009995.json zh 6039 -> 3971
+translated 20261029009994.json en 9911 -> 21294
+translated 20261029009994.json ja 9911 -> 8732
+translated 20261029009994.json zh 9911 -> 6929
+translated 20261029009993.json en 6059 -> 13594
+translated 20261029009993.json ja 6059 -> 4957
+translated 20261029009993.json zh 6059 -> 3953
+translated 20261029009992.json en 6055 -> 11922
+translated 20261029009992.json ja 6055 -> 5331
+translated 20261029009992.json zh 6055 -> 4306
+translated 20261029009991.json en 10182 -> 20735
+stopped: call cap reached (the rest follows on the next run)
+calls 30
