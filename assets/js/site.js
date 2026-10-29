@@ -794,7 +794,8 @@
     document.documentElement.style.setProperty("--stick", Math.round(h + 18) + "px");
   }
   function settleHash() {
-    if (!location.hash) return;
+    if (TRAVERSE) { TRAVERSE = false; return; }
+    if (!location.hash || RETURN_Y) return;
     var stop = false, quit = function () { stop = true; };
     ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (e) { window.addEventListener(e, quit, { once: true, passive: true }); });
     [0, 120, 350, 700, 1200, 2000, 3000].forEach(function (ms) { setTimeout(function () {
@@ -807,7 +808,7 @@
   window.addEventListener("load", function () { setStick(); settleHash(); });
   window.addEventListener("load", function () {
     setTimeout(function () {
-      if (location.hash && document.querySelector(".wbt-sub")) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+      if (location.hash && !RETURN_Y && document.querySelector(".wbt-sub")) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
       subSpy();
     }, 700);
   });
@@ -1662,21 +1663,44 @@
      Until then the page stays veiled (class set in the document head), so nothing is seen to move. */
   var SKEY = "iobsf-scroll:" + location.pathname + location.search;
   try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
-  var restoring = true;
-  function saveScroll() { if (restoring) return; try { sessionStorage.setItem(SKEY, String(Math.round(window.scrollY))); } catch (e) {} }
+  var restoring = true, TRAVERSE = false;
+  /* every history entry carries its own reading position (history.state), so going back inside a page,
+     from one submenu part to the one before, returns to the very line that was being read */
+  function saveScroll() {
+    if (restoring) return;
+    var y = Math.round(window.scrollY);
+    try { sessionStorage.setItem(SKEY, String(y)); } catch (e) {}
+    try { var st = history.state && typeof history.state === "object" ? history.state : {}; if (st.iobsfY !== y) { var n = {}; for (var k in st) n[k] = st[k]; n.iobsfY = y; history.replaceState(n, ""); } } catch (e) {}
+  }
+  function navType() { var nt = "navigate"; try { var ne = performance.getEntriesByType("navigation")[0]; if (ne) nt = ne.type; else if (performance.navigation) nt = performance.navigation.type === 1 ? "reload" : performance.navigation.type === 2 ? "back_forward" : "navigate"; } catch (e) {} return nt; }
+  function savedY() {
+    var y = 0;
+    try { if (history.state && history.state.iobsfY > 0) y = history.state.iobsfY; } catch (e) {}
+    if (!y) { try { y = parseInt(sessionStorage.getItem(SKEY) || "0", 10) || 0; } catch (e) {} }
+    return y;
+  }
+  var NT = navType(), RETURN_Y = (NT === "reload" || NT === "back_forward") ? savedY() : 0;
+  /* before a link inside the page moves the screen, the current entry keeps where the reader was */
+  document.addEventListener("click", function (e) { var a = e.target.closest && e.target.closest("a[href]"); if (a) { restoring = false; saveScroll(); } }, true);
+  /* back and forward inside the page: return to that entry's own line */
+  window.addEventListener("popstate", function (e) {
+    var y = e.state && e.state.iobsfY;
+    if (typeof y !== "number") return;
+    TRAVERSE = true;
+    setTimeout(function () { TRAVERSE = false; }, 400);
+    window.scrollTo(0, y);
+    requestAnimationFrame(function () { window.scrollTo(0, y); });
+  });
   var saveT = 0;
   window.addEventListener("scroll", function () { clearTimeout(saveT); saveT = setTimeout(saveScroll, 120); }, { passive: true });
   window.addEventListener("pagehide", saveScroll);
   document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") saveScroll(); });
   function unveil() { restoring = false; document.documentElement.classList.remove("iobsf-veil"); }
   function restoreScroll() {
-    var nt = "navigate";
-    try { var ne = performance.getEntriesByType("navigation")[0]; if (ne) nt = ne.type; else if (performance.navigation) nt = performance.navigation.type === 1 ? "reload" : performance.navigation.type === 2 ? "back_forward" : "navigate"; } catch (e) {}
-    var y = 0;
     /* only a reload or back/forward returns to the old position; a link (the emblem included) always opens at the top */
-    if (nt === "reload" || nt === "back_forward") { try { y = parseInt(sessionStorage.getItem(SKEY) || "0", 10) || 0; } catch (e) {} }
-    else { try { sessionStorage.removeItem(SKEY); } catch (e) {} }
-    var hash = location.hash ? decodeURIComponent(location.hash.slice(1)) : "";
+    var y = RETURN_Y;
+    if (!(NT === "reload" || NT === "back_forward")) { try { sessionStorage.removeItem(SKEY); } catch (e) {} }
+    var hash = location.hash && !y ? decodeURIComponent(location.hash.slice(1)) : "";
     var t0 = Date.now(), lastH = -1, still = 0;
     function place() {
       var target = hash ? document.getElementById(hash) : null;
