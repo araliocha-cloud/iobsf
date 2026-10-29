@@ -5,6 +5,7 @@
     "ja": "",
     "zh": ""
   },
+  "_note": "Settings for the Chronicle page. Stories are one file each in content/chronicle.",
   "stories": [
     {
       "id": "founding-general-meeting",
