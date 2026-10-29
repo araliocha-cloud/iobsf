@@ -2051,7 +2051,10 @@ html[data-second="ko"] .bi:has(> .s[lang="ko"]) > .p,
 html[data-second="ja"] .bi:has(> .s[lang="ja"]) > .p,
 html[data-second="zh"] .bi:has(> .s[lang="zh"]) > .p { visibility: hidden; }
 /* menus: a translated label sits in the middle of the English label's place */
-html:not([data-second="en"]) :is(.site-nav, .nav-sub, .wbt-sub) .bi { justify-items: center; }
+html:not([data-second="en"]) .wbt-sub .bi { justify-items: center; }
+@media (min-width: 1221px) { html:not([data-second="en"]) :is(.site-nav, .nav-sub) .bi { justify-items: center; } }
+/* a translation with no English beside it sits on the line, not above it */
+html:not([data-second="en"]) .bi > .p:empty { display: none; }
 /* page titles: the English title and its .bi of translations share one cell */
 html:not([data-second="en"]) :is(h1, h2, h3, h4, .lede):not(.bi):has(> .p + .bi) { display: grid; }
 :is(h1, h2, h3, h4, .lede):not(.bi):has(> .p + .bi) > :is(.p, .bi) { grid-area: 1 / 1; }
@@ -2234,3 +2237,10 @@ html[data-second="ja"] .w-body > [data-l="ja"], html[data-second="zh"] .w-body >
 .w-body > [lang="zh"] { font-family: var(--f-zh); }
 .w-body > :is([lang="en"], [lang="ja"], [lang="zh"]) p { word-break: normal; }
 .w-body > :is([lang="ja"], [lang="zh"]) p { text-indent: 2em; }
+
+/* the essay's breadcrumb runs as one line of text: the chosen language simply replaces the English */
+html:not([data-second="en"]) .w-crumb .bi { display: inline; }
+html[data-second="ko"] .w-crumb .bi:has(> .s[lang="ko"]) > .p, html[data-second="ja"] .w-crumb .bi:has(> .s[lang="ja"]) > .p,
+html[data-second="zh"] .w-crumb .bi:has(> .s[lang="zh"]) > .p { display: none; }
+html:not([data-second="en"]) .w-crumb .bi > .s { display: none; }
+html[data-second="ko"] .w-crumb .bi > .s[lang="ko"], html[data-second="ja"] .w-crumb .bi > .s[lang="ja"], html[data-second="zh"] .w-crumb .bi > .s[lang="zh"] { display: inline; }

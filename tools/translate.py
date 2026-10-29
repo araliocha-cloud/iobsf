@@ -43,7 +43,7 @@ GLOSSARY = """Fixed terms of the federation. Always use exactly these renderings
 | 핏 마스터 | Pit Master | ピットマスター | 烧烤大师（Pit Master） |
 | Slow & Low (keep this order, never Low & Slow) | Slow & Low | Slow & Low | Slow & Low |
 | 고시례(高矢禮) | Gosirye (高矢禮) | 高矢禮（コシレ） | 高矢礼 |
-| 샤카, 차영기 | Shaka Chaa | シャカ（車永基） | Shaka Chaa |
+| 샤카, 차영기(車英基) | Shaka Chaa | 車英基（シャカ） | 车英基（Shaka Chaa） |
 """
 
 RULES = """You translate essays by the Korean barbecue humanist Shaka Chaa for the official website of IOBSF.

@@ -709,11 +709,11 @@
       var pub = w.published && w.published.outlet ? '<p class="w-pub">' + bi({ en: "First published in " + w.published.outlet + (w.published.date ? ", " + fmtDate({ date: w.published.date }) : ""), ko: "처음 실린 곳: " + w.published.outlet, ja: "初出：" + w.published.outlet, zh: "首次刊载于：" + w.published.outlet }, "span", "", true) + (w.published.href ? ' <a href="' + esc(w.published.href) + '">Original</a>' : "") + "</p>" : "";
       put("#writing",
         '<article class="writing">' +
-          '<p class="w-crumb"><a href="archives.html">Archives</a>' + (cat ? " / " + esc(cat.name.en) + bi({ ko: cat.name.ko }, "span", "", true) : "") + "</p>" +
+          '<p class="w-crumb"><a href="archives.html">' + bi({ en: "Archives", ko: "서고", ja: "書庫", zh: "书库" }, "span", "", true) + "</a>" + (cat ? " / " + bi(cat.name, "span", "", true) : "") + "</p>" +
           "<h1>" + esc(en(w.title)) + "</h1>" +
           (w.subtitle && w.subtitle.en ? '<p class="w-sub-en">' + esc(w.subtitle.en) + "</p>" : "") +
           '<div class="w-ko">' + bi({ ko: w.title.ko, ja: w.title.ja, zh: w.title.zh }, "div", "w-title-ko") + (w.subtitle && w.subtitle.ko ? bi({ ko: w.subtitle.ko, ja: w.subtitle.ja, zh: w.subtitle.zh }, "div", "w-sub-ko") : "") + "</div>" +
-          '<p class="w-by">' + esc((w.by && w.by.en) || "Shaka Chaa") + bi({ ko: (w.by && w.by.ko) || "차영기" }, "span", "", true) + "</p>" + pub +
+          '<p class="w-by">' + bi({ en: (w.by && w.by.en) || "Shaka Chaa", ko: (w.by && w.by.ko) || "차영기", ja: (w.by && w.by.ja) || "車英基（Shaka Chaa）", zh: (w.by && w.by.zh) || "车英基（Shaka Chaa）" }, "span", "", true) + "</p>" + pub +
           '<p class="w-lang">' + bi({ en: tw.en ? "Translated from the Korean original" : "Original text in Korean", ko: "원문 한국어", ja: tw.ja ? "韓国語原文からの翻訳" : "原文 韓国語", zh: tw.zh ? "译自韩语原文" : "原文 韩语" }, "span", "", true) + "</p>" +
           (w.image ? '<figure class="w-fig"><img src="' + esc(w.image) + '" alt="">' + (w.image_caption ? "<figcaption>" + esc(w.image_caption) + "</figcaption>" : "") + "</figure>" : "") +
           '<div class="w-body">' + body + "</div>" +
