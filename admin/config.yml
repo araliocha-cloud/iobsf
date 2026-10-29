@@ -18,7 +18,7 @@ collections:
 - name: writings
   label: 서고 글 (Writings)
   label_singular: 글
-  description: 서고(Archives)에 실리는 글. 「새 글」을 누르면 빈 글 한 편이 열린다.
+  description: 서고(Archives)에 실리는 글. 「새 글」을 누르면 빈 글 한 편이 열린다. 한국어 원고만 쓰고 저장하면 영어, 일본어, 중국어 본문이 자동으로 채워진다.
   folder: content/writings
   extension: json
   format: json
@@ -55,6 +55,14 @@ collections:
     - name: en
       label: 영어 제목 (목록에 크게 표시)
       widget: string
+    - name: ja
+      label: 일본어 제목 (비워 두면 자동 번역)
+      widget: string
+      required: false
+    - name: zh
+      label: 중국어 제목 (비워 두면 자동 번역)
+      widget: string
+      required: false
   - name: subtitle
     label: 부제
     widget: object
@@ -65,7 +73,15 @@ collections:
       widget: string
       required: false
     - name: en
-      label: 영어 부제
+      label: 영어 부제 (비워 두면 자동 번역)
+      widget: string
+      required: false
+    - name: ja
+      label: 일본어 부제 (비워 두면 자동 번역)
+      widget: string
+      required: false
+    - name: zh
+      label: 중국어 부제 (비워 두면 자동 번역)
       widget: string
       required: false
   - name: id
@@ -81,9 +97,21 @@ collections:
     widget: string
     required: false
   - name: body
-    label: 본문
+    label: 본문 (한국어 원문)
     widget: markdown
     hint: '문단은 빈 줄로 나눈다. 소제목은 맨 앞에 ### 를, 인용은 > 를 붙인다.'
+  - name: body_en
+    label: 영어 본문 (자동 번역, 손으로 고칠 수 있다)
+    widget: markdown
+    required: false
+  - name: body_ja
+    label: 일본어 본문 (자동 번역, 손으로 고칠 수 있다)
+    widget: markdown
+    required: false
+  - name: body_zh
+    label: 중국어 본문 (자동 번역, 손으로 고칠 수 있다)
+    widget: markdown
+    required: false
   - name: refs
     label: 참고문헌
     widget: list

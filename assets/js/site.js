@@ -589,7 +589,7 @@
     return '<ul class="entries">' + list.map(function (x) {
       var t = x.href ? '<a href="' + esc(x.href) + '">' + esc(en(x.title)) + "</a>" : '<span class="entry-title">' + esc(en(x.title)) + "</span>";
       var k = KINDS[x.kind] ? '<span class="entry-kind">' + bi(KINDS[x.kind], "span", "", true) + "</span>" : "";
-      return "<li>" + k + t + bi({ ko: x.title.ko }, "div", "entry-sub") + (x.by ? '<div class="entry-by">' + esc(x.by) + "</div>" : "") + "</li>";
+      return "<li>" + k + t + bi({ ko: x.title.ko, ja: x.title.ja, zh: x.title.zh }, "div", "entry-sub") + (x.by ? '<div class="entry-by">' + esc(x.by) + "</div>" : "") + "</li>";
     }).join("") + "</ul>";
   }
   function smallTrophy(d) {
@@ -701,18 +701,22 @@
       if (!w) { put("#writing", empty({ en: "This essay was not found.", ko: "글을 찾을 수 없다." })); return; }
       var cat = (r[1].archives || []).filter(function (a) { return a.key === w.category; })[0];
       document.title = en(w.title) + " | IOBSF";
-      var body = md(w.body);
+      /* the Korean original and its translations: one shows at a time, by the chosen language; a missing translation shows the original */
+      var tw = { en: !!w.body_en, ja: !!w.body_ja, zh: !!w.body_zh };
+      var bodyOf = function (k, txt, l) { return '<div class="w-text" data-l="' + k + '" lang="' + l + '">' + md(txt) + "</div>"; };
+      var body = bodyOf("en", w.body_en || w.body, tw.en ? "en" : "ko") + bodyOf("ko", w.body, "ko") +
+        bodyOf("ja", w.body_ja || w.body, tw.ja ? "ja" : "ko") + bodyOf("zh", w.body_zh || w.body, tw.zh ? "zh" : "ko");
       var pub = w.published && w.published.outlet ? '<p class="w-pub">' + bi({ en: "First published in " + w.published.outlet + (w.published.date ? ", " + fmtDate({ date: w.published.date }) : ""), ko: "처음 실린 곳: " + w.published.outlet, ja: "初出：" + w.published.outlet, zh: "首次刊载于：" + w.published.outlet }, "span", "", true) + (w.published.href ? ' <a href="' + esc(w.published.href) + '">Original</a>' : "") + "</p>" : "";
       put("#writing",
         '<article class="writing">' +
           '<p class="w-crumb"><a href="archives.html">Archives</a>' + (cat ? " / " + esc(cat.name.en) + bi({ ko: cat.name.ko }, "span", "", true) : "") + "</p>" +
           "<h1>" + esc(en(w.title)) + "</h1>" +
           (w.subtitle && w.subtitle.en ? '<p class="w-sub-en">' + esc(w.subtitle.en) + "</p>" : "") +
-          '<div class="w-ko">' + bi({ ko: w.title.ko }, "div", "w-title-ko") + (w.subtitle && w.subtitle.ko ? bi({ ko: w.subtitle.ko }, "div", "w-sub-ko") : "") + "</div>" +
+          '<div class="w-ko">' + bi({ ko: w.title.ko, ja: w.title.ja, zh: w.title.zh }, "div", "w-title-ko") + (w.subtitle && w.subtitle.ko ? bi({ ko: w.subtitle.ko, ja: w.subtitle.ja, zh: w.subtitle.zh }, "div", "w-sub-ko") : "") + "</div>" +
           '<p class="w-by">' + esc((w.by && w.by.en) || "Shaka Chaa") + bi({ ko: (w.by && w.by.ko) || "차영기" }, "span", "", true) + "</p>" + pub +
-          '<p class="w-lang">' + bi({ en: "Original text in Korean", ko: "원문 한국어" }, "span", "", true) + "</p>" +
+          '<p class="w-lang">' + bi({ en: tw.en ? "Translated from the Korean original" : "Original text in Korean", ko: "원문 한국어", ja: tw.ja ? "韓国語原文からの翻訳" : "原文 韓国語", zh: tw.zh ? "译自韩语原文" : "原文 韩语" }, "span", "", true) + "</p>" +
           (w.image ? '<figure class="w-fig"><img src="' + esc(w.image) + '" alt="">' + (w.image_caption ? "<figcaption>" + esc(w.image_caption) + "</figcaption>" : "") + "</figure>" : "") +
-          '<div class="w-body" lang="ko">' + body + "</div>" +
+          '<div class="w-body">' + body + "</div>" +
           (w.refs && w.refs.length ? '<div class="w-refs"><h3>' + bi({ en: "References", ko: "주요 참고 문헌" }, "span", "", true) + '</h3><ul>' + w.refs.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>" : "") +
         "</article>");
     });

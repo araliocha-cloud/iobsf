@@ -2224,3 +2224,13 @@ a.gt-box:hover { transform: translateY(-4px); text-decoration: none; box-shadow:
 .pbo-name { font-family: var(--f-display); font-size: 21px; color: #f3dcaa; letter-spacing: .04em; }
 .pbo-sub { font-size: 14px; color: #c9b089; line-height: 1.6; text-align: left; }
 @media (max-width: 700px) { .pb-steps { grid-template-columns: 1fr 1fr !important; } .pb-officials { padding: 14px 16px; } }
+
+/* essays: the Korean original or its translation, one at a time by the chosen language */
+.w-body > .w-text { display: none; }
+html[data-second="en"] .w-body > [data-l="en"], html[data-second="ko"] .w-body > [data-l="ko"],
+html[data-second="ja"] .w-body > [data-l="ja"], html[data-second="zh"] .w-body > [data-l="zh"] { display: block; }
+.w-body > [lang="en"] { font-family: var(--f-body); font-size: 19px; }
+.w-body > [lang="ja"] { font-family: var(--f-ja); }
+.w-body > [lang="zh"] { font-family: var(--f-zh); }
+.w-body > :is([lang="en"], [lang="ja"], [lang="zh"]) p { word-break: normal; }
+.w-body > :is([lang="ja"], [lang="zh"]) p { text-indent: 2em; }

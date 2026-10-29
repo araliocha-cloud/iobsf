@@ -1,11 +1,14 @@
 # The admin writes one file per post under content/.
-# This puts them together into the data files the site reads, then asks GitHub Pages to publish.
+# Korean originals of the essays are translated with Gemini (when the secret GEMINI_API_KEY is set),
+# then everything is put together into the data files the site reads, and GitHub Pages is asked to publish.
 name: Build content
 on:
   push:
     branches: [main]
     paths: ["content/**", "tools/build_content.py"]
   workflow_dispatch:
+  schedule:
+    - cron: "17 18 * * *"   # once a day (03:17 in Korea): finishes any translation the free tier left for later
 permissions:
   contents: write
   pages: write
@@ -17,14 +20,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Translate
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 tools/translate.py .
       - run: python3 tools/build_content.py .
       - name: Commit data
         run: |
-          if git diff --quiet -- data; then echo "no change"; exit 0; fi
+          git add -A content data
+          if git diff --cached --quiet; then echo "no change"; exit 0; fi
           git config user.name "IOBSF admin"
           git config user.email "admin@iobsf.org"
-          git add data
-          git commit -m "Build data from content"
+          git commit -m "Translate and build data from content"
           git pull --rebase origin main
           git push
       - name: Publish
