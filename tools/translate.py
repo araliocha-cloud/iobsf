@@ -11,7 +11,7 @@ Runs in GitHub Actions before tools/build_content.py, when the secret GEMINI_API
 import hashlib, http.client, json, os, pathlib, sys, time, urllib.request, urllib.error
 
 ROOT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else ".")
-POSTS = ROOT / "content" / "writings"
+FOLDERS = ["writings", "kbri"]  # boards whose Korean originals are translated
 STATE = ROOT / "content" / ".translations"
 KEY = os.environ.get("GEMINI_API_KEY", "").strip()
 MODELS = [m for m in [os.environ.get("GEMINI_MODEL", "").strip(), "gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite", "gemini-flash-lite-latest"] if m]
@@ -208,45 +208,112 @@ def translate_text(ko, name):
     return "\n\n".join(out)
 
 
-def translate_post(f):
-    post = json.loads(f.read_text(encoding="utf-8"))
-    sf = STATE / f.name
-    st = json.loads(sf.read_text(encoding="utf-8")) if sf.exists() else {}
-    if not (post.get("id") or "").strip() and not ((post.get("title") or {}).get("en") or "").strip():
-        post["id"] = f.stem
-        f.write_text(json.dumps(post, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    ko = post.get("body") or ""
+# ---------- designed reports (HTML): only the words are translated, the design stays ----------
+SKIP = re.compile(r"(<style\b.*?</style>|<script\b.*?</script>|<!--.*?-->)", re.S | re.I)
+TAG = re.compile(r"(<[^>]+>)")
+CSS_WORDS = re.compile(r"(content:\s*['\"])([^'\"]*)(?=['\"])")
+
+
+def html_pieces(html):
+    """The document as a list of pieces; text pieces outside style and script are the ones to translate."""
+    out = []
+    for i, block in enumerate(SKIP.split(html)):
+        if i % 2:
+            if block[:6].lower() == "<style":
+                # words drawn by the stylesheet itself (content: '...') are translated too
+                for j, piece in enumerate(CSS_WORDS.split(block)):
+                    out.append((piece, j % 3 == 2 and bool(HANGUL.search(piece))))
+            else:
+                out.append((block, False))
+            continue
+        for j, piece in enumerate(TAG.split(block)):
+            out.append((piece, j % 2 == 0 and bool(HANGUL.search(piece))))
+    return out
+
+
+HTML_RULES = """These are text pieces taken from a designed research report (charts, tables, cards), in order.
+Translate each Korean piece into {lang}. Return JSON {{"t": [...]}} with exactly one string per piece, in the same order.
+- A piece may be a heading, a label in a chart, a number with a unit, or part of a sentence cut by bold or italic markup: translate it so that it joins naturally with its neighbours.
+- Keep numbers, years, currency figures, units, symbols and HTML entities (&amp; &nbsp; ...) exactly as they are.
+- Keep chart labels short; do not add words.
+- Keep spaces at the start and end of a piece as they are.
+
+{glossary}"""
+
+
+def translate_html(ko, name, k):
+    pieces = html_pieces(ko)
+    idx = [i for i, (t, tr_) in enumerate(pieces) if tr_]
+    out = {}
+    batch, size = [], 0
+
+    def run(b):
+        core = [pieces[i][0].strip() for i in b]
+        res = json.loads(gemini(HTML_RULES.format(lang=name, glossary=GLOSSARY), json.dumps({"pieces": core}, ensure_ascii=False), as_json=True))
+        got = res.get("t") if isinstance(res, dict) else None
+        if not isinstance(got, list) or len(got) != len(b):
+            raise RuntimeError(f"pieces came back {len(got) if isinstance(got, list) else '?'} for {len(b)}")
+        for i, t in zip(b, got):
+            raw = pieces[i][0]
+            lead, trail = raw[:len(raw) - len(raw.lstrip())], raw[len(raw.rstrip()):]
+            out[i] = lead + str(t).strip() + trail
+
+    for i in idx:
+        n = len(pieces[i][0])
+        if batch and (size + n > 3000 or len(batch) >= 80):
+            run(batch); batch, size = [], 0
+        batch.append(i); size += n
+    if batch:
+        run(batch)
+    # pieces that still carry Korean script are asked once more, one small batch
+    left = [i for i in idx if stray(out.get(i, ""), k)]
+    if left:
+        try:
+            run(left[:60])
+        except Stop:
+            raise
+        except Exception as e:
+            say("html repair failed:", e)
+    return "".join(out.get(i, t) for i, (t, _) in enumerate(pieces))
+
+
+def translate_field(f, post, st, src_field, prefix, state_prefix, translate, sf):
+    ko = post.get(src_field) or ""
     if not ko.strip():
         return False
     changed = False
     src = sha(ko)
     for k, name in LANGS.items():
-        field = "body_" + k
+        field = prefix + k
+        sk = state_prefix + k
         cur = post.get(field) or ""
-        made = st.get(k)
-        by_hand = bool(cur) and made != sha(cur)
-        if by_hand:
+        if cur and st.get(sk) != sha(cur):
+            continue  # edited by hand: never overwritten
+        tries = st.get(sk + "_tries", 0) if st.get(sk + "_src") == src else 0
+        if cur and st.get(sk + "_src") == src and (stray(cur, k) == 0 or tries >= 3):
             continue
-        tries = st.get(k + "_tries", 0) if st.get(k + "_src") == src else 0
-        if cur and st.get(k + "_src") == src and (stray(cur, k) == 0 or tries >= 3):
+        if prefix == "html_" and cur and st.get(sk + "_src") == src:
+            # a report keeps its few leftovers; they are listed for a look by hand
+            st[sk + "_tries"] = 3
+            sf.write_text(json.dumps(st, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             continue
-        if cur and st.get(k + "_src") == src:
+        if cur and st.get(sk + "_src") == src:
             t = repair(cur, ko, k, name)
-            st[k + "_tries"] = 3
+            st[sk + "_tries"] = 3
             if t != cur:
-                post[field] = t; st[k] = sha(t); changed = True
+                post[field] = t; st[sk] = sha(t); changed = True
                 f.write_text(json.dumps(post, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-                say("repaired", f.name, k, "left:", HANGUL.findall(t)[:5] if stray(t, k) else "none")
+                say("repaired", f.name, field, "left:", HANGUL.findall(t)[:5] if stray(t, k) else "none")
             sf.write_text(json.dumps(st, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             continue
         best = None
         for _ in range(2):
             try:
-                t = translate_text(ko, name)
+                t = translate(ko, name, k)
             except Stop:
                 raise
             except Exception as e:
-                say("error in", f.name, k, ":", str(e)[:200], "(tried again on the next run)")
+                say("error in", f.name, field, ":", str(e)[:200], "(tried again on the next run)")
                 break
             tries += 1
             if len(t) < len(ko) * 0.4:
@@ -258,20 +325,34 @@ def translate_post(f):
         if best is None:
             continue
         t = best
-        if stray(t, k):
+        if stray(t, k) and prefix != "html_":
             t = repair(t, ko, k, name)
         if stray(t, k):
-            say("check by hand:", f.name, k, "Korean script left:", HANGUL.findall(t)[:5])
+            say("check by hand:", f.name, field, "Korean script left:", HANGUL.findall(t)[:5])
         post[field] = t
-        st[k] = sha(t)
-        st[k + "_src"] = src
-        st[k + "_tries"] = tries
+        st[sk] = sha(t)
+        st[sk + "_src"] = src
+        st[sk + "_tries"] = tries
         changed = True
         f.write_text(json.dumps(post, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         sf.write_text(json.dumps(st, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        say("translated", f.name, k, len(ko), "->", len(t))
+        say("translated", f.name, field, len(ko), "->", len(t))
+    return changed
+
+
+def translate_post(f, folder):
+    post = json.loads(f.read_text(encoding="utf-8"))
+    sf = STATE / (f.name if folder == "writings" else f"{folder}__{f.name}")
+    st = json.loads(sf.read_text(encoding="utf-8")) if sf.exists() else {}
+    if not (post.get("id") or "").strip() and not ((post.get("title") or {}).get("en") or "").strip():
+        post["id"] = f.stem
+        f.write_text(json.dumps(post, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    changed = translate_field(f, post, st, "body", "body_", "", lambda ko, name, k: translate_text(ko, name), sf)
+    changed = translate_field(f, post, st, "html", "html_", "h_", translate_html, sf) or changed
     # titles and subtitles: fill only the empty languages
     title, sub = post.get("title") or {}, post.get("subtitle") or {}
+    if not (title.get("ko") or "").strip():
+        return changed
     want = {k: [x for x, o in (("title", title), ("subtitle", sub)) if (o.get("ko") or "").strip() and not (o.get(k) or "").strip()]
             for k in LANGS}
     want = {k: v for k, v in want.items() if v}
@@ -297,9 +378,10 @@ def main():
         return
     STATE.mkdir(parents=True, exist_ok=True)
     # newest first, so a new post is never kept waiting behind the backlog
-    for f in sorted(POSTS.glob("*.json"), key=lambda p: p.name, reverse=True):
+    files = [(f, d) for d in FOLDERS for f in (ROOT / "content" / d).glob("*.json")]
+    for f, d in sorted(files, key=lambda x: x[0].name, reverse=True):
         try:
-            translate_post(f)
+            translate_post(f, d)
         except Stop as e:
             say("stopped:", e, "(the rest follows on the next run)")
             break

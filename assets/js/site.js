@@ -35,6 +35,8 @@
     document.documentElement.setAttribute("lang", code === "zh" ? "zh-CN" : code);
     var btns = document.querySelectorAll(".lang-switch button");
     for (var i = 0; i < btns.length; i++) btns[i].setAttribute("aria-pressed", btns[i].dataset.lang === code ? "true" : "false");
+    /* parts drawn per language (KBRI reports) redraw themselves before the reading line is held */
+    try { document.dispatchEvent(new CustomEvent("iobsf-lang", { detail: code })); } catch (e) {}
     if (anchor && anchor.isConnected) { var d = anchor.getBoundingClientRect().top - before; if (Math.abs(d) >= 1) window.scrollBy(0, d); }
   }
   document.documentElement.setAttribute("data-second", getSecond());
@@ -324,6 +326,51 @@
     });
   }
   pages["post-fire"] = renderPost; pages["post-wbt"] = renderPost;
+
+  /* KBRI, the IOBSF Academic Body: a board written from the admin. The list shows titles only;
+     a post opens on its own page, in the chosen language. A designed report keeps its own design. */
+  var KBRI_TAG = { en: "IOBSF Academic Body", ko: "연맹 학술연구기관", ja: "連盟学術研究機関", zh: "联合会学术研究机构" };
+  var KBRI_FULL = { en: "Korea Barbecue Research & Institute", ko: "한국바비큐연구원", ja: "韓国バーベキュー研究院", zh: "韩国烧烤研究院" };
+  function kbriTitle(t) { return { en: (t && (t.en || t.ko)) || "", ko: (t && t.ko) || "", ja: (t && (t.ja || t.ko)) || "", zh: (t && (t.zh || t.ko)) || "" }; }
+  function kbriList() {
+    if (!$("#fed-kbri")) return;
+    load("kbri").then(function (d) {
+      var posts = (d && d.posts) || [];
+      put("#fed-kbri", '<div class="kbri-id">' + bi(KBRI_TAG, "p", "kbri-tag") + bi(KBRI_FULL, "p", "kbri-full") + "</div>" +
+        (posts.length ? '<div class="board rv3-box"><ol class="board-list">' + posts.map(function (q) {
+          return '<li><a href="kbri-report.html?id=' + encodeURIComponent(q.id) + '">' + '<span class="board-date">' + esc(q.date || "") + "</span>" +
+            gb(kbriTitle(q.title), "span", "board-t") + "</a></li>"; }).join("") + "</ol></div>"
+          : '<p class="wbt-empty">' + bi({ en: "Reports will appear here.", ko: "연구 보고서가 이곳에 실린다.", ja: "研究報告はここに掲載される。", zh: "研究报告将在此发布。" }, "span", "", true) + "</p>"));
+    }).catch(function () {});
+  }
+  pages["kbri-report"] = function () {
+    var id = param("id") || "";
+    var crumb = '<p class="w-crumb"><a href="federation.html">' + bi({ en: "Inside IOBSF", ko: "연맹", ja: "連盟", zh: "联合会" }, "span", "", true) + "</a> / " +
+      '<a href="federation.html#kbri">KBRI</a></p>';
+    fetchJSON("kbri/" + id.replace(/[^a-z0-9-]/gi, "")).then(function (p) {
+      var lang = function () { return document.documentElement.getAttribute("data-second") || "en"; };
+      document.title = (kbriTitle(p.title).en || "KBRI") + " | IOBSF";
+      var draw = function () {
+        var l = lang(), k = l === "ko" ? "" : "_" + l;
+        if (p.html) {
+          put("#kbri-head", crumb);
+          var doc = $("#kbri-doc"); doc.className = "kbri-doc"; doc.setAttribute("lang", (p["html" + k] || l === "ko") ? (l === "zh" ? "zh" : l) : "ko");
+          doc.innerHTML = p["html" + k] || p.html;
+        } else {
+          var by = p.by || {};
+          put("#kbri-head", crumb + '<article class="writing">' + "<h1>" + bi(kbriTitle(p.title), "span", "", true) + "</h1>" +
+            (p.subtitle && p.subtitle.ko ? bi(kbriTitle(p.subtitle), "p", "w-sub-ko") : "") +
+            '<p class="w-by">' + bi({ en: by.en || "Shaka Chaa", ko: by.ko || "차영기", ja: "車英基（Shaka Chaa）", zh: "车英基（Shaka Chaa）" }, "span", "", true) + "</p>" +
+            '<div class="w-body"><div class="w-text" style="display:block" lang="' + (p["body" + k] ? l : "ko") + '">' + md(p["body" + k] || p.body || "") + "</div></div></article>");
+          $("#kbri-doc").innerHTML = "";
+        }
+      };
+      draw();
+      document.addEventListener("iobsf-lang", draw);
+    }).catch(function () {
+      put("#kbri-head", crumb + '<p class="wbt-empty">' + bi({ en: "This report could not be found.", ko: "보고서를 찾을 수 없다.", ja: "報告が見つからない。", zh: "未找到该报告。" }, "span", "", true) + "</p>");
+    });
+  };
 
   /* The Fire: news, announcements, chronicle and press below the statements, written from the admin */
   function fireNews() {
@@ -826,7 +873,15 @@
   }
   pages.wbt = function () {
     load("wbt").then(function (w) {
-      put("#wbt-tag", '<p class="wbt-tag">' + esc(w.tagline.en) + "</p>" + gb({ en: "", ko: w.tagline.ko, ja: w.tagline.ja, zh: w.tagline.zh }, "p", "wbt-tag-2") + '<p class="wbt-full">' + esc(w.full_name) + "</p>");
+      put("#wbt-tag", '<p class="wbt-tag">' + esc(w.tagline.en) + "</p>" + gb({ en: "", ko: w.tagline.ko, ja: w.tagline.ja, zh: w.tagline.zh }, "p", "wbt-tag-2") + '<p class="wbt-full">' + esc(w.full_name) + "</p>" +
+        /* the research behind the tour: one plaque that opens the KBRI report */
+        '<a class="wbt-doc" href="kbri-report.html?id=sports-barbecue-market-outlook-2030-2035">' +
+          '<span class="wbt-doc-ic" aria-hidden="true"><svg viewBox="0 0 48 48"><defs><linearGradient id="wdg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc9a"/><stop offset=".45" stop-color="#c9963f"/><stop offset="1" stop-color="#7a4f1c"/></linearGradient></defs>' +
+          '<path d="M12 5h17l9 9v29H12z" fill="none" stroke="url(#wdg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M29 5v9h9" fill="none" stroke="url(#wdg)" stroke-width="2.2" stroke-linejoin="round"/>' +
+          '<rect x="17" y="30" width="4" height="8" fill="url(#wdg)"/><rect x="23" y="25" width="4" height="13" fill="url(#wdg)"/><rect x="29" y="20" width="4" height="18" fill="url(#wdg)"/>' +
+          '<path d="M17 24l6-5 5 2 6-6" fill="none" stroke="#ff9a4d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>' +
+          '<span class="wbt-doc-t"><span class="wbt-doc-k">KBRI REPORT</span>' +
+          bi({ en: "Market Outlook 2030–2035", ko: "시장 전망 2030–2035", ja: "市場展望 2030–2035", zh: "市场展望 2030–2035" }, "span", "wbt-doc-l", true) + "</span></a>");
       put("#wbt-sub", w.sections.map(function (x) { return '<a href="#' + esc(x.id) + '">' + gb(x.title, "span") + "</a>"; }).join(""));
       put("#wbt-grid", w.sections.map(function (x, i) {
         var n = (x.posts || []).length;
@@ -906,6 +961,7 @@
 
   pages.federation = function (site) {
     if ($("#fire-body")) spiritBody(site);
+    kbriList();
     renderJudges();
     var st = site.statements, f = site.federation;
     put("#fed-facts",

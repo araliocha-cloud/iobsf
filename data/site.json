@@ -513,7 +513,8 @@
         "business",
         "judge",
         "events",
-        "event"
+        "event",
+        "kbri-report"
       ],
       "children": [
         {
@@ -620,6 +621,21 @@
             "ja": "連盟のパートナーとビジネス窓口。",
             "zh": "联合会的合作伙伴与业务窗口。"
           }
+        },
+        {
+          "href": "federation.html#kbri",
+          "label": {
+            "en": "KBRI",
+            "ko": "KBRI",
+            "ja": "KBRI",
+            "zh": "KBRI"
+          },
+          "desc": {
+            "en": "IOBSF Academic Body: research reports and policy papers.",
+            "ko": "연맹 학술연구기관: 연구 보고서와 정책 자료.",
+            "ja": "連盟学術研究機関：研究報告と政策資料。",
+            "zh": "联合会学术研究机构：研究报告与政策资料。"
+          }
         }
       ]
     }
@@ -670,8 +686,8 @@
       "full": {
         "en": "Korea Barbecue Research & Institute",
         "ko": "한국바비큐연구원",
-        "ja": "",
-        "zh": ""
+        "ja": "韓国バーベキュー研究院",
+        "zh": "韩国烧烤研究院"
       },
       "role": {
         "en": "Research and thought: barbecue humanities, civilization history, distribution economics",

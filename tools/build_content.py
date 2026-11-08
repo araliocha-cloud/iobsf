@@ -53,6 +53,19 @@ out = {
     "news.json": into_sections(settings("news"), posts("news")),
     "wbt.json": into_sections(settings("wbt"), posts("wbt")),
 }
+# KBRI: the list carries titles only; each post has its own file with its full text and its four language versions
+kb = posts("kbri") if (C / "kbri").exists() else []
+HEAVY = ("html", "html_en", "html_ja", "html_zh", "body", "body_en", "body_ja", "body_zh")
+out["kbri.json"] = {"posts": [dict({k: v for k, v in p.items() if k not in HEAVY}, kind="report" if p.get("html") else "article") for p in kb]}
+(D / "kbri").mkdir(exist_ok=True)
+keep = set()
+for p in kb:
+    out["kbri/" + p["id"] + ".json"] = p
+    keep.add(p["id"] + ".json")
+for old in (D / "kbri").glob("*.json"):
+    if old.name not in keep:
+        old.unlink(); print("removed", old.name)
+
 changed = 0
 for name, data in out.items():
     text = json.dumps(data, ensure_ascii=False, indent=2) + "\n"

@@ -1858,7 +1858,7 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
 .site-nav .nav-sub a:hover { background: rgba(201,161,90,.12); }
 @media (max-width: 1220px) { .nav-sub { position: static; display: block; transform: none; min-width: 0; padding: 0 0 6px 14px; background: none; border: 0; box-shadow: none; } .site-nav .nav-sub a { font-size: 15px; padding: 4px 0; } }
 /* WBT page */
-.wbt-hero { position: relative; overflow: hidden; text-align: center; padding: 80px 20px 64px;
+.wbt-hero { position: relative; overflow: hidden; text-align: center; padding: 34px 20px 30px;
   background: radial-gradient(ellipse 55% 48% at 50% 46%, rgba(255,140,40,.38), rgba(180,70,10,.18) 45%, transparent 72%),
     radial-gradient(ellipse 90% 70% at 50% 110%, rgba(120,40,6,.55), transparent 65%),
     radial-gradient(ellipse 120% 90% at 50% 40%, #2a1a0e 0%, #140c07 55%, #070504 100%); }
@@ -1871,7 +1871,7 @@ body[data-page="heritageitem"] .pq-sig-title { font-size: 14px; }
   radial-gradient(1.5px 1.5px at 82% 34%, #ffd27a, transparent), radial-gradient(1.5px 1.5px at 58% 18%, #ffc061, transparent), radial-gradient(2px 2px at 12% 40%, #ff8a2a, transparent),
   radial-gradient(1.5px 1.5px at 90% 78%, #ffb347, transparent), radial-gradient(1.5px 1.5px at 44% 86%, #ff9a3a, transparent); }
 .wbt-h1 { position: relative; margin: 0; }
-.wbt-logo { display: block; margin: 0 auto; width: min(760px, 88vw); height: auto; filter: drop-shadow(0 18px 30px rgba(0,0,0,.65)) drop-shadow(0 0 40px rgba(255,120,30,.25)); }
+.wbt-logo { display: block; margin: 0 auto; width: min(500px, 76vw); height: auto; filter: drop-shadow(0 18px 30px rgba(0,0,0,.65)) drop-shadow(0 0 40px rgba(255,120,30,.25)); }
 #wbt-tag { position: relative; }
 .wbt-tag { margin: 26px 0 4px; font-family: var(--display); font-size: 24px; letter-spacing: .32em; text-transform: uppercase; color: #f1d39a; }
 .wbt-tag-2 .p:empty { display: none; }
@@ -2246,3 +2246,26 @@ html:not([data-second="en"]) :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s { displ
 html[data-second="ko"] :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s[lang="ko"],
 html[data-second="ja"] :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s[lang="ja"],
 html[data-second="zh"] :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s[lang="zh"] { display: inline; visibility: visible; }
+
+/* KBRI, the IOBSF Academic Body */
+.kbri-id { margin: -6px 0 18px; }
+.kbri-id .kbri-tag { font-family: var(--f-display, "Cormorant Garamond", serif); font-size: 15px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold, #c9a45c); margin: 0; }
+.kbri-id .kbri-full { font-size: 15px; color: var(--muted, #a99d8f); margin: 4px 0 0; }
+.kbri-head { padding-bottom: 0 !important; }
+.kbri-head .w-crumb { margin-bottom: 0; }
+.kbri-doc { margin: 14px 0 0; }
+.kbri-doc #sbbq { border-top: 1px solid rgba(201,164,92,.25); }
+
+/* WBT: the plaque that opens the KBRI report */
+.wbt-doc { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 14px; margin: 20px auto 0; padding: 11px 24px 11px 14px; text-decoration: none;
+  border-radius: 10px; background: linear-gradient(180deg, #2b211a, #18120e); border: 1px solid #a8763a;
+  box-shadow: inset 0 1px 0 rgba(255,220,160,.35), inset 0 -2px 0 rgba(0,0,0,.6), 0 0 0 3px #3a2a1a, 0 0 0 4px #7a5528, 0 10px 22px rgba(0,0,0,.6), 0 4px 0 #120c08; }
+.wbt-doc:hover { border-color: #e0b066; }
+.wbt-doc-ic { width: 46px; height: 46px; flex: none; display: grid; place-items: center; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #4a3624, #1a120c 70%); box-shadow: inset 0 0 0 1px rgba(232,190,110,.55), inset 0 2px 3px rgba(255,220,160,.25), 0 2px 4px rgba(0,0,0,.6); }
+.wbt-doc-ic svg { width: 30px; height: 30px; filter: drop-shadow(0 1px 1px rgba(0,0,0,.7)); }
+.wbt-doc-t { display: flex; flex-direction: column; align-items: center; text-align: center; line-height: 1.25; flex: 1; }
+.wbt-doc-k { font-size: 11px; letter-spacing: .3em; color: #c9a45c; }
+.wbt-doc-l { font-family: "Cormorant Garamond", serif; font-size: 20px; color: #f3e3c3; letter-spacing: .02em; }
+.wbt-doc-l .s { font-family: "Noto Serif KR", serif; }
+@media (max-width: 760px) { .wbt-hero { padding-bottom: 66px; } }
