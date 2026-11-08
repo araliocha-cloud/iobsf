@@ -2257,15 +2257,20 @@ html[data-second="zh"] :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s[lang="zh"] { 
 .kbri-doc #sbbq { border-top: 1px solid rgba(201,164,92,.25); }
 
 /* WBT: the plaque that opens the KBRI report */
-.wbt-doc { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 14px; margin: 20px auto 0; padding: 11px 24px 11px 14px; text-decoration: none;
+.wbt-doc { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 14px; margin: 20px auto 0; padding: 11px 16px; text-decoration: none;
   border-radius: 10px; background: linear-gradient(180deg, #2b211a, #18120e); border: 1px solid #a8763a;
   box-shadow: inset 0 1px 0 rgba(255,220,160,.35), inset 0 -2px 0 rgba(0,0,0,.6), 0 0 0 3px #3a2a1a, 0 0 0 4px #7a5528, 0 10px 22px rgba(0,0,0,.6), 0 4px 0 #120c08; }
 .wbt-doc:hover { border-color: #e0b066; }
 .wbt-doc-ic { width: 46px; height: 46px; flex: none; display: grid; place-items: center; border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #4a3624, #1a120c 70%); box-shadow: inset 0 0 0 1px rgba(232,190,110,.55), inset 0 2px 3px rgba(255,220,160,.25), 0 2px 4px rgba(0,0,0,.6); }
 .wbt-doc-ic svg { width: 30px; height: 30px; filter: drop-shadow(0 1px 1px rgba(0,0,0,.7)); }
-.wbt-doc-t { display: flex; flex-direction: column; align-items: center; text-align: center; line-height: 1.25; flex: 1; }
+.wbt-doc-t { display: flex; flex-direction: column; align-items: center; text-align: center; line-height: 1.25; }
 .wbt-doc-k { font-size: 11px; letter-spacing: .3em; color: #c9a45c; }
 .wbt-doc-l { font-family: "Cormorant Garamond", serif; font-size: 20px; color: #f3e3c3; letter-spacing: .02em; }
 .wbt-doc-l .s { font-family: "Noto Serif KR", serif; }
 @media (max-width: 760px) { .wbt-hero { padding-bottom: 66px; } }
+/* the motto stays on one line on a phone */
+@media (max-width: 640px) { .wbt-tag { font-size: clamp(11px, 3.6vw, 16px); letter-spacing: .1em; white-space: nowrap; } }
+/* the narrowest phones: the four language buttons still fit beside the menu */
+@media (max-width: 380px) { html .lang-switch button { width: 3.7em; font-size: 12px; } .site-header .wrap { column-gap: 8px; } }
+@media (max-width: 340px) { html .lang-switch button { width: 3.3em; font-size: 11px; } .nav-toggle { padding-left: 10px; padding-right: 10px; } }
