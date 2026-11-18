@@ -2274,3 +2274,13 @@ html[data-second="zh"] :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s[lang="zh"] { 
 /* the narrowest phones: the four language buttons still fit beside the menu */
 @media (max-width: 380px) { html .lang-switch button { width: 3.7em; font-size: 12px; } .site-header .wrap { column-gap: 8px; } }
 @media (max-width: 340px) { html .lang-switch button { width: 3.3em; font-size: 11px; } .nav-toggle { padding-left: 10px; padding-right: 10px; } }
+
+/* World Barbecue Report: magazine subtitles, drop cap, small source credits */
+.wbt-body h3.post-sub { font-family: "Noto Serif KR", serif; font-size: 20px; font-weight: 700; color: var(--copper-light); margin: 2.1em 0 .8em; padding-left: 12px; border-left: 3px solid var(--copper); line-height: 1.4; }
+.wbt-body > div > h3.post-sub:first-child { margin-top: .6em; }
+.wbt-body .p p, .wbt-body .s p { text-indent: 1em; }
+.wbt-body h3.post-sub:first-child + p { text-indent: 0; }
+.wbt-body h3.post-sub:first-child + p::first-letter { float: left; font-family: "Noto Serif KR", serif; font-size: 3.1em; line-height: .9; font-weight: 700; color: var(--copper-light); margin: .06em .12em 0 0; }
+.wbt-body .post-src { font-size: .8em; color: var(--ash); white-space: normal; }
+.wbt-body .post-src a { color: var(--copper-light); }
+@media (max-width: 640px) { .wbt-body p { text-align: left; } }

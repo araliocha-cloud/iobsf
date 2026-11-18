@@ -388,7 +388,7 @@
         gb({ en: "Stories of the Federation's fires, told after the day.", ko: "연맹의 불이 피어난 날의 이야기.", ja: "連盟の火が灯った日の物語。", zh: "联盟之火燃起之日的故事。" }, "p", "wbt-lede") +
         '<div class="wbt-links">' + stories.slice(0, 4).map(function (st) { return '<a class="wbt-link" href="chronicle.html#' + esc(st.id) + '">' + gb(st.title, "span") + "</a>"; }).join("") +
         '<a class="wbt-link" href="chronicle.html">' + gb({ en: "All stories", ko: "모든 이야기", ja: "すべての物語", zh: "全部故事" }, "span") + "</a></div></div></section>";
-      put("#fire-news", (byId.news ? sec(byId.news) : "") + (byId.announcements ? sec(byId.announcements) : "") + chron + (byId.press ? sec(byId.press) : ""));
+      put("#fire-news", (byId["world-barbecue-report"] ? sec(byId["world-barbecue-report"]) : "") + (byId.news ? sec(byId.news) : "") + (byId.announcements ? sec(byId.announcements) : "") + chron + (byId.press ? sec(byId.press) : ""));
       if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) setTimeout(function () { t.scrollIntoView(); }, 60); }
     });
   }
@@ -866,7 +866,14 @@
 
   /* WBT: World Barbecue Tour, its six branches written from the admin */
   function paras(o) {
-    var one = function (t, tag) { return String(t || "").split(/\n\s*\n/).filter(function (x) { return x.trim(); }).map(function (x) { return "<p>" + inline(x.trim()).replace(/\n/g, "<br>") + "</p>"; }).join(""); };
+    /* a "## " block is a subtitle; a paragraph's closing source credit is set small */
+    var SRC = /\s*((?:원문 보기 :|Source:|原文 ?[:：])\s*\[[\s\S]*)$/;
+    var one = function (t, tag) { return String(t || "").split(/\n\s*\n/).filter(function (x) { return x.trim(); }).map(function (x) {
+      x = x.trim();
+      if (/^##\s+/.test(x)) return '<h3 class="post-sub">' + inline(x.replace(/^##\s+/, "")) + "</h3>";
+      var m = x.match(SRC), src = "";
+      if (m) { src = ' <span class="post-src">' + inline(m[1]) + "</span>"; x = x.slice(0, m.index); }
+      return "<p>" + inline(x).replace(/\n/g, "<br>") + src + "</p>"; }).join(""); };
     var h = '<div class="p" lang="en">' + one(o.en) + "</div>";
     SECONDS.forEach(function (k) { var v = o[k] || (k !== "ko" && o.ko ? "" : ""); if (v) h += '<div class="s" lang="' + k + '">' + one(v) + "</div>"; });
     return '<div class="bi gb wbt-body">' + h + "</div>";
