@@ -337,6 +337,21 @@
       ],
       "children": [
         {
+          "href": "fire.html#world-barbecue-report",
+          "label": {
+            "en": "World Barbecue Report",
+            "ko": "World Barbecue Report",
+            "ja": "World Barbecue Report",
+            "zh": "World Barbecue Report"
+          },
+          "desc": {
+            "en": "The world of barbecue, read each week.",
+            "ko": "한 주의 세계 바비큐를 읽는다.",
+            "ja": "一週間の世界のバーベキューを読む。",
+            "zh": "每周解读世界烧烤。"
+          }
+        },
+        {
           "href": "fire.html#news",
           "label": {
             "en": "News",
