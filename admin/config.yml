@@ -177,6 +177,8 @@ collections:
     label: 갈래
     widget: select
     options:
+    - label: World Barbecue Report
+      value: world-barbecue-report
     - label: 소식
       value: news
     - label: 공지

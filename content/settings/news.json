@@ -7,6 +7,21 @@
   },
   "sections": [
     {
+      "id": "world-barbecue-report",
+      "title": {
+        "en": "World Barbecue Report",
+        "ko": "World Barbecue Report",
+        "ja": "World Barbecue Report",
+        "zh": "World Barbecue Report"
+      },
+      "lede": {
+        "en": "A weekly reading of the world of barbecue: competitions, industry, Asia and research.",
+        "ko": "한 주의 세계 바비큐를 읽는다. 대회, 산업, 아시아, 연구.",
+        "ja": "一週間の世界のバーベキューを読む。大会、産業、アジア、研究。",
+        "zh": "每周解读世界烧烤：赛事、产业、亚洲与研究。"
+      }
+    },
+    {
       "id": "news",
       "title": {
         "en": "News",
