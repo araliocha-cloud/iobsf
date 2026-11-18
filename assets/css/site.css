@@ -2283,4 +2283,4 @@ html[data-second="zh"] :is(.w-crumb, .site-nav, .wbt-sub) .bi > .s[lang="zh"] { 
 .wbt-body h3.post-sub:first-child + p::first-letter { float: left; font-family: "Noto Serif KR", serif; font-size: 3.1em; line-height: .9; font-weight: 700; color: var(--copper-light); margin: .06em .12em 0 0; }
 .wbt-body .post-src { font-size: .8em; color: var(--ash); white-space: normal; }
 .wbt-body .post-src a { color: var(--copper-light); }
-@media (max-width: 640px) { .wbt-body p { text-align: left; } }
+@media (max-width: 640px) { .wbt-body p { text-align: justify; text-align-last: left; } }
